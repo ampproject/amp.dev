@@ -41,9 +41,9 @@ Por ejemplo, puede invocar el servidor A9 de Amazon con esta sintaxis:
 </amp-ad>
 ```
 
-En este código, el atributo `type` especifica la red publicitaria, que en este caso es A9. Los atributos `data-*` dependen de los parámetros que el servidor A9 de Amazon espera para publicar un anuncio. El archivo [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) muestra cómo se asignan los parámetros para hacer una llamada JavaScript a la URL del servidor A9. Los parámetros correspondientes dados por la etiqueta [`amp-ad`](../../../documentation/components/reference/amp-ad.md) se agregan a la URL para devolver un anuncio.
+En este código, el atributo `type` especifica la red publicitaria, que en este caso es A9. Los atributos `data-*` dependen de los parámetros que el servidor A9 de Amazon espera para publicar un anuncio. El archivo [`a9.js`](https://github.com/ampproject/amphtml/blob/main/ads/a9.js) muestra cómo se asignan los parámetros para hacer una llamada JavaScript a la URL del servidor A9. Los parámetros correspondientes dados por la etiqueta [`amp-ad`](../../../documentation/components/reference/amp-ad.md) se agregan a la URL para devolver un anuncio.
 
-Para obtener más información sobre cómo crear una integración [<code>amp-ad</code>](https://github.com/ampproject/amphtml/blob/master/ads/a9.js), consulte <a>Cómo integrar redes publicitarias a AMP</a>.
+Para obtener más información sobre cómo crear una integración [<code>amp-ad</code>](https://github.com/ampproject/amphtml/blob/main/ads/a9.js), consulte <a>Cómo integrar redes publicitarias a AMP</a>.
 
 ## Creación de una integración Fast Fetch <a name="creating-a-fast-fetch-integration"></a>
 

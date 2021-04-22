@@ -83,7 +83,7 @@ Elemen ini mencakup [atribut umum](../../../documentation/guides-and-tutorials/l
 ## Substitusi <a name="substitutions"></a>
 
 Komponen `amp-pixel` memungkinkan semua substitusi variabel URL standar.
-Lihat [Panduan Substitusi](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md) untuk informasi selengkapnya.
+Lihat [Panduan Substitusi](https://github.com/ampproject/amphtml/blob/main/extensions/spec/amp-var-substitutions.md) untuk informasi selengkapnya.
 
 Pada contoh berikut, permintaan dapat dibuat untuk sesuatu seperti `https://foo.com/pixel?0.8390278471201` di mana nilai RANDOM dibuat secara acak pada setiap tayangan.
 
@@ -98,4 +98,4 @@ Pada contoh berikut, permintaan dapat dibuat untuk sesuatu seperti `https://foo.
 
 ## Validasi <a name="validation"></a>
 
-Lihat [aturan amp-pixel](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) dalam spesifikasi validator AMP.
+Lihat [aturan amp-pixel](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) dalam spesifikasi validator AMP.

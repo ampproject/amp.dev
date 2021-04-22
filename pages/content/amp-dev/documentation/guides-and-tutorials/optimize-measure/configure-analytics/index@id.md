@@ -23,7 +23,7 @@ Jika Anda memiliki solusi internal sendiri untuk mengukur keterlibatan pengguna,
 
 Analisis AMP dirancang khusus untuk mengukur satu kali dan melaporkan hasilnya ke banyak pihak. Jika Anda sudah bekerja dengan satu atau beberapa vendor analitik, periksa daftar [Vendor Analitik](https://github.com/ampproject/amphtml/issues/new) untuk mengetahui apakah mereka telah mengintegrasikan solusinya dengan AMP. Jika mereka sudah melakukannya, tinjau detail konfigurasinya, lalu ikuti petunjuknya.
 
-Jika vendor analitik belum terintegrasi dengan AMP, hubungi vendor tersebut untuk meminta dukungannya. Sebaiknya Anda juga [mengajukan masalah di project AMP](https://github.com/ampproject/amphtml/issues/new) dan meminta agar vendor tersebut ditambahkan. Kunjungi juga [Mengintegrasikan alat analitik di HTML AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+Jika vendor analitik belum terintegrasi dengan AMP, hubungi vendor tersebut untuk meminta dukungannya. Sebaiknya Anda juga [mengajukan masalah di project AMP](https://github.com/ampproject/amphtml/issues/new) dan meminta agar vendor tersebut ditambahkan. Kunjungi juga [Mengintegrasikan alat analitik di HTML AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md).
 
 ### Data apa yang Anda butuhkan?
 

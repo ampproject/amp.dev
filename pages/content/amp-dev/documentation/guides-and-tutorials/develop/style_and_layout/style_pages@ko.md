@@ -18,7 +18,7 @@ contributors:
 
 모든 스타일은 문서 헤드에 배치되어야 합니다 ([페이지에 스타일 추가](index.md#add-styles-to-a-page) 참조). 하지만 CSS 전처리기 및 템플릿을 사용하여 정적 페이지를 만들 수 있으며, 이를 통해 콘텐츠를 더 효과적으로 관리할 수 있습니다.
 
-참고: AMP 구성요소에는 기본 스타일이 제공되므로 반응형 페이지를 비교적 간편하게 제작할 수 있습니다. 이러한 스타일은 [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css) 에 정의되어 있습니다.
+참고: AMP 구성요소에는 기본 스타일이 제공되므로 반응형 페이지를 비교적 간편하게 제작할 수 있습니다. 이러한 스타일은 [`amp.css`](https://github.com/ampproject/amphtml/blob/main/css/amp.css) 에 정의되어 있습니다.
 
 다음 스타일은 AMP 페이지에서 허용되지 않습니다.
 

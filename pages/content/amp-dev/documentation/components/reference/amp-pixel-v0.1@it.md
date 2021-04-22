@@ -86,7 +86,7 @@ Questo elemento include [attributi comuni](../../../documentation/guides-and-tut
 ## Sostituzioni <a name="substitutions"></a>
 
 `amp-pixel` consente tutte le sostituzioni di variabili URL standard.
-Per ulteriori informazioni, consulta la [Guida alle sostituzioni](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md).
+Per ulteriori informazioni, consulta la [Guida alle sostituzioni](https://github.com/ampproject/amphtml/blob/main/extensions/spec/amp-var-substitutions.md).
 
 Nel seguente esempio, potrebbe essere effettuata una richiesta a `https://foo.com/pixel?0.8390278471201`, dove il valore RANDOM viene generato in modo casuale per ciascuna impressione.
 
@@ -101,4 +101,4 @@ Non modificare lo stile di `amp-pixel`.
 
 ## Convalida <a name="validation"></a>
 
-Consulta le [regole amp-pixel](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) nella specifica dello strumento di convalida AMP.
+Consulta le [regole amp-pixel](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) nella specifica dello strumento di convalida AMP.

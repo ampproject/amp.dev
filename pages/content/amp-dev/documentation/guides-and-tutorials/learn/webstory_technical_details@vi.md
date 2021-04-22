@@ -271,7 +271,7 @@ Thuộc tính [`auto-advance-after`](https://amp.dev/documentation/components/am
 
 ## Trải nghiệm trên máy tính để bàn
 
-Định dạng Câu chuyện Web hỗ trợ một [trải nghiệm không bắt buộc trên máy tính để bàn](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). Nó thay đổi trải nghiệm máy tính để bàn thành một chế độ in tràn mép đắm chìm, thay thế trải nghiệm 3 màn hình dọc mặc định và cho phép người dùng di động xem câu chuyện đó khi thiết bị của họ được cầm ngang.
+Định dạng Câu chuyện Web hỗ trợ một [trải nghiệm không bắt buộc trên máy tính để bàn](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). Nó thay đổi trải nghiệm máy tính để bàn thành một chế độ in tràn mép đắm chìm, thay thế trải nghiệm 3 màn hình dọc mặc định và cho phép người dùng di động xem câu chuyện đó khi thiết bị của họ được cầm ngang.
 
 Đăng ký hỗ trợ máy tính để bàn bằng cách thêm thuộc tính `supports-landscape` vào thành phần `<amp-story>`.
 

@@ -121,4 +121,4 @@ Fonctionnalités non compatibles :
 
 ## Validation <a name="validation"></a>
 
-Consultez les [règles relatives à amp-3d-gltf](https://github.com/ampproject/amphtml/blob/master/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii) dans les spécifications du validateur AMP.
+Consultez les [règles relatives à amp-3d-gltf](https://github.com/ampproject/amphtml/blob/main/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii) dans les spécifications du validateur AMP.

@@ -72,8 +72,8 @@ limitations under the License.
 
 ## 支持的广告联盟 <a name="supported-ad-networks"></a>
 
-* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
-* [DoubleClick（实验性）](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
+* [AdSense](https://github.com/ampproject/amphtml/blob/main/ads/google/adsense.md)
+* [DoubleClick（实验性）](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md)
 
 ## 属性
 
@@ -407,4 +407,4 @@ limitations under the License.
 
 ## 验证
 
-请参阅 AMP 验证工具规范中的 [amp-auto-ads 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-auto-ads/validator-amp-auto-ads.protoascii)。
+请参阅 AMP 验证工具规范中的 [amp-auto-ads 规则](https://github.com/ampproject/amphtml/blob/main/extensions/amp-auto-ads/validator-amp-auto-ads.protoascii)。

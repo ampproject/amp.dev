@@ -170,4 +170,4 @@ Baca lebih lanjut tentang [Tindakan dan Peristiwa AMP](../../../documentation/gu
 
 ## Validasi <a name="validation"></a>
 
-Lihat [aturan amp-selector](https://github.com/ampproject/amphtml/blob/master/extensions/amp-selector/validator-amp-selector.protoascii) dalam spesifikasi validator AMP.
+Lihat [aturan amp-selector](https://github.com/ampproject/amphtml/blob/main/extensions/amp-selector/validator-amp-selector.protoascii) dalam spesifikasi validator AMP.

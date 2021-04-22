@@ -30,7 +30,7 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 あわせて、[AMP プロジェクトに問題を報告](https://github.com/ampproject/amphtml/issues/new)し、
 ベンダーを追加するようリクエストすることをおすすめします。
 また、
-[AMP HTML にアナリティクス ツールを統合する](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)方法もご確認ください。
+[AMP HTML にアナリティクス ツールを統合する](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md)方法もご確認ください。
 
 ### どのようなデータが必要か
 

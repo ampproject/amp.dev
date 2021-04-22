@@ -213,7 +213,7 @@ For the best user experience, we strongly recommend including a poster image. If
 
 By default, the first story in the player will automatically start playing when the player becomes visible in the user's viewport.
 
-You can opt-out of the default behavior by using the configuration below. This will prevent the first story in the player to start playing until you call [play()](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md#playpause) on the player.
+You can opt-out of the default behavior by using the configuration below. This will prevent the first story in the player to start playing until you call [play()](https://github.com/ampproject/amphtml/blob/main/spec/amp-story-player.md#playpause) on the player.
 
 ```html
 <amp-story-player>
@@ -309,7 +309,7 @@ The JSON configuration must be a direct child of the `<amp-story-player>` elemen
 
 ### Personalized and infinite stories
 
-You can create an "infinite scroll" experience as the user navigates through them in the Web Story Player. To do so, include the [`fetch` action](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md#custom-events) and specify an endpoint in the JSON configuration. The player automatically fetches more stories as the user gets closer to the last loaded story. You can customize fetched stories for users by setting up backend personalization system and using the `fetch` action to serve them.
+You can create an "infinite scroll" experience as the user navigates through them in the Web Story Player. To do so, include the [`fetch` action](https://github.com/ampproject/amphtml/blob/main/spec/amp-story-player.md#custom-events) and specify an endpoint in the JSON configuration. The player automatically fetches more stories as the user gets closer to the last loaded story. You can customize fetched stories for users by setting up backend personalization system and using the `fetch` action to serve them.
 
 ```html
 <amp-story-player>
@@ -501,7 +501,7 @@ You may further personalize custom controls with the following optional properti
 
 # Web Story Player interactivity
 
-You may call the [Web Story Player’s methods](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md#programmatic-control) to programmatically control the player. These methods include when to initialize the player, muting the audio, and pausing the story.
+You may call the [Web Story Player’s methods](https://github.com/ampproject/amphtml/blob/main/spec/amp-story-player.md#programmatic-control) to programmatically control the player. These methods include when to initialize the player, muting the audio, and pausing the story.
 
 ```js
 const playerEl = document.body.querySelector('amp-story-player');
@@ -524,12 +524,12 @@ const player = new AmpStoryPlayer(window, playerEl)
 The element must be connected to the DOM before calling `load()`.
 [/tip]
 
-See the list of methods in the [Web Story Player spec](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md#programmatic-control).
+See the list of methods in the [Web Story Player spec](https://github.com/ampproject/amphtml/blob/main/spec/amp-story-player.md#programmatic-control).
 
 
 # Interactive events
 
-The Web Story Player dispatches events you can listen for and react to. Use these events to create interactive experiences and track analytics. The full list of events can be found on the [Web Story Player spec](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md#custom-events). 
+The Web Story Player dispatches events you can listen for and react to. Use these events to create interactive experiences and track analytics. The full list of events can be found on the [Web Story Player spec](https://github.com/ampproject/amphtml/blob/main/spec/amp-story-player.md#custom-events). 
 
 In the example below, we use the `page-attachment-close`, `page-attachment-open` and `amp-story-player-back` events to change the background of a different element on our page.
 

@@ -49,7 +49,7 @@ Il existe plusieurs différences notables entre le composant `amp-iframe` et les
 * Un composant `amp-iframe` ne peut ne pas figurer près du bord supérieur du document (à l'exception des cadres iFrame qui utilisent `placeholder`, comme indiqué [ci-dessous](#iframe-with-placeholder)). L'iFrame doit soit se trouver à 600 pixels du haut du document, soit hors des 75 premiers % de la fenêtre d'affichage lorsque l'utilisateur fait défiler la page vers le haut, la plus petite des deux valeurs étant retenue.
 * Par défaut, un composant amp-iframe est isolé dans un bac à sable (voir les [détails](#sandbox)).
 * Un composant `amp-iframe` peut uniquement demander des ressources via HTTPS, à partir d'un URI de données ou via l'attribut `srcdoc`.
-* Un composant `amp-iframe` ne peut pas se trouver dans la même origine que le conteneur, sauf si `allow-same-origin` n'est pas autorisé dans l'attribut `sandbox`. Pour plus d'informations sur les origines autorisées pour les cadres iFrame, consultez le document ["Iframe origin policy"](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md).
+* Un composant `amp-iframe` ne peut pas se trouver dans la même origine que le conteneur, sauf si `allow-same-origin` n'est pas autorisé dans l'attribut `sandbox`. Pour plus d'informations sur les origines autorisées pour les cadres iFrame, consultez le document ["Iframe origin policy"](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md).
 
 *Exemple : Intégration d'une carte Google dans un composant amp-iframe*
 
@@ -237,4 +237,4 @@ Le composant `amp-iframe` doit être considéré comme une solution de remplacem
 
 # Validation <a name="validation"></a>
 
-Consultez les [règles relatives à amp-iframe](https://github.com/ampproject/amphtml/blob/master/extensions/amp-iframe/validator-amp-iframe.protoascii) dans les spécifications du validateur AMP.
+Consultez les [règles relatives à amp-iframe](https://github.com/ampproject/amphtml/blob/main/extensions/amp-iframe/validator-amp-iframe.protoascii) dans les spécifications du validateur AMP.

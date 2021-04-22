@@ -390,7 +390,7 @@ limitations under the License.
 </tbody>
 </table>
 
-`src` 可以在用户使用手势后更新该属性 [`amp-bind`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-date-picker/../amp-bind/amp-bind.md)。
+`src` 可以在用户使用手势后更新该属性 [`amp-bind`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-date-picker/../amp-bind/amp-bind.md)。
 
 #### 模板定义对象
 
@@ -723,4 +723,4 @@ For a date range picker:
 
 ## Validation
 
-请参阅 AMP 验证工具规范中的 [amp-date-picker rules](https://github.com/ampproject/amphtml/blob/master/extensions/amp-date-picker/validator-amp-date-picker.protoascii)。
+请参阅 AMP 验证工具规范中的 [amp-date-picker rules](https://github.com/ampproject/amphtml/blob/main/extensions/amp-date-picker/validator-amp-date-picker.protoascii)。

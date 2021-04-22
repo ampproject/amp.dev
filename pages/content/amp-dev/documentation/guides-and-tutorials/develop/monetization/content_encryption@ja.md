@@ -34,7 +34,7 @@ AMP ドキュメントは、暗号化された鍵をそのドキュメント内�
 
 1. AMP は、ユーザーがたどり着くドキュメントで暗号化されたコンテンツの鍵を解析します。 {{ image('/static/img/docs/guides/cse/cse7.jpg', 115, 94, align='', layout='intrinsic', alt='公開鍵と対称鍵の暗号化。') }}
 2. プレミアムコンテンツを配信しながら、AMP は、ユーザーの視覚情報のフェッチの一環として、ドキュメントから認証者（authorizer<br>）に暗号化された対称鍵を送信します。 {{ image('/static/img/docs/guides/cse/cse8.jpg', 150, 251, align='', layout='intrinsic', alt='AMP は、ユーザーの視覚情報のフェッチの一環として、ドキュメントから認証者に暗号化された対称鍵を送信する。') }}
-3. 認証者は、ユーザーに適切な権限があるかどうかを判定し、ある場合は、認証者の公開/秘密鍵ペアの秘密鍵を使って、ドキュメントの対称鍵を解読し、[amp-subscriptions コンポーネントのロジック](https://github.com/ampproject/amphtml/blob/master/extensions/amp-subscriptions/0.1/amp-subscriptions.js#L264)にドキュメント鍵を返します。 {{ image('/static/img/docs/guides/cse/cse9.jpg', 237, 244, align='', layout='intrinsic', alt='AMP ロジックによって鍵が解読される。') }}
+3. 認証者は、ユーザーに適切な権限があるかどうかを判定し、ある場合は、認証者の公開/秘密鍵ペアの秘密鍵を使って、ドキュメントの対称鍵を解読し、[amp-subscriptions コンポーネントのロジック](https://github.com/ampproject/amphtml/blob/main/extensions/amp-subscriptions/0.1/amp-subscriptions.js#L264)にドキュメント鍵を返します。 {{ image('/static/img/docs/guides/cse/cse9.jpg', 237, 244, align='', layout='intrinsic', alt='AMP ロジックによって鍵が解読される。') }}
 4. AMP は、ドキュメント鍵を使ってプレミアムコンテンツを解読し、ユーザーに表示します。 {{ image('/static/img/docs/guides/cse/cse10.jpg', 250, 319, align='', layout='intrinsic', alt='AMP はドキュメント鍵を使ってプレミアムコンテンツを解読し、ユーザーに表示する。') }}
 
 # 実装手順

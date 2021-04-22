@@ -161,4 +161,4 @@ AMP音频分析收集有关用户如何与AMP文档中的音频进行交互的�
 
 ## Validation
 
-请参阅 AMP 验证工具规范中的 [amp-audio rules](https://github.com/ampproject/amphtml/blob/master/extensions/amp-audio/validator-amp-audio.protoascii)
+请参阅 AMP 验证工具规范中的 [amp-audio rules](https://github.com/ampproject/amphtml/blob/main/extensions/amp-audio/validator-amp-audio.protoascii)

@@ -86,7 +86,7 @@ a sus documentaciones, están disponibles en la lista
 
 Si eres un proveedor de analíticas,
 puedes obtener más información sobre
-[la integración de tu configuración de analíticas en AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+[la integración de tu configuración de analíticas en AMP HTML](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md).
 
 ## Cargar configuraciones remotas con el atributo config
 

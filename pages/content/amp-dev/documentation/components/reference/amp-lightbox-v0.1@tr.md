@@ -168,4 +168,4 @@ Aşağıdaki örneklerde, bir güvenilir iframe ve bir üçüncü taraf iframe i
 
 ## Doğrulama <a name="validation"></a>
 
-AMP doğrulayıcı spesifikasyonundaki [amp-lightbox kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-lightbox/validator-amp-lightbox.protoascii) bakın.
+AMP doğrulayıcı spesifikasyonundaki [amp-lightbox kurallarına](https://github.com/ampproject/amphtml/blob/main/extensions/amp-lightbox/validator-amp-lightbox.protoascii) bakın.

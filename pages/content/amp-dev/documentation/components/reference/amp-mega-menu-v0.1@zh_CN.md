@@ -29,7 +29,7 @@ limitations under the License.
 
 ## 概述
 
-`<amp-mega-menu>` '提供了在AMP页面顶部组织和显示大量导航内容的方法。 该组件主要用于桌面和平板电脑，可以与 [`<amp-sidebar>`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-mega-menu/../amp-sidebar/0.1/amp-sidebar.md) 一起使用，以创建一个响应式菜单。
+`<amp-mega-menu>` '提供了在AMP页面顶部组织和显示大量导航内容的方法。 该组件主要用于桌面和平板电脑，可以与 [`<amp-sidebar>`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-mega-menu/../amp-sidebar/0.1/amp-sidebar.md) 一起使用，以创建一个响应式菜单。
 
 ## 用法
 
@@ -106,7 +106,7 @@ limitations under the License.
 
 ### 动态内容渲染
 
-`<amp-mega-menu>` 使用 [`<amp-list>`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-mega-menu/../amp-list/amp-list.md) 和 [`<amp-mustache>`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-mega-menu/../amp-mustache/amp-mustache.md) 模板从JSON端点动态获取内容。
+`<amp-mega-menu>` 使用 [`<amp-list>`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-mega-menu/../amp-list/amp-list.md) 和 [`<amp-mustache>`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-mega-menu/../amp-mustache/amp-mustache.md) 模板从JSON端点动态获取内容。
 
 以下示例通过嵌套 `<amp-list>` 在内来演示此功能 `<amp-mega-menu>`。
 
@@ -367,4 +367,4 @@ Here is the JSON file used:
 
 ## 验证
 
-请参阅 AMP 验证工具规范中的 [amp-mega-menu rules](https://github.com/ampproject/amphtml/blob/master/extensions/amp-mega-menu/validator-amp-mega-menu.protoascii) 。
+请参阅 AMP 验证工具规范中的 [amp-mega-menu rules](https://github.com/ampproject/amphtml/blob/main/extensions/amp-mega-menu/validator-amp-mega-menu.protoascii) 。

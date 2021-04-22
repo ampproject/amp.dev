@@ -29,9 +29,9 @@ Take a look at this example of a **DoubleClick** ad:
 </amp-ad>
 ```
 
-As you can see, this is a very simple configuration. Take note of the `type` attribute, which informs the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component of the ad platform that we want to use. In this case, we want to use the [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md) platform, so we specified `doubleclick` as the value.
+As you can see, this is a very simple configuration. Take note of the `type` attribute, which informs the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component of the ad platform that we want to use. In this case, we want to use the [DoubleClick](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md) platform, so we specified `doubleclick` as the value.
 
-The `data-slot` attribute is more unique. In [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), any attributes that start with  `data-` are vendor-specific attributes. This means that not all vendors will necessarily require this particular attribute, nor will they necessarily react if it is supplied. For example, compare the **DoubleClick** example from above with the following test ad from the [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md) platform:
+The `data-slot` attribute is more unique. In [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), any attributes that start with  `data-` are vendor-specific attributes. This means that not all vendors will necessarily require this particular attribute, nor will they necessarily react if it is supplied. For example, compare the **DoubleClick** example from above with the following test ad from the [A9](https://github.com/ampproject/amphtml/blob/main/ads/a9.md) platform:
 
 ```html
 <amp-ad

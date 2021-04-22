@@ -261,7 +261,7 @@ amp-social-share[type="twitter"] {
 
 ## استبدال المتغيرات <a name="variable-substitution"></a>
 
-يمكنك استخدام [الاستبدال الشامل لمتغيرات AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) في العنصر `<amp-social-share>`. في المثال أدناه، تم استبدال `TITLE` بعنوان الصفحة واستبدال `CANONICAL_URL` بعنوان URL الأساسي للمستند.
+يمكنك استخدام [الاستبدال الشامل لمتغيرات AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) في العنصر `<amp-social-share>`. في المثال أدناه، تم استبدال `TITLE` بعنوان الصفحة واستبدال `CANONICAL_URL` بعنوان URL الأساسي للمستند.
 
 ```html
 <amp-social-share type="whatsapp"
@@ -271,4 +271,4 @@ amp-social-share[type="twitter"] {
 
 ## التحقق <a name="validation"></a>
 
-اطِّلع على [قواعد amp-social-share](https://github.com/ampproject/amphtml/blob/master/extensions/amp-social-share/validator-amp-social-share.protoascii) في مواصفات مدقق AMP.
+اطِّلع على [قواعد amp-social-share](https://github.com/ampproject/amphtml/blob/main/extensions/amp-social-share/validator-amp-social-share.protoascii) في مواصفات مدقق AMP.

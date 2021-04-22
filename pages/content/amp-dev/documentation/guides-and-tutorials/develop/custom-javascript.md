@@ -62,7 +62,7 @@ However, `amp-script` presents a fine way to take care of logic and interactions
 
 That said, before turning to `amp-script` to create a new interaction, check to see if an AMP component or a combination of components can do the same thing. Leveraging existing AMP components will ultimately make your code smaller and more maintainable. If a component can achieve an effect that's similar to what you want, you may be able to [customize its behavior with `amp-script`](#enhance-amp-components).
 
-If you use `amp-script` to create an interaction that might be of interest to other developers, please consider [suggesting or contributing](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md) a new component.
+If you use `amp-script` to create an interaction that might be of interest to other developers, please consider [suggesting or contributing](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md) a new component.
 
 ### Add advanced logic
 

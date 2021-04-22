@@ -55,7 +55,7 @@ Anda dapat menentukan template melalui salah satu dari dua cara berikut:
 * atribut `template` yang mereferensikan ID dari elemen `template` atau `script` yang sudah ada.
 * elemen `template` atau `script` yang bersarang langsung di dalam elemen `amp-list`.
 
-Untuk penjelasan selengkapnya tentang template, lihat [Template HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md).
+Untuk penjelasan selengkapnya tentang template, lihat [Template HTML AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-html-templates.md).
 
 *Contoh: Menampilkan daftar dinamis*
 
@@ -310,7 +310,7 @@ Kami memperkenalkan eksperimen `amp-list-load-more` sebagai implementasi untuk p
 
 ```
 
-Untuk contoh penggunaan, silakan lihat [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) dan [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html).
+Untuk contoh penggunaan, silakan lihat [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/main/test/manual/amp-list/infinite-scroll-1.amp.html) dan [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/main/test/manual/amp-list/infinite-scroll-1.amp.html).
 
 ### Atribut <a name="sample-usage"></a>
 
@@ -422,7 +422,7 @@ Elemen ini mencakup [atribut umum](../../../documentation/guides-and-tutorials/l
 ## Substitusi <a name="substitutions"></a>
 
 `<amp-list>` memungkinkan semua substitusi variabel URL standar.
-Lihat [Panduan Substitusi](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) untuk informasi selengkapnya.
+Lihat [Panduan Substitusi](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) untuk informasi selengkapnya.
 
 Misalnya:
 ```html
@@ -432,4 +432,4 @@ dapat membuat permintaan ke sesuatu seperti `https://foo.com/list.json?0.8390278
 
 ## Validasi <a name="validation"></a>
 
-Lihat [aturan amp-list](https://github.com/ampproject/amphtml/blob/master/extensions/amp-list/validator-amp-list.protoascii) dalam spesifikasi validator AMP.
+Lihat [aturan amp-list](https://github.com/ampproject/amphtml/blob/main/extensions/amp-list/validator-amp-list.protoascii) dalam spesifikasi validator AMP.

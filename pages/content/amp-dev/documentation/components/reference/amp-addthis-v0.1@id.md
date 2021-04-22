@@ -138,7 +138,7 @@ Lihat [video YouTube](https://www.youtube.com/watch?v=BSkuAB4er2o) kami untuk me
 
 ## Validasi <a name="validation"></a>
 
-Lihat [aturan amp-addthis](https://github.com/ampproject/amphtml/blob/master/extensions/amp-addthis/validator-amp-addthis.protoascii) dalam spesifikasi validator AMP.
+Lihat [aturan amp-addthis](https://github.com/ampproject/amphtml/blob/main/extensions/amp-addthis/validator-amp-addthis.protoascii) dalam spesifikasi validator AMP.
 
 ## Privasi <a name="privacy"></a>
 

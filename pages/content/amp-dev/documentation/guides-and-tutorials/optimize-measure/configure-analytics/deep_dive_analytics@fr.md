@@ -68,7 +68,7 @@ Par exemple, `<amp-analytics type="googleanalytics">` envoie les données d'anal
 
 Les configurations des fournisseurs de solutions d'analyse constituent un bon point de départ pour commencer avec le composant [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Pour en savoir plus, consultez la documentation et les ressources d'aide de votre fournisseur. Comme nous l'avons déjà indiqué, la liste des fournisseurs qui proposent déjà une intégration AMP ainsi que des liens vers leurs ressources respectives sont disponibles dans la liste de [fournisseurs d'analyses](../../../../documentation/components/reference/amp-analytics.md).
 
-Si vous êtes un fournisseur de solutions d'analyse, découvrez comment [intégrer votre propre configuration d'analyse dans HTML AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+Si vous êtes un fournisseur de solutions d'analyse, découvrez comment [intégrer votre propre configuration d'analyse dans HTML AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md).
 
 ## Charger une configuration distante : l'attribut config
 

@@ -167,4 +167,4 @@ Nos exemplos abaixo, demonstramos como a transição procura um anúncio HTML pa
 
 ## Validação <a name="validation"></a>
 
-Veja as [regras do amp-lightbox](https://github.com/ampproject/amphtml/blob/master/extensions/amp-lightbox/validator-amp-lightbox.protoascii) (link em inglês) nas especificações do validador de AMP.
+Veja as [regras do amp-lightbox](https://github.com/ampproject/amphtml/blob/main/extensions/amp-lightbox/validator-amp-lightbox.protoascii) (link em inglês) nas especificações do validador de AMP.

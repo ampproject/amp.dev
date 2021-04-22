@@ -152,4 +152,4 @@ Os eventos abaixo serão acionados nas `section`s do `accordion`.
 
 ## Validação <a name="validation"></a>
 
-Consulte as [regras do amp-accordion](https://github.com/ampproject/amphtml/blob/master/extensions/amp-accordion/validator-amp-accordion.protoascii) (em inglês) nas especificações do validador de AMP.
+Consulte as [regras do amp-accordion](https://github.com/ampproject/amphtml/blob/main/extensions/amp-accordion/validator-amp-accordion.protoascii) (em inglês) nas especificações do validador de AMP.

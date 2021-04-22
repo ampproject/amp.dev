@@ -15,7 +15,7 @@ AMP Obecnie stosowane formaty reklam, takie jak banery i boksy, nie integrują s
 
 Reklamy fabularne Web muszą być zgodne z następującymi zasadami:
 
-- Prawidłowa reklama AMPHTML: zgodna z tą samą specyfikacją techniczną, co klasyczna reklama [AMPHTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md).
+- Prawidłowa reklama AMPHTML: zgodna z tą samą specyfikacją techniczną, co klasyczna reklama [AMPHTML](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md).
 - Po pierwsze grafika: zachęcająca, śmiała, zależna od kontekstu.
 - Natywna: strona reklamowa musi mieć takie same wymiary, jak organiczna strona relacji.
 - Ten sam model interakcji: użytkownik może przejść do następnego ekranu tak, jak z organicznej strony relacji.

@@ -152,7 +152,7 @@ The AMP Runtime provides a Viewer API, which provides a protocol to send and
 receive  messages between the AMP Runtime and the Viewer. This makes it possible
 to control the pre-rendering of AMP documents, swiping between articles, and AMP
 Runtime instrumentation. You can learn more about the AMP Viewer API in the
-[Connecting AMP Viewers with AMP pages](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md)
+[Connecting AMP Viewers with AMP pages](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md)
 guide. Viewer implementations for [web](https://github.com/ampproject/amp-viewer/blob/master/mobile-web/README.md)
 and [iOS](https://github.com/ampproject/amp-viewer/tree/master/ios) are
 available on [GitHub](https://github.com/ampproject/amp-viewer). An Android

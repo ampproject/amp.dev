@@ -6,7 +6,7 @@ formats:
   - email
 ---
 
-Các trình khách email muốn hỗ trợ AMP cho Email nên sử dụng [AMP Viewer](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) để lưu trữ các email AMP của người gửi. Một trình xem được xây dựng với [Thư viện AMP Viewer](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) sẽ bọc lấy một tài liệu AMP và hỗ trợ các [chức năng](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md) cho phép giao tiếp hai chiều với tài liệu AMP thông qua postMessage. Các chức năng này bao gồm cấp quyền kiểm soát hiển thị email, chuyển tiếp thông số người dùng và cung cấp các cách để đảm bảo sự an toàn cho các yêu cầu XHR được thực hiện từ email.
+Các trình khách email muốn hỗ trợ AMP cho Email nên sử dụng [AMP Viewer](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) để lưu trữ các email AMP của người gửi. Một trình xem được xây dựng với [Thư viện AMP Viewer](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) sẽ bọc lấy một tài liệu AMP và hỗ trợ các [chức năng](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/CAPABILITIES.md) cho phép giao tiếp hai chiều với tài liệu AMP thông qua postMessage. Các chức năng này bao gồm cấp quyền kiểm soát hiển thị email, chuyển tiếp thông số người dùng và cung cấp các cách để đảm bảo sự an toàn cho các yêu cầu XHR được thực hiện từ email.
 
 ## Tiếp quản XHR của Trình xem
 
@@ -47,7 +47,7 @@ Cho phép tiếp quản XHR bằng cách bật chức năngxhrInterceptor của 
 
 Chức năng `viewerRenderTemplate` cho phép trình xem quản lý việc render khuôn mẫu [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email) và [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=email). Khi bật chức năng này, thời gian chạy AMP sẽ gửi trung gian một yêu cầu chứa lệnh gọi XHR gốc, dữ liệu khuôn mẫu và mọi chi tiết khác cần để render nội dung thành phần cho trình xem. Việc này cho phép trình xem kiểm tra nội dung dữ liệu điểm cuối và quản lý việc render [mustache](https://mustache.github.io/) của các khuôn mẫu nhằm xác minh và khử trùng dữ liệu. Lưu ý rằng nếu chức năng này được bật cùng với xhrInterceptor, trong thành phần amp-form và amp-list, chức năng `viewerRenderTemplate` gửi trung gian các yêu cầu đến trình xem sẽ được ưu tiên hơn xhrInterceptor.
 
-Ví dụ [viewer.html](https://github.com/ampproject/amphtml/blob/master/examples/viewer.html) cho thấy cách một người có thể xử lý thông điệp `viewerRenderTemplate` được gửi từ tài liệu AMP. Trong ví dụ đó, Viewer.prototype.processRequest\_ sẽ bắt thông điệp `viewerRenderTemplate` và tùy vào loại thành phần amp có sẵn trong yêu cầu, gửi trả HTML để được render trong định dạng JSON sau đó.
+Ví dụ [viewer.html](https://github.com/ampproject/amphtml/blob/main/examples/viewer.html) cho thấy cách một người có thể xử lý thông điệp `viewerRenderTemplate` được gửi từ tài liệu AMP. Trong ví dụ đó, Viewer.prototype.processRequest\_ sẽ bắt thông điệp `viewerRenderTemplate` và tùy vào loại thành phần amp có sẵn trong yêu cầu, gửi trả HTML để được render trong định dạng JSON sau đó.
 
 ```js
 Viewer.prototype.ssrRenderAmpListTemplate_ = (data) =>

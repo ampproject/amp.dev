@@ -42,6 +42,6 @@ Voici quelques conseils rapides pour améliorer l'engagement des utilisateurs av
 
 - **Regardez la feuille de route AMP** pour obtenir les mises à jour et les fonctionnalités sur la [feuille de route](../../../community/roadmap.html).
 
-- **Impliquez-vous.** Contribuez au code source, corrigez les bogues ou laissez des commentaires sur [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Partagez vos commentaires sur AMP sur [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
+- **Impliquez-vous.** Contribuez au code source, corrigez les bogues ou laissez des commentaires sur [GitHub](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md). Partagez vos commentaires sur AMP sur [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 
 - **Apprenez** à utiliser les composants AMP avec des [exemples](../../../documentation/examples/index.html).

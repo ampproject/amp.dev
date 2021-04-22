@@ -85,7 +85,7 @@ Kemudian, kita akan menampilkan ikon menu. Ketika diketuk, ikon akan membuka bil
 </header>
 ```
 
-Di dalam kode di atas, kita `toggle` (mengalihkan) bilah samping ke atribut tindakan [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) di elemen [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md), yang diidentifikasi dengan ID `sidebar1`. Mari kita tambahkan bilah samping.
+Di dalam kode di atas, kita `toggle` (mengalihkan) bilah samping ke atribut tindakan [`on`](https://github.com/ampproject/amphtml/blob/main/spec/amp-actions-and-events.md) di elemen [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md), yang diidentifikasi dengan ID `sidebar1`. Mari kita tambahkan bilah samping.
 
 **Tambahkan** HTML berikut ini setelah `</header>`:
 

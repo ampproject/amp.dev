@@ -68,7 +68,7 @@ For example: `<amp-analytics type="googleanalytics">` sends analytics data to th
 
 Các cấu hình của nhà cung cấp công cụ phân tích là cách nhanh chóng để bắt đầu với [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Bạn nên tham khảo tài liệu của nhà cung cấp và nguồn tài nguyên trợ giúp để biết thêm thông tin hướng dẫn. Như đã đề cập trước đó, danh sách nhà cung cấp đã tích hợp với AMP, cũng như những liên kết đến tài liệu cụ thể của họ có thể tìm thấy trong danh sách [Nhà cung cấp công cụ phân tích](analytics-vendors.md).
 
-If you’re an analytics vendor, learn more about [integrating your own analytics configuration into AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+If you’re an analytics vendor, learn more about [integrating your own analytics configuration into AMP HTML](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md).
 
 ## Tải cấu hình từ xa: thuộc tính config
 

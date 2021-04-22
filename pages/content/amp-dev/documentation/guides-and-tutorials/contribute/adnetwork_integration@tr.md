@@ -34,9 +34,9 @@ Bir reklam sunucusu olarak desteklediğiniz yayıncılar, sizin tarafınızdan s
 data-aax_pubname="test123" data-aax_src="302"&gt; &lt;/amp-ad&gt;
 ```
 
-Yukarıdaki kodda, `type` özniteliği, bu durumda A9 olan reklam ağını belirtir. `data-*` öznitelikleri, Amazon'un A9 sunucusunun bir reklam yayınlamayı beklediği parametrelere bağlıdır. [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) dosyası, parametrelerin A9 sunucusunun URL'sine bir JavaScript çağrısı yapmak için nasıl eşlendiğini gösterir. [`amp-ad`](../../../documentation/components/reference/amp-ad.md) etiketi tarafından iletilen ilgili parametreler, bir reklam ile yanıt vermek için URL'ye eklenir.
+Yukarıdaki kodda, `type` özniteliği, bu durumda A9 olan reklam ağını belirtir. `data-*` öznitelikleri, Amazon'un A9 sunucusunun bir reklam yayınlamayı beklediği parametrelere bağlıdır. [`a9.js`](https://github.com/ampproject/amphtml/blob/main/ads/a9.js) dosyası, parametrelerin A9 sunucusunun URL'sine bir JavaScript çağrısı yapmak için nasıl eşlendiğini gösterir. [`amp-ad`](../../../documentation/components/reference/amp-ad.md) etiketi tarafından iletilen ilgili parametreler, bir reklam ile yanıt vermek için URL'ye eklenir.
 
-[`amp-ad`](../../../documentation/components/reference/amp-ad.md) entegrasyonu oluşturmayla ilgili talimatlar için [Reklam ağlarını AMP'ye entegre etme](https://github.com/ampproject/amphtml/blob/master/ads/README.md) bölümüne bakın.
+[`amp-ad`](../../../documentation/components/reference/amp-ad.md) entegrasyonu oluşturmayla ilgili talimatlar için [Reklam ağlarını AMP'ye entegre etme](https://github.com/ampproject/amphtml/blob/main/ads/README.md) bölümüne bakın.
 
 ## Hızlı Getirme entegrasyonu oluşturma<a name="creating-a-fast-fetch-integration"></a>
 
@@ -50,7 +50,7 @@ Reklam sunucunuzdan AMPHTML reklamları sunmak için aşağıdakileri içeren bi
 2. Reklam isteğini oluşturmak için JavaScript sağlama (örnek uygulamalar: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) ve [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
 3. Bir doğrulama hizmeti aracılığıyla reklam öğesini doğrulama ve imzalama. [Cloudflare](https://blog.cloudflare.com/firebolt/), herhangi bir bağımsız reklam sağlayıcısının daha hızlı, daha hafif ve daha ilgi çekici reklamlar sunmasını sağlayan bir AMP reklam doğrulama hizmeti sağlar.
 
-Bir Hızlı Getirme entegrasyonu oluşturmayla ilgili talimatlar için [Hızlı Getirme Ağa Uygulama Kılavuzu'na bakın](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).
+Bir Hızlı Getirme entegrasyonu oluşturmayla ilgili talimatlar için [Hızlı Getirme Ağa Uygulama Kılavuzu'na bakın](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md).
 
 ## İlgili kaynaklar
 

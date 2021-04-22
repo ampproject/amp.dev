@@ -272,7 +272,7 @@ author: CrystalOnScript
 
 ## تجربة سطح المكتب
 
-يدعم تنسيق قصة الويب [تجربة اختيارية لسطح المكتب](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). إذ يؤدي هذا الأمر إلى تغيير تجربة سطح المكتب إلى وضع الشاشة الكاملة، ليحل محل تجربة اللوحات التصويرية الثلاثة الافتراضية ويسمح لمستخدمي الأجهزة المحمولة بعرض توقيت حمل أجهزتهم أفقيًا.
+يدعم تنسيق قصة الويب [تجربة اختيارية لسطح المكتب](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). إذ يؤدي هذا الأمر إلى تغيير تجربة سطح المكتب إلى وضع الشاشة الكاملة، ليحل محل تجربة اللوحات التصويرية الثلاثة الافتراضية ويسمح لمستخدمي الأجهزة المحمولة بعرض توقيت حمل أجهزتهم أفقيًا.
 
 اشترك في دعم سطح المكتب عن طريق إضافة السمة `supports-landscape` إلى المكون `<amp-story>`.
 

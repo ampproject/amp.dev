@@ -100,7 +100,7 @@ formats:
 
 ## 直接販売の AMPHTML 広告を配信する
 
-[`amp-ad`](../../../../documentation/components/reference/amp-ad.md) コンポーネントは、指定したネットワークの広告を配信でき、広告ネットワークで AMPHTML がサポートされているのであれば、標準的な HTML 広告と AMPHTML 広告を使用できます。直接販売広告を AMPHTML 広告として配信するには、[AMPHTML 広告の仕様](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md)の要件に従って AMPHTML で広告を作成し、[AMPHTML 広告を配信するアドサーバー](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers)を使用します。
+[`amp-ad`](../../../../documentation/components/reference/amp-ad.md) コンポーネントは、指定したネットワークの広告を配信でき、広告ネットワークで AMPHTML がサポートされているのであれば、標準的な HTML 広告と AMPHTML 広告を使用できます。直接販売広告を AMPHTML 広告として配信するには、[AMPHTML 広告の仕様](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md)の要件に従って AMPHTML で広告を作成し、[AMPHTML 広告を配信するアドサーバー](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/a4a-readme.md#publishers)を使用します。
 
 ## 広告リクエストにターゲティング データを追加する
 
@@ -112,8 +112,8 @@ RTC について詳しくは、以下の YouTube 動画をご覧ください。
 
 また、RTC に関する以下の資料でも詳細をご確認いただけます。
 
-- [AMP RTC サイト運営者向け実装ガイド](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
-- [AMP のリアルタイム設定](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
+- [AMP RTC サイト運営者向け実装ガイド](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
+- [AMP のリアルタイム設定](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-documentation.md)
 
 ## ベストプラクティス
 
@@ -124,7 +124,7 @@ AMP ページで広告効果を最大化するためのヒントをいくつか�
 - AMP ページで非 AMP ページと**同じ数の広告を配置**して、ページあたりの収益を最大化します。
 - **最初の広告を最初のビューポートのすぐ下（「スクロールして最初に現れる位置」）に配置**して、最適なユーザーエクスペリエンスを提供します。
 - 高度な CSS やメディアクエリを使用している場合を除き、**広告ユニットをページの中央揃えにレイアウト**して、最適なモバイルウェブエクスペリエンスをユーザーに提供します。
-- AMP の広告枠で[マルチサイズ広告リクエスト](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests)を有効にして、広告オークションの競争を促進して収益の増加を図ります。
+- AMP の広告枠で[マルチサイズ広告リクエスト](https://github.com/ampproject/amphtml/blob/main/ads/README.md#support-for-multi-size-ad-requests)を有効にして、広告オークションの競争を促進して収益の増加を図ります。
 
 ### 需要と価格設定: 適切な広告料金を得る
 

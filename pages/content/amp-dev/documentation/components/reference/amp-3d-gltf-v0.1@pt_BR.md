@@ -121,4 +121,4 @@ O `amp-3d-gltf` faz uma solicitação `fetch` a partir da origem `https://<rando
 
 ## Validação <a name="validation"></a>
 
-Consulte as [regras do amp-3d-gltf](https://github.com/ampproject/amphtml/blob/master/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii) (link em inglês) na especificação do validador de AMP.
+Consulte as [regras do amp-3d-gltf](https://github.com/ampproject/amphtml/blob/main/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii) (link em inglês) na especificação do validador de AMP.

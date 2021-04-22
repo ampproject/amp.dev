@@ -166,4 +166,4 @@ AMPHTML 広告がサードパーティ環境（非 AMP ドキュメントなど�
 
 ## 検証 <a name="validation"></a>
 
-AMP 検証ツール仕様の [amp-lightbox ルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-lightbox/validator-amp-lightbox.protoascii)をご覧ください。
+AMP 検証ツール仕様の [amp-lightbox ルール](https://github.com/ampproject/amphtml/blob/main/extensions/amp-lightbox/validator-amp-lightbox.protoascii)をご覧ください。

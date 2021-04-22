@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-html-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -186,7 +186,7 @@ AMP HTML использует ряд специальных элементов (
 - <a name="chrs"></a> содержать `<meta charset="utf-8">` в качестве первого дочернего элемента тега head. [🔗](#chrs)
 - <a name="vprt"></a> содержать тег `<meta name="viewport" content="width=device-width">` внутри своего тега head. Также рекомендуется добавлять `minimum-scale=1` и `initial-scale=1`. [🔗](#vprt)
 - <a name="scrpt"></a> содержать `<script async src="https://cdn.ampproject.org/v0.js"></script>` в теге head. [🔗](#scrpt)
-- <a name="boilerplate"></a> содержать [шаблонный код AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md) ( `head > style[amp-boilerplate]` и `noscript > style[amp-boilerplate]`) в теге head. [🔗](#boilerplate)
+- <a name="boilerplate"></a> содержать [шаблонный код AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md) ( `head > style[amp-boilerplate]` и `noscript > style[amp-boilerplate]`) в теге head. [🔗](#boilerplate)
 
 ### Метаданные <a name="metadata"></a>
 
@@ -285,7 +285,7 @@ AMP HTML использует ряд специальных элементов (
   </tr>
   <tr>
     <td width="30%">meta</td>
-    <td>Атрибут <code>http-equiv</code> может использоваться для указания определенных допустимых значений; подробности см. в <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">спецификации валидатора AMP</a>.</td>
+    <td>Атрибут <code>http-equiv</code> может использоваться для указания определенных допустимых значений; подробности см. в <a href="https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii">спецификации валидатора AMP</a>.</td>
   </tr>
   <tr>
     <td width="30%"><a id="ancr"></a><code>a</code></td>
@@ -560,7 +560,7 @@ Hello {% raw %}{{you}}{% endraw %}!
 
 Синтаксис в составе элемента шаблона зависит от языка шаблона. В среде AMP на язык шаблона могут накладываться ограничения. Например, в соответствии с элементом «template», все операции должны выполняться на корректно сформированном дереве DOM. Все выходные данные шаблона также подлежат санитизации, чтобы гарантировать валидный для AMP формат данных.
 
-Подробную информацию о поддерживаемых шаблонах см. в [спецификации шаблонов AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md).
+Подробную информацию о поддерживаемых шаблонах см. в [спецификации шаблонов AMP](https://github.com/ampproject/amphtml/blob/main/spec/./amp-html-templates.md).
 
 ##### URL <a name="url-1"></a>
 

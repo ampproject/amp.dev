@@ -151,4 +151,4 @@ Aşağıdaki etkinlikler, `accordion` `section` öğesinde tetiklenir.
 
 ## Doğrulama <a name="validation"></a>
 
-AMP doğrulayıcı spesifikasyonunda [amp-accordion kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-accordion/validator-amp-accordion.protoascii) bakın.
+AMP doğrulayıcı spesifikasyonunda [amp-accordion kurallarına](https://github.com/ampproject/amphtml/blob/main/extensions/amp-accordion/validator-amp-accordion.protoascii) bakın.

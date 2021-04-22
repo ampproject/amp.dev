@@ -68,7 +68,7 @@ AMP は、一般的なデータ収集方法として次の 2 つをサポート�
 
 アナリティクスベンダーの設定を行うと、手早く [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) を使い始めることができます。詳細については、ご利用のベンダーのドキュメントやヘルプリソースをご覧ください。AMP を統合済みのベンダーの一覧と、 各ベンダーのドキュメントへのリンクは、 前述の[アナリティクスベンダー](analytics-vendors.md)の一覧をご覧ください。
 
-アナリティクスベンダーの 方は、 [自社のアナリティクス設定を AMP HTML に統合する](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)方法についての説明をご覧ください。
+アナリティクスベンダーの 方は、 [自社のアナリティクス設定を AMP HTML に統合する](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md)方法についての説明をご覧ください。
 
 ## リモート設定を読み込む: config 属性
 

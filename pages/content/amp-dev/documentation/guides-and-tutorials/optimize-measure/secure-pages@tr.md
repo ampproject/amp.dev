@@ -22,6 +22,6 @@ Sayfalarınızın başına uygun meta etiketi ekleyerek bir CSP uygulayın. Aşa
 />
 ```
 
-[Tam örneği buradan görebilirsiniz](https://github.com/ampproject/amphtml/blob/master/examples/csp.amp.html).
+[Tam örneği buradan görebilirsiniz](https://github.com/ampproject/amphtml/blob/main/examples/csp.amp.html).
 
 [tip type="read-on"] [Güvenlik açıkları ve CSP'lerden korunma hakkında buradan](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) daha fazla bilgiyi edinebilirsiniz. [/tip]

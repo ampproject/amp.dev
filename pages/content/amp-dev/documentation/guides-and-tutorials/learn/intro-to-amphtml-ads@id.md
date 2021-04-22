@@ -48,7 +48,7 @@ Iklan HTML AMP bersifat fleksibel dan dinamis, sehingga memungkinkan banyak form
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='Serving AMPHTML ads to AMP pages', caption='Serving AMPHTML ads to AMP pages', align='' ) }}
 
 1. Penayang memasukkan slot iklan di halaman AMP-nya melalui tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md), yang menetapkan jaringan iklan yang ingin digunakan.
-2. Runtime AMP mengirimkan permintaan iklan ke jaringan iklan tertentu untuk mengambil iklan. Jaringan iklan yang dapat menayangkan iklan HTML AMP menyediakan [implementasi Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) yang memvalidasi dan menandatangani atau mengesahkan materi iklan.
+2. Runtime AMP mengirimkan permintaan iklan ke jaringan iklan tertentu untuk mengambil iklan. Jaringan iklan yang dapat menayangkan iklan HTML AMP menyediakan [implementasi Fast Fetch](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md) yang memvalidasi dan menandatangani atau mengesahkan materi iklan.
 3. Jaringan iklan merespons iklan HTML AMP dan Runtime AMP merender iklan di halaman AMP.
 
 [tip type="note"] Tidak diperlukan integrasi khusus untuk menayangkan iklan HTML AMP ke halaman non-AMP. Hubungi jaringan iklan Anda untuk mengetahui apakah mereka mendukung iklan HTML AMP. [/tip]
@@ -77,7 +77,7 @@ Jika Anda adalah agensi kreatif, Anda harus membuat iklan sesuai dengan [spesifi
 
 ### Jaringan/server iklan
 
-Untuk menayangkan iklan AMPHTML ke halaman AMP, Anda perlu membuat ekstensi [`amp-ad`](../../../documentation/components/reference/amp-ad.md) untuk jaringan Anda (kecuali Anda telah memilikinya) yang menggunakan [implementasi permintaan iklan Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md). Untuk mengetahui detailnya, lihat [Berintegrasi dengan AMP untuk menayangkan iklan display](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md). Perlu diingat bahwa tidak diperlukan integrasi khusus untuk menayangkan AMPHTML ke halaman non-AMP.
+Untuk menayangkan iklan AMPHTML ke halaman AMP, Anda perlu membuat ekstensi [`amp-ad`](../../../documentation/components/reference/amp-ad.md) untuk jaringan Anda (kecuali Anda telah memilikinya) yang menggunakan [implementasi permintaan iklan Fast Fetch](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md). Untuk mengetahui detailnya, lihat [Berintegrasi dengan AMP untuk menayangkan iklan display](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md). Perlu diingat bahwa tidak diperlukan integrasi khusus untuk menayangkan AMPHTML ke halaman non-AMP.
 
 ## Membuat iklan HTML AMP
 
@@ -101,7 +101,7 @@ Untuk merender iklan HTML AMP dengan cepat di halaman AMP (yaitu dengan mengguna
 
 ## Mendukung iklan HTML AMP di RTB
 
-Untuk SSP dan Ad Exchange yang ingin mendukung iklan HTML AMP di lingkungan Bidding Real-Time (RTB), kunjungi [Panduan Implementasi untuk Ad Exchange RTB](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/RTBExchangeGuide.md) untuk mengetahui selengkapnya.
+Untuk SSP dan Ad Exchange yang ingin mendukung iklan HTML AMP di lingkungan Bidding Real-Time (RTB), kunjungi [Panduan Implementasi untuk Ad Exchange RTB](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/RTBExchangeGuide.md) untuk mengetahui selengkapnya.
 
 ## T&J
 
@@ -125,4 +125,4 @@ Yes. See [`amp-ad-exit`](../../../documentation/components/reference/amp-ad-exit
 
 - [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) is our recommended way to find answers to questions about AMP; since members of the AMP Project community regularly monitor Stack Overflow you will probably receive the fastest response to your questions there.
 - Join the [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) channel for solutions and answers.
-- If you encounter a bug in AMP or have a feature request for AMP, see [Reporting issues with AMP](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp) for information on filing an issue.
+- If you encounter a bug in AMP or have a feature request for AMP, see [Reporting issues with AMP](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#reporting-issues-with-amp) for information on filing an issue.

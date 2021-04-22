@@ -9,7 +9,7 @@ Tutti gli stili devono essere inseriti nella sezione head del documento (leggi l
 Puoi però utilizzare i preprocessori e i modelli CSS per creare pagine statiche e poter così gestire meglio i tuoi contenuti.
 
 **Nota.** Nei componenti AMP ci sono stili predefiniti integrati che facilitano la creazione di pagine reattive.
-Questi stili sono definiti nell'elemento [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
+Questi stili sono definiti nell'elemento [`amp.css`](https://github.com/ampproject/amphtml/blob/main/css/amp.css).
 
 ## Utilizzare i preprocessori CSS <a name="using-css-preprocessors"></a>
 

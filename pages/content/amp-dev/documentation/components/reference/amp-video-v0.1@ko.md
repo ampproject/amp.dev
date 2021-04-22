@@ -76,7 +76,7 @@ HTML5 `video` 태그의 대체 태그입니다. HTML5 동영상 파일 직접 �
 
 ## 분석 <a name="analytics"></a>
 
-`amp-video`에서는 바로 사용할 수 있는 분석을 지원합니다. 자세한 정보는 [동영상 분석](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md)을 참조하세요.
+`amp-video`에서는 바로 사용할 수 있는 분석을 지원합니다. 자세한 정보는 [동영상 분석](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-video-analytics.md)을 참조하세요.
 
 ## 속성 <a name="attributes"></a>
 
@@ -96,7 +96,7 @@ HTML5 `video` 태그의 대체 태그입니다. HTML5 동영상 파일 직접 �
         <td width="40%"><strong>autoplay</strong></td>
         <td>이 속성이 표시되지 않고 브라우저에서 자동 재생을 지원하는 경우 동영상이 표시되는 즉시 자동으로
             재생됩니다. 구성요소를 재생하기 위해 처리 완료되어야 하는 조건이 몇 가지 있습니다.
-            <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-video-interface.md#autoplay">이 조건은 AMP 사양의 동영상에서 간략하게 설명</a>합니다.</td>
+            <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md#autoplay">이 조건은 AMP 사양의 동영상에서 간략하게 설명</a>합니다.</td>
         </tr>
         <tr>
           <td width="40%"><strong>controls</strong></td>
@@ -134,7 +134,7 @@ HTML5 `video` 태그의 대체 태그입니다. HTML5 동영상 파일 직접 �
             </tr>
             <tr>
               <td width="40%"><strong>rotate-to-fullscreen</strong></td>
-              <td>동영상이 표시되고 사용자가 기기를 가로 모드로 회전하면 동영상이 전체 화면으로 표시됩니다. 자세한 내용은 <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-video-interface.md#rotate-to-fullscreen">AMP 사양의 동영상</a>을 참조하세요.</td>
+              <td>동영상이 표시되고 사용자가 기기를 가로 모드로 회전하면 동영상이 전체 화면으로 표시됩니다. 자세한 내용은 <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md#rotate-to-fullscreen">AMP 사양의 동영상</a>을 참조하세요.</td>
             </tr>
             <tr>
               <td width="40%"><strong>공통 속성</strong></td>
@@ -187,4 +187,4 @@ HTML5 `video` 태그의 대체 태그입니다. HTML5 동영상 파일 직접 �
 
 ## 유효성 검사 <a name="validation"></a>
 
-AMP 유효성 검사기 사양의 [amp-video 규칙](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)을 참조하세요.
+AMP 유효성 검사기 사양의 [amp-video 규칙](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)을 참조하세요.

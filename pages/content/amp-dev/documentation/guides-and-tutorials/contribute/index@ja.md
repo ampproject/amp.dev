@@ -28,7 +28,7 @@ AMP のオープンソース コミュニティに継続的にご参加いただ
 
 #### コードに貢献する
 
-AMP プロジェクトでコードに貢献していただく場合は、まず [CONTRIBUTING ファイル](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md) をお読みください。このファイルには、機能やバグ修正のアイデアを思いついてから提案するまでの詳しいプロセス、技術的な設計やディスカッションに参加する方法などが記載されています。オープンソース プロジェクトに参加するのが初めての場合は、[初心者の方向けのアドバイス](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-code)をご用意していますので、参考にしてください。
+AMP プロジェクトでコードに貢献していただく場合は、まず [CONTRIBUTING ファイル](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md) をお読みください。このファイルには、機能やバグ修正のアイデアを思いついてから提案するまでの詳しいプロセス、技術的な設計やディスカッションに参加する方法などが記載されています。オープンソース プロジェクトに参加するのが初めての場合は、[初心者の方向けのアドバイス](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#contributing-code)をご用意していますので、参考にしてください。
 
 ### コンテンツ面で AMP に貢献する
 

@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vendors-list.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vendors-list.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -148,7 +148,7 @@ Dodaje obsługę Eulerian Technologies Analytics. Wymaga określenia _zmiennej_ 
 
 Wartość atrybutu type: `facebookpixel`
 
-Dodaje obsługę [piksela Facebooka](https://www.facebook.com/business/a/facebook-pixel). W konfiguracji składnika [`amp-analytics`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./amp-analytics.md) musisz określić identyfikator piksela `pixelId: YOUR-PIXEL-ID`. Obsługiwane zdarzenia wraz z odpowiadającymi im wartościami zdarzeń, które można określić, są szczegółowo opisane w [dokumentacji programistycznej piksela Facebooka](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
+Dodaje obsługę [piksela Facebooka](https://www.facebook.com/business/a/facebook-pixel). W konfiguracji składnika [`amp-analytics`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/./amp-analytics.md) musisz określić identyfikator piksela `pixelId: YOUR-PIXEL-ID`. Obsługiwane zdarzenia wraz z odpowiadającymi im wartościami zdarzeń, które można określić, są szczegółowo opisane w [dokumentacji programistycznej piksela Facebooka](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
 
 ### Gemius <a name="gemius"></a>
 
@@ -190,7 +190,7 @@ Dodaje obsługę Ibeat Analytics. Więcej szczegółów dotyczących dodawania o
 
 Wartość atrybutu type: `infonline`
 
-Dodaje obsługę [INFOnline](https://www.infonline.de)/[IVW](http://www.ivw.de). Wymaga kopii pliku [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) w innej subdomenie niż zawierająca plik AMP ([powód?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). Plik musi być serwowany przez HTTPS. Jeśli pliki AMP znajdują się na przykład w domenie `www.example.com`, plik `amp-analytics-infonline.html` musi znajdować się w innej subdomenie, takiej jak `iframe.example.com` lub `assets.example.com`.
+Dodaje obsługę [INFOnline](https://www.infonline.de)/[IVW](http://www.ivw.de). Wymaga kopii pliku [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) w innej subdomenie niż zawierająca plik AMP ([powód?](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md)). Plik musi być serwowany przez HTTPS. Jeśli pliki AMP znajdują się na przykład w domenie `www.example.com`, plik `amp-analytics-infonline.html` musi znajdować się w innej subdomenie, takiej jak `iframe.example.com` lub `assets.example.com`.
 
 Dodatkowo należy zdefiniować następujące zmienne:
 
@@ -205,7 +205,7 @@ Więcej szczegółów dotyczących dodawania obsługi INFOnline/IVW można znale
 
 Wartość atrybutu type: `infonline-anonymous`
 
-Dodaje obsługę [anonymous INFOnline](https://www.infonline.de). Wymaga kopii pliku [infonline-anonymous.html](https://www.infonline.de/amp/infonline-anonymous.html) w innej subdomenie niż zawierająca plik AMP ([powód?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). Plik musi być serwowany przez HTTPS. Jeśli pliki AMP znajdują się na przykład w domenie `www.example.com`, plik `infonline-anonymous.html` musi znajdować się w innej subdomenie, takiej jak `iframe.example.com` lub `assets.example.com`.
+Dodaje obsługę [anonymous INFOnline](https://www.infonline.de). Wymaga kopii pliku [infonline-anonymous.html](https://www.infonline.de/amp/infonline-anonymous.html) w innej subdomenie niż zawierająca plik AMP ([powód?](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md)). Plik musi być serwowany przez HTTPS. Jeśli pliki AMP znajdują się na przykład w domenie `www.example.com`, plik `infonline-anonymous.html` musi znajdować się w innej subdomenie, takiej jak `iframe.example.com` lub `assets.example.com`.
 
 Dodatkowo należy zdefiniować następujące zmienne:
 
@@ -334,7 +334,7 @@ Dodaje wsparcie Nielsen Marketing Cloud. Więcej szczegółów można znaleźć 
 
 Wartość atrybutu type: `oewa`
 
-Dodaje obsługę `[OEWA](https://www.oewa.at)`. Wymaga kopii pliku [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) w innej subdomenie niż zawierająca plik AMP ([powód?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). Plik musi być serwowany przez HTTPS. Jeśli pliki AMP znajdują się na przykład w domenie `www.example.com`, plik `amp-analytics-oewa.html` musi znajdować się w innej subdomenie, takiej jak `oewa-amp.example.com`. Więcej szczegółów na temat dodawania obsługi OEWA można znaleźć [tutaj](http://www.oewa.at/Implementierung).
+Dodaje obsługę `[OEWA](https://www.oewa.at)`. Wymaga kopii pliku [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) w innej subdomenie niż zawierająca plik AMP ([powód?](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md)). Plik musi być serwowany przez HTTPS. Jeśli pliki AMP znajdują się na przykład w domenie `www.example.com`, plik `amp-analytics-oewa.html` musi znajdować się w innej subdomenie, takiej jak `oewa-amp.example.com`. Więcej szczegółów na temat dodawania obsługi OEWA można znaleźć [tutaj](http://www.oewa.at/Implementierung).
 
 Dodatkowo należy zdefiniować następujące zmienne:
 

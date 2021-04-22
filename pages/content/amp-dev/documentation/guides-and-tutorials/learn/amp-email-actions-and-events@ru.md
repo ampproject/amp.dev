@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-email-actions-and-events.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-email-actions-and-events.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -30,7 +30,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-[tip type="note"] В этой документации описаны действия и события для формата «AMP-письма». Чтобы узнать о действиях и событиях для AMP-сайтов, историй и рекламы, прочтите [эту статью](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md). [/tip]
+[tip type="note"] В этой документации описаны действия и события для формата «AMP-письма». Чтобы узнать о действиях и событиях для AMP-сайтов, историй и рекламы, прочтите [эту статью](https://github.com/ampproject/amphtml/blob/main/spec/amp-actions-and-events.md). [/tip]
 
 Атрибут `on` используется для установки обработчиков событий на элементы. То, какие события поддерживаются, зависит от элемента.
 
@@ -436,7 +436,7 @@ event.value</pre>
   </tr>
   <tr>
     <td><code>changeToLayoutContainer</code></td>
-    <td>Обновляет макет <code>amp-list</code> до <code>layout="CONTAINTER"</code>, чтобы разрешить <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">динамическое изменение размера</a>.</td>
+    <td>Обновляет макет <code>amp-list</code> до <code>layout="CONTAINTER"</code>, чтобы разрешить <a href="https://github.com/ampproject/amphtml/blob/main/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">динамическое изменение размера</a>.</td>
   </tr>
   <tr>
     <td>

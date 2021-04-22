@@ -167,4 +167,4 @@ Dans les exemples ci-dessous, vous pouvez voir comment la transition recherche u
 
 ## Validation <a name="validation"></a>
 
-Consultez les [règles relatives à amp-lightbox](https://github.com/ampproject/amphtml/blob/master/extensions/amp-lightbox/validator-amp-lightbox.protoascii) dans les spécifications du validateur AMP.
+Consultez les [règles relatives à amp-lightbox](https://github.com/ampproject/amphtml/blob/main/extensions/amp-lightbox/validator-amp-lightbox.protoascii) dans les spécifications du validateur AMP.

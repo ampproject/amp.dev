@@ -61,4 +61,4 @@ $title: amp-layout
 
 ## 유효성 검사 <a name="validation"></a>
 
-AMP 유효성 검사기 사양의 [amp-layout 규칙](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)을 참조하세요.
+AMP 유효성 검사기 사양의 [amp-layout 규칙](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)을 참조하세요.

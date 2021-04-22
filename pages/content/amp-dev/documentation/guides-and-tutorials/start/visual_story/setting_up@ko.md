@@ -18,7 +18,7 @@ author: bpaduch
 
 #### 1단계: 코드 다운로드
 
-1. 다음 URL에서 zip 파일로 압축되어 있는 튜토리얼용 코드를 다운로드합니다. <a href="https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip">https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip</a>
+1. 다음 URL에서 zip 파일로 압축되어 있는 튜토리얼용 코드를 다운로드합니다. <a href="/static/files/tutorials/amp-pets-story.zip">/static/files/tutorials/amp-pets-story.zip</a>
 
 2. zip 파일의 압축을 풉니다. **amp-pets-story** 디렉토리에 스토리를 만들 때 사용할 이미지, 동영상, 오디오, 데이터 파일이 있습니다. **pets.html** 파일로 스토리 작성을 시작해 보겠습니다. 완성된 버전의 스토리는 [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html) 파일에서 확인할 수 있습니다.
 

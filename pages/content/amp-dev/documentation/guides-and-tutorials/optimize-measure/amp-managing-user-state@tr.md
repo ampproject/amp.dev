@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -110,7 +110,7 @@ Tıpkı AMP önbellek durumu gibi, bir AMP görüntüleyicinin alan adının da 
 
 ### Birden çok bağlam, birden çok durum yönetimi anlamına gelir <a name="multiple-contexts-means-multiple-state-management"></a>
 
-Yayıncılar, her erkan bağlamı için kullanıcı durumunu ayrı ayrı yönetmeye hazırlıklı olmalıdır. Durumunu sürdürmek için çerezlerden veya yerel depolamadan yararlanan AMP'nin [İstemci Kimliği](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id) özelliği, AMP sayfalarının kullanıcı için kararlı ve takma adlı bir tanımlayıcıya sahip olması için gerekli desteği sağlar. Uygulama açısından, çerezler veya yerel depolama kullanılır ve AMP, ekran bağlamına bağlı olarak hangisinin kullanılacağına karar verir. Bu seçim, yüzlerce veya binlerce yayıncıya ölçeklenmiş bu durumu yönetmenin teknik fizibilitesinden etkilenir.
+Yayıncılar, her erkan bağlamı için kullanıcı durumunu ayrı ayrı yönetmeye hazırlıklı olmalıdır. Durumunu sürdürmek için çerezlerden veya yerel depolamadan yararlanan AMP'nin [İstemci Kimliği](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#client-id) özelliği, AMP sayfalarının kullanıcı için kararlı ve takma adlı bir tanımlayıcıya sahip olması için gerekli desteği sağlar. Uygulama açısından, çerezler veya yerel depolama kullanılır ve AMP, ekran bağlamına bağlı olarak hangisinin kullanılacağına karar verir. Bu seçim, yüzlerce veya binlerce yayıncıya ölçeklenmiş bu durumu yönetmenin teknik fizibilitesinden etkilenir.
 
 Bununla birlikte, AMP sayfalarının yayıncıları, birden çok bağlamı içeren kullanıcı gezintilerini kolayca (farkında olmadan) tasarlayabilir. Alışveriş sepeti kullanım senaryosuna önceki bakışımızı tekrar gözden geçirelim ve tam bir **kullanıcı hikayesi** oluşturmak için ona biraz daha ayrıntı ekleyelim:
 
@@ -242,7 +242,7 @@ AMP sayfalarında, İstemci Kimliğini içeren bir amp-analytics ping'i oluştur
 
 İstemci Kimliği değişikliğinde aktarılan parametrenin, `${clientId(uid)`, `uid` olduğuna dikkat edin. Bu [1. Görevde](#task1) açıklandığı gibi yayıncı kaynağında kullanılan çerez adının aynısıyla eşleşme sağlayan bilinçli bir seçimdi. En sorunsuz entegrasyon için aynı tekniği uygulamalısınız.
 
-amp-analytics uygulamasının geri kalanıyla ilgili olarak, amp-analytics isteklerini nasıl ayarlayacağınız veya analiz tedarikçilerinin istekleri üzerinde nasıl değişiklik yapabileceğiniz hakkında daha fazla ayrıntı için [amp-analytics yapılandırmasına](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) yönelik belgelere bakın. Ping, doğrudan veya diğer [AMP değişikliklerinden](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) yararlanarak tanımladığınız ek verileri taşımak için daha da değiştirilebilir.
+amp-analytics uygulamasının geri kalanıyla ilgili olarak, amp-analytics isteklerini nasıl ayarlayacağınız veya analiz tedarikçilerinin istekleri üzerinde nasıl değişiklik yapabileceğiniz hakkında daha fazla ayrıntı için [amp-analytics yapılandırmasına](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) yönelik belgelere bakın. Ping, doğrudan veya diğer [AMP değişikliklerinden](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) yararlanarak tanımladığınız ek verileri taşımak için daha da değiştirilebilir.
 
 > **Faydalı bilgi:**
 > İstemci Kimliği özelliğine geçirilen parametre için neden `uid` adını kullandık? Kapsamı tanımlamak için `clientId(...)` değişikliğinin aldığı parametre kullanılır. İstemci Kimliği özelliği aslında birçok kullanım durumu için kullanabilir ve sonuç olarak birçok istemci kimliği oluşturabilirsiniz. Parametre, bu kullanım durumları arasında farklılık gösterir ve bu nedenle, onu İstemci Kimliğini hangi kullanım durumu için istediğinizi belirtmek için kullanırsınız. Örneğin, bir reklamveren gibi üçüncü taraflara farklı tanımlayıcılar göndermek isteyebilir ve bunu başarmak için "kapsam" parametresini kullanabilirsiniz.
@@ -386,7 +386,7 @@ Bu görevde, kullanıcı **bağlantı veya form gönderimleri yoluyla** bir sayf
 
 ##### Değiştirme özelliklerini kullanma <a name="using-substitution-features"></a>
 
-Yaklaşımımız iki tür [AMP değişken değiştirmesinden](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md) yararlanacaktır.
+Yaklaşımımız iki tür [AMP değişken değiştirmesinden](https://github.com/ampproject/amphtml/blob/main/spec/./amp-var-substitutions.md) yararlanacaktır.
 
 **Giden bağlantıları bir İstemci Kimliği değiştirmesi kullanmak üzere güncellemek için:**URL içinde görünecek ve **kullanıcı için kaynak bağlam tanımlayıcısını belirtecek** yeni bir sorgu parametresi, `ref_id` ("yönlendiren kimliği") tanımlayın. Bu sorgu parametresini AMP’nin İstemci Kimliği değişikliğinin değerine eşit olacak şekilde ayarlayın:
 
@@ -597,7 +597,7 @@ Sadece `$amp_client_id` örneklerini işlediğinizden emin olmak `$malicious_val
 
 AMP olmayan bir sayfada, doğrudan istemci tarafında `document.referrer` öğesini kontrol edin veya sunucu tarafında doğrulama yapabilmek için, değeri analiz ping'inin bir parçası olarak iletin. Yönlendiren değeri güvenebileceğiniz bir değer ise, yukarıdaki örnekte `orig_user_id` gibi açılış sayfasının URL'sinden kaynaklanan değerleri kabul edebilir ve işleyebilirsiniz.
 
-Bir AMP sayfasında, analiz ping'inin bir parçası olarak yönlendiren değerini iletmek için [Belge Yönlendirici](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#document-referrer) değişiklik değişkenini kullanın. Sunucu tarafı işleme, mevcut tek seçenektir. Örnek olarak, (1) geçerli sayfanın İstemci Kimliğini, (2) yönlendiren sayfada İstemci Kimliği olarak ayarladığımız URL yoluyla aktarılan bir değeri ve (3) (2)'deki değeri doğrulamak için yönlendirenin kendi bilgisini içeren ve açılış sayfasının gönderebileceği analiz ping'i burada verilmiştir: `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
+Bir AMP sayfasında, analiz ping'inin bir parçası olarak yönlendiren değerini iletmek için [Belge Yönlendirici](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#document-referrer) değişiklik değişkenini kullanın. Sunucu tarafı işleme, mevcut tek seçenektir. Örnek olarak, (1) geçerli sayfanın İstemci Kimliğini, (2) yönlendiren sayfada İstemci Kimliği olarak ayarladığımız URL yoluyla aktarılan bir değeri ve (3) (2)'deki değeri doğrulamak için yönlendirenin kendi bilgisini içeren ve açılış sayfasının gönderebileceği analiz ping'i burada verilmiştir: `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
 
 Yönlendirene güvenemiyorsanız, URL parametreleri aracılığıyla sağlanan tüm değerleri reddedin ve kullanmayın.
 

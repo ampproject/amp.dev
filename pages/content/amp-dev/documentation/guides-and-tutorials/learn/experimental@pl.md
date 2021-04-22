@@ -67,7 +67,7 @@ Dokument może włączać określone eksperymenty. W tym celu należy w nagłów
 </head>
 ```
 
-W ten sposób określone eksperymenty zostaną włączone dla wszystkich odwiedzających dokument. Nie wszystkie eksperymenty pozwalają jednak na ich włączenie na poziomie dokumentu. Pełna lista dozwolonych eksperymentów znajduje się w atrybucie `allow-doc-opt-in` w pliku projektu [`prod-config.json`](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/prod-config.json). Zauważ, że opcję włączenia dokumentu może zostać zastąpiona przez opcję wyłączenia przez użytkownika.
+W ten sposób określone eksperymenty zostaną włączone dla wszystkich odwiedzających dokument. Nie wszystkie eksperymenty pozwalają jednak na ich włączenie na poziomie dokumentu. Pełna lista dozwolonych eksperymentów znajduje się w atrybucie `allow-doc-opt-in` w pliku projektu [`prod-config.json`](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/prod-config.json). Zauważ, że opcję włączenia dokumentu może zostać zastąpiona przez opcję wyłączenia przez użytkownika.
 
 ## Próby źródła
 

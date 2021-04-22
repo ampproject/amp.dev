@@ -20,7 +20,7 @@ Like all web pages, AMP pages are styled with CSS, but you can’t reference ext
 
 Styles können entweder im Header des Dokuments oder inline als `style` Attribute angegeben werden (siehe [Füge Styles zu einer Seite hinzu](index.md#add-styles-to-a-page)). Du kannst jedoch CSS Präprozessoren und Vorlagen verwenden, um statische Seiten zu erstellen und deine Inhalte besser zu verwalten.
 
-[tip type="note"] **HINWEIS:** AMP Komponenten werden mit Standardstyles bereitgestellt, um das Erstellen responsiver Seiten relativ einfach zu gestalten. Diese Styles werden  in [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css) definiert. [/tip]
+[tip type="note"] **HINWEIS:** AMP Komponenten werden mit Standardstyles bereitgestellt, um das Erstellen responsiver Seiten relativ einfach zu gestalten. Diese Styles werden  in [`amp.css`](https://github.com/ampproject/amphtml/blob/main/css/amp.css) definiert. [/tip]
 
 ## Unzulässige Styles
 

@@ -178,4 +178,4 @@ teaser:
 
 ## التحقق <a name="validation"></a>
 
-اطِّلع على [قواعد amp-lightbox](https://github.com/ampproject/amphtml/blob/master/extensions/amp-lightbox/validator-amp-lightbox.protoascii) في مواصفات مدقق AMP.
+اطِّلع على [قواعد amp-lightbox](https://github.com/ampproject/amphtml/blob/main/extensions/amp-lightbox/validator-amp-lightbox.protoascii) في مواصفات مدقق AMP.

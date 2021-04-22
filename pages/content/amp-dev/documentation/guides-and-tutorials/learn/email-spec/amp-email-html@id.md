@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-html.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -33,7 +33,7 @@ limitations under the License.
 
 Catatan: Daftar ini tidak baku dan hanya untuk keperluan rujukan. Aturan Validator AMP yang berlaku pada atribut dan tag HTML yang didukung.
 
-Selain [komponen AMP yang didukung](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md), tag HTML berikut ini juga diizinkan di dalam AMP untuk Email.
+Selain [komponen AMP yang didukung](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-components.md), tag HTML berikut ini juga diizinkan di dalam AMP untuk Email.
 
 ## Tag-tag yang didukung <a name="supported-tags"></a>
 

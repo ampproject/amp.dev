@@ -271,7 +271,7 @@ L'attribut [`auto-advance-after`](https://amp.dev/documentation/components/amp-s
 
 ## Sur ordinateur de bureau
 
-Le format de story Web prend en charge une [une version sur ordinateur de bureau en option](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). Cela offre un mode immersif à fond perdu sur ordinateur de bureau, remplaçant l'affichage en portrait par défaut à trois panneaux et permet aux utilisateurs mobiles de voir la page même lorsque leur appareil est à l'horizontale.
+Le format de story Web prend en charge une [une version sur ordinateur de bureau en option](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). Cela offre un mode immersif à fond perdu sur ordinateur de bureau, remplaçant l'affichage en portrait par défaut à trois panneaux et permet aux utilisateurs mobiles de voir la page même lorsque leur appareil est à l'horizontale.
 
 Activez la prise en charge de la version pour ordinateur de bureau en ajoutant l'attribut `supports-landscape` au composant `<amp-story>`.
 

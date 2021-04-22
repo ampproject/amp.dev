@@ -41,9 +41,9 @@ formats:
 </amp-ad>
 ```
 
-В приведенном выше коде с помощью атрибута `type` указывается рекламная сеть, которой в данном случае является A9. Атрибуты `data-*` используются для передачи обязательных параметров сервера Amazon A9. В файле [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) показано, как параметры сопоставляются с вызовом JavaScript на URL сервера A9. Параметры, передаваемые тегом [`amp-ad`](../../../documentation/components/reference/amp-ad.md), добавляются к URL-адресу для возврата рекламного объявления.
+В приведенном выше коде с помощью атрибута `type` указывается рекламная сеть, которой в данном случае является A9. Атрибуты `data-*` используются для передачи обязательных параметров сервера Amazon A9. В файле [`a9.js`](https://github.com/ampproject/amphtml/blob/main/ads/a9.js) показано, как параметры сопоставляются с вызовом JavaScript на URL сервера A9. Параметры, передаваемые тегом [`amp-ad`](../../../documentation/components/reference/amp-ad.md), добавляются к URL-адресу для возврата рекламного объявления.
 
-Инструкции по созданию интеграции [`amp-ad`](../../../documentation/components/reference/amp-ad.md) см. в разделе [Интеграция рекламных сетей в AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+Инструкции по созданию интеграции [`amp-ad`](../../../documentation/components/reference/amp-ad.md) см. в разделе [Интеграция рекламных сетей в AMP](https://github.com/ampproject/amphtml/blob/main/ads/README.md).
 
 ## Создание интеграции Fast Fetch <a name="creating-a-fast-fetch-integration"></a>
 
@@ -57,7 +57,7 @@ formats:
 2. Код JavaScript для создания запроса рекламы (примеры реализации: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) и [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
 3. Проверку и подписание креатива через службу проверки рекламы — например, сервис от [Cloudflare](https://blog.cloudflare.com/firebolt/), позволяющий любому независимому рекламному провайдеру показывать более быструю, «легкую» и увлекательную рекламу.
 
-Инструкции по созданию интеграции Fast Fetch см. в [Руководстве по сетевому внедрению Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).
+Инструкции по созданию интеграции Fast Fetch см. в [Руководстве по сетевому внедрению Fast Fetch](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md).
 
 ## Ресурсы по теме
 

@@ -200,4 +200,4 @@ O sistema de layout AMP requer a proporção de uma imagem antes de buscar essa 
 
 # Validação <a name="validation"></a>
 
-Consulte as [regras do amp-img](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) na especificação do validador de AMP.
+Consulte as [regras do amp-img](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) na especificação do validador de AMP.

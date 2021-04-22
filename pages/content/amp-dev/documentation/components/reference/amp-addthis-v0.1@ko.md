@@ -138,7 +138,7 @@ AddThis는 전 세계에서 60개 이상의 언어로 콘텐츠를 공유하며 
 
 ## 유효성 검사 <a name="validation"></a>
 
-AMP 유효성 검사기 사양의 [amp-addthis 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-addthis/validator-amp-addthis.protoascii)을 참조하세요.
+AMP 유효성 검사기 사양의 [amp-addthis 규칙](https://github.com/ampproject/amphtml/blob/main/extensions/amp-addthis/validator-amp-addthis.protoascii)을 참조하세요.
 
 ## 개인정보 보호 <a name="privacy"></a>
 

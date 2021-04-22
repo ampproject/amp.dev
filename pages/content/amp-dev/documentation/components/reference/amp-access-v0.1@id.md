@@ -225,7 +225,7 @@ Anda dapat menentukan beberapa penyedia akses menggunakan array, bukan objek tun
 
 ### Variabel URL Akses <a name="access-url-variables"></a>
 
-Saat mengonfigurasi URL untuk berbagai endpoint, Penayang dapat menggunakan variabel substitusi. Daftar lengkap variabel ini ditetapkan dalam [Spesifikasi Variabel AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Selain itu, spesifikasi ini menambahkan beberapa variabel khusus akses seperti `READER_ID` dan `AUTHDATA`. Beberapa variabel yang paling relevan dijelaskan dalam tabel di bawah:
+Saat mengonfigurasi URL untuk berbagai endpoint, Penayang dapat menggunakan variabel substitusi. Daftar lengkap variabel ini ditetapkan dalam [Spesifikasi Variabel AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md). Selain itu, spesifikasi ini menambahkan beberapa variabel khusus akses seperti `READER_ID` dan `AUTHDATA`. Beberapa variabel yang paling relevan dijelaskan dalam tabel di bawah:
 
 <table>
   <tr>
@@ -496,7 +496,7 @@ AMP tidak membedakan antara login dan subscribe. Perbedaan ini dapat dikonfigura
 
 ## Integrasi dengan *amp-analytics* <a name="integration-with-amp-analytics"></a>
 
-Integrasi dengan *amp-analytics* didokumentasikan dalam [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md).
+Integrasi dengan *amp-analytics* didokumentasikan dalam [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/amp-access-analytics.md).
 
 ## Keamanan Asal CORS <a name="cors-origin-security"></a>
 
@@ -563,7 +563,7 @@ Seperti biasa, ID Pembaca harus disertakan dalam panggilan ke Halaman Login dan 
 
 ## Lampiran A: Tata bahasa ekspresi “amp-access” <a name="appendix-a-amp-access-expression-grammar"></a>
 
-Tata bahasa BNF terbaru tersedia di file [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison).
+Tata bahasa BNF terbaru tersedia di file [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/0.1/access-expr-impl.jison).
 
 Nukilan utama dari tata bahasa ini adalah sebagai berikut:
 
@@ -603,4 +603,4 @@ Bagian ini akan membahas penjelasan mendetail tentang desain yang mendasari spes
 
 ## Validasi <a name="validation"></a>
 
-Lihat [aturan amp-access](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/validator-amp-access.protoascii) dalam spesifikasi validator AMP.
+Lihat [aturan amp-access](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/validator-amp-access.protoascii) dalam spesifikasi validator AMP.

@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -110,7 +110,7 @@ limitations under the License.
 
 ### السياقات المتعددة تعني إدارة حالات متعددة <a name="multiple-contexts-means-multiple-state-management"></a>
 
-يجب أن يكون الناشرون على استعداد لإدارة حالة المستخدم لكل سياق عرض على حدة. توفر ميزة [معرّف العميل](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id) في AMP، والتي تستفيد من ملفات تعريف الارتباط أو التخزين المحلي للمحافظة على الحالة، الدعم اللازم لصفحات AMP للحصول على معرّف ثابت وسبه مستعار للمستخدم. من وجهة نظر التنفيذ، يتم استخدام ملفات تعريف الارتباط أو التخزين المحلي، وتتخذ AMP القرار الذي يجب استخدامه بناءً على سياق العرض. يتأثر هذا الاختيار بالجدوى الفنية لإدارة هذه الحالة التي تشمل مئات أو آلاف الناشرين.
+يجب أن يكون الناشرون على استعداد لإدارة حالة المستخدم لكل سياق عرض على حدة. توفر ميزة [معرّف العميل](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#client-id) في AMP، والتي تستفيد من ملفات تعريف الارتباط أو التخزين المحلي للمحافظة على الحالة، الدعم اللازم لصفحات AMP للحصول على معرّف ثابت وسبه مستعار للمستخدم. من وجهة نظر التنفيذ، يتم استخدام ملفات تعريف الارتباط أو التخزين المحلي، وتتخذ AMP القرار الذي يجب استخدامه بناءً على سياق العرض. يتأثر هذا الاختيار بالجدوى الفنية لإدارة هذه الحالة التي تشمل مئات أو آلاف الناشرين.
 
 ومع ذلك، يمكن أن ينتهي الأمر بناشري صفحات AMP بسهولة (عن غير قصد) إلى تصميم رحلات مستخدمين تتضمن سياقات متعددة. دعنا نلقي نظرة مجددًا على نظرتنا السابقة الخاصة بحالة استخدام عربة التسوق ونضيف بعض التفاصيل إليها لنصنع **قصة مستخدم** كاملة:
 
@@ -242,7 +242,7 @@ user_id=$publisher_origin_identifier
 
 لاحظ حقيقة أن المعلمة التي تم تمريرها إلى بديل معرّف العميل، `${clientId(uid)`، تكون `uid`. كان هذا اختيارًا متعمدًا يطابق نفس اسم ملف تعريف الارتباط المستخدم في مصدر الناشر كما هو موضح في [المهمة 1](#task1). لتحقيق التكامل الأكثر سلاسة، يجب عليك تطبيق نفس التقنية.
 
-فيما يتعلق ببقية تنفيذ تحليلات AMP، راجع وثائق [تكوين تحليلات AMP](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) لمزيد من التفاصيل حول كيفية إعداد طلبات amp-analytics أو لتعديل طلبات مورد التحليلات الخاص بك. يمكن تعديل رسالة الفحص بشكل إضافي لنقل البيانات الإضافية التي تحددها مباشرة أو من خلال الاستفادة من [بدائل AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) الأخرى.
+فيما يتعلق ببقية تنفيذ تحليلات AMP، راجع وثائق [تكوين تحليلات AMP](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) لمزيد من التفاصيل حول كيفية إعداد طلبات amp-analytics أو لتعديل طلبات مورد التحليلات الخاص بك. يمكن تعديل رسالة الفحص بشكل إضافي لنقل البيانات الإضافية التي تحددها مباشرة أو من خلال الاستفادة من [بدائل AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) الأخرى.
 
 > **من المفيد أن تعلم مايلي:**
 > لماذا استخدمنا الاسم `uid` للمعلمة التي تم تمريرها إلى ميزة معرّف العميل؟ يتم استخدام المعلمة التي يستخدمها بديل `clientId(...)` لتحديد النطاق التي تُستخدم فيه. يمكنك بالفعل استخدام ميزة Client ID للعديد من حالات الاستخدام، ونتيجة لذلك، يمكنك إنشاء العديد من معرفات العملاء. تميّز المعلمة بين حالات الاستخدام هذه ولذا تستخدمها لتحديد حالة الاستخدام التي تريد معرّف العميل لها. على سبيل المثال، قد ترغب في إرسال معرّفات مختلفة إلى جهات ثالثة مثل أحد القائمين على الإعلان ويمكنك استخدام معلمة "النطاق" لتحقيق ذلك.
@@ -384,7 +384,7 @@ https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id
 
 ##### استخدام ميزات بديلة <a name="using-substitution-features"></a>
 
-المنهج الخاص بنا سيستفيد من فئتين من [بدائل AMP المختلفة](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md).
+المنهج الخاص بنا سيستفيد من فئتين من [بدائل AMP المختلفة](https://github.com/ampproject/amphtml/blob/main/spec/./amp-var-substitutions.md).
 
 **&nbsp;لتحديث الروابط الخارجية لاستخدام بديل لمعرف العميل: ** حدد معلمة جديدًا للاستعلام، `ref_id` (“referrer ID”)، والذي سيظهر داخل عنوان URL ويشير إلى **إنشاء معرّف السياق** للمستخدم. عيِّن معلمة الاستعلام هذه بحيث تساوي قيمة بديل معرِّف عميل AMP:
 
@@ -595,7 +595,7 @@ https://example.com/step2.html?orig_user_id=$malicious_value
 
 على إحدى الصفحات التي لا تدعم AMP، تحقق من `مرجع المستند` مباشرةً من جانب العميل أو مرِّر القيمة كجزء من اختبار ping للتحليلات لتتمكّن من التحقق من صحة جانب الخادم. إذا كانت قيمة المرجع واحدة يمكنك الوثوق بها، فيمكنك قبول القيم التي نشأت من عنوان URL للصفحة المقصودة ومعالجتها، مثل `orig_user_id` في المثال الوارد أعلاه.
 
-على إحدى صفحات AMP، استخدم المتغير البديل [مرجع المستند](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#document-referrer) substitution لتمرير قيمة المرجع كجزء من اختبار ping للتحليلات. المعالجة من جانب الخادم هي الخيار الوحيد المتوفر. للتوضيح، في ما يلي اختبار ping للتحليلات يمكن أن ترسله الصفحة المقصودة والذي يحتوي على (1) قيمة معرّف العميل للصفحة الحالية، (2) قيمة تم تمريرها من خلال عنوان URL الذي أعددناه ليكون قيمة معرّف العميل في الإحالة الصفحة و(3) معلومات المرجع نفسها للتحقق من قيمة (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
+على إحدى صفحات AMP، استخدم المتغير البديل [مرجع المستند](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#document-referrer) substitution لتمرير قيمة المرجع كجزء من اختبار ping للتحليلات. المعالجة من جانب الخادم هي الخيار الوحيد المتوفر. للتوضيح، في ما يلي اختبار ping للتحليلات يمكن أن ترسله الصفحة المقصودة والذي يحتوي على (1) قيمة معرّف العميل للصفحة الحالية، (2) قيمة تم تمريرها من خلال عنوان URL الذي أعددناه ليكون قيمة معرّف العميل في الإحالة الصفحة و(3) معلومات المرجع نفسها للتحقق من قيمة (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
 
 إذا كان لا يمكنك الوثوق بالمرجع، ارفض أي قيم يتم توفيرها عبر معلمات URL ولا تستخدمها.
 

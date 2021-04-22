@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-html.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -33,7 +33,7 @@ limitations under the License.
 
 ملاحظة: هذه القائمة غير معيارية وللأغراض المرجعية فقط. وقواعد أداة التحقق من صحة AMP هي الجازمة على علامات وسمات HTML المدعومة.
 
-بالإضافة إلى [مكونات AMP المدعومة](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)، يُسمح بعلامات HTML التالية في AMP للبريد الإلكتروني.
+بالإضافة إلى [مكونات AMP المدعومة](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-components.md)، يُسمح بعلامات HTML التالية في AMP للبريد الإلكتروني.
 
 ## العلامات المدعومة <a name="supported-tags"></a>
 

@@ -218,7 +218,7 @@ As expressões são semelhantes às do JavaScript, mas têm algumas diferenças 
 * Variáveis indefinidas e array-index-out-of-bounds retornam `null`, em vez de `undefined` ou de gerar erros.
 * Uma expressão única atualmente está limitada a 50 operandos, por motivos de desempenho. [Fale conosco](https://github.com/ampproject/amphtml/issues/new) se esse número for insuficiente para seu caso de uso.
 
-A gramática e a implementação completas da expressão podem ser encontradas em [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) e [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js).
+A gramática e a implementação completas da expressão podem ser encontradas em [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/main/extensions/amp-bind/0.1/bind-expr-impl.jison) e [bind-expression.js](https://github.com/ampproject/amphtml/blob/main/extensions/amp-bind/0.1/bind-expression.js).
 
 # Exemplos <a name="examples"></a>
 
@@ -650,7 +650,7 @@ O AMP cria lotes XMLHttpRequests (XHRs) em endpoints JSON, ou seja, você pode u
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>O URL do endpoint remoto que retornará o JSON que atualizará esse <code>amp-state</code>. Ele precisa ser um serviço HTTP CORS.
-        O atributo <code>src</code> permite todas as substituições de variáveis de URL padrão. Consulte o <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">Guia de substituições</a> (em inglês) para ver mais informações.
+        O atributo <code>src</code> permite todas as substituições de variáveis de URL padrão. Consulte o <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md">Guia de substituições</a> (em inglês) para ver mais informações.
         [tip type="important"]
       o endpoint precisa implementar os requisitos definidos nas especificações de <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">Solicitações CORS nas AMP</a> (link em inglês).
       [/tip]</td>

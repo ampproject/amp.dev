@@ -67,7 +67,7 @@ Un document peut choisir d'activer des contenus expérimentaux. Pour ce faire, p
 </head>
 ```
 
-Ce faisant, les contenus expérimentaux spécifiés seront activés pour tous les visiteurs du document. Cependant, tous les contenus expérimentaux ne sont pas activables par le document. Pour obtenir la liste complète des composants expérimentaux autorisés, consultez l'attribut `allow-doc-opt-in` dans le fichier [`prod-config.json`](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/prod-config.json) du projet. Notez que l'activation par le document peut être annulé par la désactivation par l'utilisateur.
+Ce faisant, les contenus expérimentaux spécifiés seront activés pour tous les visiteurs du document. Cependant, tous les contenus expérimentaux ne sont pas activables par le document. Pour obtenir la liste complète des composants expérimentaux autorisés, consultez l'attribut `allow-doc-opt-in` dans le fichier [`prod-config.json`](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/prod-config.json) du projet. Notez que l'activation par le document peut être annulé par la désactivation par l'utilisateur.
 
 ## Essais d'origine
 

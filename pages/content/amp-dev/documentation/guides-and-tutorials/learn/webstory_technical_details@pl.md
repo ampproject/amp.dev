@@ -271,7 +271,7 @@ Atrybut [`auto-advance-after`](https://amp.dev/documentation/components/amp-stor
 
 ## Wyświetlanie w poziomie
 
-Format Web Story zapewnia [opcjonalne wyświetlanie w poziomie](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). Zmienia to tryb wyświetlania, zastępując domyślne wyświetlanie w trzech pionowych okienkach i pozwalając użytkownikom mobilnym na oglądanie relacji na urządzeniu trzymanym poziomo.
+Format Web Story zapewnia [opcjonalne wyświetlanie w poziomie](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). Zmienia to tryb wyświetlania, zastępując domyślne wyświetlanie w trzech pionowych okienkach i pozwalając użytkownikom mobilnym na oglądanie relacji na urządzeniu trzymanym poziomo.
 
 Włącz obsługę trybu poziomego poprzez dodanie atrybutu `supports-landscape` do składnika `<amp-story>`.
 

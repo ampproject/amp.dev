@@ -86,7 +86,7 @@ AMP 运行时的[速度进行了优化](../../../about/how-amp-works.html)，如
 
 [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
 
-1. 为[延迟呈现的扩展项](https://github.com/ampproject/amphtml/blob/master/src/render-delaying-services.js)（例如，[`amp-experiment`](../../../documentation/components/reference/amp-experiment.md)、[`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md) 和 [`amp-story`](../../../documentation/components/reference/amp-story.md)）指定 `<script>` 标记。
+1. 为[延迟呈现的扩展项](https://github.com/ampproject/amphtml/blob/main/src/render-delaying-services.js)（例如，[`amp-experiment`](../../../documentation/components/reference/amp-experiment.md)、[`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md) 和 [`amp-story`](../../../documentation/components/reference/amp-story.md)）指定 `<script>` 标记。
 2. 为其余扩展项（例如，[`amp-bind`](../../../documentation/components/reference/amp-bind.md) 等）指定 `<script>` 标记。这些扩展项不会延迟呈现，因此，不应当预加载。因为它们可能会占用初始呈现的重要带宽。
 3. 使用 `<style amp-custom>` 标记指定任何自定义样式。
 4. 添加其他所有允许在 `<head>` 部分使用的标记。特别需要说明的是，任何外部字体均应放到最后，因为它们会阻碍呈现。

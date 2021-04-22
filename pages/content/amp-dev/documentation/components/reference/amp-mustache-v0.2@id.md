@@ -62,7 +62,7 @@ Mustache adalah sintaks template tanpa logika. Lihat [dokumen Mustache.js](https
 
 ## Penggunaan <a name="usage"></a>
 
-Template `amp-mustache` harus ditentukan dan digunakan sesuai dengan [Spesifikasi Template AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md).
+Template `amp-mustache` harus ditentukan dan digunakan sesuai dengan [Spesifikasi Template AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-html-templates.md).
 
 Pertama, `amp-mustache` harus dinyatakan/dimuat seperti ini:
 
@@ -206,4 +206,4 @@ Solusinya meliputi mengganti string seperti {% raw %}`{{`{% endraw %} dengan kar
 
 ## Validasi <a name="validation-1"></a>
 
-Lihat [aturan amp-mustache](https://github.com/ampproject/amphtml/blob/master/extensions/amp-mustache/validator-amp-mustache.protoascii) dalam spesifikasi validator AMP.
+Lihat [aturan amp-mustache](https://github.com/ampproject/amphtml/blob/main/extensions/amp-mustache/validator-amp-mustache.protoascii) dalam spesifikasi validator AMP.

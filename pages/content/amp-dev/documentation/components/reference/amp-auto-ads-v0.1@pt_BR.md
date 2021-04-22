@@ -74,8 +74,8 @@ O tipo de rede de publicidade e qualquer outra informação (exigida pela rede) 
 
 ## Redes de publicidade compatíveis <a name="supported-ad-networks"></a>
 
-* [Google AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
-* [DoubleClick (experimental)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
+* [Google AdSense](https://github.com/ampproject/amphtml/blob/main/ads/google/adsense.md)
+* [DoubleClick (experimental)](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md)
 
 ## Atributos
 
@@ -409,4 +409,4 @@ Isso se aplica até o momento em que houver cinco anúncios na página, porque h
 
 ## Validação
 
-Consulte as [regras do amp-auto-ads rules](https://github.com/ampproject/amphtml/blob/master/extensions/amp-auto-ads/validator-amp-auto-ads.protoascii) (link em inglês) nas especificações do validador de AMP.
+Consulte as [regras do amp-auto-ads rules](https://github.com/ampproject/amphtml/blob/main/extensions/amp-auto-ads/validator-amp-auto-ads.protoascii) (link em inglês) nas especificações do validador de AMP.

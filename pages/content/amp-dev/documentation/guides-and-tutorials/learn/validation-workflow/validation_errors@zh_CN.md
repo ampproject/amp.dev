@@ -22,7 +22,7 @@ limitations under the License.
 本文档旨在帮助您更好地了解
 并更正在[验证 AMP 网页](validate_amp.md)时遇到的任何验证错误。
 有关验证错误的完整概述，
-请参阅 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)。
+请参阅 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)。
 
 ## AMP HTML 标记和属性错误
 
@@ -55,7 +55,7 @@ limitations under the License.
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-在 <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP 验证工具规范</a>中，这些必需的标记包含 `mandatory: true` 字段；
+在 <a href="https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii">AMP 验证工具规范</a>中，这些必需的标记包含 `mandatory: true` 字段；
 [AMP 规范](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)中也提到了这些标记。
 
 ### 缺少其他标记所需的标记
@@ -131,7 +131,7 @@ HTML 库中找到等效实现。要查看
 
 如果其中未涵盖您的用例，您也可以考虑向 AMP 项目
 中贡献新的组件。有关详情，
-请参阅 AMP 项目的[贡献](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)
+请参阅 AMP 项目的[贡献](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md)
 文档。
 
 ### 缺少必需的属性
@@ -151,7 +151,7 @@ HTML 库中找到等效实现。要查看
   </tr>
 </table>
 
-[AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)
+[AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)
 中定义了 AMP 标记的必需属性。
 只需搜索相应标记，
 查看列出的属性，
@@ -207,7 +207,7 @@ HTML 库中找到等效实现。要查看
 可用的属性都已列入白名单，因此目前还没有列表将所有不允许使用的属性明确列出。
 要查看每个特定标记支持的属性，
 请在 [AMP 验证工具规范]
-(https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)中搜索 HTML 标记，然后搜索 `attrs`。
+(https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)中搜索 HTML 标记，然后搜索 `attrs`。
 
 除了白名单中列出的每个标记专用的属性以外，
 所有 AMP 标记还可以使用 `$GLOBAL_ATTRS` 下已列入白名单的任何属性；
@@ -279,7 +279,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 以便验证基本的 CSS AMP 规则。
 
 下面列出了已列入黑名单的 CSS 数据
-（另请参阅 [AMP 验证工具规范中的 `disallowed_cdata_regex`](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)）：
+（另请参阅 [AMP 验证工具规范中的 `disallowed_cdata_regex`](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)）：
 
 * `"\\.i?-amp-"`（“CSS -amp- 类名称前缀”）
 * `"!important"`
@@ -564,7 +564,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 </table>
 
 必需的子孙级会在 [AMP 验证工具规范]
-(https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)中
+(https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)中
 定义为 `mandatory_ancestor`。
 
 当下列标记缺少各自的 `mandatory_ancestor`
@@ -655,7 +655,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 每个 AMP 标记都有一份 `supported_layouts` 列表，
 如 [AMP 验证工具规范]
-(https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)中所定义的那样。
+(https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)中所定义的那样。
 对于不受支持的布局，验证工具会显示错误，
 并会检查预定义布局的验证规则。
 
@@ -748,7 +748,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 如果您没有为 AMP 标记指定布局，
 且隐式布局（基于宽度、高度和尺寸）不受支持，就会出现这种错误。
-请参阅 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)，
+请参阅 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)，
 查看相应标记的 `supported_layout` 值。
 
 实际布局行为由 `layout` 属性决定。
@@ -806,7 +806,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 当为标记指定的布局不受支持时，
 就会出现这种错误。
-请参阅 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)，
+请参阅 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)，
 查看相应标记的 `supported_layout` 值。
 
 实际布局行为由 `layout` 属性决定。
@@ -1010,5 +1010,5 @@ AMP 网页不能包含模板语法，
 这只是一个警告；带有警告的 AMP 文档仍然有效。
 
 请在 [AMP 验证工具规范]
-(https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)中搜索 `deprecation`
+(https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)中搜索 `deprecation`
 ，以查看每个 AMP 标记的已弃用属性。

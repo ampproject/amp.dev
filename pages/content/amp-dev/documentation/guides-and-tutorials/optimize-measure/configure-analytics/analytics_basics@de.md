@@ -35,7 +35,7 @@ Füge Folgendes im Abschnitt "body" deiner AMP Seite ein, um eine einfache Konfi
 <amp-pixel src="https://foo.com/pixel?RANDOM"></amp-pixel>
 ```
 
-In diesem Beispiel werden die Daten zu Seitenaufrufen zusammen mit einer Zufallszahl an die angegebene URL gesendet. Die Variable `RANDOM` ist eine von vielen [Substitutionsvariablen der AMP Plattform](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Weitere Informationen zur [Variablensubstitution](analytics_basics.md#variable-substitution) findest du hier.
+In diesem Beispiel werden die Daten zu Seitenaufrufen zusammen mit einer Zufallszahl an die angegebene URL gesendet. Die Variable `RANDOM` ist eine von vielen [Substitutionsvariablen der AMP Plattform](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md). Weitere Informationen zur [Variablensubstitution](analytics_basics.md#variable-substitution) findest du hier.
 
 Da die Komponente [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) integriert ist, musst du ihre Einbindung nicht deklarieren (darin unterscheidet sie sich von anderen erweiternden Komponenten von AMP, einschließlich [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)). Das Tag [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) solltest du aber möglichst am Anfang des Abschnittes `<body>` platzieren. Das Tracking Pixel wird nur ausgelöst, wenn das Tag selbst angezeigt wird. Wenn [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) am unteren Rand der Seite platziert wird, wird es möglicherweise nicht ausgelöst.
 
@@ -135,7 +135,7 @@ Wenn du über die Möglichkeiten der Standardkonfiguration hinausgehen möchtest
 
 ## Variablensubstitution <a name="variable-substitution"></a>
 
-Sowohl die Komponente [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) als auch [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) ermöglicht alle standardmäßigen Variablensubstitutionen in URLs (siehe [AMP HTML Variablensubstitutionen](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)). Im folgenden Beispiel wird die Anforderung des Seitenaufrufs zusammen mit der kanonischen URL des aktuellen AMP Dokuments, seinem Titel und einer [Client ID](analytics_basics.md#user-identification) an die URL gesendet:
+Sowohl die Komponente [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) als auch [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) ermöglicht alle standardmäßigen Variablensubstitutionen in URLs (siehe [AMP HTML Variablensubstitutionen](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)). Im folgenden Beispiel wird die Anforderung des Seitenaufrufs zusammen mit der kanonischen URL des aktuellen AMP Dokuments, seinem Titel und einer [Client ID](analytics_basics.md#user-identification) an die URL gesendet:
 
 ```html
 <amp-pixel
@@ -179,7 +179,7 @@ Im obigen Beispiel werden die Variablen `account` und `title` in der Konfigurati
 
 ## Benutzeridentifikation <a name="user-identification"></a>
 
-Websites verwenden Cookies, um benutzerspezifische Informationen im Browser zu speichern. Mithilfe von Cookies kann ermittelt werden, ob Benutzer eine Website bereits besucht haben. In AMP können Seiten entweder von der Website des Publishers oder von einem Cache (wie dem Google AMP Cache) bereitgestellt werden. Die Website des Publishers und der Cache haben höchstwahrscheinlich unterschiedliche Domänen. Aus Sicherheitsgründen schränken Browser manchmal den Zugriff auf Cookies anderer Domänen ein (siehe auch [Tracking von Benutzern über mehrere Quellen hinweg](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)).
+Websites verwenden Cookies, um benutzerspezifische Informationen im Browser zu speichern. Mithilfe von Cookies kann ermittelt werden, ob Benutzer eine Website bereits besucht haben. In AMP können Seiten entweder von der Website des Publishers oder von einem Cache (wie dem Google AMP Cache) bereitgestellt werden. Die Website des Publishers und der Cache haben höchstwahrscheinlich unterschiedliche Domänen. Aus Sicherheitsgründen schränken Browser manchmal den Zugriff auf Cookies anderer Domänen ein (siehe auch [Tracking von Benutzern über mehrere Quellen hinweg](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md)).
 
 Standardmäßig verwaltet AMP die Bereitstellung einer Client ID, unabhängig davon, ob auf die Seite von der ursprünglichen Publisher Website oder über einen Cache zugegriffen wird. Die AMP generierte Client ID hat den Wert `"amp-"` gefolgt von einer zufälligen, mit `base64` codierten Zeichenfolge, und sie bleibt für einen Benutzer gleich, der die Website erneut aufruft.
 
@@ -197,6 +197,6 @@ Zum Beispiel:
 
 Wenn AMP feststellt, dass dieses Cookie angelegt wurde, gibt die Client ID Substitution den Wert des Cookies zurück. Wenn AMP feststellt, dass dieses Cookie nicht angelegt wurde, generiert AMP einen Wert im Format `amp-` gefolgt von einer zufälligen, in base64 codierten Zeichenfolge.
 
-Weitere Informationen zur Client ID Substitution und dazu, wie du eine optionale ID für Benutzerbenachrichtigungen hinzufügst, findest du unter [Von amp-analytics unterstützte Variablen](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
+Weitere Informationen zur Client ID Substitution und dazu, wie du eine optionale ID für Benutzerbenachrichtigungen hinzufügst, findest du unter [Von amp-analytics unterstützte Variablen](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md).
 
 Weitere Informationen: Erfahre mehr über Analytics in [Vertiefung von AMP Analytics](deep_dive_analytics.md) und [Use Cases](use_cases.md).

@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-debugging.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-debugging.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -50,7 +50,7 @@ have a look and request a pull request there.
     <tr>
       <td rowspan="2">素材资源（例如字体和图片）不显示</td>
       <td>提供素材资源时使用了错误的 MIME 类型。</td>
-      <td>指定<a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">可接受的 MIME 类型</a>。</td>
+      <td>指定<a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">可接受的 MIME 类型</a>。</td>
     </tr>
     <tr>
       <td>AMP 缓存无法访问素材资源。</td>

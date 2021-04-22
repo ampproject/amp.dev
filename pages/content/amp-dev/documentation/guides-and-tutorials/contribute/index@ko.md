@@ -19,7 +19,7 @@ AMP 프로젝트는 기술적 기여를 강하게 장려합니다.
 특히 관심을 가지고있는 이슈에 대한 일회성 기여도 환영합니다.
 
 #### 코드를 돕기
-[CONTRIBUTING 파일](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)을 통해 AMP 프로젝트에 코드 기여하기를 시작할 수 있습니다. 이 문서는 기능이나 버그 수정이 컨셉에서 실제 제출까지 진행되는 과정의 세부사항 및 기술 설계 및 토론에 참여하는 방법을 포함합니다. 만약 오픈소스에 익숙하지 않다면 [시작하기 위한 몇가지 팁](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-code)을 참고하십시오.
+[CONTRIBUTING 파일](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md)을 통해 AMP 프로젝트에 코드 기여하기를 시작할 수 있습니다. 이 문서는 기능이나 버그 수정이 컨셉에서 실제 제출까지 진행되는 과정의 세부사항 및 기술 설계 및 토론에 참여하는 방법을 포함합니다. 만약 오픈소스에 익숙하지 않다면 [시작하기 위한 몇가지 팁](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#contributing-code)을 참고하십시오.
 
 ### AMP에 컨텐츠 기여로 참여하기
 [amp.dev](https://amp.dev)는 개발자가 AMP로 성공적인 웹 경험을 만드는 방법을 배우는 내용을 담고 있습니다. 유용한 문서를 개선하고, 작성하고, 요청하는데에 관심을 가져 주셔서 감사드립니다!

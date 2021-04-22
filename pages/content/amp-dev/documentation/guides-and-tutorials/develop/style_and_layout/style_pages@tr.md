@@ -9,7 +9,7 @@ Tüm stiller, dokümanın head bölümünde yer almalıdır (bkz. [Sayfaya stil 
 Ancak, içeriğinizi daha iyi yönetmek amacıyla statik sayfalar oluşturmak için CSS ön işlemcilerini ve şablonlarını kullanabilirsiniz.
 
 **Not:** Duyarlı sayfaları yazmayı makul bir düzeyde kolaylaştırmak için AMP bileşenleri varsayılan stillerle birlikte gelir.
-Bu stiller, [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css) içinde tanımlanır.
+Bu stiller, [`amp.css`](https://github.com/ampproject/amphtml/blob/main/css/amp.css) içinde tanımlanır.
 
 ## CSS ön işlemcilerini kullanma <a name="using-css-preprocessors"></a>
 

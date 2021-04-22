@@ -23,7 +23,7 @@ Tujuan dokumen ini adalah untuk membantu Anda memahami dengan lebih baik
 dan memperbaiki error validasi apa pun yang dihadapi
 saat Anda [memvalidasi halaman AMP](../../../../documentation/guides-and-tutorials/start/create_amphtml_ad/validate.md).
 Untuk ringkasan lengkap mengenai error validasi,
-lihat [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+lihat [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 ## Error atribut dan tag HTML AMP
 
@@ -56,7 +56,7 @@ Tag berikut harus ada di semua dokumen AMP:
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-Tag wajib ini mencakup kolom `mandatory: true` dalam <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">spesifikasi validator AMP</a>;
+Tag wajib ini mencakup kolom `mandatory: true` dalam <a href="https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii">spesifikasi validator AMP</a>;
 tag tersebut juga dirujuk dalam [spesifikasi AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md).
 
 ### Tag yang dibutuhkan oleh tag lain tidak tersedia
@@ -132,7 +132,7 @@ digunakan untuk menyempurnakan halaman HTML AMP.
 
 Jika kasus penggunaan Anda tidak tercakup, Anda juga dapat menyertakan komponen
 baru ke Project AMP. Lihat dokumen
-[berkontribusi](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)
+[berkontribusi](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md)
 Project AMP untuk informasi selengkapnya.
 
 ### Atribut wajib tidak tersedia
@@ -153,7 +153,7 @@ Project AMP untuk informasi selengkapnya.
 </table>
 
 Atribut wajib tag AMP didefinisikan dalam
-[spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+[spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 Cukup telusuri tag,
 lihat atribut yang tercantum,
 dan periksa `mandatory: true`.
@@ -208,7 +208,7 @@ untuk melihat apakah atribut membutuhkan HTTPS.
 Atribut disertakan dalam daftar yang disetujui, sehingga tidak ada daftar definitif semua atribut yang tidak diizinkan.
 Untuk memeriksa atribut yang didukung untuk setiap tag tertentu,
 telusuri tag HTML, lalu `attrs`
-di [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+di [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 Selain daftar atribut tertentu yang disetujui untuk setiap tag,
 semua tag AMP dapat menggunakan salah satu atribut dalam daftar yang disetujui di `$GLOBAL_ATTRS`;
@@ -280,7 +280,7 @@ Data CSS tertentu dimasukkan ke daftar yang tidak diizinkan
 untuk memvalidasi aturan AMP CSS yang penting.
 
 Berikut adalah daftar data CSS yang tidak diizinkan
-(lihat juga [`disallowed_cdata_regex` di spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)):
+(lihat juga [`disallowed_cdata_regex` di spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)):
 
 * `"\\.i?-amp-"` ("Awalan nama kelas -amp- CSS")
 * `"!important"`
@@ -565,7 +565,7 @@ yang tidak dapat bertingkat di bawah tag <code>template</code> lain.
 </table>
 
 Turunan wajib didefinisikan di
-[spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)
+[spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)
 sebagai `mandatory_ancestor`.
 
 Error ini terjadi saat tag berikut
@@ -656,7 +656,7 @@ karena nilai default telah diasumsikan.
 
 Setiap tag AMP memiliki akhiran `supported_layouts`,
 seperti yang didefinisikan dalam
-[spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+[spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 Validator akan menampilkan error untuk tata letak yang tidak didukung,
 dan akan memeriksa aturan validasi untuk tata letak yang telah didefinisikan sebelumnya.
 
@@ -750,7 +750,7 @@ sehingga memudahkan perbaikan aturan tersebut.
 Error ini terjadi jika Anda tidak menentukan tata letak untuk tag AMP,
 dan tata letak tersirat (berdasarkan lebar, tinggi, dan ukuran) tidak didukung.
 Periksa nilai `supported_layout` untuk tag
-di [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+di [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 Perilaku tata letak yang sebenarnya ditentukan oleh atribut `layout`.
 Untuk mengetahui selengkapnya tentang cara kerja tata letak,
@@ -808,7 +808,7 @@ Atribut yang tidak diizinkan untuk jenis tata letak dijelaskan di
 Error ini terjadi jika tata letak yang ditentukan
 untuk tag tidak didukung.
 Periksa nilai `supported_layout` untuk tag
-di [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+di [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 Perilaku tata letak yang sebenarnya ditentukan oleh atribut `layout`.
 Untuk mengetahui selengkapnya tentang cara kerja tata letak,
@@ -1012,4 +1012,4 @@ Ini hanya peringatan; dokumen AMP dengan peringatan ini masih tetap valid.
 
 Identifikasi atribut yang sudah tidak berlaku untuk setiap tag AMP
 dengan menelusuri `deprecation` di
-[spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+[spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).

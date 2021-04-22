@@ -345,4 +345,4 @@ Daha eksiksiz bir örneği [https://ampexample.laterpay.net/dual-amp-access.html
 
 ## Doğrulama <a name="validation"></a>
 
-AMP doğrulayıcı spesifikasyonundaki [amp-access-laterpay kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii) bakın.
+AMP doğrulayıcı spesifikasyonundaki [amp-access-laterpay kurallarına](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii) bakın.

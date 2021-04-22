@@ -107,7 +107,7 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 
 ## 实现 AMP 查看工具
 
-AMP 运行时提供了一个 Viewer API，后者提供了在 AMP 运行时与查看工具之间收发消息的协议。这样，您就可以控制 AMP 文档的预呈现、在报道之间的滑动以及 AMP 运行时插桩行为。要详细了解 AMP Viewer API，请参阅[将 AMP 查看工具与 AMP 网页相关联](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md)指南。您可以在 [GitHub](https://github.com/ampproject/amp-viewer) 上找到针对[网络](https://github.com/ampproject/amp-viewer/blob/master/mobile-web/README.md)和 [iOS](https://github.com/ampproject/amp-viewer/tree/master/ios) 的查看工具实现方式。Android 查看工具尚未推出，请参阅 Stack Overflow 上的[此回答](https://stackoverflow.com/questions/44856759/does-we-need-to-change-anything-in-usual-webpage-loader-for-loading-an-amp-acce/44869038#44869038)，了解如何以最佳方式配置 WebView 以显示 AMP 网页。
+AMP 运行时提供了一个 Viewer API，后者提供了在 AMP 运行时与查看工具之间收发消息的协议。这样，您就可以控制 AMP 文档的预呈现、在报道之间的滑动以及 AMP 运行时插桩行为。要详细了解 AMP Viewer API，请参阅[将 AMP 查看工具与 AMP 网页相关联](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md)指南。您可以在 [GitHub](https://github.com/ampproject/amp-viewer) 上找到针对[网络](https://github.com/ampproject/amp-viewer/blob/master/mobile-web/README.md)和 [iOS](https://github.com/ampproject/amp-viewer/tree/master/ios) 的查看工具实现方式。Android 查看工具尚未推出，请参阅 Stack Overflow 上的[此回答](https://stackoverflow.com/questions/44856759/does-we-need-to-change-anything-in-usual-webpage-loader-for-loading-an-amp-acce/44869038#44869038)，了解如何以最佳方式配置 WebView 以显示 AMP 网页。
 
 下面介绍了一些关于实现 AMP 查看工具的一般最佳做法：
 

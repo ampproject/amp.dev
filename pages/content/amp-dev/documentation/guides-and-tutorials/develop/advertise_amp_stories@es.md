@@ -73,6 +73,6 @@ Plataformas publicitarias que actualmente admiten anuncios de historias web:
 
 Si usted es un anunciante a publicar sus anuncios dentro Historias web, por favor [extender la mano](mailto:story-ads-wg@google.com) para obtener más información.
 
-Los editores también pueden colocar anuncios personalizados si configuran su propio servidor de anuncios. [El proceso para hacerlo se explica detalladamente aquí](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
+Los editores también pueden colocar anuncios personalizados si configuran su propio servidor de anuncios. [El proceso para hacerlo se explica detalladamente aquí](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
 
 [tip type="note"] Lea el artículo [Tráfico de los creativos personalizados en las historias web](https://support.google.com/admanager/answer/9038178) para obtener información sobre cómo subir anuncios al Administrador de anuncios de Google y consulte nuestra guía sobre las [Prácticas recomendadas para crear anuncios en las historias de AMP](story_ads_best_practices.md). [/tip]

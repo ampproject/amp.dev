@@ -151,9 +151,9 @@ Lihat bagian [Validasi Kustom](#custom-validations) untuk penjelasan selengkapny
 * `<input type=button>`, `<input type=image>`
 * Sebagian besar atribut terkait formulir pada input, yang meliputi: `form`, `formaction`, `formtarget`, `formmethod`, dan sebagainya.
 
-(Penyesuaian pada beberapa aturan ini dapat dipertimbangkan kembali di masa mendatang - [harap beri tahu kami](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#suggestions-and-feature-requests) jika Anda memerlukannya dan berikan kasus penggunaan).
+(Penyesuaian pada beberapa aturan ini dapat dipertimbangkan kembali di masa mendatang - [harap beri tahu kami](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#suggestions-and-feature-requests) jika Anda memerlukannya dan berikan kasus penggunaan).
 
-Untuk detail tentang input dan kolom yang valid, lihat [aturan amp-form](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) dalam spesifikasi validator AMP.
+Untuk detail tentang input dan kolom yang valid, lihat [aturan amp-form](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) dalam spesifikasi validator AMP.
 
 # Tindakan <a name="actions"></a>
 
@@ -193,7 +193,7 @@ Misalnya, berikut berikut mendeteksi peristiwa `submit-success` dan juga `submit
 
 ```
 
-Lihat [contoh lengkapnya di sini](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
+Lihat [contoh lengkapnya di sini](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html).
 
 # Peristiwa input <a name="input-events"></a>
 
@@ -225,7 +225,7 @@ Misalnya, salah satu kasus penggunaan umum adalah mengirimkan formulir saat terj
 ```
 [/example]
 
-Lihat [contoh lengkapnya di sini](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
+Lihat [contoh lengkapnya di sini](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html).
 
 # Pemicu analisis <a name="analytics-triggers"></a>
 
@@ -382,7 +382,7 @@ untuk mengonfirmasi! Setelah itu, kami akan mulai mengirim artikel mingguan tent
 </form>
 {% endraw %}
 ```
-Lihat [contoh lengkapnya di sini](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
+Lihat [contoh lengkapnya di sini](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html).
 
 # Untuk merender respons berhasil dengan data binding <a name="to-render-a-successful-response-with-data-binding"></a>
 
@@ -494,7 +494,7 @@ Berikut contohnya:
 ```
 [/example]
 
-Untuk contoh lainnya, lihat [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
+Untuk contoh lainnya, lihat [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html).
 
 Untuk pesan validasi, jika elemen Anda tidak berisi konten teks, AMP akan mengisinya dengan pesan validasi default browser. Pada contoh di atas, jika input `name5` kosong dan validasi dimulai (artinya, pengguna mencoba mengirimkan formulir), AMP akan mengisi `<span visible-when-invalid="valueMissing" validation-for="name5"></span>` dengan pesan validasi browser dan menampilkan `span` tersebut kepada pengguna.
 
@@ -585,7 +585,7 @@ Berikut adalah tampilan respons error untuk verifikasi:
 
 Untuk menghapus kolom dari permintaan `verify-xhr`, tambahkan atribut `no-verify` ke elemen input.
 
-Untuk contoh lainnya, lihat [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
+Untuk contoh lainnya, lihat [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html).
 
 # Substitusi variabel <a name="variable-substitutions"></a>
 
@@ -673,7 +673,7 @@ Class berikut adalah [polyfill untuk pseudo-class interaksi pengguna](#user-inte
 
 Penayang dapat menggunakan class ini untuk menata gaya input dan kolom mereka agar responsif terhadap tindakan pengguna (misalnya, menyoroti input yang tidak valid dengan batas merah setelah pengguna memburamkannya).
 
-Lihat [contoh lengkapnya di sini](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) tentang cara menggunakannya.
+Lihat [contoh lengkapnya di sini](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html) tentang cara menggunakannya.
 
 [tip type="success"]
 Kunjungi [AMP Start](https://ampstart.com/components#form-elements) untuk melihat elemen formulir AMP responsif dan telah ditata gayanya yang dapat Anda gunakan di halaman AMP.

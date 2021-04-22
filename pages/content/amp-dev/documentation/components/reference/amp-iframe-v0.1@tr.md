@@ -49,7 +49,7 @@ Bir iframe görüntüler.
 * `amp-iframe`, ([aşağıda](#iframe-with-placeholder) açıklandığı gibi `placeholder` öğesini kullanan iframe'ler haricinde) dokümanın üst kısmına yakın görünmeyebilir. iframe en üst kısımdan 600 piksel uzaklıkta olmalı veya üst kısma kaydırıldığında, görüntü alanının ilk %75'inde yer almamalıdır (hangisi daha küçükse).
 * Varsayılan olarak, bir amp-iframe korumalı alanda yer alır ([ayrıntılara](#sandbox) bakın).
 * Bir `amp-iframe`, kaynakları yalnızca HTTPS aracılığıyla, bir veri URI'sından veya `srcdoc` özelliği ile istemelidir.
-* `sandbox` özelliğinde `allow-same-origin` değerine izin verilmedikçe, `amp-iframe` öğesi, kapsayıcıyla aynı kaynakta olmamalıdır. iframe'ler için izin verilen kaynaklarla ilgili daha fazla ayrıntı için ["iframe kaynak politikası"](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md) dokümanına bakın.
+* `sandbox` özelliğinde `allow-same-origin` değerine izin verilmedikçe, `amp-iframe` öğesi, kapsayıcıyla aynı kaynakta olmamalıdır. iframe'ler için izin verilen kaynaklarla ilgili daha fazla ayrıntı için ["iframe kaynak politikası"](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md) dokümanına bakın.
 
 *Örnek: Bir amp-iframe içine yerleştirilmiş Google Haritası*
 
@@ -237,4 +237,4 @@ Gerekli kullanıcı deneyimi AMP'deki diğer araçlarla mümkün değilse yani k
 
 # Doğrulama <a name="validation"></a>
 
-AMP doğrulayıcı spesifikasyonunda [amp-iframe kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-iframe/validator-amp-iframe.protoascii) bakın.
+AMP doğrulayıcı spesifikasyonunda [amp-iframe kurallarına](https://github.com/ampproject/amphtml/blob/main/extensions/amp-iframe/validator-amp-iframe.protoascii) bakın.

@@ -67,7 +67,7 @@ In ogni documento è possibile attivare gli esperimenti richiesti. A tale scopo,
 </head>
 ```
 
-In questo modo, i contenuti sperimentali attivati saranno disponibili a tutti i visitatori del documento. Tuttavia, non tutti gli esperimenti possono essere attivati a livello di documento. Per l'elenco completo degli esperimenti consentiti, consultare l'attributo `allow-doc-opt-in` nel file [`prod-config.json`](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/prod-config.json) del progetto. Nota: le attivazioni dei componenti sperimentali a livello di documento possono essere annullate dall'utente.
+In questo modo, i contenuti sperimentali attivati saranno disponibili a tutti i visitatori del documento. Tuttavia, non tutti gli esperimenti possono essere attivati a livello di documento. Per l'elenco completo degli esperimenti consentiti, consultare l'attributo `allow-doc-opt-in` nel file [`prod-config.json`](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/prod-config.json) del progetto. Nota: le attivazioni dei componenti sperimentali a livello di documento possono essere annullate dall'utente.
 
 ## Prove sull'origine
 

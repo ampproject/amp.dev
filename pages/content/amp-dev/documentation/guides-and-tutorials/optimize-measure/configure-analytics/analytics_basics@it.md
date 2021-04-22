@@ -58,7 +58,7 @@ inserisci qualcosa di simile alla seguente istruzione nel corpo della tua pagina
 In questo esempio,
 i dati di visualizzazione di pagina vengono inviati all’URL definito, unitamente a un numero casuale.
 La variabile `RANDOM` è una delle tante
-[variabili di sostituzione della piattaforma AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
+[variabili di sostituzione della piattaforma AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md).
 Per ulteriori informazioni sulla
 [Sostituzione delle variabili](analytics_basics.md#variable-substitution) vai qui.
 
@@ -119,7 +119,7 @@ Ottieni ulteriori informazioni su [richieste e attivazioni](deep_dive_analytics.
 
 Entrambi i componenti [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) e [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 consentono tutte le sostituzioni di variabili URL standard (vedi
-[Sostituzioni di variabili HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)).
+[Sostituzioni di variabili HTML AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)).
 Nel seguente esempio,
 la richiesta di visualizzazione di pagina viene inviata all’URL,
 unitamente all’attuale URL canonico del documento AMP, al relativo titolo e a un [ID client](analytics_basics.md#user-identification):
@@ -196,7 +196,7 @@ le pagine possono essere distribuite dal sito web di un publisher o tramite una 
 Per motivi di sicurezza,
 i browser possono limitare l’accesso ai cookie di un altro dominio e spesso agiscono in tal senso
 (vedi anche
-[Monitoraggio degli utenti da diversi punti di origine](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/cross-origin-tracking.md)).
+[Monitoraggio degli utenti da diversi punti di origine](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/cross-origin-tracking.md)).
 
 Per impostazione predefinita,
 AMP gestisce l’assegnazione di un ID client sia nel caso di accesso alla pagina dal sito web originale dell’editore che tramite una cache.
@@ -234,4 +234,4 @@ da una stringa codificata base64 casuale.
 
 Per ulteriori informazioni sulla sostituzione dell’ID client,
 compreso il metodo per aggiungere un ID di notifica utente opzionale, vai alla sezione
-[Variabili supportate in AMP Analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
+[Variabili supportate in AMP Analytics](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md).

@@ -271,7 +271,7 @@ El atributo [`auto-advance-after`](https://amp.dev/documentation/components/amp-
 
 ## Experiencia con equipos de escritorio
 
-El formato de las historias web es compatible con una [experiencia opcional para equipos de escritorio](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). Esto cambia la experiencia que se tiene con los equipos de escritorio hacia un modo de pantalla completa inmersivo, el cual reemplaza la experiencia predeterminada de tres paneles verticales y permite que los usuarios de dispositivos móviles la vean cuando su dispositivo se coloca horizontalmente.
+El formato de las historias web es compatible con una [experiencia opcional para equipos de escritorio](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). Esto cambia la experiencia que se tiene con los equipos de escritorio hacia un modo de pantalla completa inmersivo, el cual reemplaza la experiencia predeterminada de tres paneles verticales y permite que los usuarios de dispositivos móviles la vean cuando su dispositivo se coloca horizontalmente.
 
 Suscríbase para recibir ayuda con su equipo de escritorio, para ello agregue el atributo `supports-landscape` al componente `<amp-story>`.
 

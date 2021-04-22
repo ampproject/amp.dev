@@ -15,7 +15,7 @@ formats:
 
 تتوافق إعلانات قصة الويب مع المبادئ التالية:
 
-- إعلانات AMPHTML الصالحة: تتبع التصنيف الفني نفسه كالإعلانات التقليدية [AMPHTML ad](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md).
+- إعلانات AMPHTML الصالحة: تتبع التصنيف الفني نفسه كالإعلانات التقليدية [AMPHTML ad](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md).
 - المرئيات أولًا: حالة دعوة جذابة وظاهرة ومدفوعة بالسياق.
 - أصلية: تحتوي صفحة الإعلان على الأبعاد نفسها مثل صفحة القصة الأصلية.
 - نموذج التفاعل نفسه: يمكن للمستخدم المتابعة إلى الشاشة التالية تمامًا كما يفعل مع صفحة القصة الأصلية.

@@ -152,4 +152,4 @@ Peristiwa di bawah akan dipicu pada `section` dari `accordion`.
 
 ## Validasi <a name="validation"></a>
 
-Lihat [aturan amp-accordion](https://github.com/ampproject/amphtml/blob/master/extensions/amp-accordion/validator-amp-accordion.protoascii) dalam spesifikasi validator AMP.
+Lihat [aturan amp-accordion](https://github.com/ampproject/amphtml/blob/main/extensions/amp-accordion/validator-amp-accordion.protoascii) dalam spesifikasi validator AMP.

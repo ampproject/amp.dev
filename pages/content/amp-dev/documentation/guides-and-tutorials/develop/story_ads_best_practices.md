@@ -16,7 +16,7 @@ Current ad formats, such as banners and boxes, do not integrate well with the AM
 
 Web Story ads conform to the following principles:
 
-- Valid AMPHTML Ad: follow the same technical specification as a classic [AMPHTML ad](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md).
+- Valid AMPHTML Ad: follow the same technical specification as a classic [AMPHTML ad](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md).
 - Visual first: Inviting, bold, context-driven invitation state.
 - Native: The ad page has the same dimensions as an organic story page.
 - Same interaction model: User can continue to the next screen just like they would with an organic story page.

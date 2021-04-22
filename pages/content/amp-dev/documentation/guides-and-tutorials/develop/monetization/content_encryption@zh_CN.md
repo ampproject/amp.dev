@@ -34,7 +34,7 @@ AMP 文档将加密密钥存储在文档内部。这样可以防止加密文档�
 
 1. AMP 解析用户访问的文档中加密内容的密钥。{{ image('/static/img/docs/guides/cse/cse7.jpg', 115, 94, align='', layout='intrinsic', alt='公钥和对称密钥加密。') }}
 2. 提供付费内容时，AMP 在获取用户授权的过程中将加密的对称密钥从文档发送给授权者。{{ image('/static/img/docs/guides/cse/cse8.jpg', 150, 251, align='', layout='intrinsic', alt='AMP 在获取用户授权的过程中将加密的对称密钥从文档发送给授权者。') }}
-3. 授权者确定用户是否具有相应的权限。如果用户具有权限，授权者将使用公钥/私钥对中的私钥解密文档的对称密钥，然后将文档密钥返回给 [amp-subscriptions 组件逻辑](https://github.com/ampproject/amphtml/blob/master/extensions/amp-subscriptions/0.1/amp-subscriptions.js#L264)。{{ image('/static/img/docs/guides/cse/cse9.jpg', 237, 244, align='', layout='intrinsic', alt='AMP 逻辑解密密钥。') }}
+3. 授权者确定用户是否具有相应的权限。如果用户具有权限，授权者将使用公钥/私钥对中的私钥解密文档的对称密钥，然后将文档密钥返回给 [amp-subscriptions 组件逻辑](https://github.com/ampproject/amphtml/blob/main/extensions/amp-subscriptions/0.1/amp-subscriptions.js#L264)。{{ image('/static/img/docs/guides/cse/cse9.jpg', 237, 244, align='', layout='intrinsic', alt='AMP 逻辑解密密钥。') }}
 4. AMP 使用文档密钥解密付费内容，并向用户显示该内容！{{ image('/static/img/docs/guides/cse/cse10.jpg', 250, 319, align='', layout='intrinsic', alt='AMP 使用文档密钥解密付费内容，并向用户显示该内容。') }}
 
 # 实现步骤

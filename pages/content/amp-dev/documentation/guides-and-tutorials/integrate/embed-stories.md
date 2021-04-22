@@ -11,7 +11,7 @@ Web Stories are a full-screen immersive content experience that user’s tap or 
 
 # Include the amp-story-player
 
-Web Stories rely on the[ `amp-story-player` component ](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story-player/0.1/amp-story-player.md)to embed and play stories on AMP valid sites. Implement the `amp-story-player` by including the custom script in the head of the document.
+Web Stories rely on the[ `amp-story-player` component ](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story-player/0.1/amp-story-player.md)to embed and play stories on AMP valid sites. Implement the `amp-story-player` by including the custom script in the head of the document.
 
 `<script async custom-element="amp-story-player" src="https://cdn.ampproject.org/v0/amp-story-player-0.1.js"></script>`
 

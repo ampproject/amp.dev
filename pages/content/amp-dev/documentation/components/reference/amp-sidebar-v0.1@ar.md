@@ -76,7 +76,7 @@ $title: amp-sidebar
 
 *مثال:*
 
-في المثال التالي، نستخدم `amp-sidebar` لتضمين عناصر التنقل. ومع ذلك، يتم تعيين العنصر الثاني والرابع وNav Item 2 وNav Item 4 لمعرّف عنصر على الصفحة. وباستخدام السمة [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md)، يمكننا التمرير بسلاسة إلى العنصر باستخدام معرّف العنصر و`scrollTo`.
+في المثال التالي، نستخدم `amp-sidebar` لتضمين عناصر التنقل. ومع ذلك، يتم تعيين العنصر الثاني والرابع وNav Item 2 وNav Item 4 لمعرّف عنصر على الصفحة. وباستخدام السمة [`on`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/../../spec/amp-actions-and-events.md)، يمكننا التمرير بسلاسة إلى العنصر باستخدام معرّف العنصر و`scrollTo`.
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
@@ -93,7 +93,7 @@ $title: amp-sidebar
 
 ### فتح الشريط الجانبي وإغلاقه <a name="opening-and-closing-the-sidebar"></a>
 
-للتبديل أو فتح الشريط الجانبي أو إغلاقه عند النقر على العنصر، اضبط سمة الإجراء [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) على العنصر وحدّد أحد أساليب الإجراءات التالية:
+للتبديل أو فتح الشريط الجانبي أو إغلاقه عند النقر على العنصر، اضبط سمة الإجراء [`on`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) على العنصر وحدّد أحد أساليب الإجراءات التالية:
 
 <table>
   <tr>
@@ -335,7 +335,7 @@ $title: amp-sidebar
 
 ```
 
-يُرجى الاطّلاع على [ملف الأمثلة هذا](https://github.com/ampproject/amphtml/blob/master/examples/amp-sidebar-autoscroll.amp.html) لمعرفة أمثلة عملية للترميز.
+يُرجى الاطّلاع على [ملف الأمثلة هذا](https://github.com/ampproject/amphtml/blob/main/examples/amp-sidebar-autoscroll.amp.html) لمعرفة أمثلة عملية للترميز.
 
 ## اعتبارات تجربة المُستخدِم <a name="ux-considerations"></a>
 
@@ -345,4 +345,4 @@ $title: amp-sidebar
 
 ## التحقق <a name="validation"></a>
 
-اطِّلع على [قواعد amp-sidebar](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/validator-amp-sidebar.protoascii) في مواصفات مدقق AMP.
+اطِّلع على [قواعد amp-sidebar](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/validator-amp-sidebar.protoascii) في مواصفات مدقق AMP.

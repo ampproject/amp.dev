@@ -121,4 +121,4 @@ Funzionalità non supportate:
 
 ## Convalida <a name="validation"></a>
 
-Consulta le [regole amp-3d-gltf](https://github.com/ampproject/amphtml/blob/master/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii) nella specifica dello strumento di convalida AMP.
+Consulta le [regole amp-3d-gltf](https://github.com/ampproject/amphtml/blob/main/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii) nella specifica dello strumento di convalida AMP.

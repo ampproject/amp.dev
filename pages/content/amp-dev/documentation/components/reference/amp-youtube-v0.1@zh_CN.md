@@ -124,4 +124,4 @@ teaser:
 
 ## 验证 <a name="validation"></a>
 
-请参阅 AMP 验证工具规范中的 [amp-youtube 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube/validator-amp-youtube.protoascii)。
+请参阅 AMP 验证工具规范中的 [amp-youtube 规则](https://github.com/ampproject/amphtml/blob/main/extensions/amp-youtube/validator-amp-youtube.protoascii)。

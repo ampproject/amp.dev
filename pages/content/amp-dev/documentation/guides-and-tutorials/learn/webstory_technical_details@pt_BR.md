@@ -271,7 +271,7 @@ O atributo [`auto-advance-after`](https://amp.dev/documentation/components/amp-s
 
 ## Experiência desktop
 
-O formato de Histórias Web suporta uma [experiência desktop opcional](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). Isto altera a experiência desktop para um modo imersivo de tela cheia, substituindo a experiência default de três painéis em orientação vertical e permite que os usuários móveis vejam a história quando seus dispositivos são mantidos na posição horizontal.
+O formato de Histórias Web suporta uma [experiência desktop opcional](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). Isto altera a experiência desktop para um modo imersivo de tela cheia, substituindo a experiência default de três painéis em orientação vertical e permite que os usuários móveis vejam a história quando seus dispositivos são mantidos na posição horizontal.
 
 Ative o suporte a desktop adicionando o atributo `supports-landscape` ao componente `<amp-story>`.
 

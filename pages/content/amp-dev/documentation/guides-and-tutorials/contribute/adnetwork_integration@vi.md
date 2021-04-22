@@ -41,9 +41,9 @@ Ví dụ, máy chủ Amazon A9 có thể được gọi bằng cách sử dụng
 </amp-ad>
 ```
 
-Trong đoạn mã trên, thuộc tính `type` (loại) quy định mạng lưới quảng cáo, trong trường hợp này là A9. Thuộc tính `data-*` phụ thuộc vào các tham số được máy chủ Amazon A9 kỳ vọng để phục vụ một quảng cáo. Tập tin [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) hiển thị cách các tham số được ánh xạ để tạo một lệnh gọi JavaScript cho URL của máy chủ A9. Các tham số tương ứng được phê duyệt bởi thẻ [`amp-ad`](../../../documentation/components/reference/amp-ad.md) sẽ được chèn vào URL để trả về một quảng cáo.
+Trong đoạn mã trên, thuộc tính `type` (loại) quy định mạng lưới quảng cáo, trong trường hợp này là A9. Thuộc tính `data-*` phụ thuộc vào các tham số được máy chủ Amazon A9 kỳ vọng để phục vụ một quảng cáo. Tập tin [`a9.js`](https://github.com/ampproject/amphtml/blob/main/ads/a9.js) hiển thị cách các tham số được ánh xạ để tạo một lệnh gọi JavaScript cho URL của máy chủ A9. Các tham số tương ứng được phê duyệt bởi thẻ [`amp-ad`](../../../documentation/components/reference/amp-ad.md) sẽ được chèn vào URL để trả về một quảng cáo.
 
-Để được hướng dẫn về việc tạo một tích hợp [`amp-ad`](../../../documentation/components/reference/amp-ad.md), hãy xem [Tích hợp các mạng lưới quảng cáo vào AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+Để được hướng dẫn về việc tạo một tích hợp [`amp-ad`](../../../documentation/components/reference/amp-ad.md), hãy xem [Tích hợp các mạng lưới quảng cáo vào AMP](https://github.com/ampproject/amphtml/blob/main/ads/README.md).
 
 ## Tạo một tích hợp Fast Fetch <a name="creating-a-fast-fetch-integration"></a>
 
@@ -57,7 +57,7 @@ Trong đoạn mã trên, thuộc tính `type` (loại) quy định mạng lướ
 2. Cung cấp JavaScript để xây dựng yêu cầu quảng cáo (ví dụ triển khai: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) & [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
 3. Xác thực và ký kết cho quảng cáo thông qua một dịch vụ xác thực. [Cloudflare](https://blog.cloudflare.com/firebolt/) cung cấp một dịch vụ xác minh quảng cáo AMP, cho phép mọi nhà cung cấp quảng cáo độc lập có thể cung cấp các quảng cáo nhanh, nhẹ và cuốn hút hơn.
 
-Để được hướng dẫn về việc tạo tích hợp Fast Fetch, hãy xem [Hướng dẫn Triển khai Mạng lưới Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).
+Để được hướng dẫn về việc tạo tích hợp Fast Fetch, hãy xem [Hướng dẫn Triển khai Mạng lưới Fast Fetch](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md).
 
 ## Các tài nguyên liên quan
 

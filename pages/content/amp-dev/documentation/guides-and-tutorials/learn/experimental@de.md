@@ -67,7 +67,7 @@ Für Dokumente sind Opt-ins bei bestimmten Experimenten möglich. Platziere dazu
 </head>
 ```
 
-Auf diese Weise werden die angegebenen Experimente für alle Besucher des Dokuments aktiviert. Allerdings erlauben nicht alle Experimente eine Aktivierung auf Dokumentebene. Eine vollständige Liste mit zulässigen Experimenten findest du im Attribut `allow-doc-opt-in` in der Datei [`prod-config.json`](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/prod-config.json) des Projekts. Beachte, dass das Opt-in für das Dokument vom Opt-out der Benutzer außer Kraft gesetzt werden kann.
+Auf diese Weise werden die angegebenen Experimente für alle Besucher des Dokuments aktiviert. Allerdings erlauben nicht alle Experimente eine Aktivierung auf Dokumentebene. Eine vollständige Liste mit zulässigen Experimenten findest du im Attribut `allow-doc-opt-in` in der Datei [`prod-config.json`](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/prod-config.json) des Projekts. Beachte, dass das Opt-in für das Dokument vom Opt-out der Benutzer außer Kraft gesetzt werden kann.
 
 ## Origin Trials
 

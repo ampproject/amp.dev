@@ -19,7 +19,7 @@ AMP 애널리틱스를 사용하면 구성된 트리거에 따라 이벤트를 �
 
 [`amp-ad`](../../../components/reference/amp-ad.md) 확장 프로그램은 AMP 페이지에 디스플레이 광고를 게재하기 위한 것입니다. 90곳 이상의 광고 기술 제공업체에서 AMP를 지원합니다.  amp-ad 확장 프로그램을 사용하려면 [개발 개요](https://github.com/ampproject/amphtml/tree/master/ads#overview)를 읽어 보거나 amp-ad 확장 프로그램 지원과 관련된 [개발자 안내](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request)를 확인하세요. 여러분의 회사에서 제공하는 광고 기술에 따라 다음의 [통합 안내](ad-integration-guide.md)를 유용하게 참고할 수도 있습니다.
 
-90곳 이상의 광고 제공업체에서 [`amp-ad`](../../../components/reference/amp-ad.md)  같은 광고 관련 기능을 지원합니다. 다음은 광고 네트워크 [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md)의 샘플 [참여 요청](https://github.com/ampproject/amphtml/pull/2299)입니다.
+90곳 이상의 광고 제공업체에서 [`amp-ad`](../../../components/reference/amp-ad.md)  같은 광고 관련 기능을 지원합니다. 다음은 광고 네트워크 [Criteo](https://github.com/ampproject/amphtml/blob/main/ads/criteo.md)의 샘플 [참여 요청](https://github.com/ampproject/amphtml/pull/2299)입니다.
 
 ## 3. amp-call-tracking 확장 프로그램 사용
 
@@ -29,7 +29,7 @@ AMP 애널리틱스를 사용하면 구성된 트리거에 따라 이벤트를 �
 
 ## 4. 새로운 확장 프로그램/삽입 추가
 
-[`amp-analytics`](../../../components/reference/amp-analytics.md)  [`amp-pixel`](../../../components/reference/amp-pixel.md) 또는 [`amp-ad`](../../../components/reference/amp-ad.md)  사용하여 사용 사례를 지원할 수 없다면 [GitHub에 문제를 게시](https://github.com/ampproject/amphtml/issues/new)하여 다른 옵션을 논의해 보세요. Google에서는 다양한 회사에서 폭넓게 사용될 수 있는 신규 확장 프로그램을 환영합니다. 자세한 내용은 [확장된 구성요소로 참여하기](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-extended-components) 섹션을 확인하세요.
+[`amp-analytics`](../../../components/reference/amp-analytics.md)  [`amp-pixel`](../../../components/reference/amp-pixel.md) 또는 [`amp-ad`](../../../components/reference/amp-ad.md)  사용하여 사용 사례를 지원할 수 없다면 [GitHub에 문제를 게시](https://github.com/ampproject/amphtml/issues/new)하여 다른 옵션을 논의해 보세요. Google에서는 다양한 회사에서 폭넓게 사용될 수 있는 신규 확장 프로그램을 환영합니다. 자세한 내용은 [확장된 구성요소로 참여하기](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#contributing-extended-components) 섹션을 확인하세요.
 
 ## 5. amp-iframe 사용
 
@@ -37,11 +37,11 @@ AMP 애널리틱스를 사용하면 구성된 트리거에 따라 이벤트를 �
 
 ## 요약
 
-시작하려면 [타사 개발자 가이드라인](https://github.com/ampproject/amphtml/blob/master/3p/README.md)을 확인하세요. AMP 프로젝트에서는 이미 다양한 타사 사용 사례를 지원하고 있지만, 아직 개발되지 않은 웹 기능도 많습니다.
+시작하려면 [타사 개발자 가이드라인](https://github.com/ampproject/amphtml/blob/main/3p/README.md)을 확인하세요. AMP 프로젝트에서는 이미 다양한 타사 사용 사례를 지원하고 있지만, 아직 개발되지 않은 웹 기능도 많습니다.
 
 예를 들어, AMP에서는 아직 동적 통화 추적 사용 사례가 지원되지 않습니다. 하지만 이 사용 사례를 지원하기 위해 커뮤니티와 [적극적으로 협력](https://github.com/ampproject/amphtml/issues/5276)하고 있습니다.
 
-질문이나 제안할 내용이 있다면 언제든지 [문제를 제기](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#filing-issues)하거나 [논의 채널](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#discussion-channels) 중 하나를 통해 문의해 주시기 바랍니다.
+질문이나 제안할 내용이 있다면 언제든지 [문제를 제기](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#filing-issues)하거나 [논의 채널](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#discussion-channels) 중 하나를 통해 문의해 주시기 바랍니다.
 
 ## 추가 리소스
 

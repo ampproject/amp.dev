@@ -15,7 +15,7 @@ Gli attuali formati di annunci, come banner e caselle, non si integrano bene con
 
 Gli annunci delle storie Web devono rispettare i seguenti principi:
 
-- Validità annunci AMPHTML: seguono le stesse specifiche tecniche di un [annuncio AMPHTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md) classico.
+- Validità annunci AMPHTML: seguono le stesse specifiche tecniche di un [annuncio AMPHTML](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md) classico.
 - Impatto visivo: gli annunci devono essere accattivanti, attraenti e adeguati al contesto della storia.
 - Annunci nativi: le pagine degli annunci hanno le stesse dimensioni di una pagina della storia principale.
 - Stesso modello di interazione: l'utente può passare alla schermata successiva di un annuncio proprio come farebbe con una pagina della storia principale.

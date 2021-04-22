@@ -41,9 +41,9 @@ formats:
 </amp-ad>
 ```
 
-في الرمز أعلاه، تحدد السمة `type` شبكة الإعلانات، والتي تكون في هذه الحالة A9. فيما تعتمد سمات `data-*` على المعلمات التي يتوقعها خادم Amazon A9 لعرض الإعلان. ويوضح لك ملف [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) طريقة تعيين المعلمات لإجراء استدعاء JavaScript لعنوان URL لخادم A9. ويتم إلحاق المعلمات المقابلة التي تم تمريرها من خلال العلامة [`amp-ad`](../../../documentation/components/reference/amp-ad.md) بعنوان URL لإرجاع إعلان.
+في الرمز أعلاه، تحدد السمة `type` شبكة الإعلانات، والتي تكون في هذه الحالة A9. فيما تعتمد سمات `data-*` على المعلمات التي يتوقعها خادم Amazon A9 لعرض الإعلان. ويوضح لك ملف [`a9.js`](https://github.com/ampproject/amphtml/blob/main/ads/a9.js) طريقة تعيين المعلمات لإجراء استدعاء JavaScript لعنوان URL لخادم A9. ويتم إلحاق المعلمات المقابلة التي تم تمريرها من خلال العلامة [`amp-ad`](../../../documentation/components/reference/amp-ad.md) بعنوان URL لإرجاع إعلان.
 
-للحصول على الإرشادات حول طريقة إنشاء تكامل [`amp-ad`](../../../documentation/components/reference/amp-ad.md)، راجع [دمج شبكات الإعلانات في AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+للحصول على الإرشادات حول طريقة إنشاء تكامل [`amp-ad`](../../../documentation/components/reference/amp-ad.md)، راجع [دمج شبكات الإعلانات في AMP](https://github.com/ampproject/amphtml/blob/main/ads/README.md).
 
 ## إنشاء تكامل إحضار سريع <a name="creating-a-fast-fetch-integration"></a>
 
@@ -57,7 +57,7 @@ formats:
 2. Providing JavaScript to build the ad request (example implementations: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) & [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
 3. التحقق من صحة وتوقيع المواد الإبداعية من خلال خدمة التحقق من الصحة. إذ يوفر [Cloudflare](https://blog.cloudflare.com/firebolt/) خدمة التحقق من إعلان AMP، مما يمكِّن أي مزود إعلانات مستقل من تقديم إعلانات أسرع وأخف وأكثر جاذبية.
 
-للحصول على الإرشادات حول إنشاء تكامل الإحضار السريع، راجع [دليل تنفيذ شبكة الإحضار السريع](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).
+للحصول على الإرشادات حول إنشاء تكامل الإحضار السريع، راجع [دليل تنفيذ شبكة الإحضار السريع](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md).
 
 ## موارد ذات صلة
 
