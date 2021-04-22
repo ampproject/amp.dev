@@ -18,7 +18,7 @@ Do rozpoczęcia tego samouczka potrzebne są:
 
 #### Krok 1. Pobierz kod
 
-1. Pobierz skompresowany jako plik zip kod samouczka z poniższego adresu URL: <a href="https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip">https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip</a>
+1. Pobierz skompresowany jako plik zip kod samouczka z poniższego adresu URL: <a href="/static/files/tutorials/amp-pets-story.zip">/static/files/tutorials/amp-pets-story.zip</a>
 
 2. Wyodrębnij zawartość pliku zip. W katalogu **amp-pets-story** znajdują się pliki obrazów, wideo, audio i danych, których będziemy używać do utworzenia naszej relacji. Plik **pets.html** jest naszym punktem wyjścia dla relacji. Gotową wersję relacji można znaleźć w pliku [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html).
 

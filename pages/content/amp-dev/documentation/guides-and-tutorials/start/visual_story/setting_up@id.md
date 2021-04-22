@@ -18,7 +18,7 @@ Sebelum memulai tutorial ini, Anda akan memerlukan hal berikut ini:
 
 #### Langkah ke-1. Mengunduh kode
 
-1. Unduh kode untuk tutorial, yang dikompresi sebagai berkas zip dari URL berikut ini: <a href="https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip">https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip</a>
+1. Unduh kode untuk tutorial, yang dikompresi sebagai berkas zip dari URL berikut ini: <a href="/static/files/tutorials/amp-pets-story.zip">/static/files/tutorials/amp-pets-story.zip</a>
 
 2. Ekstrak konten berkas zip tersebut. Di direktori **amp-pets-story** ada berkas gambar, video, audio, dan data yang akan kita gunakan untuk membuat cerita. Berkas **pets.html** adalah titik awal kita untuk cerita ini. Cerita yang sudah jadi atau selesai dapat dilihat pada berkas [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html).
 
