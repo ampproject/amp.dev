@@ -18,7 +18,7 @@ author: bpaduch
 
 #### الخطوة 1. تنزيل الرمز
 
-1. قم بتنزيل الكود الخاص بالبرنامج التعليمي، والذي يتم ضغطه كملف مضغوط بتنسيق zip من عنوان URL التالي: <a href="https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip">https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip</a>
+1. قم بتنزيل الكود الخاص بالبرنامج التعليمي، والذي يتم ضغطه كملف مضغوط بتنسيق zip من عنوان URL التالي: <a href="/static/files/tutorials/amp-pets-story.zip">/static/files/tutorials/amp-pets-story.zip</a>
 
 2. استخرج محتويات الملف المضغوط، وفي الدليل **amp-pets-story** توجد ملفات الصور والفيديو والصوت والبيانات التي سنستخدمها لإنشاء قصتنا. ويُعد ملف **pets.html** نقطة البداية للقصة، فيما يمكن العثور على النسخة المكتملة من القصة في ملف [pets-complete.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html).
 
