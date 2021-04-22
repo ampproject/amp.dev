@@ -18,7 +18,7 @@ Dieses Tutorial setzt Folgendes voraus:
 
 #### Schritt 1. Lade den Code herunter
 
-1. Lade den Code für das Tutorial als ZIP Datei über die folgende URL herunter: <a href="https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip">https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip</a>
+1. Lade den Code für das Tutorial als ZIP Datei über die folgende URL herunter: <a href="/static/files/tutorials/amp-pets-story.zip">/static/files/tutorials/amp-pets-story.zip</a>
 
 2. Extrahiere den Inhalt der ZIP Datei. Im Verzeichnis **amp-pets-story** findest du die Bilder, Videos, Audiodateien und Daten, mit denen wir unsere Story erstellen. Die Datei **pets.html** ist unser Ausgangspunkt für die Story. Die fertige Version der Story findest du in der Datei [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html).
 
