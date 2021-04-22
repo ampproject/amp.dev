@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-debugging.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-debugging.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -50,7 +50,7 @@ Jeśli po wykonaniu tych czynności problem nie ustąpi, sprawdź poniższą tab
     <tr>
       <td rowspan="2">Nie są wyświetlane zasoby (np. czcionki i obrazy)</td>
       <td>Zasoby są serwowane z niewłaściwym typem MIME.</td>
-      <td>Określ <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">dopuszczalny typ MIME</a>.</td>
+      <td>Określ <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">dopuszczalny typ MIME</a>.</td>
     </tr>
     <tr>
       <td>Serwer buforujący AMP nie może uzyskać dostępu do zasobów.</td>

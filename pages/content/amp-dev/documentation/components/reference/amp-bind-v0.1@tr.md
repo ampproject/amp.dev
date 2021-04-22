@@ -218,7 +218,7 @@ Belirli etkinlikler tarafından tetiklendiğinde, `AMP.setState()`, `event` öze
 * Tanımlanmamış değişkenler ve sınırların dışındaki dizi dizini `undefined` değeri döndürmek veya hata bildirmek yerine `null` değerini döndürür.
 * Performans açısından şu anda tek bir ifade 50 öğe ile sınırlanmıştır. Sizin kullanım alanınız için bu sayı yeterli değilse lütfen [bize ulaşın](https://github.com/ampproject/amphtml/issues/new).
 
-Tam ifade dil bilgisi ve uygulaması, [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) ve [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js) içinde bulunabilir.
+Tam ifade dil bilgisi ve uygulaması, [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/main/extensions/amp-bind/0.1/bind-expr-impl.jison) ve [bind-expression.js](https://github.com/ampproject/amphtml/blob/main/extensions/amp-bind/0.1/bind-expression.js) içinde bulunabilir.
 
 # Örnekler <a name="examples"></a>
 
@@ -652,7 +652,7 @@ AMP, XMLHttpRequest öğelerini (XHR'ler) JSON uç noktalarında toplu olarak i�
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>Bu <code>amp-state</code> öğesini güncelleyecek olan JSON değerini döndürecek uzak uç noktanın URL'si. Bu bir CORS HTTP hizmeti olmalıdır.
-      <code>src</code> özelliği, tüm standart URL değişkeni değişikliklerine izin verir. Daha fazla bilgi için <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">Değişiklik Kılavuzu</a> dokümanına bakın.
+      <code>src</code> özelliği, tüm standart URL değişkeni değişikliklerine izin verir. Daha fazla bilgi için <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md">Değişiklik Kılavuzu</a> dokümanına bakın.
           [tip type="important"]
         Uç nokta, <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">AMP'de CORS İstekleri</a> spesifikasyonunda belirtilen gereksinimleri uygulamalıdır.
         [/tip]</td>

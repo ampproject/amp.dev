@@ -78,7 +78,7 @@ Ta hãy xét kĩ đoạn mã này theo từng bước:
 
 5. [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
 
-6. Quy định thẻ `<script>` cho các [phần mở rộng làm trễ render](https://github.com/ampproject/amphtml/blob/master/src/render-delaying-services.js) (ví dụ, [`amp-experiment`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md) và [`amp-story`](../../../documentation/components/reference/amp-story.md)
+6. Quy định thẻ `<script>` cho các [phần mở rộng làm trễ render](https://github.com/ampproject/amphtml/blob/main/src/render-delaying-services.js) (ví dụ, [`amp-experiment`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md) và [`amp-story`](../../../documentation/components/reference/amp-story.md)
 
 7. Quy định thẻ `<script>` cho phần mở rộng còn lại (ví dụ, [`amp-bind`](../../../documentation/components/reference/amp-bind.md) ...). Các phần mở rộng này không làm chậm việc render và do đó không cần được tải sẵn bởi chúng có thể tiêu tốn băng thông quan trọng cho lần render đầu tiên.
 

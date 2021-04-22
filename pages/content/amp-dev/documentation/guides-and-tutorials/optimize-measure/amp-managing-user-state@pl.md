@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -110,7 +110,7 @@ Podobnie jak w przypadku serwera buforującego AMP, domena przeglądarki AMP ró
 
 ### Wiele kontekstów wymaga zarządzania wieloma stanami <a name="multiple-contexts-means-multiple-state-management"></a>
 
-Wydawcy muszą być przygotowani do zarządzania stanem użytkownika oddzielnie w każdym kontekście wyświetlania. Funkcja AMP [Client ID](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id), która do podtrzymania stanu wykorzystuje pliki cookie lub magazyn lokalny, zapewnia niezbędną obsługę stron AMP, aby mieć stabilny i pseudonimiczny identyfikator użytkownika. Z punktu widzenia implementacji wykorzystywane są albo pliki cookie, albo magazyn lokalny, a AMP podejmuje decyzję, którego z nich użyć w zależności od kontekstu wyświetlania. Na ten wybór ma wpływ techniczna możliwość zarządzania tym stanem, skalowana do setek lub tysięcy wydawców.
+Wydawcy muszą być przygotowani do zarządzania stanem użytkownika oddzielnie w każdym kontekście wyświetlania. Funkcja AMP [Client ID](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#client-id), która do podtrzymania stanu wykorzystuje pliki cookie lub magazyn lokalny, zapewnia niezbędną obsługę stron AMP, aby mieć stabilny i pseudonimiczny identyfikator użytkownika. Z punktu widzenia implementacji wykorzystywane są albo pliki cookie, albo magazyn lokalny, a AMP podejmuje decyzję, którego z nich użyć w zależności od kontekstu wyświetlania. Na ten wybór ma wpływ techniczna możliwość zarządzania tym stanem, skalowana do setek lub tysięcy wydawców.
 
 Wydawcy stron AMP mogą jednak łatwo skończyć (nieświadomie), projektując obsługę użytkowników, wymagającą wielu kontekstów. Powróćmy do naszego wcześniej opisanego przykładu koszyka zakupów i dodajmy więcej szczegółów, aby tworzyć pełną **historię użytkownika**:
 
@@ -242,7 +242,7 @@ Na stronach AMP skonstruuj pakiet ping składnika amp-analytics, zawierający Cl
 
 Należy zwrócić uwagę na fakt, że parametr przekazywany do podstawienia identyfikatora klienta, `${clientId(uid)`, to `uid`. Był to świadomy wybór, który dopasowuje nazwę pliku cookie użytego w źródle jak opisano w [Zadaniu 1](#task1). Aby zapewnić bezproblemową integrację, należy zastosować tę samą technikę.
 
-Jeśli chodzi o resztę implementacji składnika amp-analytics, zapoznaj się z dokumentacją [konfiguracji składnika amp-analytics](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/), aby dowiedzieć się więcej o tym, jak skonfigurować żądania amp-analytics lub zmodyfikować te od dostawcy usług analityki. Pakiet ping można dodatkowo modyfikować w celu transportowania dodatkowych danych, które można zdefiniować bezpośrednio lub skorzystać z innych [podstawień AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
+Jeśli chodzi o resztę implementacji składnika amp-analytics, zapoznaj się z dokumentacją [konfiguracji składnika amp-analytics](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/), aby dowiedzieć się więcej o tym, jak skonfigurować żądania amp-analytics lub zmodyfikować te od dostawcy usług analityki. Pakiet ping można dodatkowo modyfikować w celu transportowania dodatkowych danych, które można zdefiniować bezpośrednio lub skorzystać z innych [podstawień AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md).
 
 > **Warto wiedzieć:**
 > Dlaczego użyliśmy nazwy `uid` dla parametru przekazywanego do funkcji Client ID? Parametr, który przyjmuje podstawienie `clientId(...)` służy do określenia zakresu. Właściwie można używać funkcji Client ID w wielu przypadkach użycia i w rezultacie generować wiele identyfikatorów klienta. Parametr rozróżnia te przypadki użycia i dlatego używasz go do określenia przypadku użycia, do którego potrzebujesz identyfikatora klienta. Możesz na przykład wysyłać różne identyfikatory do stron trzecich, takich jak reklamodawcy i używać parametru „scope”, aby to osiągnąć.
@@ -383,7 +383,7 @@ W tym zadaniu zajmiemy się dodatkową optymalizacją, która pozwala użytkowni
 
 ##### Stosowanie funkcji podstawiania <a name="using-substitution-features"></a>
 
-W naszym podejściu wykorzystamy dwa typy [podstawień zmiennych AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md).
+W naszym podejściu wykorzystamy dwa typy [podstawień zmiennych AMP](https://github.com/ampproject/amphtml/blob/main/spec/./amp-var-substitutions.md).
 
 **Aby zaktualizować linki wychodzące w celu użycia zastępczego identyfikatora Client ID:** zdefiniuj nowy parametr zapytania, `ref_id` (identyfikator skierowania), który znajdzie się w adresie URL i wskaże **identyfikator kontekstu źródłowego** użytkownika. Ustaw ten parametr zapytania na wartość równą wartości podstawienia Client ID AMP:
 
@@ -594,7 +594,7 @@ Chcesz mieć pewność, że przetwarzasz tylko wystąpienia `$amp_client_id` i u
 
 Na stronie bez AMP sprawdź `document.referrer` bezpośrednio po stronie klienta lub przekaż wartość w ramach analitycznych pakietów ping, aby móc wykonać walidację po stronie serwera. Jeśli możesz zaufać wartości strony odsyłającej, możesz zaakceptować i przetworzyć wartości pochodzące z adresu URL strony docelowej, takie jak `orig_user_id` w powyższym przykładzie.
 
-Na stronie AMP użyj podstawianej zmiennej [strony odsyłającej dokumentu](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#document-referrer), aby przekazać wartość strony odsyłającej jako część analitycznego pakietu ping. Przetwarzanie po stronie serwera jest jedyną dostępną opcją. Dla ilustracji, oto analityczny pakiet ping, który strona docelowa może wysłać, zawierający (1) wartość Client ID bieżącej strony, (2) wartość przekazywaną przez adres URL, ustawioną jako wartość Client ID na stronie odsyłającej, oraz (3) samą informację o stronie odsyłającej, aby zweryfikować wartość (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
+Na stronie AMP użyj podstawianej zmiennej [strony odsyłającej dokumentu](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#document-referrer), aby przekazać wartość strony odsyłającej jako część analitycznego pakietu ping. Przetwarzanie po stronie serwera jest jedyną dostępną opcją. Dla ilustracji, oto analityczny pakiet ping, który strona docelowa może wysłać, zawierający (1) wartość Client ID bieżącej strony, (2) wartość przekazywaną przez adres URL, ustawioną jako wartość Client ID na stronie odsyłającej, oraz (3) samą informację o stronie odsyłającej, aby zweryfikować wartość (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
 
 Jeśli nie możesz ufać stronie odsyłającej, odrzuć wszelkie wartości podane za pomocą parametrów adresu URL i nie używaj ich.
 

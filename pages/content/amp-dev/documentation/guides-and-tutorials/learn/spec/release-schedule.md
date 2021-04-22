@@ -11,7 +11,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/contributing/release-schedule.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/contributing/release-schedule.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -38,7 +38,7 @@ have a look and request a pull request there.
 
 A new release of AMP is pushed to all AMP pages every week on Tuesday. **Once a change in AMP is merged into the main branch of the amphtml repository, it will typically take 1-2 weeks for the change to be live for all users.**
 
-The [AMPHTML Validator](https://github.com/ampproject/amphtml/tree/main/validator#amp-html--validator) has it's own [Release Schedule](https://github.com/ampproject/amphtml/blob/master/contributing/validator-release-schedule.md)
+The [AMPHTML Validator](https://github.com/ampproject/amphtml/tree/main/validator#amp-html--validator) has it's own [Release Schedule](https://github.com/ampproject/amphtml/blob/main/contributing/validator-release-schedule.md)
 
 ## Release Channels <a name="release-channels"></a>
 
@@ -52,7 +52,7 @@ The **nightly** release channel is updated (as its name indicates) every weeknig
 
 The nightly release provides a mechanism to detect and resolve issues quickly and before they reach the more traffic-heavy _weekly_ release channels. It also serves to reduce the number of users affected by newly introduced issues.
 
-It is possible to opt into the **nightly** channel, to test pull requests that were merged in the past few days. See the [opt-in section](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md#opting-in-to-pre-release-channels) in [DEVELOPING.md] for details.
+It is possible to opt into the **nightly** channel, to test pull requests that were merged in the past few days. See the [opt-in section](https://github.com/ampproject/amphtml/blob/main/contributing/DEVELOPING.md#opting-in-to-pre-release-channels) in [DEVELOPING.md] for details.
 
 ### Weekly <a name="weekly"></a>
 
@@ -66,7 +66,7 @@ The **stable** release channel is built with the _production_ configuration and 
 
 The _Beta_ and _Experimental Channels_ are pre-release candidates for the next Stable release of AMP. Every Tuesday (except for weeks where there is a [release freeze](#release-freezes)), last week's **nightly** is promoted to the developer opt-in channels for **beta** and **experimental**. Following a 1-day period where we verify that no feature or performance regressions were introduced in these channels, we promote this release on Wednesday to a small portion of traffic. This same release is then promoted to the **stable** channel on Tuesday the following week.
 
-It is possible to opt into these channels. See the [opt-in section](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md#opting-in-to-pre-release-channels) in [DEVELOPING.md] for details.
+It is possible to opt into these channels. See the [opt-in section](https://github.com/ampproject/amphtml/blob/main/contributing/DEVELOPING.md#opting-in-to-pre-release-channels) in [DEVELOPING.md] for details.
 
 Opting into the _Beta Channel_ is intended for:
 

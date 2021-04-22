@@ -15,7 +15,7 @@ Web ストーリーは、読者にコンテンツへの没入感を与える、�
 
 Web ストーリー広告は、次の原則に従っています。
 
-- 有効な AMPHTML 広告: 従来の [AMPHTML 広告](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md)と同じ技術仕様に従う。
+- 有効な AMPHTML 広告: 従来の [AMPHTML 広告](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md)と同じ技術仕様に従う。
 - 視覚優先: 魅力的で迫力のある、コンテキスト主導型の招待ステート。
 - ネイティブ: 広告ページの寸法はオーガニックストーリーページと同じである。
 - 同一のインタラクションモデル: ユーザーは、オーガニックストーリーページと同じように次の画面に進むことができる。

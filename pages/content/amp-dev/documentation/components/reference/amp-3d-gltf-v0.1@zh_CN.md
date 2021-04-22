@@ -119,4 +119,4 @@ limitations under the License.
 
 ## 验证 <a name="validation"></a>
 
-请参阅 AMP 验证工具规范中的 [amp-3d-gltf 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii)。
+请参阅 AMP 验证工具规范中的 [amp-3d-gltf 规则](https://github.com/ampproject/amphtml/blob/main/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii)。

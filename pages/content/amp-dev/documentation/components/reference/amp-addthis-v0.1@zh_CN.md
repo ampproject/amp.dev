@@ -136,7 +136,7 @@ AddThis 受到超过 1500 万个网站（拥有超过 20 亿唯一身份用户�
 
 ## 验证 <a name="validation"></a>
 
-请参阅 AMP 验证工具规范中的 [amp-addthis 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-addthis/validator-amp-addthis.protoascii)。
+请参阅 AMP 验证工具规范中的 [amp-addthis 规则](https://github.com/ampproject/amphtml/blob/main/extensions/amp-addthis/validator-amp-addthis.protoascii)。
 
 ## 隐私权政策 <a name="privacy"></a>
 

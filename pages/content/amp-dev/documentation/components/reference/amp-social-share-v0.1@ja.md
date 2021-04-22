@@ -256,7 +256,7 @@ amp-social-share[type="twitter"] {
 
 ## 変数の置換 <a name="variable-substitution"></a>
 
-`<amp-social-share>` 要素内で [AMP 変数グローバル置換](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)を使用することができます。以下の例の場合、`TITLE` がページタイトルに置換され、`CANONICAL_URL` がドキュメントの正規 URL に置換されます。
+`<amp-social-share>` 要素内で [AMP 変数グローバル置換](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)を使用することができます。以下の例の場合、`TITLE` がページタイトルに置換され、`CANONICAL_URL` がドキュメントの正規 URL に置換されます。
 
 ```html
 <amp-social-share type="whatsapp"
@@ -266,4 +266,4 @@ amp-social-share[type="twitter"] {
 
 ## 検証 <a name="validation"></a>
 
-AMP 検証ツール仕様の [amp-social-share ルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-social-share/validator-amp-social-share.protoascii)をご覧ください。
+AMP 検証ツール仕様の [amp-social-share ルール](https://github.com/ampproject/amphtml/blob/main/extensions/amp-social-share/validator-amp-social-share.protoascii)をご覧ください。

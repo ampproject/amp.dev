@@ -28,7 +28,7 @@ Kami berharap Anda akan terus menjadi peserta di komunitas sumber terbuka (open 
 
 #### Membantu terkait kode
 
-Untuk memulai kontribusi kode untuk Proyek AMP, silakan baca [berkas BERKONTRIBUSI](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md), yang mencakup detail proses terkait fitur atau perbaikan bug, mulai dari konsep hingga penyerahan, dan cara Anda dapat berpartisipasi dalam diskusi dan desain teknis. Jika Anda baru mengenal sumber terbuka, kami memiliki beberapa [kiat untuk memulai](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-code).
+Untuk memulai kontribusi kode untuk Proyek AMP, silakan baca [berkas BERKONTRIBUSI](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md), yang mencakup detail proses terkait fitur atau perbaikan bug, mulai dari konsep hingga penyerahan, dan cara Anda dapat berpartisipasi dalam diskusi dan desain teknis. Jika Anda baru mengenal sumber terbuka, kami memiliki beberapa [kiat untuk memulai](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#contributing-code).
 
 ### Memberikan kontribusi konten untuk AMP
 

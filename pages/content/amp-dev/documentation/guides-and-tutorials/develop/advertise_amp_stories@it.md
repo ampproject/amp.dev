@@ -73,6 +73,6 @@ Server di annunci che attualmente supportano gli annunci nelle storie web:
 
 Se sei un inserzionista interessato a pubblicare i tuoi annunci all'interno di storie web, ti preghiamo di [contattarci](mailto:story-ads-wg@google.com) per ulteriori informazioni.
 
-Gli editori possono anche inserire annunci personalizzati se impostano un proprio server annunci. [Il processo dettagliato è disponibile qui](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
+Gli editori possono anche inserire annunci personalizzati se impostano un proprio server annunci. [Il processo dettagliato è disponibile qui](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
 
 [tip type="note"] Leggere la pagina [Traffico di elementi creativi personalizzati nelle storie Web](https://support.google.com/admanager/answer/9038178) per informazioni sul caricamento di annunci su Google Ad Manager e consultare la nostra guida sulle [procedure consigliate per la creazione di un annuncio in storie AMP](story_ads_best_practices.md).[/tip]

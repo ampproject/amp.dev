@@ -31,13 +31,13 @@ AMP 缓存是一种基于代理的内容传送网络 (CDN)，用于传送有效�
 - [Google AMP 缓存](https://developers.google.com/amp/cache/)
 - [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
-AMP 是一个开放式生态系统，AMP 项目会积极地推动开发更多 AMP 缓存。要想了解如何创建 AMP 缓存，请参阅 [AMP 缓存指南](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)。
+AMP 是一个开放式生态系统，AMP 项目会积极地推动开发更多 AMP 缓存。要想了解如何创建 AMP 缓存，请参阅 [AMP 缓存指南](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md)。
 
 ## 我该如何选择 AMP 缓存？
 
 AMP 缓存不是由身为发布商的您来选择的 - 所要使用的 AMP 缓存（如果有）*实际上是由与您的内容关联的平台*选择的。
 
-这与典型模型相反；在典型模型中，内容传送由发布商负责。但是，该模型不仅能让平台为其用户提供可预测的加载性能，还能给平台带来诸多便利，例如在 AMP 内容预呈现阶段确保满足安全性和隐私性恒定不变的要求。要了解关于创建 AMP 缓存的严格指南，请参阅 [AMP 缓存指南](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)。
+这与典型模型相反；在典型模型中，内容传送由发布商负责。但是，该模型不仅能让平台为其用户提供可预测的加载性能，还能给平台带来诸多便利，例如在 AMP 内容预呈现阶段确保满足安全性和隐私性恒定不变的要求。要了解关于创建 AMP 缓存的严格指南，请参阅 [AMP 缓存指南](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md)。
 
 ## 我能否选择停用缓存？
 
@@ -67,6 +67,6 @@ AMP 缓存不是由身为发布商的您来选择的 - 所要使用的 AMP 缓�
 
 ## 其他资源
 
-- [AMP 项目的 AMP 缓存指南](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)
+- [AMP 项目的 AMP 缓存指南](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md)
 - [Google AMP 缓存概览](https://developers.google.com/amp/cache/overview)
 - [Bing AMP Cache Documentation](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)

@@ -42,6 +42,6 @@ formats:
 
 - **AMP のロードマップを確認する。**更新や機能に関するロードマップは [roadmap](../../../community/roadmap.html) で確認できます。
 
-- **参加する。**ソースコードの提供、バグ報告、フィードバックは [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md) からお願いします。AMP に関する意見交換は [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html) で行っています。
+- **参加する。**ソースコードの提供、バグ報告、フィードバックは [GitHub](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md) からお願いします。AMP に関する意見交換は [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html) で行っています。
 
 - **AMP について学ぶ。**AMP コンポーネントの使用方法は [AMP サンプル](../../../documentation/examples/index.html)を参考にしてください。

@@ -23,7 +23,7 @@ limitations under the License.
 لأي أخطاء تتعلق بالتحقق من الصحة قد تصادفها عند
 [التحقق من صحة صفحات AMP](validate_amp.md) وإصلاح هذه الأخطاء.
 للحصول على نظرة عامة حول أخطاء التحقق من الصحة،
-راجع [مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+راجع [مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 ## أخطاء علامات وسمات HTML لصفحات AMP
 
@@ -56,7 +56,7 @@ limitations under the License.
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-تشتمل هذه العلامات الإلزامية على حقل `mandatory: true` في [مواصفات أداة التحقق من صفحة صفحات AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)؛
+تشتمل هذه العلامات الإلزامية على حقل `mandatory: true` في [مواصفات أداة التحقق من صفحة صفحات AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)؛
 كما تتم الإشارة إليها أيضًا في [مواصفات صفحات AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md).
 
 ### العلامة المطلوبة من قبل علامة أخرى غير موجودة
@@ -124,7 +124,7 @@ limitations under the License.
 </table>
 
 السمات الإلزامية لعلامات AMP محددة ضمن
-[مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+[مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 ابحث فحسب عن العلامة،
 واعرض السمات المدرجة، ثم راجع `mandatory: true`.
 يتم أيضًا إدراج السمات الإلزامية لكل علامة من علامات AMP
@@ -178,7 +178,7 @@ limitations under the License.
 السمات مدرجة في القائمة البيضاء، وبالتالي ليست هناك قائمة محددة تضم جميع السمات الغير مسموح بها.
 لمراجعة السمات المتوافقة لكل علامة محددة،
 ابحث عن علامة HTML، ثم `attrs`
-في [مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+في [مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 بالإضافة إلى قائمة بيضاء بالسمات المحددة لكل علامة،
 يمكن لجميع علامات AMP استخدام أي من السمات المدرجة بالقائمة البيضاء ضمن `$GLOBAL_ATTRS`؛
@@ -250,7 +250,7 @@ limitations under the License.
 للتحقق من صحة قواعد CSS AMP الأساسية.
 
 في ما يلي قائمة بيانات CSS المدرجة بالقائمة السوداء
-(راجع أيضًا <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">`disallowed_cdata_regex` في مواصفات أداة التحقق من صحة صفحات AMP</a>):
+(راجع أيضًا <a href="https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii">`disallowed_cdata_regex` في مواصفات أداة التحقق من صحة صفحات AMP</a>):
 
 * ‎`"\\.i?-amp-"` ("CSS -amp- class name prefix"‎)‎
 * `"!important"`
@@ -540,7 +540,7 @@ limitations under the License.
 </table>
 
 يتم تحديد التوابع الإلزامية في
-[مواصفات أداة التحقق من صفحات AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)
+[مواصفات أداة التحقق من صفحات AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)
 على النحو `mandatory_ancestor`.
 
 يحدث الخطأ عندما تفتقد العلامات التالية
@@ -631,7 +631,7 @@ limitations under the License.
 
 لكل علامة من علامات AMP قائمة من `supported_layouts`،
 كما هو محدد في
-[مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+[مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 وستعرض أداة التحقق من الصحة الأخطاء المتعلقة بالتنسيقات غير المتوافقة،
 كما ستراجع قواعد التحقق من الصحة المرتبطة بالتنسيق مسبق التحديد.
 
@@ -724,7 +724,7 @@ limitations under the License.
 يحدث هذا الخطأ عند عدم تحديد تنسيق لعلامة AMP،
 وعندما لا يكون التنسيق الضمني متوافقًا (بناءً على العرض والارتفاع والأحجام).
 راجع قيم `supported_layout` للعلامة
-في [مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+في [مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 يتم تحديد سلوك التنسيق الفعلي عن طريق السمة `layout`.
 لمزيد من المعلومات حول طريقة عمل التنسيق،
@@ -782,7 +782,7 @@ limitations under the License.
 يحدث هذا الخطأ عندما لا يكون التنسيق المحدد
 للعلامة متوافقًا.
 راجع قيم `supported_layout` للعلامة
-في [مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+في [مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 يتم تحديد سلوك التنسيق الفعلي عن طريق السمة `layout`.
 لمزيد من المعلومات حول طريقة عمل التنسيق،
@@ -986,6 +986,6 @@ limitations under the License.
 
 حدّد السمات الموقوفة لكل علامة من علامات AMP
 من  خلال البحث عن `deprecation` في
-[مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+[مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 </body>
 </html>

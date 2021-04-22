@@ -75,7 +75,7 @@ Namun, atribut opsional yang menerima kueri media dapat digunakan untuk menampil
 
 *Contoh:*
 
-Pada contoh berikut, kami menggunakan `amp-sidebar` untuk memuat item navigasi. Namun, item kedua dan keempat, Nav Item 2 dan Nav Item 4, ditetapkan ke ID elemen yang ada di halaman. Dengan menggunakan atribut [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md), kami dapat men-scroll dengan lancar ke elemen tersebut, menggunakan ID elemen dan `scrollTo`.
+Pada contoh berikut, kami menggunakan `amp-sidebar` untuk memuat item navigasi. Namun, item kedua dan keempat, Nav Item 2 dan Nav Item 4, ditetapkan ke ID elemen yang ada di halaman. Dengan menggunakan atribut [`on`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/../../spec/amp-actions-and-events.md), kami dapat men-scroll dengan lancar ke elemen tersebut, menggunakan ID elemen dan `scrollTo`.
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
@@ -92,7 +92,7 @@ Pada contoh berikut, kami menggunakan `amp-sidebar` untuk memuat item navigasi. 
 
 ### Membuka dan menutup sidebar <a name="opening-and-closing-the-sidebar"></a>
 
-Untuk beralih, membuka, atau menutup sidebar saat elemen di-tap atau diklik, tetapkan atribut tindakan [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) pada elemen tersebut, dan tentukan salah satu metode tindakan berikut:
+Untuk beralih, membuka, atau menutup sidebar saat elemen di-tap atau diklik, tetapkan atribut tindakan [`on`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) pada elemen tersebut, dan tentukan salah satu metode tindakan berikut:
 
 <table>
   <tr>
@@ -333,7 +333,7 @@ Saat menggunakan fitur `toolbar`, `autoscroll` hanya berfungsi jika elemen `<nav
 
 ```
 
-Lihat [file contoh ini](https://github.com/ampproject/amphtml/blob/master/examples/amp-sidebar-autoscroll.amp.html) untuk kode contoh yang berfungsi.
+Lihat [file contoh ini](https://github.com/ampproject/amphtml/blob/main/examples/amp-sidebar-autoscroll.amp.html) untuk kode contoh yang berfungsi.
 
 ## Pertimbangan UX <a name="ux-considerations"></a>
 
@@ -343,4 +343,4 @@ Karena alasan ini, sebaiknya kemampuan untuk membuka sidebar tidak ditempatkan d
 
 ## Validasi <a name="validation"></a>
 
-Lihat [aturan amp-sidebar](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/validator-amp-sidebar.protoascii) dalam spesifikasi validator AMP.
+Lihat [aturan amp-sidebar](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/validator-amp-sidebar.protoascii) dalam spesifikasi validator AMP.

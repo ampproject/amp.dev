@@ -82,7 +82,7 @@ AMP4ADS クリエイティブ内で使用されるこの属性は、検証後の
 
 ## 置換 <a name="substitutions"></a>
 
-`amp-pixel` では、標準的な URL 変数置換がすべて許可されています。詳細については、[置換ガイド](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md)をご覧ください。
+`amp-pixel` では、標準的な URL 変数置換がすべて許可されています。詳細については、[置換ガイド](https://github.com/ampproject/amphtml/blob/main/extensions/spec/amp-var-substitutions.md)をご覧ください。
 
 以下の例の場合、インプレッションごとに RANDOM 値がランダムに生成され、`https://foo.com/pixel?0.8390278471201` といった URL に対してリクエストが作成されます。
 
@@ -97,4 +97,4 @@ AMP4ADS クリエイティブ内で使用されるこの属性は、検証後の
 
 ## 検証 <a name="validation"></a>
 
-AMP 検証ツール仕様の [amp-pixel ルール](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)をご覧ください。
+AMP 検証ツール仕様の [amp-pixel ルール](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)をご覧ください。

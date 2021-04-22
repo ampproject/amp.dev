@@ -200,4 +200,4 @@ AMP düzen sistemi, bir resmin en boy oranının resim getirilmeden önce bilinm
 
 # Doğrulama <a name="validation"></a>
 
-AMP doğrulayıcı spesifikasyonundaki [amp-img kurallarına](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) bakın.
+AMP doğrulayıcı spesifikasyonundaki [amp-img kurallarına](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) bakın.

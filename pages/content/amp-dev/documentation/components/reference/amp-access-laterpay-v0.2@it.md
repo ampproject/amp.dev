@@ -345,4 +345,4 @@ Puoi trovare un esempio più completo su [https://ampexample.laterpay.net/dual-a
 
 ## Convalida <a name="validation"></a>
 
-Consulta le [regole relative ad amp-access-laterpay](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii) nella specifica dello strumento di convalida AMP.
+Consulta le [regole relative ad amp-access-laterpay](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii) nella specifica dello strumento di convalida AMP.

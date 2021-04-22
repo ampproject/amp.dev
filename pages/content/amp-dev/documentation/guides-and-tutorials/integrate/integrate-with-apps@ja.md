@@ -107,7 +107,7 @@ Google では、AMP URL API を提供して、リストに指定された URL �
 
 ## AMP ビューアの実装
 
-AMP ランタイムにはビューア API が用意されており、この API により、AMP ランタイムと ビューア間でメッセージを送受信するためのプロトコルが提供されます。このプロトコルにより、 AMP ドキュメントのプリレンダリング、スワイプによる記事間の移動、AMP ランタイムの 計装を管理できます。AMP ビューア API の詳細については、 [AMP ビューアと AMP ページの接続](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) ガイドをご覧ください。[ウェブ](https://github.com/ampproject/amp-viewer/blob/master/mobile-web/README.md) および [iOS](https://github.com/ampproject/amp-viewer/tree/master/ios) 用のビューアの実装は、 [GitHub](https://github.com/ampproject/amp-viewer) で入手できます。Android 用 ビューアはまだ利用できません。[この回答](https://stackoverflow.com/questions/44856759/does-we-need-to-change-anything-in-usual-webpage-loader-for-loading-an-amp-acce/44869038#44869038) （Stack Overflow のサイト）を参照して、AMP ページを表示するための WebView の最適な構成方法をご確認ください。
+AMP ランタイムにはビューア API が用意されており、この API により、AMP ランタイムと ビューア間でメッセージを送受信するためのプロトコルが提供されます。このプロトコルにより、 AMP ドキュメントのプリレンダリング、スワイプによる記事間の移動、AMP ランタイムの 計装を管理できます。AMP ビューア API の詳細については、 [AMP ビューアと AMP ページの接続](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) ガイドをご覧ください。[ウェブ](https://github.com/ampproject/amp-viewer/blob/master/mobile-web/README.md) および [iOS](https://github.com/ampproject/amp-viewer/tree/master/ios) 用のビューアの実装は、 [GitHub](https://github.com/ampproject/amp-viewer) で入手できます。Android 用 ビューアはまだ利用できません。[この回答](https://stackoverflow.com/questions/44856759/does-we-need-to-change-anything-in-usual-webpage-loader-for-loading-an-amp-acce/44869038#44869038) （Stack Overflow のサイト）を参照して、AMP ページを表示するための WebView の最適な構成方法をご確認ください。
 
 ここでは、AMP ビューアを実装する際の一般的なおすすめの方法をご紹介します。
 

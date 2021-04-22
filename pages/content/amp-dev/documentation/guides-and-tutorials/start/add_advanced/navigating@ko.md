@@ -85,7 +85,7 @@ article {
 </header>
 ```
 
-상단 코드에서는 [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) 요소의 [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) 액션 속성으로 사이드바를 `toggle` 처리합니다. 이 요소는 `sidebar1` ID로 표시되어 있습니다. 그럼 이제 사이드바를 추가해 보겠습니다.
+상단 코드에서는 [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) 요소의 [`on`](https://github.com/ampproject/amphtml/blob/main/spec/amp-actions-and-events.md) 액션 속성으로 사이드바를 `toggle` 처리합니다. 이 요소는 `sidebar1` ID로 표시되어 있습니다. 그럼 이제 사이드바를 추가해 보겠습니다.
 
 `</header>` 바로 뒤에 다음 HTML을 **추가**합니다.
 

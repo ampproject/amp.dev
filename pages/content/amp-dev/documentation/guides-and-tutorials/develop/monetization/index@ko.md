@@ -100,7 +100,7 @@ AMP 페이지에 광고를 게재하기 위해 컴포넌트를 추가하는 단�
 
 ## 직접 판매 AMPHTML 광고 게재
 
-[`amp-ad`](../../../../documentation/components/reference/amp-ad.md) 컴포넌트는 지정한 네트워크에서 광고를 게재합니다. 광고 네트워크가 AMPHTML 광고를 지원할 경우 광고는 표준 HTML 광고 또는 AMPHTML 광고일 수 있습니다. AMPHTML 광고로 직접 판매 광고를 게재하려면 [AMPHTML 광고 사양](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md)의 요구 사항에 따라 AMP HTML로 광고를 제작하고 [AMPHTML 광고를 지원하는 광고 서버](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers)를 사용해야 합니다.
+[`amp-ad`](../../../../documentation/components/reference/amp-ad.md) 컴포넌트는 지정한 네트워크에서 광고를 게재합니다. 광고 네트워크가 AMPHTML 광고를 지원할 경우 광고는 표준 HTML 광고 또는 AMPHTML 광고일 수 있습니다. AMPHTML 광고로 직접 판매 광고를 게재하려면 [AMPHTML 광고 사양](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md)의 요구 사항에 따라 AMP HTML로 광고를 제작하고 [AMPHTML 광고를 지원하는 광고 서버](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/a4a-readme.md#publishers)를 사용해야 합니다.
 
 ## 광고 요청의 타겟팅 데이터 보강
 
@@ -112,8 +112,8 @@ AMP 페이지에 광고를 게재하기 위해 컴포넌트를 추가하는 단�
 
 또는 다음 RTC 참고자료에서 자세히 알아보세요.
 
-- [AMP RTC 게시자 구현 가이드](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
-- [AMP Real Time Config](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
+- [AMP RTC 게시자 구현 가이드](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
+- [AMP Real Time Config](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-documentation.md)
 
 ## 권장 사항
 
@@ -124,7 +124,7 @@ AMP 페이지의 광고 효과를 극대화하기 위한 팁을 확인해 보세
 - 페이지당 최대 수익을 얻으려면 AMP 페이지에 AMP가 아닌 페이지와 **동일한 개수의 광고를 게재**하세요.
 - **첫 번째 표시 영역 바로 아래 첫 번째 광고를 게재**하여("스크롤 해야 볼 수 있는 부분") 최적의 사용자 환경을 제공하세요.
 - 고급 CSS 또는 미디어 쿼리를 사용하지 않는 한 **광고 단위가 페이지 중앙에 표시되도록 하여** 사용자에게 최적의 모바일 웹 환경을 제공하세요.
-- AMP 인벤토리에서 [크기가 여러 개인 광고 요청](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests)을 사용 설정하여 광고 입찰 경쟁률을 높이고 수익을 창출하세요.
+- AMP 인벤토리에서 [크기가 여러 개인 광고 요청](https://github.com/ampproject/amphtml/blob/main/ads/README.md#support-for-multi-size-ad-requests)을 사용 설정하여 광고 입찰 경쟁률을 높이고 수익을 창출하세요.
 
 ### 수요 및 가격 책정: 광고에 적절한 가격 책정
 

@@ -121,4 +121,4 @@ Funciones no admitidas:
 
 ## Validación <a name="validation"></a>
 
-Consulta las [reglas de amp-3d-gltf](https://github.com/ampproject/amphtml/blob/master/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii) en la especificación de la herramienta de validación de AMP.
+Consulta las [reglas de amp-3d-gltf](https://github.com/ampproject/amphtml/blob/main/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii) en la especificación de la herramienta de validación de AMP.

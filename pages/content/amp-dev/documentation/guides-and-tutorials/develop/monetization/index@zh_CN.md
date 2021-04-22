@@ -102,8 +102,8 @@ $title: 在您的 AMP 网页中利用广告获利
 
 或者，通过下面的 RTC 资源了解详情：
 
-*   [AMP RTC 发布商实现指南](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
-*   [AMP 实时配置](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
+*   [AMP RTC 发布商实现指南](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
+*   [AMP 实时配置](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-documentation.md)
 
 ## 最佳做法
 
@@ -114,7 +114,7 @@ $title: 在您的 AMP 网页中利用广告获利
 *   **在 AMP 网页上展示与非 AMP 网页相同数量的广告**，以实现每页收益最大化。
 *   **在第一个视口的正下方展示第一个广告**（“非首屏”），以提供最佳用户体验。
 *   除非您使用的是高级 CSS 或媒体查询，否则请**确保您的广告单元位于网页中央**，以便为用户提供最佳移动网页体验。
-*   对 AMP 广告资源启用[多尺寸广告请求](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests)，以增加广告竞价压力并提高收入。
+*   对 AMP 广告资源启用[多尺寸广告请求](https://github.com/ampproject/amphtml/blob/main/ads/README.md#support-for-multi-size-ad-requests)，以增加广告竞价压力并提高收入。
 
 ### 需求与定价：为广告确定合适的价格
 

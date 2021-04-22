@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-debugging.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-debugging.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -50,7 +50,7 @@ Se você ainda tiver problemas após seguir estas etapas, verifique a tabela aba
     <tr>
       <td rowspan="2">Os ativos (por exemplo, fontes e imagens) não aparecem</td>
       <td>Os ativos são servidos com o componente MIME incorreto.</td>
-      <td>Indique um <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">componente MIME aceito</a>.</td>
+      <td>Indique um <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">componente MIME aceito</a>.</td>
     </tr>
     <tr>
       <td>O cache do AMP não pode acessar os ativos.</td>

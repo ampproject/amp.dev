@@ -74,7 +74,7 @@ No entanto, os atributos opcionais que aceitam consultas de mídia podem ser usa
 
 *Exemplo:*
 
-No exemplo a seguir, usamos o `amp-sidebar` para incluir itens de navegação. No entanto, o segundo e quarto itens, Nav Item 2 e Nav Item 4, são atribuídos ao código do elemento que está na página. Por meio do atributo [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md), podemos rolar suavemente até o elemento, usando o código e o `scrollTo` do elemento.
+No exemplo a seguir, usamos o `amp-sidebar` para incluir itens de navegação. No entanto, o segundo e quarto itens, Nav Item 2 e Nav Item 4, são atribuídos ao código do elemento que está na página. Por meio do atributo [`on`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/../../spec/amp-actions-and-events.md), podemos rolar suavemente até o elemento, usando o código e o `scrollTo` do elemento.
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
@@ -91,7 +91,7 @@ No exemplo a seguir, usamos o `amp-sidebar` para incluir itens de navegação. N
 
 ### Abrir e fechar a barra lateral <a name="opening-and-closing-the-sidebar"></a>
 
-Para alternar, abrir ou fechar a barra lateral quando um elemento é tocado ou clicado, defina o atributo de ação [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) do elemento e especifique um dos seguintes métodos de ação:
+Para alternar, abrir ou fechar a barra lateral quando um elemento é tocado ou clicado, defina o atributo de ação [`on`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) do elemento e especifique um dos seguintes métodos de ação:
 
 <table>
   <tr>
@@ -334,7 +334,7 @@ Ao usar o recurso `toolbar`, o `autoscroll` só funciona se o elemento `<nav too
 
 ```
 
-Consulte [este arquivo de exemplo](https://github.com/ampproject/amphtml/blob/master/examples/amp-sidebar-autoscroll.amp.html) (link em inglês) para ver um código de exemplo em funcionamento.
+Consulte [este arquivo de exemplo](https://github.com/ampproject/amphtml/blob/main/examples/amp-sidebar-autoscroll.amp.html) (link em inglês) para ver um código de exemplo em funcionamento.
 
 ## Considerações sobre UX <a name="ux-considerations"></a>
 
@@ -344,4 +344,4 @@ Por esse motivo, recomendamos que as permissões para abrir a barra lateral não
 
 ## Validação <a name="validation"></a>
 
-Consulte as [regras do amp-sidebar](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/validator-amp-sidebar.protoascii) (link em inglês) nas especificações do validador de AMP.
+Consulte as [regras do amp-sidebar](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/validator-amp-sidebar.protoascii) (link em inglês) nas especificações do validador de AMP.

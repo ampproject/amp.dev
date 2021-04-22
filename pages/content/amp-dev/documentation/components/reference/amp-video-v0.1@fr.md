@@ -77,7 +77,7 @@ Le composant `amp-video` accepte jusqu'à quatre types de nœuds HTML uniques en
 
 ## Analyse <a name="analytics"></a>
 
-Le composant `amp-video` est directement compatible avec la technologie d'analyse. Pour en savoir plus, consultez la page consacrée à l'[analyse vidéo](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
+Le composant `amp-video` est directement compatible avec la technologie d'analyse. Pour en savoir plus, consultez la page consacrée à l'[analyse vidéo](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-video-analytics.md).
 
 ## Attributs <a name="attributes"></a>
 
@@ -94,7 +94,7 @@ Le composant `amp-video` est directement compatible avec la technologie d'analys
       </tr>
       <tr>
         <td width="40%"><strong>autoplay</strong></td>
-        <td>Si cet attribut est utilisé et que le navigateur est compatible avec la lecture automatique, la vidéo est lue automatiquement dès qu'elle est visible. Pour être lisible, le composant doit remplir certaines conditions, <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-video-interface.md#autoplay">exposées dans la spécification relative à la vidéo dans AMP</a>.</td>
+        <td>Si cet attribut est utilisé et que le navigateur est compatible avec la lecture automatique, la vidéo est lue automatiquement dès qu'elle est visible. Pour être lisible, le composant doit remplir certaines conditions, <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md#autoplay">exposées dans la spécification relative à la vidéo dans AMP</a>.</td>
       </tr>
       <tr>
         <td width="40%"><strong>controls</strong></td>
@@ -131,7 +131,7 @@ Le composant `amp-video` est directement compatible avec la technologie d'analys
         </tr>
         <tr>
           <td width="40%"><strong>rotate-to-fullscreen</strong></td>
-          <td>Si la vidéo est visible, elle s'affiche en mode plein écran après que l'utilisateur a fait pivoter son appareil en mode paysage. Pour plus d'informations, consultez la <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-video-interface.md#rotate-to-fullscreen">spécification relative à la vidéo dans AMP</a>.</td>
+          <td>Si la vidéo est visible, elle s'affiche en mode plein écran après que l'utilisateur a fait pivoter son appareil en mode paysage. Pour plus d'informations, consultez la <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md#rotate-to-fullscreen">spécification relative à la vidéo dans AMP</a>.</td>
         </tr>
         <tr>
           <td width="40%"><strong>common attributes</strong></td>
@@ -184,4 +184,4 @@ Pour obtenir un exemple détaillé, consultez la page [Superposition click-to-pl
 
 ## Validation <a name="validation"></a>
 
-Consultez les [règles relatives à amp-video](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) dans les spécifications du validateur AMP.
+Consultez les [règles relatives à amp-video](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) dans les spécifications du validateur AMP.

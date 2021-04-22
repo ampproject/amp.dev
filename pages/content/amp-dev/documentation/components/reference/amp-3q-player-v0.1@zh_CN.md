@@ -67,4 +67,4 @@ limitations under the License.
 
 ## 验证
 
-请参阅 AMP 验证工具规范中的 [amp-3q-player 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-3q-player/validator-amp-3q-player.protoascii)。
+请参阅 AMP 验证工具规范中的 [amp-3q-player 规则](https://github.com/ampproject/amphtml/blob/main/extensions/amp-3q-player/validator-amp-3q-player.protoascii)。

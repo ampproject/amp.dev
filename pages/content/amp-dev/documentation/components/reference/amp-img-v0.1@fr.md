@@ -200,4 +200,4 @@ Le système de mise en page AMP doit connaître les proportions d'une image avan
 
 # Validation <a name="validation"></a>
 
-Consultez les [règles relatives à amp-img](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) dans les spécifications du validateur AMP.
+Consultez les [règles relatives à amp-img](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) dans les spécifications du validateur AMP.

@@ -173,4 +173,4 @@ AMPHTML 광고가 제3자 환경에서 실행 중인 경우(예: 비AMP 문서) 
 
 ## 유효성 검사 <a name="validation"></a>
 
-AMP 유효성 검사기 사양에서 [amp-lightbox 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-lightbox/validator-amp-lightbox.protoascii)을 참조하세요.
+AMP 유효성 검사기 사양에서 [amp-lightbox 규칙](https://github.com/ampproject/amphtml/blob/main/extensions/amp-lightbox/validator-amp-lightbox.protoascii)을 참조하세요.

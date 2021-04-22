@@ -41,9 +41,9 @@ Por exemplo, é possível chamar o servidor Amazon A9 usando esta sintaxe:
 </amp-ad>
 ```
 
-No código acima, o atributo `type` especifica a rede de publicidade, que neste caso é a A9. Os atributos `data-*` dependem dos parâmetros que o servidor A9 da Amazon espera ao exibir um anúncio. O arquivo [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) mostra como os parâmetros são mapeados para fazer uma chamada JavaScript ao URL do servidor A9. Os parâmetros correspondentes transmitidos pela tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md) são anexados ao URL para retornar um anúncio.
+No código acima, o atributo `type` especifica a rede de publicidade, que neste caso é a A9. Os atributos `data-*` dependem dos parâmetros que o servidor A9 da Amazon espera ao exibir um anúncio. O arquivo [`a9.js`](https://github.com/ampproject/amphtml/blob/main/ads/a9.js) mostra como os parâmetros são mapeados para fazer uma chamada JavaScript ao URL do servidor A9. Os parâmetros correspondentes transmitidos pela tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md) são anexados ao URL para retornar um anúncio.
 
-Se quiser instruções para criar uma integração [`amp-ad`](../../../documentation/components/reference/amp-ad.md), confira como [integrar redes de publicidade à AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+Se quiser instruções para criar uma integração [`amp-ad`](../../../documentation/components/reference/amp-ad.md), confira como [integrar redes de publicidade à AMP](https://github.com/ampproject/amphtml/blob/main/ads/README.md).
 
 ## Criar uma integração com o Fast Fetch <a name="creating-a-fast-fetch-integration"></a>
 
@@ -57,7 +57,7 @@ Para veicular anúncios HTML para AMP no servidor de anúncios, é necessário f
 2. JavaScript para criar a solicitação de anúncio (exemplos de implementação: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) e [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
 3. validação e assinatura do criativo por meio de um serviço de validação (O [Cloudflare](https://blog.cloudflare.com/firebolt/) oferece um serviço de verificação de anúncios AMP. Com ele, qualquer provedor de anúncios independente pode exibir anúncios mais rápidos, leves e interessantes.)
 
-Para ver instruções sobre como criar uma integração com o Fast Fetch, confira o [guia de implementação de rede do Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) (em inglês).
+Para ver instruções sobre como criar uma integração com o Fast Fetch, confira o [guia de implementação de rede do Fast Fetch](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md) (em inglês).
 
 ## Recursos relacionados
 

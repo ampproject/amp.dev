@@ -345,4 +345,4 @@ Pour un exemple plus complet, rendez-vous à l'adresse suivante : [https://ampe
 
 ## Validation <a name="validation"></a>
 
-Consultez les [règles relatives à amp-access-laterpay](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii) dans les spécifications du validateur AMP.
+Consultez les [règles relatives à amp-access-laterpay](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii) dans les spécifications du validateur AMP.

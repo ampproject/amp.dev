@@ -61,7 +61,7 @@ Mustache es una sintaxis de plantilla "sin lógica". Consulta la [documentación
 
 ## Uso <a name="usage"></a>
 
-La plantilla de `amp-mustache` debe definirse y utilizarse de acuerdo con las [especificaciones de plantillas de AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md).
+La plantilla de `amp-mustache` debe definirse y utilizarse de acuerdo con las [especificaciones de plantillas de AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-html-templates.md).
 
 En primer lugar, `amp-mustache` debe declararse o cargarse de la siguiente manera:
 
@@ -201,4 +201,4 @@ Entre las soluciones posibles está reemplazar las cadenas como {% raw %}`{{`{% 
 
 ## Validación <a name="validation-1"></a>
 
-Consulta las [reglas de amp-mustache](https://github.com/ampproject/amphtml/blob/master/extensions/amp-mustache/validator-amp-mustache.protoascii) en la especificación de la herramienta de validación de AMP.
+Consulta las [reglas de amp-mustache](https://github.com/ampproject/amphtml/blob/main/extensions/amp-mustache/validator-amp-mustache.protoascii) en la especificación de la herramienta de validación de AMP.

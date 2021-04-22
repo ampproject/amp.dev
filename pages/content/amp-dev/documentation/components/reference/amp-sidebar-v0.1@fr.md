@@ -74,7 +74,7 @@ Cependant, des attributs facultatifs acceptant les requêtes média peuvent êtr
 
 *Exemple :*
 
-Dans l'exemple suivant, le composant `amp-sidebar` est utilisé comme conteneur d'éléments de navigation. Cependant, les deuxième et quatrième éléments, Nav Item 2 et Nav Item 4, sont affectés à l'identifiant d'élément qui figure sur la page. L'attribut [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) permet d'effectuer un défilement fluide jusqu'à l'élément, en utilisant l'identifiant d'élément et `scrollTo`.
+Dans l'exemple suivant, le composant `amp-sidebar` est utilisé comme conteneur d'éléments de navigation. Cependant, les deuxième et quatrième éléments, Nav Item 2 et Nav Item 4, sont affectés à l'identifiant d'élément qui figure sur la page. L'attribut [`on`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) permet d'effectuer un défilement fluide jusqu'à l'élément, en utilisant l'identifiant d'élément et `scrollTo`.
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
@@ -91,7 +91,7 @@ Dans l'exemple suivant, le composant `amp-sidebar` est utilisé comme conteneur 
 
 ### Ouvrir et fermer la barre latérale <a name="opening-and-closing-the-sidebar"></a>
 
-Pour activer/désactiver, ouvrir ou fermer la barre latérale lorsqu'un utilisateur appuie ou clique sur un élément, définissez l'attribut d'action [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) sur l'élément en question et indiquez l'une des méthodes d'action suivantes :
+Pour activer/désactiver, ouvrir ou fermer la barre latérale lorsqu'un utilisateur appuie ou clique sur un élément, définissez l'attribut d'action [`on`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) sur l'élément en question et indiquez l'une des méthodes d'action suivantes :
 
 <table>
   <tr>
@@ -334,7 +334,7 @@ Lorsque la fonctionnalité `toolbar` est utilisée, `autoscroll` ne fonctionne q
 
 ```
 
-Consultez [cet exemple de fichier](https://github.com/ampproject/amphtml/blob/master/examples/amp-sidebar-autoscroll.amp.html) pour obtenir un exemple de code opérationnel.
+Consultez [cet exemple de fichier](https://github.com/ampproject/amphtml/blob/main/examples/amp-sidebar-autoscroll.amp.html) pour obtenir un exemple de code opérationnel.
 
 ## Considérations relatives à l'expérience utilisateur <a name="ux-considerations"></a>
 
@@ -344,4 +344,4 @@ Pour cette raison, nous vous recommandons de ne pas placer les éléments invita
 
 ## Validation <a name="validation"></a>
 
-Consultez les [règles relatives à amp-sidebar](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/validator-amp-sidebar.protoascii) dans les spécifications du validateur AMP.
+Consultez les [règles relatives à amp-sidebar](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/validator-amp-sidebar.protoascii) dans les spécifications du validateur AMP.

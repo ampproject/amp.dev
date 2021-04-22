@@ -74,8 +74,8 @@ Debe especificarse en la etiqueta el tipo de red publicitaria y cualquier otra i
 
 ## Redes publicitarias admitidas <a name="supported-ad-networks"></a>
 
-* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
-* [DoubleClick (experimental)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
+* [AdSense](https://github.com/ampproject/amphtml/blob/main/ads/google/adsense.md)
+* [DoubleClick (experimental)](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md)
 
 ## Atributos
 
@@ -411,4 +411,4 @@ Esto se aplica hasta que hay 5 anuncios en la página, ya que hay una regla par
 
 ## Validación
 
-Consulta las [reglas de amp-auto-ads](https://github.com/ampproject/amphtml/blob/master/extensions/amp-auto-ads/validator-amp-auto-ads.protoascii) en la especificación de la herramienta de validación de AMP.
+Consulta las [reglas de amp-auto-ads](https://github.com/ampproject/amphtml/blob/main/extensions/amp-auto-ads/validator-amp-auto-ads.protoascii) en la especificación de la herramienta de validación de AMP.

@@ -239,4 +239,4 @@ L'exemple suivant illustre un carrousel de trois images, sous lequel sont dispos
 
 # Validation <a name="validation"></a>
 
-Consultez les [règles relatives à amp-carousel](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/validator-amp-carousel.protoascii) dans les spécifications du validateur AMP.
+Consultez les [règles relatives à amp-carousel](https://github.com/ampproject/amphtml/blob/main/extensions/amp-carousel/validator-amp-carousel.protoascii) dans les spécifications du validateur AMP.

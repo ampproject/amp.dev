@@ -21,13 +21,13 @@ Actualmente, hay dos proveedores de AMP Cache:
 - [Google AMP Cache](https://developers.google.com/amp/cache/)
 - [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
-AMP es un ecosistema abierto y el Proyecto AMP fomenta activamente el desarrollo de más cachés de AMP. Para obtener más información sobre la creación de cachés de AMP, consulte las [Pautas de caché de AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
+AMP es un ecosistema abierto y el Proyecto AMP fomenta activamente el desarrollo de más cachés de AMP. Para obtener más información sobre la creación de cachés de AMP, consulte las [Pautas de caché de AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md).
 
 ## ¿Cómo elijo un caché AMP?
 
 Como editor, no elige un caché AMP, en realidad *es la plataforma* que vincula su contenido que elige el caché de AMP (si corresponde) para usar.
 
-Esta es una inversión del modelo típico en el que la entrega de contenido es responsabilidad del editor. Sin embargo, este modelo permite a las plataformas proporcionar a sus usuarios un rendimiento de carga predecible y, entre otras cosas, les permite garantizar invariantes de seguridad y privacidad durante la fase de preelaboración de AMP. Para conocer las pautas estrictas para crear cachés de AMP, consulte [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
+Esta es una inversión del modelo típico en el que la entrega de contenido es responsabilidad del editor. Sin embargo, este modelo permite a las plataformas proporcionar a sus usuarios un rendimiento de carga predecible y, entre otras cosas, les permite garantizar invariantes de seguridad y privacidad durante la fase de preelaboración de AMP. Para conocer las pautas estrictas para crear cachés de AMP, consulte [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md).
 
 ## ¿Puedo optar por dejar de usar el caché?
 
@@ -58,6 +58,6 @@ Nota: La URL de caché de AMP no es una URL de usuario, es decir, los usuarios n
 
 ## Recursos Adicionales
 
-* [AMP Project's AMP Cache guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)
+* [AMP Project's AMP Cache guidelines](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md)
 * [Google AMP Cache overview](https://developers.google.com/amp/cache/overview)
 * [Bing AMP Cache Documentation](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)

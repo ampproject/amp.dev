@@ -830,13 +830,13 @@ This sample showcases how to build a product page in AMP HTML.
     <!-- The add-to-cart action action is implemented using  [amp-form](/documentation/components/reference/amp-form/). In our sample we use the [amp-selector](/components/amp-selector.html) for selecting different product properties.
     Pressing the `ADD TO CART` button adds the product to a shopping cart page using the properties you have selected. Notice that the button URL contains the query `clientId={{ClientId}}`.
     If an item is successfully added to the shopping cart, we redirect the user to the shopping cart page.
-    The redirect target is configured via a header in the server's form response ([redirecting after submission](https://github.com/ampproject/amphtml/blob/master/extensions/amp-form/amp-form.md#redirecting-after-a-submission)):
+    The redirect target is configured via a header in the server's form response ([redirecting after submission](https://github.com/ampproject/amphtml/blob/main/extensions/amp-form/amp-form.md#redirecting-after-a-submission)):
 
       <p>access-control-expose-headers:AMP-Access-Control-Allow-Source-Origin,AMP-Redirect-To
       amp-redirect-to:<a href="http://ampbyexample.com/shopping_cart/?clientid=amp-123456789">http://ampbyexample.com/shopping_cart/?clientid=amp-123456789</a></p>
      -->
 
-    <!-- We use the `CLIENT_ID` variable to identify the user, this enables storing a shopping cart between repeated visits of an AMP page (either via the AMP Cache or the original host). This variable can be used inside an amp-form by declaring an hidden input value with `default-value="CLIENT_ID(cart)`. Read more about variable substitution [here](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). -->
+    <!-- We use the `CLIENT_ID` variable to identify the user, this enables storing a shopping cart between repeated visits of an AMP page (either via the AMP Cache or the original host). This variable can be used inside an amp-form by declaring an hidden input value with `default-value="CLIENT_ID(cart)`. Read more about variable substitution [here](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md). -->
 
       <form id="order" method="POST"
             action-xhr="/documentation/examples/e-commerce/shopping_cart/add-to-cart"

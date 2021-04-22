@@ -68,7 +68,7 @@ Misalnya: `<amp-analytics type="googleanalytics">` mengirim data analisis ke pen
 
 Konfigurasi vendor analisis adalah cara cepat untuk mulai menggunakan [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Sebaiknya Anda pelajari dokumentasi vendor dan referensi bantuan untuk mendapatkan panduan lebih lanjut. Seperti disebutkan sebelumnya, daftar vendor yang telah berintegrasi dengan AMP, serta link ke dokumentasi spesifik mereka, dapat ditemukan di daftar [Vendor Analisis](analytics-vendors.md).
 
-Jika Anda adalah vendor analisis, pelajari lebih lanjut cara [mengintegrasikan konfigurasi analisis Anda ke AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+Jika Anda adalah vendor analisis, pelajari lebih lanjut cara [mengintegrasikan konfigurasi analisis Anda ke AMP HTML](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md).
 
 ## Memuat konfigurasi jarak jauh: atribut config (konfigurasi)
 

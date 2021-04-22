@@ -77,7 +77,7 @@ Komponen `amp-video` menerima hingga empat jenis node HTML unik sebagai turunan:
 
 ## Analisis <a name="analytics"></a>
 
-`amp-video` mendukung analisis yang siap digunakan. Lihat [analisis video](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md) untuk informasi selengkapnya.
+`amp-video` mendukung analisis yang siap digunakan. Lihat [analisis video](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-video-analytics.md) untuk informasi selengkapnya.
 
 ## Atribut <a name="attributes"></a>
 
@@ -94,7 +94,7 @@ Komponen `amp-video` menerima hingga empat jenis node HTML unik sebagai turunan:
       </tr>
       <tr>
         <td width="40%"><strong>autoplay</strong></td>
-        <td>Jika atribut ini ada, dan browser mendukung fitur autoplay, video akan otomatis diputar begitu terlihat. Ada beberapa kondisi yang harus dipenuhi oleh komponen ini agar video dapat diputar, <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-video-interface.md#autoplay">seperti dijelaskan dalam spesifikasi Video di AMP</a>.</td>
+        <td>Jika atribut ini ada, dan browser mendukung fitur autoplay, video akan otomatis diputar begitu terlihat. Ada beberapa kondisi yang harus dipenuhi oleh komponen ini agar video dapat diputar, <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md#autoplay">seperti dijelaskan dalam spesifikasi Video di AMP</a>.</td>
       </tr>
       <tr>
         <td width="40%"><strong>controls</strong></td>
@@ -131,7 +131,7 @@ Komponen `amp-video` menerima hingga empat jenis node HTML unik sebagai turunan:
         </tr>
         <tr>
           <td width="40%"><strong>rotate-to-fullscreen</strong></td>
-          <td>Jika video terlihat, video akan ditampilkan secara layar penuh setelah pengguna memutar perangkat ke mode lanskap. Untuk penjelasan selengkapnya, baca <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-video-interface.md#rotate-to-fullscreen">spesifikasi Video di AMP</a>.</td>
+          <td>Jika video terlihat, video akan ditampilkan secara layar penuh setelah pengguna memutar perangkat ke mode lanskap. Untuk penjelasan selengkapnya, baca <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md#rotate-to-fullscreen">spesifikasi Video di AMP</a>.</td>
         </tr>
         <tr>
           <td width="40%"><strong>atribut umum</strong></td>
@@ -184,4 +184,4 @@ Untuk contoh lebih lengkap, kunjungi [Overlay klik-untuk-putar untuk amp-video](
 
 ## Validasi <a name="validation"></a>
 
-Lihat [aturan amp-video](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) dalam spesifikasi validator AMP.
+Lihat [aturan amp-video](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) dalam spesifikasi validator AMP.

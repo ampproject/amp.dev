@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-debugging.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-debugging.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -50,7 +50,7 @@ Nếu bạn vẫn có vấn đề sau khi làm theo các bước này, hãy ki�
     <tr>
       <td rowspan="2">Các tài sản (ví dụ như phông chữ và ảnh) không xuất hiện</td>
       <td>Các tài sản này được phục vụ với loại MIME không đúng.</td>
-      <td>Quy định <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">một loại MIME được chấp nhận</a>.</td>
+      <td>Quy định <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">một loại MIME được chấp nhận</a>.</td>
     </tr>
     <tr>
       <td>Bộ nhớ đệm AMP không thể truy cập tài sản này.</td>

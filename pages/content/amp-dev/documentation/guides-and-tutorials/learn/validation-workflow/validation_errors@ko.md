@@ -23,7 +23,7 @@ limitations under the License.
 발견할 수 있는 모든 유효성 검사 오류를 더 잘 이해하고
 해결할 수 있도록 도움을 드리는 것입니다.
 유효성 검사 오류에 관한 전체 내용을 대략적으로 살펴보려면
-[AMP 유효성 검사 도구 사양](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)을 확인하시기 바랍니다.
+[AMP 유효성 검사 도구 사양](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)을 확인하시기 바랍니다.
 
 ## AMP HTML 태그와 속성 오류
 
@@ -56,7 +56,7 @@ limitations under the License.
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-이러한 필수 태그에는 <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP 유효성 검사 도구 사양</a>에 `mandatory: true` 필드가 있어야 합니다.
+이러한 필수 태그에는 <a href="https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii">AMP 유효성 검사 도구 사양</a>에 `mandatory: true` 필드가 있어야 합니다.
 이러한 태그는 [AMP 사양](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)에서도 언급됩니다.
 
 ### 다른 태그에 필요한 태그 누락
@@ -132,7 +132,7 @@ AMP 형식에서는 AMP 프로젝트에서 자체 제공하는 자바스크립�
 
 필요한 자바스크립트 사용 사례를 찾을 수 없다면 AMP 프로젝트에
 새로운 구성요소를 추가할 수도 있습니다. 자세한 내용은 AMP 프로젝트의
-[참여하기](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)
+[참여하기](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md)
 문서를 확인하세요.
 
 ### 필수 속성 누락
@@ -152,7 +152,7 @@ AMP 형식에서는 AMP 프로젝트에서 자체 제공하는 자바스크립�
   </tr>
 </table>
 
-[AMP 유효성 검사 도구 사양](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)에
+[AMP 유효성 검사 도구 사양](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)에
 AMP 태그의 필수 속성이 정의되어 있습니다.
 태그를 검색하고
 명시된 속성을 확인한 다음
@@ -207,7 +207,7 @@ AMP 태그의 필수 속성이 정의되어 있습니다.
 
 속성은 허용된 것만 사용할 수 있기 때문에 허용되지 않는 모든 속성을 나열한 목록은 존재하지 않습니다.
 각 태그에서 지원되는 속성을 확인하려면 HTML 태그를 검색한 다음
-[AMP 유효성 검사 도구 사양](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)에서
+[AMP 유효성 검사 도구 사양](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)에서
 `attrs`를 확인하시기 바랍니다.
 
 태그별로 허용되는 구체적인 속성 외에도
@@ -280,7 +280,7 @@ CDATA가 필수인 태그는 다음과 같습니다.
 유효성을 검사하기 위해 금지되었습니다.
 
 다음은 금지된 CSS 데이터 목록입니다.
-([AMP 유효성 검사 도구 사양의 `disallowed_cdata_regex`](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)도 참조하시기 바랍니다.):
+([AMP 유효성 검사 도구 사양의 `disallowed_cdata_regex`](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)도 참조하시기 바랍니다.):
 
 * `"\\.i?-amp-"` ("CSS -amp- class name prefix")
 * `"!important"`
@@ -565,7 +565,7 @@ URL이 잘못된 경우에 발생합니다.
 </table>
 
 필수 하위 요소는
-[AMP 유효성 검사 도구 사양](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)에
+[AMP 유효성 검사 도구 사양](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)에
 `mandatory_ancestor`로 정의되어 있습니다.
 
 이 오류는 다음 태그에
@@ -655,7 +655,7 @@ AMP 유효성 검사 도구에서 기본값을 추정하므로
 오류를 표시하지 않습니다.
 
 각 AMP 태그에는
-[AMP 유효성 검사 도구 사양](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)에 정의된 것처럼
+[AMP 유효성 검사 도구 사양](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)에 정의된 것처럼
 `supported_layouts` 목록이 있습니다.
 지원되지 않는 레이아웃이 있는 경우 유효성 검사 도구에서 오류가 표시되며
 사전 정의된 레이아웃의 유효성 검사 규칙을 확인합니다.
@@ -749,7 +749,7 @@ CSS 내 @ 규칙을 말합니다.
 
 이 오류는 AMP 태그에 특정 레이아웃을 지정하지 않았을 때
 너비, 높이, 크기에 의해 암시되는 레이아웃이 지원되지 않을 때 발생합니다.
-[AMP 유효성 검사 도구 사양](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)에서
+[AMP 유효성 검사 도구 사양](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)에서
 태그의 `supported_layout` 값을 확인하시기 바랍니다.
 
 실제 레이아웃 동작은 `layout` 속성에 따라 결정됩니다.
@@ -807,7 +807,7 @@ CONTAINER가 아닌 레이아웃을 지정하거나
 
 이 오류는 태그에 지정된 레이아웃이
 지원되지 않을 때 발생합니다.
-[AMP 유효성 검사 도구 사양](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)에서
+[AMP 유효성 검사 도구 사양](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)에서
 태그의 `supported_layout` 값을 확인하시기 바랍니다.
 
 실제 레이아웃 동작은 `layout` 속성에 따라 결정됩니다.
@@ -1010,6 +1010,6 @@ AMP 페이지는 템플릿 구문을 포함할 수 없습니다.
 이 경고는 이전에 유효했던 AMP 속성이 AMP 문서에서 발견되었을 때 표시됩니다.
 이는 경고일 뿐이며 경고가 있는 AMP 문서도 여전히 유효합니다.
 
-[AMP 유효성 검사 도구 사양](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)에서
+[AMP 유효성 검사 도구 사양](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)에서
 `deprecation`을 검색하여 AMP 태그별로
 지원 중단된 속성을 확인하시기 바랍니다.

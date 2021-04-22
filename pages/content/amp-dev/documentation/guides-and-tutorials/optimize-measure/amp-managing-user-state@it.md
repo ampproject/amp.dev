@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -110,7 +110,7 @@ Proprio come nel caso della cache AMP, anche il dominio di un visualizzatore AMP
 
 ### La gestione di contesti multipli implica la gestione di più stati <a name="multiple-contexts-means-multiple-state-management"></a>
 
-Gli editori devono essere in grado di gestire lo stato utente per ogni contesto di visualizzazione separatamente. La funzione [ID Client](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id) di AMP, che sfrutta i cookie o l'archiviazione locale per mantenere lo stato utente, fornisce il supporto necessario alle pagine AMP per mantenere un identificatore stabile degli utenti, che è uno pseudonimo. Da un punto di vista implementativo, questo sistema utilizza i cookie o l'archiviazione locale e AMP decide quale strumento utilizzare in base al contesto di visualizzazione. Questa scelta è determinata dall'applicabilità tecnica di tale meccanismo di gestione dello stato utente ai contenuti di centinaia o anche migliaia di editori.
+Gli editori devono essere in grado di gestire lo stato utente per ogni contesto di visualizzazione separatamente. La funzione [ID Client](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#client-id) di AMP, che sfrutta i cookie o l'archiviazione locale per mantenere lo stato utente, fornisce il supporto necessario alle pagine AMP per mantenere un identificatore stabile degli utenti, che è uno pseudonimo. Da un punto di vista implementativo, questo sistema utilizza i cookie o l'archiviazione locale e AMP decide quale strumento utilizzare in base al contesto di visualizzazione. Questa scelta è determinata dall'applicabilità tecnica di tale meccanismo di gestione dello stato utente ai contenuti di centinaia o anche migliaia di editori.
 
 In tal modo, gli editori di pagine AMP riescono spesso (anche inconsapevolmente) a realizzare esperienze di utilizzo dei propri contenuti che coprono più contesti. Torniamo a dare un'occhiata al precedente esempio dell'applicazione per un carrello di acquisti e aggiungiamo qualche dettaglio in più per creare una **storia utente** completa:
 
@@ -242,7 +242,7 @@ Nelle pagine AMP, creare un ping amp-analytics contenente l'ID client:
 
 Una cosa da notare è il fatto che il parametro passato alla sostituzione dell'ID client, `${clientId(uid)`, è `uid`. Questa è una scelta voluta per farla corrispondere allo stesso nome di cookie utilizzato nell'origine dell'editore come descritto nell'[Attività 1](#task1). Per garantire una migliore integrazione, si può applicare la stessa tecnica.
 
-Per quanto riguarda il resto dell'implementazione di amp-analytics, consultare la documentazione per [la configurazione di amp-analytics](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) che riporta maggiori dettagli su come impostare le richieste di amp-analytics o modificare quelle del proprio fornitore di strumenti di analisi. Il ping può essere ulteriormente modificato per trasportare dati aggiuntivi definiti direttamente o sfruttando altre [sostituzioni AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
+Per quanto riguarda il resto dell'implementazione di amp-analytics, consultare la documentazione per [la configurazione di amp-analytics](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) che riporta maggiori dettagli su come impostare le richieste di amp-analytics o modificare quelle del proprio fornitore di strumenti di analisi. Il ping può essere ulteriormente modificato per trasportare dati aggiuntivi definiti direttamente o sfruttando altre [sostituzioni AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md).
 
 > **Informazione utile:**
 > Perché abbiamo utilizzato il nome `uid` per il parametro passato alla funzione ID client? Il parametro utilizzato dalla sostituzione `clientId(...)` serve a definire l'ambito. Si può efficacemente utilizzare la funzione ID client per molti casi d'uso e, di conseguenza, generare molti ID client. Il parametro distingue tra questi casi d'uso e quindi permette di specificare il caso d'uso per il quale occorre un ID client. Ad esempio, si potrebbero inviare identificatori diversi a terze parti, quali inserzionisti, utilizzando il parametro "scope" per raggiungere questo risultato.
@@ -385,7 +385,7 @@ In questa attività, implementiamo un'ottimizzazione aggiuntiva che serve quando
 
 ##### Utilizzo delle funzioni di sostituzione <a name="using-substitution-features"></a>
 
-Il nostro approccio sfrutterà due tipi di [sostituzioni di variabili AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md).
+Il nostro approccio sfrutterà due tipi di [sostituzioni di variabili AMP](https://github.com/ampproject/amphtml/blob/main/spec/./amp-var-substitutions.md).
 
 **Aggiornamento dei collegamenti in uscita per utilizzare una sostituzione dell'ID client.** Definire un nuovo parametro di query, `ref_id` ("ID referente"), che apparirà all'interno dell'URL e indicherà l'**identificatore del contesto di origine** per l'utente. Impostare questo parametro di query in modo che sia uguale al valore di sostituzione dell'ID client AMP:
 
@@ -596,7 +596,7 @@ Occorre garantire solo l'utilizzo di istanze di<br>`$amp_client_id` evitando l'u
 
 In una pagina non AMP, controllare il parametro `document.referrer` direttamente sul lato client o trasmettere il valore nell'ambito del ping di analisi per poter convalidare sul lato server. Se il valore del referente è affidabile, si possono accettare ed elaborare i valori originati dall'URL della pagina di destinazione, come `orig_user_id` nell'esempio precedente.
 
-In una pagina AMP, utilizzare la variabile di sostituzione del [referente di documento](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#document-referrer) per trasmettere il valore del referente nell'ambito del ping di analisi. L'elaborazione lato server è l'unica opzione disponibile. Per illustrare questo fatto, segue un ping di analisi che la pagina di destinazione può inviare: esso contiene (1) il valore dell'ID client della pagina corrente, (2) un valore passato tramite l'URL che abbiamo impostato come valore dell'ID client nella pagina di riferimento e (3) le informazioni del referente stesso per convalidare il valore (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
+In una pagina AMP, utilizzare la variabile di sostituzione del [referente di documento](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#document-referrer) per trasmettere il valore del referente nell'ambito del ping di analisi. L'elaborazione lato server è l'unica opzione disponibile. Per illustrare questo fatto, segue un ping di analisi che la pagina di destinazione può inviare: esso contiene (1) il valore dell'ID client della pagina corrente, (2) un valore passato tramite l'URL che abbiamo impostato come valore dell'ID client nella pagina di riferimento e (3) le informazioni del referente stesso per convalidare il valore (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
 
 Se il referente non è affidabile, non accettare e non utilizzare i valori forniti tramite i parametri URL.
 

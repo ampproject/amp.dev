@@ -15,7 +15,7 @@ formats:
 
 网页故事广告遵循以下原则：
 
-- 有效的 AMPHTML 广告：遵循与经典 [AMPHTML 广告](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md)相同的技术规范。
+- 有效的 AMPHTML 广告：遵循与经典 [AMPHTML 广告](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md)相同的技术规范。
 - 视觉优先：引人注目、粗体、符合上下文的邀请状态。
 - 原生：广告页面与自然故事页面具有相同的尺寸。
 - 相同的互动模型：用户可以像阅读自然故事页面那样前进到下一个屏幕。

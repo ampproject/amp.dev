@@ -61,4 +61,4 @@ Cet élément inclut des [attributs communs](../../../documentation/guides-and-t
 
 ## Validation <a name="validation"></a>
 
-Consultez les [règles relatives à amp-layout](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) dans les spécifications du validateur AMP.
+Consultez les [règles relatives à amp-layout](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) dans les spécifications du validateur AMP.

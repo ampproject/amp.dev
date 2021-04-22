@@ -215,7 +215,7 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 * 정의되지 않은 변수 및 범위를 벗어난 배열-색인은 `undefined` 대신 `null`을 반환하거나 오류를 일으킵니다.
 * 성능을 위해 현재 단일 식의 피연산자는 50개로 제한됩니다. 이 개수가 사용 사례로 불충분한 경우 [Google에 문의](https://github.com/ampproject/amphtml/issues/new)하세요.
 
-식 문법과 구현의 전체 내용은 [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) 및 [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js)에서 찾아볼 수 있습니다.
+식 문법과 구현의 전체 내용은 [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/main/extensions/amp-bind/0.1/bind-expr-impl.jison) 및 [bind-expression.js](https://github.com/ampproject/amphtml/blob/main/extensions/amp-bind/0.1/bind-expression.js)에서 찾아볼 수 있습니다.
 
 # 예 <a name="examples"></a>
 
@@ -644,7 +644,7 @@ AMP는 여러 JSON 엔드포인트에 대해 XMLHttpRequest(XHR)를 배치 처�
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>이 <code>amp-state</code>를 업데이트할 JSON을 반환하는 원격 엔드포인트의 URL. CORS HTTP 서비스여야 합니다.
-      <code>src</code> 속성은 모든 표준 URL 변수 대체를 허용합니다. 자세한 정보는 <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">대체 가이드</a>를 참조하세요.
+      <code>src</code> 속성은 모든 표준 URL 변수 대체를 허용합니다. 자세한 정보는 <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md">대체 가이드</a>를 참조하세요.
           [tip type="important"]
         엔드포인트는 <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">AMP의 CORS 요청</a> 사양에 지정된 요구사항을 구현해야 합니다.
         [/tip]</td>

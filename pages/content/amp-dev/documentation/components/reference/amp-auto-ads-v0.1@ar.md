@@ -79,8 +79,8 @@ limitations under the License.
 
 ## شبكات الإعلانات المتوافقة <a name="supported-ad-networks"></a>
 
-* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
-* [DoubleClick (تجريبية)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
+* [AdSense](https://github.com/ampproject/amphtml/blob/main/ads/google/adsense.md)
+* [DoubleClick (تجريبية)](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md)
 
 ## السمات
 
@@ -418,4 +418,4 @@ limitations under the License.
 
 ## التحقق
 
-اطِّلع على [قواعد amp-auto-ads](https://github.com/ampproject/amphtml/blob/master/extensions/amp-auto-ads/validator-amp-auto-ads.protoascii) في مواصفات مدقق AMP.
+اطِّلع على [قواعد amp-auto-ads](https://github.com/ampproject/amphtml/blob/main/extensions/amp-auto-ads/validator-amp-auto-ads.protoascii) في مواصفات مدقق AMP.

@@ -68,7 +68,7 @@ Por exemplo: `<amp-analytics type="googleanalytics">` envia dados ao provedor de
 
 As configurações do fornecedor de análises são uma maneira rápida de dar os primeiros passos com a tag [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Consulte a documentação e os recursos de ajuda do seu fornecedor para mais informações. Como mencionamos antes, os nomes dos fornecedores que têm integração com a tecnologia AMP, assim como links para a documentação específica a cada um deles estão na lista de [fornecedores de análise](analytics-vendors.md).
 
-Se você for um fornecedor de análises, saiba mais sobre [como integrar sua própria configuração de análise ao AMPHTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+Se você for um fornecedor de análises, saiba mais sobre [como integrar sua própria configuração de análise ao AMPHTML](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md).
 
 ## Como carregar uma configuração remota: atributo "config"
 

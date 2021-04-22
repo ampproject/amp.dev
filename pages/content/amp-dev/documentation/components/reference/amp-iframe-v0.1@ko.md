@@ -48,7 +48,7 @@ iframe을 표시합니다.
 * `amp-iframe`은 문서의 상단 근처에 표시되지 않을 수 있습니다([아래](#iframe-with-placeholder) 설명된 대로 `placeholder`를 사용하는 iframe 제외). iframe은 상단에서 600픽셀 떨어져 있거나 상단으로 스크롤할 때 표시 영역의 처음 75% 안에 포함되지 않아야 하며, 둘 중 더 작은 값으로 지정됩니다.
 * 기본적으로 amp-iframe은 샌드박스 처리됩니다([세부정보](#sandbox) 참조).
 * `amp-iframe`은 HTTPS, data-URI 또는 `srcdoc` 속성을 통해서만 리소스를 요청해야 합니다.
-* `sandbox` 속성에서 `allow-same-origin`을 허용하지 않는 경우를 제외하고 `amp-iframe`은 컨테이너와 같은 원본에 없어야 합니다. iframe에 허용되는 원본에 관한 자세한 정보는 ['Iframe 원본 정책'](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md) 문서를 참조하세요.
+* `sandbox` 속성에서 `allow-same-origin`을 허용하지 않는 경우를 제외하고 `amp-iframe`은 컨테이너와 같은 원본에 없어야 합니다. iframe에 허용되는 원본에 관한 자세한 정보는 ['Iframe 원본 정책'](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md) 문서를 참조하세요.
 
 *예: amp-iframe에서 Google 지도 삽입*
 
@@ -238,4 +238,4 @@ AMP의 다른 방법으로 필수 사용자 환경을 사용할 수 없는 경�
 
 # 유효성 검사 <a name="validation"></a>
 
-AMP 유효성 검사기 사양에서 [amp-iframe 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-iframe/validator-amp-iframe.protoascii)을 참조하세요.
+AMP 유효성 검사기 사양에서 [amp-iframe 규칙](https://github.com/ampproject/amphtml/blob/main/extensions/amp-iframe/validator-amp-iframe.protoascii)을 참조하세요.

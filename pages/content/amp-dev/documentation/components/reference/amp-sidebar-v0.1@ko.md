@@ -74,7 +74,7 @@ $title: amp-sidebar
 
 *예:*
 
-다음 예에서는 이동 항목을 포함하는 데 `amp-sidebar`를 사용합니다. 그러나 두 번째와 네 번째 항목인, Nav Item 2와 Nav Item 4는 페이지에 있는 요소 ID에 할당됩니다. [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) 속성을 사용하면 요소 ID와 `scrollTo`를 사용하여 요소까지 원활하게 스크롤할 수 있습니다.
+다음 예에서는 이동 항목을 포함하는 데 `amp-sidebar`를 사용합니다. 그러나 두 번째와 네 번째 항목인, Nav Item 2와 Nav Item 4는 페이지에 있는 요소 ID에 할당됩니다. [`on`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) 속성을 사용하면 요소 ID와 `scrollTo`를 사용하여 요소까지 원활하게 스크롤할 수 있습니다.
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
@@ -91,7 +91,7 @@ $title: amp-sidebar
 
 ### 사이드바 열기 및 닫기 <a name="opening-and-closing-the-sidebar"></a>
 
-전환하려면 요소를 탭하거나 클릭할 때 사이드바를 열거나 닫은 후 요소에서 [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) 작업 속성을 설정하고 다음 작업 방법 중 하나를 지정합니다.
+전환하려면 요소를 탭하거나 클릭할 때 사이드바를 열거나 닫은 후 요소에서 [`on`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) 작업 속성을 설정하고 다음 작업 방법 중 하나를 지정합니다.
 
 <table>
   <tr>
@@ -326,7 +326,7 @@ AMP 페이지에서 사용할 수 있으며 스타일이 미리 지정되고 즉
 
 ```
 
-작동하는 예제 코드는 [이 예제 파일](https://github.com/ampproject/amphtml/blob/master/examples/amp-sidebar-autoscroll.amp.html)을 참조하세요.
+작동하는 예제 코드는 [이 예제 파일](https://github.com/ampproject/amphtml/blob/main/examples/amp-sidebar-autoscroll.amp.html)을 참조하세요.
 
 ## UX 고려사항 <a name="ux-considerations"></a>
 
@@ -336,4 +336,4 @@ AMP 페이지에서 사용할 수 있으며 스타일이 미리 지정되고 즉
 
 ## 유효성 검사 <a name="validation"></a>
 
-AMP 유효성 검증기 사양에서 [amp-sidebar 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/validator-amp-sidebar.protoascii)을 참조하세요.
+AMP 유효성 검증기 사양에서 [amp-sidebar 규칙](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/validator-amp-sidebar.protoascii)을 참조하세요.

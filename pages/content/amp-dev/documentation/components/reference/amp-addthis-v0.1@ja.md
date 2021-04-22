@@ -137,7 +137,7 @@ AddThis は、1,500 万以上のウェブサイトで利用されている信頼
 
 ## 検証 <a name="validation"></a>
 
-AMP 検証ツール仕様の [amp-addthis ルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-addthis/validator-amp-addthis.protoascii)をご覧ください。
+AMP 検証ツール仕様の [amp-addthis ルール](https://github.com/ampproject/amphtml/blob/main/extensions/amp-addthis/validator-amp-addthis.protoascii)をご覧ください。
 
 ## プライバシー <a name="privacy"></a>
 

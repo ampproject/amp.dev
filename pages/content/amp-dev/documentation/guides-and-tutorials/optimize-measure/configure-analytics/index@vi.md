@@ -23,7 +23,7 @@ Nếu bạn có giải pháp nội bộ của riêng mình cho việc đo lườ
 
 Phân tích AMP được thiết kế đặc biệt để đo lường một lần và gửi báo cáo cho nhiều bên. Nếu bạn đã làm việc với một hay nhiều nhà cung cấp công cụ phân tích, hãy xem danh sách [Nhà cung cấp công cụ phân tích](analytics-vendors.md) để xem liệu họ đã tích hợp giải pháp của mình với AMP chưa. Nếu đã tích hợp, hãy xem lại chi tiết cấu hình của họ và làm theo các chỉ dẫn.
 
-Nếu nhà cung cấp công cụ phân tích chưa tích hợp với AMP, hãy liên hệ với nhà cung cấp đó để yêu cầu họ hỗ trợ. Chúng tôi cũng khuyến khích bạn [tạo một vấn đề trong dự án AMP](https://github.com/ampproject/amphtml/issues/new) yêu cầu nhà cung cấp đó nên được thêm vào. Xem thêm [Tích hợp các công cụ phân tích trong HMTL AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+Nếu nhà cung cấp công cụ phân tích chưa tích hợp với AMP, hãy liên hệ với nhà cung cấp đó để yêu cầu họ hỗ trợ. Chúng tôi cũng khuyến khích bạn [tạo một vấn đề trong dự án AMP](https://github.com/ampproject/amphtml/issues/new) yêu cầu nhà cung cấp đó nên được thêm vào. Xem thêm [Tích hợp các công cụ phân tích trong HMTL AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md).
 
 ### Bạn cần dữ liệu gì?
 

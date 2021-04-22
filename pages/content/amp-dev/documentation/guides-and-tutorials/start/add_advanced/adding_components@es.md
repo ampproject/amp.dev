@@ -30,9 +30,9 @@ Dele un vistazo a este ejemplo de un anuncio de **DoubleClick**:
 </amp-ad>
 ```
 
-Como puede ver, esta es una configuración muy simple. Tome nota del atributo `type`, que informa al componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) de la plataforma de anuncios que queremos utilizar. En este caso, queremos utilizar la plataforma de [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md), así que especificamos `doubleclick` como el valor.
+Como puede ver, esta es una configuración muy simple. Tome nota del atributo `type`, que informa al componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) de la plataforma de anuncios que queremos utilizar. En este caso, queremos utilizar la plataforma de [DoubleClick](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md), así que especificamos `doubleclick` como el valor.
 
-El atributo `data-slot` es más único. En [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), cualquier atributo que comience con `data-` es un atributo específico del proveedor. Esto significa que no todos los vendedores necesitarán necesariamente este atributo particular, ni reaccionarán necesariamente si se proporciona. Por ejemplo, compare el ejemplo de **DoubleClick** de arriba con el siguiente anuncio de prueba de la plataforma [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md):
+El atributo `data-slot` es más único. En [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), cualquier atributo que comience con `data-` es un atributo específico del proveedor. Esto significa que no todos los vendedores necesitarán necesariamente este atributo particular, ni reaccionarán necesariamente si se proporciona. Por ejemplo, compare el ejemplo de **DoubleClick** de arriba con el siguiente anuncio de prueba de la plataforma [A9](https://github.com/ampproject/amphtml/blob/main/ads/a9.md):
 
 ```html
 <amp-ad

@@ -122,4 +122,4 @@ teaser:
 
 ## 検証 <a name="validation"></a>
 
-AMP 検証ツール仕様の [amp-youtube ルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube/validator-amp-youtube.protoascii)をご覧ください。
+AMP 検証ツール仕様の [amp-youtube ルール](https://github.com/ampproject/amphtml/blob/main/extensions/amp-youtube/validator-amp-youtube.protoascii)をご覧ください。

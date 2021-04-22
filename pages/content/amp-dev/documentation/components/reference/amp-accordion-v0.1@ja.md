@@ -151,4 +151,4 @@ teaser:
 
 ## 検証 <a name="validation"></a>
 
-AMP 検証ツール仕様の [amp-accordion ルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-accordion/validator-amp-accordion.protoascii)をご覧ください。
+AMP 検証ツール仕様の [amp-accordion ルール](https://github.com/ampproject/amphtml/blob/main/extensions/amp-accordion/validator-amp-accordion.protoascii)をご覧ください。

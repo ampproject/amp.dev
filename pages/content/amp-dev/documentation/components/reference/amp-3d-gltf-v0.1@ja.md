@@ -121,4 +121,4 @@ GL Transmission Format（glTF）の 3D モデルを表示します。
 
 ## 検証 <a name="validation"></a>
 
-AMP 検証ツール仕様の [amp-3d-gltf ルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii)をご覧ください。
+AMP 検証ツール仕様の [amp-3d-gltf ルール](https://github.com/ampproject/amphtml/blob/main/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii)をご覧ください。

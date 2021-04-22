@@ -31,13 +31,13 @@ formats:
 - [Google AMP Cache](https://developers.google.com/amp/cache/)
 - [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
-يمثل AMP نظامًا متكاملا مفتوحًا فيما يشجع AMP بنشاط على تطوير المزيد من ذاكرات AMP للتخزين المؤقت. لتعلم الم[زيد حول إنشاء](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c) ذاكرات AMP للتخزين المؤقت، راجع [إرشادات ذاكرة AMP للتخزين المؤقت](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).<br>ذاكرة Bing AMP
+يمثل AMP نظامًا متكاملا مفتوحًا فيما يشجع AMP بنشاط على تطوير المزيد من ذاكرات AMP للتخزين المؤقت. لتعلم الم[زيد حول إنشاء](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c) ذاكرات AMP للتخزين المؤقت، راجع [إرشادات ذاكرة AMP للتخزين المؤقت](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md).<br>ذاكرة Bing AMP
 
 ## كيف أختار ذاكرة AMP للتخزين المؤقت؟
 
 كناشر، أنت لا تختار ذاكرة AMP للتخزين المؤقت، وإنما تقوم _المنصة فعليا_ بالربط بالمحتوى الخاص بك والذي يختار ذاكرة AMP للتخزين المؤقت (إن وجدت) المطلوب استخدامها.
 
-This is an inversion of the typical model where content delivery is the responsibility of the publisher. However, this model allows platforms to provide their users with predictable load performance and among other things allows them to ensure required security and privacy invariants during AMP’s pre-rendering phase. To learn about the strict guidelines for creating AMP Caches, see the [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
+This is an inversion of the typical model where content delivery is the responsibility of the publisher. However, this model allows platforms to provide their users with predictable load performance and among other things allows them to ensure required security and privacy invariants during AMP’s pre-rendering phase. To learn about the strict guidelines for creating AMP Caches, see the [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md).
 
 ## هل يمكنني الانسحاب من ذاكرة التخزين المؤقت؟
 
@@ -67,6 +67,6 @@ By using the AMP format, you are making your content available to be cached by A
 
 ## موارد إضافية
 
-- [AMP Project's AMP Cache guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)
+- [AMP Project's AMP Cache guidelines](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md)
 - [Google AMP Cache overview](https://developers.google.com/amp/cache/overview)
 - [Bing AMP Cache Documentation](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)

@@ -129,4 +129,4 @@ Grazie al layout adattabile, la larghezza e l'altezza dell'esempio dovrebbero pr
 
 ## Convalida <a name="validation"></a>
 
-Consulta le [regole amp-youtube](https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube/validator-amp-youtube.protoascii) nella specifica dello strumento di convalida AMP.
+Consulta le [regole amp-youtube](https://github.com/ampproject/amphtml/blob/main/extensions/amp-youtube/validator-amp-youtube.protoascii) nella specifica dello strumento di convalida AMP.

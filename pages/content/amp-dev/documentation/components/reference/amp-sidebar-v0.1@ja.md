@@ -70,7 +70,7 @@ $title: amp-sidebar
 
 *例:*
 
-以下の例では、`amp-sidebar` を使用して、ナビゲーション アイテムを格納しています。ただし、2 番目のアイテム（Nav Item 2）と 4 番目のアイテム（Nav Item 4）は、ページ上の要素 ID に割り当てられています。[`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) 属性を使用することで、要素 ID と `scrollTo` を使用して、要素をスムーズにスクロールすることができます。
+以下の例では、`amp-sidebar` を使用して、ナビゲーション アイテムを格納しています。ただし、2 番目のアイテム（Nav Item 2）と 4 番目のアイテム（Nav Item 4）は、ページ上の要素 ID に割り当てられています。[`on`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) 属性を使用することで、要素 ID と `scrollTo` を使用して、要素をスムーズにスクロールすることができます。
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
@@ -87,7 +87,7 @@ $title: amp-sidebar
 
 ### サイドバーを開閉する <a name="opening-and-closing-the-sidebar"></a>
 
-要素に対してタップやクリックが行われたときにサイドバーを切り替えたり、開いたり、閉じたりするには、要素内に [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) action 属性を設定して、次のいずれかの action メソッドを指定します。
+要素に対してタップやクリックが行われたときにサイドバーを切り替えたり、開いたり、閉じたりするには、要素内に [`on`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) action 属性を設定して、次のいずれかの action メソッドを指定します。
 
 <table>
   <tr>
@@ -330,7 +330,7 @@ AMP ページ内で使用できるスタイル設定済みのレスポンシブ 
 
 ```
 
-機能するサンプルコードについては、[こちらのサンプル ファイル](https://github.com/ampproject/amphtml/blob/master/examples/amp-sidebar-autoscroll.amp.html)をご覧ください。
+機能するサンプルコードについては、[こちらのサンプル ファイル](https://github.com/ampproject/amphtml/blob/main/examples/amp-sidebar-autoscroll.amp.html)をご覧ください。
 
 ## UX に関する注意事項 <a name="ux-considerations"></a>
 
@@ -340,4 +340,4 @@ AMP ページ内で使用できるスタイル設定済みのレスポンシブ 
 
 ## 検証 <a name="validation"></a>
 
-AMP 検証ツール仕様の [amp-sidebar ルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/validator-amp-sidebar.protoascii)をご覧ください。
+AMP 検証ツール仕様の [amp-sidebar ルール](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/validator-amp-sidebar.protoascii)をご覧ください。

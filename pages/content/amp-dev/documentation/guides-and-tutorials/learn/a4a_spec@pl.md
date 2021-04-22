@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -96,7 +96,7 @@ Ponadto kreacje muszą być zgodne z następującymi regułami:
 
 ### Boilerplate <a name="boilerplate"></a>
 
-Kreacje reklamowe AMPHTML wymagają innej i znacznie prostszej linii stylu boilerplate niż [ogólne dokumenty AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md):
+Kreacje reklamowe AMPHTML wymagają innej i znacznie prostszej linii stylu boilerplate niż [ogólne dokumenty AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md):
 
 [sourcecode:html]
 
@@ -112,7 +112,7 @@ _Uzasadnienie:_ styl `amp-boilerplate` ukrywa zawartość sekcji body aż do mom
 
 Wreszcie, w standardowym kodzie AMPHTML reklamy używany jest składnik `amp-a4a-boilerplate`, zamiast `amp-boilerplate`, aby walidatory mogły go z łatwością zidentyfikować i wygenerować dokładniejsze komunikaty o błędach, pomocne dla programistów.
 
-Należy pamiętać, że obowiązują te same zasady dotyczące modyfikacji tekstu standardowego, co w przypadku [ogólnego kodu standardowego AMP ](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md).
+Należy pamiętać, że obowiązują te same zasady dotyczące modyfikacji tekstu standardowego, co w przypadku [ogólnego kodu standardowego AMP ](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md).
 
 ### CSS <a name="css"></a>
 
@@ -252,7 +252,7 @@ Większość pominięć wynika z kwestii wydajności albo uproszczenia analizy r
 
 _Przykład:_ `<amp-ad>` pominięto na tej liście. Jest jednoznacznie niedozwolony, ponieważ zezwalanie na `<amp-ad>` w `<amp-ad>` może doprowadzić do ładowania nieograniczonych kaskad reklam, które nie spełniają celów wydajnościowych reklam AMPHTML.
 
-_Przykład:_ `<amp-iframe>` pominięto na tej liście. Jest niedozwolony, ponieważ reklamy mogą go użyć do wykonania dowolnego kodu JavaScript i załadowania dowolnej zawartości. Reklamy chcące korzystać z takich możliwości powinny zwracać wartość `false` ze swojego wpisu [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40) i używać istniejącego mechanizmu renderowania reklam „3p iframe”.
+_Przykład:_ `<amp-iframe>` pominięto na tej liście. Jest niedozwolony, ponieważ reklamy mogą go użyć do wykonania dowolnego kodu JavaScript i załadowania dowolnej zawartości. Reklamy chcące korzystać z takich możliwości powinny zwracać wartość `false` ze swojego wpisu [a4aRegistry](https://github.com/ampproject/amphtml/blob/main/ads/_a4a-config.js#L40) i używać istniejącego mechanizmu renderowania reklam „3p iframe”.
 
 _Przykład:_ `<amp-facebook>`, `<amp-instagram>`, `<amp-twitter>` i `<amp-youtube>` pominięto z tego samego powodu, co `<amp-iframe>`: wszystkie one tworzą ramki iframe i mogą w nich używać nieograniczonych zasobów.
 
@@ -262,7 +262,7 @@ _Przykład:_ `<amp-lightbox>` nie jest jeszcze uwzględniony, ponieważ nawet ni
 
 ### Znaczniki HTML <a name="html-tags"></a>
 
-Poniżej znajdują się znaczniki _dozwolone_ w kreacji reklamowej AMPHTML. Znaczniki, które nie są jawnie dozwolone, są zabronione. Ta lista jest podzbiorem ogólnej [listy dozwolonych znaczników AMPHTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md). Podobnie jak ta lista, są uporządkowane zgodnie ze specyfikacją HTML5 w sekcji 4 [Elementy HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
+Poniżej znajdują się znaczniki _dozwolone_ w kreacji reklamowej AMPHTML. Znaczniki, które nie są jawnie dozwolone, są zabronione. Ta lista jest podzbiorem ogólnej [listy dozwolonych znaczników AMPHTML](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/../../spec/amp-tag-addendum.md). Podobnie jak ta lista, są uporządkowane zgodnie ze specyfikacją HTML5 w sekcji 4 [Elementy HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
 
 Większość pominięć wynika z kwestii wydajności albo tego, że znaczniki nie są w standardzie HTML5. Na przykład `<noscript>` pominięto, ponieważ reklamy AMPHTML zależą od włączenia obsługi JavaScript, więc blok `<noscript>` nigdy nie jest wykonywany, zatem jedynie zaśmieca kreację, obciąża łącze i zwiększa latencję. Podobnie znaczniki `<acronym>`, `<big>` itd. są zabronione, ponieważ nie są zgodne z HTML5.
 

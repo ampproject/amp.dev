@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-html.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -33,7 +33,7 @@ limitations under the License.
 
 Not: Bu liste normatif değildir ve sadece referans amaçlıdır. AMP Validator kuralları, desteklenen HTML etiketleri ve öznitelikleri üzerinde yetkilidir.
 
-[Desteklenen AMP bileşenlerine](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md) ek olarak, E-Posta için AMP'de aşağıdaki HTML etiketlerine izin verilir.
+[Desteklenen AMP bileşenlerine](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-components.md) ek olarak, E-Posta için AMP'de aşağıdaki HTML etiketlerine izin verilir.
 
 ## Desteklenen etiketler <a name="supported-tags"></a>
 

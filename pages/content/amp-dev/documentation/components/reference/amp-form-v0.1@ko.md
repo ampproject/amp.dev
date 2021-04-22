@@ -151,9 +151,9 @@ XHR 엔드포인트에서 [CORS 보안](../../../documentation/guides-and-tutori
 * `<input type=button>`, `<input type=image>`
 * 입력에 있는 대부분의 양식 관련 속성. 예: `form`, `formaction`, `formtarget`, `formmethod` 등
 
-해당 규칙 중 일부를 완화하는 일은 나중에 다시 고려해 볼 수 있습니다. 필요한 경우 [Google에 알리고](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#suggestions-and-feature-requests) 사용 사례를 제공해 주세요.
+해당 규칙 중 일부를 완화하는 일은 나중에 다시 고려해 볼 수 있습니다. 필요한 경우 [Google에 알리고](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#suggestions-and-feature-requests) 사용 사례를 제공해 주세요.
 
-유효한 입력 및 필드에 관한 세부정보는 AMP 유효성 검사기 사양의 [amp-form 규칙](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)을 참조하세요.
+유효한 입력 및 필드에 관한 세부정보는 AMP 유효성 검사기 사양의 [amp-form 규칙](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)을 참조하세요.
 
 # 작업 <a name="actions"></a>
 
@@ -193,7 +193,7 @@ XHR 엔드포인트에서 [CORS 보안](../../../documentation/guides-and-tutori
 
 ```
 
-[여기에서 전체 예](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)를 참조하세요.
+[여기에서 전체 예](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html)를 참조하세요.
 
 # 입력 이벤트 <a name="input-events"></a>
 
@@ -225,7 +225,7 @@ AMP에서는 하위 `<input>` 요소에 `change` 및 `input-debounced` 이벤트
 ```
 [/example]
 
-[여기에서 전체 예](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)를 참조하세요.
+[여기에서 전체 예](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html)를 참조하세요.
 
 # 애널리틱스 트리거 <a name="analytics-triggers"></a>
 
@@ -381,7 +381,7 @@ AMP에서는 하위 `<input>` 요소에 `change` 및 `input-debounced` 이벤트
 {% endraw %}
 ```
 
-[여기에서 전체 예](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)를 참조하세요.
+[여기에서 전체 예](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html)를 참조하세요.
 
 # 데이터 결합을 사용하여 성공 응답 렌더링하기 <a name="to-render-a-successful-response-with-data-binding"></a>
 
@@ -495,7 +495,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 ```
 [/example]
 
-더 많은 예는 [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)을 참조하세요.
+더 많은 예는 [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html)을 참조하세요.
 
 유효성 검사 메시지의 경우 요소에 텍스트 콘텐츠가 포함되지 않은 경우 AMP에서 브라우저의 기본 유효성 검사 메시지로 요소를 채웁니다. 위의 예에서 `name5` 입력이 비어 있으며 유효성 검사가 시작된 경우(즉, 사용자가 양식을 제출하려고 시도함) AMP에서 `<span visible-when-invalid="valueMissing" validation-for="name5"></span>`을 브라우저의 유효성 검사 메시지로 채우고 사용자에게 `span`을 표시합니다.
 
@@ -585,11 +585,11 @@ HTML5 유효성 검사에서는 페이지에서 사용 가능한 정보(예: 값
 
 `verify-xhr` 요청에서 필드를 제거하려면 `no-verify` 속성을 입력 요소에 추가합니다.
 
-더 많은 예는 [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)을 참조하세요.
+더 많은 예는 [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html)을 참조하세요.
 
 # 대체 변수 <a name="variable-substitutions"></a>
 
-`amp-form` 확장 프로그램에서는 `data-amp-replace` 속성이 있으며 숨겨져 있는 입력에 [플랫폼 대체 변수](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)를 사용할 수 있습니다. 양식을 제출할 때마다 `amp-form`을 통해 양식에서 모든 `input[type=hidden][data-amp-replace]`를 찾고 `value` 속성에 대체 변수를 적용하여 대체 결과로 바꿉니다.
+`amp-form` 확장 프로그램에서는 `data-amp-replace` 속성이 있으며 숨겨져 있는 입력에 [플랫폼 대체 변수](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)를 사용할 수 있습니다. 양식을 제출할 때마다 `amp-form`을 통해 양식에서 모든 `input[type=hidden][data-amp-replace]`를 찾고 `value` 속성에 대체 변수를 적용하여 대체 결과로 바꿉니다.
 
 `data-amp-replace`에서 사용한 변수의 공백으로 구분된 문자열을 지정하여 각 입력에서 각 대체에 사용할 변수를 제공해야 합니다(아래 예 참조). AMP에서는 명시적으로 지정되지 않은 변수는 대체하지 않습니다.
 
@@ -624,7 +624,7 @@ HTML5 유효성 검사에서는 페이지에서 사용 가능한 정보(예: 값
 
 위의 `CANONICAL_HOSTNAME`은 첫 번째 필드의 `data-amp-replace` 속성을 통해 허용 목록에 포함되지 않았으므로 대체되지 않았습니다.
 
-후속 제출에서는 매번 대체가 발생합니다. [AMP의 대체 변수](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)에 관해 자세히 알아보세요.
+후속 제출에서는 매번 대체가 발생합니다. [AMP의 대체 변수](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)에 관해 자세히 알아보세요.
 
 # Polyfill <a name="polyfills"></a>
 
@@ -674,7 +674,7 @@ AMP 양식은 `<textarea>` 요소에 `autoexpand` 속성을 제공합니다. 그
 
 게시자가 이 클래스를 사용하여 사용자의 작업에 응답하도록 입력과 필드 세트의 스타일을 지정할 수 있습니다(예: 사용자가 흐리게 표시한 후 잘못된 입력을 빨간색 테두리로 강조표시).
 
-이 클래스의 사용 방법은 [여기에서 전체 예](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)를 참조하세요.
+이 클래스의 사용 방법은 [여기에서 전체 예](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html)를 참조하세요.
 
 [tip type="success"]
 AMP 페이지에서 사용할 수 있는 사전에 스타일이 지정된 응답형 AMP 양식 요소는 [AMP 시작](https://ampstart.com/components#form-elements)을 방문하세요.

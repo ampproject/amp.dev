@@ -36,7 +36,7 @@ Tutti i documenti utilizzano il protocollo https nelle cache AMP.
 
 ## Suffisso Nome Dominio
 
-Tutte le cache AMP sono registrate in un file JSON, disponibile online nell'[archivio AMPHTML](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). Un esempio di cache record in questo file sarà simile al seguente:
+Tutte le cache AMP sono registrate in un file JSON, disponibile online nell'[archivio AMPHTML](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json). Un esempio di cache record in questo file sarà simile al seguente:
 
 ```json
 {
@@ -179,7 +179,7 @@ Il valore dell'intestazione Origin di una cache AMP sarà simile a uno dei segue
 - `https://www-example-com.cdn.ampproject.org`
 - `https://v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq.cdn.ampproject.org`
 
-Innanzitutto, rimuovere il prefisso del protocollo (`https://` ) e il suffisso del dominio della cache AMP, ad esempio `.cdn.ampproject.org`. Il suffisso può provenire da una qualsiasi delle cache elencate in [caches.json](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). La stringa rimanente sarà il "prefisso di dominio". Nel caso dei due esempi precedenti, il "prefisso di dominio" è:
+Innanzitutto, rimuovere il prefisso del protocollo (`https://` ) e il suffisso del dominio della cache AMP, ad esempio `.cdn.ampproject.org`. Il suffisso può provenire da una qualsiasi delle cache elencate in [caches.json](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json). La stringa rimanente sarà il "prefisso di dominio". Nel caso dei due esempi precedenti, il "prefisso di dominio" è:
 
 - `www-example-com`
 - `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq`

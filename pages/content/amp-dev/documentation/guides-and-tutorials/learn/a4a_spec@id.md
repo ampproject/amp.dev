@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -96,7 +96,7 @@ Selain itu, kreatif harus mematuhi aturan-aturan berikut ini:
 
 ### Boilerplate (templat) <a name="boilerplate"></a>
 
-Kreatif iklan AMPHTML membutuhkan baris gaya boilerplate yang jauh lebih sederhana dan berbeda dibanding [yang dilakukan dokumen AMP umum](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md):
+Kreatif iklan AMPHTML membutuhkan baris gaya boilerplate yang jauh lebih sederhana dan berbeda dibanding [yang dilakukan dokumen AMP umum](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md):
 
 [sourcecode:html]
 
@@ -112,7 +112,7 @@ _Alasan:_ Gaya `amp-boilerplate` menyembunyikan konten isi hingga runtime AMP si
 
 Terakhir, boilerplate iklan AMPHTML menggunakan `amp-a4a-boilerplate`, bukan `amp-boilerplate`, sehingga validator dapat dengan mudah mengidentifikasinya dan menghasilkan pesan kesalahan (eror) yang lebih akurat untuk membantu pengembang.
 
-Perhatikan bahwa aturan yang sama tentang mutasi pada teks boilerplate berlaku seperti pada [boilerplate AMP umum](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md).
+Perhatikan bahwa aturan yang sama tentang mutasi pada teks boilerplate berlaku seperti pada [boilerplate AMP umum](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md).
 
 ### CSS <a name="css"></a>
 
@@ -255,7 +255,7 @@ Sebagian besar yang ditiadakan adalah demi kinerja atau untuk membuat iklan AMPH
 
 _Contoh:_ `<amp-ad>` ditiadakan dari daftar ini. Ini secara tegas tidak diizinkan karena mengizinkan sebuah `<amp-ad>` di dalam sebuah `<amp-ad>` dapat berpotensi menimbulkan aliran pemuatan iklan yang tidak dapat dikendalikan, dan ini tidak sesuai dengan tujuan kinerja iklan AMPHTML.
 
-_Contoh:_ `<amp-iframe>` ditiadakan dari daftar ini. Ini tidak diizinkan karena iklan dapat menggunakannya untuk mengeksekusi JavaScript sesuka hati dan memuat konten sesuka hati. Iklan yang ingin menggunakan kemampuan seperti ini harus menghasilkan `false` dari entri [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40)-nya dan menggunakan mekanisme perenderan iklan '3p iframe' yang sudah ada.
+_Contoh:_ `<amp-iframe>` ditiadakan dari daftar ini. Ini tidak diizinkan karena iklan dapat menggunakannya untuk mengeksekusi JavaScript sesuka hati dan memuat konten sesuka hati. Iklan yang ingin menggunakan kemampuan seperti ini harus menghasilkan `false` dari entri [a4aRegistry](https://github.com/ampproject/amphtml/blob/main/ads/_a4a-config.js#L40)-nya dan menggunakan mekanisme perenderan iklan '3p iframe' yang sudah ada.
 
 _Contoh:_ `<amp-facebook>`, `<amp-instagram>`, `<amp-twitter>`, dan `<amp-youtube>`, kesemuanya ditiadakan karena alasan yang sama dengan `<amp-iframe>`: Semua ini menciptakan iframe dan berpotensi menggunakan sumber daya yang tidak terbatas yang mereka miliki.
 
@@ -265,7 +265,7 @@ _Contoh:_ `<amp-lightbox>` masih belum disertakan karena bahkan beberapa kreatif
 
 ### Tag HTML <a name="html-tags"></a>
 
-Yang berikut ini adalah tag-tag _yang diizinkan_ di dalam kreatif iklan AMPHTML. Tag-tag yang tidak dicantumkan secara tegas berarti dilarang. Daftar ini adalah sebagian dari [Daftar tambahan tag AMP yang diizinkan](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md) yang umum. Seperti daftar tersebut, ini diurutkan sesuai dengan spesifikasi HTML5 di dalam bagian 4: [Elemen HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
+Yang berikut ini adalah tag-tag _yang diizinkan_ di dalam kreatif iklan AMPHTML. Tag-tag yang tidak dicantumkan secara tegas berarti dilarang. Daftar ini adalah sebagian dari [Daftar tambahan tag AMP yang diizinkan](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/../../spec/amp-tag-addendum.md) yang umum. Seperti daftar tersebut, ini diurutkan sesuai dengan spesifikasi HTML5 di dalam bagian 4: [Elemen HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
 
 Sebagian besar yang ditiadakan adalah demi kinerja atau karena tag-tag tersebut bukan standar HTML5. Contohnya, `<noscript>` ditiadakan karena iklan AMPHTML membutuhkan JavaScript, sehingga blok `<noscript>` tidak akan pernah mengeksekusi dan, oleh karena itu, hanya akan membengkakkan kreatif dan menguasai bandwidth serta mengakibatkan latensi. Demikian juga dengan `<acronym>`, `<big>`, dan yang semacamnya, mereka dilarang karena tidak kompatibel dengan HTML5.
 

@@ -78,7 +78,7 @@ Pero, vayamos paso a paso:
 
 5. [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
 
-6. Especifique las etiquetas `<script>` para [extensiones que retrasan el procesamiento](https://github.com/ampproject/amphtml/blob/master/src/render-delaying-services.js) (por ejemplo, [`amp-experiment`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md) y [`amp-story`](../../../documentation/components/reference/amp-story.md)
+6. Especifique las etiquetas `<script>` para [extensiones que retrasan el procesamiento](https://github.com/ampproject/amphtml/blob/main/src/render-delaying-services.js) (por ejemplo, [`amp-experiment`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md) y [`amp-story`](../../../documentation/components/reference/amp-story.md)
 
 7. Especifique las etiquetas `<script>` para las extensiones restantes (por ejemplo, [`amp-bind{/code}`](../../../documentation/components/reference/amp-bind.md) ...). Estas extensiones no tienen retraso en el renderizado y por lo tanto no deben precargarse ya que podrían quitar un ancho de banda importante para el renderizado inicial.
 

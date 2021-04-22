@@ -54,6 +54,6 @@ Here are some quick tips to improve user engagement with AMP.
 - **Watch the AMP roadmap** for updates and features at [roadmap](../../../community/roadmap.html).
 
 - **Get involved.** Contribute source code, file bugs, or offer feedback
-  on [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Share your input about AMP at [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
+  on [GitHub](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md). Share your input about AMP at [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 
 - **Learn** how to use AMP components with [Examples](../../../documentation/examples/index.html).

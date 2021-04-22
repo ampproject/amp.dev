@@ -166,7 +166,7 @@ Se vengono utilizzati dati di configurazione provenienti da più di una di quest
 
 #### Caricamento configurazione remota <a name="loading-remote-configuration"></a>
 
-Per caricare una configurazione remota, nell'elemento `<amp-analytics>`, specifica l'attributo `config` e l'URL dei dati di configurazione. L'URL specificato deve utilizzare lo schema HTTPS. L'URL può includere [variabili URL AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Per accedere ai cookie, vedi l'attributo [`data-credentials`](#data-credentials). La risposta deve rispettare le [linee guida per la sicurezza CORS AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
+Per caricare una configurazione remota, nell'elemento `<amp-analytics>`, specifica l'attributo `config` e l'URL dei dati di configurazione. L'URL specificato deve utilizzare lo schema HTTPS. L'URL può includere [variabili URL AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md). Per accedere ai cookie, vedi l'attributo [`data-credentials`](#data-credentials). La risposta deve rispettare le [linee guida per la sicurezza CORS AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
 
 In questo esempio, viene specificato l'attributo `config` per caricare i dati di configurazione dall'URL specificato.
 
@@ -201,7 +201,7 @@ Il runtime unisce quindi l'intera configurazione fornita per determinare la conf
 
 Gruppi variabili è una funzione che consente ai fornitori di soluzioni di analisi di raggruppare un insieme predefinito di variabili facilmente attivabili da un utente. Queste variabili verranno quindi risolte e inviate all'endpoint `configRewriter` specificato.
 
-Per attivare questa funzione, i fornitori di soluzioni di analisi devono creare un nuovo oggetto `varGroups` all'interno della configurazione `configRewriter`. I publisher possono quindi includere qualsiasi `varGroups` creato da un fornitore di soluzioni di analisi che intendono attivare nella propria configurazione di analisi. È possibile utilizzare tutte le variabili supportate dalla [Guida alle sostituzioni HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). *Nota importante*: le varianti $ {varName} non funzioneranno.
+Per attivare questa funzione, i fornitori di soluzioni di analisi devono creare un nuovo oggetto `varGroups` all'interno della configurazione `configRewriter`. I publisher possono quindi includere qualsiasi `varGroups` creato da un fornitore di soluzioni di analisi che intendono attivare nella propria configurazione di analisi. È possibile utilizzare tutte le variabili supportate dalla [Guida alle sostituzioni HTML AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md). *Nota importante*: le varianti $ {varName} non funzioneranno.
 
 Ad esempio, potremmo avere un fornitore la cui configurazione è simile alla seguente:
 ```js
@@ -346,7 +346,7 @@ La seguente configurazione invia il primo ping di richiesta dopo un secondo e un
 
 #### Variabili <a name="vars"></a>
 
-Il componente `amp-analytics` definisce molte variabili di base che possono essere utilizzate nelle richieste. Un elenco di tutte queste variabili è disponibile nella [Guida alle variabili di `amp-analytics`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md). Sono inoltre supportate tutte le variabili supportate dalla [Guida alle sostituzioni HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
+Il componente `amp-analytics` definisce molte variabili di base che possono essere utilizzate nelle richieste. Un elenco di tutte queste variabili è disponibile nella [Guida alle variabili di `amp-analytics`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md). Sono inoltre supportate tutte le variabili supportate dalla [Guida alle sostituzioni HTML AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md).
 
 L'oggetto di configurazione `vars` può essere utilizzato per definire nuove coppie chiave-valore o per sostituire le variabili esistenti a cui si può fare riferimento nei valori di `request`. Le nuove variabili vengono generalmente utilizzate per indicare le informazioni specifiche del publisher.  Gli array possono essere utilizzati per specificare un elenco di valori con codifica URL separata e delimitatore virgola.
 
@@ -384,7 +384,7 @@ Se `useBody` è abilitato e la richiesta viene inviata tramite i metodi di trasp
 
 L'oggetto di configurazione `triggers` descrive quando deve essere inviata una richiesta di analisi. L'attributo `triggers` contiene una coppia chiave-valore di nome-attivatore e configurazione-attivatore. Un nome-attivatore può essere qualsiasi stringa composta da caratteri alfanumerici (a-zA-Z0-9). Gli attivatori provenienti da una configurazione con precedenza inferiore vengono sostituiti da attivatori con lo stesso nome provenienti da una configurazione con precedenza superiore.
 
-* `on` (obbligatorio) è l'evento da tenere in considerazione. I valori validi sono `render-start`, `ini-load`, `click`, `scroll`, `timer`, `visible`, `hidden`, `user-error`, [`access-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) e [`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md)
+* `on` (obbligatorio) è l'evento da tenere in considerazione. I valori validi sono `render-start`, `ini-load`, `click`, `scroll`, `timer`, `visible`, `hidden`, `user-error`, [`access-*`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/amp-access-analytics.md) e [`video-*`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-video-analytics.md)
 * `request` (obbligatorio) è il nome della richiesta da inviare (come specificato nella sezione `requests`).
 * `vars` è un oggetto contenente coppie chiave-valore utilizzate per sostituire le `vars` definite nella configurazione di primo livello o per specificare vars uniche per questo attivatore.
 * `important` può essere specificato per funzionare con le richieste che supportano il comportamento di raggruppamento o la finestra di segnalazione. L'impostazione di `important` su `true` può aiutare a scaricare la coda di richieste raggruppate con alcuni attivatori. In questo caso, è possibile ridurre il numero di ping delle richieste senza perdere importanti eventi di attivazione. L'impostazione di `important` su `true` può anche sostituire il valore `reportWindow` della richiesta per l'invio di ping importanti per le richieste.
@@ -394,7 +394,7 @@ L'oggetto di configurazione `triggers` descrive quando deve essere inviata una r
 * `sampleSpec` è un oggetto utilizzato per definire il modo in cui le richieste possono essere campionate prima di essere inviate. Questa impostazione consente il campionamento basato su input casuali o su altre variabili supportate dalla piattaforma. L'oggetto contiene la configurazione per specificare un input utilizzato per generare un hash e una soglia che l'hash deve soddisfare.
     * `sampleOn` è un modello di stringa che viene espanso compilando le variabili di piattaforma e quindi sottoposto ad hashing per generare un numero ai fini della logica di campionamento descritta di seguito nella sezione relativa alla soglia.
     * `threshold` è una configurazione utilizzata per escludere le richieste che non soddisfano determinati criteri. Per una richiesta di accesso al fornitore di soluzioni di analisi, la seguente logica deve essere vera: `HASH(sampleOn) < threshold`.</li>
-* `videoSpec` (utilizzato quando `on` è impostato su `video-*`) è una configurazione utilizzata in combinazione con gli attivatori [`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
+* `videoSpec` (utilizzato quando `on` è impostato su `video-*`) è una configurazione utilizzata in combinazione con gli attivatori [`video-*`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-video-analytics.md).
 
 Ad esempio, la seguente configurazione può essere utilizzata per campionare il 50% delle richieste in base a input casuali o all'1% in base all'ID client.
 
@@ -513,7 +513,7 @@ L'attivatore di visibilità elemento può essere configurato per qualsiasi eleme
 }
 ```
 
-Tieni presente che il selettore può essere utilizzato per specificare solo un singolo elemento, non una raccolta. L'elemento può essere un [elemento esteso AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-tag-addendum.md#amp-specific-tags) o una radice documento.
+Tieni presente che il selettore può essere utilizzato per specificare solo un singolo elemento, non una raccolta. L'elemento può essere un [elemento esteso AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-tag-addendum.md#amp-specific-tags) o una radice documento.
 
 L'attivatore di visibilità elemento attende il segnale specificato dalla proprietà `waitFor` in `visibilitySpec` prima di monitorare la visibilità dell'elemento. Se `waitFor` non è specificato, attende il segnale [`ini-load`](#initial-load-trigger) dell'elemento. Per ulteriori dettagli, consulta la documentazione relativa a `waitFor`.
 Se `reportWhen` è specificato, l'attivatore attende il segnale prima di inviare l'evento. È utile, ad esempio, per inviare eventi di analisi quando la pagina viene chiusa.
@@ -593,7 +593,7 @@ visibilitySpec: {
 }
 ```
 
-Oltre alle condizioni riportate sopra, `visibilitySpec` attiva anche determinate variabili documentate [qui](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#visibility-variables).
+Oltre alle condizioni riportate sopra, `visibilitySpec` attiva anche determinate variabili documentate [qui](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md#visibility-variables).
 
 ```javascript
 "triggers": {
@@ -611,7 +611,7 @@ Oltre alle condizioni riportate sopra, `visibilitySpec` attiva anche determinate
   }
 }
 ```
-Oltre alle variabili fornite come parte degli attivatori, puoi anche specificare aggiunte / sostituzioni per le [variabili come attributo dei dati](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#variables-as-data-attribute). Se utilizzati, questi attributi dei dati devono essere parte dell'elemento specificato come [`selector`](#element-selector).
+Oltre alle variabili fornite come parte degli attivatori, puoi anche specificare aggiunte / sostituzioni per le [variabili come attributo dei dati](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md#variables-as-data-attribute). Se utilizzati, questi attributi dei dati devono essere parte dell'elemento specificato come [`selector`](#element-selector).
 
 ##### Attivatore clic <a name="click-trigger"></a>
 
@@ -634,11 +634,11 @@ Utilizza l'attivatore clic (`"on": "click"`) per generare una richiesta quando v
 }
 ```
 
-Oltre alle variabili fornite come parte degli attivatori, puoi anche specificare aggiunte / sostituzioni per le [variabili come attributo dei dati](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#variables-as-data-attribute). Se utilizzati, questi attributi dei dati devono essere parte dell'elemento specificato come `selector`
+Oltre alle variabili fornite come parte degli attivatori, puoi anche specificare aggiunte / sostituzioni per le [variabili come attributo dei dati](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md#variables-as-data-attribute). Se utilizzati, questi attributi dei dati devono essere parte dell'elemento specificato come `selector`
 
 ##### Attivatore di scorrimento <a name="scroll-trigger"></a>
 
-Utilizza l'attivatore di scorrimento (`"on": "scroll"`) per attivare una richiesta in determinate condizioni quando la pagina viene scorsa. Questo attivatore fornisce [variabili speciali](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#interaction) indicanti i limiti che hanno generato l'invio della richiesta. Usa `scrollSpec` per controllare quando verrà messo in funzione:
+Utilizza l'attivatore di scorrimento (`"on": "scroll"`) per attivare una richiesta in determinate condizioni quando la pagina viene scorsa. Questo attivatore fornisce [variabili speciali](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md#interaction) indicanti i limiti che hanno generato l'invio della richiesta. Usa `scrollSpec` per controllare quando verrà messo in funzione:
 
 - `scrollSpec` questo oggetto può contenere `verticalBoundaries` e `horizontalBoundaries`. È necessaria almeno una delle due proprietà per attivare un evento di scorrimento. I valori per entrambe le proprietà devono essere array di numeri contenenti i limiti su cui viene generato un evento di scorrimento. Ad esempio, nel seguente snippet di codice, l'evento di scorrimento verrà attivato quando la pagina viene scorsa verticalmente del 25%, 50% e 90%. Inoltre, l'evento viene attivato anche quando la pagina viene spostata orizzontalmente al 90% della larghezza di scorrimento. Per mantenere le prestazioni della pagina, i bordi di scorrimento sono arrotondati al multiplo di `5` più vicino.
 
@@ -739,11 +739,11 @@ Quando la pagina viene nascosta, attiva una richiesta se l'elemento #anim-id è 
 
 ##### Attivatori di accesso <a name="access-triggers"></a>
 
-Il sistema di accesso AMP emette numerosi eventi per diversi stati nel flusso di accesso. Per informazioni dettagliate sugli attivatori di accesso (`"on": "access-*"`), consulta [Accesso ad AMP e Analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md).
+Il sistema di accesso AMP emette numerosi eventi per diversi stati nel flusso di accesso. Per informazioni dettagliate sugli attivatori di accesso (`"on": "access-*"`), consulta [Accesso ad AMP e Analytics](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/amp-access-analytics.md).
 
 #### Attivatori di analisi dei dati video <a name="video-analytics-triggers"></a>
 
-L'analisi dei dati video offre diversi attivatori (`"on": "video-*"`) utilizzabili dai publisher per monitorare diversi eventi che si verificano durante il ciclo di vita di un video. Ulteriori dettagli sono disponibili in [Analisi dei dati video AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
+L'analisi dei dati video offre diversi attivatori (`"on": "video-*"`) utilizzabili dai publisher per monitorare diversi eventi che si verificano durante il ciclo di vita di un video. Ulteriori dettagli sono disponibili in [Analisi dei dati video AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-video-analytics.md).
 
 #### Trasporto <a name="transport"></a>
 
@@ -754,7 +754,7 @@ indicano quali metodi di trasporto sono accettabili.
 * `xhrpost` indica che `XMLHttpRequest` può essere utilizzato per trasmettere la richiesta. Verrà inviata una richiesta POST con credenziali. La richiesta verrà inviata con un corpo vuoto, a meno che `useBody` non sia true. Per ulteriori informazioni su `useBody`, consulta la sezione [useBody per parametri URL aggiuntivi](#use-body-for-extra-url-params).
 * `image` indica che la richiesta può essere inviata generando un tag `Image`. Verrà inviata una richiesta GET. Per eliminare gli avvisi della console a causa di risposte vuote o richieste non riuscite, imposta `"image": {"suppressWarnings": true}`.
 
-I fornitori accreditati da MRC possono utilizzare un quarto meccanismo di trasporto, "trasporto iframe", aggiungendo una stringa URL a iframe-transport-vendors.js. Questo indica che deve essere creato un iframe con l'attributo `src` impostato su questo URL e che le richieste verranno inviate a quell'iframe tramite `window.postMessage()`. In questo caso, le richieste non devono necessariamente essere URL completi. `iframe` può essere specificato solo in `iframe-transport-vendors.js`, non in linea all'interno del tag `amp-analytics`, né tramite la configurazione remota. Inoltre, il frame del fornitore potrebbe inviare una risposta, che verrà utilizzata da amp-ad-exit. Vedi [analytics-iframe-transport-remote-frame.html](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport-remote-frame.html) e [fake_amp_ad_with_iframe_transport.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html): il primo file invia un oggetto JSON di risposta {'collected-data': 'abc'}, mentre il secondo utilizza tale oggetto per sostituire 'bar_' con 'abc' in finalUrl.
+I fornitori accreditati da MRC possono utilizzare un quarto meccanismo di trasporto, "trasporto iframe", aggiungendo una stringa URL a iframe-transport-vendors.js. Questo indica che deve essere creato un iframe con l'attributo `src` impostato su questo URL e che le richieste verranno inviate a quell'iframe tramite `window.postMessage()`. In questo caso, le richieste non devono necessariamente essere URL completi. `iframe` può essere specificato solo in `iframe-transport-vendors.js`, non in linea all'interno del tag `amp-analytics`, né tramite la configurazione remota. Inoltre, il frame del fornitore potrebbe inviare una risposta, che verrà utilizzata da amp-ad-exit. Vedi [analytics-iframe-transport-remote-frame.html](https://github.com/ampproject/amphtml/blob/main/examples/analytics-iframe-transport-remote-frame.html) e [fake_amp_ad_with_iframe_transport.html](https://github.com/ampproject/amphtml/blob/main/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html): il primo file invia un oggetto JSON di risposta {'collected-data': 'abc'}, mentre il secondo utilizza tale oggetto per sostituire 'bar_' con 'abc' in finalUrl.
 
 Se sono attivati più metodi di trasporto sopra indicati, l'ordine di precedenza è `iframe` &gt; `beacon` &gt; `xhrpost` &gt; `image`. Verrà utilizzato un solo metodo di trasporto, che sarà quello con la massima precedenza consentita e disponibile. Se lo user-agent del client non supporta un metodo, verrà utilizzato il metodo attivato successivo in ordine di precedenza. Per impostazione predefinita, tutti e quattro i metodi sopra riportati sono attivati.
 
@@ -768,7 +768,7 @@ Nell'esempio riportato di seguito, non viene specificato un URL `iframe` e `beac
 }
 ```
 
-Per ulteriori informazioni, consulta [questo esempio che implementa l'API del client di trasporto iframe](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport-remote-frame.html) e [questa pagina di esempio che incorpora tale iframe](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport.amp.html). L'esempio carica un [annuncio falso](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html), che contiene il tag `amp-analytics`. Tieni presente che i contenuti degli annunci falsi includono alcune istruzioni di configurazione aggiuntive che devono essere seguite.
+Per ulteriori informazioni, consulta [questo esempio che implementa l'API del client di trasporto iframe](https://github.com/ampproject/amphtml/blob/main/examples/analytics-iframe-transport-remote-frame.html) e [questa pagina di esempio che incorpora tale iframe](https://github.com/ampproject/amphtml/blob/main/examples/analytics-iframe-transport.amp.html). L'esempio carica un [annuncio falso](https://github.com/ampproject/amphtml/blob/main/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html), che contiene il tag `amp-analytics`. Tieni presente che i contenuti degli annunci falsi includono alcune istruzioni di configurazione aggiuntive che devono essere seguite.
 
 ##### useBody per parametri URL aggiuntivi <a name="use-body-for-extra-url-params"></a>
 
@@ -803,21 +803,21 @@ Le norme sui referrer sono disponibili solo per il trasporto `image`. Se `referr
 
 #### Linker <a name="linkers"></a>
 
-La funzione `linkers` consente di attivare la sincronizzazione degli ID interdominio. `amp-analytics` utilizzerà un [oggetto di configurazione](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-forwarding.md#format) per creare una "stringa linker", che verrà aggiunta ai link in uscita specificati nella pagina come parametro URL. Quando un utente fa clic su uno di questi link, la pagina di destinazione leggerà la stringa del linker dal parametro URL per eseguire la sincronizzazione dell'ID. In genere, viene utilizzato per partecipare alle sessioni utente in un dominio proxy AMP e un dominio del publisher.
+La funzione `linkers` consente di attivare la sincronizzazione degli ID interdominio. `amp-analytics` utilizzerà un [oggetto di configurazione](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-forwarding.md#format) per creare una "stringa linker", che verrà aggiunta ai link in uscita specificati nella pagina come parametro URL. Quando un utente fa clic su uno di questi link, la pagina di destinazione leggerà la stringa del linker dal parametro URL per eseguire la sincronizzazione dell'ID. In genere, viene utilizzato per partecipare alle sessioni utente in un dominio proxy AMP e un dominio del publisher.
 
-I dettagli per la configurazione del linker sono descritti in [Inoltro ID linker](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-forwarding.md)
+I dettagli per la configurazione del linker sono descritti in [Inoltro ID linker](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-forwarding.md)
 
-Se vuoi inserire questo parametro, consulta le informazioni sulla sua creazione in [Ricezione ID linker](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md).
+Se vuoi inserire questo parametro, consulta le informazioni sulla sua creazione in [Ricezione ID linker](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md).
 
 #### Cookie <a name="cookies"></a>
 
-La funzione `cookies` supporta la scrittura di cookie nel dominio di origine mediante estrazione delle informazioni [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#query-parameter) e [`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#linker-param) dall'URL del documento. Può essere utilizzata insieme alle funzioni `linkers` per sincronizzare gli ID dal dominio AMP con proxy con le pagine AMP del dominio di un publisher.
+La funzione `cookies` supporta la scrittura di cookie nel dominio di origine mediante estrazione delle informazioni [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#query-parameter) e [`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md#linker-param) dall'URL del documento. Può essere utilizzata insieme alle funzioni `linkers` per sincronizzare gli ID dal dominio AMP con proxy con le pagine AMP del dominio di un publisher.
 
-I dettagli sulla configurazione dei `cookies` sono disponibili su [Parametri Linker riceventi su pagine AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#receiving-linker-params-on-amp-pages)
+I dettagli sulla configurazione dei `cookies` sono disponibili su [Parametri Linker riceventi su pagine AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md#receiving-linker-params-on-amp-pages)
 
 ## Convalida <a name="validation"></a>
 
-Consulta [le regole di amp-analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/validator-amp-analytics.protoascii) nella specifica dello strumento di convalida AMP.
+Consulta [le regole di amp-analytics](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/validator-amp-analytics.protoascii) nella specifica dello strumento di convalida AMP.
 
 ### Attributi validi per `<amp-analytics>` <a name="valid-attributes-for-"></a>
 
@@ -835,7 +835,7 @@ Esempi:
 
 **config**
 
-È un attributo facoltativo, che può essere utilizzato per caricare una configurazione da un URL remoto specificato. L'URL specificato deve utilizzare lo schema HTTPS. Vedi anche l'attributo `data-include-credentials` di seguito. L'URL può includere [variabili URL AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). La risposta deve rispettare le [linee guida per la sicurezza CORS AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
+È un attributo facoltativo, che può essere utilizzato per caricare una configurazione da un URL remoto specificato. L'URL specificato deve utilizzare lo schema HTTPS. Vedi anche l'attributo `data-include-credentials` di seguito. L'URL può includere [variabili URL AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md). La risposta deve rispettare le [linee guida per la sicurezza CORS AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
 
 Esempi:
 
@@ -853,4 +853,4 @@ Se è specificato, la pagina non elabora le richieste di analisi finché non vie
 
 ## Analytics per i componenti AMP <a name="analytics-for-amp-components"></a>
 
-Gli sviluppatori dei componenti AMP possono implementare la raccolta di dati utilizzando Analytics per AMP. Per ulteriori informazioni, consulta [Implementazione di Analytics per i componenti AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-components-analytics.md)
+Gli sviluppatori dei componenti AMP possono implementare la raccolta di dati utilizzando Analytics per AMP. Per ulteriori informazioni, consulta [Implementazione di Analytics per i componenti AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-components-analytics.md)

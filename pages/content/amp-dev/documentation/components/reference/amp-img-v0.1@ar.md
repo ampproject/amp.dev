@@ -216,4 +216,4 @@ amp-img {
 
 # التحقق <a name="validation"></a>
 
-اطِّلع على [قواعد amp-img](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) في مواصفات مدقق AMP.
+اطِّلع على [قواعد amp-img](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) في مواصفات مدقق AMP.

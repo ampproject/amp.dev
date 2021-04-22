@@ -100,7 +100,7 @@ Selamat! Sekarang Anda siap menayangkan iklan di halaman AMP!
 
 ## Menayangkan iklan AMPHTML yang dijual langsung
 
-Komponen [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) menayangkan iklan dari jaringan yang Anda tentukan. Iklan tersebut dapat berupa iklan HTML standar atau iklan HTML AMP, asalkan jaringan iklan mendukung iklan HTML AMP. Untuk menayangkan iklan yang dijual langsung sebagai iklan HTML AMP, buat iklan dalam HTML AMP sesuai dengan persyaratan [spesifikasi iklan HTML AMP](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) dan gunakan [server iklan yang menayangkan iklan HTML AMP](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
+Komponen [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) menayangkan iklan dari jaringan yang Anda tentukan. Iklan tersebut dapat berupa iklan HTML standar atau iklan HTML AMP, asalkan jaringan iklan mendukung iklan HTML AMP. Untuk menayangkan iklan yang dijual langsung sebagai iklan HTML AMP, buat iklan dalam HTML AMP sesuai dengan persyaratan [spesifikasi iklan HTML AMP](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) dan gunakan [server iklan yang menayangkan iklan HTML AMP](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/a4a-readme.md#publishers).
 
 ## Meningkatkan data penargetan pada permintaan iklan
 
@@ -112,8 +112,8 @@ Anda dapat mempelajari lebih lanjut tentang RTC dari video YouTube ini:
 
 Atau, pelajari lebih lanjut dari referensi RTC ini:
 
-- [Panduan implementasi penayang RTC AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
-- [Real Time Config AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
+- [Panduan implementasi penayang RTC AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
+- [Real Time Config AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-documentation.md)
 
 ## Praktik terbaik
 
@@ -124,7 +124,7 @@ Berikut ini beberapa tips untuk memaksimalkan efektivitas iklan di halaman AMP:
 - **Tempatkan jumlah iklan yang sama** pada Halaman AMP seperti pada halaman non-AMP untuk menghasilkan pendapatan per halaman yang maksimum.
 - **Tempatkan iklan pertama tepat di bawah viewport pertama** ("paruh bawah") untuk memberikan pengalaman pengguna yang optimal.
 - Kecuali Anda menggunakan CSS lanjutan atau kueri media, **pastikan unit iklan berada di tengah-tengah halaman** untuk memberikan pengalaman web seluler yang optimal kepada pengguna.
-- Aktifkan [permintaan iklan multi-ukuran](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests) pada inventaris AMP Anda untuk meningkatkan tekanan lelang iklan dan mendorong pendapatan.
+- Aktifkan [permintaan iklan multi-ukuran](https://github.com/ampproject/amphtml/blob/main/ads/README.md#support-for-multi-size-ad-requests) pada inventaris AMP Anda untuk meningkatkan tekanan lelang iklan dan mendorong pendapatan.
 
 ### Demand & pricing: get the right price for your ads
 

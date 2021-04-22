@@ -61,7 +61,7 @@ Mustache est une syntaxe de modèle sans logique. Pour plus d'informations, cons
 
 ## Utilisation <a name="usage"></a>
 
-Le modèle `amp-mustache` doit être défini et utilisé conformément aux [spécifications du modèle AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md).
+Le modèle `amp-mustache` doit être défini et utilisé conformément aux [spécifications du modèle AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-html-templates.md).
 
 Tout d'abord,`amp-mustache` doit être déclaré et chargé comme suit :
 
@@ -203,4 +203,4 @@ Pour remédier à ce problème, vous pouvez remplacer des chaînes telles que {%
 
 ## Validation <a name="validation-1"></a>
 
-Consultez les [règles relatives à amp-mustache](https://github.com/ampproject/amphtml/blob/master/extensions/amp-mustache/validator-amp-mustache.protoascii) dans les spécifications du validateur AMP.
+Consultez les [règles relatives à amp-mustache](https://github.com/ampproject/amphtml/blob/main/extensions/amp-mustache/validator-amp-mustache.protoascii) dans les spécifications du validateur AMP.

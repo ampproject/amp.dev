@@ -11,7 +11,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/contributing/release-schedule.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/contributing/release-schedule.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -41,7 +41,7 @@ Der **nightly** Releasekanal wird an jedem Arbeitstag (wie der Name sagt) aktual
 
 Das nächtliche Release bietet einen Mechanismus, mit dem sich Probleme schnell erkennen und lösen lassen, bevor sie die _weekly_ Releasekanäle mit intensiveren Datenverkehr erreichen. Außerdem bleibt hier die Anzahl der Benutzer geringer, die von neu auftretenden Problemen betroffen sind.
 
-Es ist möglich, am **nightly** Kanal teilzunehmen, um Pull Anforderungen zu testen, die in den letzten Tagen zusammengeführt wurden. Mehr Details findest du [im Opt-in Abschnitt](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md#opting-in-to-pre-release-channels) in [DEVELOPING.md].
+Es ist möglich, am **nightly** Kanal teilzunehmen, um Pull Anforderungen zu testen, die in den letzten Tagen zusammengeführt wurden. Mehr Details findest du [im Opt-in Abschnitt](https://github.com/ampproject/amphtml/blob/main/contributing/DEVELOPING.md#opting-in-to-pre-release-channels) in [DEVELOPING.md].
 
 ### Weekly <a name="weekly"></a>
 
@@ -49,13 +49,13 @@ Die _weekly_ Releasekanäle gelten als die primären "immergrünen" Releasekanä
 
 Es gibt zwei Sätze von Buildkonfigurationen, die zum Erstellen von Releasebuilds verwendet werden: die _canary_ Konfiguration und die _production_ Konfiguration. Der **experimentelle** und der **Beta** Releasekanal basieren auf demselben Commit. Der **experimentelle** Kanal verwendet jedoch die _canary_ Konfiguration, während der **Beta** Kanal die _production_ Konfiguration verwendet. Die _canary_ Konfiguration ermöglicht experimentelle Komponenten und Funktionen, die in der _production_ Konfiguration deaktiviert werden können. Die Kanäle <br> **Experimentell** oder **Beta** können über die [Experimentierseite](https://cdn.ampproject.org/experiments.html) aktiviert werden.
 
-Der **stabile** Releasekanal wird mit der _production_ Konfiguration erstellt und für den Großteil des AMP Datenverkehrs bereitgestellt. Da der **Beta** Releasekanal auch aus der _production_ Konfiguration erstellt wird, entspricht er genau dem Build, das in der folgenden Woche **stabil** wird (mit möglichen Sonderlösungen, um dringende Probleme zu beheben; siehe [Beitragen von Code](https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md#Cherry-picks)).
+Der **stabile** Releasekanal wird mit der _production_ Konfiguration erstellt und für den Großteil des AMP Datenverkehrs bereitgestellt. Da der **Beta** Releasekanal auch aus der _production_ Konfiguration erstellt wird, entspricht er genau dem Build, das in der folgenden Woche **stabil** wird (mit möglichen Sonderlösungen, um dringende Probleme zu beheben; siehe [Beitragen von Code](https://github.com/ampproject/amphtml/blob/main/contributing/contributing-code.md#Cherry-picks)).
 
 #### Die Kanäle Experimentell und Beta <a name="beta-and-experimental-channels"></a>
 
 Die _Kanäle Beta_ und _Experimentell_ sind Pre-Releasekandidaten für die nächste Stabile Version von AMP. Jeden Dienstag (mit Ausnahme von Wochen, in denen es [Releasepausen](#release-freezes) gibt) wird das **nightly** der letzten Woche in die Opt-in Entwicklerkanäle für **Beta** und **Experimentell** aufgenommen. Einen Tag später, nachdem wir überprüft haben, ob keine Funktions- oder Leistungsnachteile in diese Kanäle gelangt sind, geben wir diese Version am Mittwoch für einen kleinen Teil des Datenverkehrs frei. Dieselbe Version wird dann am Dienstag der folgenden Woche in den **stabilen** Kanal aufgenommen.
 
-Es ist möglich, an diesen Kanälen teilzunehmen. Weitere Informationen findest du [im Opt-in Abschnitt](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md#opting-in-to-pre-release-channels) in [DEVELOPING.md].
+Es ist möglich, an diesen Kanälen teilzunehmen. Weitere Informationen findest du [im Opt-in Abschnitt](https://github.com/ampproject/amphtml/blob/main/contributing/DEVELOPING.md#opting-in-to-pre-release-channels) in [DEVELOPING.md].
 
 Das Opt-in beim _Beta Kanal_ hat folgende Zwecke:
 
@@ -71,7 +71,7 @@ Der _Experimentelle Kanal_ **ist möglicherweise weniger stabil** und kann Funkt
 
 ### Long-Term Stable (lts) <a name="long-term-stable-lts"></a>
 
-Der **lts** Releasekanal bietet in einem monatlichen Intervall ein vorheriges **stabiles** Build. Am zweiten Montag jeden Monats wird die aktuelle **stabile** Version in **lts** aufgenommen. Dieser Kanal wird nicht für alle AMP Publisher empfohlen. Er dient für Publisher, die auf ihrer Website seltener eine QA durchführen. Zu diesem Zweck können sie den **lts** Kanal für bestimmte Webseiten aktivieren (siehe <a href="https://github.com/ampproject/amphtml/blob/master/contributing/lts-release.md" data-md-type="link">**lts** Readme</a>)
+Der **lts** Releasekanal bietet in einem monatlichen Intervall ein vorheriges **stabiles** Build. Am zweiten Montag jeden Monats wird die aktuelle **stabile** Version in **lts** aufgenommen. Dieser Kanal wird nicht für alle AMP Publisher empfohlen. Er dient für Publisher, die auf ihrer Website seltener eine QA durchführen. Zu diesem Zweck können sie den **lts** Kanal für bestimmte Webseiten aktivieren (siehe <a href="https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md" data-md-type="link">**lts** Readme</a>)
 
 Wenn der zweite Montag des Monats auf einen Feiertag fällt, erfolgt die Promotion nach dem Ende der [Releasepause](#release-freezes).
 

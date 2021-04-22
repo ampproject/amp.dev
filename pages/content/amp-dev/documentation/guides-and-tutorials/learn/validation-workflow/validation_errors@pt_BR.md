@@ -23,7 +23,7 @@ O objetivo deste documento é ajudar você a entender melhor
 e corrigir esses erros
 ao [validar suas páginas AMP](../../../../documentation/guides-and-tutorials/start/create_amphtml_ad/validate.md).
 Para ter uma visão geral completa dos erros de validação,
-consulte as [especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) (em inglês).
+consulte as [especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) (em inglês).
 
 ## Erros de atributos e tags HTML para AMP
 
@@ -56,7 +56,7 @@ As seguintes tags precisam estar presentes em todos os documentos AMP:
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-Essas tags obrigatórias incluem um campo `mandatory: true` nas <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">especificações do validador de AMP</a> (em inglês).
+Essas tags obrigatórias incluem um campo `mandatory: true` nas <a href="https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii">especificações do validador de AMP</a> (em inglês).
 Elas também são mencionadas nas [especificações das AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md).
 
 ### A tag exigida por outra tag está ausente
@@ -132,7 +132,7 @@ usados para aprimorar as páginas HTML para AMP.
 
 Nos casos de uso que não estão previstos aqui, também é possível contribuir com novos
 componentes no Projeto AMP. Consulte o documento sobre
-[contribuições ao Projeto AMP](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md) (em inglês)
+[contribuições ao Projeto AMP](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md) (em inglês)
 para mais informações.
 
 ### Atributo obrigatório ausente
@@ -153,7 +153,7 @@ para mais informações.
 </table>
 
 Os atributos obrigatórios para as tags AMP são definidos nas
-[especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) (em inglês).
+[especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) (em inglês).
 Basta pesquisar a tag,
 visualizar os atributos listados
 e procurar `mandatory: true`.
@@ -208,7 +208,7 @@ para ver se o atributo requer HTTPS.
 Os atributos são colocados na lista de permissões. Por isso, não há uma lista definitiva de todos os atributos não permitidos.
 Para verificar os atributos compatíveis com cada tag específica,
 procure a tag HTML e depois o atributo `attrs`
-nas [especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) (em inglês).
+nas [especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) (em inglês).
 
 Além de uma lista de permissões de atributos específicos para cada tag,
 todas as tags AMP podem usar qualquer um dos atributos da lista de permissões `$GLOBAL_ATTRS`.
@@ -280,7 +280,7 @@ Os dados de CSS específicos foram colocados na lista negra
 para validar regras essenciais de CSS das AMP.
 
 A lista a seguir inclui os dados de CSS na lista negra.
-Veja também [`disallowed_cdata_regex` nas especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) (em inglês):
+Veja também [`disallowed_cdata_regex` nas especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) (em inglês):
 
 * `"\\.i?-amp-"` ("CSS -amp- class name prefix")
 * `"!important"`
@@ -565,7 +565,7 @@ que não pode ser aninhada em outra tag <code>template</code>.
 </table>
 
 As descendentes obrigatórias são definidas nas
-[especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) (em inglês)
+[especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) (em inglês)
 como `mandatory_ancestor`.
 
 O erro ocorre quando as seguintes tags
@@ -656,7 +656,7 @@ porque os valores padrão são considerados.
 
 Cada tag AMP tem uma lista de `supported_layouts`,
 conforme definido nas
-[especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) (em inglês)
+[especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) (em inglês)
 O validador informará erros de layouts não compatíveis
 e verificará as regras de validação para o layout predefinido.
 
@@ -750,7 +750,7 @@ facilitando a correção dela.
 Esse erro ocorre quando você não especifica um layout para a tag AMP,
 e o layout implícito (com base na largura, na altura e nos tamanhos) não é compatível.
 Verifique os valores `supported_layout` para a tag
-nas [especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) (em inglês).
+nas [especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) (em inglês).
 
 O comportamento real do layout é determinado pelo atributo `layout`.
 Para saber mais sobre como funciona o layout,
@@ -808,7 +808,7 @@ Os atributos não permitidos por tipos de layout são descritos nas
 Esse erro ocorre quando o layout especificado
 para a tag não é compatível.
 Verifique os valores `supported_layout` para a tag
-nas [especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) (em inglês).
+nas [especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) (em inglês).
 
 O comportamento real do layout é determinado pelo atributo `layout`.
 Para saber mais sobre como funciona o layout,
@@ -1012,4 +1012,4 @@ Esse aviso ocorre quando um atributo das AMP que era válido anteriormente é en
 
 Identifique atributos com uso suspenso para cada tag AMP
 pesquisando `deprecation` nas
-[especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) (em inglês)
+[especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) (em inglês)

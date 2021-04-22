@@ -100,7 +100,7 @@ formats:
 
 ## عرض إعلانات AMPHTML للبيع المباشر
 
-يعرض المكون [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) الإعلانات من الشبكة التي تحددها. ويمكن أن تكون هذه الإعلانات عبارة عن إعلانات HTML قياسية أو إعلانات AMPHTML، بشرط أن تدعم شبكة الإعلانات إعلانات AMPHTML. لعرض إعلانات بيع مباشر على أنها إعلانات AMPHTML، قم بإنشاء إعلان في AMP HTML وفقًا لمتطلبات [مواصفات إعلانات AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) واستخدم [خادم إعلانات يعرض إعلانات AMPHTML](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
+يعرض المكون [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) الإعلانات من الشبكة التي تحددها. ويمكن أن تكون هذه الإعلانات عبارة عن إعلانات HTML قياسية أو إعلانات AMPHTML، بشرط أن تدعم شبكة الإعلانات إعلانات AMPHTML. لعرض إعلانات بيع مباشر على أنها إعلانات AMPHTML، قم بإنشاء إعلان في AMP HTML وفقًا لمتطلبات [مواصفات إعلانات AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) واستخدم [خادم إعلانات يعرض إعلانات AMPHTML](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/a4a-readme.md#publishers).
 
 ## زيادة بيانات الاستهداف في طلبات الإعلان
 
@@ -112,8 +112,8 @@ formats:
 
 أو تعرف على المزيد من موارد التكوين في التوقيت الحقيقي:
 
-- [دليل تنفيذ الناشر للتكوين في التوقيت الحقيقي في AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
-- [التكوين في التوقيت الحقيقي في AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
+- [دليل تنفيذ الناشر للتكوين في التوقيت الحقيقي في AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
+- [التكوين في التوقيت الحقيقي في AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-documentation.md)
 
 ## أفضل الممارسات
 
@@ -124,7 +124,7 @@ formats:
 - ضع عدد الإعلانات نفسه في صفحات AMP مثل صفحاتك المبنية بغير AMP لتحقيق أقصى عائد لكل صفحة.
 - **ضع الإعلان الأول أسفل منفذ العرض الأول مباشرة** ("أسفل الطية") لتوفير تجربة مستخدم فائقة.
 - ما لم تكن تستخدم CSS أو استعلامات وسائط متقدمة **تأكد من أن وحداتك الإعلانية متمركزة في الصفحة** لتزويد المستخدمين بتجربة ويب مثالية للهاتف المحمول.
-- <a class="" href="https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests">قم بتمكين طلبات الإعلانات متعددة الأحجام في مخزون </a> AMP لزيادة لضغط على مزاد الإعلانات وزيادة الأرباح.
+- <a class="" href="https://github.com/ampproject/amphtml/blob/main/ads/README.md#support-for-multi-size-ad-requests">قم بتمكين طلبات الإعلانات متعددة الأحجام في مخزون </a> AMP لزيادة لضغط على مزاد الإعلانات وزيادة الأرباح.
 
 ### الطلب والتسعير: احصل على السعر المناسب لإعلاناتك
 

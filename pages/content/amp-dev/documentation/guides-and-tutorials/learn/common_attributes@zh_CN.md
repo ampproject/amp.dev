@@ -122,7 +122,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 <amp-lightbox id="my-lightbox" layout="nodisplay"> ... </amp-lightbox>
 ```
 
-有关详情，请参阅 [AMP 中的操作和事件](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md)。
+有关详情，请参阅 [AMP 中的操作和事件](https://github.com/ampproject/amphtml/blob/main/spec/amp-actions-and-events.md)。
 
 ## placeholder
 

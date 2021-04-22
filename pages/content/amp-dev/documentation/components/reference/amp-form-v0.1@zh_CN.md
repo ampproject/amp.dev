@@ -151,9 +151,9 @@ limitations under the License.
 * `<input type=button>`、`<input type=image>`
 * 输入时大部分与表单相关的属性，包括：`form`、`formaction`、`formtarget`、`formmethod` 等等。
 
-（将来我们可能会重新考虑放松上述部分规则 - 如果您需要这些规则，[请告知我们](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#suggestions-and-feature-requests)并提供相关用例）。
+（将来我们可能会重新考虑放松上述部分规则 - 如果您需要这些规则，[请告知我们](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#suggestions-and-feature-requests)并提供相关用例）。
 
-如需详细了解有效输入和字段，请参阅 AMP 验证工具规范中的 [amp-form 规则](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)。
+如需详细了解有效输入和字段，请参阅 AMP 验证工具规范中的 [amp-form 规则](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)。
 
 # 操作 <a name="actions"></a>
 
@@ -193,7 +193,7 @@ limitations under the License.
 
 ```
 
-如需查看完整示例，请点击[此处](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)。
+如需查看完整示例，请点击[此处](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html)。
 
 # 输入事件 <a name="input-events"></a>
 
@@ -225,7 +225,7 @@ AMP 针对子 `<input>` 元素提供 `change` 和 `input-debounced` 事件。这
 ```
 [/example]
 
-如需查看完整示例，请点击[此处](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)。
+如需查看完整示例，请点击[此处](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html)。
 
 # 分析触发器 <a name="analytics-triggers"></a>
 
@@ -381,7 +381,7 @@ AMP 针对子 `<input>` 元素提供 `change` 和 `input-debounced` 事件。这
 {% endraw %}
 ```
 
-如需查看完整示例，请点击[此处](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)。
+如需查看完整示例，请点击[此处](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html)。
 
 # 通过数据绑定呈现成功响应的具体步骤 <a name="to-render-a-successful-response-with-data-binding"></a>
 
@@ -495,7 +495,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 ```
 [/example]
 
-如需查看更多示例，请参阅 [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)。
+如需查看更多示例，请参阅 [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html)。
 
 对于验证消息，如果您的元素中没有包含任何文本内容，AMP 会使用浏览器的默认验证消息进行填充。在上面的示例中，当 `name5` 输入为空且验证已启动（即用户尝试提交表单）时，AMP 会使用浏览器的验证消息填充 `<span visible-when-invalid="valueMissing" validation-for="name5"></span>`，并向用户显示该 `span`。
 
@@ -584,11 +584,11 @@ HTML5 验证仅根据页面上的信息提供反馈，例如某个值是否与�
 
 要从 `verify-xhr` 请求中移除字段，请将 `no-verify` 属性添加到输入元素。
 
-如需查看更多示例，请参阅 [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)。
+如需查看更多示例，请参阅 [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html)。
 
 # 变量替换 <a name="variable-substitutions"></a>
 
-`amp-form` 扩展组件支持对已隐藏且具有 `data-amp-replace` 属性的输入进行[平台变量替换](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)。每次提交表单时，`amp-form` 都会查找表单内的所有 `input[type=hidden][data-amp-replace]`，然后对其 `value` 属性应用变量替换，并将其替换为结果值。
+`amp-form` 扩展组件支持对已隐藏且具有 `data-amp-replace` 属性的输入进行[平台变量替换](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)。每次提交表单时，`amp-form` 都会查找表单内的所有 `input[type=hidden][data-amp-replace]`，然后对其 `value` 属性应用变量替换，并将其替换为结果值。
 
 您必须针对每次输入提供要用于每次替换的变量，具体方法如下：指定在 `data-amp-replace` 中使用的一连串以空格分隔的变量（请参阅下面的示例）。AMP 不会替换未明确指定的变量。
 
@@ -623,7 +623,7 @@ HTML5 验证仅根据页面上的信息提供反馈，例如某个值是否与�
 
 请注意，上述 `CANONICAL_HOSTNAME` 未通过第一个字段中的 `data-amp-replace` 属性进入白名单中，因此未进行替换。
 
-每次进行后续提交时都会进行替换。详细了解 [AMP 中的变量替换](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)。
+每次进行后续提交时都会进行替换。详细了解 [AMP 中的变量替换](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)。
 
 # Polyfill <a name="polyfills"></a>
 
@@ -673,7 +673,7 @@ AMP 表单会为 `<textarea>` 元素提供 `autoexpand` 属性。这样一来，
 
 发布商可以使用这些类设置输入和字段集的样式，以响应用户操作（例如，当用户在无效输入中进行模糊处理后，使用红色边框进行突出显示）。
 
-如需了解如何使用这些类，请点击[此处](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)查看完整示例。
+如需了解如何使用这些类，请点击[此处](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html)查看完整示例。
 
 [tip type="ll callout('提示：</b><a class="type_success"]
 如需了解您可以在 AMP 网页中使用的自适应、已预设样式的 AMP 表单元素，请访问 [AMP Start](https://ampstart.com/components#form-elements)。

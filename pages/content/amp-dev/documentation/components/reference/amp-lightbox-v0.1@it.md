@@ -173,4 +173,4 @@ Negli esempi riportati di seguito, dimostriamo come si presenta la transizione p
 
 ## Convalida <a name="validation"></a>
 
-Consulta le [regole amp-lightbox](https://github.com/ampproject/amphtml/blob/master/extensions/amp-lightbox/validator-amp-lightbox.protoascii) nella specifica dello strumento di convalida AMP.
+Consulta le [regole amp-lightbox](https://github.com/ampproject/amphtml/blob/main/extensions/amp-lightbox/validator-amp-lightbox.protoascii) nella specifica dello strumento di convalida AMP.

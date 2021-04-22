@@ -271,7 +271,7 @@ author: CrystalOnScript
 
 ## 桌面体验
 
-网页故事格式支持[可选桌面体验](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in)。这会将桌面体验变为沉浸式全出血模式，取代默认的三幅竖排面板体验，并使移动用户能够在水平握持设备时获得出色的观看体验。
+网页故事格式支持[可选桌面体验](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in)。这会将桌面体验变为沉浸式全出血模式，取代默认的三幅竖排面板体验，并使移动用户能够在水平握持设备时获得出色的观看体验。
 
 在 `<amp-story>` 组件中添加 `supports-landscape` 特性即可加入桌面支持。
 

@@ -86,7 +86,7 @@ Veja uma descrição passo a passo:
 
 [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
 
-1. Especifique as tags `<script>` para [render-delaying extensions](https://github.com/ampproject/amphtml/blob/master/src/render-delaying-services.js) (por exemplo, [`amp-experiment`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md) e [`amp-story`](../../../documentation/components/reference/amp-story.md)
+1. Especifique as tags `<script>` para [render-delaying extensions](https://github.com/ampproject/amphtml/blob/main/src/render-delaying-services.js) (por exemplo, [`amp-experiment`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md) e [`amp-story`](../../../documentation/components/reference/amp-story.md)
 2. Especifique as tags `<script>` para as extensões restantes (por exemplo, [`amp-bind`](../../../documentation/components/reference/amp-bind.md) ...). Essas extensões não atrasam a renderização e, portanto, não devem ser pré-carregadas, pois podem consumir uma largura de banda importante para a renderização inicial.
 3. Especifique qualquer estilo personalizado usando a tag `<style amp-custom>`.
 4. Adicione quaisquer outras tags permitidas na seção `<head>`. Em particular, quaisquer fontes externas devem vir por último, uma vez que bloqueiam a renderização.

@@ -22,6 +22,6 @@ author: CrystalOnScript
 />
 ```
 
-[例の全文は、ここで閲覧できます](https://github.com/ampproject/amphtml/blob/master/examples/csp.amp.html)。
+[例の全文は、ここで閲覧できます](https://github.com/ampproject/amphtml/blob/main/examples/csp.amp.html)。
 
 [tip type="read-on"] [セキュリティの脆弱性からの保護と CSP については、こちら](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)を参照してください。 [/tip]

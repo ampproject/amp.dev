@@ -172,4 +172,4 @@ AMP 선택기는 사용자가 하나 이상 선택할 수 있는 옵션 목록�
 
 ## 유효성 검사 <a name="validation"></a>
 
-AMP 유효성 검사기 사양에서 [amp-selector 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-selector/validator-amp-selector.protoascii)을 참조하세요.
+AMP 유효성 검사기 사양에서 [amp-selector 규칙](https://github.com/ampproject/amphtml/blob/main/extensions/amp-selector/validator-amp-selector.protoascii)을 참조하세요.
