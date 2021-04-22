@@ -18,7 +18,7 @@
 
 const {pagePath} = require('@lib/utils/project');
 const {setMaxAge} = require('@lib/utils/cacheHelpers.js');
-const optimizer = require('@lib/utils/ampOptimizer.js');
+const {optimizer} = require('@lib/utils/ampOptimizer.js');
 const {readFileSync} = require('fs');
 const {join} = require('path');
 
