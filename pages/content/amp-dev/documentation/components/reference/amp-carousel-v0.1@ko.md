@@ -240,4 +240,4 @@ limitations under the License.
 
 # 유효성 검사 <a name="validation"></a>
 
-AMP 유효성 검사기 사양의 [amp-carousel 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/validator-amp-carousel.protoascii)을 참조하세요.
+AMP 유효성 검사기 사양의 [amp-carousel 규칙](https://github.com/ampproject/amphtml/blob/main/extensions/amp-carousel/validator-amp-carousel.protoascii)을 참조하세요.

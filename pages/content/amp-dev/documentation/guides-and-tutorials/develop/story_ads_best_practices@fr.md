@@ -15,7 +15,7 @@ Les formats d'annonces actuels, tels que les bannières et les encadrés, ne s'i
 
 Les annonces Web Story sont conformes aux principes suivants:
 
-- Annonce AMPHTML valide: suivez les mêmes spécifications techniques qu'une [annonce AMPHTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md) classique.
+- Annonce AMPHTML valide: suivez les mêmes spécifications techniques qu'une [annonce AMPHTML](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md) classique.
 - Visuel d'abord: état d'invitation attrayant, gras et contextuel.
 - Native: la page d'annonce a les mêmes dimensions qu'une page de story normale.
 - Modèle d'interaction identique: l'utilisateur peut passer à l'écran suivant comme il le ferait avec une page de story normale.

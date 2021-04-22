@@ -36,7 +36,7 @@ URL 계산기를 활용하여 URL을 AMP 캐시 버전으로 변환할 수 있�
 
 ## 도메인 이름 접미어
 
-모든 AMP 캐시는 JSON 파일에 등록되어 있으며 [AMPHTML 저장소](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json)에서 온라인으로 확인할 수 있습니다. 이 파일의 캐시 레코드 예시는 다음과 같이 표시됩니다.
+모든 AMP 캐시는 JSON 파일에 등록되어 있으며 [AMPHTML 저장소](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json)에서 온라인으로 확인할 수 있습니다. 이 파일의 캐시 레코드 예시는 다음과 같이 표시됩니다.
 
 ```json
 {
@@ -179,7 +179,7 @@ AMP 캐시 원본 헤더는 다음 예시 중 하나처럼 표시됩니다.
 - `https://www-example-com.cdn.ampproject.org`
 - `https://v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq.cdn.ampproject.org`
 
-먼저 프로토콜 접두어(`https://`) 및 AMP 캐시 도메인 접미어(예: `.cdn.ampproject.org`)를 제거합니다. 접미어는 [caches.json](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json)에 열거된 캐시 중 하나일 것입니다. 남은 문자열이 "도메인 접두어"입니다. 상단 예시 두 개의 경우 "도메인 접두어"는 다음과 같습니다.
+먼저 프로토콜 접두어(`https://`) 및 AMP 캐시 도메인 접미어(예: `.cdn.ampproject.org`)를 제거합니다. 접미어는 [caches.json](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json)에 열거된 캐시 중 하나일 것입니다. 남은 문자열이 "도메인 접두어"입니다. 상단 예시 두 개의 경우 "도메인 접두어"는 다음과 같습니다.
 
 - `www-example-com`
 - `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq`

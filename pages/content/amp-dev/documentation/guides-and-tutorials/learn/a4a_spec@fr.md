@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -97,7 +97,7 @@ En outre, les publicités doivent respecter les règles suivantes:
 
 ### Modèle <a name="boilerplate"></a>
 
-Les créations publicitaires AMP HTML nécessitent un modèle de style différent et considérablement plus simple que [les documents AMP généraux](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md):
+Les créations publicitaires AMP HTML nécessitent un modèle de style différent et considérablement plus simple que [les documents AMP généraux](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md):
 
 [sourcecode:html]
 
@@ -113,7 +113,7 @@ _Logique:_ le style `amp-boilerplate` masque le contenu du corps jusqu'à ce que
 
 Enfin, le modèle d'annonce AMPHTML utilise `amp-a4a-boilerplate` plutôt que `amp-boilerplate` afin que les validateurs puissent facilement l'identifier et générer des messages d'erreur plus précis pour aider les développeurs.
 
-Notez que les mêmes règles concernant les mutations du modèle de texte s'appliquent que dans le [modèle AMP général](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md).
+Notez que les mêmes règles concernant les mutations du modèle de texte s'appliquent que dans le [modèle AMP général](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md).
 
 ### CSS <a name="css"></a>
 
@@ -257,7 +257,7 @@ La plupart des omissions sont liées aux performances ou permettent de simplifie
 
 _Exemple:_ `<amp-ad>` est omis de cette liste. Cela est explicitement interdit, car autoriser un `<amp-ad>` dans `<amp-ad>` pourrait potentiellement entraîner des cascades de chargement d'annonces illimitées, ce qui ne répond pas aux objectifs de performances des annonces AMPHTML.
 
-_Exemple:_ `<amp-iframe>` est omis de cette liste. Il est interdit car les annonces pourraient l'utiliser pour exécuter du Javascript arbitraire et charger du contenu arbitraire. Les annonces souhaitant utiliser de telles fonctionnalités doivent renvoyer `false` partir de leur entrée [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40) et utiliser le mécanisme de diffusion d'annonce '3p iframe' existant.
+_Exemple:_ `<amp-iframe>` est omis de cette liste. Il est interdit car les annonces pourraient l'utiliser pour exécuter du Javascript arbitraire et charger du contenu arbitraire. Les annonces souhaitant utiliser de telles fonctionnalités doivent renvoyer `false` partir de leur entrée [a4aRegistry](https://github.com/ampproject/amphtml/blob/main/ads/_a4a-config.js#L40) et utiliser le mécanisme de diffusion d'annonce '3p iframe' existant.
 
 _Exemple:_ `<amp-facebook>` , `<amp-instagram>` , `<amp-twitter>` et `<amp-youtube>` sont tous omis pour la même raison que `<amp-iframe>`: ils créent tous des iframes et peuvent potentiellement consommer des ressources illimitées.
 
@@ -267,7 +267,7 @@ _Exemple:_ `<amp-lightbox>` n'est pas encore inclus, car certaines créations pu
 
 ### Balises HTML <a name="html-tags"></a>
 
-Les balises suivantes sont _&nbsp;autorisées_ dans une création publicitaire AMPHTML. Les balises non explicitement autorisées sont interdites. Cette liste est un sous-ensemble de la [ liste générale des balises AMP autorisées](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md). Comme cette liste, elle est ordonnée conformément aux spécifications HTML5 de la section 4 [Les éléments du HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
+Les balises suivantes sont _&nbsp;autorisées_ dans une création publicitaire AMPHTML. Les balises non explicitement autorisées sont interdites. Cette liste est un sous-ensemble de la [ liste générale des balises AMP autorisées](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/../../spec/amp-tag-addendum.md). Comme cette liste, elle est ordonnée conformément aux spécifications HTML5 de la section 4 [Les éléments du HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
 
 La plupart des omissions sont liées aux performances ou au fait que les balises ne sont pas au standard HTML5. Par exemple, `<noscript>` est omis car les annonces AMPHTML dépendent de l'activation de JavaScript. Par conséquent, un bloc `<noscript>` ne s'exécutera jamais et, par conséquent, ne fera que gonfler la publicité, consommer la bande passante et empirer la latence. De même, `<acronym>`, `<big>` , et autres sont interdits car ils ne sont pas compatibles HTML5.
 

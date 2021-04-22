@@ -48,7 +48,7 @@ Les annonces AMPHTML sont flexibles et dynamiques, permettant de nombreux format
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='Serving AMPHTML ads to AMP pages', caption='Serving AMPHTML ads to AMP pages', align='' ) }}
 
 1. Les éditeurs insèrent un espace publicitaire sur leur page AMP via la balise [`amp-ad`](../../../documentation/components/reference/amp-ad.md), en spécifiant le réseau publicitaire qu'ils souhaitent utiliser.
-2. Le runtime AMP envoie une demande d'annonce au réseau publicitaire spécifié pour récupérer l'annonce. Les réseaux publicitaires capables de diffuser des annonces AMPHTML fournissent une [mise en œuvre Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) qui valide et signe la création.
+2. Le runtime AMP envoie une demande d'annonce au réseau publicitaire spécifié pour récupérer l'annonce. Les réseaux publicitaires capables de diffuser des annonces AMPHTML fournissent une [mise en œuvre Fast Fetch](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md) qui valide et signe la création.
 3. Le réseau publicitaire répond avec l'annonce AMPHTML et le runtime AMP affiche l'annonce sur la page AMP.
 
 [tip type="note"] Aucune intégration spéciale n'est nécessaire pour diffuser des annonces AMPHTML sur des pages non AMP. Vérifiez si votre réseau publicitaire prend en charge les annonces AMPHTML. [/tip]
@@ -77,7 +77,7 @@ Si vous êtes une agence publicitaire, vous devez créer les annonces conformém
 
 ### Réseaux/serveurs publicitaires
 
-Pour diffuser des annonces AMPHTML sur des pages AMP, vous devez créer une extension [`amp-ad`](../../../documentation/components/reference/amp-ad.md) pour votre réseau (sauf si vous en avez déjà une) qui utilise la [mise en œuvre de demande d'annonce Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md). Consultez la section [Intégration à AMP pour diffuser des annonces](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md) pour plus de détails. Gardez à l'esprit qu'aucune intégration spéciale n'est nécessaire pour diffuser des annonces AMPHTML sur des pages non AMP.
+Pour diffuser des annonces AMPHTML sur des pages AMP, vous devez créer une extension [`amp-ad`](../../../documentation/components/reference/amp-ad.md) pour votre réseau (sauf si vous en avez déjà une) qui utilise la [mise en œuvre de demande d'annonce Fast Fetch](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md). Consultez la section [Intégration à AMP pour diffuser des annonces](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md) pour plus de détails. Gardez à l'esprit qu'aucune intégration spéciale n'est nécessaire pour diffuser des annonces AMPHTML sur des pages non AMP.
 
 ## Création d'annonces AMPHTML
 
@@ -101,7 +101,7 @@ Après avoir créé votre annonce AMPHTML, vous devez vous assurer que l'annonce
 
 ## Prise en charge des annonces AMPHTML dans RTB
 
-Pour les SSP et les ad-exchanges qui souhaitent prendre en charge les annonces AMPHTML dans un environnement de vente en temps réel (RTB), reportez-vous au [Guide de mise en œuvre des ad-exchanges RTB](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/RTBExchangeGuide.md) pour plus de détails.
+Pour les SSP et les ad-exchanges qui souhaitent prendre en charge les annonces AMPHTML dans un environnement de vente en temps réel (RTB), reportez-vous au [Guide de mise en œuvre des ad-exchanges RTB](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/RTBExchangeGuide.md) pour plus de détails.
 
 ## FAQ
 
@@ -125,4 +125,4 @@ Oui. Voir [`amp-ad-exit`](../../../documentation/components/reference/amp-ad-exi
 
 - [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html)est notre méthode recommandée pour trouver des réponses aux questions sur AMP; étant donné que les membres de la communauté AMP Project vérifient régulièrement Stack Overflow, vous y recevrez probablement la réponse la plus rapide à vos questions.
 - Rejoignez le groupe [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) pour trouver des solutions et des réponses.
-- Si vous rencontrez un bogue dans AMP ou avez une demande de fonctionnalité pour AMP, consultez la section [Signaler des problèmes avec AMP](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp) pour plus d'informations sur le dépôt d'un ticket.
+- Si vous rencontrez un bogue dans AMP ou avez une demande de fonctionnalité pour AMP, consultez la section [Signaler des problèmes avec AMP](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#reporting-issues-with-amp) pour plus d'informations sur le dépôt d'un ticket.

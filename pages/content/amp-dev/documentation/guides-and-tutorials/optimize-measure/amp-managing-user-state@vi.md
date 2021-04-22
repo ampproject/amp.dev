@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -110,7 +110,7 @@ Cũng như trường hợp bộ nhớ đệm AMP, tên miền cho một trình x
 
 ### Nhiều ngữ cảnh đồng nghĩa với nhiều cách quản lý trạng thái <a name="multiple-contexts-means-multiple-state-management"></a>
 
-Các nhà phát hành phải chuẩn bị để quản lý trạng thái người dùng cho từng ngữ cảnh hiển thị. Tính năng [ID Máy khách](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id) của AMP tận dụng cookie hoặc ổ lưu trữ cục bộ để duy trì trạng thái và cung cấp hỗ trợ cần thiết cho các trang AMP để có một mã định danh ổn định cho người dùng. Từ quan điểm triển khai, có thể sử dụng cookie hoặc ổ lưu trữ cục bộ, và AMP sẽ đưa ra quyết định sử dụng cách nào tùy thuộc vào ngữ cảnh hiển thị. Lựa chọn này chịu ảnh hưởng bởi tính khả thi kỹ thuật đối với việc quản lý trạng thái này, phóng lên hàng trăm hoặc hàng nghìn nhà phát hành.
+Các nhà phát hành phải chuẩn bị để quản lý trạng thái người dùng cho từng ngữ cảnh hiển thị. Tính năng [ID Máy khách](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#client-id) của AMP tận dụng cookie hoặc ổ lưu trữ cục bộ để duy trì trạng thái và cung cấp hỗ trợ cần thiết cho các trang AMP để có một mã định danh ổn định cho người dùng. Từ quan điểm triển khai, có thể sử dụng cookie hoặc ổ lưu trữ cục bộ, và AMP sẽ đưa ra quyết định sử dụng cách nào tùy thuộc vào ngữ cảnh hiển thị. Lựa chọn này chịu ảnh hưởng bởi tính khả thi kỹ thuật đối với việc quản lý trạng thái này, phóng lên hàng trăm hoặc hàng nghìn nhà phát hành.
 
 Tuy nhiên, các nhà phát hành trang AMP có thể vô ý thiết kế các hành trình người dùng liên quan đến nhiều ngữ cảnh khác nhau. Hãy nhìn lại trường hợp sử dụng giỏ hàng trước đây của chúng ta và bổ sung một số chi tiết để biến nó thành một **câu chuyện người dùng** đầy đủ:
 
@@ -242,7 +242,7 @@ Trên các trang AMP, xây dựng một mã ping amp-analytics chứa ID Máy kh
 
 Lưu ý rằng tham số được truyền vào ID Máy khách thay thế, `${clientId(uid)` là `uid`. Đây là một lựa chọn có ý định phù hợp với tên cookie đã được sử dụng trên nguồn gốc của nhà phát hành như được mô tả trong [Tác vụ 1](#task1). Để tích hợp một cách liền mạch nhất có thể, bạn cũng nên áp dụng kỹ thuật này.
 
-Liên quan đến phần còn lại của việc triển khai amp-analytics, hãy xem tài liệu [cấu hình amp-analytics](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) để biết thông tin chi tiết về cách thiết lập các yêu cầu amp-analytics hoặc sửa đổi chúng cho nhà cung cấp phân tích của bạn. Lệnh ping có thể được sửa đổi thêm nữa để truyền tải dữ liệu bổ sung mà bạn định nghĩa trực tiếp, hoặc tận dụng các mã [AMP thay thế](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) khác.
+Liên quan đến phần còn lại của việc triển khai amp-analytics, hãy xem tài liệu [cấu hình amp-analytics](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) để biết thông tin chi tiết về cách thiết lập các yêu cầu amp-analytics hoặc sửa đổi chúng cho nhà cung cấp phân tích của bạn. Lệnh ping có thể được sửa đổi thêm nữa để truyền tải dữ liệu bổ sung mà bạn định nghĩa trực tiếp, hoặc tận dụng các mã [AMP thay thế](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) khác.
 
 > **Nên biết:**
 > Vì sao chúng ta sử dụng tên `uid` cho tham số được truyền đến tính năng ID Máy khách? Tham số mà `clientId(...)` thay thế sử dụng sẽ được dùng để định nghĩa phạm vi. Bạn có thể sử dụng tính năng ID Máy khách cho nhiều trường hợp sử dụng và, do đó, tạo ra nhiều ID máy khách khác nhau. Tham số này phân biệt giữa những trường hợp sử dụng này và do đó bạn sử dụng nó để quy định trường hợp sử dụng mà bạn muốn dùng ID Máy khách đó. Ví dụ, bạn có thể muốn gửi nhiều mã định danh khác nhau đến các bên thư ba như một nhà quảng cáo và bạn có thể sử dụng tham số “scope” (phạm vi) để thực hiện điều này.
@@ -384,7 +384,7 @@ Trong tác vụ này, chúng ta sẽ bao gồm một biện pháp tối ưu bổ
 
 ##### Sử dụng các tính năng thay thế <a name="using-substitution-features"></a>
 
-Lối tiếp cận của chúng ta sẽ tận dụng 2 loại [biến số AMP thay thế](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md).
+Lối tiếp cận của chúng ta sẽ tận dụng 2 loại [biến số AMP thay thế](https://github.com/ampproject/amphtml/blob/main/spec/./amp-var-substitutions.md).
 
 **Để cập nhật liên kết đầu ra cho việc sử dụng một ID Máy khách thay thế:** Định nghĩa một tham số truy vấn mới, `ref_id` (“ID giới thiệu”), sẽ xuất hiện trong URL và chỉ báo **mã định danh của ngữ cảnh gốc** cho người dùng. Thiết lập tham số truy vấn này cho bằng giá trị của ID Máy khách AMP thay thế:
 
@@ -595,7 +595,7 @@ Bạn muốn đảm bảo rằng bạn chỉ xử lý các trường hợp `$amp
 
 Trên một trang không phải AMP, hãy kiểm tra `document.referrer` trực tiếp trên phía máy khách hoặc chuyển tiếp giá trị này như một phần của ping phân tích để có thể xác thực trên phía máy chủ. Nếu bạn có thể tin tưởng giá trị giới thiệu, thì bạn có thể chấp nhận và xử lý các giá trị xuất phát từ URL của trang đích đến, ví dụ như `orig_user_id` trong ví dụ ở trên.
 
-Trên một trang AMP, sử dụng biến số thay thế cho [Trình Giới thiệu Tài liệu](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#document-referrer) để chuyển tiếp giá trị giới thiệu như một phần của ping phân tích. Việc xử lý ở phía máy chủ là lựa chọn duy nhất. Để minh họa, đây là một ping phân tích mà trang đích đến có thể gửi chứa (1) giá trị ID Máy khách của trang hiện tại, (2) một giá trị được chuyển tiếp qua URL mà chúng ta đã thiết lập làm giá trị ID Máy khách trong trang giới thiệu, và (3) thông tin của trình giới thiệu để xác thực giá trị của (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
+Trên một trang AMP, sử dụng biến số thay thế cho [Trình Giới thiệu Tài liệu](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#document-referrer) để chuyển tiếp giá trị giới thiệu như một phần của ping phân tích. Việc xử lý ở phía máy chủ là lựa chọn duy nhất. Để minh họa, đây là một ping phân tích mà trang đích đến có thể gửi chứa (1) giá trị ID Máy khách của trang hiện tại, (2) một giá trị được chuyển tiếp qua URL mà chúng ta đã thiết lập làm giá trị ID Máy khách trong trang giới thiệu, và (3) thông tin của trình giới thiệu để xác thực giá trị của (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
 
 Nếu bạn không thể tin tưởng trình giới thiệu, hãy từ chối mọi giá trị được cung cấp thông qua các tham số URL và không sử dụng chúng.
 

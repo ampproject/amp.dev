@@ -22,7 +22,7 @@ const {FORMAT_WEBSITES} = require('@lib/amp/formatHelper.js');
 const DEFAULT_VERSION = 0.1;
 const EXTENSION_TYPE_ELEMENT = 'element';
 const EXTENSION_TYPE_TEMPLATE = 'template';
-const RELATIVE_PATH_BASE = 'https://github.com/ampproject/amphtml/blob/master/';
+const RELATIVE_PATH_BASE = 'https://github.com/ampproject/amphtml/blob/main/';
 
 class ComponentReferenceDocument extends MarkdownDocument {
   constructor(path, contents, extension) {

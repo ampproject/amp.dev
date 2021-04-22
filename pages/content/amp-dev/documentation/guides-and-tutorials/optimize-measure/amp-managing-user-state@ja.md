@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -110,7 +110,7 @@ AMP キャッシュの場合と同様、AMP ビューアのドメインは、サ
 
 ### コンテキストが複数あるため、状態の管理も複数行う必要がある <a name="multiple-contexts-means-multiple-state-management"></a>
 
-サイト運営者は、表示コンテキストごとにユーザー常置を管理する必要があります。AMP の[クライアント ID](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id) 機能は、cookie またはローカルストレージを活用して状態を永続化していますが、AMP ページがユーザーの安定した仮名 ID を使用するために必要なサポートを提供しています。実装の観点から言えば、cookie またはローカルストレージが使用されており、AMP は表示コンテキストに応じてどちらを使用するかを決定しています。この選択は、この状態を数百から数千ものサイト運営者にわたって管理する技術的な実現可能性による影響を受けます。
+サイト運営者は、表示コンテキストごとにユーザー常置を管理する必要があります。AMP の[クライアント ID](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#client-id) 機能は、cookie またはローカルストレージを活用して状態を永続化していますが、AMP ページがユーザーの安定した仮名 ID を使用するために必要なサポートを提供しています。実装の観点から言えば、cookie またはローカルストレージが使用されており、AMP は表示コンテキストに応じてどちらを使用するかを決定しています。この選択は、この状態を数百から数千ものサイト運営者にわたって管理する技術的な実現可能性による影響を受けます。
 
 ただし、AMP ページのサイト運営者は、（意図せずに）複数のコンテキストを伴うユーザージャーニーを設計してしまいがちです。最初の買い物かごのケースを見直し、完全な**ユーザーストーリー**を作成するための詳細をさらに追加しましょう。
 
@@ -242,7 +242,7 @@ AMP ページで、クライアント ID を含む amp-analytics ping を構築�
 
 クライアント ID の置換に渡されるパラメータ `${clientId(uid)` が `uid` であることに注意してください。これは、[タスク 1](#task1) で説明されたものと同じ、サイト運営者オリジンで使用されている cookie 名に一致するように意図的に選択されています。藤堂を最もシームレスに行えるようにするには、同じテクニックを適用するようにしてください。
 
-amp-analytics の残りの実装については、amp-analytics リクエストを設定する方法、またはアナリティクスベンダーのリクエストを変更する方法の詳細について、[amp-analytics 構成](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/)のドキュメントをご覧ください。ping は、直接定義するか、他の [AMP 置換](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)を利用して追加のデータを転送できるようにさらに変更することができます。
+amp-analytics の残りの実装については、amp-analytics リクエストを設定する方法、またはアナリティクスベンダーのリクエストを変更する方法の詳細について、[amp-analytics 構成](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/)のドキュメントをご覧ください。ping は、直接定義するか、他の [AMP 置換](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)を利用して追加のデータを転送できるようにさらに変更することができます。
 
 > **お役立ち情報:**
 > クライアント ID 機能に渡されるパラメータに `uid` という名前をなぜ使用したのでしょうか。`clientId(...)` 置換が取るパラメータは、スコープの定義に使用されます。実際のところ、クライアント ID 機能は多数の使用事例で使用できる機能であるため、結果的に多数のクライアント ID を生成することになります。これらの使用事例はパラメータによって区別することができるため、パラメータを使用して、どの使用事例にクライアント ID を使用したいのかを指定することができます。たとえば、異なる ID を広告主のようなサードパーティに送信するには、“scope” パラメータを使用して実現することができます。
@@ -385,7 +385,7 @@ AMP クライアント ID がマッピングに見つからない場合は、マ
 
 ##### 置換機能を使用する <a name="using-substitution-features"></a>
 
-このアプローチでは、2 種類の [AMP 変数置換](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md)を利用します。
+このアプローチでは、2 種類の [AMP 変数置換](https://github.com/ampproject/amphtml/blob/main/spec/./amp-var-substitutions.md)を利用します。
 
 **発信リンクを更新して、クライアント ID 置換を使用する:** 新しいクエリパラメータ `ref_id`（「リファラー ID」）を定義します。これは URL 内に表示され、ユーザーの**発信元コンテキストの ID** を示します。このクエリパラメータを AMP のクライアント ID 置換の値と同等になるように設定します。
 
@@ -594,7 +594,7 @@ https://example.com/step2.html?orig_user_id=$malicious_value
 
 非 AMP ページでは、クライアント側で直接 `document.referrer` を確認するか、サーバー側で検証できるように、アナリティクス ping の一部として値を渡します。リファラーの値が信頼できるものである場合は、上記の例では `orig_user_id` に当たる、ランディングページの URL から送信された値を受け入れて処理します。
 
-AMP ページでは、[ドキュメントリファラー](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#document-referrer)置換変数を使用して、リファラーの値をアナリティクス ping の一環として渡します。唯一利用できるオプションはサーバー側処理です。これを説明する次の URL には、ランディングページが送信できるアナリティクス ping には、（1）現在のページのクライアント ID 値、（2）参照先ページでクライアント ID となるようにセットアップした URL 経由で渡される値、（3）（2）の値を検証するためのリファラー情報そのものが含まれます。 `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
+AMP ページでは、[ドキュメントリファラー](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#document-referrer)置換変数を使用して、リファラーの値をアナリティクス ping の一環として渡します。唯一利用できるオプションはサーバー側処理です。これを説明する次の URL には、ランディングページが送信できるアナリティクス ping には、（1）現在のページのクライアント ID 値、（2）参照先ページでクライアント ID となるようにセットアップした URL 経由で渡される値、（3）（2）の値を検証するためのリファラー情報そのものが含まれます。 `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
 
 リファラーを信頼できない場合は、URL パラメータ経由で提供される値を拒否して使用しないようにしてください。
 

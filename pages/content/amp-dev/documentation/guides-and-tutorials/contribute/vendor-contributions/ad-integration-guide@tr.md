@@ -9,13 +9,13 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/ads/_integration-guide.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/ads/_integration-guide.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-AMP HTML'e entegre olmak isteyen bir reklam teknolojisi sağlayıcısıysanız, lütfen aşağıdaki kılavuzlara göz atın. Gecikmeyi en aza indirdiğinizden ve kaliteyi yüksek tuttuğunuzdan emin olmak için açık kaynaklı AMP projesine çekme isteği göndermeden önce lütfen [burada](https://github.com/ampproject/amphtml/blob/master/ads/../3p/README.md#ads) listelenen talimatları izleyin. AMP'ye nasıl katkı koymaya başlayabileceğinize dair genel bir kılavuz için lütfen [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/ads/../CONTRIBUTING.md) bölümüne bakın.
+AMP HTML'e entegre olmak isteyen bir reklam teknolojisi sağlayıcısıysanız, lütfen aşağıdaki kılavuzlara göz atın. Gecikmeyi en aza indirdiğinizden ve kaliteyi yüksek tuttuğunuzdan emin olmak için açık kaynaklı AMP projesine çekme isteği göndermeden önce lütfen [burada](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads) listelenen talimatları izleyin. AMP'ye nasıl katkı koymaya başlayabileceğinize dair genel bir kılavuz için lütfen [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../CONTRIBUTING.md) bölümüne bakın.
 
 ## Reklam Sunucusu <a name="ad-server"></a>
 
@@ -39,9 +39,9 @@ data-aax_src="302"
 > </amp-ad>
 > [/sourcecode]
 
-Unutmayın, `type` değerini izleyen özniteliklerin her biri reklam sunmak için Amazon'un A9 sunucusunun beklediği parametrelere bağımlıdır. [a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) dosyası, parametrelerin A9 sunucusunu `https://c.amazon-adsystem.com/aax2/assoc.js` URL'si yoluyla çağıran bir JavaScript çağrısı yapmaya nasıl eşlendiğini gösterir. AMP reklam etiketi tarafından geçilen ilgili parametreler, reklam ile dönüş yapmak için URL'ye eklenir.
+Unutmayın, `type` değerini izleyen özniteliklerin her biri reklam sunmak için Amazon'un A9 sunucusunun beklediği parametrelere bağımlıdır. [a9.js](https://github.com/ampproject/amphtml/blob/main/ads/./a9.js) dosyası, parametrelerin A9 sunucusunu `https://c.amazon-adsystem.com/aax2/assoc.js` URL'si yoluyla çağıran bir JavaScript çağrısı yapmaya nasıl eşlendiğini gösterir. AMP reklam etiketi tarafından geçilen ilgili parametreler, reklam ile dönüş yapmak için URL'ye eklenir.
 
-Reklam ağınızı AMP'ye nasıl entegre edebileceğinize dair daha fazla bilgi için [Reklam ağlarını AMP'ye entegre etme](https://github.com/ampproject/amphtml/blob/master/ads/README.md) bölümüne bakın.
+Reklam ağınızı AMP'ye nasıl entegre edebileceğinize dair daha fazla bilgi için [Reklam ağlarını AMP'ye entegre etme](https://github.com/ampproject/amphtml/blob/main/ads/README.md) bölümüne bakın.
 
 ## Tedarik Tarafı Platformu (SSP) veya Ad Exchange <a name="supply-side-platform-ssp-or-an-ad-exchange"></a>
 
@@ -63,7 +63,7 @@ Reklam öğesinin parçası olan tüm varlıkların HTTPS kullanarak istendiğin
 
 _Örnekler : Brightcove, Ooyala_
 
-Normal HTML sayfalarında çalışan bir video oynatıcı AMP'de çalışmaz ve bu nedenle AMP Çalışma Zamanının oynatıcınızı yüklemesine izin veren belirli bir etiket oluşturulmalıdır. Brightcove, medya ve reklamların AMP sayfalarında oynatılmasını sağlayan özel bir [amp-brightcove](https://github.com/ampproject/amphtml/blob/master/extensions/amp-brightcove/amp-brightcove.md) etiketi oluşturdu.
+Normal HTML sayfalarında çalışan bir video oynatıcı AMP'de çalışmaz ve bu nedenle AMP Çalışma Zamanının oynatıcınızı yüklemesine izin veren belirli bir etiket oluşturulmalıdır. Brightcove, medya ve reklamların AMP sayfalarında oynatılmasını sağlayan özel bir [amp-brightcove](https://github.com/ampproject/amphtml/blob/main/extensions/amp-brightcove/amp-brightcove.md) etiketi oluşturdu.
 
 Brightcove oynatıcısı aşağıdaki şekilde çağrılabilir:
 
@@ -106,10 +106,10 @@ Görüntülenebilirlik sağlayıcıları genellikle reklam sunucusunun reklam sa
 
 Örneğin MOAT için `http://js.moatads.com` bağlantısının `https://z.moatads.com` ile değiştirildiğinden emin olun
 
-Ayrıca, [kesişimsel gözlemci örüntüsü](https://github.com/ampproject/amphtml/blob/master/ads/README.md#ad-viewability) kullanım yaklaşımına göz atın.
+Ayrıca, [kesişimsel gözlemci örüntüsü](https://github.com/ampproject/amphtml/blob/main/ads/README.md#ad-viewability) kullanım yaklaşımına göz atın.
 
 ## İçerik Tavsiye Platformu <a name="content-recommendation-platform"></a>
 
 _Örnekler : Taboola, Outbrain_
 
-Şu anda yayıncı web sitesinde JavaScript ekli parçalarınız varsa faydalıdır ancak yaklaşım, AMP sayfalarında çalışmaz. AMP sayfasında içerik önermek isterseniz, içerik ayrıntılarını istemek için [`amp-embed` uzantısını](https://amp.dev/documentation/components/amp-ad) kullanmanızı öneririz. Lütfen [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md) örneğine bakın.
+Şu anda yayıncı web sitesinde JavaScript ekli parçalarınız varsa faydalıdır ancak yaklaşım, AMP sayfalarında çalışmaz. AMP sayfasında içerik önermek isterseniz, içerik ayrıntılarını istemek için [`amp-embed` uzantısını](https://amp.dev/documentation/components/amp-ad) kullanmanızı öneririz. Lütfen [Taboola](https://github.com/ampproject/amphtml/blob/main/ads/taboola.md) örneğine bakın.

@@ -48,7 +48,7 @@ AMPHTML reklamları esnek ve dinamiktir, döngü, paralaks ve lightbox gibi bir�
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='Serving AMPHTML ads to AMP pages', caption='Serving AMPHTML ads to AMP pages', align='' ) }}
 
 1. Yayıncılar, kullanmak istedikleri reklam ağını belirterek, AMP sayfalarına [`amp-ad`](../../../documentation/components/reference/amp-ad.md) etiketi aracılığıyla bir reklam alanı ekler.
-2. AMP Çalışma Zamanı, reklamı almak için belirtilen reklam ağına bir reklam isteği gönderir. AMPHTML reklamları sunabilen reklam ağları, reklam öğesini doğrulayan ve imzalayan bir [Hızlı Getirme uygulaması](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) sağlar.
+2. AMP Çalışma Zamanı, reklamı almak için belirtilen reklam ağına bir reklam isteği gönderir. AMPHTML reklamları sunabilen reklam ağları, reklam öğesini doğrulayan ve imzalayan bir [Hızlı Getirme uygulaması](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md) sağlar.
 3. Reklam ağı, AMPHTML reklamıyla yanıt verir ve AMP Çalışma Zamanı, reklamı AMP sayfasında oluşturur.
 
 [tip type="note"] AMPHTML reklamlarını AMP olmayan sayfalara sunmak için özel bir entegrasyon gerekmez. AMPHTML reklamlarını destekleyip desteklemediklerini öğrenmek için reklam ağınıza danışın. [/tip]
@@ -77,7 +77,7 @@ Bir reklam ajansıysanız, reklamları [AMPHTML reklam teknik özelliklerine](a4
 
 ### Reklam ağları/sunucuları
 
-AMPHTML reklamlarını AMP sayfalarında yayınlamak için, ağınız için [Hızlı Getirme reklam istek uygulaması](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) kullanan bir [` amp-ad`](../../../documentation/components/reference/amp-ad.md) uzantısı (halihazırda yoksa) oluşturmanız gerekir. Ayrıntılar için [Görüntülü reklamları sunmak için AMP ile entegrasyon](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md) bölümüne bakın. AMPHTML'yi AMP olmayan sayfalara sunmak için özel bir entegrasyona gerek olmadığını unutmayın.
+AMPHTML reklamlarını AMP sayfalarında yayınlamak için, ağınız için [Hızlı Getirme reklam istek uygulaması](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md) kullanan bir [` amp-ad`](../../../documentation/components/reference/amp-ad.md) uzantısı (halihazırda yoksa) oluşturmanız gerekir. Ayrıntılar için [Görüntülü reklamları sunmak için AMP ile entegrasyon](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md) bölümüne bakın. AMPHTML'yi AMP olmayan sayfalara sunmak için özel bir entegrasyona gerek olmadığını unutmayın.
 
 ## AMPHTML reklamları oluşturma
 
@@ -101,7 +101,7 @@ AMPHTML reklamınızı oluşturduktan sonra, reklamın doğru AMPHTML sözdizimi
 
 ## RTB'de AMPHTML reklamlarını destekleme
 
-Gerçek Zamanlı Teklif Verme (RTB) ortamında AMPHTML reklamlarını desteklemek isteyen SSP'ler ve reklam borsaları için ayrıntılar için [RTB Reklam Borsaları Uygulama Kılavuzu'na](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/RTBExchangeGuide.md) bakın.
+Gerçek Zamanlı Teklif Verme (RTB) ortamında AMPHTML reklamlarını desteklemek isteyen SSP'ler ve reklam borsaları için ayrıntılar için [RTB Reklam Borsaları Uygulama Kılavuzu'na](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/RTBExchangeGuide.md) bakın.
 
 ## SSS
 
@@ -125,4 +125,4 @@ Evet. [`amp-ad-exit`](../../../documentation/components/reference/amp-ad-exit.md
 
 - [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html), AMP ile ilgili soruların yanıtlarını bulmanız için önerdiğimiz yerdir; AMP Projesi topluluk üyeleri Stack Overflow'u düzenli olarak takip ettiğinden, sorularınıza muhtemelen en hızlı yanıtı orada alacaksınız.
 - Çözümler ve yanıtlar için [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) kanalına katılın.
-- AMP'de bir hatayla karşılaşırsanız veya AMP için bir özellik isteğiniz varsa, sorun bildirme hakkında bilgi için [AMP ile ilgili sorunları bildirme](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp) bölümüne bakın.
+- AMP'de bir hatayla karşılaşırsanız veya AMP için bir özellik isteğiniz varsa, sorun bildirme hakkında bilgi için [AMP ile ilgili sorunları bildirme](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#reporting-issues-with-amp) bölümüne bakın.

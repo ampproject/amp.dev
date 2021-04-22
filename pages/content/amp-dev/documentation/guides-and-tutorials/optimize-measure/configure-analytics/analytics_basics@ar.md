@@ -60,7 +60,7 @@ $title: "Analytics: الأساسيات"
 في هذا النموذج،
 يتم إرسال بيانات مشاهدة الصفحة إلى عنوان URL محدد مع رقم عشوائي.
 المتغير `RANDOM` هو واحد من كثير من
-[متغيرات الاستبدال في النظام الأساسي لـ AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
+[متغيرات الاستبدال في النظام الأساسي لـ AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md).
 تعرّف على المزيد بشأن
 [استبدال المتغير](analytics_basics.md) هنا.
 
@@ -122,7 +122,7 @@ $title: "Analytics: الأساسيات"
 يسمح كلّ من المكون [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) وكذلك
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) بكل
 عمليات استبدال متغير عنوان URL القياسية (انظر
-[عمليات استبدال متغير <span dir="ltr" class="nowrap">AMP HTML</span>](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)).
+[عمليات استبدال متغير <span dir="ltr" class="nowrap">AMP HTML</span>](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)).
 في النموذج التالي،
 يتم إرسال طلب مشاهدة الصفحة إلى عنوان URL،
 مع عنوان URL المتعارف عليه لمستند AMP الحالي، وعنوانه، فضلاً عن
@@ -145,7 +145,7 @@ $title: "Analytics: الأساسيات"
 أو نظام أساسي.
 سوف تستبدل العلامة <span dir="ltr" class="nowrap">[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)</span> القالب بقيمته الفعلية
 في وقت إنشاء طلب التحليلات (انظر أيضًا
-[المتغيرات المدعومة في <span dir="ltr" class="nowrap">amp-analytics</span>](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)).
+[المتغيرات المدعومة في <span dir="ltr" class="nowrap">amp-analytics</span>](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md)).
 
 في نموذج <span dir="ltr" class="nowrap">[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)</span> التالي،
 يتم إرسال طلب مشاهدة الصفحة إلى عنوان URL،
@@ -200,7 +200,7 @@ $title: "Analytics: الأساسيات"
 لأسباب تتعلق بالأمان،
 يمكن للمتصفحات (وستفعل غالبًا) تحديد إمكانية الوصول إلى ملفات تعريف الارتباط التابعة للنطاق الآخر
 (انظر أيضًا
-[تتبع المستخدمين عبر الأصول](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/cross-origin-tracking.md)).
+[تتبع المستخدمين عبر الأصول](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/cross-origin-tracking.md)).
 
 افتراضيًا،
 سوف تدير AMP توفير معرّف العميل سواء أكان الوصول إلى الصفحة يتم من موقع الويب الأصلي للناشر أم عبر ذاكرة تخزين مؤقت.
@@ -238,4 +238,4 @@ $title: "Analytics: الأساسيات"
 
 تعرّف على المزيد بشأن استبدال رقم تعريف العميل،
 بما في ذلك كيفية إضافة معرّف إشعار مستخدم اختياري، في
-[المتغيرات المدعومة في تحليلات AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
+[المتغيرات المدعومة في تحليلات AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md).

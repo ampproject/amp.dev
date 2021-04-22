@@ -151,9 +151,9 @@ Pour en savoir plus, consultez la section [Validation personnalisée](#custom-va
 * `<input type=button>`, `<input type=image>`
 * La plupart des attributs liés à un formulaire sur des entrées, y compris `form`, `formaction`, `formtarget`, `formmethod`, etc.
 
-Il se peut que nous nous penchions à nouveau sur l'assouplissement de certaines de ces règles à l'avenir. Si vous en avez besoin, [merci de nous en informer](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#suggestions-and-feature-requests) et de nous fournir des cas d'utilisation.
+Il se peut que nous nous penchions à nouveau sur l'assouplissement de certaines de ces règles à l'avenir. Si vous en avez besoin, [merci de nous en informer](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#suggestions-and-feature-requests) et de nous fournir des cas d'utilisation.
 
-Pour plus d'informations sur les entrées et les champs valides, consultez les [règles relatives à amp-form](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) dans les spécifications du validateur AMP.
+Pour plus d'informations sur les entrées et les champs valides, consultez les [règles relatives à amp-form](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) dans les spécifications du validateur AMP.
 
 # Actions <a name="actions"></a>
 
@@ -193,7 +193,7 @@ Par exemple, le code suivant écoute les événements `submit-success` et `submi
 
 ```
 
-Pour afficher l'intégralité du code, [cliquez ici](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
+Pour afficher l'intégralité du code, [cliquez ici](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html).
 
 # Événements de saisie <a name="input-events"></a>
 
@@ -225,7 +225,7 @@ Par exemple, il est courant d'envoyer un formulaire lors de la modification d'un
 ```
 [/example]
 
-Pour afficher l'intégralité du code, [cliquez ici](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
+Pour afficher l'intégralité du code, [cliquez ici](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html).
 
 # Déclencheurs d'analyse <a name="analytics-triggers"></a>
 
@@ -381,7 +381,7 @@ Vous pouvez afficher les réponses dans un modèle référencé défini précéd
 </form>
 {% endraw %}[/sourcecode]
 
-Pour afficher l'intégralité du code, [cliquez ici](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
+Pour afficher l'intégralité du code, [cliquez ici](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html).
 
 # Afficher une réponse positive avec la liaison de données <a name="to-render-a-successful-response-with-data-binding"></a>
 
@@ -495,7 +495,7 @@ Exemple :
 ```
 [/example]
 
-Pour consulter d'autres exemples, reportez-vous au fichier [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
+Pour consulter d'autres exemples, reportez-vous au fichier [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html).
 
 Dans le cas des messages de validation, si votre élément est dépourvu de contenu textuel, AMP y indique le message de validation par défaut du navigateur. Dans l'exemple ci-dessus, lorsque l'entrée `name5` est vide et que la validation est lancée (en d'autres termes, l'utilisateur a essayé d'envoyer le formulaire), AMP indique `<span visible-when-invalid="valueMissing" validation-for="name5"></span>` avec le message de validation du navigateur et présente cet élément `span` à l'utilisateur.
 
@@ -586,11 +586,11 @@ Voici un aperçu d'une réponse d'erreur pour la validation :
 
 Pour supprimer un champ de la requête `verify-xhr`, ajoutez l'attribut `no-verify` à l'élément d'entrée.
 
-Pour consulter d'autres exemples, reportez-vous au fichier [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
+Pour consulter d'autres exemples, reportez-vous au fichier [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html).
 
 # Substitutions de variables <a name="variable-substitutions"></a>
 
-L'extension `amp-form` autorise les [substitutions de variables de plate-forme](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) pour les entrées qui sont masquées et qui comportent l'attribut `data-amp-replace`. À chaque envoi de formulaire, `amp-form` recherche tous les attributs `input[type=hidden][data-amp-replace]` dans le formulaire, applique des substitutions de variables à son attribut `value`, puis le remplace par le résultat de la substitution.
+L'extension `amp-form` autorise les [substitutions de variables de plate-forme](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) pour les entrées qui sont masquées et qui comportent l'attribut `data-amp-replace`. À chaque envoi de formulaire, `amp-form` recherche tous les attributs `input[type=hidden][data-amp-replace]` dans le formulaire, applique des substitutions de variables à son attribut `value`, puis le remplace par le résultat de la substitution.
 
 Vous devez fournir les variables que vous utilisez pour chaque substitution sur chaque entrée en spécifiant une chaîne des variables utilisées dans `data-amp-replace` (voir l'exemple ci-dessous). Les variables de cette chaîne doivent être séparées par des espaces. AMP ne remplace pas les variables qui ne sont pas spécifiées explicitement.
 
@@ -625,7 +625,7 @@ Une fois que l'utilisateur tente d'envoyer le formulaire, AMP essaie de résoudr
 
 Notez que l'élément `CANONICAL_HOSTNAME` ci-dessus n'a pas été remplacé, car il ne figurait pas dans la liste blanche jusqu'à l'attribut `data-amp-replace` dans le premier champ.
 
-Les remplacements seront effectués lors de chaque envoi ultérieur. En savoir plus sur les [substitutions de variables dans AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)
+Les remplacements seront effectués lors de chaque envoi ultérieur. En savoir plus sur les [substitutions de variables dans AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)
 
 # Polyfills <a name="polyfills"></a>
 
@@ -675,7 +675,7 @@ Les classes suivantes constituent un [polyfill pour les pseudo-classes d'interac
 
 Ces classes permettent aux éditeurs d'appliquer un style à leurs entrées et jeux de champs, de telle sorte qu'ils interagissent avec les actions des utilisateurs (il peut s'agir, par exemple, de la mise en évidence d'une entrée non valide avec une bordure rouge après que l'utilisateur l'a floutée).
 
-Pour en savoir plus sur l'utilisation de ces classes, consultez l'[intégralité du code](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
+Pour en savoir plus sur l'utilisation de ces classes, consultez l'[intégralité du code](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html).
 
 [tip type="success"]
 Rendez-vous sur [AMP Start](https://ampstart.com/components#form-elements) pour découvrir des éléments de formulaire mis en forme et réactifs que vous pouvez utiliser dans vos pages AMP.

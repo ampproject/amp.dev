@@ -61,7 +61,7 @@ Mustache è una sintassi template che non utilizza la logica. Per ulteriori info
 
 ## Utilizzo <a name="usage"></a>
 
-Il modello `amp-mustache` deve essere definito e utilizzato secondo le [specifiche del modello AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md).
+Il modello `amp-mustache` deve essere definito e utilizzato secondo le [specifiche del modello AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-html-templates.md).
 
 In primo luogo, `amp-mustache` deve essere dichiarato/caricato come segue:
 
@@ -200,4 +200,4 @@ Le soluzioni alternative includono la sostituzione di stringhe come {% raw %} `{
 
 ## Convalida <a name="validation-1"></a>
 
-Consulta le [regole amp-mustache](https://github.com/ampproject/amphtml/blob/master/extensions/amp-mustache/validator-amp-mustache.protoascii) nella specifica dello strumento di convalida AMP.
+Consulta le [regole amp-mustache](https://github.com/ampproject/amphtml/blob/main/extensions/amp-mustache/validator-amp-mustache.protoascii) nella specifica dello strumento di convalida AMP.

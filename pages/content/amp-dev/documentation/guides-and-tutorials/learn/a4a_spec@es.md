@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -79,7 +79,7 @@ Adicionalmente, los creativos deben cumplir las siguientes reglas:
 
 ### Código repetitivo <a name="boilerplate"></a>
 
-Los creativos de los anuncios AMPHTML requieren de un código repetitivo diferente y con un estilo considerablemente más simple en comparación con lo que [hacen los documentos generales de AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md):
+Los creativos de los anuncios AMPHTML requieren de un código repetitivo diferente y con un estilo considerablemente más simple en comparación con lo que [hacen los documentos generales de AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md):
 
 [sourcecode:html]
 
@@ -238,7 +238,7 @@ La mayoría de las omisiones son consecuencia ya sea del rendimiento o para que 
 
 _Por ejemplo:_ `<amp-ad>` se omite de esta lista. Se prohíbe explícitamente porque permitiría que un `<amp-ad>` estuviera dentro de un `<amp-ad>` que potencialmente conduciría a cascadas ilimitadas de carga de anuncios, los cuales no cumplen con los objetivos de rendimiento para los anuncios de AMPHTML.
 
-_Por ejemplo:_ `<amp-iframe>` se omite de esta lista. Se prohíbe porque los anuncios podrían utilizarlo para ejecutar injustificadamente Javascript y cargar contenido arbitrario. Los anuncios que quieran utilizar esas funciones deben devolver `false` de su entrada [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40) y utilizar el mecanismo actual de renderización de anuncios “3p iframe”.
+_Por ejemplo:_ `<amp-iframe>` se omite de esta lista. Se prohíbe porque los anuncios podrían utilizarlo para ejecutar injustificadamente Javascript y cargar contenido arbitrario. Los anuncios que quieran utilizar esas funciones deben devolver `false` de su entrada [a4aRegistry](https://github.com/ampproject/amphtml/blob/main/ads/_a4a-config.js#L40) y utilizar el mecanismo actual de renderización de anuncios “3p iframe”.
 
 _Por ejemplo:_ `<amp-facebook>`, `<amp-instagram>`, `<amp-twitter>`, y `<amp-youtube>` se omiten por la misma razón que `<amp-iframe>`: Todos crean iframes y potencialmente pueden consumir recursos ilimitados en ellos mismos.
 
@@ -248,7 +248,7 @@ _Por ejemplo:_ `<amp-lightbox>` aún no se incluye porque todavía algunos creat
 
 ### Etiquetas HTML <a name="html-tags"></a>
 
-Las siguientes etiquetas están _permitidas_ en los creativos para los anuncios de AMPHTML. Están prohibidas las etiquetas que no están explícitamente permitidas. Esta lista es un subconjunto general en la [lista de elementos permitidos para la etiqueta de AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md). De esa forma la lista se ordena según las especificaciones para HTML5 que se encuentran en la sección 4 [Los elementos de HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
+Las siguientes etiquetas están _permitidas_ en los creativos para los anuncios de AMPHTML. Están prohibidas las etiquetas que no están explícitamente permitidas. Esta lista es un subconjunto general en la [lista de elementos permitidos para la etiqueta de AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/../../spec/amp-tag-addendum.md). De esa forma la lista se ordena según las especificaciones para HTML5 que se encuentran en la sección 4 [Los elementos de HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
 
 La mayoría de las omisiones se deben al rendimiento o porque las etiquetas no son estándares para HTML5. Por ejemplo, `<noscript>` se omite debido a que los anuncios de AMPHTML dependen de que JavaScript se haya habilitado, así que un bloque `<noscript>` nunca se ejecutará y, por lo tanto, solo obstaculizará al creativo, el costo del ancho de banda y los tiempos de espera. De forma similar, `<acronym>`, `<big>`, y otros están prohibidos debido a que no son compatibles con HTML5.
 

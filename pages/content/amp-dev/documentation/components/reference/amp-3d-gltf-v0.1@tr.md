@@ -121,4 +121,4 @@ Desteklenmeyen özellikler:
 
 ## Doğrulama <a name="validation"></a>
 
-AMP doğrulayıcı spesifikasyonundaki [amp-3d-gltf kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii) bakın.
+AMP doğrulayıcı spesifikasyonundaki [amp-3d-gltf kurallarına](https://github.com/ampproject/amphtml/blob/main/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii) bakın.

@@ -36,7 +36,7 @@ Tüm belgeler AMP önbelleklerinde https protokolünü kullanır.
 
 ## Etki Alanı Adı Soneki
 
-Tüm AMP Önbellekleri, [AMPHTML Deposu](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json) üzerinde çevrimiçi olarak bulunan bir JSON dosyasına kaydedilir. Bu dosyadaki örnek bir önbellek kaydı şöyle görünecektir:
+Tüm AMP Önbellekleri, [AMPHTML Deposu](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json) üzerinde çevrimiçi olarak bulunan bir JSON dosyasına kaydedilir. Bu dosyadaki örnek bir önbellek kaydı şöyle görünecektir:
 
 ```json
 {

@@ -30,7 +30,7 @@ But you can use CSS preprocessors and templating to build static pages
 to better manage your content.
 
 [tip type="note"]
-**NOTE –** AMP components come with default styles to make authoring responsive pages reasonably easy. These styles are defined in the [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
+**NOTE –** AMP components come with default styles to make authoring responsive pages reasonably easy. These styles are defined in the [`amp.css`](https://github.com/ampproject/amphtml/blob/main/css/amp.css).
 [/tip]
 
 ## Disallowed styles

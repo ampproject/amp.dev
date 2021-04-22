@@ -22,6 +22,6 @@ Implementiere eine CSP, indem du im Kopf deiner Seiten das entsprechende Meta Ta
 />
 ```
 
-[Das vollständige Beispiel findest du hier](https://github.com/ampproject/amphtml/blob/master/examples/csp.amp.html).
+[Das vollständige Beispiel findest du hier](https://github.com/ampproject/amphtml/blob/main/examples/csp.amp.html).
 
 [tip type="read-on"] Weitere Informationen zum [Schutz vor Sicherheitslücken und zu CSPs findest du hier](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP). [/tip]

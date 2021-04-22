@@ -75,8 +75,8 @@ Reklam ağı türü ve (reklam ağının gerektirdiği) ek bilgiler etikette bel
 
 ## Desteklenen reklam ağları <a name="supported-ad-networks"></a>
 
-* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
-* [DoubleClick (deneysel)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
+* [AdSense](https://github.com/ampproject/amphtml/blob/main/ads/google/adsense.md)
+* [DoubleClick (deneysel)](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md)
 
 ## Özellikler
 
@@ -410,4 +410,4 @@ Dolayısıyla, minimum aralık varsayılan olarak `AdConstraints` nesnesindeki i
 
 ## Doğrulama
 
-AMP doğrulayıcı spesifikasyonundaki [amp-auto-ads kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-auto-ads/validator-amp-auto-ads.protoascii) bakın.
+AMP doğrulayıcı spesifikasyonundaki [amp-auto-ads kurallarına](https://github.com/ampproject/amphtml/blob/main/extensions/amp-auto-ads/validator-amp-auto-ads.protoascii) bakın.

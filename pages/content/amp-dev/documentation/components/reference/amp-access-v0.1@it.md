@@ -226,7 +226,7 @@ Ecco un esempio di configurazione dell'Accesso AMP:
 
 ### Variabili URL di accesso <a name="access-url-variables"></a>
 
-Al momento di configurare gli URL per vari endpoint, il publisher può utilizzare le variabili di sostituzione. L'elenco completo di queste variabili è definito in [Specifica Variabili AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Inoltre, questa specifica aggiunge alcune variabili specifiche di accesso, ad esempio `READER_ID` e `AUTHDATA`. Alcune delle variabili più pertinenti sono descritte nella seguente tabella:
+Al momento di configurare gli URL per vari endpoint, il publisher può utilizzare le variabili di sostituzione. L'elenco completo di queste variabili è definito in [Specifica Variabili AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md). Inoltre, questa specifica aggiunge alcune variabili specifiche di accesso, ad esempio `READER_ID` e `AUTHDATA`. Alcune delle variabili più pertinenti sono descritte nella seguente tabella:
 
 <table>
   <tr>
@@ -494,7 +494,7 @@ Il link di accesso può essere dichiarato su qualsiasi elemento HTML che consent
 
 ## Integrazione con *amp-analytics* <a name="integration-with-amp-analytics"></a>
 
-L'integrazione con *amp-analytics* è documentata nel file [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md).
+L'integrazione con *amp-analytics* è documentata nel file [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/amp-access-analytics.md).
 
 ## CORS Origin Security <a name="cors-origin-security"></a>
 
@@ -562,7 +562,7 @@ Come al solito, l'ID lettore deve essere incluso nella chiamata alla pagina di a
 
 ## Appendice A: grammatica delle espressioni "amp-access" <a name="appendix-a-amp-access-expression-grammar"></a>
 
-La grammatica BNF più recente è disponibile al file [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison).
+La grammatica BNF più recente è disponibile al file [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/0.1/access-expr-impl.jison).
 
 L'estratto chiave di questa grammatica è riportato di seguito:
 
@@ -602,4 +602,4 @@ Questa sezione comprende una spiegazione dettagliata del progetto alla base dell
 
 ## Convalida <a name="validation"></a>
 
-Consulta le [regole di amp-access](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/validator-amp-access.protoascii) nella specifica dello strumento di convalida AMP.
+Consulta le [regole di amp-access](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/validator-amp-access.protoascii) nella specifica dello strumento di convalida AMP.

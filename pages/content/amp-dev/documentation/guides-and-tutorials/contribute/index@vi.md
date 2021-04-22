@@ -28,7 +28,7 @@ Chúng tôi hi vọng bạn sẽ trở thành một người tham gia tích cự
 
 #### Giúp đỡ với việc lập trình
 
-Để bắt đầu đóng góp code cho Dự án AMP, hãy đọc kỹ [tập tin CONTRIBUTING](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md), mô tả chi tiết quy trình mà một tính năng hoặc bản vá lỗi phải trải qua từ khâu khái niệm đến gửi đi và cách bạn có thể tham gia vào việc thiết kế kỹ thuật và thảo luận. Nếu bạn mới làm quen với mã nguồn mở, chúng tôi có một số [lời khuyên để bắt đầu](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-code).
+Để bắt đầu đóng góp code cho Dự án AMP, hãy đọc kỹ [tập tin CONTRIBUTING](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md), mô tả chi tiết quy trình mà một tính năng hoặc bản vá lỗi phải trải qua từ khâu khái niệm đến gửi đi và cách bạn có thể tham gia vào việc thiết kế kỹ thuật và thảo luận. Nếu bạn mới làm quen với mã nguồn mở, chúng tôi có một số [lời khuyên để bắt đầu](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#contributing-code).
 
 ### Cung cấp đóng góp nội dung cho AMP
 

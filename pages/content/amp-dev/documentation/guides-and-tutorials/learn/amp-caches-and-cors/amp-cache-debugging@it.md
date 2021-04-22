@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-debugging.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-debugging.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -50,7 +50,7 @@ Se il problema persiste dopo aver seguito tale procedura, controllare la tabella
     <tr>
       <td rowspan="2">Le risorse (ad esempio, caratteri e immagini) non sono visualizzate</td>
       <td>Le risorse sono fornite con il tipo MIME errato.</td>
-      <td>Indicare un <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">tipo MIME accettabile</a>.</td>
+      <td>Indicare un <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">tipo MIME accettabile</a>.</td>
     </tr>
     <tr>
       <td>La cache AMP non può accedere alle risorse.</td>

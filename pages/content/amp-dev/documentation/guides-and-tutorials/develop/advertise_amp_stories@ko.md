@@ -73,6 +73,6 @@ author: CrystalOnScript
 
 웹 스토리에 광고를 게시하는 데 관심이 있는 광고주라면 자세한 내용을 [문의해 주세요](mailto:story-ads-wg@google.com).
 
-또한 퍼블리셔는 자체 광고 서버를 설정하여 맞춤 광고를 배치할 수 있습니다. [자세한 프로세스는 이곳에서 확인하실 수 있습니다](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
+또한 퍼블리셔는 자체 광고 서버를 설정하여 맞춤 광고를 배치할 수 있습니다. [자세한 프로세스는 이곳에서 확인하실 수 있습니다](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
 
 [tip type="note"] Google Ad Manager 광고 업로드와 관련한 정보는 [AMP 스토리의 맞춤 광고 소재 트래피킹](https://support.google.com/admanager/answer/9038178)을 읽고 [AMP 스토리 광고 제작 모범 사례](story_ads_best_practices.md)도 확인해 보세요. [/tip]

@@ -41,9 +41,9 @@ Sebagai contoh, server Amazon A9 dapat dijalankan dengan menggunakan sintaksis b
 </amp-ad>
 ```
 
-Dalam kode di atas, atribut `type` menentukan jaringan iklan, dalam hal ini A9. Atribut `data-*` bergantung pada parameter yang diharapkan oleh server Amazon A9 untuk menayangkan iklan. Berkas [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) menunjukkan bagaimana parameter dipetakan untuk membuat panggilan JavaScript ke URL server A9. Parameter terkait yang diteruskan oleh tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md) ditambahkan ke akhir URL untuk menampilkan iklan.
+Dalam kode di atas, atribut `type` menentukan jaringan iklan, dalam hal ini A9. Atribut `data-*` bergantung pada parameter yang diharapkan oleh server Amazon A9 untuk menayangkan iklan. Berkas [`a9.js`](https://github.com/ampproject/amphtml/blob/main/ads/a9.js) menunjukkan bagaimana parameter dipetakan untuk membuat panggilan JavaScript ke URL server A9. Parameter terkait yang diteruskan oleh tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md) ditambahkan ke akhir URL untuk menampilkan iklan.
 
-Untuk mempelajari cara membuat integrasi [`amp-ad`](../../../documentation/components/reference/amp-ad.md), lihat [Mengintegrasikan jaringan iklan ke dalam AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+Untuk mempelajari cara membuat integrasi [`amp-ad`](../../../documentation/components/reference/amp-ad.md), lihat [Mengintegrasikan jaringan iklan ke dalam AMP](https://github.com/ampproject/amphtml/blob/main/ads/README.md).
 
 ## Membuat integrasi Fast Fetch <a name="creating-a-fast-fetch-integration"></a>
 
@@ -57,7 +57,7 @@ Untuk menampilkan iklan HTML AMP dari server iklan, Anda harus memberikan integr
 2. Menyediakan JavaScript untuk membuat permintaan iklan (contoh implementasi: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) & [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
 3. Memvalidasi dan menandatangani materi iklan melalui layanan validasi. [Cloudflare](https://blog.cloudflare.com/firebolt/) menyediakan layanan verifikasi iklan AMP, sehingga penyedia iklan independen dapat menayangkan iklan yang lebih cepat, ringan, dan menarik.
 
-Untuk mempelajari cara membuat integrasi Fast Fetch, lihat [Panduan Implementasi Jaringan Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).
+Untuk mempelajari cara membuat integrasi Fast Fetch, lihat [Panduan Implementasi Jaringan Fast Fetch](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md).
 
 ## Sumber daya terkait
 

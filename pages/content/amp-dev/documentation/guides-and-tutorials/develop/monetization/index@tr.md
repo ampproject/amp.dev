@@ -100,7 +100,7 @@ Tebrikler! Artık AMP sayfanızda reklam sunuyorsunuz!
 
 ## Doğrudan satılan AMPHTML reklamları sunma
 
-[`amp-ad`](../../../../documentation/components/reference/amp-ad.md) bileşeni, belirttiğiniz ağdaki reklamları sunar. Bu reklamlar, reklam ağının AMPHTML reklamları desteklemesi koşuluyla standart HTML reklamları veya AMPHTML reklamları olabilir. Doğrudan satılan reklamlarınızı AMPHTML reklamları olarak sunmak için, reklamı AMP HTML'de [AMPHTML reklam teknik özelliklerinin](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) gereksinimlerine göre oluşturun ve [AMPHTML reklamları sunan bir reklam sunucusu](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers) kullanın.
+[`amp-ad`](../../../../documentation/components/reference/amp-ad.md) bileşeni, belirttiğiniz ağdaki reklamları sunar. Bu reklamlar, reklam ağının AMPHTML reklamları desteklemesi koşuluyla standart HTML reklamları veya AMPHTML reklamları olabilir. Doğrudan satılan reklamlarınızı AMPHTML reklamları olarak sunmak için, reklamı AMP HTML'de [AMPHTML reklam teknik özelliklerinin](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) gereksinimlerine göre oluşturun ve [AMPHTML reklamları sunan bir reklam sunucusu](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/a4a-readme.md#publishers) kullanın.
 
 ## Reklam isteklerine ilişkin hedefleme verilerini artırma
 
@@ -112,8 +112,8 @@ Bu YouTube videosundan RTC hakkında daha fazla bilgi edinebilirsiniz:
 
 Veya bu RTC kaynaklarından daha fazla bilgi edinin:
 
-- [AMP RTC yayıncı uygulama kılavuzu](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
-- [AMP Gerçek Zamanlı Yapılandırması](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
+- [AMP RTC yayıncı uygulama kılavuzu](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
+- [AMP Gerçek Zamanlı Yapılandırması](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-documentation.md)
 
 ## En iyi uygulamalar
 
@@ -124,7 +124,7 @@ AMP sayfalarınızdaki reklamların etkinliğini en üst düzeye çıkarmak içi
 - Sayfa başına maksimum gelir elde etmek için AMP sayfalarına AMP olmayan sayfalarınızla **aynı sayıda reklam yerleştirin.**
 - Optimum kullanıcı deneyimi sağlamak için **ilk reklamı ilk görüntü alanının hemen altına yerleştirin** ("ekranın alt kısmı").
 - Gelişmiş CSS veya medya sorguları kullanmıyorsanız, kullanıcılarınıza en iyi mobil web deneyimini **sağlamak için reklam birimlerinizin sayfada ortalandığından emin olun**.
-- Reklam açık artırma baskısını artırmak ve geliri artırmak için AMP envanterinizde [çok boyutlu reklam isteklerini](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests) etkinleştirin.
+- Reklam açık artırma baskısını artırmak ve geliri artırmak için AMP envanterinizde [çok boyutlu reklam isteklerini](https://github.com/ampproject/amphtml/blob/main/ads/README.md#support-for-multi-size-ad-requests) etkinleştirin.
 
 ### Talep ve fiyatlandırma: Reklamlarınız için doğru fiyatı alma
 

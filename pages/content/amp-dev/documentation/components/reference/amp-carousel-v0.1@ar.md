@@ -245,4 +245,4 @@ limitations under the License.
 
 # التحقق <a name="validation"></a>
 
-اطِّلع على [قواعد amp-carousel](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/validator-amp-carousel.protoascii) في مواصفات مدقق AMP.
+اطِّلع على [قواعد amp-carousel](https://github.com/ampproject/amphtml/blob/main/extensions/amp-carousel/validator-amp-carousel.protoascii) في مواصفات مدقق AMP.

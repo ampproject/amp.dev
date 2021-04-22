@@ -47,7 +47,7 @@ AMP HTML 広告が通常の広告よりも優れている点は次のとおり�
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='AMP HTML 広告を AMP ページに配信', caption='AMP HTML 広告を AMP ページに配信', align='' ) }}
 
 1. サイト運営者が、[`amp-ad`](../../../documentation/components/reference/amp-ad.md) タグを使用して AMP ページに広告スロットを挿入し、使用する広告ネットワークを指定します。
-1. AMP ランタイムが、広告を取得するための広告リクエストを指定の広告ネットワークに送信します。AMP HTML 広告の配信に対応している広告ネットワークは、広告を検証して署名する[高速フェッチ実装](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)を提供しています。
+1. AMP ランタイムが、広告を取得するための広告リクエストを指定の広告ネットワークに送信します。AMP HTML 広告の配信に対応している広告ネットワークは、広告を検証して署名する[高速フェッチ実装](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md)を提供しています。
 1. 広告ネットワークが AMP HTML 広告を返し、AMP ランタイムがその広告を AMP ページに表示します。
 
 ## AMP HTML 広告を配信する
@@ -102,7 +102,7 @@ AMP HTML 広告を作成したら、広告が正しい AMP HTML 構文に基づ�
 
 ## RTB での AMP HTML 広告のサポート
 
-SSP やアド エクスチェンジのリアルタイム ビッダー（RTB）環境で AMP HTML 広告に対応する方法について詳しくは、[RTB アド エクスチェンジのための実装ガイド](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/RTBExchangeGuide.md)をご確認ください。
+SSP やアド エクスチェンジのリアルタイム ビッダー（RTB）環境で AMP HTML 広告に対応する方法について詳しくは、[RTB アド エクスチェンジのための実装ガイド](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/RTBExchangeGuide.md)をご確認ください。
 
 ## よくある質問
 
@@ -126,4 +126,4 @@ SSP やアド エクスチェンジのリアルタイム ビッダー（RTB）�
 
 *   AMP に関する質問の投稿先には、[Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) をおすすめします。AMP プロジェクト コミュニティのメンバーは、定期的にこのサイトをチェックしているため、短時間で質問への回答を得られる可能性があります。
 *   [Slack の #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) チャネルに参加すると、質問を投稿して問題の解決策や回答を得られます。
-*   AMP のバグを見つけた場合や、AMP の機能をリクエストしたい場合は、[AMP に関する問題を報告](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp)する方法についての説明をご覧ください。
+*   AMP のバグを見つけた場合や、AMP の機能をリクエストしたい場合は、[AMP に関する問題を報告](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#reporting-issues-with-amp)する方法についての説明をご覧ください。

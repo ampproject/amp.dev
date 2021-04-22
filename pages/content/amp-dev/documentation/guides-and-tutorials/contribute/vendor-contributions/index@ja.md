@@ -19,7 +19,7 @@ AMP アナリティクスを使用すると、貴社で設定したトリガー�
 
 [`amp-ad`](../../../components/reference/amp-ad.md) 拡張機能は、AMP ページにディスプレイ広告を配信するためのものです。90 社以上の広告テクノロジー プロバイダが AMP のサポートを導入しています。開始する際は、[開発の概要](https://github.com/ampproject/amphtml/tree/master/ads#overview)をお読みください。また、amp-ad 拡張機能のサポートの追加に関する[デベロッパー向けの手順](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request)もご覧ください。提供している広告テクノロジーによっては、こちらの[統合の手順](ad-integration-guide.md)も役立ちます。
 
-90 社以上の広告プロバイダが [`amp-ad`](../../../components/reference/amp-ad.md) のような広告関連機能のサポートを導入しています。広告ネットワーク [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md) による[プルリクエスト](https://github.com/ampproject/amphtml/pull/2299)の例をご覧ください。
+90 社以上の広告プロバイダが [`amp-ad`](../../../components/reference/amp-ad.md) のような広告関連機能のサポートを導入しています。広告ネットワーク [Criteo](https://github.com/ampproject/amphtml/blob/main/ads/criteo.md) による[プルリクエスト](https://github.com/ampproject/amphtml/pull/2299)の例をご覧ください。
 
 ## 3. amp-call-tracking 拡張機能を使用する
 
@@ -29,7 +29,7 @@ AMP アナリティクスを使用すると、貴社で設定したトリガー�
 
 ## 4. 新しい拡張機能や埋め込みを追加する
 
-貴社のユースケースに [`amp-analytics`](../../../components/reference/amp-analytics.md) [`amp-pixel`](../../../components/reference/amp-pixel.md) [`amp-ad`](../../../components/reference/amp-ad.md) の使用が適さない場合は、[GitHub の問題]を公開して、代わりの方法について検討してください。Google はさまざまな企業で幅広くご利用いただける新しい拡張機能を歓迎いたします。詳しくは、[拡張コンポーネントへの貢献](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-extended-components)をご覧ください。
+貴社のユースケースに [`amp-analytics`](../../../components/reference/amp-analytics.md) [`amp-pixel`](../../../components/reference/amp-pixel.md) [`amp-ad`](../../../components/reference/amp-ad.md) の使用が適さない場合は、[GitHub の問題]を公開して、代わりの方法について検討してください。Google はさまざまな企業で幅広くご利用いただける新しい拡張機能を歓迎いたします。詳しくは、[拡張コンポーネントへの貢献](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#contributing-extended-components)をご覧ください。
 
 ## 5. amp-iframe を使用する
 
@@ -37,11 +37,11 @@ AMP アナリティクスを使用すると、貴社で設定したトリガー�
 
 ## まとめ
 
-開始するにあたっては、まず、Google の[サードパーティ デベロッパー向けガイドライン](https://github.com/ampproject/amphtml/blob/master/3p/README.md)をご覧ください。AMP プロジェクトでは、すでにさまざまなサードパーティのユースケースをサポートしていますが、まだ構築されていないウェブの機能があるはずです。
+開始するにあたっては、まず、Google の[サードパーティ デベロッパー向けガイドライン](https://github.com/ampproject/amphtml/blob/main/3p/README.md)をご覧ください。AMP プロジェクトでは、すでにさまざまなサードパーティのユースケースをサポートしていますが、まだ構築されていないウェブの機能があるはずです。
 
 たとえば、動的なコール トラッキングはまだ AMP でサポートされていないユースケースですが、このサポートを追加するため、コミュニティと[積極的に協力](https://github.com/ampproject/amphtml/issues/5276)しているところです。
 
-ご質問やご提案がある場合は、お気軽に[問題を送信](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#filing-issues)してください。または、いずれかの[ディスカッション チャンネル](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#discussion-channels)にご投稿ください。
+ご質問やご提案がある場合は、お気軽に[問題を送信](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#filing-issues)してください。または、いずれかの[ディスカッション チャンネル](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#discussion-channels)にご投稿ください。
 
 ## その他のリソース
 

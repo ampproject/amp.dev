@@ -6,7 +6,7 @@ $title: 支持的 CSS
 
 所有样式都必须放置在文档的标头部分（请参阅[向网页中添加样式](index.md#add-styles-to-a-page)）。 但是您可以使用 CSS 预处理器和模板来构建静态网页，以便更好地管理您的内容。
 
-注意: AMP 组件本身具有默认的样式，使自适应网页的创建过程变得容易。 这些样式在 [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css) 中进行了定义。
+注意: AMP 组件本身具有默认的样式，使自适应网页的创建过程变得容易。 这些样式在 [`amp.css`](https://github.com/ampproject/amphtml/blob/main/css/amp.css) 中进行了定义。
 
 ## 禁止使用的样式
 

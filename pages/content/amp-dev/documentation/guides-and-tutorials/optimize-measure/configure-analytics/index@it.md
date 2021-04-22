@@ -21,7 +21,7 @@ Tutte le soluzioni di analisi si basano sulla conoscenza del tipo di dati necess
 
 L’analisi AMP è concepita appositamente per eseguire una sola misurazione e generare più tipi di rapporti. Se collabori già con uno o più fornitori di soluzioni di analisi, verifica la [specifica amp-analytics](../../../../documentation/components/reference/amp-analytics.md) per vedere se hanno integrato AMP nella propria soluzione. In tal caso, basta semplicemente creare il link ai relativi documenti dalla specifica e iniziare a seguire le istruzioni.
 
-Se il fornitore della soluzione di analisi non ha integrato il formato AMP, contattalo per richiedere assistenza. Ti invitiamo anche a [segnalare un problema relativo al progetto AMP](https://github.com/ampproject/amphtml/issues/new) richiedendo l’aggiunta del fornitore. Vedi anche la sezione [Integrazione degli strumenti di analisi in HTML AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+Se il fornitore della soluzione di analisi non ha integrato il formato AMP, contattalo per richiedere assistenza. Ti invitiamo anche a [segnalare un problema relativo al progetto AMP](https://github.com/ampproject/amphtml/issues/new) richiedendo l’aggiunta del fornitore. Vedi anche la sezione [Integrazione degli strumenti di analisi in HTML AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md).
 
 Quali dati relativi ai tuoi utenti pensi di acquisire per valutarne il coinvolgimento? Devi identificare questi dati prima di poterli configurare.
 

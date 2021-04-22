@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -33,7 +33,7 @@ limitations under the License.
 
 AMP는 모바일 클라이언트에서 매우 빠른 웹 페이지를 개발하는 데 사용되는 기술입니다. AMP는 JavaScript로 지원되는 HTML 태그 집합이며 성능과 보안에 중점을 둔 기능을 쉽게 구현합니다. 캐러셀부터 반응형 양식 요소, 원격 엔드포인트에서 새로운 콘텐츠 검색까지 아우르는 모든 기능이 [AMP 컴포넌트](https://amp.dev/documentation/components/)로 제공됩니다.
 
-이메일용 AMP 형식은 이메일 메시지에 사용 가능한 [AMP 컴포넌트의 하위 집합](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)을 제공합니다. AMP 이메일 수신자는 이메일에서 바로 AMP 컴포넌트를 보고 상호작용할 수 있습니다.
+이메일용 AMP 형식은 이메일 메시지에 사용 가능한 [AMP 컴포넌트의 하위 집합](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-components.md)을 제공합니다. AMP 이메일 수신자는 이메일에서 바로 AMP 컴포넌트를 보고 상호작용할 수 있습니다.
 
 ## 필수 마크업
 
@@ -73,7 +73,7 @@ AMP 이메일의 필수 요건은 다음과 같습니다.
 
 이메일용 AMP는 [RFC 1521, 섹션 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3)에서 정의된 것처럼 표준 `multipart/alternative` [MIME](https://en.wikipedia.org/wiki/MIME) 서브타입에 의존합니다.
 
-_자세한 내용은 [AMP 이메일의 구조 및 렌더링](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)을 참조하세요._
+_자세한 내용은 [AMP 이메일의 구조 및 렌더링](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-structure.md)을 참조하세요._
 
 ## 지원되는 AMP 컴포넌트<a name="supported-amp-components"></a>
 
@@ -81,13 +81,13 @@ _<a>이메일용 AMP 지원 컴포넌트</a>를 참조하세요._
 
 ## HTML 요구 사항<a name="html-requirements"></a>
 
-_[이메일용 AMP에서 지원되는 HTML](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)을 참조하세요._
+_[이메일용 AMP에서 지원되는 HTML](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-html.md)을 참조하세요._
 
 ## CSS 요구 사항<a name="css-requirements"></a>
 
 ### 지원되는 선택자 및 속성 <a name="supported-selectors-and-properties"></a>
 
-_[이메일용 AMP에서 지원되는 CSS](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)를 참조하세요._
+_[이메일용 AMP에서 지원되는 CSS](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-css.md)를 참조하세요._
 
 ### AMP 문서에 CSS 지정<a name="specifying-css-in-an-amp-document"></a>
 
@@ -151,4 +151,4 @@ AMPHTML을 사용하면 일반 HTML 이메일과 마찬가지로 픽셀 추적 �
 
 ## 피드백 및 지원 <a name="feedback--support"></a>
 
-이메일용 AMP에 대한 지원 및 피드백을 제공하려면 다음 채널을 사용하세요: [ongoing-participation](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#ongoing-participation)
+이메일용 AMP에 대한 지원 및 피드백을 제공하려면 다음 채널을 사용하세요: [ongoing-participation](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#ongoing-participation)

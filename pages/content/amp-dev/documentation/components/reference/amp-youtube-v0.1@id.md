@@ -128,4 +128,4 @@ Dengan tata letak responsive, lebar dan tinggi dari contoh berikut akan menghasi
 
 ## Validasi <a name="validation"></a>
 
-Lihat [aturan amp-youtube](https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube/validator-amp-youtube.protoascii) dalam spesifikasi validator AMP.
+Lihat [aturan amp-youtube](https://github.com/ampproject/amphtml/blob/main/extensions/amp-youtube/validator-amp-youtube.protoascii) dalam spesifikasi validator AMP.

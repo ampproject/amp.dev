@@ -271,7 +271,7 @@ Das Attribut [`auto-advance-after`](https://amp.dev/documentation/components/amp
 
 ## Desktopdarstellung
 
-Das Web Story Format unterstützt eine [optionale Desktopdarstellung](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). Das ermöglicht die Darstellung in einem immersiven Randlosmodus, der die Standardanzeige mit drei Bereichen im Hochformat ersetzt und mobilen Benutzern ermöglicht, die Story auf horizontal gehaltenen Geräten anzusehen.
+Das Web Story Format unterstützt eine [optionale Desktopdarstellung](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). Das ermöglicht die Darstellung in einem immersiven Randlosmodus, der die Standardanzeige mit drei Bereichen im Hochformat ersetzt und mobilen Benutzern ermöglicht, die Story auf horizontal gehaltenen Geräten anzusehen.
 
 Aktiviere die Unterstützung für das Desktopformat, indem du der Komponente `<amp-story>` das Attribut `supports-landscape` hinzufügst.
 

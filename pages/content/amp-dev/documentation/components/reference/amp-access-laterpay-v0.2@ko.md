@@ -345,4 +345,4 @@ LaterPay 및 기존 페이월 통합과 함께 사용하는 경우 필수 구성
 
 ## 확인 <a name="validation"></a>
 
-AMP 유효성 검사기 사양의 [amp-access-laterpay 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii)을 참조하세요.
+AMP 유효성 검사기 사양의 [amp-access-laterpay 규칙](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii)을 참조하세요.

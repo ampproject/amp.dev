@@ -42,6 +42,6 @@ A continuación le proporcionamos algunos consejos rápidos para mejorar la part
 
 - **Vea el plan de trabajo de AMP** para obtener actualizaciones y funciones en [el plan de trabajo](../../../community/roadmap.html).
 
-- **Involúcrese**. Contribuya con el código fuente, errores de archivos o comentarios en [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Comparta su opinión sobre AMP en [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
+- **Involúcrese**. Contribuya con el código fuente, errores de archivos o comentarios en [GitHub](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md). Comparta su opinión sobre AMP en [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 
 - **Aprenda** a usar los componentes AMP con [Ejemplos](../../../documentation/examples/index.html).

@@ -240,4 +240,4 @@ No exemplo a seguir, temos um carrossel de três imagens com botões de visualiz
 
 # Validação <a name="validation"></a>
 
-Consulte as [regras do amp-carousel](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/validator-amp-carousel.protoascii) (link em inglês) nas especificações do validador de AMP.
+Consulte as [regras do amp-carousel](https://github.com/ampproject/amphtml/blob/main/extensions/amp-carousel/validator-amp-carousel.protoascii) (link em inglês) nas especificações do validador de AMP.

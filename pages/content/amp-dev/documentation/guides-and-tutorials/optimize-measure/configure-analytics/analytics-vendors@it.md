@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vendors-list.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vendors-list.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -152,7 +152,7 @@ Fornisce supporto per Eulerian Technologies Analytics. Richiede la definizione d
 
 Valore dell'attributo type: `facebookpixel`
 
-Fornisce supporto per [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). Nella configurazione di [`amp-analytics`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./amp-analytics.md), occorre definire il proprio Pixel ID con `pixelId: YOUR-PIXEL-ID`. Gli eventi supportati e i loro corrispodenti valori che possono essere indicati, sono descritti in dettaglio nella [documentazione per gli sviluppatori di Facebook Pixel](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
+Fornisce supporto per [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). Nella configurazione di [`amp-analytics`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/./amp-analytics.md), occorre definire il proprio Pixel ID con `pixelId: YOUR-PIXEL-ID`. Gli eventi supportati e i loro corrispodenti valori che possono essere indicati, sono descritti in dettaglio nella [documentazione per gli sviluppatori di Facebook Pixel](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
 
 ### Gemius <a name="gemius"></a>
 
@@ -194,7 +194,7 @@ Fornisce supporto per Ibeat Analytics. Maggiori dettagli per l'aggiunta di Ibeat
 
 Valore dell'attributo type: `infonline`
 
-Fornisce supporto per [INFOnline](https://www.infonline.de) / [IVW](http://www.ivw.de). Richiede una copia di [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) su un sottodominio diverso da quello che include il file AMP ([come mai?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). Il file deve essere fornito tramite HTTPS. Ad esempio, se i tuoi file AMP sono ospitati su `www.example.com`, allora `amp-analytics-infonline.html` deve trovarsi in altri sottodomini quali `iframe.example.com` o `assets.example.com`.
+Fornisce supporto per [INFOnline](https://www.infonline.de) / [IVW](http://www.ivw.de). Richiede una copia di [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) su un sottodominio diverso da quello che include il file AMP ([come mai?](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md)). Il file deve essere fornito tramite HTTPS. Ad esempio, se i tuoi file AMP sono ospitati su `www.example.com`, allora `amp-analytics-infonline.html` deve trovarsi in altri sottodomini quali `iframe.example.com` o `assets.example.com`.
 
 Inoltre, è necessario definire le seguenti variabili:
 
@@ -209,7 +209,7 @@ Maggiori dettagli per l'aggiunta di INFOnline / IVW sono disponibili su [www.inf
 
 Valore dell'attributo type:: `infonline-anonymous`
 
-Fornisce supporto per [anonymous INFOnline](https://www.infonline.de). Richiede una copia di [infonline-anonymous.html](https://www.infonline.de/amp/infonline-anonymous.html) su un sottodominio diverso da quello che include il file AMP ([come mai?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). Il file deve essere fornito tramite HTTPS. Ad esempio, se i tuoi file AMP sono ospitati su `www.example.com`, `infonline-anonymous.html` deve trovarsi in un altro sottodominio, come `iframe.example.com` o `assets.example.com`.
+Fornisce supporto per [anonymous INFOnline](https://www.infonline.de). Richiede una copia di [infonline-anonymous.html](https://www.infonline.de/amp/infonline-anonymous.html) su un sottodominio diverso da quello che include il file AMP ([come mai?](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md)). Il file deve essere fornito tramite HTTPS. Ad esempio, se i tuoi file AMP sono ospitati su `www.example.com`, `infonline-anonymous.html` deve trovarsi in un altro sottodominio, come `iframe.example.com` o `assets.example.com`.
 
 Inoltre, è necessario definire le seguenti variabili:
 
@@ -342,7 +342,7 @@ Fornisc supporto per Nielsen Marketing Cloud. Maggiori dettagli sono disponibili
 
 Valore dell'attributo type: `oewa`
 
-Fornisce supporto per `[OEWA](https://www.oewa.at)`. Richiede una copia di [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) su un sottodominio diverso da quello che include il file AMP ([come mai?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). Il file deve essere fornito tramite HTTPS. Ad esempio, se i tuoi file AMP sono ospitati su `www.example.com`, `amp-analytics-oewa.html` deve trovarsi in un altro sottodominio, come `oewa-amp.example.com` . Ulteriori dettagli per l'aggiunta di OEWA sono disponibili [qui](http://www.oewa.at/Implementierung).
+Fornisce supporto per `[OEWA](https://www.oewa.at)`. Richiede una copia di [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) su un sottodominio diverso da quello che include il file AMP ([come mai?](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md)). Il file deve essere fornito tramite HTTPS. Ad esempio, se i tuoi file AMP sono ospitati su `www.example.com`, `amp-analytics-oewa.html` deve trovarsi in un altro sottodominio, come `oewa-amp.example.com` . Ulteriori dettagli per l'aggiunta di OEWA sono disponibili [qui](http://www.oewa.at/Implementierung).
 
 Inoltre, è necessario definire le seguenti variabili:
 

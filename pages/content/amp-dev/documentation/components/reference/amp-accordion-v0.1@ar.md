@@ -159,4 +159,4 @@ limitations under the License.
 
 ## التحقق <a name="validation"></a>
 
-اطِّلع على [قواعد amp-accordion](https://github.com/ampproject/amphtml/blob/master/extensions/amp-accordion/validator-amp-accordion.protoascii) في مواصفات مدقق AMP.
+اطِّلع على [قواعد amp-accordion](https://github.com/ampproject/amphtml/blob/main/extensions/amp-accordion/validator-amp-accordion.protoascii) في مواصفات مدقق AMP.

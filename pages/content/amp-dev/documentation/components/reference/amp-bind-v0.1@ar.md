@@ -224,7 +224,7 @@ limitations under the License.
 * المتغيرات غير المحددة وarray-index-out-of-bound تعرض `null` بدلاً من `undefined` أو إظهار الأخطاء.
 * للتعبير الواحد حاليًا حد قيمته 50 معاملًا بغرض جودة الأداء. يرجى [الاتصال بنا](https://github.com/ampproject/amphtml/issues/new) إذا لم يكن هذا كافيًا لحالة الاستخدام لديك.
 
-يمكن العثور على القواعد الكاملة للتعبيرات وتنفيذها في [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) و[bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js).
+يمكن العثور على القواعد الكاملة للتعبيرات وتنفيذها في [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/main/extensions/amp-bind/0.1/bind-expr-impl.jison) و[bind-expression.js](https://github.com/ampproject/amphtml/blob/main/extensions/amp-bind/0.1/bind-expression.js).
 
 # أمثلة <a name="examples"></a>
 
@@ -658,7 +658,7 @@ AMP ترسل XMLHttpRequests (XHRs) إلى نقاط نهاية JSON في دفع�
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>هي عنوان URL لنقطة النهاية البعيدة التي ستعرض JSON الذي سيعمل على تعديل <code>amp-state</code> هذا. ويجب أن تكون خدمة CORS HTTP.
-      تتيح السمة <code>src</code> جميع استبدالات متغيرات عنوان URL القياسية. اطّلِع على <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">دليل الاستبدالات</a> للحصول على المزيد من المعلومات.
+      تتيح السمة <code>src</code> جميع استبدالات متغيرات عنوان URL القياسية. اطّلِع على <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md">دليل الاستبدالات</a> للحصول على المزيد من المعلومات.
       [tip type="important"]
       يجب أن تنفذ نقطة النهاية المتطلبات المحددة في مواصفات <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">طلبات CORS في AMP</a>.
       [/tip]

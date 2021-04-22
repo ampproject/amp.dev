@@ -164,4 +164,4 @@ AMP セレクタは、オプションのリストを提示し、その中から 
 
 ## 検証 <a name="validation"></a>
 
-AMP 検証ツール仕様の [amp-selector ルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-selector/validator-amp-selector.protoascii)をご覧ください。
+AMP 検証ツール仕様の [amp-selector ルール](https://github.com/ampproject/amphtml/blob/main/extensions/amp-selector/validator-amp-selector.protoascii)をご覧ください。

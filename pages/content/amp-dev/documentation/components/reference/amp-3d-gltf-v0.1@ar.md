@@ -121,4 +121,4 @@ limitations under the License.
 
 ## التحقق <a name="validation"></a>
 
-اطِّلع على [قواعد amp-3d-gltf ](https://github.com/ampproject/amphtml/blob/master/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii) في مواصفات مدقق AMP.
+اطِّلع على [قواعد amp-3d-gltf ](https://github.com/ampproject/amphtml/blob/main/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii) في مواصفات مدقق AMP.

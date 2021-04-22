@@ -11,7 +11,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/contributing/release-schedule.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/contributing/release-schedule.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -41,7 +41,7 @@ have a look and request a pull request there.
 
 Ночные релизы позволяют оперативно выявлять и устранять ошибки, чтобы не допустить их попадания в _еженедельные_ релизные каналы, на которые приходится больше трафика. Они также позволяют снизить число пользователей, затрагиваемых новыми ошибками при их появлении.
 
-Вы можете присоединиться к каналу **nightly**, для того чтобы тестировать пул-реквесты, которые были включены в код в течение последних нескольких дней. О том, [как присоединяться к каналам](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md#opting-in-to-pre-release-channels), читайте в [DEVELOPING.md].
+Вы можете присоединиться к каналу **nightly**, для того чтобы тестировать пул-реквесты, которые были включены в код в течение последних нескольких дней. О том, [как присоединяться к каналам](https://github.com/ampproject/amphtml/blob/main/contributing/DEVELOPING.md#opting-in-to-pre-release-channels), читайте в [DEVELOPING.md].
 
 ### Еженедельные каналы <a name="weekly"></a>
 
@@ -49,13 +49,13 @@ _Еженедельные_ релизные каналы — это основн
 
 Для создания релизных сборок используются два набора конфигураций сборки: _canary_ и _production_. Сборки для релизных каналов **experimental** и **beta** генерируются на основе одного и того же коммита, но канал **experimental** использует конфигурацию _canary_, тогда как канал **beta** — конфигурацию _production_. Конфигурация _canary_ активирует экспериментальные компоненты и функции, которые могут быть неактивны при сборке с конфигурацией _production_. Присоединиться к каналу **experimental** или **beta** можно на [странице экспериментов](https://cdn.ampproject.org/experiments.html).
 
-Релизный канал **stable** использует конфигурацию сборки _production_, и на него приходится большая часть AMP-трафика. Поскольку релизный канал **beta** также использует конфигурацию сборки _production_, публикуемые на нем сборки идентичны сборкам, которые будут опубликованы на канале **stable** спустя неделю (за исключением изменений, внесенных в последний момент при помощи операции cherry-pick; см. [Внесение кода](https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md#Cherry-picks)).
+Релизный канал **stable** использует конфигурацию сборки _production_, и на него приходится большая часть AMP-трафика. Поскольку релизный канал **beta** также использует конфигурацию сборки _production_, публикуемые на нем сборки идентичны сборкам, которые будут опубликованы на канале **stable** спустя неделю (за исключением изменений, внесенных в последний момент при помощи операции cherry-pick; см. [Внесение кода](https://github.com/ampproject/amphtml/blob/main/contributing/contributing-code.md#Cherry-picks)).
 
 #### Каналы Beta и Experimental <a name="beta-and-experimental-channels"></a>
 
 На каналах _Beta_ и _Experimental_ публикуются предварительные сборки, являющиеся кандидатами на роль следующего стабильного релиза AMP. Каждый вторник (за исключением тех недель, когда происходит [заморозка релиза](#release-freezes)) сборка **nightly** за последний день прошедшей недели попадает на каналы **beta** и **experimental** для разработчиков. Если по истечении 1 дня в новой сборке не будет выявлено изменений, негативным образом отражающихся на функциональности и производительности, то в среду мы переводим на новый релиз небольшую часть обычного трафика. Этот же релиз затем попадает на канал **stable** в следующий вторник.
 
-Вы можете присоединиться к одному из этих каналов. О том, [как это сделать](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md#opting-in-to-pre-release-channels), читайте в [DEVELOPING.md].
+Вы можете присоединиться к одному из этих каналов. О том, [как это сделать](https://github.com/ampproject/amphtml/blob/main/contributing/DEVELOPING.md#opting-in-to-pre-release-channels), читайте в [DEVELOPING.md].
 
 _Канал Beta_ предназначен для того, чтобы:
 
@@ -71,7 +71,7 @@ _Канал Experimental_ предназначен для того, чтобы:
 
 ### Долгосрочный стабильный канал (lts) <a name="long-term-stable-lts"></a>
 
-На релизном канале **lts** публикуются сборки с канала **stable** с интервалом в один месяц. Каждый месяц во второй понедельник актуальная сборка с канала **stable** получает статус **lts**. Этот канал рекомендуется использовать не всем издателям AMP-страниц. Он предоставляется для того, чтобы издатели сайтов могли сократить частоту проверок качества (QA), установив канал **lts** для конкретных веб-страниц (см. <a href="https://github.com/ampproject/amphtml/blob/master/contributing/lts-release.md" data-md-type="link">справку по **lts**</a>).
+На релизном канале **lts** публикуются сборки с канала **stable** с интервалом в один месяц. Каждый месяц во второй понедельник актуальная сборка с канала **stable** получает статус **lts**. Этот канал рекомендуется использовать не всем издателям AMP-страниц. Он предоставляется для того, чтобы издатели сайтов могли сократить частоту проверок качества (QA), установив канал **lts** для конкретных веб-страниц (см. <a href="https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md" data-md-type="link">справку по **lts**</a>).
 
 Если второй понедельник месяца является праздничным днем, публикация сборки происходит по окончании [заморозки релиза](#release-freezes).
 

@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vendors-list.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vendors-list.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -152,7 +152,7 @@ Bổ sung hỗ trợ cho Eulerian Technologies Analytics. Yêu cầu định ngh
 
 Giá trị thuộc tính type: `facebookpixel`
 
-Bổ sung hỗ trợ cho [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). Trong cấu hình [`amp-analytics`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./amp-analytics.md), bạn phải định nghĩa Pixel ID là `pixelId: YOUR-PIXEL-ID`. Về những sự kiện được hỗ trợ cùng với những giá trị sự kiện tương ứng vốn có thể được chỉ định, có thể xem chi tiết ở [tài liệu nhà phát triển của Facebook Pixel](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
+Bổ sung hỗ trợ cho [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). Trong cấu hình [`amp-analytics`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/./amp-analytics.md), bạn phải định nghĩa Pixel ID là `pixelId: YOUR-PIXEL-ID`. Về những sự kiện được hỗ trợ cùng với những giá trị sự kiện tương ứng vốn có thể được chỉ định, có thể xem chi tiết ở [tài liệu nhà phát triển của Facebook Pixel](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
 
 ### Gemius <a name="gemius"></a>
 
@@ -194,7 +194,7 @@ Bổ sung hỗ trợ cho Ibeat Analytics. Chi tiết khác cho việc thêm sự
 
 Giá trị thuộc tính type: `infonline`
 
-Bổ sung hỗ trợ cho [INFOnline](https://www.infonline.de) / [IVW](http://www.ivw.de). Cần có một bản sao của [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) trên một tên miền con khác tên miền bao gồm tập tin AMP ([tại sao?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). Tập tin này phải được phân phát qua HTTPS. Ví dụ nếu những tập tin AMP của bạn được lưu trữ trên <code>www.example.com</code>, thì `amp-analytics-infonline.html` cần ở trên một tên miền con khác chẳng hạn như `iframe.example.com` hoặc `assets.example.com`.
+Bổ sung hỗ trợ cho [INFOnline](https://www.infonline.de) / [IVW](http://www.ivw.de). Cần có một bản sao của [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) trên một tên miền con khác tên miền bao gồm tập tin AMP ([tại sao?](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md)). Tập tin này phải được phân phát qua HTTPS. Ví dụ nếu những tập tin AMP của bạn được lưu trữ trên <code>www.example.com</code>, thì `amp-analytics-infonline.html` cần ở trên một tên miền con khác chẳng hạn như `iframe.example.com` hoặc `assets.example.com`.
 
 Ngoài ra, những biến số sau cần phải được định nghĩa:
 
@@ -209,7 +209,7 @@ Chi tiết khác về việc thêm sự hỗ trợ của INFOnline / IVW có th�
 
 Giá trị thuộc tính type: `infonline-anonymous`
 
-Bổ sung hỗ trợ cho [anonymous INFOnline](https://www.infonline.de). Cần có một bản sao của [infonline-anonymous.html](https://www.infonline.de/amp/infonline-anonymous.html) trên một tên miền con khác tên miền bao gồm tập tin AMP ([tại sao?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). Tập tin này phải được phân phát qua HTTPS. Ví dụ nếu những tập tin AMP của bạn được lưu trữ trên `www.example.com`, thì `infonline-anonymous.html` cần phải ở trên tên miền con khác chẳng hạn như `iframe.example.com` hay `assets.example.com`.
+Bổ sung hỗ trợ cho [anonymous INFOnline](https://www.infonline.de). Cần có một bản sao của [infonline-anonymous.html](https://www.infonline.de/amp/infonline-anonymous.html) trên một tên miền con khác tên miền bao gồm tập tin AMP ([tại sao?](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md)). Tập tin này phải được phân phát qua HTTPS. Ví dụ nếu những tập tin AMP của bạn được lưu trữ trên `www.example.com`, thì `infonline-anonymous.html` cần phải ở trên tên miền con khác chẳng hạn như `iframe.example.com` hay `assets.example.com`.
 
 Ngoài ra, những biến số sau cần phải được định nghĩa:
 
@@ -342,7 +342,7 @@ Bổ sung hỗ trợ cho Nielsen Marketing Cloud. Chi tiết khác có thể đ�
 
 Giá trị thuộc tính type: `oewa`
 
-Bổ sung hỗ trợ cho `[OEWA](https://www.oewa.at)`. Cần một bản sao của [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) trên một tên miền con khác tên miền bao gồm tập tin AMP ([tại sao?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). Tập tin này phải được phân phát qua HTTPS. Ví dụ nếu những tập tin AMP của bạn được lưu trữ trên `www.example.com`, thì `amp-analytics-oewa.html` cần phải ở trên tên miền con khác chẳng hạn như `oewa-amp.example.com`. Chi tiết khác cho việc thêm sự hỗ trợ của OEWA có thể được tìm thấy [ở đây](http://www.oewa.at/Implementierung).
+Bổ sung hỗ trợ cho `[OEWA](https://www.oewa.at)`. Cần một bản sao của [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) trên một tên miền con khác tên miền bao gồm tập tin AMP ([tại sao?](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md)). Tập tin này phải được phân phát qua HTTPS. Ví dụ nếu những tập tin AMP của bạn được lưu trữ trên `www.example.com`, thì `amp-analytics-oewa.html` cần phải ở trên tên miền con khác chẳng hạn như `oewa-amp.example.com`. Chi tiết khác cho việc thêm sự hỗ trợ của OEWA có thể được tìm thấy [ở đây](http://www.oewa.at/Implementierung).
 
 Ngoài ra, những biến số sau phải được định nghĩa:
 

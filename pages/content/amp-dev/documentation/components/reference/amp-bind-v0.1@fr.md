@@ -218,7 +218,7 @@ Les expressions sont semblables à JavaScript, avec toutefois quelques différen
 * Les variables non définies et les exceptions array-index-out-of-bounds renvoient la valeur `null` au lieu de renvoyer `undefined` ou de générer des erreurs.
 * Une expression unique est actuellement limitée à 50 opérandes afin d'optimiser les performances. N'hésitez pas à [nous contacter](https://github.com/ampproject/amphtml/issues/new) si cela s'avère insuffisant dans votre cas.
 
-Pour consulter toute la mise en œuvre et la grammaire complète de l'expression, reportez-vous aux pages [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) et [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js).
+Pour consulter toute la mise en œuvre et la grammaire complète de l'expression, reportez-vous aux pages [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/main/extensions/amp-bind/0.1/bind-expr-impl.jison) et [bind-expression.js](https://github.com/ampproject/amphtml/blob/main/extensions/amp-bind/0.1/bind-expression.js).
 
 # Exemples <a name="examples"></a>
 
@@ -654,7 +654,7 @@ AMP regroupe les requêtes XHR (XMLHttpRequest) dans des points de terminaison J
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>URL du point de terminaison distant qui renvoie le fichier JSON qui mettra à jour cet élément <code>amp-state</code>. Il doit s'agir d'un service HTTP CORS.
-        L'attribut <code>src</code> autorise toutes les substitutions de variables d'URL standards. Pour plus d'informations, consultez le <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">Guide des substitutions</a>.
+        L'attribut <code>src</code> autorise toutes les substitutions de variables d'URL standards. Pour plus d'informations, consultez le <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md">Guide des substitutions</a>.
         [tip type="important"]
       Le point de terminaison doit mettre en œuvre les exigences énoncées dans la spécification <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">Requêtes CORS dans AMP</a>.
       [/tip]</td>

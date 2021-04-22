@@ -20,7 +20,7 @@ limitations under the License.
 
 Pour être valides, les documents AMP ne doivent comprendre aucune erreur de validation.
 Le but de ce document est de vous aider à mieux comprendre et à corriger les erreurs de validation que vous rencontrez lorsque vous [validez vos pages AMP](validate_amp.md).
-Pour un aperçu complet des erreurs de validation, consultez les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Pour un aperçu complet des erreurs de validation, consultez les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 ## Erreurs de balise HTML et d'attributs AMP
 
@@ -53,7 +53,7 @@ Les balises suivantes doivent être présentes dans tous les documents AMP :
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-Ces balises obligatoires comprennent un champ `mandatory: true` dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii). Elles sont également référencées dans la [spécifications AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md).
+Ces balises obligatoires comprennent un champ `mandatory: true` dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii). Elles sont également référencées dans la [spécifications AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md).
 
 ### Absence d'une balise requise par une autre balise
 
@@ -113,7 +113,7 @@ Les balises sont ajoutées à la liste blanche. Il n'existe donc pas de liste d�
   </tr>
 </table>
 
-Les attributs obligatoires pour les balises AMP sont définis dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Les attributs obligatoires pour les balises AMP sont définis dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 Il vous suffit de rechercher la balise, de consulter les attributs répertoriés et de vérifier qu'ils sont bien définis sur `mandatory: true`.
 Les attributs obligatoires pour chaque balise AMP sont également répertoriés dans les spécifications de la balise.
 
@@ -157,7 +157,7 @@ Ainsi, cette erreur se déclenche fréquemment en cas de valeurs d'URL incorrect
 </table>
 
 Les attributs sont ajoutés à une liste blanche. Il n'existe donc pas de liste définitive de tous les attributs interdits.
-Pour connaître les attributs compatibles avec chaque balise, recherchez la balise HTML, puis `attrs` dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Pour connaître les attributs compatibles avec chaque balise, recherchez la balise HTML, puis `attrs` dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 En plus d'une liste blanche des attributs spécifiques pour chaque balise, les balises AMP peuvent utiliser tous les attributs ajoutés à la liste blanche dans `$GLOBAL_ATTRS`. Tous les attributs avec le préfixe `"data-"` sont également acceptés.
 
@@ -224,7 +224,7 @@ Voici des exemples de messages détaillés correspondant à la description ci-de
 
 Des données CSS spécifiques ont été ajoutées à la liste noire pour valider des règles AMP CSS essentielles.
 
-La liste suivante indique les données CSS sur liste noire (voir également `disallowed_cdata_regex` dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)) :
+La liste suivante indique les données CSS sur liste noire (voir également `disallowed_cdata_regex` dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)) :
 
 * `"\\.i?-amp-"` ("Préfixe de nom de classe -amp- CSS")
 * `"!important"`
@@ -502,7 +502,7 @@ Cette erreur se produit lorsqu'une balise est un descendant d'une autre balise n
   </tr>
 </table>
 
-Les descendants obligatoires sont définis dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) comme `mandatory_ancestor`.
+Les descendants obligatoires sont définis dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) comme `mandatory_ancestor`.
 
 L'erreur se produit en l'absence de `mandatory_ancestor` (balise, ancêtre) pour les balises suivantes :
 
@@ -578,7 +578,7 @@ Chaque balise affichée sur la page doit avoir une hauteur et une largeur préd�
 Cela ne signifie pas que vous devez inclure manuellement ces attributs.
 Pour certains types de mises en page, le validateur AMP ne génère pas d'erreurs, car il considère que des valeurs par défaut sont utilisées.
 
-Chaque balise AMP est associée à une liste de `supported_layouts`, telle que définie dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Chaque balise AMP est associée à une liste de `supported_layouts`, telle que définie dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 Le validateur génère des erreurs pour les mises en page non compatibles, et vérifie les règles de validation pour la mise en page prédéfinie.
 
 ### Feuille de style trop longue
@@ -659,7 +659,7 @@ L'erreur de validation vous indique précisément la règle incorrecte, ce qui p
 </table>
 
 Cette erreur se produit lorsque vous ne spécifiez pas de mise en page pour la balise AMP, et que la mise en page implicite (en fonction de la largeur, de la hauteur et de la taille) n'est pas acceptée.
-Vérifiez les valeurs `supported_layout` pour la balise dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Vérifiez les valeurs `supported_layout` pour la balise dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 Le comportement de la mise en page est déterminé par l'attribut `layout`.
 Pour en savoir plus sur la mise en page, consultez la page d'aide relative au [contrôle de la mise en page](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md), ainsi que les [spécifications du système de mise en page AMP HTML](../../../../documentation/components/reference/amp-layout.md).
@@ -705,7 +705,7 @@ Les attributs interdits selon les types de mises en page sont décrits dans la [
 </table>
 
 Cette erreur se produit lorsque la mise en page spécifiée pour la balise n'est pas acceptée.
-Vérifiez les valeurs `supported_layout` pour la balise dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Vérifiez les valeurs `supported_layout` pour la balise dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 Le comportement de la mise en page est déterminé par l'attribut `layout`.
 Pour en savoir plus sur la mise en page, consultez la page d'aide relative au [contrôle de la mise en page](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md), ainsi que les [spécifications du système de mise en page AMP HTML](../../../../documentation/components/reference/amp-layout.md).
@@ -885,6 +885,6 @@ Aucune balise obsolète n'existe actuellement. L'avertissement concernera les ob
 Cet avertissement s'affiche lorsqu'un attribut AMP valide par le passé se trouve dans le document AMP.
 Il s'agit seulement d'un avertissement ; les documents AMP présentant des avertissements restent valides.
 
-Identifiez les attributs obsolètes pour chaque balise AMP en recherchant `deprecation` dans la [spécification du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Identifiez les attributs obsolètes pour chaque balise AMP en recherchant `deprecation` dans la [spécification du validateur AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 </body>
 </html>

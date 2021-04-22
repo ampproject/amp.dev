@@ -17,9 +17,9 @@ toc: 'true'
 
 Прежде чем вы сможете добавить свой аналитический сервис в среду выполнения AMP HTML, вам может потребоваться выполнить следующее:
 
-- Определите типы [переменных](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) и [запросов,](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md#requests) которые понадобятся вашей службе аналитики в документе AMP HTML.
+- Определите типы [переменных](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md) и [запросов,](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-analytics.md#requests) которые понадобятся вашей службе аналитики в документе AMP HTML.
 - Определите триггеры, которые будут инициировать отправку со страницы необходимых вашему сервису аналитических запросов.
-- Подумайте, будете ли вы [отслеживать пользователей при переходе между собственным](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md) и сторонними контекстами AMP, и если да, то каким образом.
+- Подумайте, будете ли вы [отслеживать пользователей при переходе между собственным](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md) и сторонними контекстами AMP, и если да, то каким образом.
 - Определите, как ваша панель аналитики будет обрабатывать AMP-трафик.
 - Выявите все недостающие функции в `amp-analytics` и [отправьте запросы](https://github.com/ampproject/amphtml/issues/new) на добавление необходимых функций.
 - AMP Analytics отправляет свои переменные в предварительно настроенную конечную точку. Если у вас еще нет существующей конечной точки, просмотрите [этот пример](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample), чтобы узнать, как создать ее.
@@ -29,7 +29,7 @@ toc: 'true'
 
 ## Добавление вашей конфигурации в среду выполнения AMP HTML <a name="adding-your-configuration-to-the-amp-html-runtime"></a>
 
-1. Создайте [задачу Intent-To-Implement](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features), в которой говорится, что вы добавите конфигурацию своего аналитического сервиса в среду выполнения AMP HTML. Не забудьте включить в описание строку **cc @ ampproject / wg-analytics**.
+1. Создайте [задачу Intent-To-Implement](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features), в которой говорится, что вы добавите конфигурацию своего аналитического сервиса в среду выполнения AMP HTML. Не забудьте включить в описание строку **cc @ ampproject / wg-analytics**.
 2. Разработайте патч, который реализует следующее:
    1. Новый конфигурационный JSON-файл `${vendorName}.json` в [папке](https://github.com/ampproject/amphtml/tree/master/extensions/amp-analytics/0.1/vendors) поставщиков, включая все опции, выходящие за стандартную конфигурацию, например:
       1. `"vars": {}` для дополнительных переменных по умолчанию.
@@ -37,13 +37,13 @@ toc: 'true'
       3. `"optout":` при необходимости. В настоящее время у нас нет универсальной системы отписки, поэтому свяжитесь с нами, чтобы помочь нам разработать ту, которая подойдет вам.
       4. `"warningMessage":` при необходимости. Отображает предупреждающую информацию от поставщика (например, об устаревании или миграции) в консоли.
    2. Если вы используете транспортировку в iframe, добавьте также новую строку в раздел ANALYTICS_IFRAME_TRANSPORT_CONFIG файла iframe-transport-vendors.js, содержащую `"*vendor-name*": "*url*"`
-   3. Пример в справочном файле [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html).
-   4. Тест в файле [extensions/amp-analytics/0.1/test/vendor-requests.json](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../extensions/amp-analytics/0.1/test/vendor-requests.json).
-   5. Добавьте свой аналитический сервис в список поддерживаемых поставщиков в файле [extensions/amp-analytics/0.1/analytics-vendors-list.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./analytics-vendors-list.md). Укажите его тип, описание и ссылку на документацию по использованию.
-3. Протестируйте новый пример, который вы поместили в [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html), чтобы убедиться, что обращения из примера работают должным образом — например, что необходимые данные собираются и отображаются на инструментальной панели вашего аналитического сервиса.
+   3. Пример в справочном файле [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../examples/analytics-vendors.amp.html).
+   4. Тест в файле [extensions/amp-analytics/0.1/test/vendor-requests.json](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../extensions/amp-analytics/0.1/test/vendor-requests.json).
+   5. Добавьте свой аналитический сервис в список поддерживаемых поставщиков в файле [extensions/amp-analytics/0.1/analytics-vendors-list.md](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/./analytics-vendors-list.md). Укажите его тип, описание и ссылку на документацию по использованию.
+3. Протестируйте новый пример, который вы поместили в [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../examples/analytics-vendors.amp.html), чтобы убедиться, что обращения из примера работают должным образом — например, что необходимые данные собираются и отображаются на инструментальной панели вашего аналитического сервиса.
 4. Отправьте пул-реквест с этим патчем, указав ссылку на задачу Intent-To-Implement.
 5. Обновите документацию по использованию вашего сервиса и проинформируйте своих клиентов.
-6. Настоятельно рекомендуется [проводить интеграционный тест вне репозитория AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests).
+6. Настоятельно рекомендуется [проводить интеграционный тест вне репозитория AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../3p/README.md#adding-proper-integration-tests).
 
 ## Менеджеры тегов <a name="tag-managers"></a>
 
@@ -65,8 +65,8 @@ config="https://my-awesome-tag-manager.example.com/user-id.json"
 
 ## Дополнительные ресурсы <a name="further-resources"></a>
 
-- Детальный разбор: [почему бы просто не использовать iframe?](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/why-not-iframe.md)
-- Детальный разбор: [управление неаутентифицированным состоянием пользователя с помощью AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)
+- Детальный разбор: [почему бы просто не использовать iframe?](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/why-not-iframe.md)
+- Детальный разбор: [управление неаутентифицированным состоянием пользователя с помощью AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md)
 - [Пример использования amp-analytics](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
 - Справочная документация по [amp-analytics](https://amp.dev/documentation/components/amp-analytics)
-- Справочная документация по [переменным amp-analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)
+- Справочная документация по [переменным amp-analytics](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md)

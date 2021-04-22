@@ -36,7 +36,7 @@ Wszystkie dokumenty używają protokołu https na serwerze buforującym AMP.
 
 ## Sufiks nazwy domeny
 
-Wszystkie serwery buforujące AMP są rejestrowane w pliku JSON, dostępnym online w [repozytorium AMPHTML](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). Przykładowy rekord serwera buforującego w tym pliku będzie wyglądał tak:
+Wszystkie serwery buforujące AMP są rejestrowane w pliku JSON, dostępnym online w [repozytorium AMPHTML](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json). Przykładowy rekord serwera buforującego w tym pliku będzie wyglądał tak:
 
 ```json
 {
@@ -179,7 +179,7 @@ Wartość nagłówka Origin serwera buforującego AMP będzie wyglądać jak jed
 - `https://www-example-com.cdn.ampproject.org`
 - `https://v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq.cdn.ampproject.org`
 
-Najpierw usuń prefiks protokołu (`https://`) oraz sufiks domeny serwera buforującego AMP, taki jak `.cdn.ampproject.org`. Sufiks może pochodzić z jednego z serwerów buforujących wymienionych w pliku [caches.json](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). Pozostały ciąg będzie „prefiksem domeny”. W przypadku dwóch powyższych przykładów „prefiks domeny” jest następujący:
+Najpierw usuń prefiks protokołu (`https://`) oraz sufiks domeny serwera buforującego AMP, taki jak `.cdn.ampproject.org`. Sufiks może pochodzić z jednego z serwerów buforujących wymienionych w pliku [caches.json](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json). Pozostały ciąg będzie „prefiksem domeny”. W przypadku dwóch powyższych przykładów „prefiks domeny” jest następujący:
 
 - `www-example-com`
 - `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq`

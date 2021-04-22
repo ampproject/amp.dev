@@ -73,8 +73,8 @@ limitations under the License.
 
 ## サポートされている広告ネットワーク <a name="supported-ad-networks"></a>
 
-* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
-* [DoubleClick（試験運用版）](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
+* [AdSense](https://github.com/ampproject/amphtml/blob/main/ads/google/adsense.md)
+* [DoubleClick（試験運用版）](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md)
 
 ## 属性
 
@@ -390,4 +390,4 @@ limitations under the License.
 
 ## 検証
 
-AMP 検証ツールの仕様で [amp-auto-ads のルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-auto-ads/validator-amp-auto-ads.protoascii)をご確認ください。
+AMP 検証ツールの仕様で [amp-auto-ads のルール](https://github.com/ampproject/amphtml/blob/main/extensions/amp-auto-ads/validator-amp-auto-ads.protoascii)をご確認ください。

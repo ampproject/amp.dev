@@ -30,9 +30,9 @@ AMP'deki reklamlar [`amp-ad`](../../../../documentation/components/reference/amp
 </amp-ad>
 ```
 
-Gördüğünüz gibi, bu çok basit bir yapılandırma. Kullanmak istediğimiz reklam platformunun [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) bileşenini bilgilendiren `type` özniteliğine dikkat edin. Bu durumda, [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md) platformunu kullanmak istiyoruz, bu yüzden `doubleclick`'i değer olarak belirttik.
+Gördüğünüz gibi, bu çok basit bir yapılandırma. Kullanmak istediğimiz reklam platformunun [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) bileşenini bilgilendiren `type` özniteliğine dikkat edin. Bu durumda, [DoubleClick](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md) platformunu kullanmak istiyoruz, bu yüzden `doubleclick`'i değer olarak belirttik.
 
-`data-slot` özniteliği daha benzersizdir. [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)'de, `data-` ile başlayan tüm öznitelikler sağlayıcıya özgü özniteliklerdir. Bu, tüm sağlayıcıların mutlaka bu özel özniteliğe ihtiyaç duymayacağı ve sağlanırsa mutlaka tepki vermeyeceği anlamına gelir. Örneğin, yukarıdaki **DoubleClick** örneğini [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md) platformundaki aşağıdaki test reklamıyla karşılaştırın:
+`data-slot` özniteliği daha benzersizdir. [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)'de, `data-` ile başlayan tüm öznitelikler sağlayıcıya özgü özniteliklerdir. Bu, tüm sağlayıcıların mutlaka bu özel özniteliğe ihtiyaç duymayacağı ve sağlanırsa mutlaka tepki vermeyeceği anlamına gelir. Örneğin, yukarıdaki **DoubleClick** örneğini [A9](https://github.com/ampproject/amphtml/blob/main/ads/a9.md) platformundaki aşağıdaki test reklamıyla karşılaştırın:
 
 ```html
 <amp-ad

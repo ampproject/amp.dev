@@ -55,7 +55,7 @@ Serwery reklam, które obecnie obsługują reklamy w formacie AMP Story:
 
 Jeśli prowadzisz serwer reklam i chcesz serwować reklamy fabularne, skontaktuj się z nami, zgłaszając [problem w GitHub](https://github.com/ampproject/amphtml/issues/new). Zespół AMP chętnie się z Tobą skontaktuje!
 
-Wydawcy mogą również umieszczać reklamy niestandardowe, jeśli skonfigurują własny serwer reklam. [Proces ten szczegółowo opisano tutaj](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
+Wydawcy mogą również umieszczać reklamy niestandardowe, jeśli skonfigurują własny serwer reklam. [Proces ten szczegółowo opisano tutaj](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
 
 ## Google Ad Manager <a name="google-ad-manager"></a>
 

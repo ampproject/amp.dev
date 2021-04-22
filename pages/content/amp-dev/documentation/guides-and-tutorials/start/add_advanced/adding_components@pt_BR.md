@@ -27,9 +27,9 @@ Veja este exemplo de um anúncio da **DoubleClick**:
 </amp-ad>
 ```
 
-Essa é uma configuração muito simples. Observe o atributo `type`, que informa o componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) sobre a plataforma de anúncios desejada. Nesse caso, queremos usar a plataforma [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md), então `doubleclick` foi especificado como valor.
+Essa é uma configuração muito simples. Observe o atributo `type`, que informa o componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) sobre a plataforma de anúncios desejada. Nesse caso, queremos usar a plataforma [DoubleClick](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md), então `doubleclick` foi especificado como valor.
 
-O atributo `data-slot` é mais exclusivo. No [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), os atributos iniciados por `data-` são específicos ao fornecedor. Isso significa que nem todos os fornecedores necessariamente exigirão esse atributo em particular, e talvez nem respondam a ele. Por exemplo, compare o exemplo anterior da **DoubleClick** com o anúncio de teste a seguir da plataforma [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md):
+O atributo `data-slot` é mais exclusivo. No [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), os atributos iniciados por `data-` são específicos ao fornecedor. Isso significa que nem todos os fornecedores necessariamente exigirão esse atributo em particular, e talvez nem respondam a ele. Por exemplo, compare o exemplo anterior da **DoubleClick** com o anúncio de teste a seguir da plataforma [A9](https://github.com/ampproject/amphtml/blob/main/ads/a9.md):
 
 ```html
 <amp-ad

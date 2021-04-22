@@ -20,7 +20,7 @@ Questo documento delinea le aspettative verso i fornitori terzi di tecnologie AM
 
 # Linee guida per i contributi
 
-Tutti i contributi generali sono soggetti alle [linee guida universali AMPHTML riportate in CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Ci aspettiamo che i soggetti terzi che contribuiscono al progetto a vari livelli si occupino delle verifiche, la manutenzione e l'aggiornamento dei propri contributi.
+Tutti i contributi generali sono soggetti alle [linee guida universali AMPHTML riportate in CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md). Ci aspettiamo che i soggetti terzi che contribuiscono al progetto a vari livelli si occupino delle verifiche, la manutenzione e l'aggiornamento dei propri contributi.
 
 Per risultare idonei all'inclusione nel progetto, i contributi a ogni livello devono:
 
@@ -48,7 +48,7 @@ I contributi di livello 1 sfruttano la logica funzionale di componenti già esis
 
 Per implementare le loro funzionalità, i soggetti terzi aggiungono configurazioni o funzionalità alle estensioni già esistenti, utilizzando le API fornite. Se tale componente non esiste, possono proporne uno nuovo.
 
-I soli tipi di logica specifica di terze parti verificati nell'archivio AMP sono le configurazioni di terzi. L'aggiunta di nuovi elementi da parte di terzi a un contributo di livello 1 già esistente in genere non richiede una revisione del progetto. I terzi possono seguire la documentazione di integrazione dei componenti, ad esempio [Integrazione delle reti di annunci in AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+I soli tipi di logica specifica di terze parti verificati nell'archivio AMP sono le configurazioni di terzi. L'aggiunta di nuovi elementi da parte di terzi a un contributo di livello 1 già esistente in genere non richiede una revisione del progetto. I terzi possono seguire la documentazione di integrazione dei componenti, ad esempio [Integrazione delle reti di annunci in AMP](https://github.com/ampproject/amphtml/blob/main/ads/README.md).
 
 ### Aspettative sui contributi di terzi
 
@@ -63,7 +63,7 @@ I soli tipi di logica specifica di terze parti verificati nell'archivio AMP sono
 
 I fornitori di annunci devono leggere la [panoramica del processo di sviluppo](https://github.com/ampproject/amphtml/tree/master/ads#overview) e le [istruzioni per gli sviluppatori](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) per l'aggiunta del supporto del componente [`amp-ad`](../../../components/reference/amp-ad.md). In base alla tecnologia fornita dalla tua azienda, potrai trovare utili [queste istruzioni di integrazione](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads).
 
-Ci sono molti fornitori di annunci che hanno aggiunto il supporto di funzionalità per gli annunci come amp-ad. Ecco una [richiesta pull di esempio](https://github.com/ampproject/amphtml/pull/2299) dalla rete di annunci [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
+Ci sono molti fornitori di annunci che hanno aggiunto il supporto di funzionalità per gli annunci come amp-ad. Ecco una [richiesta pull di esempio](https://github.com/ampproject/amphtml/pull/2299) dalla rete di annunci [Criteo](https://github.com/ampproject/amphtml/blob/main/ads/criteo.md).
 
 ## Contributi di livello 2
 

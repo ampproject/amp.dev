@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -33,7 +33,7 @@ limitations under the License.
 
 AMP est une technologie connue pour développer des pages Web ultra rapides sur les clients mobiles. AMP est un ensemble de balises HTML soutenues par JavaScript qui active facilement les fonctionnalités en donnant plus de priorité aux performances et à la sécurité. Il existe des [composants AMP](https://amp.dev/documentation/components/) pour tout, des carrousels aux éléments de formulaire réactifs, en passant par la récupération de contenu récent à partir de points de terminaison distants.
 
-Le format des e-mails AMP fournit [un sous-ensemble de composants AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md) que vous pouvez utiliser dans les e-mails. Les destinataires des e-mails AMP peuvent afficher et interagir avec les composants AMP directement dans l'e-mail.
+Le format des e-mails AMP fournit [un sous-ensemble de composants AMP](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-components.md) que vous pouvez utiliser dans les e-mails. Les destinataires des e-mails AMP peuvent afficher et interagir avec les composants AMP directement dans l'e-mail.
 
 ## Balisage requis
 
@@ -73,21 +73,21 @@ Le balisage AMPHTML entier ne doit pas dépasser 200 000 octets.
 
 Les e-mails AMP reposent sur le sous-type <a>MIME</a> standard <code>multipart/alternative</code>, tel que défini dans le [RFC 1521, section 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-_Pour plus d'informations, consultez [Structure et rendu des e-mails AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)._
+_Pour plus d'informations, consultez [Structure et rendu des e-mails AMP](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-structure.md)._
 
 ## Composants AMP pris en charge <a name="supported-amp-components"></a>
 
-_Voir [Composants pris en charge dans les e-mails AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)._
+_Voir [Composants pris en charge dans les e-mails AMP](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-components.md)._
 
 ## Exigences HTML <a name="html-requirements"></a>
 
-_Consultez [HTML pris en charge dans les e-mails AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)._
+_Consultez [HTML pris en charge dans les e-mails AMP](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-html.md)._
 
 ## Exigences CSS <a name="css-requirements"></a>
 
 ### Sélecteurs et propriétés pris en charge <a name="supported-selectors-and-properties"></a>
 
-_Consultez [CSS pris en charge dans les e-mails AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)._
+_Consultez [CSS pris en charge dans les e-mails AMP](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-css.md)._
 
 ### Spécification CSS dans un document AMP <a name="specifying-css-in-an-amp-document"></a>
 
@@ -151,4 +151,4 @@ Les redirections dans [`<amp-form>`](https://amp.dev/documentation/components/am
 
 ## Commentaires et assistance <a name="feedback--support"></a>
 
-Pour obtenir de l'aide et des commentaires au sujet des e-mails AMP, veuillez utiliser le canal suivant : [participation continue](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#ongoing-participation)
+Pour obtenir de l'aide et des commentaires au sujet des e-mails AMP, veuillez utiliser le canal suivant : [participation continue](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#ongoing-participation)

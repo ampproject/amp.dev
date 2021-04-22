@@ -73,7 +73,7 @@ $title: amp-sidebar
 
 *示例：*
 
-在下面的示例中，我们使用 `amp-sidebar` 来包含导航项。不过，第二个和第四个导航项（Nav Item 2 和 Nav Item 4）分配给了页面上的元素 ID。通过使用 [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) 属性，我们可以借助元素 ID 和 `scrollTo` 平滑地滚动到相应元素。
+在下面的示例中，我们使用 `amp-sidebar` 来包含导航项。不过，第二个和第四个导航项（Nav Item 2 和 Nav Item 4）分配给了页面上的元素 ID。通过使用 [`on`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) 属性，我们可以借助元素 ID 和 `scrollTo` 平滑地滚动到相应元素。
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
@@ -90,7 +90,7 @@ $title: amp-sidebar
 
 ### 打开和关闭边栏 <a name="opening-and-closing-the-sidebar"></a>
 
-要在用户点按或点击某个元素时切换、打开或关闭边栏，请为该元素设置 [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) 操作属性，然后指定以下操作方法之一：
+要在用户点按或点击某个元素时切换、打开或关闭边栏，请为该元素设置 [`on`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) 操作属性，然后指定以下操作方法之一：
 
 <table>
   <tr>
@@ -333,7 +333,7 @@ $title: amp-sidebar
 
 ```
 
-如需有效的示例代码，请参阅[此示例文件](https://github.com/ampproject/amphtml/blob/master/examples/amp-sidebar-autoscroll.amp.html)。
+如需有效的示例代码，请参阅[此示例文件](https://github.com/ampproject/amphtml/blob/main/examples/amp-sidebar-autoscroll.amp.html)。
 
 ## 用户体验注意事项 <a name="ux-considerations"></a>
 
@@ -343,4 +343,4 @@ $title: amp-sidebar
 
 ## 验证 <a name="validation"></a>
 
-请参阅 AMP 验证工具规范中的 [amp-sidebar 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/validator-amp-sidebar.protoascii)。
+请参阅 AMP 验证工具规范中的 [amp-sidebar 规则](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/validator-amp-sidebar.protoascii)。

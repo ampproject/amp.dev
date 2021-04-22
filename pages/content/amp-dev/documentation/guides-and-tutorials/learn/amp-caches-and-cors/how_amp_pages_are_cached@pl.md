@@ -31,13 +31,13 @@ Obecnie jest dwóch dostawców usługi buforowania AMP:
 - [Google AMP Cache](https://developers.google.com/amp/cache/)
 - [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
-AMP jest otwartym ekosystemem, a AMP Project aktywnie zachęca do tworzenia większej liczby serwerów buforujących AMP. Więcej informacji na temat tworzenia serwerów buforujących AMP zawierają [Wytyczne usługi buforowania AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
+AMP jest otwartym ekosystemem, a AMP Project aktywnie zachęca do tworzenia większej liczby serwerów buforujących AMP. Więcej informacji na temat tworzenia serwerów buforujących AMP zawierają [Wytyczne usługi buforowania AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md).
 
 ## Jak wybrać serwer buforujący AMP?
 
 Jako wydawca nie wybierasz serwera buforującego AMP, _w istocie to platforma_ łącząca się z zawartością wybiera serwer buforujący AMP (jeśli istnieje) do użycia.
 
-Jest to odwrócenie typowego modelu, w którym dostarczanie treści leży w gestii wydawcy. Model ten pozwala jednak platformom na zapewnienie swoim użytkownikom przewidywalnej wydajności pod obciążeniem oraz, między innymi, na zapewnienie wymaganych niezmiennych funkcji zabezpieczeń i prywatności w fazzie wstępnego renderowania AMP. Więcej informacji na temat ścisłych wytycznych dotyczących tworzenia serwerów buforujących AMP zawierają [Wytyczne usługi buforowania AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
+Jest to odwrócenie typowego modelu, w którym dostarczanie treści leży w gestii wydawcy. Model ten pozwala jednak platformom na zapewnienie swoim użytkownikom przewidywalnej wydajności pod obciążeniem oraz, między innymi, na zapewnienie wymaganych niezmiennych funkcji zabezpieczeń i prywatności w fazzie wstępnego renderowania AMP. Więcej informacji na temat ścisłych wytycznych dotyczących tworzenia serwerów buforujących AMP zawierają [Wytyczne usługi buforowania AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md).
 
 ## Czy można zrezygnować z buforowania?
 
@@ -67,6 +67,6 @@ Używając formatu AMP, udostępniasz swoją zawartość do buforowania serwerom
 
 ## Dodatkowe zasoby
 
-- [Wytyczne AMP Project dotyczące usługi buforowania AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)
+- [Wytyczne AMP Project dotyczące usługi buforowania AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md)
 - [Omówienie usługi Google AMP Cache](https://developers.google.com/amp/cache/overview)
 - [Dokumentacja usługi Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)

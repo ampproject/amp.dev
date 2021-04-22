@@ -49,7 +49,7 @@ Muestra un iframe.
 * Un `amp-iframe` no aparece cerca de la parte superior del documento, excepto los que utilizan el atributo `placeholder` (consulta la sección [Iframe con marcador de posición](#iframe-with-placeholder) de este documento). El iframe debe estar situado a 600 píxeles de distancia de la parte superior o a partir del primer 75 % del viewport cuando el desplazamiento es hasta la parte superior de la página, la opción que sea más pequeña.
 * De forma predeterminada, los amp-iframe están en zona de pruebas ([más información](#sandbox)).
 * `amp-iframe` solo debe solicitar recursos a través de HTTPS, de una URI de datos o del atributo `srcdoc`.
-* `amp-iframe` no debe estar situado en el mismo origen que el contenedor, a menos que no admitan `allow-same-origin` en el atributo `sandbox`. Para obtener más información sobre los orígenes permitidos para iframes, consulta la [política de origen de iframe](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md).
+* `amp-iframe` no debe estar situado en el mismo origen que el contenedor, a menos que no admitan `allow-same-origin` en el atributo `sandbox`. Para obtener más información sobre los orígenes permitidos para iframes, consulta la [política de origen de iframe](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md).
 
 *Ejemplo: Incrustar un mapa de Google Maps en un amp-iframe*
 
@@ -237,4 +237,4 @@ El componente `amp-iframe` debe considerarse como un respaldo si no se puede ofr
 
 # Validación <a name="validation"></a>
 
-Consulta las [reglas de amp-iframe](https://github.com/ampproject/amphtml/blob/master/extensions/amp-iframe/validator-amp-iframe.protoascii) en la especificación de la herramienta de validación de AMP.
+Consulta las [reglas de amp-iframe](https://github.com/ampproject/amphtml/blob/main/extensions/amp-iframe/validator-amp-iframe.protoascii) en la especificación de la herramienta de validación de AMP.

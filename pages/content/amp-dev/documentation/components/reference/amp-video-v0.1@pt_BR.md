@@ -77,7 +77,7 @@ O componente `amp-video` aceita até quatro tipos exclusivos de nós HTML como f
 
 ## Análise <a name="analytics"></a>
 
-O `amp-video` é compatível com análises prontas. Consulte a seção [análise de vídeos](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md) (link em inglês) para ver mais informações.
+O `amp-video` é compatível com análises prontas. Consulte a seção [análise de vídeos](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-video-analytics.md) (link em inglês) para ver mais informações.
 
 ## Atributos <a name="attributes"></a>
 
@@ -94,7 +94,7 @@ O `amp-video` é compatível com análises prontas. Consulte a seção [análise
       </tr>
       <tr>
         <td width="40%"><strong>autoplay</strong></td>
-        <td>Se este atributo estiver presente e o navegador for compatível com a reprodução automática, o vídeo será iniciado automaticamente assim que ficar visível. Há algumas condições que o componente precisa atender para ser reproduzido, <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-video-interface.md#autoplay">descritas na especificações de vídeo em AMP</a> (link em inglês).</td>
+        <td>Se este atributo estiver presente e o navegador for compatível com a reprodução automática, o vídeo será iniciado automaticamente assim que ficar visível. Há algumas condições que o componente precisa atender para ser reproduzido, <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md#autoplay">descritas na especificações de vídeo em AMP</a> (link em inglês).</td>
       </tr>
       <tr>
         <td width="40%"><strong>controls</strong></td>
@@ -131,7 +131,7 @@ O `amp-video` é compatível com análises prontas. Consulte a seção [análise
         </tr>
         <tr>
           <td width="40%"><strong>rotate-to-fullscreen</strong></td>
-          <td>Se o vídeo estiver visível, ele será exibido em tela cheia depois que o usuário girar o dispositivo para o modo paisagem. Para ver mais detalhes, consulte as <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-video-interface.md#rotate-to-fullscreen">especificações de vídeo em AMP</a> (link em inglês).</td>
+          <td>Se o vídeo estiver visível, ele será exibido em tela cheia depois que o usuário girar o dispositivo para o modo paisagem. Para ver mais detalhes, consulte as <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md#rotate-to-fullscreen">especificações de vídeo em AMP</a> (link em inglês).</td>
         </tr>
         <tr>
           <td width="40%"><strong>common attributes</strong></td>
@@ -184,4 +184,4 @@ Para um exemplo detalhado, acesse [Sobreposição de reprodução com um clique 
 
 ## Validação <a name="validation"></a>
 
-Consulte as [regras do amp-video](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) (link em inglês) na especificação do validador de AMP.
+Consulte as [regras do amp-video](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) (link em inglês) na especificação do validador de AMP.

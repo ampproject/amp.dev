@@ -86,7 +86,7 @@ Mari kita bahas langkah demi langkah:
 
 [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
 
-1. Tentukan tag `<script>` untuk [ekstensi penunda perenderan ](https://github.com/ampproject/amphtml/blob/master/src/render-delaying-services.js) (cth.: [`amp-experiment`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md), dan [`amp-story`](../../../documentation/components/reference/amp-story.md)).
+1. Tentukan tag `<script>` untuk [ekstensi penunda perenderan ](https://github.com/ampproject/amphtml/blob/main/src/render-delaying-services.js) (cth.: [`amp-experiment`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md), dan [`amp-story`](../../../documentation/components/reference/amp-story.md)).
 2. Tentukan tag `<script>` untuk ekstensi yang tersisa (cth.: [`amp-bind`](../../../documentation/components/reference/amp-bind.md) ...). Ekstensi ini tidak menunda perenderan, dan oleh karena itu, tidak boleh dimuat sebelumnya karena dapat menghabiskan bandwidth penting untuk perenderan awal.
 3. Tentukan gaya kustom apa pun dengan menggunakan tag `<style amp-custom>`.
 4. Tambahkan tag lain yang diizinkan di bagian `<head>`. Secara khusus, font eksternal apa pun harus yang paling lama bertahan karena mereka menghalangi perenderan.

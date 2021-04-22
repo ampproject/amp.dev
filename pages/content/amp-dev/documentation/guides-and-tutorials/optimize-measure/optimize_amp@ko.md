@@ -86,7 +86,7 @@ AMP 페이지의 `<head>` 섹션에 권장되는 정렬은 다음과 같습니�
 
 [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
 
-1. [렌더링 지연 확장자](https://github.com/ampproject/amphtml/blob/master/src/render-delaying-services.js)에 대한 `<script>` 태그를 지정합니다(예: [`amp-experiment`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md) 및 [`amp-story`](../../../documentation/components/reference/amp-story.md)
+1. [렌더링 지연 확장자](https://github.com/ampproject/amphtml/blob/main/src/render-delaying-services.js)에 대한 `<script>` 태그를 지정합니다(예: [`amp-experiment`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md) 및 [`amp-story`](../../../documentation/components/reference/amp-story.md)
 2. 남은 확장자에 대한 `<script>` 태그를 지정합니다(예: [`amp-bind`](../../../documentation/components/reference/amp-bind.md) ...). 이러한 확장자는 렌더링 지연 확장자가 아닙니다. 그렇기에 초기 렌더링 시 중요한 대역폭을 차지할 수 있으므로 사전 로드되어선 안 됩니다.
 3. `<style amp-custom>` 태그를 사용하여 사용자 지정 스타일을 지정합니다.
 4. `<head>` 섹션에서 허용된 기타 태그를 추가합니다. 특히 외부 글꼴은 렌더링을 차단하므로 마지막에 추가되어야 합니다.

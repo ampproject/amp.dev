@@ -129,4 +129,4 @@ teaser:
 
 ## 유효성 검사 <a name="validation"></a>
 
-AMP 유효성 검사기 사양에서 [amp-youtube 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube/validator-amp-youtube.protoascii)을 참조하세요.
+AMP 유효성 검사기 사양에서 [amp-youtube 규칙](https://github.com/ampproject/amphtml/blob/main/extensions/amp-youtube/validator-amp-youtube.protoascii)을 참조하세요.

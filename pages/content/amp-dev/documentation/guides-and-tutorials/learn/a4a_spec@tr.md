@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -98,7 +98,7 @@ Ayrıca, reklam öğelerinin aşağıdaki kurallara uyması gerekir:
 
 ### Ortak Metin <a name="boilerplate"></a>
 
-AMPHTML reklam öğeleri [genel AMP belgelerindekinden](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md) farklı ve çok daha basit bir ortak metin stil satırı gerektirir:
+AMPHTML reklam öğeleri [genel AMP belgelerindekinden](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md) farklı ve çok daha basit bir ortak metin stil satırı gerektirir:
 
 [sourcecode:html]
 
@@ -114,7 +114,7 @@ _Gerekçe:_ `amp-boilerplate` stili, AMP çalışma zamanı hazır olana ve onu 
 
 Son olarak, AMPHTML reklam ortak metni, `amp-boilerplate` yerine `amp-a4a-boilerplate` kullanır böylece doğrulayıcılar onu kolayca tespit edebilir ve geliştiricilere yardım etmek için doğru hata mesajları üretebilir.
 
-[Genel AMP ortak metin](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md) kurallarının aynısının, ortak metin içeriğindeki değişikliklere uygulandığını unutmayın.
+[Genel AMP ortak metin](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md) kurallarının aynısının, ortak metin içeriğindeki değişikliklere uygulandığını unutmayın.
 
 ### CSS <a name="css"></a>
 
@@ -266,7 +266,7 @@ _Örnek:_ `<amp-lightbox>` henüz dahil edilmemiştir çünkü bazı AMPHTML rek
 
 ### HTML etiketleri <a name="html-tags"></a>
 
-Aşağıdakiler, bir AMPHTML reklam öğesinde _izin verilen_ etiketlerdir. Açıkça izin verilmeyen etiketler yasaktır. Bu liste, genel [AMP etiketi ek izin](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md) listesinin bir alt kümesidir. Bu liste gibi, [HTML'nin Öğeleri](http://www.w3.org/TR/html5/single-page.html#html-elements) bölüm 4'te, HTML5 özellikleriyle tutarlı olarak sıralanmıştır.
+Aşağıdakiler, bir AMPHTML reklam öğesinde _izin verilen_ etiketlerdir. Açıkça izin verilmeyen etiketler yasaktır. Bu liste, genel [AMP etiketi ek izin](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/../../spec/amp-tag-addendum.md) listesinin bir alt kümesidir. Bu liste gibi, [HTML'nin Öğeleri](http://www.w3.org/TR/html5/single-page.html#html-elements) bölüm 4'te, HTML5 özellikleriyle tutarlı olarak sıralanmıştır.
 
 Çıkartmaların çoğu ya performans içindir ya da etiketler HTML5 standardına uygun olmadığı içindir. Örneğin, AMPHTML reklamları JavaScript'in etkinleştirilmesine bağlı olduğundan `<noscript>` çıkarılmıştır, bu nedenle `<noscript>` bloğu hiçbir zaman yürütülmez ve bu yüzden sadece reklam öğesini şişirir, bant genişliği maliyeti doğurur ve gecikmeye neden olur. Benzer şekilde, `<acronym>` , `<big>` vd. HTML5 uyumlu olmadıkları için yasaktır.
 

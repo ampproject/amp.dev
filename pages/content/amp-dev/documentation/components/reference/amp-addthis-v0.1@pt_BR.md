@@ -138,7 +138,7 @@ Confira nosso [vídeo do YouTube](https://www.youtube.com/watch?v=BSkuAB4er2o) p
 
 ## Validação <a name="validation"></a>
 
-Consulte as [regras do amp-addthis](https://github.com/ampproject/amphtml/blob/master/extensions/amp-addthis/validator-amp-addthis.protoascii) (em inglês) nas especificações do validador de AMP.
+Consulte as [regras do amp-addthis](https://github.com/ampproject/amphtml/blob/main/extensions/amp-addthis/validator-amp-addthis.protoascii) (em inglês) nas especificações do validador de AMP.
 
 ## Privacidade <a name="privacy"></a>
 

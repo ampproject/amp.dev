@@ -11,7 +11,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/contributing/release-schedule.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/contributing/release-schedule.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -41,7 +41,7 @@ Kanał wydań **conocnych** jest aktualizowany (jak wskazuje jego nazwa) w każd
 
 Wydanie conocne zapewnia mechanizm pozwalający na szybkie wykrycie i rozwiązanie problemów, zanim dotrą one do kanałów wydania _cotygodniowego_ o większym ruchu. Służy również do zmniejszenia liczby użytkowników, których dotkną nowo wprowadzone problemy.
 
-Możliwe jest dołączenie do kanału **conocnego**, aby testować żądania ściągnięcia, które zostały scalone w ciągu ostatnich kilku dni. Szczegóły zawiera [sekcja dotycząca dołączania](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md#opting-in-to-pre-release-channels) w pliku [DEVELOPING.md].
+Możliwe jest dołączenie do kanału **conocnego**, aby testować żądania ściągnięcia, które zostały scalone w ciągu ostatnich kilku dni. Szczegóły zawiera [sekcja dotycząca dołączania](https://github.com/ampproject/amphtml/blob/main/contributing/DEVELOPING.md#opting-in-to-pre-release-channels) w pliku [DEVELOPING.md].
 
 ### Cotygodniowe <a name="weekly"></a>
 
@@ -49,7 +49,7 @@ Kanały wydania _cotygodniowego_ są uważane za podstawowe kanały wersji „wi
 
 Są dwa zestawy konfiguracji używanych do tworzenia kompilacji wersji: konfiguracja _canary_ oraz konfiguracja _production_. Kanały wersji **eksperymentalnych** i **beta** są kompilowane z tego samego zatwierdzenia. Kanał **eksperymentalny** wykorzystuje jednak konfigurację _canary_, a kanał **beta** wykorzystuje konfigurację _production_. Konfiguracja _canary_ umożliwia korzystanie z eksperymentalnych składników i funkcji, które mogą być wyłączone w konfiguracji _production_. Kanały **eksperymentalny** lub **beta** można wybrać poprzez [stronę eksperymentów](https://cdn.ampproject.org/experiments.html).
 
-Kanał wydania **stabilnego** jest kompilowany w konfiguracji _production_ i serwowany większości ruchu AMP. Kanał wydania **beta** jest również kompilowany z konfiguracji _production_, reprezentuje więc dokładnie tę kompilację, która stanie się **stabilna** w następnym tygodniu (z możliwością wybiórczego rozwiązywania problemów w ostatniej chwili; patrz [Dodawanie kodu](https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md#Cherry-picks)).
+Kanał wydania **stabilnego** jest kompilowany w konfiguracji _production_ i serwowany większości ruchu AMP. Kanał wydania **beta** jest również kompilowany z konfiguracji _production_, reprezentuje więc dokładnie tę kompilację, która stanie się **stabilna** w następnym tygodniu (z możliwością wybiórczego rozwiązywania problemów w ostatniej chwili; patrz [Dodawanie kodu](https://github.com/ampproject/amphtml/blob/main/contributing/contributing-code.md#Cherry-picks)).
 
 #### Kanały eksperymentalne i beta <a name="beta-and-experimental-channels"></a>
 
@@ -71,7 +71,7 @@ Kanał _eksperymentalny_ **może być mniej stabilny** i może zawierać funkcje
 
 ### Stabilne długookresowe (lts) <a name="long-term-stable-lts"></a>
 
-Kanał wydawania **lts** zapewnia poprzednią **stabilną ** kompilację w odstępach jednomiesięcznych. W drugi poniedziałek każdego miesiąca bieżące wydanie **stabilne** jest promowane na wersję **lts**. Ten kanał nie jest zalecany dla wszystkich wydawców AMP. Jest on zapewniany, aby wydawcy, którzy chcą rzadziej przeprowadzać cykl QA na swojej stronie internetowej, mogli to zrobić poprzez podłączenie żądanych stron internetowych do kanału **lts** (patrz readme do <a href="https://github.com/ampproject/amphtml/blob/master/contributing/lts-release.md" data-md-type="link">**lts**</a>).
+Kanał wydawania **lts** zapewnia poprzednią **stabilną ** kompilację w odstępach jednomiesięcznych. W drugi poniedziałek każdego miesiąca bieżące wydanie **stabilne** jest promowane na wersję **lts**. Ten kanał nie jest zalecany dla wszystkich wydawców AMP. Jest on zapewniany, aby wydawcy, którzy chcą rzadziej przeprowadzać cykl QA na swojej stronie internetowej, mogli to zrobić poprzez podłączenie żądanych stron internetowych do kanału **lts** (patrz readme do <a href="https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md" data-md-type="link">**lts**</a>).
 
 W przypadku, gdy drugi poniedziałek miesiąca wypada w święto, promocja zostanie przeprowadzona po zakończeniu [zamrożenia wydania](#release-freezes).
 

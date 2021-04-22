@@ -15,7 +15,7 @@ Los formatos y conceptos que se utilizan actualmente en los anuncios de las hist
 
 Los anuncios que aparecen en las historias web se ajustan a los siguientes principios:
 
-- Para anuncios válidos de AMPHTML: siga las mismas especificaciones técnicas que usaría en un [anuncio de AMPHTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md) convencional.
+- Para anuncios válidos de AMPHTML: siga las mismas especificaciones técnicas que usaría en un [anuncio de AMPHTML](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md) convencional.
 - Primero lo visual: deben atraer la atención, ser llamativos y establecer una invitación basada en el contexto.
 - Nativo: la página de anuncios tiene las mismas dimensiones que una página de historias bien estructurada.
 - Utiliza el mismo modelo de interacción: el usuario puede pasar a la siguiente pantalla como lo haría con una página de historias convencional.

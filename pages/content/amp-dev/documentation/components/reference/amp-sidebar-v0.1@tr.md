@@ -74,7 +74,7 @@ Bununla birlikte, medya sorgularını kabul eden isteğe bağlı özellikler, si
 
 *Örnek:*
 
-Aşağıdaki örnekte gezinme öğelerini içermek için `amp-sidebar` özelliğini kullandık. Bununla birlikte, ikinci ve dördüncü öğe (Nav Item 2 ve Nav Item 4), sayfada bulunan öğe kimliğine atanmıştır. [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) özelliği sayesinde, öğe kimliğini ve `scrollTo` özelliğini kullanarak görünümü hızlı bir şekilde öğeye kaydırabiliriz.
+Aşağıdaki örnekte gezinme öğelerini içermek için `amp-sidebar` özelliğini kullandık. Bununla birlikte, ikinci ve dördüncü öğe (Nav Item 2 ve Nav Item 4), sayfada bulunan öğe kimliğine atanmıştır. [`on`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) özelliği sayesinde, öğe kimliğini ve `scrollTo` özelliğini kullanarak görünümü hızlı bir şekilde öğeye kaydırabiliriz.
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
@@ -91,7 +91,7 @@ Aşağıdaki örnekte gezinme öğelerini içermek için `amp-sidebar` özelliğ
 
 ### Kenar çubuğunu açma ve kapatma <a name="opening-and-closing-the-sidebar"></a>
 
-Bir öğeye dokunulduğunda veya bir öğe tıklandığında kenar çubuğuna geçiş yapmak, kenar çubuğunu açmak veya kapatmak için öğede [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) işlem özelliğini ayarlayın ve aşağıdaki işlem yöntemlerinden birini belirtin:
+Bir öğeye dokunulduğunda veya bir öğe tıklandığında kenar çubuğuna geçiş yapmak, kenar çubuğunu açmak veya kapatmak için öğede [`on`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) işlem özelliğini ayarlayın ve aşağıdaki işlem yöntemlerinden birini belirtin:
 
 <table>
   <tr>
@@ -334,7 +334,7 @@ Bu özellik, uzun gezinme listeleriyle uğraşırken, sayfa yüklendiğinde kena
 
 ```
 
-Çalışan bir örnek kod için lütfen [bu örnek dosyasına](https://github.com/ampproject/amphtml/blob/master/examples/amp-sidebar-autoscroll.amp.html) bakın.
+Çalışan bir örnek kod için lütfen [bu örnek dosyasına](https://github.com/ampproject/amphtml/blob/main/examples/amp-sidebar-autoscroll.amp.html) bakın.
 
 ## Kullanıcı deneyimi ile ilgili dikkat edilmesi gereken noktalar <a name="ux-considerations"></a>
 
@@ -344,4 +344,4 @@ Bu nedenle, kenar çubuğunu açmaya yönelik olanakların sabit, tam genişlikl
 
 ## Doğrulama <a name="validation"></a>
 
-AMP doğrulayıcı spesifikasyonundaki [amp-sidebar kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/validator-amp-sidebar.protoascii) bakın.
+AMP doğrulayıcı spesifikasyonundaki [amp-sidebar kurallarına](https://github.com/ampproject/amphtml/blob/main/extensions/amp-sidebar/validator-amp-sidebar.protoascii) bakın.

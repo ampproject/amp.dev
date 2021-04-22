@@ -31,13 +31,13 @@ No momento, há dois provedores de cache de AMP:
 - [Cache de AMP do Google](https://developers.google.com/amp/cache/)
 - [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
-AMP é um ecossistema aberto, e o Projeto AMP incentiva ativamente o desenvolvimento de mais caches de AMP. Para saber mais sobre a criação de caches de AMP, consulte as [Diretrizes de cache de AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
+AMP é um ecossistema aberto, e o Projeto AMP incentiva ativamente o desenvolvimento de mais caches de AMP. Para saber mais sobre a criação de caches de AMP, consulte as [Diretrizes de cache de AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md).
 
 ## Como escolher um cache de AMP?
 
 O editor não escolhe um cache de AMP. Essa escolha é feita pela _plataforma_ que vincula seu conteúdo (se houver).
 
-Isso é o contrário do modelo normal em que a entrega de conteúdo é de responsabilidade do editor. No entanto, esse modelo permite que as plataformas forneçam aos usuários um desempenho de carregamento previsível e, entre outras coisas, que garantam as constantes necessárias de segurança e privacidade durante a fase de pré-renderização de AMP. [Clique aqui](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md) se quiser saber mais sobre as diretrizes rígidas para a criação de caches de AMP.
+Isso é o contrário do modelo normal em que a entrega de conteúdo é de responsabilidade do editor. No entanto, esse modelo permite que as plataformas forneçam aos usuários um desempenho de carregamento previsível e, entre outras coisas, que garantam as constantes necessárias de segurança e privacidade durante a fase de pré-renderização de AMP. [Clique aqui](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md) se quiser saber mais sobre as diretrizes rígidas para a criação de caches de AMP.
 
 ## Posso optar por não armazenar em cache?
 
@@ -67,6 +67,6 @@ Ao usar o formato AMP, você disponibiliza conteúdo para ser armazenado em cach
 
 ## Outros recursos
 
-- [Diretrizes do cache de AMP do Projeto AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)
+- [Diretrizes do cache de AMP do Projeto AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md)
 - [Visão geral do cache de AMP do Google](https://developers.google.com/amp/cache/overview)
 - [Bing AMP Cache Documentation](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)

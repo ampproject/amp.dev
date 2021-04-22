@@ -30,9 +30,9 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
 </amp-ad>
 ```
 
-您可以看到，此广告的配置非常简单。请注意 `type` 属性，它可告知 [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) 组件我们要使用哪个广告平台。在本例中，我们想使用 [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md) 平台，因此我们将 `doubleclick` 指定为该属性的值。
+您可以看到，此广告的配置非常简单。请注意 `type` 属性，它可告知 [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) 组件我们要使用哪个广告平台。在本例中，我们想使用 [DoubleClick](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md) 平台，因此我们将 `doubleclick` 指定为该属性的值。
 
-`data-slot` 属性比较独特。在 [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) 中，任何以 `data-` 开头的属性都是与特定供应商相关的属性。这意味着并非所有供应商都需要这一属性；如果提供了此属性，他们也未必全都会做出回应。我们不妨将上述 **DoubleClick** 广告示例与 [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md) 平台上的以下测试广告进行对比：
+`data-slot` 属性比较独特。在 [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) 中，任何以 `data-` 开头的属性都是与特定供应商相关的属性。这意味着并非所有供应商都需要这一属性；如果提供了此属性，他们也未必全都会做出回应。我们不妨将上述 **DoubleClick** 广告示例与 [A9](https://github.com/ampproject/amphtml/blob/main/ads/a9.md) 平台上的以下测试广告进行对比：
 
 ```html
 <amp-ad

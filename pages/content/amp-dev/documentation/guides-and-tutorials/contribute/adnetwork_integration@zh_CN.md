@@ -41,9 +41,9 @@ formats:
 </amp-ad>
 ```
 
-在上面的代码中，`type` 属性会指定广告联盟，在本例中为 A9。`data-*` 属性取决于 Amazon A9 服务器投放广告要使用的参数。[`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) 文件向您展示了如何映射参数以向 A9 服务器的网址发出 JavaScript 调用。[`amp-ad`](../../../documentation/components/reference/amp-ad.md) 标记传递的相应参数会附加到该网址上，以返回广告。
+在上面的代码中，`type` 属性会指定广告联盟，在本例中为 A9。`data-*` 属性取决于 Amazon A9 服务器投放广告要使用的参数。[`a9.js`](https://github.com/ampproject/amphtml/blob/main/ads/a9.js) 文件向您展示了如何映射参数以向 A9 服务器的网址发出 JavaScript 调用。[`amp-ad`](../../../documentation/components/reference/amp-ad.md) 标记传递的相应参数会附加到该网址上，以返回广告。
 
-有关创建 [`amp-ad`](../../../documentation/components/reference/amp-ad.md) 集成的说明，请参阅[将广告联盟集成到 AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md)。
+有关创建 [`amp-ad`](../../../documentation/components/reference/amp-ad.md) 集成的说明，请参阅[将广告联盟集成到 AMP](https://github.com/ampproject/amphtml/blob/main/ads/README.md)。
 
 ## 创建“快速获取”集成 <a name="creating-a-fast-fetch-integration"></a>
 
@@ -57,7 +57,7 @@ formats:
 2. 提供 JavaScript 以构建广告请求（示例实现：[AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) 和 [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)）。
 3. 通过验证服务验证广告素材并进行签名。[Cloudflare](https://blog.cloudflare.com/firebolt/) 提供 AMP 广告验证服务，使所有独立广告提供商都能提供更快速、更精简且更具吸引力的广告。
 
-有关创建“快速获取”集成的说明，请参阅[快速获取网络实现指南](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)。
+有关创建“快速获取”集成的说明，请参阅[快速获取网络实现指南](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md)。
 
 ## 相关资源
 

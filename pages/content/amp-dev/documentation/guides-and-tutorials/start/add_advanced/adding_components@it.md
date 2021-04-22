@@ -30,9 +30,9 @@ Consideriamo questo esempio di annuncio **DoubleClick**:
 </amp-ad>
 ```
 
-Come si vede, la sua configurazione è molto semplice. Si può notare l'attributo `type`, che informa il componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) della piattaforma di annunci da utilizzare. In questo caso, vogliamo utilizzare la piattaforma [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md), per cui abbiamo indicato `doubleclick` come valore.
+Come si vede, la sua configurazione è molto semplice. Si può notare l'attributo `type`, che informa il componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) della piattaforma di annunci da utilizzare. In questo caso, vogliamo utilizzare la piattaforma [DoubleClick](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md), per cui abbiamo indicato `doubleclick` come valore.
 
-L'attributo `data-slot` è invece specifico della piattaforma. In [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), tutti gli attributi che iniziano con `data-` sono specifici del fornitore. Ciò significa che non tutti i fornitori richiederanno necessariamente questo particolare attributo, e che essi non saranno sempre efficaci se forniti. Ad esempio, confrontiamo il precedente esempio di **DoubleClick** con il seguente annuncio di prova della piattaforma [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md):
+L'attributo `data-slot` è invece specifico della piattaforma. In [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), tutti gli attributi che iniziano con `data-` sono specifici del fornitore. Ciò significa che non tutti i fornitori richiederanno necessariamente questo particolare attributo, e che essi non saranno sempre efficaci se forniti. Ad esempio, confrontiamo il precedente esempio di **DoubleClick** con il seguente annuncio di prova della piattaforma [A9](https://github.com/ampproject/amphtml/blob/main/ads/a9.md):
 
 ```html
 <amp-ad

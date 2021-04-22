@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -96,7 +96,7 @@ Zusätzlich dazu müssen Creatives die folgenden Regeln befolgen:
 
 ### Boilerplate <a name="boilerplate"></a>
 
-AMPHTML Ad Creatives erfordern eine andere, wesentlich einfachere Zeile für Boilerplate Stil als die [allgemeinen AMP Dokumente](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md):
+AMPHTML Ad Creatives erfordern eine andere, wesentlich einfachere Zeile für Boilerplate Stil als die [allgemeinen AMP Dokumente](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md):
 
 [sourcecode:html]
 
@@ -112,7 +112,7 @@ _Begründung:_ Der Stil `amp-boilerplate` blendet den Inhalt des Hauptteils aus,
 
 Und zu guter Letzt verwendet die AMPHTML Ad Boilerplate `amp-a4a-boilerplate` anstelle von `amp-boilerplate`, damit Validationstools sie einfacher identifizieren und präzisere Fehlermeldungen erstellen können, die Entwicklern weiterhelfen.
 
-Beachte, dass für Mutationen im Text der Boilerplate die gleichen Regeln gelten wie für Mutationen in der [allgemeinen AMP Boilerplate](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md).
+Beachte, dass für Mutationen im Text der Boilerplate die gleichen Regeln gelten wie für Mutationen in der [allgemeinen AMP Boilerplate](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md).
 
 ### CSS <a name="css"></a>
 
@@ -265,7 +265,7 @@ _Beispiel:_ `<amp-lightbox>` ist noch nicht in der Liste aufgeführt, da auch ei
 
 ### HTML Tags <a name="html-tags"></a>
 
-Die folgenden Tags sind in einem AMPHTML Ad Creative _zulässig_. Tags, die nicht ausdrücklich erlaubt sind, sind verboten. Diese Liste ist eine Teilmenge der allgemeinen [ergänzenden Zulassungsliste für AMP Tags](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md). Genau wie die Zulassungsliste orientiert sich auch diese Liste in ihrer Anordnung an der HTML5 Spezifikation im Abschnitt 4 von [The Elements of HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
+Die folgenden Tags sind in einem AMPHTML Ad Creative _zulässig_. Tags, die nicht ausdrücklich erlaubt sind, sind verboten. Diese Liste ist eine Teilmenge der allgemeinen [ergänzenden Zulassungsliste für AMP Tags](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/../../spec/amp-tag-addendum.md). Genau wie die Zulassungsliste orientiert sich auch diese Liste in ihrer Anordnung an der HTML5 Spezifikation im Abschnitt 4 von [The Elements of HTML](http://www.w3.org/TR/html5/single-page.html#html-elements).
 
 Den meisten Auslassungen liegt entweder der Gedanke der Leistungssteigerung oder die Tatsache zugrunde, dass die Tags nicht dem HTML5 Standard entsprechen. Zum Beispiel wurde `<noscript>` weggelassen, weil AMPHTML Ads aktiviertes JavaScript voraussetzen. Der Block `<noscript>` würde also niemals ausgeführt werden und bläht das Creative auf Kosten von Bandbreite und Latenz nur unnötig auf. Ähnlich dazu sind auch `<acronym>`, `<big>` und andere verboten, da sie nicht HTML5 kompatibel sind.
 

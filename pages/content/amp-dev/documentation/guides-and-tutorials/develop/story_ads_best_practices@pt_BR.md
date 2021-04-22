@@ -15,7 +15,7 @@ Os formatos de anúncio atuais, como banners e caixas, não se integram bem com 
 
 Os anúncios em Histórias Web aderem aos seguintes princípios:
 
-- Anúncio AMPHTML válido: deve seguir a mesma especificação técnica que um [anúncio AMPHTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md) clássico.
+- Anúncio AMPHTML válido: deve seguir a mesma especificação técnica que um [anúncio AMPHTML](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md) clássico.
 - Visual em primeiro lugar: convidativo, ousado e orientado pelo contexto.
 - Nativo: a página do anúncio tem as mesmas dimensões que uma página de história orgânica.
 - Mesmo modelo de interação: o usuário pode seguir para a próxima tela assim como faria com uma página de história orgânica.

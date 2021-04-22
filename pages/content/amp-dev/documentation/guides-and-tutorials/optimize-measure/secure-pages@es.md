@@ -20,6 +20,6 @@ Puede implementar una CSP al agregar la metaetiqueta apropiada en el encabezado 
 />
 ```
 
-[Puede consultar el ejemplo completo aquí](https://github.com/ampproject/amphtml/blob/master/examples/csp.amp.html).
+[Puede consultar el ejemplo completo aquí](https://github.com/ampproject/amphtml/blob/main/examples/csp.amp.html).
 
 [tip type="read-on"] Obtenga más información sobre [cómo protegerse contra las vulnerabilidades en la seguridad y la CSP, aquí](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP). [/tip]

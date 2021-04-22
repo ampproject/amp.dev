@@ -119,4 +119,4 @@ Fitur yang tidak didukung:
 
 ## Validasi <a name="validation"></a>
 
-Lihat [aturan amp-3d-gltf](https://github.com/ampproject/amphtml/blob/master/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii) dalam spesifikasi validator AMP.
+Lihat [aturan amp-3d-gltf](https://github.com/ampproject/amphtml/blob/main/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii) dalam spesifikasi validator AMP.

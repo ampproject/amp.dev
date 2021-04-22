@@ -4,7 +4,7 @@ $title: Errores de validación de AMP
 
 Los documentos de AMP no pueden tener errores de validación.
 La finalidad de este documento es ayudarte a entender mejor y a corregir cualquier error de validación que encuentres al [validar páginas de AMP](validate_amp.md).
-Para obtener una visión general completa de los errores de validación, consulta la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Para obtener una visión general completa de los errores de validación, consulta la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 ## Errores en atributos y etiquetas AMP HTML
 
@@ -37,7 +37,7 @@ Todos los documentos de AMP deben contener las siguientes etiquetas:
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-Estas etiquetas obligatorias incluyen un campo `mandatory: true` en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii), y también se hace referencia a ellas en la [especificación de AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md).
+Estas etiquetas obligatorias incluyen un campo `mandatory: true` en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii), y también se hace referencia a ellas en la [especificación de AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md).
 
 ### Falta una etiqueta requerida por otra etiqueta
 
@@ -97,7 +97,7 @@ Las etiquetas se incluyen en una lista blanca, por lo que no hay ninguna lista q
   </tr>
 </table>
 
-Los atributos obligatorios para las etiquetas de AMP se definen en las [especificaciones del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Los atributos obligatorios para las etiquetas de AMP se definen en las [especificaciones del validador de AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 Busca la etiqueta, observa los atributos enumerados y comprueba que aparezca `mandatory: true`.
 Los atributos obligatorios para cada etiqueta de AMP también aparecen en la especificación de la etiqueta.
 
@@ -141,7 +141,7 @@ Por ejemplo, esto pasa a veces cuando las URL tienen valores no válidos. Todos 
 </table>
 
 Los atributos se incluyen en una lista blanca, por lo que no hay ninguna lista definitiva de todos los atributos no permitidos.
-Para consultar qué atributos admite cada etiqueta, busca la etiqueta HTML y, a continuación, `attrs` en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Para consultar qué atributos admite cada etiqueta, busca la etiqueta HTML y, a continuación, `attrs` en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 Todas las etiquetas de AMP pueden utilizar, además de los atributos específicos recogidos en una lista blanca para cada etiqueta, cualquiera de los atributos que se incluyan en la sección `$GLOBAL_ATTRS` de la lista blanca; todos los atributos con el prefijo `"data-"` también se incluyen en esta lista.
 
@@ -208,7 +208,7 @@ Este caso se describe con uno de los siguientes mensajes detallados:
 
 Los datos de CSS específicos se han incluido en la lista negra para validar reglas fundamentales de AMP para CSS.
 
-A continuación puedes consultar la lista de datos CSS incluidos en la lista negra (consulta también <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">`disallowed_cdata_regex` en la especificación del validador de AMP</a>):
+A continuación puedes consultar la lista de datos CSS incluidos en la lista negra (consulta también <a href="https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii">`disallowed_cdata_regex` en la especificación del validador de AMP</a>):
 
 * `"\\.i?-amp-"` ("prefijo de nombre de clase -amp- CSS")
 * `"!important"`
@@ -482,7 +482,7 @@ En la actualidad, el único ejemplo es una etiqueta `template`, que podría no e
   </tr>
 </table>
 
-En la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) se hace referencia a los descendientes obligatorios como `mandatory_ancestor`.
+En la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) se hace referencia a los descendientes obligatorios como `mandatory_ancestor`.
 
 El error se produce cuando a las siguientes etiquetas les falta su `mandatory_ancestor` (etiqueta, antecesora):
 
@@ -558,7 +558,7 @@ Todas las etiquetas que se muestran en la página deben tener una altura y una a
 Pero esto no significa que debas incluir manualmente estos atributos,
 ya que en algunos tipos de diseño, el validador de AMP no devuelve errores, sino que adopta los valores predeterminados.
 
-Todas las etiquetas de AMP tienen una lista de `supported_layouts`, como se define en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Todas las etiquetas de AMP tienen una lista de `supported_layouts`, como se define en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 El validador devolverá errores cuando detecte diseños no admitidos y aplicará reglas de validación para el diseño predefinido.
 
 ### Hoja de estilo demasiado larga
@@ -640,7 +640,7 @@ En el error de validación se indica cuál es concretamente la regla no válida 
 </table>
 
 Este error se produce cuando no se especifica ningún diseño para la etiqueta de AMP y no se admite el diseño implícito (basado en la anchura, la altura y los tamaños).
-Consulta los valores de `supported_layout` para la etiqueta en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Consulta los valores de `supported_layout` para la etiqueta en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 El atributo `layout` es el que determina el comportamiento real del diseño.
 Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) y la [especificación del sistema de diseño AMP HTML](../../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md).
@@ -686,7 +686,7 @@ Los atributos no permitidos por los tipos de diseño se describen en la [especif
 </table>
 
 Este error se produce cuando no se admite el diseño especificado para la etiqueta.
-Consulta los valores de `supported_layout` para la etiqueta en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Consulta los valores de `supported_layout` para la etiqueta en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 El atributo `layout` es el que determina el comportamiento real del diseño.
 Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) y la [especificación del sistema de diseño AMP HTML](../../../../documentation/components/reference/amp-layout.md).
@@ -866,4 +866,4 @@ Actualmente no existen etiquetas obsoletas; la advertencia se reserva para futur
 Esta advertencia se produce cuando en el documento de AMP se detecta un atributo de AMP que antes era válido.
 Se trata solamente de una advertencia, ya que los documentos de AMP con advertencias siguen siendo válidos.
 
-Para identificar los atributos obsoletos de cada etiqueta de AMP, busca `deprecation` en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Para identificar los atributos obsoletos de cada etiqueta de AMP, busca `deprecation` en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).

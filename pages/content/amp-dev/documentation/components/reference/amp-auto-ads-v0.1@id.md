@@ -74,8 +74,8 @@ Jenis jaringan iklan dan informasi tambahan apa pun (yang diperlukan oleh jaring
 
 ## Jaringan iklan yang didukung <a name="supported-ad-networks"></a>
 
-* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
-* [DoubleClick (eksperimental)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
+* [AdSense](https://github.com/ampproject/amphtml/blob/main/ads/google/adsense.md)
+* [DoubleClick (eksperimental)](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md)
 
 ## Atribut
 
@@ -409,4 +409,4 @@ Hal ini akan berlaku hingga jumlah iklan di halaman itu mencapai 5 buah, karena 
 
 ## Validasi
 
-Lihat [aturan iklan otomatis AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-auto-ads/validator-amp-auto-ads.protoascii) dalam spesifikasi validator AMP.
+Lihat [aturan iklan otomatis AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-auto-ads/validator-amp-auto-ads.protoascii) dalam spesifikasi validator AMP.

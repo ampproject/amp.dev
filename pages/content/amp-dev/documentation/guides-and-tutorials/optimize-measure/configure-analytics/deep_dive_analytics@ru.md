@@ -82,7 +82,7 @@ AMP поддерживает два стандартных шаблона сбо
 [спецификации `amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 
 Если вы являетесь поставщиком аналитических услуг,
-ознакомьтесь с возможностью [интеграцией собственной конфигурации аналитики в AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+ознакомьтесь с возможностью [интеграцией собственной конфигурации аналитики в AMP HTML](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md).
 
 ## Загрузка удаленной конфигурации: атрибут config
 

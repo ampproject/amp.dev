@@ -65,7 +65,7 @@ AMP 支持两种常见的数据收集模式：
 
 借助分析服务供应商的配置，您可以快速开始使用 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)。您应查阅供应商的文档和 帮助资源，以获取进一步的指导。如前所述，如果您想了解哪些供应商已与 AMP 集成并获取指向他们各自的文档的链接，请查看[分析服务供应商](analytics-vendors.md)列表。
 
-如果您是分析服务供应商，请详细了解如何[将您自己的分析配置集成到 AMP HTML 中](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)。
+如果您是分析服务供应商，请详细了解如何[将您自己的分析配置集成到 AMP HTML 中](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md)。
 
 ## 加载远程配置：config 属性
 

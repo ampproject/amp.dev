@@ -73,7 +73,7 @@ Você pode incorporar histórias AMP dentro de uma página não-AMP, permitindo 
 
 ## Como incorporar o player de histórias AMP
 
-A exibição de uma história AMP em uma página não-AMP requer o uso do elemento [`amp-story-player`](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md) element.
+A exibição de uma história AMP em uma página não-AMP requer o uso do elemento [`amp-story-player`](https://github.com/ampproject/amphtml/blob/main/spec/amp-story-player.md) element.
 
 ### Importe scripts
 

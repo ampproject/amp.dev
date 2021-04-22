@@ -36,7 +36,7 @@ Todos los documentos utilizan el protocolo https en los cachés de AMP.
 
 ## Sufijo para el nombre de dominio
 
-Todos los cachés de AMP se registran en un archivo JSON, que se encuentra en línea en el [repositorio AMPHTML](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). Un ejemplo del registro de caché en este archivo se verá de la siguiente manera:
+Todos los cachés de AMP se registran en un archivo JSON, que se encuentra en línea en el [repositorio AMPHTML](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json). Un ejemplo del registro de caché en este archivo se verá de la siguiente manera:
 
 ```json
 {
@@ -179,7 +179,7 @@ Un valor del encabezado para el origen del caché de AMP se verá como uno de lo
 - `https://www-example-com.cdn.ampproject.org`
 - `https://v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq.cdn.ampproject.org`
 
-En primer lugar, elimine el prefijo del protocolo (`https://`) y el sufijo del dominio para el caché de AMP, por ejemplo `.cdn.ampproject.org`. El sufijo puede ser cualquiera de los cachés que se muestran en la lista de los [caches.json](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). La cadena restante será el “prefijo del dominio”. En el caso de los dos ejemplos anteriores, el “prefijo del dominio” es:
+En primer lugar, elimine el prefijo del protocolo (`https://`) y el sufijo del dominio para el caché de AMP, por ejemplo `.cdn.ampproject.org`. El sufijo puede ser cualquiera de los cachés que se muestran en la lista de los [caches.json](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json). La cadena restante será el “prefijo del dominio”. En el caso de los dos ejemplos anteriores, el “prefijo del dominio” es:
 
 - `www-example-com`
 - `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq`

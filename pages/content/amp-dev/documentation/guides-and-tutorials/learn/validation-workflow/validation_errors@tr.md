@@ -4,7 +4,7 @@ $title: AMP Doğrulama Hataları
 
 Geçerli AMP dokümanları hiçbir doğrulama hatası içermemelidir.
 Bu dokümanın amacı, [AMP sayfalarınızı doğrularken](validate_amp.md) karşılaştığınız doğrulama hatalarını daha iyi anlamanıza ve düzeltmenize yardımcı olmaktır.
-Doğrulama hatalarıyla ilgili eksiksiz bir genel bakış için [AMP doğrulayıcı spesifikasyonuna](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) bakın.
+Doğrulama hatalarıyla ilgili eksiksiz bir genel bakış için [AMP doğrulayıcı spesifikasyonuna](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) bakın.
 
 ## AMP HTML etiketi ve öznitelik hataları
 
@@ -37,7 +37,7 @@ Tüm AMP dokümanlarında aşağıdaki etiketler bulunmalıdır:
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-Bu zorunlu etiketlerin [AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) bir `mandatory: true` alanı olur; bunlara [AMP spesifikasyonunda](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md) da başvuruda bulunulur.
+Bu zorunlu etiketlerin [AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) bir `mandatory: true` alanı olur; bunlara [AMP spesifikasyonunda](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md) da başvuruda bulunulur.
 
 ### Başka bir etiketin gerektirdiği etiket eksik
 
@@ -97,7 +97,7 @@ Etiketler beyaz listede yer alır, bu yüzden izin verilmeyen tüm etiketlerin t
   </tr>
 </table>
 
-AMP etiketlerine ilişkin zorunlu öznitelikler [AMP'nin doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) tanımlanmıştır.
+AMP etiketlerine ilişkin zorunlu öznitelikler [AMP'nin doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) tanımlanmıştır.
 Etiketi aramanız, listelenen öznitelikleri görüntüleyip `mandatory: true` alanını kontrol etmeniz yeterlidir.
 Her bir AMP etiketinin zorunlu öznitelikleri etiketin spesifikasyonu içinde de listelenir.
 
@@ -141,7 +141,7 @@ Bu hata, bir HTML etiketinin izin verilen bir ada, ancak izin verilmeyen bir de�
 </table>
 
 Öznitelikler beyaz listede yer alır, bu yüzden izin verilmeyen tüm özniteliklerin tanımlandığı bir liste yoktur.
-Belirli bir etikete ilişkin desteklenen öznitelikleri kontrol etmek için HTML etiketini ve ardından [AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) `attrs` özniteliğini arayın.
+Belirli bir etikete ilişkin desteklenen öznitelikleri kontrol etmek için HTML etiketini ve ardından [AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) `attrs` özniteliğini arayın.
 
 Her bir etikete ilişkin belirli özniteliklerin yer aldığı beyaz listeye ek olarak, tüm AMP etiketleri `$GLOBAL_ATTRS` altında beyaz listeye eklenen tüm öznitelikleri kullanabilir; `"data-"` önekli tüm öznitelikler de beyaz listede yer alır.
 
@@ -208,7 +208,7 @@ Buna ilişkin ayrıntılı ileti aşağıdakilerden biri olabilir:
 
 Belirli CSS verileri, önemli CSS AMP kurallarını doğrulamak için kara listeye eklenmiştir.
 
-Aşağıda, kara listeye alınan CSS verilerinin listesini görebilirsiniz (ayrıca, [AMP doğrulayıcı spesifikasyonunda `disallowed_cdata_regex` öğesine de bakın](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)):
+Aşağıda, kara listeye alınan CSS verilerinin listesini görebilirsiniz (ayrıca, [AMP doğrulayıcı spesifikasyonunda `disallowed_cdata_regex` öğesine de bakın](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)):
 
 * `"\\.i?-amp-"` ("CSS -amp- sınıf adı öneki")
 * `"!important"`
@@ -486,7 +486,7 @@ Bu hata, bir etiket doğrulanmayan bir başka etiketin alt etiketi olduğunda or
   </tr>
 </table>
 
-Zorunlu alt etiketler, [AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) `mandatory_ancestor` olarak tanımlanır.
+Zorunlu alt etiketler, [AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) `mandatory_ancestor` olarak tanımlanır.
 
 Hata, aşağıdaki etiketlerin `mandatory_ancestor` (etiket, üst etiket) özniteliği eksik olduğunda ortaya çıkar:
 
@@ -562,7 +562,7 @@ Sayfada görüntülenen herhangi bir etiketin önceden tanımlanmış bir yükse
 Bununla birlikte, bu öznitelikleri manuel olarak eklemeniz gerekmez.
 Belirli düzen türlerinde, varsayılan değerler kabul edildiğinden AMP doğrulayıcı hata bildirmez.
 
-Her AMP etiketinin, [AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) tanımlanana benzer bir `supported_layouts` listesi vardır.
+Her AMP etiketinin, [AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) tanımlanana benzer bir `supported_layouts` listesi vardır.
 Doğrulayıcı, desteklenmeyen düzenler için hatalar bildirir ve önceden tanımlanmış düzene ilişkin doğrulama kurallarını kontrol eder.
 
 ### Stil sayfası çok uzun
@@ -644,7 +644,7 @@ Doğrulama hatası özel olarak geçersiz olan kuralı size bildirerek söz konu
 </table>
 
 Bu hata, AMP etiketi için bir düzen belirtmediğinizde ve işaret edilen düzen (genişlik, yükseklik ve boyutlara göre) desteklenmediğinde ortaya çıkar.
-[AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii), etikete ilişkin `supported_layout` değerlerini kontrol edin.
+[AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii), etikete ilişkin `supported_layout` değerlerini kontrol edin.
 
 Gerçek düzen davranışı, `layout` özniteliği tarafından belirlenir.
 Düzenin nasıl çalıştığıyla ilgili daha fazla bilgi için [Düzen Nasıl Kontrol Edilir?](../../develop/style_and_layout/control_layout.md) konusuna ve [AMP HTML düzeni sistem spesifikasyonuna](../../../../documentation/components/reference/amp-layout.md) bakın.
@@ -690,7 +690,7 @@ Düzen türleri için izin verilmeyen öznitelikler [AMP HTML düzeni sistem spe
 </table>
 
 Bu hata, etiket için belirtilen düzen desteklenmediğinde ortaya çıkar.
-[AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii), etikete ilişkin `supported_layout` değerlerini kontrol edin.
+[AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii), etikete ilişkin `supported_layout` değerlerini kontrol edin.
 
 Gerçek düzen davranışı, `layout` özniteliği tarafından belirlenir.
 Düzenin nasıl çalıştığıyla ilgili daha fazla bilgi için [Düzen Nasıl Kontrol Edilir?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) konusuna ve [AMP HTML düzeni sistem spesifikasyonuna](../../../../documentation/components/reference/amp-layout.md) bakın.
@@ -870,6 +870,6 @@ Bu yalnızca bir uyarıdır: Uyarılar içeren AMP dokümanlarının geçerlili�
 Bu uyarı, AMP dokümanında önceden geçerli olan bir AMP özniteliği bulunduğunda ortaya çıkar.
 Bu yalnızca bir uyarıdır: Uyarılar içeren AMP dokümanlarının geçerliliği devam eder.
 
-[AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) `deprecation` terimini arayarak her bir AMP etiketi için kullanımdan kaldırılan öznitelikleri tanımlayın.
+[AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) `deprecation` terimini arayarak her bir AMP etiketi için kullanımdan kaldırılan öznitelikleri tanımlayın.
 </body>
 </html>

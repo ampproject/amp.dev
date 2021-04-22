@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-debugging.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-debugging.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -50,7 +50,7 @@ Si vous rencontrez toujours un problème après avoir suivi ces étapes, consult
     <tr>
       <td rowspan="2">Les éléments (par exemple, les polices et les images) n'apparaissent pas</td>
       <td>Les éléments sont diffusés avec un type MIME incorrect.</td>
-      <td>Spécifiez un <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">type MIME acceptable</a> .</td>
+      <td>Spécifiez un <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">type MIME acceptable</a> .</td>
     </tr>
     <tr>
       <td>Le cache AMP ne peut pas accéder aux éléments.</td>

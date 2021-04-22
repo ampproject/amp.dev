@@ -131,4 +131,4 @@ Duyarlı düzenle, örnekteki genişlik ve yükseklik, 16:9 en boy oranlı video
 
 ## Doğrulama <a name="validation"></a>
 
-AMP doğrulayıcı spesifikasyonundaki [amp-youtube kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube/validator-amp-youtube.protoascii) bakın.
+AMP doğrulayıcı spesifikasyonundaki [amp-youtube kurallarına](https://github.com/ampproject/amphtml/blob/main/extensions/amp-youtube/validator-amp-youtube.protoascii) bakın.

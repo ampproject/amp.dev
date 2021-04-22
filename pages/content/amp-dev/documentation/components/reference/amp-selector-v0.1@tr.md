@@ -170,4 +170,4 @@ Etkinlikler, `on` özelliğini kullanan diğer AMP bileşenlerinde işlemleri te
 
 ## Doğrulama <a name="validation"></a>
 
-AMP doğrulayıcı spesifikasyonundaki [amp-selector kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-selector/validator-amp-selector.protoascii) bakın.
+AMP doğrulayıcı spesifikasyonundaki [amp-selector kurallarına](https://github.com/ampproject/amphtml/blob/main/extensions/amp-selector/validator-amp-selector.protoascii) bakın.

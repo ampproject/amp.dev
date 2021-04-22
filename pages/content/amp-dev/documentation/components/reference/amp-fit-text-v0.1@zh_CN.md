@@ -104,4 +104,4 @@ limitations under the License.
 
 ## 验证
 
-请参阅 AMP 验证工具规范中的 [amp-fit-text rules](https://github.com/ampproject/amphtml/blob/master/extensions/amp-fit-text/validator-amp-fit-text.protoascii)。
+请参阅 AMP 验证工具规范中的 [amp-fit-text rules](https://github.com/ampproject/amphtml/blob/main/extensions/amp-fit-text/validator-amp-fit-text.protoascii)。

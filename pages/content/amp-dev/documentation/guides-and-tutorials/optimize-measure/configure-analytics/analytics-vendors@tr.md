@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vendors-list.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vendors-list.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -148,7 +148,7 @@ Eulerian Technologies Analytics için destek ekler. _var_ `analyticsHost` ile Eu
 
 Tür özellik değeri: `facebookpixel`
 
-[Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel) için destek ekler. [`amp-analytics`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./amp-analytics.md) yapılandırmanızda, Pixel ID'nizi `pixelId: YOUR-PIXEL-ID` olarak tanımlamalısınız. Belirtilebilen ilgili olay değerleriyle birlikte desteklenen olaylar, [Facebook Pixel geliştirici belgelerinde](https://developers.facebook.com/docs/ads-for-websites/pixel-events) ayrıntılı olarak açıklanmıştır.
+[Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel) için destek ekler. [`amp-analytics`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/./amp-analytics.md) yapılandırmanızda, Pixel ID'nizi `pixelId: YOUR-PIXEL-ID` olarak tanımlamalısınız. Belirtilebilen ilgili olay değerleriyle birlikte desteklenen olaylar, [Facebook Pixel geliştirici belgelerinde](https://developers.facebook.com/docs/ads-for-websites/pixel-events) ayrıntılı olarak açıklanmıştır.
 
 ### Gemius <a name="gemius"></a>
 
@@ -190,7 +190,7 @@ Ibeat Analytics için destek ekler. Ibeat desteği eklemek için daha fazla ayr�
 
 Tür özellik değeri: `infonline`
 
-[INFOnline](https://www.infonline.de) / [IVW](http://www.ivw.de) için destek ekler. AMP dosyası dahil farklı bir alt etki alanında [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) dosyasının bir kopyasını gerektirir ([neden?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). Dosya HTTPS aracılığıyla sunulmalıdır. Örneğin, AMP dosyalarınız `www.example.com`'da barındırılıyorsa, `amp-analytics-infonline.html`'in `iframe.example.com` veya `assets.example.com` gibi başka bir alt etki alanında olması gerekir.
+[INFOnline](https://www.infonline.de) / [IVW](http://www.ivw.de) için destek ekler. AMP dosyası dahil farklı bir alt etki alanında [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) dosyasının bir kopyasını gerektirir ([neden?](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md)). Dosya HTTPS aracılığıyla sunulmalıdır. Örneğin, AMP dosyalarınız `www.example.com`'da barındırılıyorsa, `amp-analytics-infonline.html`'in `iframe.example.com` veya `assets.example.com` gibi başka bir alt etki alanında olması gerekir.
 
 Ek olarak, aşağıdaki değişkenler tanımlanmalıdır:
 
@@ -205,7 +205,7 @@ INFOnline / IVW desteği eklemek için daha fazla ayrıntı [www.infonline.de](h
 
 Tür özellik değeri: `infonline-anonymous`
 
-[anonymous INFOnline](https://www.infonline.de) için destek ekler. [infonline-anonymous.html](https://www.infonline.de/amp/infonline-anonymous.html)'in AMP dosyası dahil olmak üzere farklı bir alt etki alanında bir kopyasını gerektirir ([neden?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). Dosya HTTPS aracılığıyla sunulmalıdır. Örneğin, AMP dosyalarınız `www.example.com`'da barındırılıyorsa, `infonline-anonymous.html`'in `iframe.example.com` veya `assets.example.com` gibi başka bir alt etki alanında olması gerekir.
+[anonymous INFOnline](https://www.infonline.de) için destek ekler. [infonline-anonymous.html](https://www.infonline.de/amp/infonline-anonymous.html)'in AMP dosyası dahil olmak üzere farklı bir alt etki alanında bir kopyasını gerektirir ([neden?](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md)). Dosya HTTPS aracılığıyla sunulmalıdır. Örneğin, AMP dosyalarınız `www.example.com`'da barındırılıyorsa, `infonline-anonymous.html`'in `iframe.example.com` veya `assets.example.com` gibi başka bir alt etki alanında olması gerekir.
 
 Ek olarak, aşağıdaki değişkenler tanımlanmalıdır:
 
@@ -334,7 +334,7 @@ Nielsen Marketing Cloud için destek ekler. [Nielsen Marketing Cloud](http://www
 
 Tür özellik değeri: `oewa`
 
-`[OEWA](https://www.oewa.at)` için destek ekler. AMP dosyası dahil farklı bir alt etki alanında [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html)'in bir kopyasını gerektirir ([why?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). Dosya HTTPS aracılığıyla sunulmalıdır. Örneğin, AMP dosyalarınız `www.example.com`'da barındırılıyorsa, `amp-analytics-oewa.html`'in `oewa-amp.example.com` gibi başka bir alt etki alanında olması gerekir. OEWA desteği eklemeyle ilgili daha fazla ayrıntı [burada](http://www.oewa.at/Implementierung)bulunabilir.
+`[OEWA](https://www.oewa.at)` için destek ekler. AMP dosyası dahil farklı bir alt etki alanında [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html)'in bir kopyasını gerektirir ([why?](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md)). Dosya HTTPS aracılığıyla sunulmalıdır. Örneğin, AMP dosyalarınız `www.example.com`'da barındırılıyorsa, `amp-analytics-oewa.html`'in `oewa-amp.example.com` gibi başka bir alt etki alanında olması gerekir. OEWA desteği eklemeyle ilgili daha fazla ayrıntı [burada](http://www.oewa.at/Implementierung)bulunabilir.
 
 Ek olarak, aşağıdaki değişkenler tanımlanmalıdır:
 

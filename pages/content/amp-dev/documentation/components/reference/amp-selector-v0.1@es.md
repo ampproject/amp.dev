@@ -170,4 +170,4 @@ Más información sobre [las acciones y los eventos de AMP](../../../documentati
 
 ## Validación <a name="validation"></a>
 
-Consulta las [reglas de amp-selector](https://github.com/ampproject/amphtml/blob/master/extensions/amp-selector/validator-amp-selector.protoascii) en la especificación de la herramienta de validación de AMP.
+Consulta las [reglas de amp-selector](https://github.com/ampproject/amphtml/blob/main/extensions/amp-selector/validator-amp-selector.protoascii) en la especificación de la herramienta de validación de AMP.

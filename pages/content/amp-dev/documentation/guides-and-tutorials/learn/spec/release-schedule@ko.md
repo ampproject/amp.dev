@@ -11,7 +11,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/contributing/release-schedule.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/contributing/release-schedule.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -41,7 +41,7 @@ AMP 런타임 및 확장자는 다양한 *릴리스 채널*을 통해 제공됩�
 
 야간 빌드 릴리스가 제공하는 메커니즘을 통해 트래픽량이 많은 _주간_ 릴리스 채널에 이슈가 도달하기 전 빠르게 감지하고 해결할 수 있습니다. 또한 새로 추가된 이슈로 인해 영향받는 사용자 수도 줄어듭니다.
 
-지난 며칠간 병합된 풀 리퀘스트를 테스트하려면 **야간 빌드** 채널 옵션을 선택할 수 있습니다. 자세한 내용은 [DEVELOPING.md]의 [옵트인 섹션](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md#opting-in-to-pre-release-channels)을 참조하세요.
+지난 며칠간 병합된 풀 리퀘스트를 테스트하려면 **야간 빌드** 채널 옵션을 선택할 수 있습니다. 자세한 내용은 [DEVELOPING.md]의 [옵트인 섹션](https://github.com/ampproject/amphtml/blob/main/contributing/DEVELOPING.md#opting-in-to-pre-release-channels)을 참조하세요.
 
 ### 주간 <a name="weekly"></a>
 
@@ -49,13 +49,13 @@ _주간_ 릴리스 채널은 주요한 "상시 업데이트" 릴리스 채널로
 
 릴리스 빌드 생성에 사용되는 빌드 구성에는 _카나리아_ 구성 및 _프로덕션_ 구성이라는 두 가지 집합이 포함됩니다. **실험 버전** 및 **베타** 릴리스 채널은 동일한 커밋을 기반으로 빌드됩니다. 하지만 **실험 버전** 채널은 _카나리아_ 구성을 사용하고 **베타** 채널은 _프로덕션_ 구성을 사용합니다. _카나리아_ 구성을 사용하면 _프로덕션_ 구성에서는 사용이 해제된 컴포넌트 및 기능이 지원됩니다. [실험 페이지](https://cdn.ampproject.org/experiments.html)를 통해 **실험 버전** 또는 **베타** 채널 옵션을 선택할 수 있습니다.
 
-**안정** 릴리스 채널은 _프로덕션_ 구성으로 빌드되며 대부분 AMP 트래픽에 제공됩니다. **베타** 릴리스 채널도 _프로덕션_ 구성으로 빌드되므로 다음 주에 **안정**으로 변경될 정확한 빌드를 표시합니다(또한 최종 이슈 수정 시 체리픽을 사용할 수도 있음. [코드 기여](https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md#Cherry-picks) 참조)
+**안정** 릴리스 채널은 _프로덕션_ 구성으로 빌드되며 대부분 AMP 트래픽에 제공됩니다. **베타** 릴리스 채널도 _프로덕션_ 구성으로 빌드되므로 다음 주에 **안정**으로 변경될 정확한 빌드를 표시합니다(또한 최종 이슈 수정 시 체리픽을 사용할 수도 있음. [코드 기여](https://github.com/ampproject/amphtml/blob/main/contributing/contributing-code.md#Cherry-picks) 참조)
 
 #### 베타 및 실험 버전 채널 <a name="beta-and-experimental-channels"></a>
 
 _베타_ 및 *실험 버전 채널*은 다음 AMP 안정 릴리스의 사전 릴리스 후보입니다. 매주 화요일([릴리스 프리즈](#release-freezes) 주간 제외), 지난 주의 **야간 빌드**가 개발자 옵트인 채널인 **베타** 및 **실험 버전**으로 이동합니다. 이후 하루 동안 해당 채널에 추가된 기능이나 성능 저하가 없는지 검증을 완료하고 수요일에 릴리스를 약간의 트래픽에 공개합니다. 동일한 릴리스가 다음 주 화요일에 **안정** 채널로 이동합니다.
 
-이 채널 옵션을 선택할 수 있습니다. 자세한 내용은 [DEVELOPING.md]의 [옵트인 섹션](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md#opting-in-to-pre-release-channels)을 참조하세요.
+이 채널 옵션을 선택할 수 있습니다. 자세한 내용은 [DEVELOPING.md]의 [옵트인 섹션](https://github.com/ampproject/amphtml/blob/main/contributing/DEVELOPING.md#opting-in-to-pre-release-channels)을 참조하세요.
 
 _베타 채널_ 옵션 선택이 적합한 경우:
 
@@ -71,7 +71,7 @@ _베타 채널_ 옵션 선택이 적합한 경우:
 
 ### 장기 안정(LTS) <a name="long-term-stable-lts"></a>
 
-**LTS** 릴리스 채널은 1달 간격으로 이전의 **안정** 빌드를 제공합니다. 매월 두 번째 월요일에 현재 **안정** 릴리스가 **LTS**로 이동합니다. 이 채널은 모든 AMP 퍼블리셔에게 권장되지는 않으며, 특정 웹 페이지를 **LTS** 채널로 선택하여 웹사이트 QA 수행 주기의 빈도를 줄이려는 퍼블리셔에게 적합합니다(<a href="https://github.com/ampproject/amphtml/blob/master/contributing/lts-release.md" data-md-type="link">**LTS** 읽어보기</a> 참조).
+**LTS** 릴리스 채널은 1달 간격으로 이전의 **안정** 빌드를 제공합니다. 매월 두 번째 월요일에 현재 **안정** 릴리스가 **LTS**로 이동합니다. 이 채널은 모든 AMP 퍼블리셔에게 권장되지는 않으며, 특정 웹 페이지를 **LTS** 채널로 선택하여 웹사이트 QA 수행 주기의 빈도를 줄이려는 퍼블리셔에게 적합합니다(<a href="https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md" data-md-type="link">**LTS** 읽어보기</a> 참조).
 
 해당 월의 두번째 월요일이 휴일인 경우에는 LTS 채널로 이동이 [릴리스 프리즈](#release-freezes) 종료 이후 수행됩니다.
 

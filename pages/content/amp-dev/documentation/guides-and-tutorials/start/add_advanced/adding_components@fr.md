@@ -30,9 +30,9 @@ Jetez un œil à cet exemple d'annonce **DoubleClick** :
 </amp-ad>
 ```
 
-Comme vous pouvez le voir, c'est une configuration très simple. Prenez note de l'attribut `type`, qui informe le composant [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) de la plateforme publicitaire que nous voulons utiliser. Dans ce cas, nous souhaitons utiliser la plateforme [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md). Nous avons donc spécifié `doubleclick` comme valeur.
+Comme vous pouvez le voir, c'est une configuration très simple. Prenez note de l'attribut `type`, qui informe le composant [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) de la plateforme publicitaire que nous voulons utiliser. Dans ce cas, nous souhaitons utiliser la plateforme [DoubleClick](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md). Nous avons donc spécifié `doubleclick` comme valeur.
 
-L'attribut `data-slot` est plus spécifique. Dans [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), tous les attributs qui commencent par `data-` sont des attributs spécifiques au fournisseur. Cela signifie que tous les fournisseurs n'auront pas nécessairement besoin de cet attribut particulier, et ne réagiront nécessairement pas s'il est fourni. Par exemple, comparez l'exemple **DoubleClick** ci-dessus avec l'annonce test suivante de la plateforme [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md) :
+L'attribut `data-slot` est plus spécifique. Dans [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), tous les attributs qui commencent par `data-` sont des attributs spécifiques au fournisseur. Cela signifie que tous les fournisseurs n'auront pas nécessairement besoin de cet attribut particulier, et ne réagiront nécessairement pas s'il est fourni. Par exemple, comparez l'exemple **DoubleClick** ci-dessus avec l'annonce test suivante de la plateforme [A9](https://github.com/ampproject/amphtml/blob/main/ads/a9.md) :
 
 ```html
 <amp-ad

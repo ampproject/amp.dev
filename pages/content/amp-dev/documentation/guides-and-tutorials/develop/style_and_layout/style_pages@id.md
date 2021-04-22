@@ -6,7 +6,7 @@ Seperti semua halaman, halaman AMP digayakan dengan CSS, tapi tidak dapat merefe
 
 Semua gaya harus ada di kepala dokumen (lihat [Tambahkan gaya ke halaman](index.md#add-styles-to-a-page)). Namun Anda dapat menggunakan pembuatan template dan praprosesor CSS untuk membuat halaman statis agar dapat mengelola konten Anda dengan lebih baik.
 
-Catatan: Komponen AMP hadir dengan gaya default untuk mempermudah pembuatan halaman responsif. Gaya ini ditentukan di [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
+Catatan: Komponen AMP hadir dengan gaya default untuk mempermudah pembuatan halaman responsif. Gaya ini ditentukan di [`amp.css`](https://github.com/ampproject/amphtml/blob/main/css/amp.css).
 
 ## Gaya yang tidak diizinkan
 

@@ -30,9 +30,9 @@ AMP の広告は、[`amp-ad`](../../../../documentation/components/reference/amp
 </amp-ad>
 ```
 
-ご覧のとおり、設定は非常にシンプルです。[`amp-ad`](../../../../documentation/components/reference/amp-ad.md) コンポーネントに対し、使用する広告プラットフォームを `type` 属性で指定しています。ここでは、[DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md) プラットフォームを使用するために、値として `doubleclick` を指定しています。
+ご覧のとおり、設定は非常にシンプルです。[`amp-ad`](../../../../documentation/components/reference/amp-ad.md) コンポーネントに対し、使用する広告プラットフォームを `type` 属性で指定しています。ここでは、[DoubleClick](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md) プラットフォームを使用するために、値として `doubleclick` を指定しています。
 
-`data-slot` はさらにユニークな属性です。[`amp-ad`](../../../../documentation/components/reference/amp-ad.md) コンポーネントでは、`data-` で始まる属性はすべてベンダー固有の属性です。この属性はすべてのベンダーに必須指定するものではなく、指定しても必ず反応するとは限りません。上に示した **DoubleClick** の場合の例と、以下に示す [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md) プラットフォームの広告の例を比べてみましょう。
+`data-slot` はさらにユニークな属性です。[`amp-ad`](../../../../documentation/components/reference/amp-ad.md) コンポーネントでは、`data-` で始まる属性はすべてベンダー固有の属性です。この属性はすべてのベンダーに必須指定するものではなく、指定しても必ず反応するとは限りません。上に示した **DoubleClick** の場合の例と、以下に示す [A9](https://github.com/ampproject/amphtml/blob/main/ads/a9.md) プラットフォームの広告の例を比べてみましょう。
 
 ```html
 <amp-ad

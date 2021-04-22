@@ -42,7 +42,7 @@ All documents use https protocol on AMP caches.
 
 ## Domain Name Suffix
 
-All AMP Caches are registered in a JSON file, found online on the [AMPHTML Repository](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). An example cache record in this file will look like:
+All AMP Caches are registered in a JSON file, found online on the [AMPHTML Repository](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json). An example cache record in this file will look like:
 
 
 ```json
@@ -189,7 +189,7 @@ An AMP Cache Origin header value will look like one of the following examples:
 * `https://www-example-com.cdn.ampproject.org`
 * `https://v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq.cdn.ampproject.org`
 
-First, remove the protocol prefix (`https://`) and the AMP Cache domain suffix, such as `.cdn.ampproject.org`. The suffix may be from any one of the caches listed in [caches.json](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). The remaining string will be the “domain prefix”. In the case of the above two examples, the “domain prefix is:
+First, remove the protocol prefix (`https://`) and the AMP Cache domain suffix, such as `.cdn.ampproject.org`. The suffix may be from any one of the caches listed in [caches.json](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json). The remaining string will be the “domain prefix”. In the case of the above two examples, the “domain prefix is:
 
 
 

@@ -195,4 +195,4 @@ AMP レイアウト システムでは、画像を取得する前にあらかじ
 
 # 検証 <a name="validation"></a>
 
-AMP 検証ツールの仕様で [amp-img のルール](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)をご確認ください。
+AMP 検証ツールの仕様で [amp-img のルール](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)をご確認ください。

@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -110,7 +110,7 @@ Sama seperti kasus cache AMP, bisa diperkirakan bahwa domain untuk penampil AMP 
 
 ### Multi-konteks berarti manajemen multi-status <a name="multiple-contexts-means-multiple-state-management"></a>
 
-Penayang harus disiapkan untuk mengelola status pengguna untuk setiap konteks tampilan secara terpisah. Fitur [ID Klien](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id) AMP, yang memanfaatkan cookie atau penyimpanan lokal untuk mempertahankan status, memberikan dukungan yang diperlukan untuk halaman AMP agar mempunyai pengenal yang stabil dan semu (pseudonymous) untuk pengguna. Dari sudut pandang penerapan, digunakan cookie atau penyimpanan lokal, dan AMP memutuskan mana yang akan digunakan sesuai dengan konteks tampilan. Pilihan ini dipengaruhi oleh kelayakan teknis dalam mengelola status ini yang berskala ratusan hingga ribuan penayang.
+Penayang harus disiapkan untuk mengelola status pengguna untuk setiap konteks tampilan secara terpisah. Fitur [ID Klien](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#client-id) AMP, yang memanfaatkan cookie atau penyimpanan lokal untuk mempertahankan status, memberikan dukungan yang diperlukan untuk halaman AMP agar mempunyai pengenal yang stabil dan semu (pseudonymous) untuk pengguna. Dari sudut pandang penerapan, digunakan cookie atau penyimpanan lokal, dan AMP memutuskan mana yang akan digunakan sesuai dengan konteks tampilan. Pilihan ini dipengaruhi oleh kelayakan teknis dalam mengelola status ini yang berskala ratusan hingga ribuan penayang.
 
 Namun, penayang halaman AMP dapat dengan mudah akhirnya merancang (tanpa disengaja) perjalanan pengguna yang melibatkan banyak konteks. Mari kita kembali ke kajian tentang contoh penggunaan keranjang belanja dan tambahkan sejumlah informasi untuk membuat **cerita pengguna** lengkap:
 
@@ -242,7 +242,7 @@ Pada halaman AMP, buat ping amp-analytics yang berisi ID Klien:
 
 Perhatikan fakta bahwa parameter yang diteruskan ke dalam pengganti ID Klien, `${clientId(uid)`, adalah `uid`. Ini adalah pilihan yang disengaja yang sesuai dengan nama cookie yang digunakan di asal penayang sebagaimana dijelaskan di dalam [Tugas 1](#task1). Untuk mencapai integrasi yang paling mulus, Anda harus menerapkan teknik yang sama.
 
-Menyangkut penerapan amp-analytics selanjutnya, kunjungi dokumentasi untuk [konfigurasi amp-analytics](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) untuk mengetahui selengkapnya tentang cara menyiapkan permintaan amp-analytics atau untuk memodifikasi permintaan vendor analitis Anda. Ping dapat dimodifikasi lebih lanjut untuk mentransportasikan data tambahan yang Anda tentukan secara langsung atau dengan memanfaatkan [penggantian AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) lain.
+Menyangkut penerapan amp-analytics selanjutnya, kunjungi dokumentasi untuk [konfigurasi amp-analytics](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) untuk mengetahui selengkapnya tentang cara menyiapkan permintaan amp-analytics atau untuk memodifikasi permintaan vendor analitis Anda. Ping dapat dimodifikasi lebih lanjut untuk mentransportasikan data tambahan yang Anda tentukan secara langsung atau dengan memanfaatkan [penggantian AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) lain.
 
 > **Pengetahuan lain:**
 > Mengapa kita menggunakan nama `uid` untuk parameter yang diteruskan ke fitur ID Klien? Parameter yang diambil pengganti `clientId(...)` digunakan untuk menentukan cakupan. Anda sebenarnya dapat menggunakan fitur ID Klien untuk berbagai contoh penggunaan dan, sebagai hasilnya, menghasilkan banyak ID klien. Parameter membedakan contoh-contoh penggunaan sehingga Anda dapat menggunakannya untuk menentukan contoh penggunaan mana yang ingin Anda berikan ID Klien. Contohnya, Anda mungkin ini mengirimkan pengenal yang berbeda kepada pihak ketiga, seperti pengiklan, dan Anda dapat menggunakan parameter “cakupan” untuk melakukan hal ini.
@@ -383,7 +383,7 @@ Di dalam tugas ini, kita akan membahas pengoptimalan tambahan yang akan membantu
 
 ##### Menggunakan fitur-fitur penggantian <a name="using-substitution-features"></a>
 
-Pendekatan kita akan menggunakan dua jenis dari [penggantian variabel AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md).
+Pendekatan kita akan menggunakan dua jenis dari [penggantian variabel AMP](https://github.com/ampproject/amphtml/blob/main/spec/./amp-var-substitutions.md).
 
 **Untuk memperbarui tautan keluar untuk menggunakan penggantian ID Klien**: Tentukan sebuah parameter kueri yang baru, `ref_id` (“ID perujuk”), yang akan muncul di dalam URL, dan indikasikan **pengenal konteks asal** untuk pengguna. Atur parameter kueri ini agar sama dengan nilai penggantian ID Klien AMP:
 
@@ -594,7 +594,7 @@ Anda perlu memastikan bahwa Anda hanya memproses hal seperti `$amp_client_id` da
 
 Pada halaman non-AMP, periksa `document.referrer` langsung pada sisi klien atau teruskan nilai tersebut sebagia bagian dari ping analitis agar dapat mengesahkan pada sisi server. Jika nilai perujuk dapat Anda percayai, maka Anda dapat menerima dan memproses nilai yang dihasilkan dari URL halaman landing, seperti `orig_user_id` di dalam contoh di atas.
 
-Pada halaman AMP, gunakan variabel penggantian [Perujuk Dokumen](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#document-referrer) untuk meneruskan nilai perujuk sebagai bagian dari ping analitis. Pemrosesan sisi server adalah satu-satunya pilihan yang ada. Untuk menggambarkannya, berikut ini adalah ping analitis yang dapat dikirimkan halaman landing yang berisi (1) nilai ID Klien halaman saat ini, (2) nilai yang diteruskan melalui URL yang telah kita atur menjadi nilai ID Klien di dalam halaman rujukan, dan (3) informasi perujuk itu sendiri untuk mengesahkan nilai (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
+Pada halaman AMP, gunakan variabel penggantian [Perujuk Dokumen](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#document-referrer) untuk meneruskan nilai perujuk sebagai bagian dari ping analitis. Pemrosesan sisi server adalah satu-satunya pilihan yang ada. Untuk menggambarkannya, berikut ini adalah ping analitis yang dapat dikirimkan halaman landing yang berisi (1) nilai ID Klien halaman saat ini, (2) nilai yang diteruskan melalui URL yang telah kita atur menjadi nilai ID Klien di dalam halaman rujukan, dan (3) informasi perujuk itu sendiri untuk mengesahkan nilai (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
 
 Jika Anda tidak dapat memercayai perujuk, maka tolak nilai apa pun yang disediakan melalui parameter URL dan jangan gunakan.
 

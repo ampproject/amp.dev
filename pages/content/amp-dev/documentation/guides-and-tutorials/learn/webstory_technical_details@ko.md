@@ -271,7 +271,7 @@ amp-story-page로 공개되는 [`auto-advance-after`](https://amp.dev/documentat
 
 ## 데스크톱 경험
 
-웹 스토리 형식은 [선택적 데스크톱 경험](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in)을 지원합니다. 따라서 데스크톱 경험이 몰입형 전체 블리드 모드로 변경되며 세로형 패널 3개가 제공되는 기본 경험을 대체합니다. 모바일 사용자는 기기를 가로로 들어도 스토리를 볼 수 있습니다.
+웹 스토리 형식은 [선택적 데스크톱 경험](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in)을 지원합니다. 따라서 데스크톱 경험이 몰입형 전체 블리드 모드로 변경되며 세로형 패널 3개가 제공되는 기본 경험을 대체합니다. 모바일 사용자는 기기를 가로로 들어도 스토리를 볼 수 있습니다.
 
 `<amp-story>` 컴포넌트에 `supports-landscape` 속성을 추가하여 데스크톱 지원 옵션을 선택할 수 있습니다.
 

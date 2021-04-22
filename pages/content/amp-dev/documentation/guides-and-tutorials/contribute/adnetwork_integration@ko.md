@@ -41,9 +41,9 @@ formats:
 </amp-ad>
 ```
 
-위의 코드에서 `type` 속성은 광고 네트워크(이 경우 A9)를 지정합니다. `data-*` 속성은 Amazon A9 서버에서 광고를 제공하는 데 필요한 매개변수에 따라 달라집니다. [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) 파일에서는 매개변수를 매핑하여 A9 서버의 URL에 대한 JavaScript 호출을 생성하는 방법을 보여줍니다. AMP 광고 태그에 의해 전달되는 해당 매개변수는 광고를 반환하는 URL에 추가됩니다.
+위의 코드에서 `type` 속성은 광고 네트워크(이 경우 A9)를 지정합니다. `data-*` 속성은 Amazon A9 서버에서 광고를 제공하는 데 필요한 매개변수에 따라 달라집니다. [`a9.js`](https://github.com/ampproject/amphtml/blob/main/ads/a9.js) 파일에서는 매개변수를 매핑하여 A9 서버의 URL에 대한 JavaScript 호출을 생성하는 방법을 보여줍니다. AMP 광고 태그에 의해 전달되는 해당 매개변수는 광고를 반환하는 URL에 추가됩니다.
 
-<a><code>amp-ad</code></a> 통합을 만드는 방법은 <a class="" href="https://github.com/ampproject/amphtml/blob/master/ads/README.md">AMP에 광고 네트워크 통합</a>을 참조하세요.
+<a><code>amp-ad</code></a> 통합을 만드는 방법은 <a class="" href="https://github.com/ampproject/amphtml/blob/main/ads/README.md">AMP에 광고 네트워크 통합</a>을 참조하세요.
 
 ## 빠른 가져오기 통합 만들기 <a name="creating-a-fast-fetch-integration"></a>
 
@@ -57,7 +57,7 @@ formats:
 2. 광고 요청을 작성하는 JavaScript 제공(예제 구현: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) 및 [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl))
 3. 유효성 검사 서비스를 통한 광고 소재 유효성 검사 및 서명. [Cloudflare](https://blog.cloudflare.com/firebolt/)는 AMP 광고 확인 서비스를 제공하여, 독립 광고 제공업체에서 더 빠르고, 가볍고, 참여를 유도하는 광고를 게재할 수 있도록 지원합니다.
 
-빠른 가져오기 통합을 생성하는 방법은 [빠른 가져오기 네트워크 구현 가이드](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)를 참조하세요.
+빠른 가져오기 통합을 생성하는 방법은 [빠른 가져오기 네트워크 구현 가이드](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md)를 참조하세요.
 
 ## 관련 리소스
 

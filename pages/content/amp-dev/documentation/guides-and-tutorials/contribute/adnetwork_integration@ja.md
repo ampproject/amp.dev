@@ -41,9 +41,9 @@ formats:
 </amp-ad>
 ```
 
-上記のコードでは、`type` 属性で広告ネットワーク（この例では A9）を指定しています。`data-*` 属性の値は、Amazon A9 サーバーが広告を配信するために必要とするパラメータによって決まります。各パラメータと、A9 サーバーの URL に対する JavaScript の呼び出しの対応関係は、[`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) ファイルに記述されています。[`amp-ad`](../../../documentation/components/reference/amp-ad.md) タグによって渡される、対応するパラメータは前述の URL に付加され、広告を返すために使用されます。
+上記のコードでは、`type` 属性で広告ネットワーク（この例では A9）を指定しています。`data-*` 属性の値は、Amazon A9 サーバーが広告を配信するために必要とするパラメータによって決まります。各パラメータと、A9 サーバーの URL に対する JavaScript の呼び出しの対応関係は、[`a9.js`](https://github.com/ampproject/amphtml/blob/main/ads/a9.js) ファイルに記述されています。[`amp-ad`](../../../documentation/components/reference/amp-ad.md) タグによって渡される、対応するパラメータは前述の URL に付加され、広告を返すために使用されます。
 
-[`amp-ad`](../../../documentation/components/reference/amp-ad.md) の統合を作成する手順については、「[AMP への広告ネットワークの統合](https://github.com/ampproject/amphtml/blob/master/ads/README.md)」をご覧ください。
+[`amp-ad`](../../../documentation/components/reference/amp-ad.md) の統合を作成する手順については、「[AMP への広告ネットワークの統合](https://github.com/ampproject/amphtml/blob/main/ads/README.md)」をご覧ください。
 
 ## 高速フェッチ統合を作成する <a name="creating-a-fast-fetch-integration"></a>
 
@@ -57,7 +57,7 @@ formats:
 2. 広告リクエストを作成するための JavaScript を提供する（実装例: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl)、[DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)）。
 3. 検証サービスを通じてクリエイティブを検証、署名する。たとえば [Cloudflare](https://blog.cloudflare.com/firebolt/) は AMP 広告の検証サービスを提供しており、第三者の広告プロバイダは、このサービスを利用して軽量で訴求力のある広告を高速に配信できます。
 
-高速フェッチ統合を作成する手順については、「[高速フェッチのネットワーク実装ガイド](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)」をご覧ください。
+高速フェッチ統合を作成する手順については、「[高速フェッチのネットワーク実装ガイド](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md)」をご覧ください。
 
 ## 関連資料
 

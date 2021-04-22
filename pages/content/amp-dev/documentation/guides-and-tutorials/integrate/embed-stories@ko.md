@@ -73,7 +73,7 @@ AMP Story Player를 사용하면 웹 페이지에 사용자가 탭하거나 클�
 
 ## AMP 스토리 플레이어 삽입
 
-비 AMP 페이지에서 AMP 스토리를 표시하려면 [`amp-story-player`](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md) 요소를 사용해야 합니다.
+비 AMP 페이지에서 AMP 스토리를 표시하려면 [`amp-story-player`](https://github.com/ampproject/amphtml/blob/main/spec/amp-story-player.md) 요소를 사용해야 합니다.
 
 ### 스크립트 가져오기
 
