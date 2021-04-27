@@ -16,11 +16,12 @@ Genellikle şunlarla kullanılır: resimler, animasyonlar, ses ve videolar
 Örnek:
 
 ```html
-<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
-  <div fallback>Cannot play animated images on this device.</div>
-</amp-anim>
+<amp-img src="invalid.jpg" height="400" width="300" layout="responsive">
+  <div fallback style="background-color: #ccc; display: flex; justify-content: center; align-items: center;">
+    Could not load image
+  </div>
+</amp-img>
 ```
-
 Daha fazla bilgi için, [Yer tutucular ve yedekler](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md) bölümüne bakın.
 
 ## heights
