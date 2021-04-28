@@ -1,0 +1,47 @@
+.#{prefix(null, 'stage')} {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 28px 20px 68px;
+  text-align: center;
+  grid-column: 1/-1;
+
+  &:first-child {
+    margin-top: 28px;
+  }
+
+  &-logo {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 19px;
+    
+    svg {
+      width: 50vw;
+      height: 50vw;
+    }
+
+    @include respond-to('small') {
+      align-items: initial;
+      margin-bottom: 0;
+      padding: 0;
+
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        max-width: 50vw;
+        max-height: 50vw;
+      }
+    }
+  }
+
+  @include respond-to('small') {
+    flex-direction: row-reverse;
+    text-align: left;
+    grid-column: 2/22;
+  }
+}

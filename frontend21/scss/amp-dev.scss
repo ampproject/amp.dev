@@ -38,6 +38,7 @@
 @import 'components/filter-bubbles-list.scss';
 @import 'components/pill.scss';
 @import 'components/content/stage.scss';
+@import 'components/stage-2021.scss';
 
 main {
   @include grid;
@@ -49,6 +50,7 @@ main {
 
   @include respond-to('large') {
     grid-gap: 30px;
+    max-width: 1920px;
   }
 }
 
