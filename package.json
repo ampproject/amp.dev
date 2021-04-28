@@ -134,7 +134,7 @@
 		"del": "6.0.0",
 		"eslint": "7.24.0",
 		"eslint-config-google": "0.14.0",
-		"eslint-config-prettier": "8.2.0",
+		"eslint-config-prettier": "8.3.0",
 		"eslint-plugin-prettier": "3.4.0",
 		"expect-puppeteer": "4.4.0",
 		"fetch-mock": "9.11.0",
