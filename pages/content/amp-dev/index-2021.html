@@ -41,4 +41,82 @@ success_stories:
     </div>
     <h1>AMP is a component framework to easily create user-first experiences across the web.</h1>
   </section>
+  <section class="ap-formats ap-section --fullscreen">
+    <aside class="ap-formats-navigation">
+      <div class="ap-formats-navigation-wrapper">
+        {% for format in doc.format_explainer %}
+        <amp-animation id="switchIcon-{{ format.name }}" layout="nodisplay">
+          <script type="application/json">
+            {
+              "duration": "500ms",
+                "fill": "both",
+                "animations": [
+                  {
+                      "selector": ".ap-formats-navigation-icon.active.{{ format.name }}",
+                        "keyframes": [
+                          {
+                              "visibility": "hidden",
+                                "opacity": "0"
+                            },
+                          {
+                              "visibility": "visible",
+                                "opacity": "1"
+                            }
+                        ]
+                    },
+                    {
+                      "selector": ".ap-formats-navigation-icon.inactive.{{ format.name }}",
+                        "keyframes": [
+                          {
+                              "visibility": "visible",
+                                "opacity": "1"
+                            },
+                          {
+                              "visibility": "hidden",
+                                "opacity": "0"
+                            }
+                        ]
+                    }
+                ]   
+            }
+          </script>
+        </amp-animation>
+        <div class="ap-formats-navigation-icon-wrapper">
+          <div class="ap-formats-navigation-icon inactive {{ format.name }}">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
+          </div>
+          <div class="ap-formats-navigation-icon active {{ format.name }}">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </aside>
+    {% set initial_format = doc.format_explainer[0].name -%}
+    {% for format in doc.format_explainer %}
+    <div class="ap-formats-format {{ format.name }}{% if format.name == initial_format %} initial{% endif %}">
+      <amp-position-observer on="enter:switchIcon-{{ format.name }}.start;exit:switchIcon-{{ format.name }}.start,switchIcon-{{ format.name }}.reverse" intersection-ratios="0.9" layout="nodisplay">
+      </amp-position-observer>
+      <div class="ap-formats-background">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
+      </div>
+      <div class="ap-formats-format-content">
+          LOGO 
+          mobile: sticky to the left, highlight on format change
+          desktop: above the headline
+        -->
+        {% do doc.icons.useIcon('/icons/amp-' + format.name + '.svg') %}
+        <div class="ap-formats-logo">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
+        </div>
+        <h2>{{ format.headline }}</h2>
+        <p>{{ format.description }}</p>
+        {% if format.cta %}
+          <a href="documentation/index.html" class="ap-button --inverted cta">{{ format.cta }}</a>
+        {% endif %}
+        <a href="{{ format.url }}" class="ap-button {% if not format.cta %}--inverted{% endif %}">{{ _('Learn more') }}</a>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
 </main>
