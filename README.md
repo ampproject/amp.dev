@@ -75,8 +75,8 @@ We welcome contributions to amp.dev.
 
   **Mac**
   ```sh
-    LDFLAGS="-L$(brew --prefix)/lib" CFLAGS="-I$(brew --prefix)/include" pipenv run pip3 install --global-option="--with-libyaml" --force pyyaml
-    pipenv run pip3 install --user grow
+    LDFLAGS="-L$(brew --prefix)/lib" CFLAGS="-I$(brew --prefix)/include" pip3 install --global-option="--with-libyaml" --force pyyaml
+    pip3 install --user grow
     ```
 
   **Linux**
