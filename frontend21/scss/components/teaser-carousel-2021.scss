@@ -1,0 +1,97 @@
+.#{prefix(null, 'teaser-carousel')} {
+  grid-column: 1/-1;
+  
+  &-card {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 493px;
+    white-space: normal;
+    color: color('charade');
+    border-radius: 8px;
+    box-shadow: 0 15px 30px 0 rgb(0 0 0 / 15%);
+    transition: box-shadow .3s ease,transform .3s ease;
+
+    @include respond-to('medium') {
+      width: 390px;
+    }
+    
+    &:hover, &:focus, &:focus-within {
+      transform: translateY(-.125em);
+      box-shadow: 0 25px 60px 0 rgb(0 0 0 / 10%);
+    }
+
+    &-header {
+      display: flex;
+      align-items: center;
+      padding: 10px 30px;
+
+      &-logo {
+        width: 26px;
+        height: 26px;
+        margin-right: 10px;
+      }
+    }
+
+    &-image {
+      position: relative;
+      height: 220px;
+      
+      amp-img img {
+        object-fit: cover;
+      }
+    }
+
+    &-logo {
+      position: relative;
+      height: 30px;
+
+      amp-img img {
+        object-fit: contain;
+        object-position: left center;
+      }
+    }
+
+    &-body {
+      padding: 25px 30px 20px;
+      flex-grow: 2;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-headline {
+      margin-top: 10px;
+      flex-grow: 2;
+    }
+
+    &-meta {
+      font-size: 14px;
+      color: color('river-bed');
+      text-transform: capitalize;
+    }
+  }
+
+  &-item {
+    position: relative;
+    padding-left: 20px;
+    margin: 0 0 80px 0;
+    top: 0px;
+
+    &:last-child {
+      padding-right: 20px
+    }
+
+    @include respond-to('medium') {
+      padding-left: 30px;
+
+      &:nth-child(even) {
+        margin-bottom: 40px;
+        top: 40px;
+      }
+
+      &:last-child {
+        padding-right: 30px
+      }
+    }
+  }
+}

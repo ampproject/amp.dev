@@ -119,4 +119,120 @@ success_stories:
     </div>
     {% endfor %}
   </section>
+
+  <section class="ap-intro ap-section --left">
+    <h1>The latest news</h1>
+    <p>Don't want to miss any of the great stuff that happens around AMP? Then always be first in line and subscribe to our newsletter! Lorem ipsum dolor sit amet.</p>
+    <a href="about/success-stories/index.html" class="ap-m-lnk ap-m-lnk-square">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">{{ _('Subscribe newsletter') }}</span>
+    </a>
+  </section>
+  <section class="ap-news ap-section --fullscreen">
+    [% set posts = []|importBlog %]
+    [% if posts|length %]
+      <amp-carousel
+        class="ap-teaser-carousel --news"
+        height="573"
+        layout="fixed-height"
+        type="carousel"
+        role="region"
+        aria-label="{{ _('News') }}">
+        [% for post in posts %]
+        <a href="[= post.url =]" class="ap-teaser-carousel-item">
+          <div class="ap-teaser-carousel-card">
+            <div class="ap-teaser-carousel-card-header">
+              <h6>[= post.title =]</h6>
+            </div>
+            <div class="ap-teaser-carousel-card-image">
+              [% if post.image and post.image != '' and not post.image.includes('AMP_Blog_Square') %]
+                <amp-img class=""
+                    src="[= post.image =]"
+                    layout="responsive"
+                    width="160"
+                    height="90"
+                    alt="[= post.title =]">
+                </amp-img>
+              [% else %]
+                <div class="ap-o-news-icon">
+                  <div class="ap-a-ico">
+                    {% do doc.icons.useIcon('icons/news.svg') %}
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#news"></use></svg>
+                  </div>
+                </div>
+              [% endif %]
+            </div>
+            <div class="ap-teaser-carousel-card-body">
+              <h4 class="ap-teaser-carousel-card-headline">[= post.headline =]</h4>
+              <div class="ap-teaser-carousel-card-meta">[= post.date =]</div>
+            </div>
+          </div>
+        </a>
+        [% endfor %]
+      </amp-carousel>
+    [% endif %]
+  </section>
+
+  <section class="ap-intro ap-section --right">
+    <h1>Explore AMP success stories</h1>
+    <p>Don't take our word for it - read case studies from your industry and see how AMP has produced positive results. Lorem ipsum dolor sit amet.</p>
+    <a href="about/success-stories/index.html" class="ap-m-lnk ap-m-lnk-square">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">{{ _('See all success stories') }}</span>
+    </a>
+  </section>
+  <section class="ap-success-stories ap-section --fullscreen">
+      <amp-carousel
+        class="ap-teaser-carousel --success-stories"
+        height="573"
+        layout="fixed-height"
+        type="carousel"
+        role="region"
+        aria-label="{{ _('Success stories') }}">
+        {% for success_story in doc.success_stories %}
+        <a href="{{ success_story.url.path }}" class="ap-teaser-carousel-item">
+          <div class="ap-teaser-carousel-card">
+            <div class="ap-teaser-carousel-card-header">
+              {% for format in success_story.formats %}
+                {% do doc.icons.useIcon('/icons/amp-' + format + '.svg') %}
+                <div class="ap-teaser-carousel-card-header-logo">
+                  <svg fill="url(#gradient-{{ format }})"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format }}"></use></svg>
+                </div>
+                <h6>{{ format }}</h6>
+              {% endfor %}
+            </div>
+            {% with %}
+            {% set teaser = success_story.teaser %}
+            <div class="ap-teaser-carousel-card-image">
+              <amp-img
+                src="{{ teaser.image.src }}"
+                layout="fill"
+                alt="{{ teaser.image.alt }}">
+              </amp-img>
+            </div>
+            <div class="ap-teaser-carousel-card-body">
+              <div class="ap-teaser-carousel-card-logo">
+                <amp-img
+                    src="{{ teaser.logo.src }}"
+                    layout="fill"
+                    alt="{{ teaser.logo.alt }}">
+                </amp-img>
+              </div>
+              <h4 class="ap-teaser-carousel-card-headline">{{ teaser.text }}</h4>
+              {% endwith %}
+              <div class="ap-teaser-carousel-card-meta">
+                {{ success_story.category }}
+              </div>
+            </div>
+          </div>
+        </a>
+        {% endfor %}
+      </amp-carousel>
+  </section>
 </main>

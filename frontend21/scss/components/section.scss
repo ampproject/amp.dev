@@ -43,6 +43,18 @@
     }
   }
 
+  &.--left {
+    @include respond-to('small') {
+      grid-column: 2/11;
+    }
+  }
+
+  &.--right {
+    @include respond-to('small') {
+      grid-column: 12/-1;
+    }
+  }
+
   &.--fullscreen {
     margin: 0;
     grid-column: 1 / -1;
