@@ -5,7 +5,7 @@ description: 'AMP embraces interactive user experiences.'
 author: crystalonscript
 ---
 
-AMP embraces interactive user experiences. But, for performance and user experience guarantees, it’s just done a bit differently than non-AMP pages.
+AMP embraces interactive user experiences. But, for performance and user experience enhancements, it’s just done a bit differently than non-AMP pages.
 
 AMP uses the `on` attribute to install event handlers on elements. Like attributes, some events and actions are available to common elements while others are special to certain components. For our first page, we’ll register a basic event, a user’s click, then respond with a popular action, hide.
 
