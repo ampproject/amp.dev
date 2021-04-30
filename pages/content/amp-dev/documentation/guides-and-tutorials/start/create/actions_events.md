@@ -23,7 +23,7 @@ The first thing we’ll define in the `on` attribute’s value is the event we�
 <button on="tap">
 ```
 
-Then, we add a colon character, then define the `id` of the target we want our action to have an effect on. We’ll hide our `<h1>` element, so let's add “hello” after the colon character.
+Then, we add a colon character, then define the `id` of the target we want our action to have an effect on. We’ll hide our `<h1 id="hello">` element, so let's add “hello” after the colon character.
 
 ```html
 <button on="tap:hello">
