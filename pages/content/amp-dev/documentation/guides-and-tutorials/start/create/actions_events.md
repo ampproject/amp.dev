@@ -17,7 +17,7 @@ Add a button to your page, and give it the `on` attribute:
 </button>
 ```
 
-The first thing we’ll define in the `on` attribute’s value is the event we’re listening for. For a user’s click via mouse on desktop or mobile touch, AMP uses the event value `tap`.
+The first thing we’ll define in the `on` attribute’s value is the event we’re listening for. For a user’s click via mouse on desktop or mobile touch, AMP uses the event type `tap`.
 
 ```html
 <button on="tap">
