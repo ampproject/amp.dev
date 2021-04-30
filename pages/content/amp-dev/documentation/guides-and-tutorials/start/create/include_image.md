@@ -40,4 +40,4 @@ The playground will display a validation error! But, don’t fret, there are sev
 <amp-img src="https://preview.amp.dev/static/samples/img/amp.jpg" height="410" layout="fixed-height"></amp-img>
 ```
 
-And there, our validation error is gone! This type of flexibility in layout lets us work with what we know, cuh as the hight but not the width, while still guaranteeing a good experience for end users! Learn all about how AMP renders and layouts a page and how you can modify the layout in [Layout & Media queries](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout/?format=websites).
+And there, our validation error is gone! This type of flexibility in layout lets us work with what we know, such as a pre-determined hight but not the width, while still guaranteeing a good experience for end users! Learn all about how AMP renders and layouts a page and how you can modify the layout in [Layout & Media queries](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout/?format=websites).
