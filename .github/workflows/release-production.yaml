@@ -131,10 +131,10 @@ jobs:
         with:
           python-version: '3.x'
 
-      - uses: actions/cache@v2
-        with:
-          path: ${{ env.pythonLocation }}
-          key: ${{ env.pythonLocation }}
+#      - uses: actions/cache@v2
+#        with:
+#          path: ${{ env.pythonLocation }}
+#          key: ${{ env.pythonLocation }}
 
       - name: Installing Grow
         run: |
