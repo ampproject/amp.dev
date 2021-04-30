@@ -14,7 +14,7 @@ Unlike `amp-img`, the `amp-base-carousel` component is an extended component. Ex
 To use the `amp-base-carousel` component, we must import its script tag. Copy the tag below and place it into the head of the document.
 
 [tip type="note"]
-You can find the import script for each component at the top of it's reference documentation.
+You can find the import script for each component at the top of its reference documentation.
 [/tip]
 
 ```html
