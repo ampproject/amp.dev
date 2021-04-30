@@ -26,7 +26,6 @@
 @import 'components/content.scss';
 @import 'components/icon-text.scss';
 @import 'components/teaser-grid.scss';
-@import 'components/teaser-component.scss';
 @import 'components/table-component.scss';
 @import 'components/component-intro.scss';
 @import 'components/code-snippet.scss';
@@ -41,6 +40,7 @@
 @import 'components/stage-2021.scss';
 @import 'components/formats-2021.scss';
 @import 'components/teaser-carousel-2021.scss';
+@import 'components/teaser-2021.scss';
 
 main {
   @include grid;

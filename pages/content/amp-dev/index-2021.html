@@ -127,7 +127,7 @@ success_stories:
       <span class="ap-m-lnk-text">{{ _('Subscribe newsletter') }}</span>
     </a>
   </section>
-  <section class="ap-news ap-section --fullscreen">
+  <section class="ap-section --fullscreen">
     [% set posts = []|importBlog %]
     [% if posts|length %]
       <amp-carousel
@@ -138,35 +138,15 @@ success_stories:
         role="region"
         aria-label="{{ _('News') }}">
         [% for post in posts %]
-        <a href="[= post.url =]" class="ap-teaser-carousel-item">
-          <div class="ap-teaser-carousel-card">
-            <div class="ap-teaser-carousel-card-header">
-              <h6>[= post.title =]</h6>
-            </div>
-            <div class="ap-teaser-carousel-card-image">
-              [% if post.image and post.image != '' and not post.image.includes('AMP_Blog_Square') %]
-                <amp-img class=""
-                    src="[= post.image =]"
-                    layout="responsive"
-                    width="160"
-                    height="90"
-                    alt="[= post.title =]">
-                </amp-img>
-              [% else %]
-                <div class="ap-o-news-icon">
-                  <div class="ap-a-ico">
-                    {% do doc.icons.useIcon('icons/news.svg') %}
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#news"></use></svg>
-                  </div>
-                </div>
-              [% endif %]
-            </div>
-            <div class="ap-teaser-carousel-card-body">
-              <h4 class="ap-teaser-carousel-card-headline">[= post.headline =]</h4>
-              <div class="ap-teaser-carousel-card-meta">[= post.date =]</div>
-            </div>
-          </div>
-        </a>
+        {% set teaser_doc = {
+          'type': 'news',
+          'title': '[= post.title =]',
+          'image': '[= post.image =]',
+          'url': '[= post.url =]',
+          'headline': '[= post.headline =]',
+          'date': '[= post.date =]'
+        } %}
+        {% include '/views/2021/partials/teaser.j2' %}
         [% endfor %]
       </amp-carousel>
     [% endif %]
@@ -183,7 +163,7 @@ success_stories:
       <span class="ap-m-lnk-text">{{ _('See all success stories') }}</span>
     </a>
   </section>
-  <section class="ap-success-stories ap-section --fullscreen">
+  <section class="ap-section --fullscreen">
       <amp-carousel
         class="ap-teaser-carousel --success-stories"
         height="573"
@@ -192,42 +172,10 @@ success_stories:
         role="region"
         aria-label="{{ _('Success stories') }}">
         {% for success_story in doc.success_stories %}
-        <a href="{{ success_story.url.path }}" class="ap-teaser-carousel-item">
-          <div class="ap-teaser-carousel-card">
-            <div class="ap-teaser-carousel-card-header">
-              {% for format in success_story.formats %}
-                {% do doc.icons.useIcon('/icons/amp-' + format + '.svg') %}
-                <div class="ap-teaser-carousel-card-header-logo">
-                  <svg fill="url(#gradient-{{ format }})"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format }}"></use></svg>
-                </div>
-                <h6>{{ format }}</h6>
-              {% endfor %}
-            </div>
-            {% with %}
-            {% set teaser = success_story.teaser %}
-            <div class="ap-teaser-carousel-card-image">
-              <amp-img
-                src="{{ teaser.image.src }}"
-                layout="fill"
-                alt="{{ teaser.image.alt }}">
-              </amp-img>
-            </div>
-            <div class="ap-teaser-carousel-card-body">
-              <div class="ap-teaser-carousel-card-logo">
-                <amp-img
-                    src="{{ teaser.logo.src }}"
-                    layout="fill"
-                    alt="{{ teaser.logo.alt }}">
-                </amp-img>
-              </div>
-              <h4 class="ap-teaser-carousel-card-headline">{{ teaser.text }}</h4>
-              {% endwith %}
-              <div class="ap-teaser-carousel-card-meta">
-                {{ success_story.category }}
-              </div>
-            </div>
-          </div>
-        </a>
+        {% with %}
+        {% set teaser_doc = success_story %}
+        {% include '/views/2021/partials/teaser.j2' %}
+        {% endwith %}
         {% endfor %}
       </amp-carousel>
   </section>
