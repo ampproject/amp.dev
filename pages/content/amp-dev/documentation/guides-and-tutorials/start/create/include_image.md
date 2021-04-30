@@ -34,7 +34,7 @@ Our image now fits snugly in our viewport and grows or shrinks when the viewport
 
 While non-AMP pages may almost exclusively use CSS to layout elements, AMP enforces stricter rules to avoid content layout shift and other performance reasons. All AMP components are required to have an explicit dimensions declared in the HTML. To see an example, remove the `width` attribute from the `<amp-img>`.  
 
-The playground will display a validation error! But, don’t fret, there are several ways we can fix this. One way is to add the `width` attribute back, but another is to change the defined `layout` attribute. Try updating “responsive” to “fixed-height”. 
+The playground will display a validation error! But, don’t fret, there are several ways we can fix this. One way is to add the `width` attribute back, but another is to change the defined `layout` attribute. Try updating `“responsive”` to `“fixed-height”`. 
 
 ```
 <amp-img src="https://preview.amp.dev/static/samples/img/amp.jpg" height="410" layout="fixed-height"></amp-img>
