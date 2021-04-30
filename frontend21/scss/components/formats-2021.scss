@@ -134,9 +134,8 @@
     @include respond-to('small') {
       height: 460px;
       transform: skewY(0deg);
-      box-shadow: 0 15px 30px 0 rgb(0 0 0 / 15%);
+      @include shadow-large;
       transition: box-shadow .3s ease;
-      // transition: flex 1s;
 
       &-content {
         padding: 65px 25px 38px;
@@ -149,7 +148,7 @@
 
       &:hover, &:focus, &:focus-within {
         flex: 2;
-        box-shadow: 0 25px 60px 0 rgb(0 0 0 / 10%);
+        @include shadow-small;
 
         .ap-button, .cta {
           opacity: 1;

@@ -9,7 +9,7 @@
     white-space: normal;
     color: color('charade');
     border-radius: 8px;
-    box-shadow: 0 15px 30px 0 rgb(0 0 0 / 15%);
+    @include shadow-large;
     transition: box-shadow .3s ease,transform .3s ease;
 
     @include respond-to('medium') {
@@ -18,7 +18,7 @@
     
     &:hover, &:focus, &:focus-within {
       transform: translateY(-.125em);
-      box-shadow: 0 25px 60px 0 rgb(0 0 0 / 10%);
+      @include shadow-small;
     }
 
     &-header {
