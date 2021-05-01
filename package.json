@@ -185,7 +185,7 @@
 		"url-search-params": "1.1.0",
 		"wade": "0.3.3",
 		"webpack": "5.36.0",
-		"webpack-build-notifier": "2.1.1",
+		"webpack-build-notifier": "2.2.1",
 		"webpack-cli": "4.6.0",
 		"webpack-dev-server": "3.11.2",
 		"write": "2.0.0"
