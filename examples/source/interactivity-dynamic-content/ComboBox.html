@@ -90,9 +90,9 @@
 
           Finally, the combobox can be triggered via a button that focuses the input field: `<button on="tap:combo-input.focus">`.
         -->
-        <form method="post" action-xhr="/documentation/examples/api/echo">
+        <form method="post" id="myform" action-xhr="/documentation/examples/api/echo">
           <amp-autocomplete class="combo-box" filter="token-prefix" min-characters="0">
-            <input id="combo-input" type="text">
+            <input id="combo-input" name="name" type="text" on="change:myform.submit">
             <button hidden id="close" on="tap:open.show, close.hide">
               <i class="arrow"></i>
             </button>
