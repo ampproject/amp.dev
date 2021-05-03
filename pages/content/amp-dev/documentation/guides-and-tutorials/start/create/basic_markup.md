@@ -36,55 +36,57 @@ The body content is pretty straightforward, but there’s some additional code i
    </td>
   </tr>
   <tr>
-   <td>Start with the &lt;!doctype html> doctype.
+   <td>Start with the <code>&lt;!doctype html></code> doctype.
    </td>
    <td>Standard for HTML.
    </td>
   </tr>
   <tr>
-   <td>Contain a top-level &lt;html ⚡> tag
-<p>
-(&lt;html amp> is accepted as well).
+   <td>Contain a top-level <code>&lt;html ⚡></code> or <code>&lt;html amp> tag.
    </td>
    <td>Identifies the page as AMP content.
    </td>
   </tr>
   <tr>
-   <td>Contain &lt;head> and &lt;body> tags.
+   <td>Contain <code>&lt;head></code> and <code>&lt;body></code> tags.
    </td>
    <td>While optional in HTML, this is required in AMP.
    </td>
   </tr>
   <tr>
-   <td>Contain a &lt;meta charset="utf-8"> tag right after the &lt;head> tag.
+   <td>Contain a <code>&lt;meta charset="utf-8"></code> tag right after the <code>&lt;head></code> tag.
    </td>
    <td>Identifies the encoding for the page.
    </td>
   </tr>
   <tr>
-   <td>Contain a &lt;script async src="https://cdn.ampproject.org/v0.js">&lt;/script> tag inside the &lt;head> tag. As a best practice, you should include the script as early as possible.
+   <td>Contain a <code>&lt;script async src="https://cdn.ampproject.org/v0.js">&lt;/script></code<>> tag inside the <code>&lt;head></code> tag. As a best practice, you should include the script as early as possible.
    </td>
    <td>Includes and loads the AMP JS library.
    </td>
   </tr>
   <tr>
-   <td>Contain a &lt;link rel="canonical" href="$SOME_URL"> tag inside their &lt;head>.
+   <td>Contain a <code>&lt;link rel="canonical" href="$SOME_URL"></code> tag inside their <code>&lt;head></code>.
    </td>
    <td>the <code>href</code> attribute should point to the page itself. This section exists for legacy reasons. 
    </td>
   </tr>
   <tr>
-   <td>Contain a &lt;meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"> tag inside their &lt;head> tag.
+   <td>Contain a <code>&lt;meta name="viewport" content="width=device-width" /></code> tag inside their <code>&lt;head></code> tag.
    </td>
-   <td>Specifies a responsive viewport. Learn more in <a href="https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design/?format=websites">Create Responsive AMP Pages</a>.
+   <td>Specifies a responsive viewport. Learn more in <a href="../../develop/style_and_layout/responsive_design.md">Create Responsive AMP Pages</a>.
    </td>
   </tr>
   <tr>
-   <td>Contain the <a href="https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites">AMP boilerplate code</a> in their &lt;head> tag.
+   <td>Contain the <a href="../../learn/spec/amp-boilerplate.md">AMP boilerplate code</a> in their <code>&lt;head></code> tag.
    </td>
    <td>CSS boilerplate to initially hide the content until AMP JS is loaded.
    </td>
   </tr>
 </table>
 
-Open this document in the [AMP playground](https://playground.amp.dev/) to get started building our page!
+Click "Open this snippet in playground" under the example above to get started building our page! 
+
+[tip type="note"]
+  If you want to skip ahead, you can view the [finished tutorial code here](publish.md)!
+[/tip]

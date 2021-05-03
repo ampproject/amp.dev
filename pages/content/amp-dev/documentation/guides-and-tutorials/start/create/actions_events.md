@@ -5,9 +5,9 @@ description: 'AMP embraces interactive user experiences.'
 author: crystalonscript
 ---
 
-AMP embraces interactive user experiences. But, for performance and user experience enhancements, it’s just done a bit differently than non-AMP pages.
+AMP embraces interactive user experiences. But, for performance and user experience guarantees, it’s just done a bit differently than in non-AMP pages.
 
-AMP uses the `on` attribute to install event handlers on elements. Like attributes, some events and actions are available to common elements while others are special to certain components. For our first page, we’ll register a basic event, a user’s click, then respond with a popular action, hide.
+AMP uses the `on` attribute to install event handlers on elements. Like attributes, some events and actions are available to common elements while others are special to certain components. For our first page, we’ll register a basic event, a user’s click, then respond with the hide action.
 
 Add a button to your page, and give it the `on` attribute:
 
@@ -39,4 +39,4 @@ Now, if we click our button the `<h1>` element is hidden!
 
 ## Interactivity options
 
-Read [Actions and events](https://amp.dev/documentation/guides-and-tutorials/learn/amp-actions-and-events/?format=websites) and our [Interactivity guide](https://amp.dev/documentation/guides-and-tutorials/develop/interactivity_guide/?format=websites) for more details on the types of interactions available in AMP and how to implement them. Additionally, AMP embraces custom JavaScript through the [amp-script](https://amp.dev/documentation/components/amp-script/?format=websites) component. Read the [Use custom JavaScript in AMP pages](https://amp.dev/documentation/guides-and-tutorials/develop/custom-javascript/?format=websites) guide and follow the [Create a UI widget with custom JavaScript](https://amp.dev/documentation/guides-and-tutorials/develop/custom-javascript-tutorial/?format=websites) to get started.
+Read [Actions and events](../../learn/amp-actions-and-events.md) and our [Interactivity guide](../../develop/interactivity_guide/index.md) for more details on the types of interactions available in AMP and how to implement them. Additionally, AMP embraces custom JavaScript through the [`<amp-script>`](../../../components/reference/amp-script.md) component. Read the [Use custom JavaScript in AMP pages](../../develop/custom-javascript.md) guide and follow the [Create a UI widget with custom JavaScript](../../develop/custom-javascript-tutorial.md) to get started.
