@@ -43,15 +43,27 @@
     }
   }
 
-  &.--left {
+  &.--col-left, &.--col-right {
+    grid-column: 2/24;
+  }
+
+  &.--col-left {
     @include respond-to('small') {
-      grid-column: 2/11;
+      grid-column: 2/15;
+    }
+
+    @include respond-to('medium') {
+      grid-column: 4/15;
     }
   }
 
-  &.--right {
+  &.--col-right {
     @include respond-to('small') {
-      grid-column: 12/-1;
+      grid-column: 11/24;
+    }
+
+    @include respond-to('medium') {
+      grid-column: 13/24;
     }
   }
 
