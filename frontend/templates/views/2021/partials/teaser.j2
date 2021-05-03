@@ -1,6 +1,5 @@
 {% if teaser_doc.view == '/views/detail/success-story-detail.j2' %}
   {% set type = "success-story" %}
-  {% set isSuccessStory = true %}
   {% set url = teaser_doc.url.path %}
   {% set image = teaser_doc.teaser.image.src %}
   {% set alt = teaser_doc.teaser.image.alt %}
@@ -29,7 +28,7 @@
       {% endif %}
     </div>
     <div class="ap-teaser-card-image">
-      {% if teaser_doc.image and teaser_doc.image != '' or isSuccessStory %}
+      {% if teaser_doc.image and teaser_doc.image != '' or type == "success-story" %}
         <amp-img class=""
             src="{{ image }}"
             layout="responsive"
@@ -47,7 +46,7 @@
       {% endif %}
     </div>
     <div class="ap-teaser-card-body">
-      {% if isSuccessStory %}
+      {% if type == "success-story" %}
         <div class="ap-teaser-card-logo">
           <amp-img
               src="{{ teaser_doc.teaser.logo.src }}"
