@@ -1,0 +1,7 @@
+.#{prefix(null, 'intro')} {
+  margin-bottom: 72px;
+
+  @include respond-to('medium') {
+    margin-bottom: 100px;
+  }
+}
