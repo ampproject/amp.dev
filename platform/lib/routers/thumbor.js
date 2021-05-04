@@ -68,19 +68,24 @@ thumborRouter.get(imagePaths, async (request, response, next) => {
   thumborUrl.pathname =
     SECURITY_KEY + (imageWidth ? `/${imageWidth}x0/` : '/') + imageUrl.href;
 
-  const optimizedImage = await fetch(thumborUrl.toString(), {
-    headers: request.headers,
-  });
-  if (!optimizedImage.ok) {
-    log.error('Thumbor did not respond to', thumborUrl.toString());
-    // If Thumbor did not respond, fail over to default static middleware
-    next();
-    return;
-  }
+  try {
+    const optimizedImage = await fetch(thumborUrl.toString(), {
+      headers: request.headers,
+    });
+    if (!optimizedImage.ok) {
+      log.error('Thumbor did not respond to', thumborUrl.toString());
+      // If Thumbor did not respond, fail over to default static middleware
+      next();
+      return;
+    }
 
-  const contentType = optimizedImage.headers.get('content-type');
-  response.setHeader('Content-Type', contentType);
-  optimizedImage.body.pipe(response);
+    const contentType = optimizedImage.headers.get('content-type');
+    response.setHeader('Content-Type', contentType);
+    optimizedImage.body.pipe(response);
+  } catch (e) {
+    log.error('Failed connecting to thumbor', e);
+    next();
+  }
 });
 
 module.exports = {
