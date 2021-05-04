@@ -12,7 +12,7 @@
     </script>
   </amp-state>
 
-  <amp-script src="{{ podspec.base_urls.platform }}/static/survey.js" width="450" height="1205"  id="fez-container" sandbox="allow-forms">
+  <amp-script src="{{ podspec.base_urls.platform }}/static/survey.js" width="450" height="1205"  id="fez-container" sandbox="allow-forms" next-page-hide>
     <form id="fez" action="#" target="_top">
       {% do doc.icons.useIcon('icons/close.svg') %}
       <svg class="ap-a-ico icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
