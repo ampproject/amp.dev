@@ -36,7 +36,7 @@ Our image now fits snugly in our viewport and grows or shrinks when the viewport
 
 ## Modify layout
 
-While non-AMP pages may almost exclusively use CSS to layout elements, AMP enforces stricter rules to avoid content layout shift and other performance reasons. AMP layouts require an explicit dimensions declared in the HTML, but which ones depends on the layout applied. For example, our image has the `responsive` layout, which requires `width` and `height`. If you remove the `width` attribute from the `<amp-img>` the playground will display a validation error! But, don’t fret, there are several ways we can fix this! One way is to add the `width` attribute back, but another is to change the defined `layout` attribute. Try updating `“responsive”` to `“fixed-height”`. 
+While non-AMP pages may almost exclusively use CSS to layout elements, AMP enforces stricter rules to avoid content layout shift and other performance reasons. All AMP components require a layout and each layout has different dimension declaration requirements. For example, our image has the `responsive` layout, which requires `width` and `height`. If you remove the `width` attribute from the `<amp-img>` the playground will display a validation error! But, don’t fret, there are several ways we can fix this! One way is to add the `width` attribute back, but another is to change the defined `layout` attribute. Try updating `“responsive”` to `“fixed-height”`. 
 
 ```html
 <amp-img src="https://source.unsplash.com/random/600x400" height="400" layout="fixed-height"></amp-img>
