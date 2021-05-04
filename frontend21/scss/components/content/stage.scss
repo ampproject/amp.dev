@@ -1,0 +1,86 @@
+.#{project('stage')} {
+  --spacing: 50px;
+
+  position: relative;
+  @include grid;
+  color: color('white');
+  grid-column: 1 / -1;
+  padding: var(--spacing) 0;
+  margin-bottom: var(--spacing);
+
+  @include respond-to('small') {
+    --spacing: 100px;
+  }
+
+  &:before {
+    content: '';
+    @include fill;
+    @include ci-websites;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3em), 0 100%, 0 100%);
+
+    @include respond-to('small') {
+      height: calc(100% - var(--spacing));
+    }
+  }
+
+  &-text,
+  &-media,
+  &-backdrop {
+    position: relative;
+    z-index: 1;
+  }
+
+  &-text {
+    grid-column: 2 / 24;
+    margin-bottom: var(--spacing);
+
+    @include respond-to('small') {
+      grid-column: 2 / span 11;
+    }
+
+    @include respond-to('medium') {
+      margin-bottom: 0;
+    }
+  }
+
+  &-media {
+    grid-row: 1;
+    grid-column: 2 / span 24;
+    align-self: flex-end;
+    margin-bottom: var(--spacing);
+
+    @include respond-to('small') {
+      grid-column: 14 / span 10;
+      padding-top: var(--spacing);
+      margin-bottom: -var(--spacing);
+    }
+  }
+
+  &-backdrop {
+    display: none;
+
+    @include respond-to('small') {
+      display: block;
+      grid-row: 1;
+      grid-column: 14 / span 8;
+      align-self: center;
+    }
+
+    @include respond-to('medium') {
+      align-self: flex-start;
+    }
+
+    svg,
+    amp-img {
+      width: 100%;
+    }
+
+    svg {
+      height: 100%;
+    }
+  }
+
+  .#{project('button')} {
+    margin-top: 50px;
+  }
+}

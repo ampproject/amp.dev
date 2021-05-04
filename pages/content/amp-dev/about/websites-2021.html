@@ -1,0 +1,39 @@
+---
+$title: AMP Websites
+$view: /views/2021/base.html
+description: "AMP is a simple and robust format to ensure your website is fast, user-first, and makes money. AMP
+provides long-term success for your web strategy with distribution across ..."
+sharing_images:
+  square: /static/img/sharing/about-websites-1x1.png
+  wide: /static/img/sharing/about-websites-600x314.png
+---
+
+<main>
+  <section class="ap-stage">
+    <div class="ap-stage-text">
+      <div class="ap-text-block">
+        <h2>AMP Websites</h2>
+        <h1>{{ _('A framework that amplifies page experience.') }}</h1>
+        <p>
+          {{ _('AMP is a simple and robust web components framework that makes it easy to build fast websites that are
+          user-first and makes money. AMP provides long-term success for your web strategy with distribution across
+          popular platforms and reduced operating costs.') }}
+        </p>
+
+      <a class="ap-button --inverted" href="{{ g.doc('/content/amp-dev/documentation/index.html', locale=doc.locale).url.path }}">
+        {{ _('Get started with AMP') }}
+      </a>
+      </div>
+    </div>
+
+    <div class="ap-stage-backdrop">
+      <svg width="457" height="457">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/static/frontend/sprite.svg#deco-foundation"></use>
+      </svg>
+    </div>
+
+    <div class="ap-stage-media">
+      <amp-img src="/static/img/about/websites-amp-sidebar.jpg" layout="responsive" width="653" height="567" alt="{{ _('A screenshot showing amp-sidebar.') }}"></amp-img>
+    </div>
+  </section>
+</main>
