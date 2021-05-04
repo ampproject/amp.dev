@@ -6,7 +6,6 @@
   color: color('white');
   grid-column: 1 / -1;
   padding: var(--spacing) 0;
-  margin-bottom: var(--spacing);
 
   @include respond-to('small') {
     --spacing: 100px;

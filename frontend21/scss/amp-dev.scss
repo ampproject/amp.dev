@@ -74,13 +74,15 @@ h6 {
   color: currentColor;
 }
 
-h1 {
+h1,
+.#{project('h1')} {
   @include respond-to('small') {
     font-size: 52px;
   }
 }
 
-h3 {
+h3,
+.#{project('h3')} {
   font-size: 20px;
 }
 
@@ -142,22 +144,6 @@ select {
 
 figure {
   margin: 0;
-}
-
-figcaption {
-  margin-top: 0.3em;
-  margin-left: auto;
-  font-size: 14px;
-  line-height: 1.71;
-
-  @include respond-to('medium') {
-    max-width: 80%;
-  }
-
-  span {
-    margin-top: 10px;
-    font-size: 12px;
-  }
 }
 
 svg {
