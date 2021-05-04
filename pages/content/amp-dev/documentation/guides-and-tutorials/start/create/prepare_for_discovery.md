@@ -24,9 +24,9 @@ You can find the import script for each component at the top of its reference do
 Next, copy and paste another `<amp-img>` element under the first one, then wrap both inside `<amp-base-carousel>` tags, like below:
 
 ```html
-<amp-base-carousel width="680" height="410" layout="responsive">
-  <amp-img src="https://amp.dev/static/samples/img/amp.jpg" width="680" height="410" layout="responsive"></amp-img>
-  <amp-img src="https://amp.dev/static/samples/img/amp.jpg" width="680" height="410" layout="responsive"></amp-img>
+<amp-base-carousel width="600" height="400" layout="responsive">
+  <amp-img src="https://source.unsplash.com/random/600x400" width="600" height="400" layout="responsive"></amp-img>
+  <amp-img src="https://source.unsplash.com/random/600x400" width="600" height="400" layout="responsive"></amp-img>
 </amp-base-carousel>
 ```
 
@@ -35,11 +35,11 @@ Next, copy and paste another `<amp-img>` element under the first one, then wrap 
 You may notice we have familiar attributes, `width`, `height`, and `layout` defined. Like HTML, attributes are used everywhere in AMP. But, AMP uses additional attributes to customize components’ behavior. Some are [common element attributes](../../learn/common_attributes.md) and others are special to certain components. Let's add the `loop` attribute and set it to `true` and include more images:
 
 ```html
-<amp-base-carousel loop="true"  width="450" height="300" layout="responsive">
-  <amp-img src="https://amp.dev/static/samples/img/amp.jpg" width="680" height="410" layout="responsive"></amp-img>
-  <amp-img src="/static/inline-examples/images/image1.jpg" width="450" height="300" layout="responsive"></amp-img>
-  <amp-img src="/static/inline-examples/images/image2.jpg" width="450" height="300" layout="responsive"></amp-img>
-  <amp-img src="/static/inline-examples/images/image3.jpg" width="450" height="300" layout="responsive"></amp-img>
+<amp-base-carousel loop="true"  width="600" height="400" layout="responsive">
+  <amp-img src="https://source.unsplash.com/random/600x400" width="600" height="400" layout="responsive"></amp-img>
+  <amp-img src="https://source.unsplash.com/random/600x400" width="600" height="400" layout="responsive"></amp-img>
+  <amp-img src="https://source.unsplash.com/random/600x400" width="600" height="400" layout="responsive"></amp-img>
+  <amp-img src="https://source.unsplash.com/random/600x400" width="600" height="400" layout="responsive"></amp-img>
 </amp-base-carousel>
 ```
 

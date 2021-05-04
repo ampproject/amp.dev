@@ -30,11 +30,11 @@ Congratulations, you’ve built your first AMP page! It should look like the exa
   </head>
   <body>
     <h1 id="hello">Hello AMPHTML World!</h1>
-    <amp-base-carousel loop="true"  width="450" height="300" layout="responsive">
-      <amp-img src="/static/samples/img/amp.jpg" width="680" height="410" layout="responsive"></amp-img>
-      <amp-img src="/static/inline-examples/images/image1.jpg" width="450" height="300" layout="responsive"></amp-img>
-      <amp-img src="/static/inline-examples/images/image2.jpg" width="450" height="300" layout="responsive"></amp-img>
-      <amp-img src="/static/inline-examples/images/image3.jpg" width="450" height="300" layout="responsive"></amp-img>
+    <amp-base-carousel loop="true"  width="600" height="400" layout="responsive">
+        <amp-img src="https://source.unsplash.com/random/600x400" width="600" height="400" layout="responsive"></amp-img>
+        <amp-img src="https://source.unsplash.com/random/600x400" width="600" height="400" layout="responsive"></amp-img>
+        <amp-img src="https://source.unsplash.com/random/600x400" width="600" height="400" layout="responsive"></amp-img>
+        <amp-img src="https://source.unsplash.com/random/600x400" width="600" height="400" layout="responsive"></amp-img>
     </amp-base-carousel>
     <button on="tap:hello.hide">
       Goodbye AMPHTML World!
