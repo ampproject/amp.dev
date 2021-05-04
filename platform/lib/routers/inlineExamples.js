@@ -22,20 +22,30 @@ const {
   getFormatFromRequest,
   DEFAULT_FORMAT,
 } = require('../amp/formatHelper.js');
+const {promisify} = require('util');
+const fs = require('fs');
+const readFileAsync = promisify(fs.readFile);
+const {optimize} = require('@lib/utils/ampOptimizer.js');
+const path = require('path');
 
 // eslint-disable-next-line new-cap
 const inlineExamples = express.Router();
-
-const staticMiddleware = express.static(project.paths.INLINE_EXAMPLES_DEST, {
-  'extensions': ['html'],
-});
 
 inlineExamples.get('/*', async (request, response, next) => {
   const format = getFormatFromRequest(request);
   if (format && format !== DEFAULT_FORMAT) {
     request.url = request.path.replace('.html', `.${format}.html`);
   }
-  return staticMiddleware(request, response, next);
+
+  try {
+    const example = await readFileAsync(
+      path.join(project.paths.INLINE_EXAMPLES_DEST, request.url),
+      'utf-8'
+    );
+    response.send(await optimize(request, example));
+  } catch (e) {
+    next(e);
+  }
 });
 
 module.exports = inlineExamples;
