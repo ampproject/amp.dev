@@ -3539,3 +3539,36 @@ msgstr "サポート対象のプラットフォーム、ベンダー、パート
 
 msgid "AMP Conf 2020: Save the date!"
 msgstr "AMP Conf 2020：お見逃しなく！"
+
+msgid "AMP is a web component framework to easily create user-first experiences for the web."
+msgstr ""
+
+msgid "Easily create websites with a great page experience out-of-the-box using AMP’s ready-to-go web components."
+msgstr ""
+
+msgid "All about AMP Websites"
+msgstr ""
+
+msgid "Get started"
+msgstr ""
+
+msgid "Immerse readers in visual and tappable stories they can share anywhere on the open web."
+msgstr ""
+
+msgid "All about Web Stories"
+msgstr ""
+
+msgid "Serve lightning fast and secure eye-catching creatives."
+msgstr ""
+
+msgid "Send emails of the future with personalized dynamic content and interactive elements that engage readers."
+msgstr ""
+
+msgid "The latest news"
+msgstr ""
+
+msgid "Don't want to miss any of the great stuff that happens around AMP? Then always be first in line and subscribe to our newsletter!"
+msgstr ""
+
+msgid "Don’t take our word for it - read case studies from industry success stories and see how AMP has produced positive results."
+msgstr ""
