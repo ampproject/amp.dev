@@ -49,21 +49,21 @@
 
   &.--col-left {
     @include respond-to('small') {
-      grid-column: 2/15;
+      grid-column: 2/16;
     }
 
     @include respond-to('medium') {
-      grid-column: 4/15;
+      grid-column: 4/16;
     }
   }
 
   &.--col-right {
     @include respond-to('small') {
-      grid-column: 11/24;
+      grid-column: 9/23;
     }
 
     @include respond-to('medium') {
-      grid-column: 13/24;
+      grid-column: 11/23;
     }
   }
 
