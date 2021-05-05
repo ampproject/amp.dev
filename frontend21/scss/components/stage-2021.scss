@@ -12,10 +12,6 @@
 
   &-logo {
     position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 19px;
     
     svg {
@@ -24,17 +20,17 @@
     }
 
     @include respond-to('small') {
-      align-items: initial;
       margin-bottom: 0;
       padding: 0;
+      flex: 1;
 
       svg {
         position: absolute;
         top: 50%;
         left: 0;
         transform: translateY(-50%);
-        max-width: 50vw;
-        max-height: 50vw;
+        max-width: 514px;
+        max-height: 514px;
       }
     }
   }
@@ -43,5 +39,9 @@
     flex-direction: row-reverse;
     text-align: left;
     grid-column: 2/22;
+
+    h1 {
+      flex: 2;
+    }
   }
 }
