@@ -130,12 +130,16 @@ success_stories:
   <section class="ap-section --fullscreen">
     [% set posts = []|importBlog %]
     [% if posts|length %]
-      <amp-carousel
-        class="ap-teaser-carousel --news"
+    <div class="ap-teaser-carousel --news">
+      <div class="ap-teaser-carousel-controls --prev">
+        <button on="tap: teaser-carousel-news.prev()" class="amp-carousel-button amp-carousel-button-prev" aria-label="Previous"></button>
+      </div>
+      <amp-base-carousel
+        id="teaser-carousel-news"
         height="573"
         layout="fixed-height"
-        type="carousel"
         role="region"
+        visible-count="(min-width: 1280px) 3, (min-width: 768px) 2, 1"
         aria-label="{{ _('News') }}">
         [% for post in posts %]
         {% set teaser_doc = {
@@ -148,7 +152,13 @@ success_stories:
         } %}
         {% include '/views/2021/partials/teaser.j2' %}
         [% endfor %]
-      </amp-carousel>
+        <button slot="next-arrow"></button>
+        <button slot="prev-arrow"></button>
+      </amp-base-carousel>
+      <div class="ap-teaser-carousel-controls --next">
+        <button on="tap: teaser-carousel-news.next()" class="amp-carousel-button amp-carousel-button-next" aria-label="Next"></button>
+      </div>
+    </div>
     [% endif %]
   </section>
 
@@ -164,12 +174,16 @@ success_stories:
     </a>
   </section>
   <section class="ap-section --fullscreen">
-      <amp-carousel
-        class="ap-teaser-carousel --success-stories"
+    <div class="ap-teaser-carousel --success-stories">
+      <div class="ap-teaser-carousel-controls --prev">
+        <button on="tap: teaser-carousel-success-stories.prev()" class="amp-carousel-button amp-carousel-button-prev" aria-label="Previous"></button>
+      </div>
+      <amp-base-carousel
+        id="teaser-carousel-success-stories"
         height="573"
         layout="fixed-height"
-        type="carousel"
         role="region"
+        visible-count="(min-width: 1280px) 3, (min-width: 768px) 2, 1"
         aria-label="{{ _('Success stories') }}">
         {% for success_story in doc.success_stories %}
         {% with %}
@@ -177,6 +191,12 @@ success_stories:
         {% include '/views/2021/partials/teaser.j2' %}
         {% endwith %}
         {% endfor %}
-      </amp-carousel>
+        <button slot="next-arrow"></button>
+        <button slot="prev-arrow"></button>
+      </amp-base-carousel>
+      <div class="ap-teaser-carousel-controls --next">
+        <button on="tap: teaser-carousel-success-stories.next()" class="amp-carousel-button amp-carousel-button-next" aria-label="Next"></button>
+      </div>
+    </div>
   </section>
 </main>

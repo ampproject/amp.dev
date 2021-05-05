@@ -1,9 +1,11 @@
 .#{prefix(null, 'teaser')} {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   &-card {
-    display: flex;
     flex-direction: column;
-    width: 320px;
-    height: 493px;
+    max-width: 320px;
     white-space: normal;
     color: color('charade');
     border-radius: 8px;
@@ -11,7 +13,7 @@
     transition: box-shadow 0.3s ease, transform 0.3s ease;
   
     @include respond-to('medium') {
-      width: 390px;
+      max-width: 390px;
     }
   
     &:hover,
