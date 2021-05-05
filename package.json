@@ -170,7 +170,7 @@
 		"optimize-css-assets-webpack-plugin": "5.0.4",
 		"preload-webpack-plugin": "3.0.0-beta.4",
 		"prettier": "2.2.1",
-		"puppeteer": "2.1.1",
+		"puppeteer": "9.1.1",
 		"quoted-printable": "1.0.1",
 		"recursive-search": "1.0.1",
 		"sass": "1.32.11",
