@@ -12,7 +12,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vendors-list.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vendors-list.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -208,7 +208,7 @@ Adds support for Eulerian Technologies Analytics. Requires defining _var_ `analy
 
 Type attribute value: `facebookpixel`
 
-Adds support for the [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). In your [`amp-analytics`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/./amp-analytics.md) configuration, you must define your Pixel ID as `pixelId: YOUR-PIXEL-ID`. The events supported along with the corresponding event values that can be specified are detailed in the [Facebook Pixel developer documentation](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
+Adds support for the [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). In your [`amp-analytics`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./amp-analytics.md) configuration, you must define your Pixel ID as `pixelId: YOUR-PIXEL-ID`. The events supported along with the corresponding event values that can be specified are detailed in the [Facebook Pixel developer documentation](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
 
 ### Gemius <a name="gemius"></a>
 
@@ -483,11 +483,11 @@ Adds support for Pinpoll. Configuration details can be found at [pinpoll.com](ht
 
 Type attribute value: `piStats`
 
-### PPAS analytics <a name="ppas-analytics"></a>
+### Piwik PRO Analytics Suite <a name="piwik-pro-analytics-suite"></a>
 
 Type attribute value: `ppasanalytics`
 
-Adds support for PPAS analytics. Configuration details can be found at [piwik.pro](https://developers.piwik.pro/).
+Adds support for Piwik PRO Analytics Suite. Configuration details can be found at [piwik.pro](https://developers.piwik.pro/en/latest/integrations/AMP_integration.html).
 
 ### Pressboard <a name="pressboard"></a>
 

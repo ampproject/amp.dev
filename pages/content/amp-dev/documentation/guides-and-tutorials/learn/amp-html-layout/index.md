@@ -11,7 +11,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-html-layout.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -264,11 +264,10 @@ The `placeholder` attribute can be set on any HTML element, not just AMP element
 The `fallback` attribute can be set on any HTML element, not just AMP elements. A fallback is a convention that allows the element to communicate to the reader that the browser does not support the element. If specified, a fallback element must be a direct child of the AMP element. The exact behavior with respect to the fallback is up to the element's implementation.
 
 [sourcecode:html]
-<amp-img src="invalid.jpg" height="400" width="300" layout="responsive">
-  <div fallback style="background-color: #ccc; display: flex; justify-content: center; align-items: center;">
-    Could not load image
-  </div>
-</amp-img>[/sourcecode]
+<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
+  <div fallback>Cannot play animated images on this device.</div>
+</amp-anim>
+[/sourcecode]
 
 ### `noloading` <a name="noloading"></a>
 

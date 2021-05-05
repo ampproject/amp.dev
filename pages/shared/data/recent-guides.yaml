@@ -256,6 +256,18 @@
   date: 2018-12-01 01:12:23 -0800
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md
   date: 2018-12-01 01:12:23 -0800
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/building-page.md
+  date: 2018-11-30 08:03:59 -0800
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md
+  date: 2018-11-30 08:03:59 -0800
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md
+  date: 2018-11-30 08:03:59 -0800
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md
+  date: 2018-11-30 08:03:59 -0800
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/resolving-errors.md
+  date: 2018-11-30 08:03:59 -0800
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/setting-up.md
+  date: 2018-11-30 08:03:59 -0800
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md
   date: 2018-11-30 08:03:59 -0800
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create/include_image.md
@@ -269,18 +281,6 @@
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create/preview_and_validate.md
   date: 2018-11-30 08:03:59 -0800
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create/publish.md
-  date: 2018-11-30 08:03:59 -0800
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/building-page.md
-  date: 2018-11-30 08:03:59 -0800
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md
-  date: 2018-11-30 08:03:59 -0800
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md
-  date: 2018-11-30 08:03:59 -0800
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md
-  date: 2018-11-30 08:03:59 -0800
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/resolving-errors.md
-  date: 2018-11-30 08:03:59 -0800
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/setting-up.md
   date: 2018-11-30 08:03:59 -0800
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/adding_carousels.md
   date: 2018-11-30 08:03:59 -0800
