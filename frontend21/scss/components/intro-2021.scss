@@ -1,6 +1,14 @@
 .#{prefix(null, 'intro')} {
   margin-bottom: 72px;
 
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 40px;
+  }
+
   @include respond-to('medium') {
     margin-bottom: 100px;
   }
