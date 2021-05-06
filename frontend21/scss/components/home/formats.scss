@@ -18,7 +18,7 @@ $skew-angle: 4deg;
     grid-gap: 10px;
     padding: 0 10px;
 
-    .ap-button, .cta {
+    .ap-button, .cta, .ap-m-lnk {
       opacity: 0;
       visibility: hidden;
     }
@@ -162,7 +162,7 @@ $skew-angle: 4deg;
         flex: 2;
         @include shadow-small;
 
-        .ap-button, .cta {
+        .ap-button, .cta, .ap-m-lnk {
           opacity: 1;
           visibility: visible;
         }
