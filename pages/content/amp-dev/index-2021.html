@@ -139,8 +139,8 @@ success_stories:
         height="573"
         layout="fixed-height"
         role="region"
-        visible-count="(min-width: 1280px) 3, (min-width: 768px) 2, 1"
-        aria-label="{{ _('News') }}">
+        visible-count="(min-width: 1440px) 3, (min-width: 768px) 2, 1"
+        aria-label="{{ _('News') }}"
         on="slideChange:teaser-carousel-pagination-news.toggle(index=event.index, value=true)">
         [% for post in posts %]
         {% set teaser_doc = {
@@ -189,8 +189,8 @@ success_stories:
         height="573"
         layout="fixed-height"
         role="region"
-        visible-count="(min-width: 1280px) 3, (min-width: 768px) 2, 1"
-        aria-label="{{ _('Success stories') }}">
+        visible-count="(min-width: 1440px) 3, (min-width: 768px) 2, 1"
+        aria-label="{{ _('Success stories') }}"
         on="slideChange:teaser-carousel-pagination-success-stories.toggle(index=event.index, value=true)">
         {% for success_story in doc.success_stories %}
         {% with %}
