@@ -3154,3 +3154,27 @@ msgstr ""
 
 msgid "Don’t take our word for it - read case studies from industry success stories and see how AMP has produced positive results."
 msgstr ""
+
+msgid "A framework that amplifies page experience."
+msgstr ""
+
+msgid "AMP is a simple and robust web components framework that makes it easy to build fast websites that are user-first and makes money. AMP provides long-term success for your web strategy with distribution across popular platforms and reduced operating costs."
+msgstr ""
+
+msgid "Guaranteed Page Experience"
+msgstr ""
+
+msgid "AMP provides you with the tools needed to build websites that meet Page Experience ranking signals while remaining flexible and customizable to your needs. Page experience is a set of signals from Google that measure how users perceive their experience interacting with a web page beyond its pure information value. AMP is a straightforward way to a high page experience score. Domains built with AMP are 5 times more likely to pass* Core Web Vitals metrics than non-AMP!"
+msgstr ""
+
+msgid "Check your page’s performance"
+msgstr ""
+
+msgid "Frameworks and CMSs"
+msgstr ""
+
+msgid "Select a ready-to-go framework or integration-enabled CMS to get an AMP valid site up and running, fast. These platforms give you all the benefits of AMP without all the built-from-scratch hassle."
+msgstr ""
+
+msgid "See supported platforms"
+msgstr ""
