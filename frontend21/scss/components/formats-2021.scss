@@ -1,7 +1,10 @@
+@use 'sass:math';
+$skew-angle: 4deg;
+
 .#{prefix(null, 'formats')} {
   --width: 100vw;
-  --skew-angle: 4deg;
-  --magic-number: 0.0349634; // tan(angle) / 2;
+  --skew-angle: #{$skew-angle};
+  --magic-number: #{math.tan($skew-angle) / 2};
 
   --skew-padding: calc(var(--width) * var(--magic-number));
 
