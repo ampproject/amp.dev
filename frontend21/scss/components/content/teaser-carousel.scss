@@ -1,4 +1,4 @@
-.#{prefix(null, 'teaser-carousel')} {
+.#{project('teaser-carousel')} {
   position: relative;
   display: grid;
   grid-gap: 15px;
@@ -7,11 +7,16 @@
   margin: 0 auto 100px;
 
   amp-base-carousel {
-    grid-column: 2;
+    grid-column: 1/-1;
     grid-row: 1;
+
+    @include respond-to('small') {
+      grid-column: 2;
+    }
   }
 
   &-controls {
+    display: none;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -31,6 +36,10 @@
       width: 68px;
       height: 68px;
       background-size: 28px 28px;
+    }
+
+    @include respond-to('small') {
+      display: initial;
     }
   }
 
@@ -73,7 +82,7 @@
       &:nth-child(3n+2) {
         align-items: flex-end;
       }
-  
+
       &:nth-child(3n+3) {
         align-items: flex-start;
       }

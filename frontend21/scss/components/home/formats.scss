@@ -1,7 +1,7 @@
 @use 'sass:math';
 $skew-angle: 4deg;
 
-.#{prefix(null, 'formats')} {
+.#{project('formats')} {
   --width: 100vw;
   --skew-angle: #{$skew-angle};
   --magic-number: #{math.tan($skew-angle) / 2};
@@ -36,7 +36,7 @@ $skew-angle: 4deg;
     z-index: 1;
     padding: 136px 0;
 
-    @include respond-to('medium') {
+    @include respond-to('small') {
       display: none;
     }
 
@@ -70,19 +70,19 @@ $skew-angle: 4deg;
         background-color: color('white');
         opacity: 0;
         visibility: hidden;
-        
+
         &.websites {
           fill: url('#gradient-websites') color('black');
         }
-  
+
         &.stories {
           fill: url('#gradient-stories') color('black');
         }
-  
+
         &.ads {
           fill: url('#gradient-ads') color('black');
         }
-  
+
         &.email {
           fill: url('#gradient-email') color('black');
         }
@@ -118,6 +118,15 @@ $skew-angle: 4deg;
         font-weight: bold;
         flex-grow: 2;
         margin-bottom: 40px;
+      }
+
+      .ap-m-lnk {
+        &-text {
+          color: color('white');
+        }
+        .ap-a-ico {
+          fill: color('white');
+        }
       }
     }
 
@@ -162,7 +171,7 @@ $skew-angle: 4deg;
       &:nth-child(even) {
         top: -24px;
       }
-  
+
       &:nth-child(odd) {
         top: 24px;
       }
@@ -207,15 +216,15 @@ $skew-angle: 4deg;
     .websites & {
       @include ci-websites;
     }
-  
+
     .stories & {
       @include ci-stories;
     }
-  
+
     .email & {
       @include ci-e-mails;
     }
-  
+
     .ads & {
       @include ci-ads;
     }

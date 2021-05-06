@@ -36,8 +36,8 @@ success_stories:
 ---
 
 <main class="ap--main">
-  <section class="ap-stage ap-section">
-    <div class="ap-stage-logo">
+  <section class="ap-home-stage ap-section">
+    <div class="ap-home-stage-logo">
       {% do doc.icons.useIcon('icons/logo-outline.svg') %}
       <svg>
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-outline"></use>
@@ -113,8 +113,16 @@ success_stories:
         <p>{{ _(format.description) }}</p>
         {% if format.cta %}
           <a href="documentation/index.html" class="ap-button --inverted cta">{{ _(format.cta) }}</a>
+          <a href="{{ format.url }}" class="ap-m-lnk">
+            <div class="ap-a-ico ap-m-lnk-icon">
+              {% do doc.icons.useIcon('icons/internal.svg') %}
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+            </div>
+            <span class="ap-m-lnk-text">{{ _(format.link) }}</span>
+          </a>
+        {% else %}
+          <a href="{{ format.url }}" class="ap-button {% if not format.cta %}--inverted{% endif %}">{{ _(format.link) }}</a>
         {% endif %}
-        <a href="{{ format.url }}" class="ap-button {% if not format.cta %}--inverted{% endif %}">{{ _(format.link) }}</a>
       </div>
     </div>
     {% endfor %}

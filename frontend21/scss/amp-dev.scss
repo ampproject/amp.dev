@@ -37,11 +37,11 @@
 @import 'components/filter-bubbles-list.scss';
 @import 'components/pill.scss';
 @import 'components/content/stage.scss';
-@import 'components/stage-2021.scss';
-@import 'components/formats-2021.scss';
-@import 'components/teaser-carousel-2021.scss';
-@import 'components/teaser-2021.scss';
-@import 'components/intro-2021.scss';
+@import 'components/home/home-stage.scss';
+@import 'components/home/formats.scss';
+@import 'components/content/teaser-carousel.scss';
+@import 'components/content/teaser.scss';
+@import 'components/content/intro.scss';
 
 main {
   @include grid;

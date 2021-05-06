@@ -1,4 +1,4 @@
-.#{prefix(null, 'stage')} {
+.#{project('home-stage')} {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,7 +13,7 @@
   &-logo {
     position: relative;
     margin-bottom: 19px;
-    
+
     svg {
       width: 50vw;
       height: 50vw;
