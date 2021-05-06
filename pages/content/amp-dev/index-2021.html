@@ -8,20 +8,24 @@ description: 'Whether you are a publisher, e-commerce company, storyteller, adve
 format_explainer:
   - name: websites
     headline: AMP Websites
-    description: "Ready-to-go web components to quickly compose performant and functional websites with minimal maintenance."
-    cta: "Start building websites with AMP"
+    description: "Easily create websites with a great page experience out-of-the-box using AMP’s ready-to-go web components."
+    link: "All about AMP Websites"
+    cta: "Get started"
     url: /about/websites.html
   - name: stories
     headline: Web Stories
-    description: "Immerse readers in highly visual tappable stories they can share on the open web."
+    description: "Immerse readers in visual and tappable stories they can share anywhere on the open web."
+    link: "All about Web Stories"
     url: /about/stories.html
   - name: email
     headline: AMP Emails
-    description: "Personalized messages with dynamic content and interactive elements that engage users."
+    description: "Send emails of the future with personalized dynamic content and interactive elements that engage readers."
+    link: "All about AMP Emails"
     url: /about/email.html
   - name: ads
     headline: AMP Ads
     description: "Serve lightning fast and secure eye-catching creatives."
+    link: "All about AMP Ads"
     url: /about/ads.html
 
 success_stories:
@@ -39,7 +43,7 @@ success_stories:
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-outline"></use>
       </svg>
     </div>
-    <h1>AMP is a component framework to easily create user-first experiences across the web.</h1>
+    <h1>{{ _('AMP is a web component framework to easily create user-first experiences for the web.') }}</h1>
   </section>
   <section class="ap-formats ap-section --fullscreen">
     <aside class="ap-formats-navigation">
@@ -77,7 +81,7 @@ success_stories:
                             }
                         ]
                     }
-                ]   
+                ]
             }
           </script>
         </amp-animation>
@@ -105,26 +109,26 @@ success_stories:
         <div class="ap-formats-logo">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
         </div>
-        <h2>{{ format.headline }}</h2>
-        <p>{{ format.description }}</p>
+        <h2>{{ _(format.headline) }}</h2>
+        <p>{{ _(format.description) }}</p>
         {% if format.cta %}
-          <a href="documentation/index.html" class="ap-button --inverted cta">{{ format.cta }}</a>
+          <a href="documentation/index.html" class="ap-button --inverted cta">{{ _(format.cta) }}</a>
         {% endif %}
-        <a href="{{ format.url }}" class="ap-button {% if not format.cta %}--inverted{% endif %}">{{ _('Learn more') }}</a>
+        <a href="{{ format.url }}" class="ap-button {% if not format.cta %}--inverted{% endif %}">{{ _(format.link) }}</a>
       </div>
     </div>
     {% endfor %}
   </section>
 
   <section class="ap-intro ap-section --col-left">
-    <h1>The latest news</h1>
-    <p>Don't want to miss any of the great stuff that happens around AMP? Then always be first in line and subscribe to our newsletter! Lorem ipsum dolor sit amet.</p>
+    <h1>{{ _('The latest news') }}</h1>
+    <p>{{ _('Don\'t want to miss any of the great stuff that happens around AMP? Then always be first in line and subscribe to our newsletter!') }}</p>
     <a href="about/success-stories/index.html" class="ap-m-lnk ap-m-lnk-square">
       <div class="ap-a-ico ap-m-lnk-icon">
         {% do doc.icons.useIcon('icons/internal.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
       </div>
-      <span class="ap-m-lnk-text">{{ _('Subscribe newsletter') }}</span>
+      <span class="ap-m-lnk-text">{{ _('Subscribe') }}</span>
     </a>
   </section>
   <section class="ap-section --fullscreen">
@@ -169,8 +173,8 @@ success_stories:
   </section>
 
   <section class="ap-intro ap-section --col-right">
-    <h1>Explore AMP success stories</h1>
-    <p>Don't take our word for it - read case studies from your industry and see how AMP has produced positive results. Lorem ipsum dolor sit amet.</p>
+    <h1>{{ _('Explore AMP<br/> success stories') }}</h1>
+    <p>{{ _('Don’t take our word for it - read case studies from industry success stories and see how AMP has produced positive results.') }}</p>
     <a href="about/success-stories/index.html" class="ap-m-lnk ap-m-lnk-square">
       <div class="ap-a-ico ap-m-lnk-icon">
         {% do doc.icons.useIcon('icons/internal.svg') %}
