@@ -141,6 +141,7 @@ success_stories:
         role="region"
         visible-count="(min-width: 1280px) 3, (min-width: 768px) 2, 1"
         aria-label="{{ _('News') }}">
+        on="slideChange:teaser-carousel-pagination-news.toggle(index=event.index, value=true)">
         [% for post in posts %]
         {% set teaser_doc = {
           'type': 'news',
@@ -155,6 +156,11 @@ success_stories:
         <button slot="next-arrow"></button>
         <button slot="prev-arrow"></button>
       </amp-base-carousel>
+      <amp-selector class="ap-teaser-carousel-pagination" id="teaser-carousel-pagination-news" layout="container" on="select: teaser-carousel-news.goToSlide(index=event.targetOption)">
+        [% for post in posts %]
+          <div class="ap-teaser-carousel-pagination-item" option="[= loop.index0 =]" [% if loop.index0 == 0 %]selected[% endif %]></div>
+        [% endfor %]
+      </amp-selector>
       <div class="ap-teaser-carousel-controls --next">
         <button on="tap: teaser-carousel-news.next()" class="amp-carousel-button amp-carousel-button-next" aria-label="Next"></button>
       </div>
@@ -185,6 +191,7 @@ success_stories:
         role="region"
         visible-count="(min-width: 1280px) 3, (min-width: 768px) 2, 1"
         aria-label="{{ _('Success stories') }}">
+        on="slideChange:teaser-carousel-pagination-success-stories.toggle(index=event.index, value=true)">
         {% for success_story in doc.success_stories %}
         {% with %}
         {% set teaser_doc = success_story %}
@@ -194,6 +201,11 @@ success_stories:
         <button slot="next-arrow"></button>
         <button slot="prev-arrow"></button>
       </amp-base-carousel>
+      <amp-selector class="ap-teaser-carousel-pagination" id="teaser-carousel-pagination-success-stories" layout="container" on="select: teaser-carousel-success-stories.goToSlide(index=event.targetOption)">
+        {% for success_story in doc.success_stories %}
+          <div class="ap-teaser-carousel-pagination-item" option="{{ loop.index0 }}" {% if loop.index0 == 0 %}selected{% endif %}></div>
+        {% endfor %}
+      </amp-selector>
       <div class="ap-teaser-carousel-controls --next">
         <button on="tap: teaser-carousel-success-stories.next()" class="amp-carousel-button amp-carousel-button-next" aria-label="Next"></button>
       </div>

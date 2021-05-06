@@ -34,6 +34,37 @@
     }
   }
 
+  &-pagination {
+    grid-row: 2;
+    grid-column: 1/-1;
+    margin: 0 auto;
+
+    &-item {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin: 0 5px;
+      background-color: color('iron');
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &[option][selected] {
+        outline: none;
+      }
+
+      &[selected] {
+        @include ci-websites;
+      }
+    }
+  }
+
   @include respond-to('small') {
     .ap-teaser {
       &:nth-child(3n+1) {
