@@ -18,7 +18,7 @@ $skew-angle: 4deg;
     grid-gap: 10px;
     padding: 0 10px;
 
-    .ap-button, .cta, .ap-m-lnk {
+    .#{project('button')}, .ap-m-lnk {
       opacity: 0;
       visibility: hidden;
     }
@@ -110,10 +110,6 @@ $skew-angle: 4deg;
       flex-direction: column;
       height: 100%;
 
-      h2 {
-        color: color('charade');
-      }
-
       p {
         font-weight: bold;
         flex-grow: 2;
@@ -138,9 +134,6 @@ $skew-angle: 4deg;
 
     &.websites, &.ads {
       color: color('white');
-      h2 {
-        color: color('white');
-      }
     }
 
     @include respond-to('small') {
