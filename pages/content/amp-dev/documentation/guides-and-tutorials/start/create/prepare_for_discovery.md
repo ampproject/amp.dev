@@ -21,12 +21,12 @@ You can find the import script for each component at the top of its reference do
 <script async custom-element="amp-base-carousel" src="https://cdn.ampproject.org/v0/amp-base-carousel-0.1.js"></script>
 ```
 
-Next, copy and paste another `<amp-img>` element under the first one, then wrap both inside `<amp-base-carousel>` tags, like below:
+Next, include another `<amp-img>` element under the first one, then wrap both inside `<amp-base-carousel>` tags, like below:
 
 ```html
 <amp-base-carousel width="600" height="400" layout="responsive">
-  <amp-img src="https://source.unsplash.com/random/600x400" width="600" height="400" layout="responsive"></amp-img>
-  <amp-img src="https://source.unsplash.com/random/600x400" width="600" height="400" layout="responsive"></amp-img>
+  <amp-img src="https://source.unsplash.com/Ji_G7Bu1MoM/600x400" width="600" height="400" layout="responsive"></amp-img>
+  <amp-img src="https://source.unsplash.com/4yCXNMLP9g8/600x400" width="600" height="400" layout="responsive"></amp-img>
 </amp-base-carousel>
 ```
 
@@ -36,10 +36,10 @@ You may notice we have familiar attributes, `width`, `height`, and `layout` defi
 
 ```html
 <amp-base-carousel loop="true"  width="600" height="400" layout="responsive">
-  <amp-img src="https://source.unsplash.com/random/600x400" width="600" height="400" layout="responsive"></amp-img>
-  <amp-img src="https://source.unsplash.com/random/600x400" width="600" height="400" layout="responsive"></amp-img>
-  <amp-img src="https://source.unsplash.com/random/600x400" width="600" height="400" layout="responsive"></amp-img>
-  <amp-img src="https://source.unsplash.com/random/600x400" width="600" height="400" layout="responsive"></amp-img>
+  <amp-img src="https://source.unsplash.com/Ji_G7Bu1MoM/600x400" width="600" height="400" layout="responsive"></amp-img>
+  <amp-img src="https://source.unsplash.com/4yCXNMLP9g8/600x400" width="600" height="400" layout="responsive"></amp-img>
+  <amp-img src="https://source.unsplash.com/QrgRXH81DXk/600x400" width="600" height="400" layout="responsive"></amp-img>
+  <amp-img src="https://source.unsplash.com/8QJSi37vhms/600x400" width="600" height="400" layout="responsive"></amp-img>
 </amp-base-carousel>
 ```
 
