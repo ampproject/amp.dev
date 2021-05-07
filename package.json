@@ -62,7 +62,7 @@
 		"@ampproject/toolbox-cors": "2.8.0-canary.15",
 		"@ampproject/toolbox-linter": "2.8.0-canary.16",
 		"@ampproject/toolbox-optimizer": "2.8.0-canary.18",
-		"@google-cloud/datastore": "6.3.1",
+		"@google-cloud/datastore": "6.4.0",
 		"acorn": "8.2.1",
 		"casual": "1.6.2",
 		"cheerio": "1.0.0-rc.3",
