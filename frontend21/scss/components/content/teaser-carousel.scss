@@ -1,26 +1,20 @@
 .#{project('teaser-carousel')} {
+  --spacing: 68px;
+
   position: relative;
   display: grid;
   grid-gap: 15px;
-  grid-template-columns: 68px 1fr 68px;
+  grid-template-columns: var(--spacing) 1fr var(--spacing);
   max-width: 1440px;
   margin: 0 auto 100px;
 
-  amp-base-carousel {
+  &-container {
     grid-column: 1/-1;
     grid-row: 1;
-
-    @include respond-to('small') {
-      grid-column: 2;
-    }
   }
 
   &-controls {
     display: none;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    grid-row: 1;
 
     &.--prev {
       left: 0;
@@ -33,13 +27,17 @@
     }
 
     .amp-carousel-button {
-      width: 68px;
-      height: 68px;
+      width: var(--spacing);
+      height: var(--spacing);
       background-size: 28px 28px;
     }
 
     @include respond-to('small') {
       display: initial;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      grid-row: 1;
     }
   }
 
@@ -75,7 +73,13 @@
   }
 
   @include respond-to('small') {
-    .ap-teaser {
+    &-container {
+      padding: 0 var(--spacing)
+    }
+
+    .#{project('teaser')} {
+      padding-bottom: 15px;
+
       &:nth-child(3n+1) {
         align-items: center;
       }
