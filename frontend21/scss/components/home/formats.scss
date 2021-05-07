@@ -28,6 +28,16 @@ $skew-angle: 4deg;
     font-size: 28px;
   }
 
+  &:hover .#{project('formats')} {
+    &-format {
+      &-content {
+        p {
+          animation: 1s linear fade-out-fade-in;
+        }
+      }
+    }
+  }
+
   &-navigation {
     position: absolute;
     top: 0;
@@ -140,7 +150,8 @@ $skew-angle: 4deg;
       height: 460px;
       transform: skewY(0deg);
       @include shadow-large;
-      transition: box-shadow .3s ease;
+      transition: box-shadow .3s ease, flex 0.8s ease-in-out 0.2s;
+      will-change: flex;
 
       &-content {
         padding: 65px 25px 38px;
@@ -151,13 +162,24 @@ $skew-angle: 4deg;
         }
       }
 
-      &:hover, &:focus, &:focus-within {
+      &:hover {
         flex: 2;
         @include shadow-small;
 
-        .ap-button, .cta, .ap-m-lnk {
+        p {
+          animation: 1s linear fade-out-fade-in;
+        }
+
+        .#{project('button')}, .ap-m-lnk {
           opacity: 1;
           visibility: visible;
+          transition: opacity 0.1s 0.9s;
+        }
+      }
+
+      &:hover ~ .ap-formats-format {
+        p {
+          animation: 1s linear fade-out-fade-in;
         }
       }
 
@@ -232,17 +254,11 @@ $skew-angle: 4deg;
   }
 
   @keyframes fade-out-fade-in {
-    0% {
-      opacity: 1;
-    }
-    25% {
-      opacity: 0;
-    }
-    99% {
-      opacity: 0;
+    25%, 90% {
+      opacity: 0
     }
     100% {
-      opacity: 1;
+      opacity: 1
     }
   }
 }
