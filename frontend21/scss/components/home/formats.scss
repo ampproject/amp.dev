@@ -166,8 +166,14 @@ $skew-angle: 4deg;
         flex: 2;
         @include shadow-small;
 
-        p {
-          animation: 1s linear fade-out-fade-in;
+        .#{project('formats')} {
+          &-format {
+            &-content {
+              p {
+                animation: 1s linear fade-out-fade-in;
+              }
+            }
+          }
         }
 
         .#{project('button')}, .ap-m-lnk {
