@@ -36,14 +36,16 @@ success_stories:
 ---
 
 <main class="ap--main">
-  <section class="ap-home-stage ap-section">
+  <section class="ap-home-stage">
     <div class="ap-home-stage-logo">
       {% do doc.icons.useIcon('icons/logo-outline.svg') %}
       <svg>
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-outline"></use>
       </svg>
     </div>
-    <h1>{{ _('AMP is a web component framework to easily create user-first experiences for the web.') }}</h1>
+    <div class="ap-home-stage-text">
+      <h1>{{ _('AMP is a web component framework to easily create user-first experiences for the web.') }}</h1>
+    </div>
   </section>
   <section class="ap-formats ap-section --fullscreen">
     <aside class="ap-formats-navigation">

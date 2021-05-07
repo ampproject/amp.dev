@@ -1,47 +1,50 @@
 .#{project('home-stage')} {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 28px 20px 68px;
+  --spacing: 50px;
+
+  position: relative;
+  @include grid;
+  padding: var(--spacing) 0;
   text-align: center;
   grid-column: 1/-1;
+  color: color('charade');
 
-  &:first-child {
-    margin-top: 28px;
+  @include respond-to('small') {
+    --spacing: 100px;
+
+    text-align: left;
+  }
+
+  &-text {
+    grid-column: 2/24;
+
+    @include respond-to('small') {
+      grid-column: 2/14;
+      grid-row: 1;
+    }
   }
 
   &-logo {
-    position: relative;
-    margin-bottom: 19px;
+    grid-column: 1/-1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     svg {
-      width: 50vw;
-      height: 50vw;
+      height: 52vw;
+      width: 52vw;
+      max-width: 194px;
+      max-height: 194px;
     }
 
     @include respond-to('small') {
-      margin-bottom: 0;
-      padding: 0;
-      flex: 1;
+      grid-column: 15/-1;
+      grid-row: 1;
 
       svg {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
         max-width: 514px;
         max-height: 514px;
+        position: absolute;
       }
-    }
-  }
-
-  @include respond-to('small') {
-    flex-direction: row-reverse;
-    text-align: left;
-    grid-column: 2/22;
-
-    h1 {
-      flex: 2;
     }
   }
 }
