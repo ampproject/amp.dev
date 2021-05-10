@@ -47,7 +47,7 @@ success_stories:
       <h1>{{ _('AMP is a web component framework to easily create user-first experiences for the web.') }}</h1>
     </div>
   </section>
-  <section class="ap-formats ap-section --fullscreen">
+  <section class="ap-formats">
     <aside class="ap-formats-navigation">
       <div class="ap-formats-navigation-wrapper">
         {% for format in doc.format_explainer %}
@@ -115,16 +115,14 @@ success_stories:
         <p>{{ _(format.description) }}</p>
         {% if format.cta %}
           <a href="documentation/index.html" class="ap-button --inverted cta">{{ _(format.cta) }}</a>
-          <a href="{{ format.url }}" class="ap-m-lnk">
-            <div class="ap-a-ico ap-m-lnk-icon">
-              {% do doc.icons.useIcon('icons/internal.svg') %}
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-            </div>
-            <span class="ap-m-lnk-text">{{ _(format.link) }}</span>
-          </a>
-        {% else %}
-          <a href="{{ format.url }}" class="ap-button {% if not format.cta %}--inverted{% endif %}">{{ _(format.link) }}</a>
         {% endif %}
+        <a href="{{ format.url }}" class="ap-m-lnk">
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ap-m-lnk-text">{{ _(format.link) }}</span>
+        </a>
       </div>
     </div>
     {% endfor %}
