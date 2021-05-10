@@ -111,7 +111,7 @@ success_stories:
         <div class="ap-formats-logo">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
         </div>
-        <h2>{{ _(format.headline) }}</h2>
+        <h1>{{ _(format.headline) }}</h1>
         <p>{{ _(format.description) }}</p>
         {% if format.cta %}
           <a href="documentation/index.html" class="ap-button --inverted cta">{{ _(format.cta) }}</a>
@@ -149,7 +149,7 @@ success_stories:
           height="573"
           layout="fixed-height"
           role="region"
-          visible-count="(min-width: 1440px) 3, (min-width: 768px) 2, 1"
+          visible-count="(min-width: 1024px) 3, (min-width: 768px) 2, 1"
           aria-label="{{ _('News') }}"
           on="slideChange:teaser-carousel-pagination-news.toggle(index=event.index, value=true)">
           [% for post in posts %]
@@ -201,7 +201,7 @@ success_stories:
           height="573"
           layout="fixed-height"
           role="region"
-          visible-count="(min-width: 1440px) 3, (min-width: 768px) 2, 1"
+          visible-count="(min-width: 1024px) 3, (min-width: 768px) 2, 1"
           aria-label="{{ _('Success stories') }}"
           on="slideChange:teaser-carousel-pagination-success-stories.toggle(index=event.index, value=true)">
           {% for success_story in doc.success_stories %}

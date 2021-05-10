@@ -1,5 +1,5 @@
 .#{project('teaser-carousel')} {
-  --spacing: 68px;
+  --spacing: 43px;
 
   position: relative;
   display: grid;
@@ -29,7 +29,15 @@
     .amp-carousel-button {
       width: var(--spacing);
       height: var(--spacing);
-      background-size: 28px 28px;
+      background-size: 19px 19px;
+
+      @include respond-to('medium') {
+        background-size: 18px 18px;
+      }
+
+      @include respond-to('large') {
+        background-size: 28px 28px;
+      }
     }
 
     @include respond-to('small') {
@@ -91,5 +99,13 @@
         align-items: flex-start;
       }
     }
+  }
+
+  @include respond-to('medium') {
+    --spacing: 47px;
+  }
+
+  @include respond-to('large') {
+    --spacing: 68px;
   }
 }
