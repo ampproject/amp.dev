@@ -104,7 +104,7 @@ success_stories:
       <amp-position-observer on="enter:switchIcon-{{ format.name }}.start;exit:switchIcon-{{ format.name }}.start,switchIcon-{{ format.name }}.reverse" intersection-ratios="0.9" layout="nodisplay">
       </amp-position-observer>
       <div class="ap-formats-background">
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
+        <svg amp-fx="parallax" data-parallax-factor="0.95"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
       </div>
       <div class="ap-formats-format-content">
         {% do doc.icons.useIcon('/icons/amp-' + format.name + '.svg') %}

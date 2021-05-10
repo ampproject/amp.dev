@@ -20,7 +20,7 @@ $skew-angle: 4deg;
     flex-direction: row;
     flex-wrap: wrap;
     grid-gap: var(--gap);
-    padding: 0 10px;
+    padding: 0 var(--gap);
   }
 
   @include respond-to('large') {
