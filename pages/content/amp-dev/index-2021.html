@@ -87,20 +87,20 @@ success_stories:
             }
           </script>
         </amp-animation>
-        <div class="ap-formats-navigation-icon-wrapper">
+        <button class="ap-formats-navigation-icon-wrapper" on="tap:ap-formats-format-{{ format.name }}.scrollTo(duration=300)">
           <div class="ap-formats-navigation-icon inactive {{ format.name }}">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
           </div>
           <div class="ap-formats-navigation-icon active {{ format.name }}">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
           </div>
-        </div>
+        </button>
         {% endfor %}
       </div>
     </aside>
     {% set initial_format = doc.format_explainer[0].name -%}
     {% for format in doc.format_explainer %}
-    <div class="ap-formats-format {{ format.name }}{% if format.name == initial_format %} initial{% endif %}">
+    <div class="ap-formats-format {{ format.name }}" id="ap-formats-format-{{ format.name }}">
       <amp-position-observer on="enter:switchIcon-{{ format.name }}.start;exit:switchIcon-{{ format.name }}.start,switchIcon-{{ format.name }}.reverse" intersection-ratios="0.9" layout="nodisplay">
       </amp-position-observer>
       <div class="ap-formats-background">
