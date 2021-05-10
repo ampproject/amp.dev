@@ -1,0 +1,43 @@
+.#{project('center-stage')} {
+  --spacing: 50px;
+
+  position: relative;
+  @include grid;
+  color: color('white');
+  grid-column: 1 / -1;
+  padding: var(--spacing) 0;
+
+  @include respond-to('small') {
+    --spacing: 100px;
+  }
+
+  .#{project('section')} + & {
+    margin-top: 100px;
+  }
+
+  &:before {
+    content: '';
+    @include fill;
+    background: linear-gradient(
+      180deg,
+      color('robins-egg') -45%,
+      color('blue-ribbon') 161%
+    );
+    color: color('white');
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    grid-column: 2 / 24;
+  }
+
+  .#{project('button')} {
+    width: max-content;
+    margin: 50px auto 0 auto;
+  }
+}
