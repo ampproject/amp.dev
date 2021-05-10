@@ -38,6 +38,7 @@
 @import 'components/filter-bubbles-list.scss';
 @import 'components/pill.scss';
 @import 'components/content/stage.scss';
+@import 'components/extra/about/components-showcase.scss';
 
 main {
   @include grid;
@@ -115,7 +116,6 @@ p code {
   font-weight: 500;
   word-break: normal;
   color: color('black');
-  background: color('iron');
   font-size: 0.9em;
 }
 
