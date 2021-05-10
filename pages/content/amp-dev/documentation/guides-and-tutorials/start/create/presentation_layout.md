@@ -1,35 +1,21 @@
 ---
-$title: Modify presentation and layout
+$title: Adding style
 $order: 3
-description: 'AMP pages are web pages; any styling to the page and its elements is done using common CSS properties. Style elements using class or element selectors ...'
-author: pbakaus
-contributors:
-  - bpaduch
+description: 'AMP pages are web pages—any styling to the page and its elements is done using standard CSS properties.'
+author: crystalonscript
 ---
 
-## Modify the presentation
+AMP pages are web pages — any styling to the page and its elements is done using standard CSS properties. However, AMP requires that all CSS is included within a custom `style` tag in the head of the document, called `<style amp-custom>`. The `<style amp-custom>` tag must go inside the`<head>` of the document. Styles may also be defined inlined if needed. Try adding the following styles to your page:
 
-AMP pages are web pages; any styling to the page and its elements is done using common CSS properties. Style elements using class or element selectors in an embedded stylesheet in the `<head>`, called `<style amp-custom>`:
+```css
+  <style amp-custom>
+    h1 {
+      margin: 1rem;
+    }
+     body {
+      background-color: blue;
+    }
+  </style>
+```
 
-[sourcecode:html]
-<style amp-custom>
-  /* any custom style goes here */
-  body {
-    background-color: white;
-  }
-  amp-img {
-    background-color: gray;
-    border: 1px solid black;
-  }
-</style>
-[/sourcecode]
-
-Every AMP page can only have a single embedded stylesheet and inline styles, but there are certain selectors you’re not allowed to use. [Learn all about styling](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).
-
-## Control the layout
-
-AMP follows stricter rules when laying out elements on the page. On a normal HTML page, you almost exclusively use CSS to lay out elements. But for performance reasons, AMP requires all elements to have an explicit size set from the get-go.
-
-[tip type="read-on"]
-**READ ON –** Learn all about how AMP renders and layouts a page and how you can modify the layout in [Layout & Media queries](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md).
-[/tip]
+AMP allows almost all CSS, but there are a few selectors that must be avoided. [Learn about those and more about styling in AMP here](../../develop/style_and_layout/style_pages.md).

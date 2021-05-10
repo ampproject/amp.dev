@@ -1,7 +1,7 @@
 ---
 $title: AMP Websites
 $view: /views/2021/base.html
-description: "AMP is a simple and robust format to ensure your website is fast, user-first, and makes money. AMP provides long-term success for your web strategy with distribution across ..."
+description: 'AMP is a simple and robust format to ensure your website is fast, user-first, and makes money. AMP provides long-term success for your web strategy with distribution across ...'
 sharing_images:
   square: /static/img/sharing/about-websites-1x1.png
   wide: /static/img/sharing/about-websites-600x314.png
@@ -14,11 +14,16 @@ sharing_images:
         <h2>{{ _('AMP Websites') }}</h2>
         <h1>{{ _('A framework that amplifies page experience.') }}</h1>
         <p>
-          {{ _('AMP is a simple and robust web components framework that makes it easy to build fast websites that are user-first and makes money. AMP provides long-term success for your web strategy with distribution across popular platforms and reduced operating costs.') }}
+          {{ _('AMP is a simple and robust web components framework that makes
+          it easy to build fast websites that are user-first and makes money.
+          AMP provides long-term success for your web strategy with distribution
+          across popular platforms and reduced operating costs.') }}
         </p>
 
-        <a class="ap-button --inverted"
-          href="{{ g.doc('/content/amp-dev/documentation/index.html', locale=doc.locale).url.path }}">
+        <a
+          class="ap-button --inverted"
+          href="{{ g.doc('/content/amp-dev/documentation/index.html', locale=doc.locale).url.path }}"
+        >
           {{ _('Get started with AMP') }}
         </a>
       </div>
@@ -26,13 +31,61 @@ sharing_images:
 
     <div class="ap-stage-backdrop">
       <svg width="457" height="457">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/static/frontend/sprite.svg#deco-foundation"></use>
+        <use
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xlink:href="/static/frontend/sprite.svg#deco-foundation"
+        ></use>
       </svg>
     </div>
 
     <div class="ap-stage-media">
-      <amp-img src="/static/img/about/websites-amp-sidebar.jpg" layout="responsive" width="653" height="567"
-        alt="{{ _('A screenshot showing amp-sidebar.') }}"></amp-img>
+      <amp-img
+        src="/static/img/about/websites-amp-sidebar.jpg"
+        layout="responsive"
+        width="653"
+        height="567"
+        alt="{{ _('A screenshot showing amp-sidebar.') }}"
+      ></amp-img>
+    </div>
+  </section>
+
+  <section class="ap-section --col-4-23">
+    <div class="ap-text-block">
+      <h2 class="ap-h1">{{ _('Grab-and-go components') }}</h2>
+    </div>
+
+    <div class="ap-text-media --thirds --center --mobile-reverse">
+      <div class="ap-text-media-col">
+        <div class="ap-text-block">
+          <p>
+            {{ _('Quickly build pages with AMP’s extensive component library.
+            These components are copy-and-pastable and meet a wide range of UI
+            and functionality needs. They are customizable in behavior and style
+            through attributes and CSS. Best of all, they have a team of
+            engineers working full-time to guarantee performance.') }}
+          </p>
+        </div>
+        <a
+          href="{{ g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path }}"
+          class="ap-m-lnk ap-m-lnk-square"
+        >
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg>
+              <use
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="#internal"
+              ></use>
+            </svg>
+          </div>
+          <span class="ap-m-lnk-text"
+            >{{ _('See the full component library') }}</span
+          >
+        </a>
+      </div>
+      <div class="ap-text-media-col">
+        {% include 'views/2021/partials/extras/about/components-showcase.j2' %}
+      </div>
     </div>
   </section>
 
@@ -45,20 +98,35 @@ sharing_images:
         <div class="ap-text-block">
           <h2 class="ap-h1">{{ _('Guaranteed Page Experience') }}</h2>
           <p>
-            {{ _('AMP provides you with the tools needed to build websites that meet Page Experience ranking signals while remaining flexible and customizable to your needs. Page experience is a set of signals from Google that measure how users perceive their experience interacting with a web page beyond its pure information value. AMP is a straightforward way to a high page experience score. Domains built with AMP are 5 times more likely to pass* Core Web Vitals metrics than non-AMP!') }}
+            {{ _('AMP provides you with the tools needed to build websites that
+            meet Page Experience ranking signals while remaining flexible and
+            customizable to your needs. Page experience is a set of signals from
+            Google that measure how users perceive their experience interacting
+            with a web page beyond its pure information value. AMP is a
+            straightforward way to a high page experience score. Domains built
+            with AMP are 5 times more likely to pass* Core Web Vitals metrics
+            than non-AMP!') }}
           </p>
         </div>
 
-        <a class="ap-button" href="{{ g.doc('/content/amp-dev/page-experience.html', locale=doc.locale).url.path }}">
+        <a
+          class="ap-button"
+          href="{{ g.doc('/content/amp-dev/page-experience.html', locale=doc.locale).url.path }}"
+        >
           {{ _('Check your page’s performance') }}
         </a>
 
-        <a href="{{g.doc('/content/amp-dev/about/page-experience.html', locale=doc.locale).url.path}}"
-          class="ap-m-lnk ap-m-lnk-square">
+        <a
+          href="{{g.doc('/content/amp-dev/about/page-experience.html', locale=doc.locale).url.path}}"
+          class="ap-m-lnk ap-m-lnk-square"
+        >
           <div class="ap-a-ico ap-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
             <svg>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+              <use
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="#internal"
+              ></use>
             </svg>
           </div>
           <span class="ap-m-lnk-text">{{ _('Learn more') }}</span>
@@ -75,23 +143,38 @@ sharing_images:
     <div class="ap-text-media --thirds --center --mobile-reverse">
       <div class="ap-text-media-col">
         <div class="ap-text-block">
-          <p>{{ _('Select a ready-to-go framework or integration-enabled CMS to get an AMP valid site up and running, fast. These platforms give you all the benefits of AMP without all the built-from-scratch hassle.') }}</p>
+          <p>
+            {{ _('Select a ready-to-go framework or integration-enabled CMS to
+            get an AMP valid site up and running, fast. These platforms give you
+            all the benefits of AMP without all the built-from-scratch hassle.')
+            }}
+          </p>
         </div>
-        <a href="{{ g.doc('/content/amp-dev/support/faq/platform-and-vendor-partners.md', locale=doc.locale).url.path }}" class="ap-m-lnk ap-m-lnk-square">
+        <a
+          href="{{ g.doc('/content/amp-dev/support/faq/platform-and-vendor-partners.md', locale=doc.locale).url.path }}"
+          class="ap-m-lnk ap-m-lnk-square"
+        >
           <div class="ap-a-ico ap-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+            <svg>
+              <use
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="#internal"
+              ></use>
+            </svg>
           </div>
           <span class="ap-m-lnk-text">{{ _('See supported platforms') }}</span>
         </a>
       </div>
       <div class="ap-text-media-col">
         <figure>
-          <amp-img alt="{{ _('Supported CMS’ and frameworks') }}"
-              src="/static/img/frameworks.jpg"
-              width="714"
-              height="288"
-              layout="responsive">
+          <amp-img
+            alt="{{ _('Supported CMS’ and frameworks') }}"
+            src="/static/img/frameworks.jpg"
+            width="714"
+            height="288"
+            layout="responsive"
+          >
           </amp-img>
         </figure>
       </div>

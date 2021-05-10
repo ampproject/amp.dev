@@ -42,6 +42,7 @@
 @import 'components/content/teaser-carousel.scss';
 @import 'components/content/teaser.scss';
 @import 'components/content/intro.scss';
+@import 'components/extra/about/components-showcase.scss';
 
 main {
   @include grid;
@@ -120,7 +121,6 @@ p code {
   font-weight: 500;
   word-break: normal;
   color: color('black');
-  background: color('iron');
   font-size: 0.9em;
 }
 
