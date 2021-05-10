@@ -139,7 +139,7 @@
 		"expect-puppeteer": "5.0.3",
 		"fetch-mock": "9.11.0",
 		"file-loader": "6.2.0",
-		"filemanager-webpack-plugin": "4.0.0",
+		"filemanager-webpack-plugin": "5.0.0",
 		"globby": "11.0.3",
 		"gulp": "4.0.2",
 		"gulp-amphtml-validator": "1.0.6",
