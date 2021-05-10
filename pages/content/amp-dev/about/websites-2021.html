@@ -71,7 +71,14 @@ cards:
   <section class="ap-section --col-3-22">
     <div class="ap-text-media">
       <div class="ap-text-media-col">
-        {% include 'views/2021/partials/extras/page-experience/pie-chart.j2' %}
+        <amp-img
+          alt="{{ _('A green check mark') }}"
+          src="/static/img/about/page-experience.jpg"
+          width="1070"
+          height="1034"
+          layout="responsive"
+        >
+        </amp-img>
       </div>
       <div class="ap-text-media-col">
         <div class="ap-text-block">
@@ -214,6 +221,48 @@ cards:
           >
           </amp-img>
         </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="ap-section --col-3-22">
+    <div class="ap-text-media">
+      <div class="ap-text-media-col">
+        <amp-img
+          alt="{{ _('AMP Contributors in front of GitHub issues') }}"
+          src="/static/img/about/start-contributing.jpg"
+          width="924"
+          height="656"
+          layout="responsive"
+        >
+        </amp-img>
+      </div>
+      <div class="ap-text-media-col">
+        <div class="ap-text-block">
+          <h2 class="ap-h1">{{ _('Get involved') }}</h2>
+          <p>
+            {{ _('AMP is open source! This means it’s built by the community,
+            for the community with the OpenJS foundation. There are many ways to
+            contribute, including implementing features, fixing bugs and writing
+            documentation! ') }}
+          </p>
+        </div>
+
+        <a
+          href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path }}"
+          class="ap-m-lnk ap-m-lnk-square"
+        >
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg>
+              <use
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="#internal"
+              ></use>
+            </svg>
+          </div>
+          <span class="ap-m-lnk-text">{{ _('Start contributing') }}</span>
+        </a>
       </div>
     </div>
   </section>
