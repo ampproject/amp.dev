@@ -6,7 +6,7 @@
   padding: var(--spacing) 0;
   text-align: center;
   grid-column: 1/-1;
-  max-width: 1440px;
+  max-width: $maxWidth;
   margin: 0 auto;
   color: color('charade');
 

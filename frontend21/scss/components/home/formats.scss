@@ -10,7 +10,7 @@ $skew-angle: 4deg;
 
   grid-column: 1/-1;
   margin: 0 auto;
-  max-width: 1440px;
+  max-width: $maxWidth;
 
   display: flex;
   flex-direction: column;

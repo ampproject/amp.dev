@@ -5,7 +5,7 @@
   display: grid;
   grid-gap: 15px;
   grid-template-columns: var(--spacing) 1fr var(--spacing);
-  max-width: 1440px;
+  max-width: $maxWidth;
   margin: 0 auto 100px;
 
   &-container {
