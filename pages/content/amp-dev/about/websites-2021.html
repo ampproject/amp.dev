@@ -5,6 +5,25 @@ description: 'AMP is a simple and robust format to ensure your website is fast, 
 sharing_images:
   square: /static/img/sharing/about-websites-1x1.png
   wide: /static/img/sharing/about-websites-600x314.png
+cards:
+  - icon: icon-flash
+    headline: Lightning Speed
+    text: AMP pages load near instantly – across all devices and platforms.
+  - icon: icon-build
+    headline: Easy Building
+    text: 'You can often convert your entire archive in days – especially when using common CMS like WordPress or Drupal.'
+  - icon: icon-flexible
+    headline: Maintain flexibility
+    text: 'You can use CSS to customize your styling and dynamic data to fetch the freshest data where needed.'
+  - icon: icon-performance
+    headline: Ensure performance
+    text: 'It takes a lot of time and effort to build a great website. AMP components are already optimized for the best performance.'
+  - icon: icon-touch-points
+    headline: Various web touch points
+    text: 'Used by global platforms like Google, Bing and Twitter, AMP allows users a native-feeling experience across all platforms by defaulting to AMP pages when available.'
+  - icon: icon-heart
+    headline: Open web
+    text: 'The AMP Project is an open source initiative to protect the future of the web by delivering a better, faster and more user-friendly experience.'
 ---
 
 <main>
@@ -97,7 +116,7 @@ sharing_images:
 
   <section class="ap-center-stage">
     <div class="ap-center-stage-content">
-      <h2 class="ap-center-stage-headline">{{ _('How AMP works for you') }}</h2>
+      <h2 class="ap-h2">{{ _('How AMP works for you') }}</h2>
       <p class="ap-center-stage-copy">
         {{ _("AMP meets you exactly where you are. Whether you're building a
         site from scratch, using a CMS or optimizing an in-house solution, AMP
@@ -112,6 +131,45 @@ sharing_images:
         {{ _('Learn how AMP works') }}
       </a>
     </div>
+  </section>
+  <section class="ap-cards">
+    <div class="ap-cards-grid" role="list">
+      {% for card in doc.cards %}
+      <div class="ap-cards-item" role="listitem">
+        <svg class="ap-cards-item-icon" width="30" height="30">
+          <use
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xlink:href="/static/frontend/sprite.svg#{{ card.icon }}"
+          ></use>
+        </svg>
+
+        <h3>{{ card.headline }}</h3>
+        <p>{{ card.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <amp-carousel
+      class="ap-cards-carousel"
+      role="list"
+      layout="fixed-height"
+      height="300"
+      type="slides"
+    >
+      {% for card in doc.cards %}
+      <div class="ap-cards-item" role="listitem">
+        <svg class="ap-cards-item-icon" width="30" height="30">
+          <use
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xlink:href="/static/frontend/sprite.svg#{{ card.icon }}"
+          ></use>
+        </svg>
+
+        <h3>{{ card.headline }}</h3>
+        <p>{{ card.text }}</p>
+      </div>
+      {% endfor %}
+    </amp-carousel>
   </section>
 
   <section class="ap-section --col-4-23">
@@ -162,7 +220,7 @@ sharing_images:
 
   <section class="ap-center-stage">
     <div class="ap-center-stage-content">
-      <h2 class="ap-center-stage-headline">{{ _('Get started') }}</h2>
+      <h2 class="ap-h2 ap-center-stage-headline">{{ _('Get started') }}</h2>
       <p class="ap-center-stage-copy">
         {{ _("Ready to start building websites with AMP? Click the button below
         to find step one of your AMP journey!") }}

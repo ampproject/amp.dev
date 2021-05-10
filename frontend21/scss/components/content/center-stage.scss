@@ -6,6 +6,12 @@
   color: color('white');
   grid-column: 1 / -1;
   padding: var(--spacing) 0;
+  background: linear-gradient(
+    180deg,
+    color('robins-egg') -45%,
+    color('blue-ribbon') 161%
+  );
+  color: color('white');
 
   @include respond-to('small') {
     --spacing: 100px;
@@ -15,24 +21,11 @@
     margin-top: 100px;
   }
 
-  &:before {
-    content: '';
-    @include fill;
-    background: linear-gradient(
-      180deg,
-      color('robins-egg') -45%,
-      color('blue-ribbon') 161%
-    );
-    color: color('white');
-  }
-
   &-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
     text-align: center;
-    z-index: 1;
     grid-column: 2 / 24;
   }
 

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
+    <defs>
+        <path id="6yhbazyxka" d="M0 0H64V64H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <g transform="translate(-555 -3603) translate(0 3043.16) translate(105 530) translate(420) translate(30 29.84)">
+                                <mask id="i7w33mqetb" fill="#fff">
+                                    <use xlink:href="#6yhbazyxka"/>
+                                </mask>
+                                <use fill="#20202A" xlink:href="#6yhbazyxka"/>
+                                <text font-family="FiraMono-Bold, Fira Mono" font-size="25.2" font-weight="bold" mask="url(#i7w33mqetb)">
+                                    <tspan x="9" y="42" fill="#FFF">&lt;</tspan> <tspan x="24.12" y="42" fill="#EB49E1">/</tspan> <tspan x="39.24" y="42" fill="#FFF">&gt;</tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
