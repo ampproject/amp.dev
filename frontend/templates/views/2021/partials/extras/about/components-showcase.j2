@@ -1,0 +1,33 @@
+<article class="ap-components-showcase">
+  <div class="ap-components-showcase-buttons" role="list">
+    <button class="ap-button">{{ _('Carousel') }}</button>
+    <button class="ap-button --inactive">{{ _('Accordion') }}</button>
+  </div>
+
+  <div class="ap-components-showcase-demos">
+    <div class="ap-components-showcase-demo --carousel">
+      <div class="ap-components-showcase-demo-code">
+        <div class="ap-code-snippet">
+          {% set code_snippet = g.doc('/shared/components-showcase/amp-carousel.html').content %}
+          {{ doc.pod.markdown.convert('```html\n' + code_snippet + '\n```')|safe }}
+        </div>
+      </div>
+
+      <div class="ap-components-showcase-demo-ui">
+        <!-- Styled demo here -->
+      </div>
+    </div>
+    <div class="ap-components-showcase --accordion">
+      <div class="ap-components-showcase-demo-code">
+        <div class="ap-code-snippet">
+          {% set code_snippet = g.doc('/shared/components-showcase/amp-accordion.html').content %}
+          {{ doc.pod.markdown.convert('```html\n' + code_snippet + '\n```')|safe }}
+        </div>
+      </div>
+
+      <div class="ap-components-showcase-demo-ui">
+        <!-- Styled demo here -->
+      </div>
+    </div>
+  </div>
+</article>

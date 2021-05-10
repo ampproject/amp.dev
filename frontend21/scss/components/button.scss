@@ -22,8 +22,13 @@
     box-shadow: 0 25px 20px -15px rgba(0, 0, 0, 0.15);
   }
 
-  &.--inverted {
+  &.--inverted,
+  &.--inactive {
     background: color('white');
     color: color('blue-ribbon');
+  }
+
+  &.--inactive {
+    color: inherit;
   }
 }
