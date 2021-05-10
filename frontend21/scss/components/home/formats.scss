@@ -151,8 +151,12 @@ $skew-angle: 4deg;
       height: 460px;
       transform: skewY(0deg);
       @include shadow-large;
-      transition: box-shadow .3s ease;
+      transition: box-shadow .3s ease-in-out;
       flex: 1 0 calc(50% - (2 * var(--gap)));
+
+      &:hover {
+        @include shadow-small;
+      }
 
       &-content {
         padding: 65px 25px 38px;
