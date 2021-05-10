@@ -128,6 +128,7 @@ $skew-angle: 4deg;
       }
 
       .ap-m-lnk {
+        padding-bottom: 0;
         &-text {
           color: inherit;
         }
@@ -148,7 +149,6 @@ $skew-angle: 4deg;
     }
 
     @include respond-to('small') {
-      height: 460px;
       transform: skewY(0deg);
       @include shadow-large;
       transition: box-shadow .3s ease-in-out;
