@@ -26,7 +26,6 @@
 @import 'components/content.scss';
 @import 'components/icon-text.scss';
 @import 'components/teaser-grid.scss';
-@import 'components/teaser-component.scss';
 @import 'components/table-component.scss';
 @import 'components/component-intro.scss';
 @import 'components/code-snippet.scss';
@@ -38,6 +37,11 @@
 @import 'components/filter-bubbles-list.scss';
 @import 'components/pill.scss';
 @import 'components/content/stage.scss';
+@import 'components/home/home-stage.scss';
+@import 'components/home/formats.scss';
+@import 'components/content/teaser-carousel.scss';
+@import 'components/content/teaser.scss';
+@import 'components/content/intro.scss';
 @import 'components/extra/about/components-showcase.scss';
 
 main {
@@ -50,6 +54,7 @@ main {
 
   @include respond-to('large') {
     grid-gap: 30px;
+    max-width: 1920px;
   }
 }
 

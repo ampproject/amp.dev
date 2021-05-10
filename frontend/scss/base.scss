@@ -34,6 +34,14 @@ html, body {
   box-shadow: 0 10px 15px 0 transparentize(color('black'), 0.6);
   transition: 400ms;
   background-color: color('white');
+  position: relative;
+  box-sizing: border-box;
+  margin: 1em;
+  border-style: none;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  z-index: 10;
+  pointer-events: all;
 
   &-prev {
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='%23005AF0'%3E%3Cpath d='M15 8.25H5.87l4.19-4.19L9 3 3 9l6 6 1.06-1.06-4.19-4.19H15v-1.5z'/%3E%3C/svg%3E");
