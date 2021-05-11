@@ -66,8 +66,6 @@
         pointer-events: none;
       }
 
-     
-
       &:after {
         content: attr(title);
         position: absolute;
@@ -94,6 +92,13 @@
       button {
         margin: 50px 0 0 0;
       }
+    }
+
+    .grap-lnk {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding-bottom: 0;
     }
   }
 }

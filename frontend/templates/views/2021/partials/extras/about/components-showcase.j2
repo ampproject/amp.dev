@@ -1,3 +1,5 @@
+{% set components = ['carousel', 'animation', 'accordion', 'autocomplete'] %}
+
 <article class="ap-components-showcase">
   <div class="ap-components-showcase-buttons" role="list">
     <button [class]="carouselVisibility ? 'ap-button' : 'ap-button --inactive' " on="tap:AMP.setState({carouselVisibility: true, animationVisibility: false, accordionVisibility: false, autocompleteVisibility: false})" class="ap-button">{{ _('Carousel') }}</button>
@@ -6,104 +8,38 @@
     <button [class]="autocompleteVisibility ? 'ap-button' : 'ap-button --inactive'" on="tap:AMP.setState({carouselVisibility: false, animationVisibility: false, accordionVisibility: false, autocompleteVisibility: true})" class="ap-button --inactive">{{ _('Autocomplete') }}</button>
   </div>
 
-  <div class="ap-components-showcase-demos">
-    <div [class]="carouselVisibility ? 'ap-components-showcase-demo --carousel show' : 'hide' " class="ap-components-showcase-demo --carousel show">
-      <div class="ap-components-showcase-demo-code" title="amp-carousel">
+  <div class="ap-components-showcase-demos">  
+    {%for component in components %}
+    {%set visibilityName = component ~ "Visibility" %}
+    {%set componentLink = "/shared/components-showcase/amp-" ~ component ~ ".html" %}
+    {%set componentBind = visibilityName ~ " ? 'ap-components-showcase-demo --"~component ~ " show' : 'hide' " %}
+    {%set componentDoc = g.doc('/content/amp-dev/documentation/components/amp-'~component, locale=doc.locale).url.path %}
+    {%if component == components[0] %}
+      {%set componentClass = "ap-components-showcase-demo --" ~component~ " show" %}
+    {% else %}
+    {%set componentClass = "hide" %}
+    {%endif%}
+
+    <div [class]="{{componentBind | safe }}" class="{{ (componentClass | safe)}}">
+      <div class="ap-components-showcase-demo-code" title={{"amp-"~component}}>
         <div class="ap-code-snippet">
-          {% set code_snippet = g.doc('/shared/components-showcase/amp-carousel.html').content %}
+          {% set code_snippet = g.doc(componentLink).content %}
           {{ doc.pod.markdown.convert('```html\n' + code_snippet + '\n```')|safe }}
         </div>
       </div>
 
-      <div class="ap-components-showcase-demo-ui" title="<amp-carousel>">
+      <div class="ap-components-showcase-demo-ui" title={{"<amp-"~component~">"}}>
         <!-- Styled demo here -->
-        <amp-carousel width="450" height="400" layout="responsive" type="slides" role="region" aria-label="Basic carousel">
-          <amp-img src="/static/inline-examples/images/image1.jpg" width="400" height="450" layout="fill"></amp-img>
-          <amp-img src="/static/inline-examples/images/image2.jpg" width="400" height="450" layout="fill"></amp-img>
-          <amp-img src="/static/inline-examples/images/image3.jpg" width="400" height="450" layout="fill"></amp-img>
-        </amp-carousel>
+        {{ code_snippet|safe }}
       </div>
-    </div>
-    <div [class]="animationVisibility ? 'ap-components-showcase-demo --animation show' : 'hide' " class="hide">
-      <div class="ap-components-showcase-demo-code" title="amp-animation">
-        <div class="ap-code-snippet">
-          {% set code_snippet = g.doc('/shared/components-showcase/amp-animation.html').content %}
-          {{ doc.pod.markdown.convert('```html\n' + code_snippet + '\n```')|safe }}
+      <a href="{{componentDoc | safe}}" class="ap-m-lnk grap-lnk">
+        <div class="ap-a-ico ap-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
         </div>
-      </div>
-
-      <div class="ap-components-showcase-demo-ui" title="<amp-animation>">
-        <!-- Styled demo here -->
-        <div class="rotate-image-window">
-          <amp-img id="animatedImage" width="450" height="300" layout="responsive" src="/static/samples/img/elephant.jpg" alt="Picture of an elephant"></amp-img>
-          <button on="tap:scaleUpImage.start" class="ap-button">Click to scale up the image</button>
-        </div>
-
-        <amp-animation id="scaleUpImage" layout="nodisplay">
-          <script type="application/json">
-            {
-              "duration": "1s",
-              "fill": "both",
-              "direction": "normal",
-              "animations": [
-                {
-                  "selector": "#animatedImage",
-                  "keyframes": [
-                    { "transform": "scale(1)" },
-                    { "transform": "scale(1.2)" },
-                    { "transform": "scale(1)" }
-                  ]
-                }
-              ]
-            }
-          </script>
-        </amp-animation>
-      </div>
+        <span class="ap-m-lnk-text">All about this component</span>
+      </a>
     </div>
-    <div [class]="accordionVisibility ? 'ap-components-showcase --accordion show' : 'hide' " class="hide">
-      <div class="ap-components-showcase-demo-code" title="amp-accordion">
-        <div class="ap-code-snippet -p">
-          {% set code_snippet = g.doc('/shared/components-showcase/amp-accordion.html').content %}
-          {{ doc.pod.markdown.convert('```html\n' + code_snippet + '\n```')|safe }}
-        </div>
-      </div>
-
-      <div class="ap-components-showcase-demo-ui" title="<amp-accordion>">
-        <!-- Styled demo here -->
-        <amp-accordion id="my-accordion" disable-session-states>
-          <section expanded>
-            <h2>Section 1</h2>
-            <p>Content in section 1.</p>
-          </section>
-          <section>
-            <h2>Section 2</h2>
-            <div>Content in section 2.</div>
-          </section>
-          <section>
-            <h2>Section 3</h2>
-            <div>Content in section 3.</div>
-          </section>
-        </amp-accordion>
-      </div>
-    </div>
-    <div [class]="autocompleteVisibility ? 'ap-components-showcase --autocomplete show' : 'hide' " class="hide">
-      <div class="ap-components-showcase-demo-code" title="amp-autocomplete">
-        <div class="ap-code-snippet">
-          {% set code_snippet = g.doc('/shared/components-showcase/amp-autocomplete.html').content %}
-          {{ doc.pod.markdown.convert('```html\n' + code_snippet + '\n```')|safe }}
-        </div>
-      </div>
-
-      <div class="ap-components-showcase-demo-ui" title="<amp-autocomplete>">
-        <!-- Styled demo here -->
-        <amp-autocomplete filter="substring" id="myAutocomplete">
-        <span>Please enter "apple", "banana" or "cherry"</span>
-        <input />
-        <script type="application/json">
-          {"items": ["apple", "banana", "cherry"]}
-        </script>
-      </amp-autocomplete>
-      </div>
-    </div>
+    {%endfor%}
   </div>
 </article>
