@@ -154,7 +154,7 @@ $gap: 10px;
       transform: skewY(0deg);
       @include shadow-large;
       transition: box-shadow .3s ease-in-out;
-      flex: 1 0 calc(50% - (2 * $gap));
+      flex: 1 0 calc(50% - (2 * #{$gap}));
 
       &:hover {
         @include shadow-small;
@@ -189,7 +189,7 @@ $gap: 10px;
     }
 
     @include respond-to('large') {
-      flex: 1 0 calc(25% - (4 * $gap));
+      flex: 1 0 calc(25% - (4 * #{$gap}));
     }
   }
 
