@@ -1,5 +1,6 @@
 .#{project('intro')} {
-  margin-bottom: 72px;
+  color: color('charade');
+  margin-bottom: 36px;
 
   h1 {
     margin-bottom: 20px;
@@ -9,7 +10,11 @@
     margin-bottom: 40px;
   }
 
+  .ap-m-lnk-square {
+    border-bottom: none;
+  }
+
   @include respond-to('medium') {
-    margin-bottom: 100px;
+    margin-bottom: 56px;
   }
 }
