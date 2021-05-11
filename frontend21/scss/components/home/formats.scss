@@ -21,10 +21,11 @@ $gap: 10px;
     flex-wrap: wrap;
     grid-gap: $gap;
     padding: 0 $gap;
+    grid-column: 2/22;
   }
 
   @include respond-to('large') {
-    grid-column: 2/24;
+    grid-column: 1/-1;
   }
 
   &-navigation {
@@ -113,10 +114,9 @@ $gap: 10px;
       flex-direction: column;
       height: 100%;
 
-      p {
-        font-weight: bold;
+      h5 {
         flex-grow: 2;
-        margin-bottom: 40px;
+        margin: 25px 0 40px;
       }
 
       a {
@@ -155,13 +155,14 @@ $gap: 10px;
       @include shadow-large;
       transition: box-shadow .3s ease-in-out;
       flex: 1 0 calc(50% - (2 * #{$gap}));
+      border-radius: 4px;
 
       &:hover {
         @include shadow-small;
       }
 
       &-content {
-        padding: 65px 25px 38px;
+        padding: 50px 30px 30px;
         transform: skewY(0deg);
 
         h1 {
@@ -220,6 +221,9 @@ $gap: 10px;
       top: 0;
       bottom: 0;
       transform: skewY(0deg);
+      svg {
+        display: none;
+      }
     }
 
     .websites & {
