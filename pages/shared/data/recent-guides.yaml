@@ -1,3 +1,5 @@
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/actions_events.md
+  date: 2021-05-07 13:37:13 -0700
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-video-interface.md
   date: 2021-03-22 12:08:53 -0400
 - path: /content/amp-dev/documentation/guides-and-tutorials/integrate/embed-stories-nonamp.md
@@ -256,20 +258,6 @@
   date: 2018-12-01 01:12:23 -0800
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md
   date: 2018-12-01 01:12:23 -0800
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md
-  date: 2018-11-30 08:03:59 -0800
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/include_image.md
-  date: 2018-11-30 08:03:59 -0800
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/index.md
-  date: 2018-11-30 08:03:59 -0800
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/prepare_for_discovery.md
-  date: 2018-11-30 08:03:59 -0800
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/presentation_layout.md
-  date: 2018-11-30 08:03:59 -0800
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/preview_and_validate.md
-  date: 2018-11-30 08:03:59 -0800
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/publish.md
-  date: 2018-11-30 08:03:59 -0800
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/building-page.md
   date: 2018-11-30 08:03:59 -0800
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md
@@ -299,4 +287,18 @@
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/setting_up.md
   date: 2018-11-30 08:03:59 -0800
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/tracking_data.md
+  date: 2018-11-30 08:03:59 -0800
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md
+  date: 2018-11-30 08:03:59 -0800
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/include_image.md
+  date: 2018-11-30 08:03:59 -0800
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/index.md
+  date: 2018-11-30 08:03:59 -0800
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/prepare_for_discovery.md
+  date: 2018-11-30 08:03:59 -0800
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/presentation_layout.md
+  date: 2018-11-30 08:03:59 -0800
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/preview_and_validate.md
+  date: 2018-11-30 08:03:59 -0800
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/publish.md
   date: 2018-11-30 08:03:59 -0800
