@@ -6,7 +6,7 @@
   grid-gap: 15px;
   grid-template-columns: var(--spacing) 1fr var(--spacing);
   max-width: 1440px;
-  margin: 0 auto 100px;
+  margin: 100px auto 100px auto;
 
   &-container {
     grid-column: 1/-1;
@@ -74,20 +74,20 @@
 
   @include respond-to('small') {
     &-container {
-      padding: 0 var(--spacing)
+      padding: 0 var(--spacing);
     }
 
     .#{project('teaser')} {
       padding-bottom: 15px;
 
-      &:nth-child(3n+1) {
+      &:nth-child(3n + 1) {
         align-items: center;
       }
-      &:nth-child(3n+2) {
+      &:nth-child(3n + 2) {
         align-items: flex-end;
       }
 
-      &:nth-child(3n+3) {
+      &:nth-child(3n + 3) {
         align-items: flex-start;
       }
     }
