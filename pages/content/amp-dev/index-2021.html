@@ -53,7 +53,7 @@ success_stories:
       </svg>
     </div>
     <div class="ap-home-stage-text">
-      <h1>{{ _('AMP is a web component framework to easily create user-first experiences for the web.') }}</h1>
+      <h1 class="ap-h1">{{ _('AMP is a web component framework to easily create user-first experiences for the web.') }}</h1>
     </div>
   </section>
   <section class="ap-formats">
@@ -121,7 +121,7 @@ success_stories:
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
         </div>
         <h1>{{ _(format.headline) }}</h1>
-        <p>{{ _(format.description) }}</p>
+        <h5>{{ _(format.description) }}</h5>
         {% if format.cta %}
           <a href="documentation/index.html" class="ap-button --inverted cta">{{ _(format.cta) }}</a>
         {% endif %}
