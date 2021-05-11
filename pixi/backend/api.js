@@ -21,8 +21,8 @@ const cheerio = require('cheerio');
 const log = require('@lib/utils/log')('Pixi API');
 const fetch = require('node-fetch');
 const RateLimitedFetch = require('@lib/utils/rateLimitedFetch');
-const GA_TRACKING_ID = require('../../platform/config/shared.json')
-  .gaTrackingId;
+const GA_TRACKING_ID =
+  require('../../platform/config/shared.json').gaTrackingId;
 const {API_ENDPOINT_TOOLBOX_PAGE_EXPERIENCE} = require('../config').production;
 
 const rateLimitedFetch = new RateLimitedFetch({

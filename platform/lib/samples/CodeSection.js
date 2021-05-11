@@ -37,7 +37,8 @@ renderer.paragraph = function (text) {
   return '<p class="mb2 px1">' + text + '</p>';
 };
 
-const encodedTemplateRegexp = /\[\[\s*<.*?>([A-Za-z]*?)\s*(<.*?>)?(\.[A-Za-z]*)?\s*<\/span>\s*\]\]/g;
+const encodedTemplateRegexp =
+  /\[\[\s*<.*?>([A-Za-z]*?)\s*(<.*?>)?(\.[A-Za-z]*)?\s*<\/span>\s*\]\]/g;
 
 const hintStartPlaceholder = 'START_HINT';
 const hintStartRegexp = new RegExp(

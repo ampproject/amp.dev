@@ -161,8 +161,14 @@ describe('DocumentParser', () => {
   });
 
   it('marks sections in body', () => {
-    const sections = parse(HEAD, HEAD_END, BODY, COMMENT, TAG, BODY_END)
-      .sections;
+    const sections = parse(
+      HEAD,
+      HEAD_END,
+      BODY,
+      COMMENT,
+      TAG,
+      BODY_END
+    ).sections;
     expect(sections[0].inBody).toBe(false);
     expect(sections[1].inBody).toBe(true);
   });
