@@ -16,57 +16,7 @@ $view: /views/2021/base.html
   <section class="ap-section --col-3-22">
     <div class="ap-text-media">
       <div class="ap-text-media-col">
-        <amp-animation id="fillAnim" layout="nodisplay">
-          <script type="application/json">
-            {
-              "duration": "0.7s",
-              "fill": "both",
-              "easing": "cubic-bezier(.73,1.59,.63,.85)",
-              "animations": [
-                {
-                  "selector": "#chart60 .ap-pie-charts-chart-clip:nth-child(2), #chart60 .ap-pie-charts-chart-part",
-                  "keyframes": {"transform": "rotate(108deg)"}
-                },
-                {
-                  "selector": "#chart12 .ap-pie-charts-chart-clip:nth-child(2), #chart12 .ap-pie-charts-chart-part",
-                  "keyframes": {"transform": "rotate(23deg)"}
-                }
-              ]
-            }
-          </script>
-        </amp-animation>
-
-        <amp-position-observer intersection-ratios="0.8" on="enter:fillAnim.start" layout="nodisplay">
-        </amp-position-observer>
-
-        <figure class="ap-pie-charts">
-          <div id="chart60" class="ap-pie-charts-chart">
-            <div class="ap-pie-charts-chart-clip">
-              <div class="ap-pie-charts-chart-part"></div>
-            </div>
-            <div class="ap-pie-charts-chart-clip">
-              <div class="ap-pie-charts-chart-part"></div>
-            </div>
-            <div class="ap-pie-charts-chart-overlay">
-              <span>60%</span>
-              <aside>AMP<br>domains</aside>
-            </div>
-          </div>
-          <div id="chart12" class="ap-pie-charts-chart">
-            <div class="ap-pie-charts-chart-clip">
-              <div class="ap-pie-charts-chart-part"></div>
-            </div>
-            <div class="ap-pie-charts-chart-clip">
-              <div class="ap-pie-charts-chart-part"></div>
-            </div>
-            <div class="ap-pie-charts-chart-overlay">
-              <span>12%</span>
-              <aside>non-AMP<br>domains</aside>
-            </div>
-          </div>
-          <figcaption>Domains built with AMP are 5 times more likely to pass* Core Web Vitals metrics than non-AMP!<br><span>*where „passing“ means 75% of pages on the domain passed in October 2020</span></figcaption>
-        </figure>
-
+        {% include '/views/2021/partials/extras/page-experience/pie-chart.j2' %}
       </div>
       <div class="ap-text-media-col">
         <div class="ap-text-block">

@@ -23,6 +23,10 @@ const signale = require('signale');
 const optimizerConfig = {
   imageBasePath: 'pages',
   imageOptimizer,
+  autoExtensionImport: true,
+  extensionVersions: {
+    'amp-base-carousel': '0.1',
+  },
   transformations: [
     HeadDedupTransformer,
     ...AmpOptimizer.TRANSFORMATIONS_AMP_FIRST,

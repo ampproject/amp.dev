@@ -67,7 +67,7 @@ module.exports = (env, argv) => {
               },
             ],
           },
-          filename: 'static/icons.svg',
+          filename: 'static/sprite.svg',
         },
       }),
       new MiniCssExtractPlugin({

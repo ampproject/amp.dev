@@ -1,0 +1,23 @@
+.#{project('components-showcase')} {
+  background: red;
+
+  &-buttons {
+    background: lime;
+  }
+
+  &-demos {
+    background: cyan;
+  }
+
+  &-demo {
+    background: yellow;
+
+    &-code {
+      background: slategray;
+    }
+
+    &-ui {
+      background: magenta;
+    }
+  }
+}

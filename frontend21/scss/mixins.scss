@@ -8,15 +8,32 @@
     @media #{inspect(map-get($breakpoints, $key))} {
       @content;
     }
-  }
-  @else {
+  } @else {
     @warn "Unfortunately, no value could be retrieved from `#{$key}`. "
     + "Available breakpoints are: #{map-keys($breakpoints)}.";
   }
 }
 
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  grid-gap: 15px;
+}
+
+@mixin fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
 @mixin ci-websites {
-  background: linear-gradient(225deg, color('robins-egg') 0%, color('blue-ribbon') 75%);
+  background: linear-gradient(
+    225deg,
+    color('robins-egg') 0%,
+    color('blue-ribbon') 75%
+  );
   color: color('white');
 
   svg {
@@ -25,7 +42,11 @@
 }
 
 @mixin ci-stories {
-  background: linear-gradient(225deg, color('clementine') 0%, color('school-bus') 75%);
+  background: linear-gradient(
+    225deg,
+    color('clementine') 0%,
+    color('school-bus') 75%
+  );
   color: color('charade');
 
   svg {
@@ -34,7 +55,11 @@
 }
 
 @mixin ci-ads {
-  background: linear-gradient(225deg, color('lav-magenta') 0%, color('electric-violet') 75%);
+  background: linear-gradient(
+    225deg,
+    color('lav-magenta') 0%,
+    color('electric-violet') 75%
+  );
   color: color('white');
 
   svg {
@@ -43,7 +68,11 @@
 }
 
 @mixin ci-e-mails {
-  background: linear-gradient(225deg, color('japan-laurel') 0%, color('confetti') 75%);
+  background: linear-gradient(
+    225deg,
+    color('japan-laurel') 0%,
+    color('confetti') 75%
+  );
   color: color('charade');
 
   svg {
@@ -72,4 +101,12 @@
   background-color: transparent;
   border: none;
   padding: 0;
+}
+
+@mixin shadow-large {
+  box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.15);
+}
+
+@mixin shadow-small {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
 }

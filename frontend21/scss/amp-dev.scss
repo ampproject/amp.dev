@@ -4,6 +4,7 @@
 @import '../../frontend/scss/components/atoms/_color.scss';
 
 @import 'variables.scss';
+@import 'functions.scss';
 @import 'mixins.scss';
 
 @import 'components/sidebar.scss';
@@ -25,7 +26,6 @@
 @import 'components/content.scss';
 @import 'components/icon-text.scss';
 @import 'components/teaser-grid.scss';
-@import 'components/teaser-component.scss';
 @import 'components/table-component.scss';
 @import 'components/component-intro.scss';
 @import 'components/code-snippet.scss';
@@ -36,11 +36,18 @@
 @import 'components/tag.scss';
 @import 'components/filter-bubbles-list.scss';
 @import 'components/pill.scss';
+@import 'components/content/stage.scss';
+@import 'components/content/center-stage.scss';
+@import 'components/content/cards.scss';
+@import 'components/home/home-stage.scss';
+@import 'components/home/formats.scss';
+@import 'components/content/teaser-carousel.scss';
+@import 'components/content/teaser.scss';
+@import 'components/content/intro.scss';
+@import 'components/extra/about/components-showcase.scss';
 
 main {
-  display: grid;
-  grid-template-columns: repeat(24, 1fr);
-  grid-gap: 15px;
+  @include grid;
   width: 100%;
   margin: 0 auto;
   padding: 0;
@@ -49,6 +56,7 @@ main {
 
   @include respond-to('large') {
     grid-gap: 30px;
+    max-width: 1920px;
   }
 }
 
@@ -70,15 +78,23 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 0.3em;
+  color: inherit;
 }
 
-h1 {
+h1,
+.#{project('h1')} {
   @include respond-to('small') {
     font-size: 52px;
   }
 }
 
-h3 {
+h2,
+.#{project('h2')} {
+  font-size: 2.4em;
+}
+
+h3,
+.#{project('h3')} {
   font-size: 20px;
 }
 
@@ -92,6 +108,7 @@ p {
   line-height: 1.63;
   margin-top: 1.1em;
   margin-bottom: 0;
+  color: currentColor;
 }
 
 button {
@@ -111,7 +128,6 @@ p code {
   font-weight: 500;
   word-break: normal;
   color: color('black');
-  background: color('iron');
   font-size: 0.9em;
 }
 
@@ -139,22 +155,6 @@ select {
 
 figure {
   margin: 0;
-}
-
-figcaption {
-  margin-top: 0.3em;
-  margin-left: auto;
-  font-size: 14px;
-  line-height: 1.71;
-
-  @include respond-to('medium') {
-    max-width: 80%;
-  }
-
-  span {
-    margin-top: 10px;
-    font-size: 12px;
-  }
 }
 
 svg {

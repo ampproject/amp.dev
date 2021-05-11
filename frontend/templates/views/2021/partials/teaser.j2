@@ -1,17 +1,62 @@
-{% set teaser = teaser_doc %}
-{% set navigation_url = teaser.url.path %}
-
-<a class="ap-teaser" href="{{ navigation_url }}">
-  {% if teaser.formats %}
-    <div class="ap-teaser-tags">
-      {% for format in teaser.formats %}
-      <div class="ap-tag --{{ format }}"></div>
-      {% endfor %}
+{% if teaser_doc.view == '/views/detail/success-story-detail.j2' %}
+  {% set type = "success-story" %}
+  {% set url = teaser_doc.url.path %}
+  {% set image = teaser_doc.teaser.image.src %}
+  {% set alt = teaser_doc.teaser.image.alt %}
+  {% set meta = teaser_doc.category %}
+  {% set headline = teaser_doc.teaser.text %}
+{% else %}
+  {% set type = teaser_doc.type %}
+  {% set url = teaser_doc.url %}
+  {% set image = teaser_doc.image %}
+  {% set alt = teaser_doc.title %}
+  {% set meta = teaser_doc.date %}
+  {% set headline = teaser_doc.headline %}
+{% endif %}
+<a href="{{ url }}" class="ap-teaser --{{ type }}">
+  <div class="ap-teaser-card">
+    <div class="ap-teaser-card-header">
+      {% if teaser_doc.formats %}
+        {% set format = teaser_doc.formats[0] %}
+        {% do doc.icons.useIcon('/icons/amp-' + format + '.svg') %}
+          <div class="ap-teaser-card-header-logo">
+            <svg fill="url(#gradient-{{ format }})"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format }}"></use></svg>
+          </div>
+          <h6>{{ format }}</h6>
+      {% else %}
+      <h6>{{ teaser_doc.title }}</h6>
+      {% endif %}
     </div>
-  {% endif %}
-
-  <code class="ap-teaser-title">{{ teaser.title }}</code>
-  <p class="ap-teaser-copy">
-    {{ teaser.teaser.text }}
-  </p>
+    <div class="ap-teaser-card-image">
+      {% if teaser_doc.image and teaser_doc.image != '' or type == "success-story" %}
+        <amp-img class=""
+            src="{{ image }}"
+            layout="responsive"
+            width="160"
+            height="90"
+            alt="{{ alt }}">
+        </amp-img>
+      {% else %}
+        <div class="ap-o-news-icon">
+          <div class="ap-a-ico">
+            {% do doc.icons.useIcon('icons/news.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#news"></use></svg>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+    <div class="ap-teaser-card-body">
+      {% if type == "success-story" %}
+        <div class="ap-teaser-card-logo">
+          <amp-img
+              src="{{ teaser_doc.teaser.logo.src }}"
+              layout="fill"
+              alt="{{ teaser_doc.teaser.logo.alt }}">
+          </amp-img>
+        </div>
+      {% endif %}
+      <h4 class="ap-teaser-card-headline">{{ headline }}</h4>
+      <div class="ap-teaser-card-meta">{{ meta }}</div>
+    </div>
+  </div>
 </a>

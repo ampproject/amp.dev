@@ -52,7 +52,7 @@
 		},
 		"thumbor": {
 			"scheme": "http",
-			"host": "ig-amp-dev-thumbor-n0gc.c.amp-dev-230314.internal",
+			"host": "ig-amp-dev-thumbor-34q6.c.amp-dev-230314.internal",
 			"port": "8080"
 		}
 	},
