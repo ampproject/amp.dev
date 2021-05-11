@@ -94,7 +94,7 @@
 		"nunjucks": "3.2.3",
 		"p-queue": "6.6.2",
 		"postcss": "8.2.14",
-		"postcss-css-variables": "0.17.0",
+		"postcss-css-variables": "0.18.0",
 		"process": "0.11.10",
 		"randomstring": "1.2.1",
 		"rcs-core": "3.6.0",
