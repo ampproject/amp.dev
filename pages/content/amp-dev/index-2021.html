@@ -140,7 +140,15 @@ success_stories:
   <section class="ap-intro ap-section --col-left">
     <h1>{{ _('The latest news') }}</h1>
     <p>{{ _('Don\'t want to miss any of the great stuff that happens around AMP? Then always be first in line and subscribe to our newsletter!') }}</p>
-    <a href="https://services.google.com/fb/forms/ampnewsletter-doubleopt-in/" class="ap-m-lnk ap-m-lnk-square">
+    <a href="https://services.google.com/fb/forms/ampnewsletter-doubleopt-in/" class="ap-m-lnk ap-m-lnk-square ap-newsletter-double">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">{{ _('Subscribe') }}</span>
+    </a>
+
+    <a href="https://services.google.com/fb/forms/ampnewsletter/" class="ap-m-lnk ap-m-lnk-square ap-newsletter">
       <div class="ap-a-ico ap-m-lnk-icon">
         {% do doc.icons.useIcon('icons/internal.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
