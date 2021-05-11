@@ -38,9 +38,18 @@ success_stories:
 <main class="ap--main">
   <section class="ap-home-stage">
     <div class="ap-home-stage-logo">
-      {% do doc.icons.useIcon('icons/logo-outline.svg') %}
-      <svg>
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-outline"></use>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 194 194">
+        <defs>
+            <linearGradient id="hnk2zvh1ka" x1="100%" x2="0%" y1="0%" y2="100%">
+                <stop offset="0%" stop-color="#00DCC0"/>
+                <stop offset="100%" stop-color="#005AF0"/>
+            </linearGradient>
+        </defs>
+        <g fill="none" fill-rule="evenodd">
+            <g fill="url(#hnk2zvh1ka)" transform="translate(-91 -83)">
+                <path d="M188 83c53.572 0 97 43.428 97 97s-43.428 97-97 97-97-43.428-97-97 43.428-97 97-97zm0 2.533c-52.173 0-94.467 42.294-94.467 94.467s42.294 94.467 94.467 94.467 94.467-42.294 94.467-94.467S240.173 85.533 188 85.533zM193.88 124l8.969.037-6.742 41.065 18.96-.023.31-.005.177.002c2.472.072 4.446 2.15 4.446 4.697 0 1.007-.345 1.937-.952 2.77l.043-.06L182.03 236h-8.853l6.577-41.007-18.856.028-.277.005-.173-.001c-2.472-.073-4.449-2.153-4.449-4.698 0-.37.076-.76.208-1.185.071-.23.158-.465.257-.705.156-.378.312-.697.445-.944L193.88 124zm1.435 2.562L159.1 188.754l-.067.132-.1.21c-.05.106-.099.217-.145.33-.071.172-.132.336-.178.485-.015.05-.029.096-.04.14l-.029.118-.017.094c-.003.026-.005.048-.005.064 0 1.187.928 2.143 2.062 2.143l.19-.003 21.947-.035-6.579 41.011h4.454l36.39-62.366.038-.053c.305-.42.458-.832.458-1.25 0-1.19-.925-2.143-2.06-2.143l-22.288.032 6.744-41.082-4.561-.019z"/>
+            </g>
+        </g>
       </svg>
     </div>
     <div class="ap-home-stage-text">
@@ -193,8 +202,8 @@ success_stories:
       <span class="ap-m-lnk-text">{{ _('See all success stories') }}</span>
     </a>
   </section>
-  
-  {% set slider_id = 'success-stories' %} 
-  {% set teaser_docs = doc.success_stories %} 
+
+  {% set slider_id = 'success-stories' %}
+  {% set teaser_docs = doc.success_stories %}
   {% include '/views/2021/partials/teaser-slider.j2' %}
 </main>
