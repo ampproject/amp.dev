@@ -52,8 +52,8 @@ Many frameworks and CMS’ have AMP integrations, such as Eleventy and WordPress
 
 ## Integrate AMP with an in-house solution
 
-AMP is a front-end framework and you can integrate it with your backend solution. Use [available tools](../../../../tools/) and [AMP optimizers](../../optimize-measure/amp-optimizer-guide/index.md) to get the most out of AMP!
+AMP is a front-end framework and you can integrate it with your backend solution. Use [available tools](../../../tools.html) and [AMP optimizers](../../optimize-measure/amp-optimizer-guide/index.md) to get the most out of AMP!
 
 ## Learn web development with AMP
 
-If you’re new to web development, you can start your journey with [AMP’s web development courses](../../../../courses/)! These three free courses are in use in schools and training programs around the world. Now you can take them here, online, on our site. Suitable for beginners and experienced web developers alike, they will take you from zero to AMP!
+If you’re new to web development, you can start your journey with [AMP’s web development courses](../../../courses/index.html)! These three free courses are in use in schools and training programs around the world. Now you can take them here, online, on our site. Suitable for beginners and experienced web developers alike, they will take you from zero to AMP!
