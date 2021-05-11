@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
-const {remove, firstChildByTag} =
-  require('@ampproject/toolbox-optimizer').NodeUtils;
+const {
+  remove,
+  firstChildByTag,
+} = require('@ampproject/toolbox-optimizer').NodeUtils;
 const TAGS_TO_DEDUP = {
   meta: {
     name: 'viewport',

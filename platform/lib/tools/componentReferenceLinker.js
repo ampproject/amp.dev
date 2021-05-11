@@ -224,8 +224,9 @@ class ComponentReferenceLinker {
   _createTablePlaceholder(component) {
     const placeholder = `<!--${this._hash(component)}-->`;
     if (!this._tablePlaceholders[placeholder]) {
-      this._tablePlaceholders[placeholder] =
-        this._tableComponentPath(component);
+      this._tablePlaceholders[placeholder] = this._tableComponentPath(
+        component
+      );
     }
     return placeholder;
   }

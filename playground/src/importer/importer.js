@@ -31,8 +31,7 @@ import * as Runtimes from '../runtime/runtimes.js';
 export const EVENT_REQUEST_URL_CONTENT = 'event-request-url-content';
 
 /* eslint-disable max-len */
-const URL_VALIDATION_REGEX =
-  /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
+const URL_VALIDATION_REGEX = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
 
 export function createImport() {
   const target = document.getElementById('import-view');

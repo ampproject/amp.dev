@@ -44,8 +44,7 @@ const RESPONSE_MAX_AGE = {
   autosuggest: 86400, // 24 hours
 };
 
-const COMPONENT_REFERENCE_DOC_PATTERN =
-  /^(?:https?:\/\/[^/]+)?(?:\/[^/]+)?\/documentation\/components\/(amp-[^/]+)/;
+const COMPONENT_REFERENCE_DOC_PATTERN = /^(?:https?:\/\/[^/]+)?(?:\/[^/]+)?\/documentation\/components\/(amp-[^/]+)/;
 
 // use the twitter title if available since it does not contain the site name
 const TITLE_META_TAG = 'twitter:title';

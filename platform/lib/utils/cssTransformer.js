@@ -13,8 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const {nextNode, hasAttribute, firstChildByTag} =
-  require('@ampproject/toolbox-optimizer').NodeUtils;
+const {
+  nextNode,
+  hasAttribute,
+  firstChildByTag,
+} = require('@ampproject/toolbox-optimizer').NodeUtils;
 const rcs = require('rcs-core');
 
 /* Class names which are safe to rewrite in the context of amp.dev */

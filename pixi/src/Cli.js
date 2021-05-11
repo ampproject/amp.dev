@@ -74,13 +74,17 @@ export default class PageExperienceCli {
 
     const recommendations = await recommendationsPromise;
 
-    const [{pageExperience}, linter, mobileFriendliness, safeBrowsing] =
-      await Promise.all([
-        pageExperiencePromise,
-        linterPromise,
-        mobileFriendlinessPromise,
-        safeBrowsingPromise,
-      ]);
+    const [
+      {pageExperience},
+      linter,
+      mobileFriendliness,
+      safeBrowsing,
+    ] = await Promise.all([
+      pageExperiencePromise,
+      linterPromise,
+      mobileFriendlinessPromise,
+      safeBrowsingPromise,
+    ]);
 
     const hasPageExperience = pageExperience !== undefined;
     const hasFieldData =

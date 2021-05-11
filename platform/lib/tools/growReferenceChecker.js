@@ -65,8 +65,7 @@ const LOOKUP_TABLE = {
 };
 /* eslint-enable max-len */
 // The following paths are skipped when checked for existance
-const IGNORED_PATH_PATTERNS =
-  /\/content\/amp-dev\/documentation\/components\/reference\/.*?|\/boilerplate|\/content\/amp-dev\/community\/working-groups\/.*?/g;
+const IGNORED_PATH_PATTERNS = /\/content\/amp-dev\/documentation\/components\/reference\/.*?|\/boilerplate|\/content\/amp-dev\/community\/working-groups\/.*?/g;
 
 // The list of imported docs. Here we do not check anchors.
 const IMPORTED_DOCS = require(__dirname +

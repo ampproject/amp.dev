@@ -39,13 +39,17 @@ export default async function getIssueUrl(
   mobileFriendlinessPromise,
   safeBrowsingPromise
 ) {
-  const [{pageExperience}, linter, mobileFriendliness, safeBrowsing] =
-    await Promise.all([
-      pageExperiencePromise,
-      linterPromise,
-      mobileFriendlinessPromise,
-      safeBrowsingPromise,
-    ]);
+  const [
+    {pageExperience},
+    linter,
+    mobileFriendliness,
+    safeBrowsing,
+  ] = await Promise.all([
+    pageExperiencePromise,
+    linterPromise,
+    mobileFriendlinessPromise,
+    safeBrowsingPromise,
+  ]);
   const hasPageExperience = pageExperience !== undefined;
   const hasFieldData =
     hasPageExperience && pageExperience.source === 'fieldData';

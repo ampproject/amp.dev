@@ -21,8 +21,11 @@ const {join} = require('path');
 const {sh} = require('@lib/utils/sh.js');
 const mri = require('mri');
 const {existsSync} = require('fs');
-const {ROOT, THUMBOR_ROOT, PIXI_CLOUD_ROOT} =
-  require('@lib/utils/project').paths;
+const {
+  ROOT,
+  THUMBOR_ROOT,
+  PIXI_CLOUD_ROOT,
+} = require('@lib/utils/project').paths;
 
 const PREFIX = 'amp-dev';
 const PACKAGER_PREFIX = PREFIX + '-packager';
