@@ -190,6 +190,9 @@
 		"webpack-dev-server": "3.11.2",
 		"write": "2.0.0"
 	},
+	"optionalDependencies": {
+		"fsevents": "2.3.2"
+	},
 	"sideEffects": [
 		"./playground/src/request-idle-callback/base.js",
 		"./playground/src/service-worker/base.js",

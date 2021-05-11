@@ -6,9 +6,11 @@
   padding: var(--spacing) 0;
   text-align: center;
   grid-column: 1/-1;
+  max-width: $maxWidth;
+  margin: 0 auto;
   color: color('charade');
 
-  @include respond-to('small') {
+  @include respond-to('medium') {
     --spacing: 100px;
 
     text-align: left;
@@ -18,8 +20,16 @@
     grid-column: 2/24;
 
     @include respond-to('small') {
-      grid-column: 2/14;
+      grid-column: 4/22;
+    }
+
+    @include respond-to('medium') {
+      grid-column: 2/16;
       grid-row: 1;
+    }
+
+    @include respond-to('large') {
+      grid-column: 2/14;
     }
   }
 
@@ -36,14 +46,22 @@
       max-height: 194px;
     }
 
-    @include respond-to('small') {
-      grid-column: 15/-1;
+    @include respond-to('medium') {
+      grid-column: 16/24;
       grid-row: 1;
 
       svg {
+        max-width: 341px;
+        max-height: 341px;
+        position: absolute;
+      }
+    }
+
+    @include respond-to('large') {
+      grid-column: 14/24;
+      svg {
         max-width: 514px;
         max-height: 514px;
-        position: absolute;
       }
     }
   }

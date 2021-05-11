@@ -47,7 +47,7 @@ success_stories:
       <h1>{{ _('AMP is a web component framework to easily create user-first experiences for the web.') }}</h1>
     </div>
   </section>
-  <section class="ap-formats ap-section --fullscreen">
+  <section class="ap-formats">
     <aside class="ap-formats-navigation">
       <div class="ap-formats-navigation-wrapper">
         {% for format in doc.format_explainer %}
@@ -87,44 +87,42 @@ success_stories:
             }
           </script>
         </amp-animation>
-        <div class="ap-formats-navigation-icon-wrapper">
+        <button class="ap-formats-navigation-icon-wrapper" on="tap:ap-formats-format-{{ format.name }}.scrollTo(duration=300)">
           <div class="ap-formats-navigation-icon inactive {{ format.name }}">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
           </div>
           <div class="ap-formats-navigation-icon active {{ format.name }}">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
           </div>
-        </div>
+        </button>
         {% endfor %}
       </div>
     </aside>
     {% set initial_format = doc.format_explainer[0].name -%}
     {% for format in doc.format_explainer %}
-    <div class="ap-formats-format {{ format.name }}{% if format.name == initial_format %} initial{% endif %}">
+    <div class="ap-formats-format {{ format.name }}" id="ap-formats-format-{{ format.name }}">
       <amp-position-observer on="enter:switchIcon-{{ format.name }}.start;exit:switchIcon-{{ format.name }}.start,switchIcon-{{ format.name }}.reverse" intersection-ratios="0.9" layout="nodisplay">
       </amp-position-observer>
       <div class="ap-formats-background">
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
+        <svg amp-fx="parallax" data-parallax-factor="0.95"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
       </div>
       <div class="ap-formats-format-content">
         {% do doc.icons.useIcon('/icons/amp-' + format.name + '.svg') %}
         <div class="ap-formats-logo">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
         </div>
-        <h2>{{ _(format.headline) }}</h2>
+        <h1>{{ _(format.headline) }}</h1>
         <p>{{ _(format.description) }}</p>
         {% if format.cta %}
           <a href="documentation/index.html" class="ap-button --inverted cta">{{ _(format.cta) }}</a>
-          <a href="{{ format.url }}" class="ap-m-lnk">
-            <div class="ap-a-ico ap-m-lnk-icon">
-              {% do doc.icons.useIcon('icons/internal.svg') %}
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-            </div>
-            <span class="ap-m-lnk-text">{{ _(format.link) }}</span>
-          </a>
-        {% else %}
-          <a href="{{ format.url }}" class="ap-button {% if not format.cta %}--inverted{% endif %}">{{ _(format.link) }}</a>
         {% endif %}
+        <a href="{{ format.url }}" class="ap-m-lnk">
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ap-m-lnk-text">{{ _(format.link) }}</span>
+        </a>
       </div>
     </div>
     {% endfor %}
@@ -151,7 +149,7 @@ success_stories:
           height="573"
           layout="fixed-height"
           role="region"
-          visible-count="(min-width: 1440px) 3, (min-width: 768px) 2, 1"
+          visible-count="(min-width: 1024px) 3, (min-width: 768px) 2, 1"
           aria-label="{{ _('News') }}"
           on="slideChange:teaser-carousel-pagination-news.toggle(index=event.index, value=true)">
           [% for post in posts %]
