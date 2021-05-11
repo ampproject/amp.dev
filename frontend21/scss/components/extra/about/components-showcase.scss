@@ -1,104 +1,139 @@
-.#{project('components-showcase')} {
-  position: relative;
-  height: 100%;
-  
-  &-buttons {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0.625rem;
-    margin-bottom: 1.875rem;
-    button { margin-bottom: 0;}
-  }
-  
-  &-demos {
+.#{project("components-showcase")} {
+	position: relative;
+	height: 100%;
 
-    .show {
-      position: relative;
-      display: block;
-      height: 455px;
-    }
+	&-buttons {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 0.625rem;
+		margin-bottom: 1.875rem;
+		button {
+			margin-bottom: 0;
+		}
+	}
 
-    .hide {
-      display: none;
-    }
-  }
+	&-demos {
+		.show {
+			position: relative;
+			display: block;
+			height: 455px;
+		}
 
-  &-demo {
-    position: relative;
+		.hide {
+			display: none;
+		}
+	}
 
-    &-code {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 64.9%;
-      height: 92%;
+	&-demo {
+		position: relative;
 
-      &:before {
-        content: attr(title);
-        position: absolute;
-        bottom: calc(100% - 20px);
-        width: calc(100% - 40px) ;
-        padding: 5px 20px;
-        border-bottom: 2px solid color('river-bed');
-        background: color('charade');
+		&-code {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 64.9%;
+			height: 92%;
+
+			&:before {
+				content: attr(title);
+				position: absolute;
+				bottom: calc(100% - 20px);
+				width: calc(100% - 40px);
+				padding: 5px 20px;
+				border-bottom: 2px solid color("river-bed");
+				background: color("charade");
+				color: white;
+				font-family: FiraMono, monospace;
+				font-size: 12px;
+			}
+
+      code {
         color: white;
-        font-family: FiraMono,monospace;
-        font-size: 12px;
       }
-    }
+		}
 
-    &-ui {
-      background: #fff;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 54.92%;
-      height: 80%;
+		&-ui {
+			background: #fff;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 54.92%;
+			height: 80%;
 
-      &:before {
-        content: "";
-        position: absolute;
-        top: -3px;
-        left: -3px;
-        width: 100%;
-        height: 100%;
-        border: 3px solid color('robins-egg');
-        pointer-events: none;
-      }
+			&:before {
+				content: "";
+				position: absolute;
+				top: -3px;
+				left: -3px;
+				width: 100%;
+				height: 100%;
+				border: 3px solid color("robins-egg");
+				pointer-events: none;
+			}
 
-      &:after {
-        content: attr(title);
-        position: absolute;
-        background: linear-gradient( 225deg, color('robins-egg'), color('blue-ribbon') 75%);
-        padding: 5px 10px;
-        font-size: 1.25vw;
+			&:after {
+				content: attr(title);
+				position: absolute;
+				background: linear-gradient(
+					225deg,
+					color("robins-egg"),
+					color("blue-ribbon") 75%
+				);
+				padding: 5px 10px;
+				font-size: 1.25vw;
 
-        line-height: 1.42rem;
-        font-weight: 700;
-        color: #48525c;
-        font-family: FiraMono,monospace;
-        color: #fff;
-        left: -3px;
-        bottom: calc(100% + 3px);
-        padding: 3px 6px;
-        font-size: 12px;
-        background-color: color('robins-egg');
-      }
+				line-height: 1.42rem;
+				font-weight: 700;
+				color: #48525c;
+				font-family: FiraMono, monospace;
+				color: #fff;
+				left: -3px;
+				bottom: calc(100% + 3px);
+				padding: 3px 6px;
+				font-size: 12px;
+				background-color: color("robins-egg");
+			}
 
-      amp-carousel {
-        height: 100%;
-      }
-      
-      button {
-        margin: 50px 0 0 0;
-      }
-    }
+			amp-carousel {
+				height: 100%;
+			}
 
-    .grap-lnk {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      padding-bottom: 0;
-    }
-  }
+			button {
+				margin: 50px 0 0 0;
+			}
+		}
+
+		.accordion {
+			amp-accordion {
+				height: 100%;
+				padding: 20px;
+				background-color: color("whisper");
+
+				section {
+					margin-bottom: 20px;
+				}
+
+				section[expanded] {
+					box-shadow: 0 15px 35px -5px rgb(0 0 0 / 25%);
+				}
+
+				section > .i-amphtml-accordion-header,
+				section > .i-amphtml-accordion-content {
+					background-color: color("white");
+          padding: 5px 20px;
+				}
+
+				section[expanded] > h2 {
+					border: none;
+				}
+			}
+		}
+
+		.grap-lnk {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			padding-bottom: 0;
+		}
+	}
 }

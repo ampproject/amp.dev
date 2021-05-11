@@ -28,7 +28,7 @@
         </div>
       </div>
 
-      <div class="ap-components-showcase-demo-ui" title={{"<amp-"~component~">"}}>
+      <div class="ap-components-showcase-demo-ui {{component | safe}}" title={{"<amp-"~component~">"}}>
 
       {%if component == 'animation' %}
         <div class="rotate-image-window">
@@ -36,7 +36,7 @@
           <button on="tap:scaleUpImage.start" class="ap-button">Click to scale up the image</button>
         </div>
       {%endif%}
-      
+
         <!-- Styled demo here -->
         {{ code_snippet|safe }}
       </div>
