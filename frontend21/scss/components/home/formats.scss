@@ -1,12 +1,12 @@
 @use 'sass:math';
 $skew-angle: 4deg;
+$gap: 10px;
 
 .#{project('formats')} {
   --width: 100vw;
   --skew-angle: #{$skew-angle};
   --magic-number: #{math.tan($skew-angle) / 2};
   --skew-padding: calc(var(--width) * var(--magic-number));
-  --gap: 10px;
 
   grid-column: 1/-1;
   margin: 0 auto;
@@ -19,8 +19,8 @@ $skew-angle: 4deg;
   @include respond-to('medium') {
     flex-direction: row;
     flex-wrap: wrap;
-    grid-gap: var(--gap);
-    padding: 0 var(--gap);
+    grid-gap: $gap;
+    padding: 0 $gap;
   }
 
   @include respond-to('large') {
@@ -154,7 +154,7 @@ $skew-angle: 4deg;
       transform: skewY(0deg);
       @include shadow-large;
       transition: box-shadow .3s ease-in-out;
-      flex: 1 0 calc(50% - (2 * var(--gap)));
+      flex: 1 0 calc(50% - (2 * $gap));
 
       &:hover {
         @include shadow-small;
@@ -189,7 +189,7 @@ $skew-angle: 4deg;
     }
 
     @include respond-to('large') {
-      flex: 1 0 calc(25% - (4 * var(--gap)));
+      flex: 1 0 calc(25% - (4 * $gap));
     }
   }
 
