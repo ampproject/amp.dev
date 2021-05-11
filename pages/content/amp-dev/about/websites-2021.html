@@ -24,6 +24,11 @@ cards:
   - icon: icon-heart
     headline: Open web
     text: 'The AMP Project is an open source initiative to protect the future of the web by delivering a better, faster and more user-friendly experience.'
+success_stories:
+  - !g.doc /content/amp-dev/about/success-stories/washingtonpost.yaml
+  - !g.doc /content/amp-dev/about/success-stories/teads.yaml
+  - !g.doc /content/amp-dev/about/success-stories/carved.yaml
+  - !g.doc /content/amp-dev/about/success-stories/wompmobile.yaml
 ---
 
 <main>
@@ -224,6 +229,28 @@ cards:
       </div>
     </div>
   </section>
+
+  <section class="ap-section --col-4-23">
+    <div class="ap-text-block">
+      <h2 class="ap-h1">{{ _('Check out AMP in action') }}</h2>
+    </div>
+
+    <div class="ap-text-media --thirds --center --mobile-reverse">
+      <div class="ap-text-media-col">
+        <div class="ap-text-block">
+          <p>
+            {{ _('Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+            diam nonumy eirmod tempor. Sed diam nonumy eirmod tempor, lorem
+            ipsum dolor sit amet.') }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% set slider_id = 'success-stories' %} 
+  {% set teaser_docs = doc.success_stories %} 
+  {% include '/views/2021/partials/teaser-slider.j2' %}
 
   <section class="ap-section --col-3-22">
     <div class="ap-text-media">
