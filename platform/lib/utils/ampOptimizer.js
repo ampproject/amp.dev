@@ -25,7 +25,7 @@ const optimizerConfig = {
   imageOptimizer,
   autoExtensionImport: true,
   extensionVersions: {
-    'amp-base-carousel': '0.1'
+    'amp-base-carousel': '0.1',
   },
   transformations: [
     HeadDedupTransformer,
