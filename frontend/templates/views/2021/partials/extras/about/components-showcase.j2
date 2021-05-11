@@ -20,7 +20,7 @@
     {%set componentClass = "hide" %}
     {%endif%}
 
-    <div [class]="{{componentBind | safe }}" class="{{ (componentClass | safe)}}">
+    <div [class]="{{componentBind | safe }}" class="{{componentClass | safe}}">
       <div class="ap-components-showcase-demo-code" title={{"amp-"~component}}>
         <div class="ap-code-snippet">
           {% set code_snippet = g.doc(componentLink).content %}
@@ -29,6 +29,14 @@
       </div>
 
       <div class="ap-components-showcase-demo-ui" title={{"<amp-"~component~">"}}>
+
+      {%if component == 'animation' %}
+        <div class="rotate-image-window">
+          <amp-img id="animatedImage" width="450" height="300" layout="responsive" src="/static/samples/img/elephant.jpg" alt="Picture of an elephant"></amp-img>
+          <button on="tap:scaleUpImage.start" class="ap-button">Click to scale up the image</button>
+        </div>
+      {%endif%}
+      
         <!-- Styled demo here -->
         {{ code_snippet|safe }}
       </div>
