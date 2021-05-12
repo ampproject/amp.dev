@@ -1,23 +1,270 @@
-.#{project('components-showcase')} {
-  background: red;
+.#{project("components-showcase")} {
+  position: relative;
+  height: 100%;
 
   &-buttons {
-    background: lime;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0.625rem;
+    margin: 3.75rem 0 1.875rem 0;
+
+    button {
+      margin-bottom: 0;
+    }
+
+    @include respond-to('small') {
+      margin-top: 0;
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &-demos {
-    background: cyan;
+    .show {
+      position: relative;
+      display: block;
+      height: 455px;
+    }
+
+    .hide {
+      display: none;
+    }
   }
 
   &-demo {
-    background: yellow;
+    position: relative;
 
     &-code {
-      background: slategray;
+      @include fill;
+      top: 20px;
+      width: 95%;
+      height: 100%;
+      max-height: 420px;
+      
+      @include respond-to('small') {
+        width: 65%;
+      }
+
+      &-snippet {
+        height: 92%;
+      }
+
+      &:before {
+        content: attr(title);
+        position: absolute;
+        bottom: calc(100% - 20px);
+        width: calc(100% - 40px);
+        padding: 12px 20px;
+        border-bottom: 2px solid color("river-bed");
+        background: color("charade");
+        color: white;
+        font-family: $fontFamilyHeadline;
+        font-weight: 700;
+        font-size: 12px;
+      }
+
+      code {
+        color: white;
+      }
+
+      .grap-lnk {
+        margin-top: 20px;
+        width: 100%;
+        
+        @include respond-to("small") {
+          margin-top: 15px;
+          width: 50%;
+        }
+
+        @include respond-to("medium") {
+          margin-top: 10px;
+          width: 100%;
+        }
+      }
+
+      &[title="amp-accordion"] {
+        .grap-lnk {
+          margin-top: 140px;
+          
+          @include respond-to('small') {
+            margin-top: 15px;
+          }
+        }
+      }
+
+      &[title="amp-autocomplete"] {
+        .grap-lnk {
+          margin-top: 90px;
+          
+          @include respond-to('small') {
+            margin-top: 15px;
+          }
+        }
+      }
     }
 
     &-ui {
-      background: magenta;
+      position: absolute;
+      width: 95%;
+      height: 80%;
+      max-height: 330px;
+      right: 0;
+      bottom: 0;
+      background: color("white");
+      
+      @include respond-to('small') {
+        width: 55%;
+      }
+
+      &:before {
+        content: "";
+        @include fill;
+        top: -3px;
+        left: -3px;
+        border: 3px solid color("robins-egg");
+        pointer-events: none;
+      }
+
+      &:after {
+        content: attr(title);
+        position: absolute;
+        left: -3px;
+        bottom: calc(100% + 3px);
+        padding: 5px 10px;
+        padding: 3px 6px;
+
+        background-color: color("robins-egg");
+        background: linear-gradient(
+          225deg,
+          color("robins-egg"),
+          color("blue-ribbon") 75%
+        );
+        color: #48525c;
+        color: color("white");
+
+        font-family: $fontFamilyCode;
+        font-size: 1.25vw;
+        font-size: 12px;
+        line-height: 1.42rem;
+        font-weight: 700;
+      }
+
+      &.--carousel {
+        amp-carousel {
+          height: 100%;
+        }
+      }
+
+      button {
+        margin: 50px 0 0 0;
+      }
+
+      &.--animation {
+        bottom: 20px;
+
+        @include respond-to('small') {
+          bottom: 0;
+        }
+
+        #animatedImage {
+          max-height: 330px;
+          z-index: 2;
+        }
+
+        .anim-button {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: 2;
+        }
+      }
+
+      &.--accordion {
+        height: auto;
+        max-height: none;
+
+        amp-accordion {
+          height: 100%;
+          padding: 20px;
+          background-color: color("whisper");
+
+          section {
+            position: relative;
+            margin-bottom: 20px;
+
+            &:after {
+              content: "";
+              position: absolute;
+              top: 12px;
+              right: 8px;
+              height: 16px;
+              width: 16px;
+              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath d='M1.927 12.41a1.087 1.087 0 01-1.579 0 1.277 1.277 0 010-1.752L7.211 3.59a1.086 1.086 0 011.578 0l6.863 7.068c.224.23.348.54.348.876 0 .335-.124.644-.348.876a1.087 1.087 0 01-1.579 0L8 6.155 1.927 12.41z' fill='%2348525C' fill-rule='evenodd'/%3E%3C/svg%3E");
+              background-repeat: no-repeat;
+
+              @include respond-to("small") {
+                right: 16px;
+              }
+            }
+          }
+
+          section[expanded] {
+            box-shadow: 0 15px 35px -5px rgb(0 0 0 / 25%);
+
+            &:after {
+              transform: rotate(180deg);
+            }
+          }
+
+          section > h2,
+          section > p {
+            background-color: color("white");
+            padding: 10px 20px;
+          }
+
+          section > h2 {
+            font-size: 1em;
+          }
+
+          section[expanded] > h2 {
+            border: none;
+          }
+        }
+      }
+
+      &.--autocomplete {
+        padding: 0 26px;
+
+        height: 160px;
+        bottom: 35%;
+
+        @include respond-to('small') {
+          bottom: 25%;
+        }
+
+        amp-autocomplete {
+          width: 100%;
+
+          form {
+            margin-top: 5px;
+          }
+
+          input {
+            border: none;
+            width: 100%;
+            box-shadow: 0 15px 35px -5px rgb(0 0 0 / 25%);
+          }
+        }
+
+        amp-autocomplete > div[role="listbox"] {
+          width: 100%;
+          right: 0;
+          box-shadow: 0 15px 35px -5px rgb(0 0 0 / 25%);
+
+          div {
+            padding: 15px 15px;
+          }
+        }
+      }
     }
   }
 }
