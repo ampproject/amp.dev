@@ -167,16 +167,21 @@
 
         #animatedImage {
           max-height: 330px;
+          z-index: 2;
         }
 
         .anim-button {
           position: absolute;
           bottom: 0;
           left: 0;
+          z-index: 2;
         }
       }
 
       &.--accordion {
+        height: auto;
+        max-height: none;
+
         amp-accordion {
           height: 100%;
           padding: 20px;
