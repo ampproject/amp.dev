@@ -291,6 +291,7 @@ function buildPrepare(done) {
       buildBoilerplate,
       buildPixi,
       buildSamples,
+      buildFrontend21,
       importAll,
       zipTemplates
     ),
