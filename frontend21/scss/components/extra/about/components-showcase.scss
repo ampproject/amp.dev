@@ -4,11 +4,17 @@
 
   &-buttons {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: 0.625rem;
-    margin-bottom: 1.875rem;
+    margin: 3.75rem 0 1.875rem 0;
+
     button {
       margin-bottom: 0;
+    }
+
+    @include respond-to('small') {
+      margin-top: 0;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
@@ -30,9 +36,13 @@
     &-code {
       @include fill;
       top: 20px;
-      width: 64.9%;
+      width: 95%;
       height: 100%;
       max-height: 420px;
+      
+      @include respond-to('small') {
+        width: 65%;
+      }
 
       &-snippet {
         height: 92%;
@@ -57,23 +67,53 @@
       }
 
       .grap-lnk {
-        margin-top: 15px;
-        width: 50%;
+        margin-top: 20px;
+        width: 100%;
+        
+        @include respond-to("small") {
+          margin-top: 15px;
+          width: 50%;
+        }
+
         @include respond-to("medium") {
           margin-top: 10px;
           width: 100%;
+        }
+      }
+
+      &[title="amp-accordion"] {
+        .grap-lnk {
+          margin-top: 140px;
+          
+          @include respond-to('small') {
+            margin-top: 15px;
+          }
+        }
+      }
+
+      &[title="amp-autocomplete"] {
+        .grap-lnk {
+          margin-top: 90px;
+          
+          @include respond-to('small') {
+            margin-top: 15px;
+          }
         }
       }
     }
 
     &-ui {
       position: absolute;
-      width: 54.92%;
+      width: 95%;
       height: 80%;
       max-height: 330px;
       right: 0;
       bottom: 0;
       background: color("white");
+      
+      @include respond-to('small') {
+        width: 55%;
+      }
 
       &:before {
         content: "";
@@ -119,6 +159,12 @@
       }
 
       &.--animation {
+        bottom: 20px;
+
+        @include respond-to('small') {
+          bottom: 0;
+        }
+
         #animatedImage {
           max-height: 330px;
         }
@@ -184,7 +230,11 @@
         padding: 0 26px;
 
         height: 160px;
-        bottom: 25%;
+        bottom: 35%;
+
+        @include respond-to('small') {
+          bottom: 25%;
+        }
 
         amp-autocomplete {
           width: 100%;
