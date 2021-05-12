@@ -19,27 +19,28 @@
           {% set code_snippet = g.doc(showcase_code_path).content %}
           {{ doc.pod.markdown.convert('```html\n' + code_snippet + '\n```')|safe }}
         </div>
+
+         <a href="{{component_doc | safe}}" class="ap-m-lnk grap-lnk">
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ap-m-lnk-text">All about this component</span>
+        </a>
       </div>
 
-      <div class="ap-components-showcase-demo-ui {{component | safe}}" title={{"<amp-"~component~">"}}>
+      <div class="ap-components-showcase-demo-ui --{{component | safe}}" title={{"<amp-"~component~">"}}>
 
       {% if component == 'animation' %}
         <div class="scale-image-window">
           <amp-img id="animatedImage" width="450" height="300" layout="responsive" src="/static/samples/img/elephant.jpg" alt="{{ _('Picture of an elephant') }}"></amp-img>
-          <button on="tap:scaleUpAnimation.start" class="ap-button">{{ _('Click to scale up the image') }}</button>
         </div>
+        <button on="tap:scaleUpAnimation.restart" class="ap-button anim-button">{{ _('Click to scale up the image') }}</button>
       {% endif %}
 
         <!-- Styled demo here -->
         {{ code_snippet|safe }}
       </div>
-      <a href="{{component_doc | safe}}" class="ap-m-lnk grap-lnk">
-        <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        </div>
-        <span class="ap-m-lnk-text">All about this component</span>
-      </a>
     </div>
     {% endfor %}
   </div>
