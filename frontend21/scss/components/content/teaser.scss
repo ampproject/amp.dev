@@ -10,7 +10,7 @@
     color: color('charade');
     border-radius: 8px;
     @include shadow-large;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transition: box-shadow .3s ease-in-out, transform 0.3s ease-in-out;
 
     @include respond-to('small') {
       max-width: 291px;
