@@ -81,6 +81,16 @@
         }
       }
 
+      &[title="amp-carousel"] {
+        .grap-lnk {
+          margin-top: 300px;
+          
+          @include respond-to('small') {
+            margin-top: 15px;
+          }
+        }
+      }
+
       &[title="amp-accordion"] {
         .grap-lnk {
           margin-top: 140px;
@@ -129,20 +139,10 @@
         position: absolute;
         left: -3px;
         bottom: calc(100% + 3px);
-        padding: 5px 10px;
         padding: 3px 6px;
-
-        background-color: color("robins-egg");
-        background: linear-gradient(
-          225deg,
-          color("robins-egg"),
-          color("blue-ribbon") 75%
-        );
-        color: #48525c;
-        color: color("white");
-
+        
+        @include ci-websites;
         font-family: $fontFamilyCode;
-        font-size: 1.25vw;
         font-size: 12px;
         line-height: 1.42rem;
         font-weight: 700;
