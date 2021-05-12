@@ -58,7 +58,8 @@ thumborRouter.get(imagePaths, async (request, response, next) => {
 
   // We allow certain remote images to be optimized;
   // they mount on the virtual /static/remote
-  if (request.url.includes(REMOTE_STATIC_MOUNT)) {
+  const isRemoteImage = request.url.includes(REMOTE_STATIC_MOUNT);
+  if (isRemoteImage) {
     imageUrl = new URL(request.query.url);
   } else {
     imageUrl.searchParams.set('original', 'true');
@@ -68,24 +69,40 @@ thumborRouter.get(imagePaths, async (request, response, next) => {
   thumborUrl.pathname =
     SECURITY_KEY + (imageWidth ? `/${imageWidth}x0/` : '/') + imageUrl.href;
 
+  let optimizedImage;
   try {
-    const optimizedImage = await fetch(thumborUrl.toString(), {
+    optimizedImage = await fetch(thumborUrl.toString(), {
       headers: request.headers,
     });
-    if (!optimizedImage.ok) {
-      log.error('Thumbor did not respond to', thumborUrl.toString());
-      // If Thumbor did not respond, fail over to default static middleware
-      next();
-      return;
-    }
-
-    const contentType = optimizedImage.headers.get('content-type');
-    response.setHeader('Content-Type', contentType);
-    optimizedImage.body.pipe(response);
   } catch (e) {
     log.error('Failed connecting to thumbor', e);
-    next();
+    optimizedImage = {ok: false};
   }
+  if (!optimizedImage.ok) {
+    log.error('Thumbor did not respond to', thumborUrl.toString());
+    if (isRemoteImage) {
+      // Fetch the image from remote
+      try {
+        optimizedImage = await fetch(imageUrl);
+        if (!optimizedImage.ok) {
+          log.error('Failed downloading remote image', optimizedImage.status);
+          res.status(404).send('Not found');
+          return;
+        }
+      } catch (e) {
+        log.error('Failed downloading remote image', e);
+        res.status(404).send('Not found');
+        return;
+      }
+    } else {
+      // If Thumbor did not respond, fail over to default static middleware
+      return next();
+    }
+  }
+
+  const contentType = optimizedImage.headers.get('content-type');
+  response.setHeader('Content-Type', contentType);
+  optimizedImage.body.pipe(response);
 });
 
 module.exports = {
