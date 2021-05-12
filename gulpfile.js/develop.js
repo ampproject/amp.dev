@@ -36,7 +36,7 @@ function bootstrap(done) {
 }
 
 function develop() {
-  gulp.series(gulp.parallel(build.buildFrontend, build.collectStatics), run)();
+  gulp.series(build.buildFrontend, build.collectStatics, run)();
 }
 
 function extract(done) {
