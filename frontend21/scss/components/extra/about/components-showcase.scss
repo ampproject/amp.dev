@@ -13,12 +13,6 @@
   }
 
   &-demos {
-    margin-bottom: 50px;
-
-    @include respond-to("small") {
-      margin-bottom: 0px;
-    }
-
     .show {
       position: relative;
       display: block;
