@@ -21,6 +21,10 @@
     }
 
     @include respond-to('large') {
+      max-width: 350px;
+    }
+
+    @include respond-to('xlarge') {
       max-width: 390px;
     }
 
