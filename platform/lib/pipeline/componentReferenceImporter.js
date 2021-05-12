@@ -198,12 +198,7 @@ class ComponentReferenceImporter {
       }
     }
 
-    return Promise.all(
-      documents.map(async (doc) => {
-        const growDoc = await this._createGrowDoc(doc);
-        return growDoc;
-      })
-    );
+    return Promise.all(documents.map((doc) => this._createGrowDoc(doc)));
   }
 
   /**
