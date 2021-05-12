@@ -81,19 +81,8 @@ thumborRouter.get(imagePaths, async (request, response, next) => {
   if (!optimizedImage.ok) {
     log.error('Thumbor did not respond to', thumborUrl.toString());
     if (isRemoteImage) {
-      // Fetch the image from remote
-      try {
-        optimizedImage = await fetch(imageUrl);
-        if (!optimizedImage.ok) {
-          log.error('Failed downloading remote image', optimizedImage.status);
-          res.status(404).send('Not found');
-          return;
-        }
-      } catch (e) {
-        log.error('Failed downloading remote image', e);
-        res.status(404).send('Not found');
-        return;
-      }
+      // Redirect to remote image
+      response.redirect(imageUrl);
     } else {
       // If Thumbor did not respond, fail over to default static middleware
       return next();
