@@ -40,7 +40,7 @@ function develop() {
 }
 
 function extract(done) {
-  gulp.series(gulp.parallel(build.buildFrontend, build.collectStatics), () => {
+  gulp.series(build.buildFrontend, build.collectStatics, () => {
     config.configureGrow();
 
     return grow('translations extract').catch(() => {
