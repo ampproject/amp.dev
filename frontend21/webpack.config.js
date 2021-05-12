@@ -20,6 +20,7 @@ module.exports = (env, argv) => {
       chunkFilename: 'static/[name].[chunkhash].bundle.js',
       sourceMapFilename: 'static/[name].map',
       publicPath: isDevelopment ? 'http://localhost:8090/' : '/',
+      path: path.join(process.cwd(), 'dist'),
     },
     optimization: {
       minimizer: isDevelopment ? [] : [new OptimizeCSSAssetsPlugin({})],
