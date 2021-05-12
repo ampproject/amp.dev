@@ -30,7 +30,7 @@ class SourceCodeExporterTestCase(unittest.TestCase):
     self.assertEqual('amp-accordion', example_doc.imports[0].name)
     self.assertEqual('0.9', example_doc.imports[0].version)
     self.assertEqual('amp-date-display', example_doc.imports[1].name)
-    self.assertEqual('0.1', example_doc.imports[1].version) # 0.1 is always the default
+    self.assertEqual('1.0', example_doc.imports[1].version) # 0.1 is always the default
     self.assertEqual('amp-mustache', example_doc.template.name)
     self.assertEqual('0.2', example_doc.template.version)
 
@@ -43,7 +43,7 @@ class SourceCodeExporterTestCase(unittest.TestCase):
     self.assertEqual('none', example_doc.preview)
     self.assertEqual(1, len(example_doc.imports))
     self.assertEqual('amp-accordion', example_doc.imports[0].name)
-    self.assertEqual('0.1', example_doc.imports[0].version) # 0.1 is always the default
+    self.assertEqual('1.0', example_doc.imports[0].version) # 0.1 is always the default
     self.assertEqual('amp-mustache', example_doc.template.name)
     self.assertEqual('0.9', example_doc.template.version)
 
