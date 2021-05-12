@@ -68,6 +68,7 @@ class ComponentReferenceImporter {
       if (growDoc && growDoc.bento) {
         bentoComponents.set(growDoc.title, {
           name: growDoc.title,
+          experimental: growDoc.experimental,
           path:
             growDoc.servingPath ||
             `/documentation/components/${growDoc.title}-v${growDoc.version}/`,
@@ -88,7 +89,7 @@ class ComponentReferenceImporter {
     }
     fs.writeFile(
       BENTO_COMPONENTS_LIST,
-      JSON.stringify(Array.from(bentoComponents.values), null, 2),
+      JSON.stringify(Array.from(bentoComponents.values()), null, 2),
       'utf-8'
     );
 
@@ -198,8 +199,9 @@ class ComponentReferenceImporter {
     }
 
     return Promise.all(
-      documents.map((doc) => {
-        return this._createGrowDoc(doc);
+      documents.map(async (doc) => {
+        const growDoc = await this._createGrowDoc(doc);
+        return growDoc;
       })
     );
   }
