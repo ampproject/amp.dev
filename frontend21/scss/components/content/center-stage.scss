@@ -1,0 +1,36 @@
+.#{project('center-stage')} {
+  --spacing: 50px;
+
+  position: relative;
+  @include grid;
+  color: color('white');
+  grid-column: 1 / -1;
+  padding: var(--spacing) 0;
+  background: linear-gradient(
+    180deg,
+    color('robins-egg') -45%,
+    color('blue-ribbon') 161%
+  );
+  color: color('white');
+
+  @include respond-to('small') {
+    --spacing: 100px;
+  }
+
+  .#{project('section')} + & {
+    margin-top: 100px;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    grid-column: 2 / 24;
+  }
+
+  .#{project('button')} {
+    width: max-content;
+    margin: 50px auto 0 auto;
+  }
+}

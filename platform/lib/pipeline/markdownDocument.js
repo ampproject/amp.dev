@@ -24,10 +24,12 @@ const SlugGenerator = require('@lib/utils/slugGenerator');
 const TOC_MARKER = '[TOC]';
 
 // This expression matches a {% raw %}...{% endraw %} block
-const JINJA2_RAW_BLOCK = /\{%\s*raw\s*%\}(?:(?!\{%\s*endraw\s*%\})[\s\S])*\{%\s*endraw\s*%\}/;
+const JINJA2_RAW_BLOCK =
+  /\{%\s*raw\s*%\}(?:(?!\{%\s*endraw\s*%\})[\s\S])*\{%\s*endraw\s*%\}/;
 
 // This expression matches source code blocks. fenced blocks are converted to this syntax
-const SOURCECODE_BLOCK = /\[\s*sourcecode[^\]]*\][\s\S]*?\[\s*\/\s*sourcecode\s*\]/;
+const SOURCECODE_BLOCK =
+  /\[\s*sourcecode[^\]]*\][\s\S]*?\[\s*\/\s*sourcecode\s*\]/;
 
 // we search for ALL code blocks, and at the same time for raw blocks
 // to ensure we do not match something that belongs to different code blocks
@@ -74,7 +76,8 @@ const RELATIVE_LINK_PATTERN = new RegExp(
 );
 
 // This pattern will find the text for markdown titles skipping explicit anchors.
-const TITLE_ANCHOR_PATTERN = /^(#+)[ \t]+(.*?)(<a[ \t]+name=[^>]*><\/a>)?((?:.(?!<a[ \t]+name))*?)$/gm;
+const TITLE_ANCHOR_PATTERN =
+  /^(#+)[ \t]+(.*?)(<a[ \t]+name=[^>]*><\/a>)?((?:.(?!<a[ \t]+name))*?)$/gm;
 
 // Matches a block of frontmatter delimited by ---
 const FRONTMATTER_PATTERN = /^---\r?\n.*\r?\n---\r?\n/ms;
@@ -327,7 +330,8 @@ class MarkdownDocument {
    * @return {String}          The rewritten input
    */
   static rewriteCalloutToTip(contents) {
-    const CALLOUT_PATTERN = /{% call callout\('.*?', type='(.*?)'\) %}(.*?){% endcall %}/gs;
+    const CALLOUT_PATTERN =
+      /{% call callout\('.*?', type='(.*?)'\) %}(.*?){% endcall %}/gs;
     const AVAILABLE_CALLOUT_TYPES = {
       'note': 'note',
       'read': 'read-on',

@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -404,7 +404,7 @@ In this task, we’ll cover an additional optimization that helps when the user 
 
 ##### Using substitution features <a name="using-substitution-features"></a>
 
-Our approach will take advantage of two types of [AMP variable substitutions](https://github.com/ampproject/amphtml/blob/main/spec/./amp-var-substitutions.md).
+Our approach will take advantage of two types of [AMP variable substitutions](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md).
 
 **To update outgoing links to use a Client ID substitution:** Define a new query parameter, `ref_id` ("referrer ID"), which will appear within the URL and indicate the **originating context’s identifier** for the user. Set this query parameter to equal the value of AMP’s Client ID substitution:
 

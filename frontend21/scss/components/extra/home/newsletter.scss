@@ -1,0 +1,15 @@
+.#{project('newsletter')} {
+  display: flex;
+
+  .amp-geo-group-doubleOptIn &, .amp-geo-pending & {
+    display: none;
+  }
+
+  &-double {
+    display: none;
+
+    .amp-geo-group-doubleOptIn &, .amp-geo-pending & {
+      display: flex;
+    }
+  }
+}

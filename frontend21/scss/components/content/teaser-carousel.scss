@@ -1,0 +1,111 @@
+.#{project('teaser-carousel')} {
+  --spacing: 43px;
+
+  position: relative;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: var(--spacing) 1fr var(--spacing);
+  max-width: $maxWidth;
+  margin: 100px auto 100px auto;
+
+  &-container {
+    grid-column: 1/-1;
+    grid-row: 1;
+  }
+
+  &-controls {
+    display: none;
+
+    &.--prev {
+      left: 0;
+      grid-column: 1;
+    }
+
+    &.--next {
+      right: 0;
+      grid-column: 3;
+    }
+
+    .amp-carousel-button {
+      width: var(--spacing);
+      height: var(--spacing);
+      background-size: 19px 19px;
+
+      @include respond-to('medium') {
+        background-size: 18px 18px;
+      }
+
+      @include respond-to('large') {
+        background-size: 28px 28px;
+      }
+    }
+
+    @include respond-to('small') {
+      display: initial;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      grid-row: 1;
+    }
+  }
+
+  &-pagination {
+    grid-row: 2;
+    grid-column: 1/-1;
+    margin: 0 auto;
+
+    &-item {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin: 0 5px;
+      background-color: color('iron');
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &[option][selected] {
+        outline: none;
+      }
+
+      &[selected] {
+        @include ci-websites;
+      }
+    }
+  }
+
+  @include respond-to('small') {
+    &-container {
+      padding: 0 var(--spacing);
+    }
+
+    .#{project('teaser')} {
+      padding-bottom: 15px;
+
+      &:nth-child(3n + 1) {
+        align-items: center;
+      }
+      &:nth-child(3n + 2) {
+        align-items: flex-end;
+      }
+
+      &:nth-child(3n + 3) {
+        align-items: flex-start;
+      }
+    }
+  }
+
+  @include respond-to('medium') {
+    --spacing: 47px;
+  }
+
+  @include respond-to('large') {
+    --spacing: 68px;
+  }
+}

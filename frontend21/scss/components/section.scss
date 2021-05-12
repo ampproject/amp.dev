@@ -43,6 +43,30 @@
     }
   }
 
+  &.--col-left, &.--col-right {
+    grid-column: 2/24;
+  }
+
+  &.--col-left {
+    @include respond-to('small') {
+      grid-column: 2/16;
+    }
+
+    @include respond-to('medium') {
+      grid-column: 4/16;
+    }
+  }
+
+  &.--col-right {
+    @include respond-to('small') {
+      grid-column: 9/23;
+    }
+
+    @include respond-to('medium') {
+      grid-column: 10/23;
+    }
+  }
+
   &.--fullscreen {
     margin: 0;
     grid-column: 1 / -1;

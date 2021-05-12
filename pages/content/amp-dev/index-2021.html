@@ -1,0 +1,217 @@
+---
+$title: AMP - a web component framework to easily create user-first web experiences
+$view: /views/2021/base.html
+$titles:
+  navigation: Start
+description: 'Whether you are a publisher, e-commerce company, storyteller, advertiser or email sender, AMP makes it easy to create great experiences on the web. Use AMP to build websites, stories, ads and emails.'
+
+format_explainer:
+  - name: websites
+    headline: AMP Websites
+    description: "Easily create websites with a great page experience out-of-the-box using AMP’s ready-to-go web components."
+    link: "All about AMP Websites"
+    cta: "Get started"
+    url: /about/websites.html
+  - name: stories
+    headline: Web Stories
+    description: "Immerse readers in visual and tappable stories they can share anywhere on the open web."
+    link: "All about Web Stories"
+    url: /about/stories.html
+  - name: email
+    headline: AMP Emails
+    description: "Send emails of the future with personalized dynamic content and interactive elements that engage readers."
+    link: "All about AMP Emails"
+    url: /about/email.html
+  - name: ads
+    headline: AMP Ads
+    description: "Serve lightning fast and secure eye-catching creatives."
+    link: "All about AMP Ads"
+    url: /about/ads.html
+
+success_stories:
+  - !g.doc /content/amp-dev/about/success-stories/washingtonpost.yaml
+  - !g.doc /content/amp-dev/about/success-stories/teads.yaml
+  - !g.doc /content/amp-dev/about/success-stories/carved.yaml
+  - !g.doc /content/amp-dev/about/success-stories/wompmobile.yaml
+---
+
+<main class="ap--main">
+  <section class="ap-home-stage">
+    <div class="ap-home-stage-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 194 194">
+        <defs>
+            <linearGradient id="hnk2zvh1ka" x1="100%" x2="0%" y1="0%" y2="100%">
+                <stop offset="0%" stop-color="#00DCC0"/>
+                <stop offset="100%" stop-color="#005AF0"/>
+            </linearGradient>
+        </defs>
+        <g fill="none" fill-rule="evenodd">
+            <g fill="url(#hnk2zvh1ka)" transform="translate(-91 -83)">
+                <path d="M188 83c53.572 0 97 43.428 97 97s-43.428 97-97 97-97-43.428-97-97 43.428-97 97-97zm0 2.533c-52.173 0-94.467 42.294-94.467 94.467s42.294 94.467 94.467 94.467 94.467-42.294 94.467-94.467S240.173 85.533 188 85.533zM193.88 124l8.969.037-6.742 41.065 18.96-.023.31-.005.177.002c2.472.072 4.446 2.15 4.446 4.697 0 1.007-.345 1.937-.952 2.77l.043-.06L182.03 236h-8.853l6.577-41.007-18.856.028-.277.005-.173-.001c-2.472-.073-4.449-2.153-4.449-4.698 0-.37.076-.76.208-1.185.071-.23.158-.465.257-.705.156-.378.312-.697.445-.944L193.88 124zm1.435 2.562L159.1 188.754l-.067.132-.1.21c-.05.106-.099.217-.145.33-.071.172-.132.336-.178.485-.015.05-.029.096-.04.14l-.029.118-.017.094c-.003.026-.005.048-.005.064 0 1.187.928 2.143 2.062 2.143l.19-.003 21.947-.035-6.579 41.011h4.454l36.39-62.366.038-.053c.305-.42.458-.832.458-1.25 0-1.19-.925-2.143-2.06-2.143l-22.288.032 6.744-41.082-4.561-.019z"/>
+            </g>
+        </g>
+      </svg>
+    </div>
+    <div class="ap-home-stage-text">
+      <h1 class="ap-h1">{{ _('AMP is a web component framework to easily create user-first experiences for the web.') }}</h1>
+    </div>
+  </section>
+  <section class="ap-formats">
+    <aside class="ap-formats-navigation">
+      <div class="ap-formats-navigation-wrapper">
+        {% for format in doc.format_explainer %}
+        <amp-animation id="switchIcon-{{ format.name }}" layout="nodisplay">
+          <script type="application/json">
+            {
+              "duration": "500ms",
+                "fill": "both",
+                "animations": [
+                  {
+                      "selector": ".ap-formats-navigation-icon.active.{{ format.name }}",
+                        "keyframes": [
+                          {
+                              "visibility": "hidden",
+                                "opacity": "0"
+                            },
+                          {
+                              "visibility": "visible",
+                                "opacity": "1"
+                            }
+                        ]
+                    },
+                    {
+                      "selector": ".ap-formats-navigation-icon.inactive.{{ format.name }}",
+                        "keyframes": [
+                          {
+                              "visibility": "visible",
+                                "opacity": "1"
+                            },
+                          {
+                              "visibility": "hidden",
+                                "opacity": "0"
+                            }
+                        ]
+                    }
+                ]
+            }
+          </script>
+        </amp-animation>
+        <button class="ap-formats-navigation-icon-wrapper" on="tap:ap-formats-format-{{ format.name }}.scrollTo(duration=300)">
+          <div class="ap-formats-navigation-icon inactive {{ format.name }}">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
+          </div>
+          <div class="ap-formats-navigation-icon active {{ format.name }}">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
+          </div>
+        </button>
+        {% endfor %}
+      </div>
+    </aside>
+    {% set initial_format = doc.format_explainer[0].name -%}
+    {% for format in doc.format_explainer %}
+    <div class="ap-formats-format {{ format.name }}" id="ap-formats-format-{{ format.name }}">
+      <amp-position-observer on="enter:switchIcon-{{ format.name }}.start;exit:switchIcon-{{ format.name }}.start,switchIcon-{{ format.name }}.reverse" intersection-ratios="0.9" layout="nodisplay">
+      </amp-position-observer>
+      <div class="ap-formats-background">
+        <svg amp-fx="parallax" data-parallax-factor="0.95"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
+      </div>
+      <div class="ap-formats-format-content">
+        {% do doc.icons.useIcon('/icons/amp-' + format.name + '.svg') %}
+        <div class="ap-formats-logo">
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format.name }}"></use></svg>
+        </div>
+        <h1>{{ _(format.headline) }}</h1>
+        <h5>{{ _(format.description) }}</h5>
+        {% if format.cta %}
+          <a href="documentation/index.html" class="ap-button --inverted cta">{{ _(format.cta) }}</a>
+        {% endif %}
+        <a href="{{ format.url }}" class="ap-m-lnk">
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ap-m-lnk-text">{{ _(format.link) }}</span>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section class="ap-intro ap-section --col-left">
+    <h1>{{ _('The latest news') }}</h1>
+    <p>{{ _('Don\'t want to miss any of the great stuff that happens around AMP? Then always be first in line and subscribe to our newsletter!') }}</p>
+    <a href="https://services.google.com/fb/forms/ampnewsletter-doubleopt-in/" class="ap-m-lnk ap-m-lnk-square ap-newsletter-double">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">{{ _('Subscribe') }}</span>
+    </a>
+
+    <a href="https://services.google.com/fb/forms/ampnewsletter/" class="ap-m-lnk ap-m-lnk-square ap-newsletter">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">{{ _('Subscribe') }}</span>
+    </a>
+  </section>
+  <section class="ap-section --fullscreen">
+    [% set posts = []|importBlog %]
+    [% if posts|length %]
+    <div class="ap-teaser-carousel --news">
+      <div class="ap-teaser-carousel-container">
+        <amp-base-carousel
+          id="teaser-carousel-news"
+          height="573"
+          layout="fixed-height"
+          role="region"
+          visible-count="(min-width: 1024px) 3, (min-width: 768px) 2, 1"
+          aria-label="{{ _('News') }}"
+          on="slideChange:teaser-carousel-pagination-news.toggle(index=event.index, value=true)">
+          [% for post in posts %]
+          {% set teaser_doc = {
+            'type': 'news',
+            'title': '[= post.title =]',
+            'image': '[= post.image =]',
+            'url': '[= post.url =]',
+            'headline': '[= post.headline =]',
+            'date': '[= post.date =]'
+          } %}
+          {% include '/views/2021/partials/teaser.j2' %}
+          [% endfor %]
+          <button slot="next-arrow"></button>
+          <button slot="prev-arrow"></button>
+        </amp-base-carousel>
+      </div>
+      <div class="ap-teaser-carousel-controls --prev">
+        <button on="tap: teaser-carousel-news.prev()" class="amp-carousel-button amp-carousel-button-prev" aria-label="Previous"></button>
+      </div>
+      <div class="ap-teaser-carousel-controls --next">
+        <button on="tap: teaser-carousel-news.next()" class="amp-carousel-button amp-carousel-button-next" aria-label="Next"></button>
+      </div>
+      <amp-selector class="ap-teaser-carousel-pagination" id="teaser-carousel-pagination-news" layout="container" on="select: teaser-carousel-news.goToSlide(index=event.targetOption)">
+        [% for post in posts %]
+          <div class="ap-teaser-carousel-pagination-item" option="[= loop.index0 =]" [% if loop.index0 == 0 %]selected[% endif %]></div>
+        [% endfor %]
+      </amp-selector>
+    </div>
+    [% endif %]
+  </section>
+
+  <section class="ap-intro ap-section --col-right">
+    <h1>{{ _('Explore AMP<br/> success stories') }}</h1>
+    <p>{{ _('Don’t take our word for it - read case studies from industry success stories and see how AMP has produced positive results.') }}</p>
+    <a href="about/success-stories/index.html" class="ap-m-lnk ap-m-lnk-square">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/internal.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">{{ _('See all success stories') }}</span>
+    </a>
+  </section>
+
+  {% set slider_id = 'success-stories' %}
+  {% set teaser_docs = doc.success_stories %}
+  {% include '/views/2021/partials/teaser-slider.j2' %}
+</main>

@@ -45,9 +45,9 @@
     margin-bottom: var(--spacing);
 
     @include respond-to('small') {
-      grid-column: 14 / span 10;
+      grid-column: 14 / span 11;
       padding-top: var(--spacing);
-      margin-bottom: -var(--spacing);
+      margin-bottom: calc(-1 * var(--spacing));
     }
   }
 

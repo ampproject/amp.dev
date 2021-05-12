@@ -107,12 +107,14 @@ describe('formatTransform', () => {
   });
 
   it('removes @formats', () => {
-    const input = s(`<html ⚡><head><style amp-custom>body{color:red}</style></head>
+    const input =
+      s(`<html ⚡><head><style amp-custom>body{color:red}</style></head>
 <!-- comment @formats(websites) -->
 <body>
 </body>
 </html>`);
-    const want = s(`<html ⚡><head><style amp-custom>body{color:red}</style></head>
+    const want =
+      s(`<html ⚡><head><style amp-custom>body{color:red}</style></head>
 <!-- comment  -->
 <body>
 </body>

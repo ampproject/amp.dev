@@ -48,6 +48,9 @@ $breakpoints: (
   'pointer-fine': (
     pointer: fine,
   ),
+  '-small': (
+    max-width: 767px,
+  ),
   'small': (
     min-width: 768px,
   ),

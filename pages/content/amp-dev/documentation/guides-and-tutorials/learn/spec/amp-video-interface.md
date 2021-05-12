@@ -12,7 +12,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-video-interface.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -64,7 +64,6 @@ these players implement.
 -   [amp-viqeo-player](https://amp.dev/documentation/components/amp-viqeo-player)
 -   [amp-wistia-player](https://amp.dev/documentation/components/amp-wistia-player)
 -   [amp-youtube](https://amp.dev/documentation/components/amp-youtube)
--   [amp-foo](https://amp.dev/documentation/components/amp-foo)
 
 <!-- markdown-link-check-enable -->
 
