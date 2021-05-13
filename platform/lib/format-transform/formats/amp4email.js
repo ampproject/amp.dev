@@ -16,6 +16,7 @@
 
 const config = require('@lib/config.js');
 const host = config.hosts.platform;
+const postcss = require('postcss');
 const postcssCssVariables = require('postcss-css-variables');
 
 module.exports = {
@@ -46,7 +47,7 @@ module.exports = {
       const node = el[0].children[0];
 
       if (node) {
-        node.data = postcssCssVariables.process(node.data).css;
+        node.data = postcss([postcssCssVariables()]).process(node.data).css;
       }
     },
     'head > style[amp-boilerplate]':

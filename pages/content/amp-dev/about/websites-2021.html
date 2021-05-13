@@ -1,7 +1,8 @@
 ---
 $title: AMP Websites
 $view: /views/2021/base.html
-description: 'AMP is a simple and robust format to ensure your website is fast, user-first, and makes money. AMP provides long-term success for your web strategy with distribution across ...'
+description: 'AMP is a simple and robust format to ensure your website is fast, user-first, and makes money. AMP
+provides long-term success for your web strategy with distribution across ...'
 sharing_images:
   square: /static/img/sharing/about-websites-1x1.png
   wide: /static/img/sharing/about-websites-600x314.png
@@ -44,10 +45,8 @@ success_stories:
           across popular platforms and reduced operating costs.') }}
         </p>
 
-        <a
-          class="ap-button --inverted"
-          href="{{ g.doc('/content/amp-dev/documentation/index.html', locale=doc.locale).url.path }}"
-        >
+        <a class="ap-button --inverted"
+          href="{{ g.doc('/content/amp-dev/documentation/index.html', locale=doc.locale).url.path }}">
           {{ _('Get started with AMP') }}
         </a>
       </div>
@@ -55,10 +54,7 @@ success_stories:
 
     <div class="ap-stage-backdrop">
       <svg width="457" height="457">
-        <use
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          xlink:href="/static/frontend/sprite.svg#deco-foundation"
-        ></use>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/static/frontend/sprite.svg#deco-foundation"></use>
       </svg>
     </div>
 
@@ -70,6 +66,46 @@ success_stories:
         height="669"
         alt="{{ _('A screenshot showing amp-sidebar.') }}"
       ></amp-img>
+    </div>
+  </section>
+
+  <section class="ap-section --col-4-23">
+    <div class="ap-text-block">
+      <h2 class="ap-h1">{{ _('Grab-and-go components') }}</h2>
+    </div>
+  
+    <div class="ap-text-media --thirds --center">
+      <div class="ap-text-media-col">
+        <div class="ap-text-block">
+          <p>
+            {{ _('Quickly build pages with AMP’s extensive component library.
+            These components are copy-and-pastable and meet a wide range of UI
+            and functionality needs. They are customizable in behavior and style
+            through attributes and CSS. Best of all, they have a team of
+            engineers working full-time to guarantee performance.') }}
+          </p>
+        </div>
+        <a href="{{ g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path }}"
+          class="ap-m-lnk ap-m-lnk-square">
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+            </svg>
+          </div>
+          <span class="ap-m-lnk-text">{{ _('See the full component library') }}</span>
+        </a>
+  
+        <p>
+          {{ _('Want just the components without the AMP ecosystem? ')}}
+          <a
+            href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/bento_guide', locale=doc.locale).url.path }}">Bento
+            AMP</a>!
+        </p>
+      </div>
+      <div class="ap-text-media-col">
+        {% include 'views/2021/partials/extras/about/components-showcase.j2' %}
+      </div>
     </div>
   </section>
 
@@ -100,24 +136,16 @@ success_stories:
           </p>
         </div>
 
-        <a
-          class="ap-button"
-          href="{{ g.doc('/content/amp-dev/page-experience.html', locale=doc.locale).url.path }}"
-        >
+        <a class="ap-button" href="{{ g.doc('/content/amp-dev/page-experience.html', locale=doc.locale).url.path }}">
           {{ _('Check your page’s performance') }}
         </a>
 
-        <a
-          href="{{g.doc('/content/amp-dev/about/page-experience.html', locale=doc.locale).url.path}}"
-          class="ap-m-lnk ap-m-lnk-square"
-        >
+        <a href="{{g.doc('/content/amp-dev/about/page-experience.html', locale=doc.locale).url.path}}"
+          class="ap-m-lnk ap-m-lnk-square">
           <div class="ap-a-ico ap-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
             <svg>
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="#internal"
-              ></use>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
             </svg>
           </div>
           <span class="ap-m-lnk-text">{{ _('Learn more') }}</span>
@@ -199,17 +227,12 @@ success_stories:
             }}
           </p>
         </div>
-        <a
-          href="{{ g.doc('/content/amp-dev/support/faq/platform-and-vendor-partners.md', locale=doc.locale).url.path }}"
-          class="ap-m-lnk ap-m-lnk-square"
-        >
+        <a href="{{ g.doc('/content/amp-dev/support/faq/platform-and-vendor-partners.md', locale=doc.locale).url.path }}"
+          class="ap-m-lnk ap-m-lnk-square">
           <div class="ap-a-ico ap-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
             <svg>
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="#internal"
-              ></use>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
             </svg>
           </div>
           <span class="ap-m-lnk-text">{{ _('See supported platforms') }}</span>
@@ -217,13 +240,8 @@ success_stories:
       </div>
       <div class="ap-text-media-col">
         <figure>
-          <amp-img
-            alt="{{ _('Supported CMS’ and frameworks') }}"
-            src="/static/img/frameworks.jpg"
-            width="714"
-            height="288"
-            layout="responsive"
-          >
+          <amp-img alt="{{ _('Supported CMS’ and frameworks') }}" src="/static/img/frameworks.jpg" width="714"
+            height="288" layout="responsive">
           </amp-img>
         </figure>
       </div>

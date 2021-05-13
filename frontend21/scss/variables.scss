@@ -51,6 +51,9 @@ $breakpoints: (
   '-small': (
     max-width: 767px,
   ),
+  'min': (
+    min-width: 550px,
+  ),
   'small': (
     min-width: 768px,
   ),
@@ -59,6 +62,9 @@ $breakpoints: (
   ),
   'large': (
     min-width: 1280px,
+  ),
+  'xlarge': (
+    min-width: 1440px,
   ),
   'max': (
     min-width: 1680px,
