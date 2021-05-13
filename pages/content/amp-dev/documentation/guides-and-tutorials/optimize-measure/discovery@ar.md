@@ -74,7 +74,7 @@ $title: جعل صفحتك قابلة للاكتشاف
 </script>
 [/sourcecode]
 
-يمكن الاطلاع على المزيد من الأمثلة في [مجلد أمثلة ampproject](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples)، بما في ذلك بنية سمة HTML البدلية.
+يمكن الاطلاع على المزيد من الأمثلة في [مجلد أمثلة ampproject](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples)، بما في ذلك بنية سمة HTML البدلية.
 
 ملاحظة: يعتبر تعريف Schema.org شرطًا لجعل المحتوى التابع لك مؤهلاً للظهور في النسخة التجريبية من [المكتبة الدوّارة لأخبار بحث Google (جرّبها على الجوّال)](https://g.co/ampdemo).
 راجع أيضًا [أهم الأخبار المتعلقة بـ AMP](https://developers.google.com/structured-data/carousels/top-stories)، و[أداة اختبار البيانات المنظمة](https://developers.google.com/structured-data/testing-tool/).

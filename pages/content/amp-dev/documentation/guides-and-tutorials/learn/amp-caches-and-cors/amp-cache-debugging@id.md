@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-debugging.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-debugging.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -50,7 +50,7 @@ Jika Anda masih mengalami masalah setelah mengikuti langkah-langkah ini, periksa
     <tr>
       <td rowspan="2">Aset (cth., font dan gambar) tidak muncul</td>
       <td>Aset disajikan dengan jenis MIME yang tidak benar.</td>
-      <td>Tentukan sebuah <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">jenis MIME yang dapat diterima</a>.</td>
+      <td>Tentukan sebuah <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">jenis MIME yang dapat diterima</a>.</td>
     </tr>
     <tr>
       <td>Cache AMP tidak dapat mengakses aset.</td>

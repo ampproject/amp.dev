@@ -6,7 +6,7 @@ formats:
   - email
 ---
 
-Klien email yang ingin mendukung AMP untuk Email harus menggunakan [Penampil AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) untuk mengelola email AMP pengirim mereka. Penampil yang dibuat dengan [perpustakaan Penampil AMP](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) menyelubungi dokumen AMP dan memungkinkan [kemampuan](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/CAPABILITIES.md) yang mengizinkan komunikasi dua arah dengan dokumen AMP melalui postMessage. Kemampuan ini meliputi pemberian kontrol atas visibilitas email, penyampaian metrik pengguna, dan menyediakan alat untuk memastikan keamanan permintaan XHR yang dibuat dari email.
+Klien email yang ingin mendukung AMP untuk Email harus menggunakan [Penampil AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) untuk mengelola email AMP pengirim mereka. Penampil yang dibuat dengan [perpustakaan Penampil AMP](https://github.com/ampproject/amphtml/tree/main/extensions/amp-viewer-integration) menyelubungi dokumen AMP dan memungkinkan [kemampuan](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/CAPABILITIES.md) yang mengizinkan komunikasi dua arah dengan dokumen AMP melalui postMessage. Kemampuan ini meliputi pemberian kontrol atas visibilitas email, penyampaian metrik pengguna, dan menyediakan alat untuk memastikan keamanan permintaan XHR yang dibuat dari email.
 
 ## Pencegatan XHR Penampil
 

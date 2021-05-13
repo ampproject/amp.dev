@@ -49,7 +49,7 @@ Menampilkan iframe.
 * `amp-iframe` tidak akan muncul di dekat bagian atas dokumen (kecuali untuk iframe yang menggunakan `placeholder` seperti dijelaskan [di bawah](#iframe-with-placeholder)). iframe harus berjarak 600 piksel dari atas, atau tidak dalam 75% pertama dari viewport saat di-scroll ke atas, salah satu yang lebih kecil.
 * Secara default, amp-iframe ditempatkan dalam sandbox (lihat [detail](#sandbox)).
 * `amp-iframe` hanya boleh meminta resource melalui HTTPS, dari data-URI, atau melalui atribut `srcdoc`.
-* `amp-iframe` tidak boleh berada dalam asal yang sama dengan container kecuali jika `allow-same-origin` tidak diizinkan dalam atribut `sandbox`. Lihat dokumen [“Kebijakan asal iframe”](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md) untuk penjelasan selengkapnya mengenai asal yang diizinkan untuk iframe.
+* `amp-iframe` tidak boleh berada dalam asal yang sama dengan container kecuali jika `allow-same-origin` tidak diizinkan dalam atribut `sandbox`. Lihat dokumen [“Kebijakan asal iframe”](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md) untuk penjelasan selengkapnya mengenai asal yang diizinkan untuk iframe.
 
 *Contoh: Menyematkan Google Map di dalam amp-iframe*
 

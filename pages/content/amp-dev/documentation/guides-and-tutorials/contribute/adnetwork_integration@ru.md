@@ -54,7 +54,7 @@ formats:
 Чтобы показывать AMPHTML-рекламу с вашего рекламного сервера, вы должны обеспечить интеграцию Fast Fetch, которая включает в себя:
 
 1. Поддержку SSL.
-2. Код JavaScript для создания запроса рекламы (примеры реализации: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) и [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
+2. Код JavaScript для создания запроса рекламы (примеры реализации: [AdSense](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-adsense-impl) и [DoubleClick](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-doubleclick-impl)).
 3. Проверку и подписание креатива через службу проверки рекламы — например, сервис от [Cloudflare](https://blog.cloudflare.com/firebolt/), позволяющий любому независимому рекламному провайдеру показывать более быструю, «легкую» и увлекательную рекламу.
 
 Инструкции по созданию интеграции Fast Fetch см. в [Руководстве по сетевому внедрению Fast Fetch](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md).

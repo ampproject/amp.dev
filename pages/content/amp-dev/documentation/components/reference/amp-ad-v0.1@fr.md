@@ -182,7 +182,7 @@ Pour l'activer, copiez le fichier [remote.html](https://github.com/ampproject/am
 <meta name="amp-3p-iframe-src" content="https://assets.your-domain.com/path/to/remote.html">
 ```
 
-  L'attribut `content` de la balise Meta correspond à l'URL absolue de votre copie du fichier remote.html sur votre serveur Web. Cette URL doit utiliser un schéma "https". Elle ne peut pas résider sur la même origine que vos fichiers AMP. Par exemple, si vous hébergez des fichiers AMP sur `www.example.com`, cette URL ne peut pas se trouver à cet emplacement `www.example.com`. En revanche, une adresse du type `something-else.example.com` est acceptée. Pour plus d'informations sur les origines autorisées pour les cadres iFrame, reportez-vous à la section traitant des [règles relatives aux origines des cadres iFrame](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md).
+  L'attribut `content` de la balise Meta correspond à l'URL absolue de votre copie du fichier remote.html sur votre serveur Web. Cette URL doit utiliser un schéma "https". Elle ne peut pas résider sur la même origine que vos fichiers AMP. Par exemple, si vous hébergez des fichiers AMP sur `www.example.com`, cette URL ne peut pas se trouver à cet emplacement `www.example.com`. En revanche, une adresse du type `something-else.example.com` est acceptée. Pour plus d'informations sur les origines autorisées pour les cadres iFrame, reportez-vous à la section traitant des [règles relatives aux origines des cadres iFrame](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md).
 
 ### Sécurité <a name="security"></a>
 

@@ -260,7 +260,7 @@ amp-social-share[type="twitter"] {
 
 ## 대체 변수 <a name="variable-substitution"></a>
 
-`<amp-social-share>` 요소에서 [전역 AMP 대체 변수](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)를 사용할 수 있습니다. 아래 예에서 `TITLE`이 페이지 제목으로 대체되고 `CANONICAL_URL`이 문서의 표준 URL로 대체됩니다.
+`<amp-social-share>` 요소에서 [전역 AMP 대체 변수](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)를 사용할 수 있습니다. 아래 예에서 `TITLE`이 페이지 제목으로 대체되고 `CANONICAL_URL`이 문서의 표준 URL로 대체됩니다.
 
 ```html
 <amp-social-share type="whatsapp"

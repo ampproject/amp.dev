@@ -20,7 +20,7 @@ Questo documento delinea le aspettative verso i fornitori terzi di tecnologie AM
 
 # Linee guida per i contributi
 
-Tutti i contributi generali sono soggetti alle [linee guida universali AMPHTML riportate in CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md). Ci aspettiamo che i soggetti terzi che contribuiscono al progetto a vari livelli si occupino delle verifiche, la manutenzione e l'aggiornamento dei propri contributi.
+Tutti i contributi generali sono soggetti alle [linee guida universali AMPHTML riportate in CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md). Ci aspettiamo che i soggetti terzi che contribuiscono al progetto a vari livelli si occupino delle verifiche, la manutenzione e l'aggiornamento dei propri contributi.
 
 Per risultare idonei all'inclusione nel progetto, i contributi a ogni livello devono:
 
@@ -61,7 +61,7 @@ I soli tipi di logica specifica di terze parti verificati nell'archivio AMP sono
 
 [**amp-ad**](../../../components/reference/amp-ad.md)
 
-I fornitori di annunci devono leggere la [panoramica del processo di sviluppo](https://github.com/ampproject/amphtml/tree/master/ads#overview) e le [istruzioni per gli sviluppatori](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) per l'aggiunta del supporto del componente [`amp-ad`](../../../components/reference/amp-ad.md). In base alla tecnologia fornita dalla tua azienda, potrai trovare utili [queste istruzioni di integrazione](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads).
+I fornitori di annunci devono leggere la [panoramica del processo di sviluppo](https://github.com/ampproject/amphtml/tree/main/ads#overview) e le [istruzioni per gli sviluppatori](https://github.com/ampproject/amphtml/tree/main/ads#developer-guidelines-for-a-pull-request) per l'aggiunta del supporto del componente [`amp-ad`](../../../components/reference/amp-ad.md). In base alla tecnologia fornita dalla tua azienda, potrai trovare utili [queste istruzioni di integrazione](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads).
 
 Ci sono molti fornitori di annunci che hanno aggiunto il supporto di funzionalità per gli annunci come amp-ad. Ecco una [richiesta pull di esempio](https://github.com/ampproject/amphtml/pull/2299) dalla rete di annunci [Criteo](https://github.com/ampproject/amphtml/blob/main/ads/criteo.md).
 

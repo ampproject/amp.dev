@@ -11,7 +11,7 @@ toc: true
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-html.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -38,7 +38,7 @@ limitations under the License.
 Note: This list is non-normative and is for reference purposes only. The AMP Validator rules are authoritative
 on the supported HTML tags and attributes.
 
-In addition to the [supported AMP components](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md), the following HTML tags are
+In addition to the [supported AMP components](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md), the following HTML tags are
 allowed in AMP for Email.
 
 ## Supported tags <a name="supported-tags"></a>

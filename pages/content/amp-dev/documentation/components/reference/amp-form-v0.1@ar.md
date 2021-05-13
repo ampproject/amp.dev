@@ -157,7 +157,7 @@ limitations under the License.
 * `<input type=button>` و`<input type=image>`
 * معظم السمات المتعلقة بالنموذج في الإدخالات ومنها: `form` و`formaction` و`formtarget` و`formmethod` وغيرها
 
-(قد يتم مستقبلاً إعادة النظر في تخفيف بعض هذه القواعد - [يرجى إعلامنا](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#suggestions-and-feature-requests) إذا كنت تحتاج هذه الإدخالات أو الحقول مع تقديم حالات استخدام).
+(قد يتم مستقبلاً إعادة النظر في تخفيف بعض هذه القواعد - [يرجى إعلامنا](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#suggestions-and-feature-requests) إذا كنت تحتاج هذه الإدخالات أو الحقول مع تقديم حالات استخدام).
 
 للحصول على تفاصيل حول الإدخالات والحقول الصحيحة، راجِع [قواعد amp-form](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) في مواصفات مدقق AMP.
 
@@ -606,7 +606,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 
 # استبدال المتغيرات <a name="variable-substitutions"></a>
 
-تتيح الإضافة `amp-form` [استبدال المتغيرات في المنصة](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) للإدخالات المخفية والتي تحتوي على السمة `data-amp-replace`. عند كل عملية إرسال للنموذج، يعثر `amp-form` على كل `input[type=hidden][data-amp-replace]` في النموذج ويطبق استبدال المتغيرات على السمة `value` ويغيّرها بنتيجة الاستبدال.
+تتيح الإضافة `amp-form` [استبدال المتغيرات في المنصة](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) للإدخالات المخفية والتي تحتوي على السمة `data-amp-replace`. عند كل عملية إرسال للنموذج، يعثر `amp-form` على كل `input[type=hidden][data-amp-replace]` في النموذج ويطبق استبدال المتغيرات على السمة `value` ويغيّرها بنتيجة الاستبدال.
 
 عليك تقديم المتغيرات التي تستخدمها لكل استبدال في كل إدخال عن طريق تحديد سلسلة مفصول بينها بمسافات من المتغيرات المستخدَمة في `data-amp-replace` (انظر المثال أدناه). لن تستبدل AMP المتغيرات التي لم يتم تحديدها بشكل صريح.
 
@@ -641,7 +641,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 
 لاحظ أنه لم يتم استبدال `CANONICAL_HOSTNAME` في المثال أعلاه لأنه لم يكن في القائمة البيضاء من خلال السمة `data-amp-replace` في الحقل الأول.
 
-ستحدث عمليات الاستبدال عند كل إرسال لاحق. يمكنك قراءة المزيد عن [عمليات استبدال المتغيرات في AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md).
+ستحدث عمليات الاستبدال عند كل إرسال لاحق. يمكنك قراءة المزيد عن [عمليات استبدال المتغيرات في AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md).
 
 # تعويض الميزات المفقودة من المتصفحات <a name="polyfills"></a>
 

@@ -96,7 +96,7 @@ Il componente `amp-video` accetta fino a quattro tipi unici di nodi HTML come se
         <td width="40%"><strong>autoplay</strong></td>
         <td>Se questo attributo è presente e il browser supporta la riproduzione automatica, il video verrà riprodotto
             automaticamente non appena sarà visibile. Le condizioni che il componente deve soddisfare per
-            essere visualizzato <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md#autoplay">sono elencate nella specifica dei video in AMP</a>.</td>
+            essere visualizzato <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md#autoplay">sono elencate nella specifica dei video in AMP</a>.</td>
         </tr>
         <tr>
           <td width="40%"><strong>controls</strong></td>
@@ -134,7 +134,7 @@ Il componente `amp-video` accetta fino a quattro tipi unici di nodi HTML come se
             </tr>
             <tr>
               <td width="40%"><strong>rotate-to-fullscreen</strong></td>
-              <td>Se il video è visibile, viene visualizzato a schermo intero dopo che l'utente ha ruotato il dispositivo in modalità orizzontale. Per ulteriori informazioni, consulta la <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md#rotate-to-fullscreen">specifica dei video in AMP</a>.</td>
+              <td>Se il video è visibile, viene visualizzato a schermo intero dopo che l'utente ha ruotato il dispositivo in modalità orizzontale. Per ulteriori informazioni, consulta la <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md#rotate-to-fullscreen">specifica dei video in AMP</a>.</td>
             </tr>
             <tr>
               <td width="40%"><strong>common attributes</strong></td>

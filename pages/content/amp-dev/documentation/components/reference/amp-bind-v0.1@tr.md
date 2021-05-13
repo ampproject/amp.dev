@@ -652,7 +652,7 @@ AMP, XMLHttpRequest öğelerini (XHR'ler) JSON uç noktalarında toplu olarak i�
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>Bu <code>amp-state</code> öğesini güncelleyecek olan JSON değerini döndürecek uzak uç noktanın URL'si. Bu bir CORS HTTP hizmeti olmalıdır.
-      <code>src</code> özelliği, tüm standart URL değişkeni değişikliklerine izin verir. Daha fazla bilgi için <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md">Değişiklik Kılavuzu</a> dokümanına bakın.
+      <code>src</code> özelliği, tüm standart URL değişkeni değişikliklerine izin verir. Daha fazla bilgi için <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">Değişiklik Kılavuzu</a> dokümanına bakın.
           [tip type="important"]
         Uç nokta, <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">AMP'de CORS İstekleri</a> spesifikasyonunda belirtilen gereksinimleri uygulamalıdır.
         [/tip]</td>

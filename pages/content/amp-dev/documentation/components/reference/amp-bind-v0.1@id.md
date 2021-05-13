@@ -652,7 +652,7 @@ AMP mengelompokkan XMLHttpRequest (XHR) ke endpoint JSON, artinya, Anda dapat me
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>URL endpoint jarak jauh yang akan menampilkan JSON yang akan mengubah <code>amp-state</code>. Harus berupa layanan HTTP CORS.
-        Atribut <code>src</code> memungkinkan semua substitusi variabel URL standar. Lihat <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md">Panduan Substitusi</a> untuk informasi selengkapnya.
+        Atribut <code>src</code> memungkinkan semua substitusi variabel URL standar. Lihat <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">Panduan Substitusi</a> untuk informasi selengkapnya.
         [tip type="caution"] Endpoint harus mengimplementasikan persyaratan yang ditentukan dalam spesifikasi <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">permintaan CORS di AMP</a>.
         [/tip]</td>
     </tr>

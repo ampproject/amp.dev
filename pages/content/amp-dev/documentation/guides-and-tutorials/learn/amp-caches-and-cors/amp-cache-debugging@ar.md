@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-debugging.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-debugging.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -50,7 +50,7 @@ have a look and request a pull request there.
     <tr>
       <td rowspan="2">الأصول (مثل الخطوط والصور) لا تظهر</td>
       <td>يجري عرض الأصول بنوع MIME غير صحيح.</td>
-      <td>حدد <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">نوع MIME مقبول</a>.</td>
+      <td>حدد <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">نوع MIME مقبول</a>.</td>
     </tr>
     <tr>
       <td>لا يمكن لذاكرة AMP للتخزين المؤقت الوصول إلى الأصول.</td>

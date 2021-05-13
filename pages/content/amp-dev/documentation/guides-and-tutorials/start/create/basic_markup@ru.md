@@ -53,7 +53,7 @@ $title: Создание страницы AMP HTML
 
 Кроме выполнения этих простых требований заголовок нашего примера также включает определение Schema.org, которое не является жестким требованием для AMP, но необходимо для предоставления контента в некоторых местах, например в [демонстрации карусельного представления новостей Google Поиска (попробуйте на своем телефоне)](https://g.co/ampdemo).
 
-Чтобы узнать больше о всех метаданных, которые потребуются в различных других местах, таких как Twitter, [ознакомьтесь с нашими примерами](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples). Для получения дополнительной информации об использовании AMP в Google Поиске см. раздел [Горячие новости с AMP](https://developers.google.com/structured-data/carousels/top-stories).
+Чтобы узнать больше о всех метаданных, которые потребуются в различных других местах, таких как Twitter, [ознакомьтесь с нашими примерами](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples). Для получения дополнительной информации об использовании AMP в Google Поиске см. раздел [Горячие новости с AMP](https://developers.google.com/structured-data/carousels/top-stories).
 
 <hr>
 

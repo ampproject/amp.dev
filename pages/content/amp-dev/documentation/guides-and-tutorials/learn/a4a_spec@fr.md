@@ -97,7 +97,7 @@ En outre, les publicités doivent respecter les règles suivantes:
 
 ### Modèle <a name="boilerplate"></a>
 
-Les créations publicitaires AMP HTML nécessitent un modèle de style différent et considérablement plus simple que [les documents AMP généraux](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md):
+Les créations publicitaires AMP HTML nécessitent un modèle de style différent et considérablement plus simple que [les documents AMP généraux](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md):
 
 [sourcecode:html]
 
@@ -113,7 +113,7 @@ _Logique:_ le style `amp-boilerplate` masque le contenu du corps jusqu'à ce que
 
 Enfin, le modèle d'annonce AMPHTML utilise `amp-a4a-boilerplate` plutôt que `amp-boilerplate` afin que les validateurs puissent facilement l'identifier et générer des messages d'erreur plus précis pour aider les développeurs.
 
-Notez que les mêmes règles concernant les mutations du modèle de texte s'appliquent que dans le [modèle AMP général](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md).
+Notez que les mêmes règles concernant les mutations du modèle de texte s'appliquent que dans le [modèle AMP général](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md).
 
 ### CSS <a name="css"></a>
 

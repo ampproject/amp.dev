@@ -125,4 +125,4 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 - 建议您在 [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) 上查找 AMP 相关问题的解答；由于 AMP 项目社区成员会定期查看 Stack Overflow，因此通过 Stack Overflow 提问时可以最快得到解答。
 - 要获取解决方案和解答，请加入 [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) 渠道。
-- 如果您遇到 AMP 方面的错误或有与 AMP 相关的功能请求，请参阅[报告 AMP 问题](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#reporting-issues-with-amp)，了解如何提交问题。
+- 如果您遇到 AMP 方面的错误或有与 AMP 相关的功能请求，请参阅[报告 AMP 问题](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#reporting-issues-with-amp)，了解如何提交问题。

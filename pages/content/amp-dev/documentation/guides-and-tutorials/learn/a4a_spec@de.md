@@ -96,7 +96,7 @@ Zusätzlich dazu müssen Creatives die folgenden Regeln befolgen:
 
 ### Boilerplate <a name="boilerplate"></a>
 
-AMPHTML Ad Creatives erfordern eine andere, wesentlich einfachere Zeile für Boilerplate Stil als die [allgemeinen AMP Dokumente](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md):
+AMPHTML Ad Creatives erfordern eine andere, wesentlich einfachere Zeile für Boilerplate Stil als die [allgemeinen AMP Dokumente](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md):
 
 [sourcecode:html]
 
@@ -112,7 +112,7 @@ _Begründung:_ Der Stil `amp-boilerplate` blendet den Inhalt des Hauptteils aus,
 
 Und zu guter Letzt verwendet die AMPHTML Ad Boilerplate `amp-a4a-boilerplate` anstelle von `amp-boilerplate`, damit Validationstools sie einfacher identifizieren und präzisere Fehlermeldungen erstellen können, die Entwicklern weiterhelfen.
 
-Beachte, dass für Mutationen im Text der Boilerplate die gleichen Regeln gelten wie für Mutationen in der [allgemeinen AMP Boilerplate](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md).
+Beachte, dass für Mutationen im Text der Boilerplate die gleichen Regeln gelten wie für Mutationen in der [allgemeinen AMP Boilerplate](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md).
 
 ### CSS <a name="css"></a>
 

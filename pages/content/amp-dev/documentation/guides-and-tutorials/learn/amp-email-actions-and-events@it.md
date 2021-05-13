@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-email-actions-and-events.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-email-actions-and-events.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -30,7 +30,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-[tip type="note"] Questa documentazione descrive azioni ed eventi relativi al formato delle e-mail AMP. Leggi anche il documento [Azioni ed eventi](https://github.com/ampproject/amphtml/blob/main/spec/amp-actions-and-events.md) per siti web, storie e annunci. [/tip]
+[tip type="note"] Questa documentazione descrive azioni ed eventi relativi al formato delle e-mail AMP. Leggi anche il documento [Azioni ed eventi](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-actions-and-events.md) per siti web, storie e annunci. [/tip]
 
 L'attributo `on` viene utilizzato per installare i gestori di eventi sugli elementi. Gli eventi supportati dipendono dall'elemento.
 
@@ -425,7 +425,7 @@ Ad esempio, in AMP è possibile la seguente struttura:
   </tr>
   <tr>
     <td><code>changeToLayoutContainer</code></td>
-    <td>Aggiorna il layout di <code>amp-list</code> a <code>layout="CONTAINTER"</code> per consentire <a href="https://github.com/ampproject/amphtml/blob/main/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">il ridimensionamento dinamico</a>.</td>
+    <td>Aggiorna il layout di <code>amp-list</code> a <code>layout="CONTAINTER"</code> per consentire <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">il ridimensionamento dinamico</a>.</td>
   </tr>
   <tr>
     <td> <code>fetch-error</code>(bassa affidabilità)</td>

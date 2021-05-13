@@ -151,7 +151,7 @@ Daha ayrıntılı bilgi için [Özel Doğrulama](#custom-validations) bölümün
 * `<input type=button>`, `<input type=image>`
 * Girişlerdeki formla ilgili çoğu özellik; örneğin: `form`, `formaction`, `formtarget`, `formmethod` ve diğerleri.
 
-(Gelecekte bu kurallardan bazılarının gevşetilmesi yeniden değerlendirilebilir; sizin için gerekli olanlar varsa [lütfen bunları bize bildirin](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#suggestions-and-feature-requests) ve kullanım örnekleri sağlayın).
+(Gelecekte bu kurallardan bazılarının gevşetilmesi yeniden değerlendirilebilir; sizin için gerekli olanlar varsa [lütfen bunları bize bildirin](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#suggestions-and-feature-requests) ve kullanım örnekleri sağlayın).
 
 Geçerli girişler ve alanlarla ilgili ayrıntılar için AMP doğrulayıcı spesifikasyonundaki [amp-form kurallarına](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) bakın.
 
@@ -591,7 +591,7 @@ Daha fazla örnek için [examples/forms.amp.html](https://github.com/ampproject/
 
 # Değişken değişiklikleri <a name="variable-substitutions"></a>
 
-`amp-form` uzantısı, gizli olan ve `data-amp-replace` özelliğine sahip girişler için [platform değişken değişikliklerine](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) olanak tanır. Her form gönderiminde `amp-form`, formun içindeki tüm `input[type=hidden][data-amp-replace]` öğelerini bulur ve değişken değişikliklerini `value` özelliğine uygulayıp bunu, değişikliğin sonucuyla değiştirir.
+`amp-form` uzantısı, gizli olan ve `data-amp-replace` özelliğine sahip girişler için [platform değişken değişikliklerine](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) olanak tanır. Her form gönderiminde `amp-form`, formun içindeki tüm `input[type=hidden][data-amp-replace]` öğelerini bulur ve değişken değişikliklerini `value` özelliğine uygulayıp bunu, değişikliğin sonucuyla değiştirir.
 
 Her bir girişte, `data-amp-replace` öğesinde kullanılan boşlukla ayrılmış değişken dizesini belirterek her değişiklik için kullandığınız değişkenleri sağlamanız gerekir (aşağıdaki örneğe bakın). AMP, açıkça belirtilmeyen değişkenleri değiştirmez.
 
@@ -626,7 +626,7 @@ Kullanıcı formu göndermeyi denedikten sonra, AMP değişkenleri çözmeye ve 
 
 Yukarıdaki `CANONICAL_HOSTNAME` öğesinin, ilk alandaki `data-amp-replace` özelliği aracılığıyla beyaz listeye alınmadığı için değiştirilmemiş olmasına dikkat edin.
 
-Değişiklikler, bir sonraki gönderimde gerçekleşir. [AMP'deki değişken değişiklikleri](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) hakkında daha fazla bilgi edinin.
+Değişiklikler, bir sonraki gönderimde gerçekleşir. [AMP'deki değişken değişiklikleri](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) hakkında daha fazla bilgi edinin.
 
 # Çoklu dolgular <a name="polyfills"></a>
 

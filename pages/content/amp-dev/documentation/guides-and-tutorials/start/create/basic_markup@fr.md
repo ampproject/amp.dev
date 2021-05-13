@@ -66,7 +66,7 @@ Bonne nouvelle ! C'est tout ce dont nous avons besoin pour créer la première p
 [tip type="read-on"]Consultez ces ressources pour en savoir plus:
 
 - Premiers pas avec AMP dans la recherche Google: comment préparer vos pages AMP pour la recherche Google.
-- [Exemples de métadonnées](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - en savoir plus sur toutes les métadonnées dont vous aurez besoin dans divers autres endroits (par exemple, Twitter) [/tip]
+- [Exemples de métadonnées](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples) - en savoir plus sur toutes les métadonnées dont vous aurez besoin dans divers autres endroits (par exemple, Twitter) [/tip]
 
 <hr>
 

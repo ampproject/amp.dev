@@ -98,7 +98,7 @@ AMPHTML 広告は、高速で高性能の広告を AMP ページにレンダリ�
 
 ### ボイラープレート <a name="boilerplate"></a>
 
-AMPHTML 広告クリエイティブには、[一般的な AMP ドキュメントが必要とする](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md)ボイラープレートとは別の、非常にシンプルなボイラープレートスタイル行が必要です。
+AMPHTML 広告クリエイティブには、[一般的な AMP ドキュメントが必要とする](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md)ボイラープレートとは別の、非常にシンプルなボイラープレートスタイル行が必要です。
 
 [sourcecode:html]
 

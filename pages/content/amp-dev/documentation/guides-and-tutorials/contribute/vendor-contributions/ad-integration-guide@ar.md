@@ -15,7 +15,7 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-إذا كنت موفر تقنية إعلانات تبحث عن التكامل مع AMP HTML، فيرجى مراجعة الإرشادات أدناه. لضمان أدنى زمن انتقال وأفضل جودة، يرجى اتباع الإرشادات المسردة [هنا](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads) قبل إرسال طلب سحب إلى مشروع AMP مفتوح المصدر. للحصول على توجيه عام بشأن كيفية البدء بالمساهمة في AMP، يرجى مراجعة [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../CONTRIBUTING.md).
+إذا كنت موفر تقنية إعلانات تبحث عن التكامل مع AMP HTML، فيرجى مراجعة الإرشادات أدناه. لضمان أدنى زمن انتقال وأفضل جودة، يرجى اتباع الإرشادات المسردة [هنا](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads) قبل إرسال طلب سحب إلى مشروع AMP مفتوح المصدر. للحصول على توجيه عام بشأن كيفية البدء بالمساهمة في AMP، يرجى مراجعة [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../docs/contributing.md).
 
 ## خادم الإعلانات <a name="ad-server"></a>
 

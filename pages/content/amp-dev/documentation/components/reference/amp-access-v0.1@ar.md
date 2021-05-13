@@ -229,7 +229,7 @@ limitations under the License.
 
 ### متغيرات عناوين URL للوصول <a name="access-url-variables"></a>
 
-عند تهيئة عناوين URL لنقاط النهاية المختلفة، يمكن للناشر استخدام متغيرات الاستبدال. يمكن العثور على قائمة كاملة بتعريفات هذه المتغيرات في [مواصفات متغيرات AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md). بالإضافة إلى هذا، تزيد هذه المواصفات متغيرات خاصة بالوصول، مثل `READER_ID` و`AUTHDATA`. يوضّح الجدول أدناه بعضًا من أكثر المتغيرات صلة:
+عند تهيئة عناوين URL لنقاط النهاية المختلفة، يمكن للناشر استخدام متغيرات الاستبدال. يمكن العثور على قائمة كاملة بتعريفات هذه المتغيرات في [مواصفات متغيرات AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md). بالإضافة إلى هذا، تزيد هذه المواصفات متغيرات خاصة بالوصول، مثل `READER_ID` و`AUTHDATA`. يوضّح الجدول أدناه بعضًا من أكثر المتغيرات صلة:
 
 <table>
   <tr>

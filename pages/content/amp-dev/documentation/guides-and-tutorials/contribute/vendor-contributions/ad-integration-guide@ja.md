@@ -15,7 +15,7 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-AMP HTML の統合を検討中の広告テクノロジープロバイダーは、以下のガイドラインをお読みください。最小限のレイテンシーと高い品質を確保するには、AMP オープンソースプロジェクトにプルリクエストを提出する前に、[こちら](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads)に記載されている手順に従ってください。AMP へのコントリビューションを始める方法に関する一般的なガイダンスについては、「[CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../CONTRIBUTING.md)」を参照してください。
+AMP HTML の統合を検討中の広告テクノロジープロバイダーは、以下のガイドラインをお読みください。最小限のレイテンシーと高い品質を確保するには、AMP オープンソースプロジェクトにプルリクエストを提出する前に、[こちら](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads)に記載されている手順に従ってください。AMP へのコントリビューションを始める方法に関する一般的なガイダンスについては、「[CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../docs/contributing.md)」を参照してください。
 
 ## アドサーバー <a name="ad-server"></a>
 

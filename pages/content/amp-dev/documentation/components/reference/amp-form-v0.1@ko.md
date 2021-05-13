@@ -151,7 +151,7 @@ XHR 엔드포인트에서 [CORS 보안](../../../documentation/guides-and-tutori
 * `<input type=button>`, `<input type=image>`
 * 입력에 있는 대부분의 양식 관련 속성. 예: `form`, `formaction`, `formtarget`, `formmethod` 등
 
-해당 규칙 중 일부를 완화하는 일은 나중에 다시 고려해 볼 수 있습니다. 필요한 경우 [Google에 알리고](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#suggestions-and-feature-requests) 사용 사례를 제공해 주세요.
+해당 규칙 중 일부를 완화하는 일은 나중에 다시 고려해 볼 수 있습니다. 필요한 경우 [Google에 알리고](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#suggestions-and-feature-requests) 사용 사례를 제공해 주세요.
 
 유효한 입력 및 필드에 관한 세부정보는 AMP 유효성 검사기 사양의 [amp-form 규칙](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)을 참조하세요.
 
@@ -589,7 +589,7 @@ HTML5 유효성 검사에서는 페이지에서 사용 가능한 정보(예: 값
 
 # 대체 변수 <a name="variable-substitutions"></a>
 
-`amp-form` 확장 프로그램에서는 `data-amp-replace` 속성이 있으며 숨겨져 있는 입력에 [플랫폼 대체 변수](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)를 사용할 수 있습니다. 양식을 제출할 때마다 `amp-form`을 통해 양식에서 모든 `input[type=hidden][data-amp-replace]`를 찾고 `value` 속성에 대체 변수를 적용하여 대체 결과로 바꿉니다.
+`amp-form` 확장 프로그램에서는 `data-amp-replace` 속성이 있으며 숨겨져 있는 입력에 [플랫폼 대체 변수](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)를 사용할 수 있습니다. 양식을 제출할 때마다 `amp-form`을 통해 양식에서 모든 `input[type=hidden][data-amp-replace]`를 찾고 `value` 속성에 대체 변수를 적용하여 대체 결과로 바꿉니다.
 
 `data-amp-replace`에서 사용한 변수의 공백으로 구분된 문자열을 지정하여 각 입력에서 각 대체에 사용할 변수를 제공해야 합니다(아래 예 참조). AMP에서는 명시적으로 지정되지 않은 변수는 대체하지 않습니다.
 
@@ -624,7 +624,7 @@ HTML5 유효성 검사에서는 페이지에서 사용 가능한 정보(예: 값
 
 위의 `CANONICAL_HOSTNAME`은 첫 번째 필드의 `data-amp-replace` 속성을 통해 허용 목록에 포함되지 않았으므로 대체되지 않았습니다.
 
-후속 제출에서는 매번 대체가 발생합니다. [AMP의 대체 변수](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)에 관해 자세히 알아보세요.
+후속 제출에서는 매번 대체가 발생합니다. [AMP의 대체 변수](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)에 관해 자세히 알아보세요.
 
 # Polyfill <a name="polyfills"></a>
 

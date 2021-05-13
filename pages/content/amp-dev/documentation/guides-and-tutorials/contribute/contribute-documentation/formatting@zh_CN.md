@@ -16,8 +16,8 @@ author: CrystalOnScript
 
 可从 [amp.dev](https://github.com/ampproject/amp.dev) 和 [AMPHTML](https://github.com/ampproject/amphtml) 这两个仓库中提取关于 amp.dev 的内容。组件下的所有参考文档均从 AMPHTML 的内置组件或扩展组件中提取。
 
-- [内置组件](https://github.com/ampproject/amphtml/tree/master/builtins)
-- [组件](https://github.com/ampproject/amphtml/tree/master/extensions)
+- [内置组件](https://github.com/ampproject/amphtml/tree/main/builtins)
+- [组件](https://github.com/ampproject/amphtml/tree/main/extensions)
 - [课程](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/courses)
 - [示例](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/examples)
 - [指南和教程](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/guides-and-tutorials)

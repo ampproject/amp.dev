@@ -225,7 +225,7 @@ Tek bir nesne yerine bir dizi kullanan ve her giriş için bir `namespace` sağl
 
 ### Access URL'si Değişkenleri <a name="access-url-variables"></a>
 
-Çeşitli uç noktalar için URL'leri yapılandırırken, Yayıncı değişiklik değişkenlerini kullanabilir. Bu değişkenlerin tam listesi, [AMP Var Spesifikasyonu](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)'nda tanımlanmaktadır. Buna ek olarak, bu spesifikasyon `READER_ID` ve `AUTHDATA` gibi erişime özel birkaç değişken de ekler. En alakalı değişkenlerden bazıları aşağıdaki tabloda açıklanmıştır:
+Çeşitli uç noktalar için URL'leri yapılandırırken, Yayıncı değişiklik değişkenlerini kullanabilir. Bu değişkenlerin tam listesi, [AMP Var Spesifikasyonu](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)'nda tanımlanmaktadır. Buna ek olarak, bu spesifikasyon `READER_ID` ve `AUTHDATA` gibi erişime özel birkaç değişken de ekler. En alakalı değişkenlerden bazıları aşağıdaki tabloda açıklanmıştır:
 
 <table>
   <tr>

@@ -73,7 +73,7 @@ formats:
 
 ## Встраивание AMP Story Player
 
-Для отображения AMP-историй на традиционной (не-AMP) странице необходимо использовать элемент [`amp-story-player`](https://github.com/ampproject/amphtml/blob/main/spec/amp-story-player.md).
+Для отображения AMP-историй на традиционной (не-AMP) странице необходимо использовать элемент [`amp-story-player`](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-story-player.md).
 
 ### Импорт скриптов
 

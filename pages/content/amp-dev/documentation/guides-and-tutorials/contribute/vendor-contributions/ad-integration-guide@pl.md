@@ -15,7 +15,7 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-Jeśli jesteś dostawcą technologii reklamowych i chcesz zintegrować je z AMP HTML, zapoznaj się z poniższymi wytycznymi. Aby zapewnić minimalne opóźnienia i wysoką jakość, przed przesłaniem żądania ściągnięcia do projektu open-source AMP wykonaj instrukcje podane [tutaj](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads). Ogólne wskazówki na temat wnoszenia wkładu do AMP zawiera strona [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../CONTRIBUTING.md).
+Jeśli jesteś dostawcą technologii reklamowych i chcesz zintegrować je z AMP HTML, zapoznaj się z poniższymi wytycznymi. Aby zapewnić minimalne opóźnienia i wysoką jakość, przed przesłaniem żądania ściągnięcia do projektu open-source AMP wykonaj instrukcje podane [tutaj](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads). Ogólne wskazówki na temat wnoszenia wkładu do AMP zawiera strona [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../docs/contributing.md).
 
 ## Serwer reklam <a name="ad-server"></a>
 

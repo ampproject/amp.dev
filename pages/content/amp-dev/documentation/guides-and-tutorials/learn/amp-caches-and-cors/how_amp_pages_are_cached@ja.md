@@ -21,13 +21,13 @@ AMP キャッシュについて詳しくは、下記の YouTube 動画やブロ�
 - [Google AMP キャッシュ](https://developers.google.com/amp/cache/)
 - [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
-AMP はオープン エコシステムであり、AMP プロジェクトでは AMP キャッシュの開発を積極的に奨励しています。AMP キャッシュの作成について詳しくは、[AMP キャッシュ ガイドライン](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md)をご覧ください。
+AMP はオープン エコシステムであり、AMP プロジェクトでは AMP キャッシュの開発を積極的に奨励しています。AMP キャッシュの作成について詳しくは、[AMP キャッシュ ガイドライン](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md)をご覧ください。
 
 ## AMP キャッシュの選択
 
 サイト運営者が AMP キャッシュを選択することはありません。使用する AMP キャッシュ（ある場合）を選択するのは、実際には、コンテンツにリンクしている*プラットフォーム*です。
 
-これは、サイト運営者がコンテンツ配信を担当する一般的なモデルとは逆の形です。しかし、このモデルでは、プラットフォームがユーザーに予測可能な読み込みのパフォーマンスを提供することができます。特に、プリレンダリングの段階で求められるセキュリティとプライバシーの不変性をプラットフォームが保証できるようになります。AMP キャッシュの作成に関する詳細なガイドラインについては、[AMP キャッシュ ガイドライン](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md)をご覧ください。
+これは、サイト運営者がコンテンツ配信を担当する一般的なモデルとは逆の形です。しかし、このモデルでは、プラットフォームがユーザーに予測可能な読み込みのパフォーマンスを提供することができます。特に、プリレンダリングの段階で求められるセキュリティとプライバシーの不変性をプラットフォームが保証できるようになります。AMP キャッシュの作成に関する詳細なガイドラインについては、[AMP キャッシュ ガイドライン](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md)をご覧ください。
 
 ## キャッシュのオプトアウト
 
@@ -58,6 +58,6 @@ AMP 形式を使用することで、コンテンツは AMP キャッシュに�
 
 ## その他のリソース
 
-* [AMP プロジェクトの AMP キャッシュ ガイドライン](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md)
+* [AMP プロジェクトの AMP キャッシュ ガイドライン](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md)
 * [Google AMP キャッシュの概要](https://developers.google.com/amp/cache/overview)
 * [[Bing AMP Cache Documentation](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)

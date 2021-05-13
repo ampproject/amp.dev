@@ -3488,8 +3488,8 @@ msgstr "<p>AMP 프로젝트는 모두에게 열려 있으며, 기존 구성원 �
 msgid "How can an advertising or technology vendor get involved in Accelerated Mobile Pages?"
 msgstr "광고나 기술 공급업체는 AMP에 어떻게 참여할 수 있나요?"
 
-msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
-msgstr "<p><a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">기여 가이드라인</a>을 검토하고 <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>을 통해 문의해 주세요.</p>"
+msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
+msgstr "<p><a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">기여 가이드라인</a>을 검토하고 <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>을 통해 문의해 주세요.</p>"
 
 msgid "How does advertising work on Accelerated Mobile Pages?"
 msgstr "AMP 페이지에서 광고가 작동하는 원리는 무엇인가요?"

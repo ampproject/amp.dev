@@ -92,7 +92,7 @@ Pengoptimal AMP menyediakan konfigurasi default yang wajar yang akan bekerja den
 
 Beberapa pilihan yang perlu diperhatikan adalah:
 
-- `lts: true` untuk memungkinkan [URL stabil dalam jangka panjang](https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md) untuk komponen dan runtime AMP.
+- `lts: true` untuk memungkinkan [URL stabil dalam jangka panjang](https://github.com/ampproject/amphtml/blob/main/docs/lts-release.md) untuk komponen dan runtime AMP.
 - `verbose: true` untuk output debugging yang terperinci. Terutama sangat baik untuk mengetahui mengapa boilerplate AMP tidak dapat dihapus.
 - `imageOptimizer`: memungkinkan pembuatan srcset gambar otomatis dengan menyediakan fungsi untuk menghitung URL srcset untuk serc gambar tertentu. Fungsi ini akan menghasilkan URL yang mengarah ke versi gambar <code>src</code> dengan lebar tertentu. Jika gambar tidak tersedia, yang dihasilkan adalah nilai semu (falsy). Selengkapnya tentang hal ini di dalam bagian selanjutnya.
 

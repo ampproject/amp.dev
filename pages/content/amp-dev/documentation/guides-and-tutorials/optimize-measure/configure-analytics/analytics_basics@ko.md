@@ -35,7 +35,7 @@ AMP 플랫폼 통합의 일환으로 공급업체는 사전 정의된 [`amp-anal
 <amp-pixel src="https://foo.com/pixel?RANDOM"></amp-pixel>
 ```
 
-이 예에서 페이지 조회수 데이터는 임의의 숫자로 정의된 URL에 전송됩니다. `RANDOM` 변수는 [AMP 플랫폼에서 사용되는 다양한 대체 변수 중 하나](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)입니다. [변수 대체](analytics_basics.md#variable-substitution)와 관련한 자세한 내용을 알아보세요.
+이 예에서 페이지 조회수 데이터는 임의의 숫자로 정의된 URL에 전송됩니다. `RANDOM` 변수는 [AMP 플랫폼에서 사용되는 다양한 대체 변수 중 하나](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)입니다. [변수 대체](analytics_basics.md#variable-substitution)와 관련한 자세한 내용을 알아보세요.
 
 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 컴포넌트는 기본으로 제공되므로 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)와 같은 AMP 확장 컴포넌트와는 달리 삽입(inclusion) 선언이 필요하지 않습니다. 하지만 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 태그는 `<body>` 시작 부분에 최대한 가깝게 배치해야 합니다. 추적 픽셀은 태그가 뷰 안에 포함될 경우에만 시작됩니다. 만약 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)이 페이지 하단에 위치할 경우 추적 픽셀이 시작되지 않을 수도 있습니다.
 
@@ -133,7 +133,7 @@ AMP 애널리틱스를 활용하면 어떤 애널리틱스 공급업체를 사�
 
 ## 변수 대체 <a name="user-identification"></a>
 
-<a><code data-md-type="codespan">amp-pixel</code></a> 및 <a><code data-md-type="codespan">amp-analytics</code></a> 컴포넌트는 모든 표준 URL 변수 대체을 허용합니다(<a class="" href="https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md">AMP HTML 변수 대체</a> 참조). 다음 예시에서는 페이지 조회수 요청이 URL로 전송되며, 현재 AMP 문서의 기본 URL, 제목, <a class="" href="https://gitlocalize.com/repo/4863/ko/pages/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md#user-identification">클라이언트 ID</a>도 함께 전송됩니다.
+<a><code data-md-type="codespan">amp-pixel</code></a> 및 <a><code data-md-type="codespan">amp-analytics</code></a> 컴포넌트는 모든 표준 URL 변수 대체을 허용합니다(<a class="" href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">AMP HTML 변수 대체</a> 참조). 다음 예시에서는 페이지 조회수 요청이 URL로 전송되며, 현재 AMP 문서의 기본 URL, 제목, <a class="" href="https://gitlocalize.com/repo/4863/ko/pages/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md#user-identification">클라이언트 ID</a>도 함께 전송됩니다.
 
 ```html
 <amp-pixel
@@ -177,7 +177,7 @@ AMP 애널리틱스를 활용하면 어떤 애널리틱스 공급업체를 사�
 
 ## 사용자 식별 <a name="user-identification"></a>
 
-웹사이트는 쿠키를 사용하여 특정 사용자의 정보를 브라우저에 저장합니다. 사용자가 이전에 사이트에 방문했는지 판별하는 데 쿠키가 사용됩니다. AMP에서는 퍼블리셔의 웹사이트 또는 캐시(Google AMP 캐시 등)를 통해 페이지가 제공되빈다. 퍼블리셔의 웹사이트 및 캐시는 서로 다른 도메인을 사용할 가능성이 높습니다. 보안상의 이유로 브라우저는 다른 도메인의 쿠키 액세스를 제한할 수 있으며 실제로 제한하기도 합니다([여러 출처의 사용자 추적](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md) 참조).
+웹사이트는 쿠키를 사용하여 특정 사용자의 정보를 브라우저에 저장합니다. 사용자가 이전에 사이트에 방문했는지 판별하는 데 쿠키가 사용됩니다. AMP에서는 퍼블리셔의 웹사이트 또는 캐시(Google AMP 캐시 등)를 통해 페이지가 제공되빈다. 퍼블리셔의 웹사이트 및 캐시는 서로 다른 도메인을 사용할 가능성이 높습니다. 보안상의 이유로 브라우저는 다른 도메인의 쿠키 액세스를 제한할 수 있으며 실제로 제한하기도 합니다([여러 출처의 사용자 추적](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md) 참조).
 
 기본적으로 AMP는 퍼블리셔의 출처 웹사이트 또는 캐시 중 페이지가 액세스된 경로와 무관하게 클라이언트 ID 제공을 관리합니다. AMP에서 생성된 클라이언트 ID에는 `"amp-"` 값과 `base64`로 인코딩된 임의의 문자열이 포함됩니다. 해당 ID는 동일한 사용자가 다시 방문할 경우 동일하게 유지됩니다.
 

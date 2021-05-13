@@ -61,7 +61,7 @@ Mustache は、ロジックレスのテンプレート構文です。細につ�
 
 ## 使用方法 <a name="usage"></a>
 
-`amp-mustache` テンプレートは、[AMP テンプレート仕様](https://github.com/ampproject/amphtml/blob/main/spec/amp-html-templates.md)に沿って定義、使用する必要があります。
+`amp-mustache` テンプレートは、[AMP テンプレート仕様](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-templates.md)に沿って定義、使用する必要があります。
 
 まず、以下のように `amp-mustache` を宣言して読み込む必要があります。
 

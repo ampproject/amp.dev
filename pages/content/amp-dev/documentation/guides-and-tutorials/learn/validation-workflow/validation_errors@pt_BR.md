@@ -132,7 +132,7 @@ usados para aprimorar as páginas HTML para AMP.
 
 Nos casos de uso que não estão previstos aqui, também é possível contribuir com novos
 componentes no Projeto AMP. Consulte o documento sobre
-[contribuições ao Projeto AMP](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md) (em inglês)
+[contribuições ao Projeto AMP](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md) (em inglês)
 para mais informações.
 
 ### Atributo obrigatório ausente

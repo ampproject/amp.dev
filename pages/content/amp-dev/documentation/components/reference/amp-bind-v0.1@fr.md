@@ -654,7 +654,7 @@ AMP regroupe les requêtes XHR (XMLHttpRequest) dans des points de terminaison J
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>URL du point de terminaison distant qui renvoie le fichier JSON qui mettra à jour cet élément <code>amp-state</code>. Il doit s'agir d'un service HTTP CORS.
-        L'attribut <code>src</code> autorise toutes les substitutions de variables d'URL standards. Pour plus d'informations, consultez le <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md">Guide des substitutions</a>.
+        L'attribut <code>src</code> autorise toutes les substitutions de variables d'URL standards. Pour plus d'informations, consultez le <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">Guide des substitutions</a>.
         [tip type="important"]
       Le point de terminaison doit mettre en œuvre les exigences énoncées dans la spécification <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">Requêtes CORS dans AMP</a>.
       [/tip]</td>

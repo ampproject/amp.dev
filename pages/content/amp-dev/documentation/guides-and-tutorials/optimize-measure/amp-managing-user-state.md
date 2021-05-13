@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -127,7 +127,7 @@ Just like the AMP cache case, expect the domain for an AMP viewer to also be dif
 
 ### Multiple contexts means multiple state management <a name="multiple-contexts-means-multiple-state-management"></a>
 
-Publishers must be prepared to manage the user state for each display context separately. AMP’s [Client ID](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#client-id) feature, which takes advantage of cookies or local storage to persist state, provides the necessary support for AMP pages to have a stable and pseudonymous identifier for the user. From an implementation point of view, either cookies or local storage are used, and AMP makes the decision which to use depending on the display context. This choice is influenced by the technical feasibility of managing this state scaled to hundreds or thousands of publishers.
+Publishers must be prepared to manage the user state for each display context separately. AMP’s [Client ID](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md#client-id) feature, which takes advantage of cookies or local storage to persist state, provides the necessary support for AMP pages to have a stable and pseudonymous identifier for the user. From an implementation point of view, either cookies or local storage are used, and AMP makes the decision which to use depending on the display context. This choice is influenced by the technical feasibility of managing this state scaled to hundreds or thousands of publishers.
 
 However, publishers of AMP pages can easily end up (unwittingly) designing user journeys that involve multiple contexts. Let’s revisit our earlier look at the shopping cart use case and add some more detail to it to make a full **user story**:
 
@@ -261,7 +261,7 @@ On AMP pages, construct an amp-analytics ping containing the Client ID:
 
 Take note of the fact that the parameter passed into the Client ID substitution, `${clientId(uid)`, is `uid`. This was a deliberate choice that matches the same cookie name used on the publisher origin as described in [Task 1](#task1). For the most seamless integration, you should apply the same technique.
 
-Concerning the rest of the amp-analytics implementation, see the documentation for [amp-analytics configuration](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) for more detail on how to set up amp-analytics requests or to modify those of your analytics vendor. The ping can be further modified to transport additional data that you either directly define or by taking advantage of other [AMP substitutions](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md).
+Concerning the rest of the amp-analytics implementation, see the documentation for [amp-analytics configuration](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) for more detail on how to set up amp-analytics requests or to modify those of your analytics vendor. The ping can be further modified to transport additional data that you either directly define or by taking advantage of other [AMP substitutions](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md).
 
 > **Good to know:**
 >
@@ -404,7 +404,7 @@ In this task, we’ll cover an additional optimization that helps when the user 
 
 ##### Using substitution features <a name="using-substitution-features"></a>
 
-Our approach will take advantage of two types of [AMP variable substitutions](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md).
+Our approach will take advantage of two types of [AMP variable substitutions](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-var-substitutions.md).
 
 **To update outgoing links to use a Client ID substitution:** Define a new query parameter, `ref_id` ("referrer ID"), which will appear within the URL and indicate the **originating context’s identifier** for the user. Set this query parameter to equal the value of AMP’s Client ID substitution:
 
@@ -621,7 +621,7 @@ You want to ensure that you process only instances of `$amp_client_id` and avoid
 
 On a non-AMP page, check `document.referrer` directly on the client side or pass the value on as part of the analytics ping to be able to validate on the server side. If the referrer value is one you can trust, then you can accept and process values that originated from the URL of the landing page, such as `orig_user_id` in the example above.
 
-On an AMP page, use the [Document Referrer](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#document-referrer) substitution variable to pass along the referrer value as part of the analytics ping. Server side processing is the only available option. To illustrate, here’s an analytics ping that the landing page can send that contains (1) the Client ID value of the current page, (2) a value passed via URL that we’ve set up to be the Client ID value in the referring page, and (3) the referrer information itself to validate the value of (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
+On an AMP page, use the [Document Referrer](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md#document-referrer) substitution variable to pass along the referrer value as part of the analytics ping. Server side processing is the only available option. To illustrate, here’s an analytics ping that the landing page can send that contains (1) the Client ID value of the current page, (2) a value passed via URL that we’ve set up to be the Client ID value in the referring page, and (3) the referrer information itself to validate the value of (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
 
 If you cannot trust the referrer, then reject any values provided via URL parameters and do not use them.
 

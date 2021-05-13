@@ -54,7 +54,7 @@ Untuk mempelajari cara membuat integrasi [`amp-ad`](../../../documentation/compo
 Untuk menampilkan iklan HTML AMP dari server iklan, Anda harus memberikan integrasi Fast Fetch, antara lain:
 
 1. Mendukung komunikasi jaringan SSL.
-2. Menyediakan JavaScript untuk membuat permintaan iklan (contoh implementasi: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) & [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
+2. Menyediakan JavaScript untuk membuat permintaan iklan (contoh implementasi: [AdSense](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-adsense-impl) & [DoubleClick](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-doubleclick-impl)).
 3. Memvalidasi dan menandatangani materi iklan melalui layanan validasi. [Cloudflare](https://blog.cloudflare.com/firebolt/) menyediakan layanan verifikasi iklan AMP, sehingga penyedia iklan independen dapat menayangkan iklan yang lebih cepat, ringan, dan menarik.
 
 Untuk mempelajari cara membuat integrasi Fast Fetch, lihat [Panduan Implementasi Jaringan Fast Fetch](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md).

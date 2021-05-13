@@ -49,7 +49,7 @@ O `amp-iframe` tem várias diferenças importantes em relação aos iframes vani
 * Um `amp-iframe` pode não aparecer perto da parte superior do documento (exceto para iframes que usam `placeholder` como [descrito abaixo](#iframe-with-placeholder)). O iframe precisa estar a 600 px da parte superior ou não estar dentro dos primeiros 75% da janela de visualização quando rolado para a parte superior, o que for menor.
 * Por padrão, um amp-iframe é colocado em sandbox (veja [mais detalhes](#sandbox)).
 * Um `amp-iframe` só deve solicitar recursos por meio de HTTPS, de um URI de dados ou do atributo `srcdoc`.
-* Um `amp-iframe` não pode ter a mesma origem que o contêiner, a menos que não permita `allow-same-origin` no atributo `sandbox`. Consulte o documento [Política de origem do iframe](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md) (link em inglês) para ver mais detalhes sobre as origens permitidas para iframes.
+* Um `amp-iframe` não pode ter a mesma origem que o contêiner, a menos que não permita `allow-same-origin` no atributo `sandbox`. Consulte o documento [Política de origem do iframe](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md) (link em inglês) para ver mais detalhes sobre as origens permitidas para iframes.
 
 *Exemplo: um mapa do Google Maps incorporado a um amp-iframe*
 

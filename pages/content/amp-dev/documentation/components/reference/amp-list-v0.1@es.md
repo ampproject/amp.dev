@@ -55,7 +55,7 @@ Puedes especificar una plantilla de dos formas:
 * Mediante un atributo `template` que haga referencia al ID de un elemento `template` o `script` existente.
 * Mediante un elemento `template` o `script` anidado directamente en `amp-list`.
 
-Para obtener más información sobre las plantillas, consulta el documento sobre [plantillas AMP HTML](https://github.com/ampproject/amphtml/blob/main/spec/amp-html-templates.md).
+Para obtener más información sobre las plantillas, consulta el documento sobre [plantillas AMP HTML](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-templates.md).
 
 *Ejemplo: Mostrar una lista dinámica*
 
@@ -419,7 +419,7 @@ Este elemento incluye [atributos comunes](../../../documentation/guides-and-tuto
 ## Sustituciones <a name="substitutions"></a>
 
 `<amp-list>` admite todas las sustituciones estándar de variables de URL.
-Para obtener más información, consulta la [guía de sustituciones](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md).
+Para obtener más información, consulta la [guía de sustituciones](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md).
 
 Por ejemplo:
 ```html

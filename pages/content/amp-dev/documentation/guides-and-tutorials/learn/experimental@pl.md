@@ -8,7 +8,7 @@ formats:
   - ads
 ---
 
-[Eksperymentalne składniki AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments) to wydane funkcje, które nie są jeszcze gotowe do powszechnego stosowania, więc są chronione przez status **eksperymentalny**.
+[Eksperymentalne składniki AMP](https://github.com/ampproject/amphtml/tree/main/tools/experiments) to wydane funkcje, które nie są jeszcze gotowe do powszechnego stosowania, więc są chronione przez status **eksperymentalny**.
 
 Programiści i użytkownicy mogą zdecydować się na korzystanie z tych funkcji przed ich pełnym wydaniem. Należy jednak zachować ostrożność, ponieważ mogą one zawierać błędy lub mieć nieoczekiwane skutki uboczne.
 

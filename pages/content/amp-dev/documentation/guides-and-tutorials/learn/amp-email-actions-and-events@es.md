@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-email-actions-and-events.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-email-actions-and-events.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -30,7 +30,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-[tip type="note"] Este documento habla sobre las acciones y eventos que puede usar para el formato del correo electrónico de AMP. Lea sobre las [Acciones y eventos en el correo electrónico de AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-actions-and-events.md) para los sitios web, historias y anuncios de AMP. [/tip]
+[tip type="note"] Este documento habla sobre las acciones y eventos que puede usar para el formato del correo electrónico de AMP. Lea sobre las [Acciones y eventos en el correo electrónico de AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-actions-and-events.md) para los sitios web, historias y anuncios de AMP. [/tip]
 
 El atributo `on` se utiliza para instalar controladores de eventos en los elementos. La compatibilidad de los eventos dependerá del elemento.
 
@@ -428,7 +428,7 @@ Por ejemplo, en AMP es posible hacer lo siguiente:
   </tr>
   <tr>
     <td><code>changeToLayoutContainer</code></td>
-    <td>Actualiza el diseño de <code>amp-list</code> a <code>layout="CONTAINTER"</code> para permitir <a href="https://github.com/ampproject/amphtml/blob/main/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">cambios en el tamaño de forma dinámica</a>.</td>
+    <td>Actualiza el diseño de <code>amp-list</code> a <code>layout="CONTAINTER"</code> para permitir <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">cambios en el tamaño de forma dinámica</a>.</td>
   </tr>
   <tr>
     <td> <code>fetch-error</code>(low-trust)</td>

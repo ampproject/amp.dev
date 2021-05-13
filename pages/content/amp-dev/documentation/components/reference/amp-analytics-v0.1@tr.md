@@ -165,7 +165,7 @@ Bu kaynakların birden fazlasına ait yapılandırma verileri kullanılırsa yap
 
 #### Uzak yapılandırma yükleme <a name="loading-remote-configuration"></a>
 
-Bir uzak yapılandırmayı yüklemek için `<amp-analytics>` öğesinde `config` özelliğini ve yapılandırma verilerinin URL'sini belirtin. Belirtilen URL, HTTPS şemasını kullanmalıdır. URL, [AMP URL değişkenlerini](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) içerebilir. Çerezlere erişmek için [`data-credentials`](#data-credentials) özelliğine bakın. Yanıt, [AMP CORS güvenlik yönergelerine](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) uygun olmalıdır.
+Bir uzak yapılandırmayı yüklemek için `<amp-analytics>` öğesinde `config` özelliğini ve yapılandırma verilerinin URL'sini belirtin. Belirtilen URL, HTTPS şemasını kullanmalıdır. URL, [AMP URL değişkenlerini](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) içerebilir. Çerezlere erişmek için [`data-credentials`](#data-credentials) özelliğine bakın. Yanıt, [AMP CORS güvenlik yönergelerine](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) uygun olmalıdır.
 
 Bu örnekte, belirtilen URL'den yapılandırma verilerini yüklemek için `config` özelliğini belirtiriz.
 
@@ -200,7 +200,7 @@ Ardından, çalışma zamanı, nihai yapılandırmayı belirlemek için sağlana
 
 Değişken Grupları, analiz sağlayıcılarının, kullanıcının kolayca etkinleştirebileceği önceden tanımlanmış bir değişken grubunu gruplamalarına olanak tanıyan bir özelliktir. Daha sonra, bu değişkenler çözümlenir ve belirtilen `configRewriter` uç noktasına gönderilir.
 
-Analiz sağlayıcılarının, bu özelliği etkinleştirmek için `configRewriter` yapılandırmasının içinde yeni bir `varGroups` nesnesi oluşturması gerekir. Böylece yayıncılar, analiz yapılandırmalarında etkinleştirmek istedikleri analiz sağlayıcı tarafından oluşturulan adlandırılmış `varGroups` nesnesini ekleyebilir. [AMP HTML Değişiklik Kılavuzu](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) tarafından desteklenen tüm değişkenler kullanılabilir. *Önemli not*: ${varName} çeşitleri kullanılamaz.
+Analiz sağlayıcılarının, bu özelliği etkinleştirmek için `configRewriter` yapılandırmasının içinde yeni bir `varGroups` nesnesi oluşturması gerekir. Böylece yayıncılar, analiz yapılandırmalarında etkinleştirmek istedikleri analiz sağlayıcı tarafından oluşturulan adlandırılmış `varGroups` nesnesini ekleyebilir. [AMP HTML Değişiklik Kılavuzu](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) tarafından desteklenen tüm değişkenler kullanılabilir. *Önemli not*: ${varName} çeşitleri kullanılamaz.
 
 Örneğin, yapılandırması şöyle görünen bir tedarikçi firmamız olabilir:
 ```js
@@ -344,7 +344,7 @@ Aşağıdaki yapılandırma, 1 saniye sonra ilk istek pingini göndermesinin ard
 
 #### Değişkenler <a name="vars"></a>
 
-`amp-analytics` bileşeni, isteklerde kullanılabilecek birçok temel değişken tanımlar. Bu değişkenlerin tamamını içeren bir listeyi [`amp-analytics` Değişkenler Kılavuzu](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md)'nda bulabilirsiniz. Buna ek olarak, [AMP HTML Değişiklik Kılavuzu](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) tarafından desteklenen tüm değişkenler de desteklenir.
+`amp-analytics` bileşeni, isteklerde kullanılabilecek birçok temel değişken tanımlar. Bu değişkenlerin tamamını içeren bir listeyi [`amp-analytics` Değişkenler Kılavuzu](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md)'nda bulabilirsiniz. Buna ek olarak, [AMP HTML Değişiklik Kılavuzu](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) tarafından desteklenen tüm değişkenler de desteklenir.
 
 `vars` yapılandırma nesnesi, yeni anahtar/değer çiftlerini tanımlamak veya `request` değerlerinde başvurulabilecek mevcut değişkenleri geçersiz kılmak için kullanılabilir. Yeni değişkenler, yaygın olarak yayıncıya özel bilgileri belirtmek için kullanılır.  Diziler, virgül sınırlayıcısını korurken, URL kodlaması ayrı olarak yapılması gereken bir değer listesi belirtmek için kullanılabilir.
 
@@ -511,7 +511,7 @@ Sayfa görünür hale geldiğinde bir isteği etkinleştirmek için sayfa görü
 }
 ```
 
-Seçicinin bir koleksiyonu değil, yalnızca tek bir öğeyi belirtmek için kullanılabileceğini unutmayın. Öğe, [AMP genişletilmiş öğesi](https://github.com/ampproject/amphtml/blob/main/spec/amp-tag-addendum.md#amp-specific-tags) veya bir doküman kökü olabilir.
+Seçicinin bir koleksiyonu değil, yalnızca tek bir öğeyi belirtmek için kullanılabileceğini unutmayın. Öğe, [AMP genişletilmiş öğesi](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-tag-addendum.md#amp-specific-tags) veya bir doküman kökü olabilir.
 
 Öğe görünürlüğü tetikleyicisi, öğenin görünürlüğünü izlemeden önce `visibilitySpec` öğesindeki `waitFor` özelliğiyle belirtilen sinyali bekler. `waitFor` değeri belirtilmezse öğenin [`ini-load`](#initial-load-trigger) sinyalini bekler. Daha fazla ayrıntı için `waitFor` dokümanlarına bakın.
 `reportWhen` değeri belirtilirse tetikleyici, etkinliği göndermeden önce bu sinyali bekler. Bu, örneğin, sayfa kapatıldığında analiz etkinliklerini gönderme açısından yararlıdır.
@@ -808,7 +808,7 @@ Bu parametreyi kullanmanız gerekirse bu parametrenin nasıl oluşturulduğuna i
 
 #### Çerezler <a name="cookies"></a>
 
-`cookies` özelliği, doküman URL'sinden [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#query-parameter) ve [`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md#linker-param) bilgilerini ayıklayarak çerezleri orijinal alana yazmayı destekler. AMP proxy'si uygulanan alandan bir yayıncı alanındaki AMP sayfalarına kimlik senkronizasyonu gerçekleştirmek için `linkers` özellikleriyle birlikte kullanılabilir.
+`cookies` özelliği, doküman URL'sinden [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md#query-parameter) ve [`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md#linker-param) bilgilerini ayıklayarak çerezleri orijinal alana yazmayı destekler. AMP proxy'si uygulanan alandan bir yayıncı alanındaki AMP sayfalarına kimlik senkronizasyonu gerçekleştirmek için `linkers` özellikleriyle birlikte kullanılabilir.
 
 `cookies` yapılandırmasını ayarlamayla ilgili ayrıntıları [AMP Sayfalarında Bağlayıcı Parametreleri Alma](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md#receiving-linker-params-on-amp-pages) bölümünde bulabilirsiniz.
 
@@ -832,7 +832,7 @@ Tedarikçi firmanın türünü belirtir.  Ayrıntılar için [Analytics tedarik�
 
 **config**
 
-Bu, belirtilen uzak bir URL'den bir yapılandırmayı yüklemek için kullanılabilen isteğe bağlı bir özelliktir. Belirtilen URL, HTTPS şemasını kullanmalıdır. Ayrıca, aşağıdaki `data-include-credentials` özelliğine bakın. URL, [AMP URL değişkenlerini](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) içerebilir. Yanıt, [AMP CORS güvenlik yönergelerine](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) uygun olmalıdır.
+Bu, belirtilen uzak bir URL'den bir yapılandırmayı yüklemek için kullanılabilen isteğe bağlı bir özelliktir. Belirtilen URL, HTTPS şemasını kullanmalıdır. Ayrıca, aşağıdaki `data-include-credentials` özelliğine bakın. URL, [AMP URL değişkenlerini](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) içerebilir. Yanıt, [AMP CORS güvenlik yönergelerine](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) uygun olmalıdır.
 
 Örnek:
 

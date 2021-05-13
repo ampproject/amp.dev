@@ -20,7 +20,7 @@ Tài liệu này mô tả các kỳ vọng cho AMP bên thứ ba và định ngh
 
 # Hướng dẫn đóng góp
 
-Mọi đóng góp chung đều cần tuân thủ [Hướng dẫn chung về AMPHTML trong CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md). Chúng tôi kỳ vọng bên thứ ba sẽ kiểm tra, duy trì và cập nhật đóng góp của họ theo nhiều mức độ khác nhau.
+Mọi đóng góp chung đều cần tuân thủ [Hướng dẫn chung về AMPHTML trong CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md). Chúng tôi kỳ vọng bên thứ ba sẽ kiểm tra, duy trì và cập nhật đóng góp của họ theo nhiều mức độ khác nhau.
 
 Để đủ điều kiện được bao gồm, mọi cấp độ đóng góp đều phải:
 
@@ -61,7 +61,7 @@ Lôgic dành riêng cho bên thứ ba duy nhất được duyệt vào kho lưu 
 
 [**amp-ad**](../../../components/reference/amp-ad.md)
 
-Các nhà cung cấp quảng cáo nên đọc [tổng quan về phát triển](https://github.com/ampproject/amphtml/tree/master/ads#overview) và [hướng dẫn cho nhà phát triển](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) về việc bổ sung hỗ trợ cho [`amp-ad`](../../../components/reference/amp-ad.md). Tùy thuộc vào công nghệ quảng cáo mà công ty của bạn cung cấp, bạn có thể thấy [các hướng dẫn tích hợp này](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads) hữu ích.
+Các nhà cung cấp quảng cáo nên đọc [tổng quan về phát triển](https://github.com/ampproject/amphtml/tree/main/ads#overview) và [hướng dẫn cho nhà phát triển](https://github.com/ampproject/amphtml/tree/main/ads#developer-guidelines-for-a-pull-request) về việc bổ sung hỗ trợ cho [`amp-ad`](../../../components/reference/amp-ad.md). Tùy thuộc vào công nghệ quảng cáo mà công ty của bạn cung cấp, bạn có thể thấy [các hướng dẫn tích hợp này](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads) hữu ích.
 
 Có rất nhiều đơn vị cung cấp quảng cáo đã bổ sung hỗ trợ cho các tính năng liên quan đến quảng cáo như amp-ad. Sau đây là một [yêu cầu kéo mẫu](https://github.com/ampproject/amphtml/pull/2299) từ mạng lưới quảng cáo [Criteo](https://github.com/ampproject/amphtml/blob/main/ads/criteo.md).
 

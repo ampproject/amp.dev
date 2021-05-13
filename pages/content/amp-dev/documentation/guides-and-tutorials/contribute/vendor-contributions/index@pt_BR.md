@@ -29,7 +29,7 @@ Para saber mais sobre como essa extensão pode ajudá-lo, consulte a [`amp-call-
 
 ## 4. Adicionar uma nova extensão/incorporação
 
-Se o caso de uso não puder ser atendido pelas extensões [`amp-analytics`](../../../components/reference/amp-analytics.md) , [`amp-pixel`](../../../components/reference/amp-pixel.md) ou [`amp-ad`](../../../components/reference/amp-ad.md) , [poste a questão no GitHub](https://github.com/ampproject/amphtml/issues/new) para discutir opções alternativas. Recebemos novas extensões que podem ser usadas por várias empresas. Veja a seção [componentes estendidos contribuintes](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#contributing-extended-components) para mais detalhes.
+Se o caso de uso não puder ser atendido pelas extensões [`amp-analytics`](../../../components/reference/amp-analytics.md) , [`amp-pixel`](../../../components/reference/amp-pixel.md) ou [`amp-ad`](../../../components/reference/amp-ad.md) , [poste a questão no GitHub](https://github.com/ampproject/amphtml/issues/new) para discutir opções alternativas. Recebemos novas extensões que podem ser usadas por várias empresas. Veja a seção [componentes estendidos contribuintes](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#contributing-extended-components) para mais detalhes.
 
 ## 5. Usar amp-iframe
 
@@ -41,7 +41,7 @@ Para começar, leia as [diretrizes do desenvolvedor terceirizado](https://github
 
 Por exemplo, o rastreamento dinâmico de chamadas é um caso de uso ainda não compatível com AMP. No entanto, estamos [trabalhando ativamente](https://github.com/ampproject/amphtml/issues/5276) com a comunidade para torná-lo compatível.
 
-Caso tenha dúvidas ou sugestões, [envie seus comentários](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#filing-issues) ou entre em contato por um dos [canais de discussão](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#discussion-channels).
+Caso tenha dúvidas ou sugestões, [envie seus comentários](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#filing-issues) ou entre em contato por um dos [canais de discussão](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#discussion-channels).
 
 ## Outros recursos
 

@@ -62,7 +62,7 @@ teaser:
 * السمة `template` التي تشير إلى معرّف `template` حالي أو إلى عنصر `script` حالي
 * `template` أو عنصر `script` مدمج مباشرة داخل العنصر `amp-list`
 
-راجِع [نماذج رمز HTML لصفحات AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-html-templates.md) للحصول على مزيد من التفاصيل عن النماذج.
+راجِع [نماذج رمز HTML لصفحات AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-templates.md) للحصول على مزيد من التفاصيل عن النماذج.
 
 *مثال: عرض قائمة ديناميكية*
 
@@ -431,7 +431,7 @@ amp-list div[role="list"] {
 ## الاستبدالات <a name="substitutions"></a>
 
 يتيح `<amp-list>` جميع استبدالات متغيرات عناوين URL القياسية.
-اطّلِع على [دليل الاستبدالات](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) للحصول على المزيد من المعلومات.
+اطّلِع على [دليل الاستبدالات](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) للحصول على المزيد من المعلومات.
 
 مثال:
 ```html

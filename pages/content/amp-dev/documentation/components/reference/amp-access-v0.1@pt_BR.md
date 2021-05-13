@@ -225,7 +225,7 @@ Veja um exemplo da configuração do AMP Access:
 
 ### Variáveis de URL de acesso <a name="access-url-variables"></a>
 
-Ao configurar os URLs para vários endpoints, o editor pode usar variáveis de substituição. A lista completa dessas variáveis é definida nas [especificações de variáveis de AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) (link em inglês). Essas especificações adicionam algumas variáveis específicas para acesso, como `READER_ID` e `AUTHDATA`. Algumas das variáveis mais relevantes são descritas na tabela abaixo:
+Ao configurar os URLs para vários endpoints, o editor pode usar variáveis de substituição. A lista completa dessas variáveis é definida nas [especificações de variáveis de AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) (link em inglês). Essas especificações adicionam algumas variáveis específicas para acesso, como `READER_ID` e `AUTHDATA`. Algumas das variáveis mais relevantes são descritas na tabela abaixo:
 
 <table>
   <tr>

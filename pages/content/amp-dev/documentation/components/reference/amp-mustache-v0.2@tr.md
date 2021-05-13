@@ -61,7 +61,7 @@ Mustache, mantık içermeyen bir şablon söz dizimidir. Daha ayrıntılı bilgi
 
 ## Kullanım <a name="usage"></a>
 
-`amp-mustache` şablonu, [AMP Şablon Spesifikasyonu](https://github.com/ampproject/amphtml/blob/main/spec/amp-html-templates.md)'na göre tanımlanmalı ve kullanılmalıdır.
+`amp-mustache` şablonu, [AMP Şablon Spesifikasyonu](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-templates.md)'na göre tanımlanmalı ve kullanılmalıdır.
 
 Öncelikle `amp-mustache` şu şekilde beyan edilmeli/yüklenmelidir:
 

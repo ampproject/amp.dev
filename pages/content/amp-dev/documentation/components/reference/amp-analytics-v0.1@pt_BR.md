@@ -166,7 +166,7 @@ Se forem usados dados de configuração de mais de uma dessas fontes, os objetos
 
 #### Carregar configuração remota <a name="loading-remote-configuration"></a>
 
-Para carregar uma configuração remota, no elemento `<amp-analytics>`, especifique o atributo `config` e o URL para os dados de configuração. O URL especificado precisa usar o esquema HTTPS. O URL pode incluir [variáveis de URL de AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) (link em inglês). Para acessar cookies, consulte o atributo [`data-credentials`](#data-credentials). A resposta precisa seguir as [diretrizes de segurança de CORS nas AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) (link em inglês).
+Para carregar uma configuração remota, no elemento `<amp-analytics>`, especifique o atributo `config` e o URL para os dados de configuração. O URL especificado precisa usar o esquema HTTPS. O URL pode incluir [variáveis de URL de AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) (link em inglês). Para acessar cookies, consulte o atributo [`data-credentials`](#data-credentials). A resposta precisa seguir as [diretrizes de segurança de CORS nas AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) (link em inglês).
 
 Neste exemplo, especificamos o atributo `config` para carregar os dados de configuração a partir do URL especificado.
 
@@ -201,7 +201,7 @@ Em seguida, o ambiente de execução mescla toda a configuração fornecida para
 
 Os grupos de variáveis são um recurso que permite aos fornecedores de análise agrupar um conjunto predefinido de variáveis que podem ser facilmente ativadas por um usuário. Depois, essas variáveis serão resolvidas e enviadas ao endpoint do `configRewriter` especificado.
 
-Os fornecedores de análise precisam criar um novo objeto `varGroups` dentro da configuração de `configRewriter` para ativar esse recurso. Os editores podem, então, incluir qualquer fornecedor de análise nomeado responsável por criar `varGroups` que eles queiram ativar nas respectivas configurações de análise. Todas as variáveis compatíveis com o [Guia de substituições de HTML para AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) (link em inglês) podem ser usadas. *Observação importante*: as variantes ${varName} não funcionarão.
+Os fornecedores de análise precisam criar um novo objeto `varGroups` dentro da configuração de `configRewriter` para ativar esse recurso. Os editores podem, então, incluir qualquer fornecedor de análise nomeado responsável por criar `varGroups` que eles queiram ativar nas respectivas configurações de análise. Todas as variáveis compatíveis com o [Guia de substituições de HTML para AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) (link em inglês) podem ser usadas. *Observação importante*: as variantes ${varName} não funcionarão.
 
 Por exemplo, podemos ter um fornecedor com a seguinte configuração:
 ```js
@@ -345,7 +345,7 @@ A configuração a seguir envia o primeiro ping de solicitação após um segund
 
 #### Variáveis <a name="vars"></a>
 
-O componente `amp-analytics` define muitas variáveis básicas que podem ser usadas em solicitações. Uma lista de todas essas variáveis está disponível no [Guia de variáveis do `amp-analytics`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md). Além disso, todas as variáveis compatíveis com o [Guia de substituições de AMP para HTML](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) (link em inglês) também são compatíveis.
+O componente `amp-analytics` define muitas variáveis básicas que podem ser usadas em solicitações. Uma lista de todas essas variáveis está disponível no [Guia de variáveis do `amp-analytics`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md). Além disso, todas as variáveis compatíveis com o [Guia de substituições de AMP para HTML](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) (link em inglês) também são compatíveis.
 
 O objeto de configuração `vars` pode ser usado para definir novos pares de chave-valor ou modificar as variáveis existentes que podem ser referenciadas nos valores de `request`. Novas variáveis geralmente são usadas para especificar informações específicas do editor.  As matrizes podem ser usadas para especificar uma lista de valores que precisam ser codificados com URL separadamente, ao mesmo tempo em que
  preservam o delimitador de vírgula.
@@ -513,7 +513,7 @@ O acionador de visibilidade de elemento pode ser configurado para qualquer eleme
 }
 ```
 
-O seletor só pode ser usado para especificar um único elemento, não um conjunto deles. O elemento pode ser um [elemento AMP estendido](https://github.com/ampproject/amphtml/blob/main/spec/amp-tag-addendum.md#amp-specific-tags) ou uma raiz de documento.
+O seletor só pode ser usado para especificar um único elemento, não um conjunto deles. O elemento pode ser um [elemento AMP estendido](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-tag-addendum.md#amp-specific-tags) ou uma raiz de documento.
 
 O acionador de visibilidade de elemento aguarda o sinal especificado pela propriedade `waitFor` em `visibilitySpec` antes de rastrear a visibilidade do elemento. Se `waitFor` não for especificado, ele aguardará o sinal [`ini-load`](#initial-load-trigger) do elemento. Consulte a documentação de `waitFor` para ver mais detalhes.
 Se `reportWhen` for especificado, o acionador aguardará esse sinal antes de enviar o evento. Isso é útil, por exemplo, para o envio de eventos de análise quando a página é fechada.
@@ -816,7 +816,7 @@ Se você precisar ingerir esse parâmetro, consulte as informações sobre como 
 
 #### Cookies <a name="cookies"></a>
 
-O recurso de `cookies` é compatível com a gravação de cookies no domínio de origem extraindo as informações de [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#query-parameter) e [`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md#linker-param) do URL do documento. Ele pode ser usado com os recursos `linkers` para executar a sincronização de código do domínio de AMP em proxy para páginas AMP no domínio de um editor.
+O recurso de `cookies` é compatível com a gravação de cookies no domínio de origem extraindo as informações de [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md#query-parameter) e [`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md#linker-param) do URL do documento. Ele pode ser usado com os recursos `linkers` para executar a sincronização de código do domínio de AMP em proxy para páginas AMP no domínio de um editor.
 
 Detalhes sobre como configurar os `cookies` podem ser encontrados em [Receber parâmetros do vinculador em páginas AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md#receiving-linker-params-on-amp-pages)
 
@@ -840,7 +840,7 @@ Exemplo:
 
 **config**
 
-Este é um atributo opcional, que pode ser usado para carregar uma configuração de um URL remoto especificado. O URL especificado precisa usar o esquema HTTPS. Consulte também o atributo `data-include-credentials` abaixo. O URL pode incluir [variáveis de URL de AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) (link em inglês). A resposta precisa seguir as [diretrizes de segurança de CORS nas AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) (link em inglês).
+Este é um atributo opcional, que pode ser usado para carregar uma configuração de um URL remoto especificado. O URL especificado precisa usar o esquema HTTPS. Consulte também o atributo `data-include-credentials` abaixo. O URL pode incluir [variáveis de URL de AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) (link em inglês). A resposta precisa seguir as [diretrizes de segurança de CORS nas AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) (link em inglês).
 
 Exemplo:
 

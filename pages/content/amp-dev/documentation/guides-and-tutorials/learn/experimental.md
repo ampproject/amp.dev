@@ -8,7 +8,7 @@ formats:
   - ads
 ---
 
-[AMP experimental components](https://github.com/ampproject/amphtml/tree/master/tools/experiments)
+[AMP experimental components](https://github.com/ampproject/amphtml/tree/main/tools/experiments)
 are released features not yet ready for wide use, so they are protected by an **experimental** status.
 
 Developers and users can opt-in to using these features before they are fully released.

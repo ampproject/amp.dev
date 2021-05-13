@@ -15,7 +15,7 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-Инструкции, приведенные ниже, предназначены для провайдеров рекламных технологий, желающих выполнить интеграцию с AMP HTML. Чтобы обеспечить минимальную задержку связи и надлежащее качество интеграции, прежде чем отправлять пулреквест в AMP Project, выполните инструкции, приведенные [здесь](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads). Более общие инструкции о том, как помочь развитию проекта AMP, см. в файле [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../CONTRIBUTING.md).
+Инструкции, приведенные ниже, предназначены для провайдеров рекламных технологий, желающих выполнить интеграцию с AMP HTML. Чтобы обеспечить минимальную задержку связи и надлежащее качество интеграции, прежде чем отправлять пулреквест в AMP Project, выполните инструкции, приведенные [здесь](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads). Более общие инструкции о том, как помочь развитию проекта AMP, см. в файле [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../docs/contributing.md).
 
 ## Рекламный сервер <a name="ad-server"></a>
 

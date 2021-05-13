@@ -644,7 +644,7 @@ AMP는 여러 JSON 엔드포인트에 대해 XMLHttpRequest(XHR)를 배치 처�
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>이 <code>amp-state</code>를 업데이트할 JSON을 반환하는 원격 엔드포인트의 URL. CORS HTTP 서비스여야 합니다.
-      <code>src</code> 속성은 모든 표준 URL 변수 대체를 허용합니다. 자세한 정보는 <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md">대체 가이드</a>를 참조하세요.
+      <code>src</code> 속성은 모든 표준 URL 변수 대체를 허용합니다. 자세한 정보는 <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">대체 가이드</a>를 참조하세요.
           [tip type="important"]
         엔드포인트는 <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">AMP의 CORS 요청</a> 사양에 지정된 요구사항을 구현해야 합니다.
         [/tip]</td>

@@ -27,7 +27,7 @@ Antes de que agregue el servicio de análisis al tiempo de ejecución de AMP HTM
 - Identificar los tipos de [variables](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md) y [solicitudes](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-analytics.md#requests) que necesitará en un documento AMP HTML cuando implemente el servicio de análisis.
 - Verificar si la función del complemento para el procesamiento por lotes es necesaria para elaborar la URL final, en caso de que se utilicen solicitudes con el comportamiento del procesamiento por lotes.
 - Identificar cuáles son los factores que provocarían que las solicitudes de análisis se envíen desde una página que sea importante para su servicio.
-- Analizar si es necesario hacerlo y cómo [realizará un seguimiento de los usuarios a través](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md) del contexto de primeros o terceros para AMP.
+- Analizar si es necesario hacerlo y cómo [realizará un seguimiento de los usuarios a través](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md) del contexto de primeros o terceros para AMP.
 - Conocer cómo el panel de control de su servicio de análisis controla el tráfico de AMP.
 - Identificar cualquier funcionalidad que no esté disponible en `amp-analytics`, y [presentar solicitudes](https://github.com/ampproject/amphtml/issues/new) para las funciones que sean necesarias.
 - AMP Analytics envía sus variables a un endpoint que se configuró previamente. Si actualmente todavía no cuenta con un endpoint, consulte [este ejemplo](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample) donde encontrará información general sobre cómo crear uno.
@@ -37,9 +37,9 @@ Antes de que agregue el servicio de análisis al tiempo de ejecución de AMP HTM
 
 ## Cómo agregar su configuración al tiempo de ejecución en AMP HTML <a name="adding-your-configuration-to-the-amp-html-runtime"></a>
 
-1. Cree un [ problema del tipo "Intención de implementar"](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features) donde indique que agregará la configuración para su servicio de análisis al tiempo de ejecución de AMP HTML. Asegúrese de enviar su solicitud con copia para **@ampproject/wg-analytics** en su descripción.
+1. Cree un [ problema del tipo "Intención de implementar"](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../docs/contributing.md#contributing-features) donde indique que agregará la configuración para su servicio de análisis al tiempo de ejecución de AMP HTML. Asegúrese de enviar su solicitud con copia para **@ampproject/wg-analytics** en su descripción.
 2. Desarrolle un parche que implemente lo siguiente:
-   1. Un nuevo archivo para la configuración de tipo json `${vendorName}.json` en la [carpeta](https://github.com/ampproject/amphtml/tree/master/extensions/amp-analytics/0.1/vendors) para los proveedores, que incluya todas las opciones anteriores y las predeterminadas, por ejemplo:
+   1. Un nuevo archivo para la configuración de tipo json `${vendorName}.json` en la [carpeta](https://github.com/ampproject/amphtml/tree/main/extensions/amp-analytics/0.1/vendors) para los proveedores, que incluya todas las opciones anteriores y las predeterminadas, por ejemplo:
       1. `"vars": {}` para variables adicionales predeterminadas.
       2. `"requests": {}` para las solicitudes que utilizará su servicio.
       3. `"optout":` si es necesario. Actualmente no contamos con un buen sistema de exclusión voluntaria, entonces, póngase en contacto con nosotros y ayúdenos a diseñar uno que funcione adecuadamente para usted.
@@ -75,7 +75,7 @@ Para adoptar este concepto, consulte la documentación que le explicará cómo i
 ## Recursos adicionales <a name="further-resources"></a>
 
 - Para profundizar en el tema: [¿Por qué no simplemente usar un iframe?](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/why-not-iframe.md)
-- Para profundizar en el tema: [Cómo administrar el estado del usuario cuando no se autenticó con AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md)
+- Para profundizar en el tema: [Cómo administrar el estado del usuario cuando no se autenticó con AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md)
 - Ejemplo de [amp-analytics](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
 - Documentación de referencia para [amp-analytics](https://amp.dev/documentation/components/amp-analytics)
 - Documentación de referencia para las variables de [amp-analytics](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md)

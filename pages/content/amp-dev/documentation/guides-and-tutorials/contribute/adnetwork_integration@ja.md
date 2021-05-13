@@ -54,7 +54,7 @@ formats:
 アドサーバーから AMPHTML 広告を配信するには、次の条件を満たす高速フェッチ統合を提供する必要があります。
 
 1. SSL ネットワーク通信をサポートする。
-2. 広告リクエストを作成するための JavaScript を提供する（実装例: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl)、[DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)）。
+2. 広告リクエストを作成するための JavaScript を提供する（実装例: [AdSense](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-adsense-impl)、[DoubleClick](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-doubleclick-impl)）。
 3. 検証サービスを通じてクリエイティブを検証、署名する。たとえば [Cloudflare](https://blog.cloudflare.com/firebolt/) は AMP 広告の検証サービスを提供しており、第三者の広告プロバイダは、このサービスを利用して軽量で訴求力のある広告を高速に配信できます。
 
 高速フェッチ統合を作成する手順については、「[高速フェッチのネットワーク実装ガイド](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md)」をご覧ください。

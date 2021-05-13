@@ -55,7 +55,7 @@ Você pode especificar um modelo de duas maneiras:
 * um atributo `template` que faça referência a um código de um elemento `template` ou `script` existente;
 * um elemento `template` ou `script` aninhado diretamente no elemento `amp-list`.
 
-Para ver mais detalhes sobre modelos, consulte [Modelos HTML para AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-html-templates.md) (link em inglês).
+Para ver mais detalhes sobre modelos, consulte [Modelos HTML para AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-templates.md) (link em inglês).
 
 *Exemplo: exibição de uma lista dinâmica*
 
@@ -425,7 +425,7 @@ Este elemento inclui [atributos comuns](../../../documentation/guides-and-tutori
 ## Substituições <a name="substitutions"></a>
 
 O `<amp-list>` permite todas as substituições de variáveis de URL padrão.
-Consulte o [Guia de substituições](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) (em inglês) para ver mais informações.
+Consulte o [Guia de substituições](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) (em inglês) para ver mais informações.
 
 Por exemplo:
 ```html

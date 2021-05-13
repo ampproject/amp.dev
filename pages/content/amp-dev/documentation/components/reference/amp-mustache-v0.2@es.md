@@ -61,7 +61,7 @@ Mustache es una sintaxis de plantilla "sin lógica". Consulta la [documentación
 
 ## Uso <a name="usage"></a>
 
-La plantilla de `amp-mustache` debe definirse y utilizarse de acuerdo con las [especificaciones de plantillas de AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-html-templates.md).
+La plantilla de `amp-mustache` debe definirse y utilizarse de acuerdo con las [especificaciones de plantillas de AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-templates.md).
 
 En primer lugar, `amp-mustache` debe declararse o cargarse de la siguiente manera:
 

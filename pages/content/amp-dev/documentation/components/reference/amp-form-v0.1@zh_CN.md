@@ -151,7 +151,7 @@ limitations under the License.
 * `<input type=button>`、`<input type=image>`
 * 输入时大部分与表单相关的属性，包括：`form`、`formaction`、`formtarget`、`formmethod` 等等。
 
-（将来我们可能会重新考虑放松上述部分规则 - 如果您需要这些规则，[请告知我们](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#suggestions-and-feature-requests)并提供相关用例）。
+（将来我们可能会重新考虑放松上述部分规则 - 如果您需要这些规则，[请告知我们](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#suggestions-and-feature-requests)并提供相关用例）。
 
 如需详细了解有效输入和字段，请参阅 AMP 验证工具规范中的 [amp-form 规则](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)。
 
@@ -588,7 +588,7 @@ HTML5 验证仅根据页面上的信息提供反馈，例如某个值是否与�
 
 # 变量替换 <a name="variable-substitutions"></a>
 
-`amp-form` 扩展组件支持对已隐藏且具有 `data-amp-replace` 属性的输入进行[平台变量替换](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)。每次提交表单时，`amp-form` 都会查找表单内的所有 `input[type=hidden][data-amp-replace]`，然后对其 `value` 属性应用变量替换，并将其替换为结果值。
+`amp-form` 扩展组件支持对已隐藏且具有 `data-amp-replace` 属性的输入进行[平台变量替换](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)。每次提交表单时，`amp-form` 都会查找表单内的所有 `input[type=hidden][data-amp-replace]`，然后对其 `value` 属性应用变量替换，并将其替换为结果值。
 
 您必须针对每次输入提供要用于每次替换的变量，具体方法如下：指定在 `data-amp-replace` 中使用的一连串以空格分隔的变量（请参阅下面的示例）。AMP 不会替换未明确指定的变量。
 
@@ -623,7 +623,7 @@ HTML5 验证仅根据页面上的信息提供反馈，例如某个值是否与�
 
 请注意，上述 `CANONICAL_HOSTNAME` 未通过第一个字段中的 `data-amp-replace` 属性进入白名单中，因此未进行替换。
 
-每次进行后续提交时都会进行替换。详细了解 [AMP 中的变量替换](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)。
+每次进行后续提交时都会进行替换。详细了解 [AMP 中的变量替换](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)。
 
 # Polyfill <a name="polyfills"></a>
 

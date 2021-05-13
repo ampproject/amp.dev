@@ -91,7 +91,7 @@ teaser:
 
 [/sourcecode]
 
-[ampproject の examples フォルダ](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples)には、代替の HTML 属性構文など、このほかにもサンプルが用意されています。
+[ampproject の examples フォルダ](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples)には、代替の HTML 属性構文など、このほかにもサンプルが用意されています。
 
 [tip type="read-on"] 構造化データについて詳しくは、次の関連資料をご覧ください。
 

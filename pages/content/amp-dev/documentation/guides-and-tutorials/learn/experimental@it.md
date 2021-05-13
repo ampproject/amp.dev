@@ -8,7 +8,7 @@ formats:
   - annunci
 ---
 
-I [componenti sperimentali AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments) sono funzioni rilasciate ma non ancora pronte per un ampio utilizzo, quindi sono protette dallo stato **sperimentale**.
+I [componenti sperimentali AMP](https://github.com/ampproject/amphtml/tree/main/tools/experiments) sono funzioni rilasciate ma non ancora pronte per un ampio utilizzo, quindi sono protette dallo stato **sperimentale**.
 
 Gli sviluppatori e gli utenti possono scegliere di utilizzare queste funzionalità prima che vengano rilasciate completamente. Ma dovrebbero essere usati con cautela, poiché potrebbero contenere bug o avere effetti collaterali inaspettati.
 

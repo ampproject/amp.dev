@@ -125,4 +125,4 @@ formats:
 
 - [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) — рекомендуемый нами способ искать ответы на вопросы об AMP. Поскольку члены сообщества AMP Project регулярно просматривают Stack Overflow, получить самый быстрый ответ на свои вопросы, скорее всего, можно именно там.
 - Присоединяйтесь к Slack-каналу [#a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877), чтобы получить решения и ответы.
-- Если вы столкнулись с ошибкой в AMP или у вас есть запрос функции для AMP, сообщите нам об этом (см. раздел [Как сообщать о проблемах в AMP](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#reporting-issues-with-amp)).
+- Если вы столкнулись с ошибкой в AMP или у вас есть запрос функции для AMP, сообщите нам об этом (см. раздел [Как сообщать о проблемах в AMP](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#reporting-issues-with-amp)).

@@ -125,4 +125,4 @@ AMP HTML 광고를 만든 후 광고가 적절한 AMP HTML 구문을 사용하�
 
 - AMP 관련 질문의 답변은 [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html)에서 찾아보는 것이 좋습니다. AMP 프로젝트 커뮤니티 구성원이 정기적으로 Stack Overflow를 모니터링하므로 질문을 가장 빠르게 해결할 수 있는 방법입니다.
 - [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) 채널에 참여하여 솔루션 및 답변을 확인해 보세요.
-- AMP에서 버그가 발생하거나 AMP에 요청할 기능이 있다면 [AMP 문제 신고](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#reporting-issues-with-amp)에서 문제를 신고하는 방법을 확인하세요.
+- AMP에서 버그가 발생하거나 AMP에 요청할 기능이 있다면 [AMP 문제 신고](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#reporting-issues-with-amp)에서 문제를 신고하는 방법을 확인하세요.

@@ -42,6 +42,6 @@ AMP를 활용해 사용자 참여도를 개선하는 몇 가지 간단한 팁을
 
 - **AMP 로드맵을 살펴보면** [로드맵](../../../community/roadmap.html)의 업데이트 및 기능을 확인할 수 있습니다.
 
-- **적극적인 참여.** 소스 코드에 기여, 버그 신고, [GitHub](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md) 피드백 제공을 통해 적극적으로 참여하세요. [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html)에서 AMP에 대한 의견을 공유하셔도 좋습니다.
+- **적극적인 참여.** 소스 코드에 기여, 버그 신고, [GitHub](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md) 피드백 제공을 통해 적극적으로 참여하세요. [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html)에서 AMP에 대한 의견을 공유하셔도 좋습니다.
 
 - [예제](../../../documentation/examples/index.html)를 통해 AMP 컴포넌트 사용 방법을 **학습**합니다.

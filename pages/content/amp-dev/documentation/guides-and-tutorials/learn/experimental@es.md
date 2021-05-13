@@ -2,7 +2,7 @@
 $title: Funciones experimentales
 ---
 
-Los [componentes AMP experimentales](https://github.com/ampproject/amphtml/tree/master/tools/experiments)
+Los [componentes AMP experimentales](https://github.com/ampproject/amphtml/tree/main/tools/experiments)
 son funciones que aún no están listas para usarse de forma generalizada; por eso se marcan como **experimentales**.
 
 Los desarrolladores y los usuarios pueden habilitar el uso de estas funciones antes de que se publiquen definitivamente,

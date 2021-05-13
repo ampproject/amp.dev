@@ -42,6 +42,6 @@ formats:
 
 - **查看 AMP 路线图**，了解[路线图](../../../community/roadmap.html)中的最新动态和功能。
 
-- **积极参与**。在 [GitHub](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md) 上贡献源代码，提交错误或提供反馈。 在 [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html) 上分享您对 AMP 的想法。
+- **积极参与**。在 [GitHub](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md) 上贡献源代码，提交错误或提供反馈。 在 [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html) 上分享您对 AMP 的想法。
 
 - **了解**如何通过[示例](../../../documentation/examples/index.html)使用 AMP 组件。

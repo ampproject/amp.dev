@@ -92,7 +92,7 @@ L'ottimizzatore AMP fornisce una ragionevole configurazione predefinita che dovr
 
 Le opzioni principali sono le seguenti:
 
-- `lts: true` per abilitare [URL stabili a lungo termine](https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md) per il runtime e i componenti AMP.
+- `lts: true` per abilitare [URL stabili a lungo termine](https://github.com/ampproject/amphtml/blob/main/docs/lts-release.md) per il runtime e i componenti AMP.
 - `verbose: true` per output di debugging dettagliati. Particolarmente utile per identificare i motivi per cui non è stato possibile rimuovere il boilerplate AMP.
 - `imageOptimizer` : abilita la generazione automatica di elementi srcset per immagini, fornendo una funzione per il calcolo degli URL di srcset per una data immagine src. La funzione dovrebbe restituire un URL che punta a una versione dell'immagine `src` con la larghezza data. Se nessuna immagine è disponibile, dovrebbe restituire un valore falso. Maggiori informazioni nella prossima sezione.
 
