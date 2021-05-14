@@ -2980,8 +2980,7 @@ msgstr "<p>Responsable del acceso controlado específico de los usuarios al cont
 msgid "What is the Accelerated Mobile Pages project?"
 msgstr "¿Qué es el proyecto Páginas Móviles Aceleradas (AMP)?"
 
-msgid "<p>The Accelerated Mobile Pages (AMP) Project is an open source initiative that came out of discussions between publishers and technology companies about the need to improve the entire mobile content ecosystem for everyone -- publishers, consumer platforms, advertisers, creators, and users.</p>\n"
-"<p>Today, the expectation is that content should load super fast and be easy to explore. The reality is that content can take several seconds to load, or, because the user abandons the slow page, never fully loads at all. Accelerated Mobile Pages are web pages designed to load near instantaneously -- they are a step towards a better mobile web for all.</p>"
+msgid "<p>The Accelerated Mobile Pages (AMP) Project is an open source initiative that came out of discussions between publishers and technology companies about the need to improve the entire mobile content ecosystem for everyone -- publishers, consumer platforms, advertisers, creators, and users.</p>\n<p>Today, the expectation is that content should load super fast and be easy to explore. The reality is that content can take several seconds to load, or, because the user abandons the slow page, never fully loads at all. Accelerated Mobile Pages are web pages designed to load near instantaneously -- they are a step towards a better mobile web for all.</p>"
 msgstr "<p>El proyecto Páginas Móviles Aceleradas (AMP) es una iniciativa de código abierto que surgió de las discusiones entre los editores y las empresas de tecnología sobre la necesidad de mejorar todo el ecosistema de contenido móvil para todos: editores, plataformas de consumidores, anunciantes, creadores y usuarios.</p>\n"
 "<p>Actualmente, la expectativa es que el contenido se cargue rápidamente y sea fácil de explorar. La realidad es que el contenido puede tardar varios segundos en cargarse o, debido a que el usuario abandona la página lenta, nunca se carga completamente. Las páginas móviles aceleradas son páginas web diseñadas para cargarse casi instantáneamente y son un paso hacia una mejor web móvil para todos.</p>"
 
@@ -3177,4 +3176,3 @@ msgstr "Seleccione un entorno de trabajo listo para usar o un CMS con capacidad 
 
 msgid "See supported platforms"
 msgstr "Consulte las plataformas que son compatibles"
-
