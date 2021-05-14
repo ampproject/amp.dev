@@ -6,7 +6,6 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const svgToMiniDataURI = require('mini-svg-data-uri');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 
@@ -20,6 +19,7 @@ module.exports = (env, argv) => {
       chunkFilename: 'static/[name].[chunkhash].bundle.js',
       sourceMapFilename: 'static/[name].map',
       publicPath: isDevelopment ? 'http://localhost:8090/' : '/',
+      path: path.join(process.cwd(), 'dist'),
     },
     optimization: {
       minimizer: isDevelopment ? [] : [new OptimizeCSSAssetsPlugin({})],
@@ -87,8 +87,8 @@ module.exports = (env, argv) => {
                 destination: '../pages/views/2021/',
               },
               {
-                source: './dist/static/**/*',
-                destination: '../dist/static/frontend',
+                source: './dist/static/sprite.svg',
+                destination: '../dist/static/frontend/sprite.svg',
               },
               {
                 source: './static/img/**/*',
@@ -99,13 +99,6 @@ module.exports = (env, argv) => {
         },
       }),
       new webpack.HotModuleReplacementPlugin({}),
-      new CleanWebpackPlugin({
-        dry: false,
-        dangerouslyAllowCleanPatternsOutsideProject: true,
-        cleanAfterEveryBuildPatterns: [
-          path.resolve(process.cwd(), '../dist/static/frontend/**/*'),
-        ],
-      }),
       isDevelopment
         ? new WebpackBuildNotifierPlugin({
             title: 'amp.dev: Frontend',

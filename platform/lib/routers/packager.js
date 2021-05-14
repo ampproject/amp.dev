@@ -80,8 +80,14 @@ const packager = (request, response, next) => {
     sign: urlToSign,
   }).toString();
   const url = `/priv/doc?${searchParams}`;
-  // Serve webpackage via packager
-  sxgProxy(request, response, url, next);
+  try {
+    // Serve webpackage via packager
+    sxgProxy(request, response, url, next);
+  } catch (error) {
+    log.error('[SXG] could not proxy request to amppackager', error);
+    // Serve normal version of the page
+    next();
+  }
 };
 
 function sxgProxy(request, response, url) {
