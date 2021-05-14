@@ -1,4 +1,3 @@
-
 #: /views/partials/case-band.j2:6 /views/partials/case-band.j2:7
 msgid "A screenshot of a website using AMP."
 msgstr "Zrzut ekranu witryny internetowej korzystającej z AMP."
@@ -1358,7 +1357,7 @@ msgstr "Shaun Zacharia, prezes i współzałożyciel Triplelift."
 
 #: /content/amp-dev/about/ads.html:208
 msgid "The average mobile site takes 19 seconds to load over a 3G connection. Coupled with the fact that conversions fall by 12% for every additional second a webpage takes to load, you can safely assume two things: speed equals performance, and most advertiser campaigns have room to improve. That’s where you come in. As an SSP, DSP, analytics provider, or anything in between, embracing speed means improving campaign performance, delivering quality user experiences, and establishing yourself as the adtech platform for the fast web. Join the hundreds of technology platforms currently supporting the open source AMP ecosystem."
-msgstr "Załadowanie typowej witryny mobilnej przez łącze 3G zajmuje przeciętnie 19 sekund. W połączeniu z faktem, że z każdą kolejną sekundą ładowania strony internetowej konwersje spadają o 12%, można śmiało założyć, że wyniki zależą przede wszystkim od szybkości, a w przypadku kampanii większości reklamodawców można je poprawić. Tu właśnie leży Twoja szansa. Dla dostawcy platformy SSP lub DSP, dostawcy usług analityki itd. zwiększenie szybkości oznacza poprawę skuteczności kampanii, zapewnienie wysokiej jakości wrażeń użytkowników i osiągnięcie renomy jako szybkiej platformy reklamy internetowej. Dołącz do setek platform technologicznych obsługujących obecnie ekosystem open source AMP."
+msgstr "Załadowanie typowej witryny mobilnej przez łącze 3G zajmuje przeciętnie 19 sekund. Zaś każda kolejna sekunda ładowania strony zmniejsza współczynnik konwersji o 12%. Dlatego można śmiało założyć, że wyniki zależą przede wszystkim od szybkości — a w przypadku kampanii większości reklamodawców można je poprawić. Tu właśnie leży Twoja szansa. Dla dostawcy platformy SSP lub DSP, dostawcy usług analityki itd. przyspieszenie oznacza poprawę skuteczności kampanii, poprawę zadowolenia użytkowników i zbudowanie marki szybkiej platformy reklamy internetowej. Dołącz do setek platform technologicznych obsługujących środowisko open source AMP."
 
 #: /content/amp-dev/about/ads.html:209
 msgid "AMP offers a way for you to give users a faster experience everywhere: on ads, landing pages or on your entire website. AMP ads help users engage with your brand and improve the performance of your campaigns. When your target audience lands on an AMP page, they get what they’re looking for in the moment they’re looking for it. The net result – they’re more likely to be engaged with and receptive to your brand’s messages, and more likely to take the actions you’re guiding them towards like completing a purchase."
@@ -1587,8 +1586,8 @@ msgstr "Spójność i skalowalność"
 msgid "AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms."
 msgstr "Strony AMP ładowane są niemal natychmiastowo, co gwarantuje użytkownikom niezmiennie szybkie działanie na wszystkich urządzeniach i platformach."
 
-msgid "You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal."
-msgstr "Całe swoje archiwum można nierzadko przekonwertować w kilka dni, zwłaszcza jeśli korzystasz z popularnego CMS, takiego jak Wordpress lub Drupal."
+msgid "You can often convert your entire archive in days especially if you use a popular CMS such as WordPress or Drupal."
+msgstr "Całe swoje archiwum można nierzadko przekonwertować w kilka dni, zwłaszcza jeśli korzystasz z popularnego CMS, takiego jak WordPress lub Drupal."
 
 msgid "Used by popular and global platforms like Google, Bing and Twitter, AMP allows you to ensure users from all these surfaces get an unparalleled, often instantaneous and native-feeling experience by defaulting to AMP pages when available."
 msgstr "Technologia AMP, używana przez popularne globalne platformy, takie jak Google, Bing i Twitter, pozwala zapewnić użytkownikom wszystkich tych usług niezrównane, często natychmiastowe i naturalne w odczuciu działanie, domyślnie wyświetlając strony AMP, jeśli tylko są dostępne."
@@ -1702,7 +1701,7 @@ msgid "WYSIWYG drag and drop editor with templates, illustrations, icons, and th
 msgstr "Edytor WYSIWYG z obsługą przeciągania i upuszczania, szablonami, ilustracjami, ikonami oraz możliwością przesyłania własnych zdjęć i filmów."
 
 msgid "Newsroom Studio helps you create engaging, instant loading mobile experiences."
-msgstr "Narzędzie Newsroom Studio umożliwia tworzenie angażujących materiałów, błyskawicznie ładowanych na urządzenia mobilne."
+msgstr "Newsroom Studio umożliwia tworzenie angażujących materiałów, błyskawicznie ładowanych na urządzenia mobilne."
 
 msgid "Discover all tools"
 msgstr "Odkryj wszystkie narzędzia"
@@ -1765,16 +1764,16 @@ msgid "Allows the creation of rich, eye-catching marketing content with Adobe An
 msgstr "Umożliwia tworzenie bogatych, atrakcyjnych wizualnie treści marketingowych za pomocą Adobe Animate."
 
 msgid "Create AMPHTML-valid and ready to be published individual designs or full sets of static or animated marketing visuals, within minutes."
-msgstr "Twórz w czasie liczonym w minutach prawidłowe, gotowe do publikacji indywidualne projekty lub pełne zestawy statycznych lub animowanych materiałów marketingowych zgodnych z AMPHTML."
+msgstr "Twórz w kilka minutach prawidłowe, gotowe do publikacji indywidualne projekty lub pełne zestawy statycznych lub animowanych materiałów marketingowych zgodnych z AMPHTML."
 
 msgid "Online AMPHTML banner maker which allows you to easily create AMP ads without prior coding knowledge."
-msgstr "Internetowe narzędzie do tworzenia banerów w języku AMPHTML, umożliwiające łatwe tworzenie reklam AMP bez wiedzy na temat kodowania."
+msgstr "Internetowe narzędzie do tworzenia banerów w języku AMPHTML, umożliwiające łatwe tworzenie reklam AMP bez umiejętności kodowania."
 
 msgid "Google Web Designer"
 msgstr "Google Web Designer"
 
 msgid "Create engaging, interactive AMPHTML Ad compliant designs and motion graphics that can run on any device."
-msgstr "Buduj angażujące, interaktywne reklamy w AMPHTML i animacje działające na dowolnym urządzeniu."
+msgstr "Twórz angażujące, interaktywne projekty reklam zgodne z AMPHTML i animacje działające na dowolnym urządzeniu."
 
 msgid "Increase in revenue"
 msgstr "Wzrost przychodów"
@@ -2864,8 +2863,8 @@ msgstr "Dane wprowadzane przez użytkownika"
 msgid "Validator"
 msgstr "Walidator"
 
-msgid "You can often convert your entire archive in days – especially when using common CMS like Wordpress or Drupal."
-msgstr "Całe swoje archiwum można nierzadko przekonwertować w kilka dni, zwłaszcza jeśli korzystasz z popularnego CMS, takiego jak Wordpress lub Drupal."
+msgid "You can often convert your entire archive in days – especially when using common CMS like WordPress or Drupal."
+msgstr "Całe swoje archiwum można nierzadko przekonwertować w kilka dni, zwłaszcza jeśli korzystasz z popularnego CMS, takiego jak WordPress lub Drupal."
 
 msgid "All"
 msgstr "Wszystko"
@@ -2981,10 +2980,8 @@ msgstr "<p>Odpowiada za kontrolowany dostęp określonego użytkownika do treśc
 msgid "What is the Accelerated Mobile Pages project?"
 msgstr "Czym jest projekt Accelerated Mobile Pages?"
 
-msgid "<p>The Accelerated Mobile Pages (AMP) Project is an open source initiative that came out of discussions between publishers and technology companies about the need to improve the entire mobile content ecosystem for everyone -- publishers, consumer platforms, advertisers, creators, and users.</p>\n"
-"<p>Today, the expectation is that content should load super fast and be easy to explore. The reality is that content can take several seconds to load, or, because the user abandons the slow page, never fully loads at all. Accelerated Mobile Pages are web pages designed to load near instantaneously -- they are a step towards a better mobile web for all.</p>"
-msgstr "<p>Projekt Accelerated Mobile Pages (AMP) to inicjatywa open source, która powstała w wyniku rozmów wydawców i firm technologicznych na temat potrzeby ulepszenia całego ekosystemu treści mobilnych dla wszystkich — wydawców, platform konsumenckich, reklamodawców, twórców i użytkowników.</p>\n"
-"<p>Obecnie oczekuje się bardzo szybkiego ładowania i łatwości eksplorowania treści. W rzeczywistości załadowanie treści może trwać nawet kilka sekund i czasem użytkownik opuszcza ślamazarną stronę zanim zostanie w całości załadowana. Strony internetowe wykonane w technologii Accelerated Mobile Pages są zaprojektowane do błyskawicznego ładowania. To ważny krok w kierunku lepszego Internetu mobilnego dla wszystkich.</p>"
+msgid "<p>The Accelerated Mobile Pages (AMP) Project is an open source initiative that came out of discussions between publishers and technology companies about the need to improve the entire mobile content ecosystem for everyone -- publishers, consumer platforms, advertisers, creators, and users.</p>\n<p>Today, the expectation is that content should load super fast and be easy to explore. The reality is that content can take several seconds to load, or, because the user abandons the slow page, never fully loads at all. Accelerated Mobile Pages are web pages designed to load near instantaneously -- they are a step towards a better mobile web for all.</p>"
+msgstr "<p>Projekt Accelerated Mobile Pages (AMP) to inicjatywa open source, która powstała w wyniku rozmów wydawców i firm technologicznych na temat potrzeby ulepszenia całego ekosystemu treści mobilnych dla wszystkich — wydawców, platform konsumenckich, reklamodawców, twórców i użytkowników.</p>\n<p>Obecnie oczekuje się bardzo szybkiego ładowania i łatwości eksplorowania treści. W rzeczywistości załadowanie treści może trwać nawet kilka sekund i czasem użytkownik opuszcza ślamazarną stronę zanim zostanie w całości załadowana. Strony internetowe wykonane w technologii Accelerated Mobile Pages są zaprojektowane do błyskawicznego ładowania. To ważny krok w kierunku lepszego Internetu mobilnego dla wszystkich.</p>"
 
 msgid "What are the benefits of Accelerated Mobile Pages?"
 msgstr "Jakie są korzyści ze stosowania technologii Accelerated Mobile Pages?"
@@ -2995,14 +2992,8 @@ msgstr "<p>Szybkość ma znaczenie. Im szybciej, tym lepiej! Badania wykazały w
 msgid "How do Accelerated Mobile Pages work?"
 msgstr "Jak działają strony AMP?"
 
-msgid "<p>Accelerated Mobile Pages are just like any other HTML page, but with a limited set of allowed technical functionality that is defined and governed by the open source AMP spec. Just like all web pages, Accelerated Mobile Pages will load in any modern browser or app webview.</p>\n"
-"<p>AMP files take advantage of various technical and architectural approaches that prioritize speed to provide a faster experience for users. AMP developers can use a rich and growing library of web components that offer the ability to embed rich media objects like video and social posts, display advertising, or collect analytics. The goal is not to homogenize how content looks and feels, but instead to build a more common technical core between pages that speeds up load times.</p>\n"
-"<p>In addition, AMP files can be cached in the cloud in order to reduce the time content takes to get to a user’s mobile device. By using the AMP format, content producers are making the content in AMP files available to be cached by third parties. Under this type of framework, publishers and advertisers continue to control their content, but platforms can easily cache or mirror the content for optimal delivery speed to users. Google has provided the <a href=\"https://developers.google.com/amp/cache/\">Google AMP Cache</a> that can be used by anyone at no cost, and all AMPs will be cached by the Google AMP Cache. Other companies may build their own AMP cache as well.</p>\n"
-"<p>In summary, the goal is that the combination of limited technical functionality with a distribution system built around caching will lead to better performing pages, and increased audience development.</p>"
-msgstr "<p>Strony Accelerated Mobile Pages są jak każda inna strona HTML, ale z ograniczonym zestawem dozwolonych funkcji technicznych, zdefiniowanych w specyfikacji AMP typu open source i zarządzanych na jej podstawie. Strony AMP są obsługiwane w każdej nowoczesnej przeglądarce lub aplikacji ze składnikiem WebView.</p>\n"
-"<p>Pliki AMP korzystają z różnych rozwiązań technicznych i architektonicznych, w których priorytetem jest szybkość, aby zapewnić użytkownikom szybszy dostęp do treści. Programiści AMP mogą korzystać z bogatej i rosnącej biblioteki składników internetowych, oferujących możliwość osadzania obiektów multimedialnych, takich jak filmy i posty społecznościowe, cyfrowe reklamy displayowe lub zbieranie danych analitycznych. Celem nie jest ujednolicenie wyglądu i działania treści, tylko stworzenie wspólnego rdzenia technicznego między stronami, co skróci czas ładowania.</p>\n"
-"<p>Pliki AMP można ponadto buforować w chmurze, aby skrócić czas potrzebny do pobrania treści na urządzenie mobilne użytkownika. W formacie AMP producenci udostępniają treści w plikach AMP, aby umożliwić ich buforowanie zewnętrzne. Dzięki użyciu tego typu frameworku wydawcy i reklamodawcy zachowują kontrolę nad treściami, ale pojawia się możliwość ich łatwego buforowania lub dublowania w celu uzyskania optymalnej szybkości dostarczania. Google udostępnia za darmo sieć serwerów <a href=\"https://developers.google.com/amp/cache/\">Google AMP Cache</a> na buforowanie wszystkich treści AMP w usłudze Google AMP Cache. Inne firmy mogą budować własne sieci serwerów buforujących AMP.</p>\n"
-"<p>Podsumowując, celem jest połączenie ograniczonej funkcjonalności technicznej z systemem dystrybucji opartym na buforowaniu w celu doprowadzenia do szybszego ładowania stron i zwiększenia liczby ich odbiorców.</p>"
+msgid "<p>Accelerated Mobile Pages are just like any other HTML page, but with a limited set of allowed technical functionality that is defined and governed by the open source AMP spec. Just like all web pages, Accelerated Mobile Pages will load in any modern browser or app webview.</p>\n<p>AMP files take advantage of various technical and architectural approaches that prioritize speed to provide a faster experience for users. AMP developers can use a rich and growing library of web components that offer the ability to embed rich media objects like video and social posts, display advertising, or collect analytics. The goal is not to homogenize how content looks and feels, but instead to build a more common technical core between pages that speeds up load times.</p>\n<p>In addition, AMP files can be cached in the cloud in order to reduce the time content takes to get to a user’s mobile device. By using the AMP format, content producers are making the content in AMP files available to be cached by third parties. Under this type of framework, publishers and advertisers continue to control their content, but platforms can easily cache or mirror the content for optimal delivery speed to users. Google has provided the <a href=\"https://developers.google.com/amp/cache/\">Google AMP Cache</a> that can be used by anyone at no cost, and all AMPs will be cached by the Google AMP Cache. Other companies may build their own AMP cache as well.</p>\n<p>In summary, the goal is that the combination of limited technical functionality with a distribution system built around caching will lead to better performing pages, and increased audience development.</p>"
+msgstr "<p>Strony Accelerated Mobile Pages są jak każda inna strona HTML, ale z ograniczonym zestawem dozwolonych funkcji technicznych, zdefiniowanych w specyfikacji AMP typu open source i zarządzanych na jej podstawie. Strony AMP są obsługiwane w każdej nowoczesnej przeglądarce lub aplikacji ze składnikiem WebView.</p>\n<p>Pliki AMP korzystają z różnych rozwiązań technicznych i architektonicznych, w których priorytetem jest szybkość, aby zapewnić użytkownikom szybszy dostęp do treści. Programiści AMP mogą korzystać z bogatej i rosnącej biblioteki składników internetowych, oferujących możliwość osadzania obiektów multimedialnych, takich jak filmy i posty społecznościowe, cyfrowe reklamy displayowe lub zbieranie danych analitycznych. Celem nie jest ujednolicenie wyglądu i działania treści, tylko stworzenie wspólnego rdzenia technicznego między stronami, co skróci czas ładowania.</p>\n<p>Pliki AMP można ponadto buforować w chmurze, aby skrócić czas potrzebny do pobrania treści na urządzenie mobilne użytkownika. W formacie AMP producenci udostępniają treści w plikach AMP, aby umożliwić ich buforowanie zewnętrzne. Dzięki użyciu tego typu frameworku wydawcy i reklamodawcy zachowują kontrolę nad treściami, ale pojawia się możliwość ich łatwego buforowania lub dublowania w celu uzyskania optymalnej szybkości dostarczania. Google udostępnia za darmo sieć serwerów <a href=\"https://developers.google.com/amp/cache/\">Google AMP Cache</a> na buforowanie wszystkich treści AMP w usłudze Google AMP Cache. Inne firmy mogą budować własne sieci serwerów buforujących AMP.</p>\n<p>Podsumowując, celem jest połączenie ograniczonej funkcjonalności technicznej z systemem dystrybucji opartym na buforowaniu w celu doprowadzenia do szybszego ładowania stron i zwiększenia liczby ich odbiorców.</p>"
 
 msgid "Why does the Accelerated Mobile Pages Project take an open source approach?"
 msgstr "Dlaczego projekt Accelerated Mobile Pages stosuje podejście open source?"
@@ -3025,12 +3016,8 @@ msgstr "<p>Korzystając z formatu AMP, producenci treści udostępniają zawarto
 msgid "What responsibilities do I have when using Accelerated Mobile Pages?"
 msgstr "Jakie mam obowiązki w razie stosowania AMP?"
 
-msgid "<p>If a publisher or advertiser collects data from users who view its AMP pages, such data collection is governed by their privacy policy.  It is the publisher or advertiser’s responsibility to disclose its privacy policy, ideally by including a link to it within each of their AMP pages.</p>\n"
-"<p>Furthermore, the laws in many jurisdictions, such as in the European Union, require a website to give visitors information about cookies and other forms of local storage used on the site (including AMP pages). In many cases, these laws also require that the website obtain consent.  It is the website's responsibility to determine, based on its use of cookies, what type of notice would be appropriate.  Additional information and tools for generating cookie notices can be found at www.cookiechoices.org.  Note that the AMP component <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user-notification</a> provides a way to display a dismissable notification to the user.</p>\n"
-"<p>If an AMP page is shown within a viewer on a third party platform, such as a Google AMP Viewer on Google Search, the viewer may be a hybrid environment in which the AMP page and the third party platform may each collect data about the user.  In such a case, data collection by each party is governed by that party’s privacy policy (i.e., in a hybrid viewer environment, data collected by the AMP page is governed by its privacy policy and data collected by the third party platform is governed by the platform’s privacy policy).  It is each party’s responsibility to disclose its privacy policy and comply with relevant data regulations, including European laws relating to its use of cookies.</p>"
-msgstr "<p>Jeśli wydawca lub reklamodawca zbiera dane od użytkowników, którzy przeglądają jego strony AMP, takie zbieranie danych podlega jego zasadom ochrony prywatności. Wydawca lub reklamodawca jest odpowiedzialny za ujawnienie stosowanych zasad, najlepiej poprzez zamieszczenie linku do niej na każdej ze stron AMP.</p>\n"
-"<p>Przepisy obowiązujące w wielu miejscach, np. w Unii Europejskiej, wymagają ponadto od witryny internetowej podawania odwiedzającym informacji na temat plików cookie i innych form lokalnego przechowywania danych w witrynie (dotyczy to również stron AMP). W wielu przypadkach przepisy te wymagają również uzyskania zgody od użytkownika. Na witrynie spoczywa obowiązek ustalenia na podstawie plików cookie odpowiedniego typu zawiadomienia. Dodatkowe informacje i narzędzia do generowania powiadomień o plikach cookie można znaleźć na stronie www.cookiechoices.org. Należy zauważyć, że powiadomienie składnika AMP <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user</a> zapewnia sposób wyświetlania użytkownikowi powiadomienia, które można odrzucić.</p>\n"
-"<p>Jeśli strona AMP jest wyświetlana w przeglądarce na platformie strony trzeciej, takiej jak Google AMP Viewer w wyszukiwarce Google, przeglądarka może być środowiskiem hybrydowym, w którym dane dotyczące użytkownika może gromadzić zarówno strona AMP i platforma strony trzeciej. W takim przypadku zbieranie danych przez każdą ze stron podlega polityce prywatności tej strony (tj. w środowisku przeglądarki hybrydowej dane gromadzone przez stronę AMP podlegają jej polityce prywatności, a dane gromadzone przez platformę zewnętrzną podlegają polityce prywatności platformy). Każda ze stron ponosi odpowiedzialność za ujawnienie swojej polityki prywatności i przestrzeganie odpowiednich przepisów dotyczących ochrony danych, w tym przepisów europejskich dotyczących stosowania plików cookie.</p>"
+msgid "<p>If a publisher or advertiser collects data from users who view its AMP pages, such data collection is governed by their privacy policy.  It is the publisher or advertiser’s responsibility to disclose its privacy policy, ideally by including a link to it within each of their AMP pages.</p>\n<p>Furthermore, the laws in many jurisdictions, such as in the European Union, require a website to give visitors information about cookies and other forms of local storage used on the site (including AMP pages). In many cases, these laws also require that the website obtain consent.  It is the website's responsibility to determine, based on its use of cookies, what type of notice would be appropriate.  Additional information and tools for generating cookie notices can be found at www.cookiechoices.org.  Note that the AMP component <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user-notification</a> provides a way to display a dismissable notification to the user.</p>\n<p>If an AMP page is shown within a viewer on a third party platform, such as a Google AMP Viewer on Google Search, the viewer may be a hybrid environment in which the AMP page and the third party platform may each collect data about the user.  In such a case, data collection by each party is governed by that party’s privacy policy (i.e., in a hybrid viewer environment, data collected by the AMP page is governed by its privacy policy and data collected by the third party platform is governed by the platform’s privacy policy).  It is each party’s responsibility to disclose its privacy policy and comply with relevant data regulations, including European laws relating to its use of cookies.</p>"
+msgstr "<p>Jeśli wydawca lub reklamodawca zbiera dane od użytkowników, którzy przeglądają jego strony AMP, takie zbieranie danych podlega jego zasadom ochrony prywatności. Wydawca lub reklamodawca jest odpowiedzialny za ujawnienie stosowanych zasad, najlepiej poprzez zamieszczenie linku do niej na każdej ze stron AMP.</p>\n<p>Przepisy obowiązujące w wielu miejscach, np. w Unii Europejskiej, wymagają ponadto od witryny internetowej podawania odwiedzającym informacji na temat plików cookie i innych form lokalnego przechowywania danych w witrynie (dotyczy to również stron AMP). W wielu przypadkach przepisy te wymagają również uzyskania zgody od użytkownika. Na witrynie spoczywa obowiązek ustalenia na podstawie plików cookie odpowiedniego typu zawiadomienia. Dodatkowe informacje i narzędzia do generowania powiadomień o plikach cookie można znaleźć na stronie www.cookiechoices.org. Należy zauważyć, że powiadomienie składnika AMP <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user</a> zapewnia sposób wyświetlania użytkownikowi powiadomienia, które można odrzucić.</p>\n<p>Jeśli strona AMP jest wyświetlana w przeglądarce na platformie strony trzeciej, takiej jak Google AMP Viewer w wyszukiwarce Google, przeglądarka może być środowiskiem hybrydowym, w którym dane dotyczące użytkownika może gromadzić zarówno strona AMP i platforma strony trzeciej. W takim przypadku zbieranie danych przez każdą ze stron podlega polityce prywatności tej strony (tj. w środowisku przeglądarki hybrydowej dane gromadzone przez stronę AMP podlegają jej polityce prywatności, a dane gromadzone przez platformę zewnętrzną podlegają polityce prywatności platformy). Każda ze stron ponosi odpowiedzialność za ujawnienie swojej polityki prywatności i przestrzeganie odpowiednich przepisów dotyczących ochrony danych, w tym przepisów europejskich dotyczących stosowania plików cookie.</p>"
 
 msgid "What type of content works best using Accelerated Mobile Pages?"
 msgstr "Jaki typ treści najlepiej jest stosować na stronach Accelerated Mobile Pages?"
@@ -3123,58 +3110,58 @@ msgid "AMP Conf 2020: Save the date!"
 msgstr "AMP Conf 2020: powiadomienie!"
 
 msgid "AMP is a web component framework to easily create user-first experiences for the web."
-msgstr ""
+msgstr "AMP jest to framework składników internetowych ułatwiający tworzenie treści internetowych zorientowanych na użytkownika."
 
 msgid "Easily create websites with a great page experience out-of-the-box using AMP’s ready-to-go web components."
-msgstr ""
+msgstr "Z łatwością twórz witryny internetowe ze stronami od razu zapewniającymi doskonałe wrażenia, korzystając z gotowych do użycia składników internetowych AMP."
 
 msgid "All about AMP Websites"
-msgstr ""
+msgstr "Wszystko o witrynach AMP"
 
 msgid "Get started"
-msgstr ""
+msgstr "Rozpocznij"
 
 msgid "Immerse readers in visual and tappable stories they can share anywhere on the open web."
-msgstr ""
+msgstr "Angażuj czytelników w interaktywne wizualne relacje, które mogą udostępniać w dowolnym miejscu w otwartej sieci."
 
 msgid "All about Web Stories"
-msgstr ""
+msgstr "Wszystko o relacjach internetowych"
 
 msgid "Serve lightning fast and secure eye-catching creatives."
-msgstr ""
+msgstr "Błyskawicznie i bezpiecznie wyświetlaj przykuwające wzrok kreacje."
 
 msgid "Send emails of the future with personalized dynamic content and interactive elements that engage readers."
-msgstr ""
+msgstr "Wysyłaj wiadomości e-mail przyszłości ze spersonalizowaną dynamiczną zawartością i interaktywnymi elementami, angażującymi czytelników."
 
 msgid "The latest news"
-msgstr ""
+msgstr "Najnowsze wiadomości"
 
 msgid "Don't want to miss any of the great stuff that happens around AMP? Then always be first in line and subscribe to our newsletter!"
-msgstr ""
+msgstr "Nie chcesz przegapić żadnych wspaniałych spraw związanych z AMP? W takim razie niezwłocznie zasubskrybuj nasz biuletyn!"
 
 msgid "Don’t take our word for it - read case studies from industry success stories and see how AMP has produced positive results."
-msgstr ""
+msgstr "Nie wierz nam na słowo — przeczytaj historie sukcesu z Twojej branży i przekonaj się samodzielnie, jakie pozytywne wyniki przyniosło stosowanie AMP."
 
 msgid "A framework that amplifies page experience."
-msgstr ""
+msgstr "Framework, który poprawia wrażenia z korzystania ze strony."
 
 msgid "AMP is a simple and robust web components framework that makes it easy to build fast websites that are user-first and makes money. AMP provides long-term success for your web strategy with distribution across popular platforms and reduced operating costs."
-msgstr ""
+msgstr "AMP to prosty i niezawodny framework składników internetowych ułatwiający tworzenie szybko działających witryn internetowych zorientowanych na użytkownika i zarabianie pieniędzy. AMP zapewnia długoterminowy sukces Twojej strategii internetowej dzięki dystrybucji na popularnych platformach oraz obniżeniu kosztów operacyjnych."
 
 msgid "Guaranteed Page Experience"
-msgstr ""
+msgstr "Gwarantowana wysoka jakość strony"
 
 msgid "AMP provides you with the tools needed to build websites that meet Page Experience ranking signals while remaining flexible and customizable to your needs. Page experience is a set of signals from Google that measure how users perceive their experience interacting with a web page beyond its pure information value. AMP is a straightforward way to a high page experience score. Domains built with AMP are 5 times more likely to pass* Core Web Vitals metrics than non-AMP!"
-msgstr ""
+msgstr "AMP zapewnia narzędzia niezbędne do tworzenia witryn internetowych zgodnych z sygnałami rankingu Page Experience, a jednocześnie elastycznych i dostosowanymi do potrzeb. Page Experience to zestaw sygnałów od Google, które mierzą sposób, w jaki użytkownicy postrzegają swoją interakcję ze stroną internetową, wykraczających poza jej czystą wartość informacyjną. AMP w prosty sposób umożliwia uzyskanie wysokiego wyniku jakości strony. Domeny utworzone przy użyciu AMP mają 5 razy większe prawdopodobieństwo zaliczenia* wskaźników Core Web Vitals niż domeny bez AMP!"
 
 msgid "Check your page’s performance"
-msgstr ""
+msgstr "Sprawdź działanie swojej strony"
 
 msgid "Frameworks and CMSs"
-msgstr ""
+msgstr "Frameworki i systemy CMS"
 
 msgid "Select a ready-to-go framework or integration-enabled CMS to get an AMP valid site up and running, fast. These platforms give you all the benefits of AMP without all the built-from-scratch hassle."
-msgstr ""
+msgstr "Wybierz gotowy do użycia framework lub system CMS z obsługą integracji, aby szybko utworzyć i uruchomić prawidłową witrynę AMP. Platformy te zapewniają wszystkie zalety AMP bez problemów związanych z tworzeniem witryn od podstaw."
 
 msgid "See supported platforms"
-msgstr ""
+msgstr "Sprawdź obsługiwane platformy"
