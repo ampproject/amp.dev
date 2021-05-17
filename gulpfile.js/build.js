@@ -42,6 +42,7 @@ const {thumborImageIndex} = require('./thumbor.js');
 const CleanCSS = require('clean-css');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
 const {PIXI_CLOUD_ROOT} = require('@lib/utils/project').paths;
+const {copyFile} = require('fs/promises');
 
 // Path of the grow test pages for filtering in the grow podspec.yaml
 const TEST_CONTENT_PATH_REGEX = '^/tests/';
@@ -290,6 +291,7 @@ function buildPrepare(done) {
       buildBoilerplate,
       buildPixi,
       buildSamples,
+      buildFrontend21,
       importAll,
       zipTemplates
     ),
@@ -377,6 +379,25 @@ function buildPages(done) {
       return gulp
         .src(`${project.paths.GROW_BUILD_DEST}/shared/*.html`)
         .pipe(gulp.dest(`${project.paths.PAGES_DEST}/shared`));
+    },
+    // eslint-disable-next-line prefer-arrow-callback
+    async function publishPages() {
+      if (!config.options.locales.includes(config.getDefaultLocale())) {
+        console.log(
+          'Skipping page publishing. Default language is not build, only:',
+          config.options.locales
+        );
+        return;
+      }
+
+      await copyFile(
+        `${project.paths.GROW_BUILD_DEST}/index-2021.html`,
+        `${project.paths.PAGES_DEST}/index.html`
+      );
+      await copyFile(
+        `${project.paths.GROW_BUILD_DEST}/about/websites-2021.html`,
+        `${project.paths.PAGES_DEST}/about/websites.html`
+      );
     },
     // eslint-disable-next-line prefer-arrow-callback
     function sitemap() {
