@@ -73,6 +73,6 @@ Web ストーリーに広告を含めるには、サポートされているア�
 
 Web ストーリー内での広告の掲載にご興味がある広告主の方は、詳細について[お問い合わせ](mailto:story-ads-wg@google.com)ください。
 
-サイト運営者も、独自のアドサーバーをセットアップすれば、カスタム広告を配置することができます。[そのプロセスは、こちらで説明しています](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads)。
+サイト運営者も、独自のアドサーバーをセットアップすれば、カスタム広告を配置することができます。[そのプロセスは、こちらで説明しています](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story-ads.md#publisher-placed-ads)。
 
 [tip type="note"] Google アドマネージャーに広告をアップロードする方法については、「[Web ストーリーでカスタムクリエイティブをトラフィックする](https://support.google.com/admanager/answer/9038178)」を参照してください。また、[AMP ストーリー広告作成のベストプラクティス](story_ads_best_practices.md)に関するガイドも確認してください。[/tip]

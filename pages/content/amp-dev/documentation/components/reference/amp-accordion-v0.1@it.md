@@ -151,4 +151,4 @@ The events below will be triggered on `section`s of `accordion`.
 
 ## Convalida <a name="validation"></a>
 
-Consulta le [regole amp-accordion](https://github.com/ampproject/amphtml/blob/master/extensions/amp-accordion/validator-amp-accordion.protoascii) nella specifica dello strumento di convalida AMP.
+Consulta le [regole amp-accordion](https://github.com/ampproject/amphtml/blob/main/extensions/amp-accordion/validator-amp-accordion.protoascii) nella specifica dello strumento di convalida AMP.

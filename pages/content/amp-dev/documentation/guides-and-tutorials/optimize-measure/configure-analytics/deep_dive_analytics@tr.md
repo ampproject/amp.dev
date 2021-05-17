@@ -83,7 +83,7 @@ spesifik belgelerin bağlantıları
 
 Bir analitik satıcıysanız,
 
-[AMP HTML›sine kendi analitik yapılandırmanızı entegre etme](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md) hakkında daha fazla öğrenin.
+[AMP HTML›sine kendi analitik yapılandırmanızı entegre etme](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md) hakkında daha fazla öğrenin.
 
 ## Uzaktan yapılandırma yükle: yapılandırma özelliği
 

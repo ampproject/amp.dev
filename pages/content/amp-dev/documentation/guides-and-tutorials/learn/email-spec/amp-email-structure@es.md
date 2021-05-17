@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-structure.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -35,7 +35,7 @@ El correo electrónico está estructurado como un árbol MIME. En este árbol MI
 
 Para integrar AMP en un correo electrónico, agregue una nueva sección del MIME que tenga un contenido tipo `text/x-amp-html` y sea descendiente de `multipart/alternative`. Debe establecerse junto con el actual `text/html` o las secciones de `text/plain`. Esto garantizará que el mensaje de correo electrónico funcione para todos los clientes.
 
-<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/master/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"><img data-md-type="raw_html" alt="AMP para diagrama de piezas de MIME de correo electrónico" src="../img/amp-email-mime-parts.png"></noscript></amp-img>
+<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/main/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"><img data-md-type="raw_html" alt="AMP para diagrama de piezas de MIME de correo electrónico" src="../img/amp-email-mime-parts.png"></noscript></amp-img>
 
 Para obtener más información sobre el subtipo `multipart/alternative` consulte el [RFC 1521, sección 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 

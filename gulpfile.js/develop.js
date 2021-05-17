@@ -29,17 +29,18 @@ function bootstrap(done) {
     build.buildComponentVersions,
     build.buildBoilerplate,
     build.buildPlayground,
+    build.buildPixiFunctions,
     build.importAll,
     samplesBuilder.build.bind(samplesBuilder)
   )(done);
 }
 
 function develop() {
-  gulp.series(gulp.parallel(build.buildFrontend, build.collectStatics), run)();
+  gulp.series(build.buildFrontend, build.collectStatics, run)();
 }
 
 function extract(done) {
-  gulp.series(gulp.parallel(build.buildFrontend, build.collectStatics), () => {
+  gulp.series(build.buildFrontend, build.collectStatics, () => {
     config.configureGrow();
 
     return grow('translations extract').catch(() => {

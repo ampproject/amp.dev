@@ -6,7 +6,7 @@ formats:
   - email
 ---
 
-Email clients looking to support AMP for Email should use the [AMP Viewer](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) to host their sender’s AMP emails. A viewer built with the [AMP Viewer library](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) encapsulates an AMP document and enables [capabilities](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md) that allow for bidirectional communication with the AMP document via postMessage. These capabilities include granting control of the email’s visibility, relaying of user metrics, and providing means of ensuring the safety of XHR requests made from the email.
+Email clients looking to support AMP for Email should use the [AMP Viewer](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) to host their sender’s AMP emails. A viewer built with the [AMP Viewer library](https://github.com/ampproject/amphtml/tree/main/extensions/amp-viewer-integration) encapsulates an AMP document and enables [capabilities](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/CAPABILITIES.md) that allow for bidirectional communication with the AMP document via postMessage. These capabilities include granting control of the email’s visibility, relaying of user metrics, and providing means of ensuring the safety of XHR requests made from the email.
 
 ## Viewer XHR interception
 
@@ -45,7 +45,7 @@ Enable xhr intercepting by opting the viewer into the xhrInterceptor capability 
 
 The `viewerRenderTemplate` capability allows the viewer to manage [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email) and [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=email) template  rendering. With this enabled, the AMP runtime proxies a request containing the original XHR call, template data, and any other details required for rendering the component contents to the viewer.  This allows the viewer to introspect the endpoint data content and manage the [mustache](https://mustache.github.io/) rendering of the templates to verify and sanitize the data. Note that if this capability is enabled along with the xhrInterceptor, in the amp-form and amp-list component, the `viewerRenderTemplate` capability which also proxies requests to the viewer will trump that of the xhrInterceptor.
 
-The [viewer.html](https://github.com/ampproject/amphtml/blob/master/examples/viewer.html) example shows how one might handle the `viewerRenderTemplate` message sent from the AMP doc. In that example, the Viewer.prototype.processRequest_ catches the `viewerRenderTemplate` message and based on the amp component type available in the request, sends back the html to be rendered in the following JSON format.
+The [viewer.html](https://github.com/ampproject/amphtml/blob/main/examples/viewer.html) example shows how one might handle the `viewerRenderTemplate` message sent from the AMP doc. In that example, the Viewer.prototype.processRequest_ catches the `viewerRenderTemplate` message and based on the amp component type available in the request, sends back the html to be rendered in the following JSON format.
 
 ```js
 Viewer.prototype.ssrRenderAmpListTemplate_ = (data) => Promise.resolve({

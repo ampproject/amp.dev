@@ -16,11 +16,12 @@ fallback 是一种惯例，可让相应元素告知读者，浏览器不支持�
 示例：
 
 ```html
-<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
-  <div fallback>Cannot play animated images on this device.</div>
-</amp-anim>
+<amp-img src="invalid.jpg" height="400" width="300" layout="responsive">
+  <div fallback style="background-color: #ccc; display: flex; justify-content: center; align-items: center;">
+    Could not load image
+  </div>
+</amp-img>
 ```
-
 有关详情，请参阅[占位符和备用行为](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)。
 
 ## heights
@@ -122,7 +123,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 <amp-lightbox id="my-lightbox" layout="nodisplay"> ... </amp-lightbox>
 ```
 
-有关详情，请参阅 [AMP 中的操作和事件](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md)。
+有关详情，请参阅 [AMP 中的操作和事件](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-actions-and-events.md)。
 
 ## placeholder
 

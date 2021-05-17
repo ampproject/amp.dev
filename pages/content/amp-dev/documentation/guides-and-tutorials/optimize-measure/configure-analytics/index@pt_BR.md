@@ -30,7 +30,7 @@ entre em contato com ele para receber suporte.
 Também recomendamos [indicar um problema no projeto AMP](https://github.com/ampproject/amphtml/issues/new) (em inglês)
 solicitando que o fornecedor seja adicionado.
 Veja também como
-[integrar suas ferramentas de análise no HTML para AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md) (em inglês).
+[integrar suas ferramentas de análise no HTML para AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md) (em inglês).
 
 ### De que dados você precisa?
 

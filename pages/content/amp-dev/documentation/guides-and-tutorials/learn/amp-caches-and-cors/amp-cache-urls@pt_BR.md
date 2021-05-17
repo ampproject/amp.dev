@@ -36,7 +36,7 @@ Todos os documentos usam o protocolo https nos caches do AMP.
 
 ## Sufixo do nome de domínio
 
-Todos os caches do AMP são registrados em um arquivo JSON, encontrado on-line no [repositório AMPHTML](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). Abaixo está mostrado um exemplo do registro de cache nesse arquivo:
+Todos os caches do AMP são registrados em um arquivo JSON, encontrado on-line no [repositório AMPHTML](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json). Abaixo está mostrado um exemplo do registro de cache nesse arquivo:
 
 ```json
 {
@@ -179,7 +179,7 @@ Um valor do cabeçalho Origin em um Cache do AMP será similar a um dos exemplos
 - `https://www-example-com.cdn.ampproject.org`
 - `https://v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq.cdn.ampproject.org`
 
-Primeiro, remova o prefixo do protocolo (`https://`) e o sufixo do domínio do Cache do AMP, como `.cdn.ampproject.org`. O sufixo pode ser de qualquer um dos caches listados em [caches.json](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). A string restante será o "prefixo de domínio". No caso dos dois exemplos acima, o "prefixo de domínio" será:
+Primeiro, remova o prefixo do protocolo (`https://`) e o sufixo do domínio do Cache do AMP, como `.cdn.ampproject.org`. O sufixo pode ser de qualquer um dos caches listados em [caches.json](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json). A string restante será o "prefixo de domínio". No caso dos dois exemplos acima, o "prefixo de domínio" será:
 
 - `www-example-com`
 - `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq`

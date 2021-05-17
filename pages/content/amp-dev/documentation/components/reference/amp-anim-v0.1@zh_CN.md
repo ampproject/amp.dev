@@ -94,4 +94,4 @@ limitations under the License.
 
 ## 验证
 
-请参阅 AMP 验证工具规范中的 [`amp-anim` 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-anim/validator-amp-anim.protoascii)。
+请参阅 AMP 验证工具规范中的 [`amp-anim` 规则](https://github.com/ampproject/amphtml/blob/main/extensions/amp-anim/validator-amp-anim.protoascii)。

@@ -92,7 +92,7 @@ li.CodeMirror-hint-active {
 }
 
 .gutter-error {
-  background-color: color("red");
+  background-color: safeColor('dark-red');
 }
 
 .gutter-warning {

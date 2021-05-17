@@ -80,7 +80,7 @@
                   [% if format in {{ example.formats|tojson }} %]
                   {% set active = true if example == doc %}
                   <li class="nav-item{{ ' active' if active }} level-2"{{ ' autoscroll' if active }}>
-                    <a class="nav-link" href="{{ example.url.path }}">{{ example.title }}</a>
+                    <a class="nav-link" href="{{ example.url.path }}{% if example.formats|length == 1 %}?format={{ example.formats[0] }}{% endif %}">{{ example.title }}</a>
                   </li>
                   [% endif %]
                   {% endif %}

@@ -1,0 +1,12 @@
+@function project($selector) {
+  @return #{$projectPrefix}-#{$selector};
+}
+
+@function gradient($name) {
+  @if map-has-key($gradients, $name) {
+    @return map-get($gradients, $name);
+  }
+
+  @warn "Unknown `#{$name}` in $gradients.";
+  @return null;
+}

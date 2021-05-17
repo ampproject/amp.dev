@@ -9,13 +9,13 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/ads/_integration-guide.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/ads/_integration-guide.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-Jika Anda adalah penyedia teknologi iklan yang ingin berintegrasi dengan HTML AMP, silakan baca panduan di bawah ini. Untuk memastikan latensi yang minimum dan mutu, harap ikuti instruksi yang dicantumkan [di sini](https://github.com/ampproject/amphtml/blob/master/ads/../3p/README.md#ads) sebelum mengirimkan permintaan penarikan (pull request) ke proyek sumber terbuka AMP. Untuk mendapatkan panduan umum tentang cara memulai berkontribusi di AMP, silakan buka [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/ads/../CONTRIBUTING.md).
+Jika Anda adalah penyedia teknologi iklan yang ingin berintegrasi dengan HTML AMP, silakan baca panduan di bawah ini. Untuk memastikan latensi yang minimum dan mutu, harap ikuti instruksi yang dicantumkan [di sini](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads) sebelum mengirimkan permintaan penarikan (pull request) ke proyek sumber terbuka AMP. Untuk mendapatkan panduan umum tentang cara memulai berkontribusi di AMP, silakan buka [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../docs/contributing.md).
 
 ## Server Iklan <a name="ad-server"></a>
 
@@ -39,9 +39,9 @@ data-aax_src="302"
 > </amp-ad>
 > [/sourcecode]
 
-Harap ketahui bahwa setiap atribut yang mengikuti `type` bergantung pada parameter yang diharapkan server A9 Amazon agar dapat menyampaikan sebuah iklan. Berkas [a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) memperlihatkan cara parameter dipetakan pada pembuatan panggilan JavaScript yang meminta server A9 melalui URL `https://c.amazon-adsystem.com/aax2/assoc.js`. Parameter terkait yang dilewati oleh tag iklan AMP dilampirkan pada URL untuk menghasilkan sebuah iklan.
+Harap ketahui bahwa setiap atribut yang mengikuti `type` bergantung pada parameter yang diharapkan server A9 Amazon agar dapat menyampaikan sebuah iklan. Berkas [a9.js](https://github.com/ampproject/amphtml/blob/main/ads/./a9.js) memperlihatkan cara parameter dipetakan pada pembuatan panggilan JavaScript yang meminta server A9 melalui URL `https://c.amazon-adsystem.com/aax2/assoc.js`. Parameter terkait yang dilewati oleh tag iklan AMP dilampirkan pada URL untuk menghasilkan sebuah iklan.
 
-Untuk penjelasan selengkapnya tentang cara mengintegrasikan jaringan iklan Anda dengan AMP, buka [Mengintegrasikan jaringan iklan ke dalam AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+Untuk penjelasan selengkapnya tentang cara mengintegrasikan jaringan iklan Anda dengan AMP, buka [Mengintegrasikan jaringan iklan ke dalam AMP](https://github.com/ampproject/amphtml/blob/main/ads/README.md).
 
 ## Platform Bagian Suplai (SSP) atau sebuah Bursa Iklan <a name="supply-side-platform-ssp-or-an-ad-exchange"></a>
 
@@ -63,7 +63,7 @@ Pastikan bahwa semua aset yang menjadi bagian dari kreatif diminta dengan menggu
 
 _Contoh: Brightcove, Ooyala_
 
-Sebuah pemutar video yang bekerja pada halaman HTML biasa tidak akan bekerja di AMP, dan oleh karena itu sebuah tag yang spesifik harus dibuat agar AMP Runtime dapat memuat pemutar Anda. Brightcove telah membuat tag kustom [amp-brightcove](https://github.com/ampproject/amphtml/blob/master/extensions/amp-brightcove/amp-brightcove.md) yang memungkinkan media dan iklan diputar pada halaman AMP.
+Sebuah pemutar video yang bekerja pada halaman HTML biasa tidak akan bekerja di AMP, dan oleh karena itu sebuah tag yang spesifik harus dibuat agar AMP Runtime dapat memuat pemutar Anda. Brightcove telah membuat tag kustom [amp-brightcove](https://github.com/ampproject/amphtml/blob/main/extensions/amp-brightcove/amp-brightcove.md) yang memungkinkan media dan iklan diputar pada halaman AMP.
 
 Sebuah pemutar Brightcove dapat dipanggil dengan yang berikut ini:
 
@@ -106,10 +106,10 @@ Penyedia keterlihatan biasanya berintegrasi dengan penayang melalui pembungkus k
 
 Contohnya, untuk MOAT, pastikan `http://js.moatads.com` dialihkan ke `https://z.moatads.com`
 
-Selain itu, lihat pendekatan untuk menggunakan [pola pengamat persimpangan](https://github.com/ampproject/amphtml/blob/master/ads/README.md#ad-viewability).
+Selain itu, lihat pendekatan untuk menggunakan [pola pengamat persimpangan](https://github.com/ampproject/amphtml/blob/main/ads/README.md#ad-viewability).
 
 ## Platform Rekomendasi Konten <a name="content-recommendation-platform"></a>
 
 _Contoh: Taboola, Outbrain_
 
-Berguna jika Anda mempunyai JavaScript yang disematkan pada situs web penayang sekarang ini, namun pendekatan ini tidak akan berhasil pada halaman AMP. Jika Anda ingin merekomendasikan konten di halaman AMP, sebaiknya Anda menggunakan ekstensi [`amp-embed`](https://amp.dev/documentation/components/amp-ad) untuk meminta detail konten. Silakan buka contoh [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md).
+Berguna jika Anda mempunyai JavaScript yang disematkan pada situs web penayang sekarang ini, namun pendekatan ini tidak akan berhasil pada halaman AMP. Jika Anda ingin merekomendasikan konten di halaman AMP, sebaiknya Anda menggunakan ekstensi [`amp-embed`](https://amp.dev/documentation/components/amp-ad) untuk meminta detail konten. Silakan buka contoh [Taboola](https://github.com/ampproject/amphtml/blob/main/ads/taboola.md).

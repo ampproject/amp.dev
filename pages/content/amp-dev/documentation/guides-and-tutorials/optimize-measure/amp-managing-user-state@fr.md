@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -110,7 +110,7 @@ Tout comme le cas du cache AMP, attendez-vous à ce que le domaine d'une visionn
 
 ### La multiplicité des contextes conduit à une gestion d'états multiples <a name="multiple-contexts-means-multiple-state-management"></a>
 
-Les éditeurs doivent être prêts à gérer séparément l'état de l'utilisateur pour chaque contexte d'affichage. La fonction [ID client](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id) d'AMP, qui tire parti des cookies ou du stockage local pour conserver l'état, fournit le support nécessaire pour que les pages AMP aient un identifiant stable et pseudonyme pour l'utilisateur. Du point de vue de l'implémentation, AMP utilise des cookies ou un stockage local et choisit la méthode à utiliser en fonction du contexte d'affichage. Ce choix est influencé par la faisabilité technique de la gestion de cet état à l'échelle de centaines ou de milliers d'éditeurs.
+Les éditeurs doivent être prêts à gérer séparément l'état de l'utilisateur pour chaque contexte d'affichage. La fonction [ID client](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md#client-id) d'AMP, qui tire parti des cookies ou du stockage local pour conserver l'état, fournit le support nécessaire pour que les pages AMP aient un identifiant stable et pseudonyme pour l'utilisateur. Du point de vue de l'implémentation, AMP utilise des cookies ou un stockage local et choisit la méthode à utiliser en fonction du contexte d'affichage. Ce choix est influencé par la faisabilité technique de la gestion de cet état à l'échelle de centaines ou de milliers d'éditeurs.
 
 Cependant, les éditeurs de pages AMP peuvent facilement finir par concevoir (involontairement) des expériences utilisateurs impliquant plusieurs contextes. Revenons à notre cas précédent concernant le panier d'achat et ajoutons-y plus de détails pour créer **scénario utilisateur** complet:
 
@@ -120,8 +120,8 @@ Dans ce scénario, l'utilisatrice reçoit une expérience de panier d'achat coh�
 
 **Pour activer cela ainsi que toute expérience impliquant l'état de l'utilisateur, tous les contextes traversés par l'utilisateur doivent partager leur état géré individuellement les uns avec les autres.** « Parfait! », Dites-vous, face à l'idée de partager les valeurs des cookies avec les identifiants des utilisateurs à travers ces frontières contextuelles. Un problème cependant: même si chacun de ces contextes affiche du contenu contrôlé par le même éditeur, chacun voit l'autre comme un tiers car chaque contexte vit sur des domaines différents.
 
-<amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png" width="1030" height="868">
-  <noscript><img alt="La capacité d'AMP à être affichée dans de nombreux contextes signifie que chacun de ces contextes a son propre stockage pour les identifiants" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
+<amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/contexts-with-different-storage.png" width="1030" height="868">
+  <noscript><img alt="La capacité d'AMP à être affichée dans de nombreux contextes signifie que chacun de ces contextes a son propre stockage pour les identifiants" src="https://github.com/ampproject/amphtml/raw/main/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
 
 Comme vous le verrez dans la section suivante, être dans une position tierce lors de l'interaction avec les cookies peut présenter des défis, selon la façon dont les paramètres du navigateur de l'utilisateur sont configurés. En particulier, si les cookies tiers sont bloqués dans une situation particulière, cela empêchera le partage des informations entre les contextes. D'autre part, si les opérations de cookies tiers sont autorisées, les informations peuvent être partagées.
 
@@ -142,8 +142,8 @@ Après avoir posé les bases, nous visitons ensuite un sujet avec une série plu
 
 En parcourant le guide technique ci-dessous, supposons que vous liez **l'état de l'utilisateur** à un **identificateur** stable qui représente l'utilisateur. Par exemple, l'identificateur pourrait ressembler à `n34ic982n2386n30`. Côté serveur, vous associez alors `n34ic982n2386n30` à tout ensemble d'informations sur l'état de l'utilisateur, comme le contenu du panier, une liste d'articles précédemment lus ou d'autres données selon le cas d'utilisation.
 
-<amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
-  <noscript><img alt="Un identifiant unique pourrait être utilisé pour gérer l'état de l'utilisateur dans de nombreux cas d'utilisation" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png"></noscript></amp-img>
+<amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
+  <noscript><img alt="Un identifiant unique pourrait être utilisé pour gérer l'état de l'utilisateur dans de nombreux cas d'utilisation" src="https://github.com/ampproject/amphtml/raw/main/spec/img/identifiers-for-use-cases.png"></noscript></amp-img>
 
 Pour plus de clarté dans le reste de ce document, nous appellerons diverses chaînes de caractères qui sont des identifiants par des noms plus lisibles précédés d'un signe dollar (`$`):
 
@@ -242,7 +242,7 @@ Sur les pages AMP, créez un ping amp-analytics contenant l'ID client:
 
 Notez que le paramètre transmis dans la substitution d'ID client, `${clientId(uid)` , est `uid`. Il s'agissait d'un choix délibéré qui correspond au même nom de cookie utilisé sur l'origine de l'éditeur, comme décrit dans la [tâche 1](#task1). Pour une intégration aussi transparente que possible, vous devez appliquer la même technique.
 
-Concernant le reste de l'implémentation d'amp-analytics, consultez la documentation sur la [configuration d'amp-analytics](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) pour plus de détails sur la configuration des requêtes amp-analytics ou pour modifier celles de votre fournisseur d'analyse. Le ping peut être modifié davantage pour transporter des données supplémentaires que vous définissez directement ou en tirant parti d'autres [substitutions AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
+Concernant le reste de l'implémentation d'amp-analytics, consultez la documentation sur la [configuration d'amp-analytics](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) pour plus de détails sur la configuration des requêtes amp-analytics ou pour modifier celles de votre fournisseur d'analyse. Le ping peut être modifié davantage pour transporter des données supplémentaires que vous définissez directement ou en tirant parti d'autres [substitutions AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md).
 
 > **Bon à savoir:**
 > Pourquoi avons-nous utilisé le nom `uid` pour le paramètre transmis à la fonction ID client? Le paramètre pris par la substitution `clientId(...)` est utilisé pour définir la portée. Vous pouvez en fait utiliser la fonction ID client dans de nombreux cas d'utilisation et, par conséquent, générer de nombreux ID client. Le paramètre fait la différence entre ces cas d'utilisation et vous l'utilisez donc pour spécifier le cas d'utilisation pour lequel vous souhaitez un ID client. Par exemple, vous pouvez vouloir envoyer différents identifiants à des tiers comme un annonceur et vous pouvez utiliser le paramètre « scope » pour y parvenir.
@@ -380,12 +380,12 @@ En général, lorsque la lecture et l'écriture de cookies tiers sont interdites
 
 Dans cette tâche, nous aborderons une optimisation supplémentaire qui est utile lorsque l'utilisateur navigue dans différents contextes d'une page à une autre, soit **via des liens ou des soumissions de formulaires**. Dans ces situations, et avec le travail d'implémentation décrit ci-dessous, il est possible de mettre en place un système totalement efficace pour gérer l'état des utilisateurs dans tous les contextes.
 
-<amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
-  <noscript><img alt="Les liens peuvent être utilisés pour transmettre les informations d'identification d'un contexte dans un autre contexte (lié)" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png"></noscript></amp-img>
+<amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
+  <noscript><img alt="Les liens peuvent être utilisés pour transmettre les informations d'identification d'un contexte dans un autre contexte (lié)" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-form-identifier-forwarding.png"></noscript></amp-img>
 
 ##### Utilisation des fonctionnalités de substitution <a name="using-substitution-features"></a>
 
-Notre approche tirera parti de deux types de [substitutions de variables AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md).
+Notre approche tirera parti de deux types de [substitutions de variables AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-var-substitutions.md).
 
 **Pour mettre à jour les liens sortants afin d'utiliser une substitution d'ID client:** définissez un nouveau paramètre de requête, `ref_id` (« ID de référent »), qui apparaîtra dans l'URL et indiquera **l'identifiant du contexte d'origine** de l'utilisateur. Définissez ce paramètre de requête sur la valeur de la substitution d'ID client AMP:
 
@@ -436,8 +436,8 @@ En suivant ces étapes, l'ID client est disponible sur le serveur cible et/ou en
 https://example.com/step2.html?ref_id=$amp_client_id
 [/sourcecode]
 
-<amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
-  <noscript><img alt="Exemple de transmission d'un identifiant dans un contexte de visionneuse AMP via un lien dans un contexte d'origine d'éditeur" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png"></noscript></amp-img>
+<amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
+  <noscript><img alt="Exemple de transmission d'un identifiant dans un contexte de visionneuse AMP via un lien dans un contexte d'origine d'éditeur" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-1.png"></noscript></amp-img>
 
 Lorsque l'utilisateur atterrit sur une page contenant une valeur `ref_id` soit comme paramètre d'URL soit dans l'en-tête, nous avons la possibilité de co-traiter l'identifiant `ref_id` avec l'identifiant exposé via la page elle-même (c-à-d une valeur de cookie). En incluant les deux dans un ping d'analyse, votre serveur d'analyse peut travailler simultanément avec les deux valeurs, et sachant qu'elles sont liées, ressortir cette relation dans votre back-end. Les étapes à suivre montrent comment y parvenir.
 
@@ -460,8 +460,8 @@ Pour traiter les informations lors de la redirection, gérez la demande sur le s
 
 Pour traiter les informations sur la page de destination, l'approche variera selon que cette page est une page AMP ou une page non AMP.
 
-<amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
-  <noscript><img alt="Exemple de construction d'un ping analytique contenant un identifiant du contexte précédent fourni via l'URL et un identifiant du contexte actuel" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
+<amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
+  <noscript><img alt="Exemple de construction d'un ping analytique contenant un identifiant du contexte précédent fourni via l'URL et un identifiant du contexte actuel" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
 
 _Mises à jour de la page AMP:_ utilisez la fonctionnalité de substitution de paramètre de requête dans votre configuration amp-analytics pour obtenir la valeur de l'identifiant `ref_id` dans l'URL. La fonction de paramètre de requête prend un paramètre qui indique la « clé » de la paire clé-valeur souhaitée dans l'URL et renvoie la valeur correspondante. Utilisez la fonction d'ID client comme nous l'avons fait pour obtenir l'identifiant du contexte de la page AMP.
 
@@ -593,7 +593,7 @@ Vous voulez vous assurer de ne traiter que les instances de `$amp_client_id` et 
 
 Sur une page non AMP, vérifiez `document.referrer` directement côté client ou transmettez la valeur dans le cadre du ping d'analyse pour pouvoir valider côté serveur. Si la valeur du référent est une valeur fiable, vous pouvez accepter et traiter les valeurs provenant de l'URL de la page de destination, telles que `orig_user_id` dans l'exemple ci-dessus.
 
-Sur une page AMP, utilisez la variable de substitution [Document Referrer](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#document-referrer) pour transmettre la valeur du référent dans le ping d'analyse. Le traitement côté serveur est la seule option disponible. Pour illustrer cela, voici un ping d'analyse que la page de destination peut envoyer qui contient (1) la valeur de l'ID client de la page actuelle, (2) une valeur transmise via l'URL que nous avons configurée pour être la valeur de l'ID client dans la page de référence, et (3) les informations de référent elles-mêmes pour valider la valeur de (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
+Sur une page AMP, utilisez la variable de substitution [Document Referrer](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md#document-referrer) pour transmettre la valeur du référent dans le ping d'analyse. Le traitement côté serveur est la seule option disponible. Pour illustrer cela, voici un ping d'analyse que la page de destination peut envoyer qui contient (1) la valeur de l'ID client de la page actuelle, (2) une valeur transmise via l'URL que nous avons configurée pour être la valeur de l'ID client dans la page de référence, et (3) les informations de référent elles-mêmes pour valider la valeur de (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
 
 Si vous ne faites pas confiance au référent, rejetez toutes les valeurs fournies via les paramètres d'URL et ne les utilisez pas.
 

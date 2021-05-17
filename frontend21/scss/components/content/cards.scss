@@ -1,0 +1,68 @@
+.#{project('cards')} {
+  $cards: &;
+  position: relative;
+  grid-column: 1 / -1;
+  @include grid;
+
+  .#{project('center-stage')} + & {
+    margin-top: -30px;
+  }
+
+  &:after {
+    content: '';
+    @include fill;
+    height: 75%;
+    background: #0080e3;
+  }
+
+  &-item {
+    min-height: 320px;
+    padding: 20px;
+    border-radius: 8px;
+    color: color('black');
+    background: color('white');
+    box-shadow: 0 5px 10px 0px rgb(0 0 0 / 8%);
+
+    &-icon {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &-grid {
+    position: relative;
+    z-index: 1;
+    grid-column: 2 / span 22;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include respond-to('-small') {
+      display: none;
+    }
+  }
+
+  &-carousel {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    grid-column: 2 / span 22;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px 0px rgb(0 0 0 / 8%);
+
+    @include respond-to('small') {
+      display: none;
+    }
+
+    .#{project('cards')}-item {
+      width: 90vw;
+      margin-right: 15px;
+      box-shadow: none;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

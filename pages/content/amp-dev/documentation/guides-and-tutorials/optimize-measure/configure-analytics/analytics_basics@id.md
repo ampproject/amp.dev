@@ -35,7 +35,7 @@ Untuk membuat konfigurasi [`amp-pixel`](../../../../documentation/components/ref
 <amp-pixel src="https://foo.com/pixel?RANDOM"></amp-pixel>
 ```
 
-Dalam contoh ini, data tampilan halaman dikirimkan ke URL yang telah ditentukan, bersama sebuah nomor acak: Variabel `RANDOM` adalah salah satu dari banyak [variabel pengganti di platform AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Pelajari lebih lanjut tentang [Penggantian variabel](analytics_basics.md#variable-substitution) di sini.
+Dalam contoh ini, data tampilan halaman dikirimkan ke URL yang telah ditentukan, bersama sebuah nomor acak: Variabel `RANDOM` adalah salah satu dari banyak [variabel pengganti di platform AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md). Pelajari lebih lanjut tentang [Penggantian variabel](analytics_basics.md#variable-substitution) di sini.
 
 Komponen [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) bersifat standar, sehingga Anda tidak memerlukan deklarasi inklusi seperti saat membuat komponen AMP yang diperluas, termasuk [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Namun, Anda harus menempatkan tag [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) sedekat mungkin dengan permulaan `<body>` halaman AMP Anda. Piksel pelacakan hanya akan diproses jika tag terlihat dengan sendirinya. Jika [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) diposisikan di dekat bagian bawah halaman, tag tersebut mungkin tidak akan berfungsi.
 
@@ -135,7 +135,7 @@ Jika Anda tertarik untuk mengetahui lebih dari apa yang dapat diberikan konfigur
 
 ## Penggantian variabel <a name="variable-substitution"></a>
 
-Baik komponen [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) maupun [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) mengizinkan semua penggantian variabel URL standar (kunjungi [Penggantian Variabel HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) ). Di dalam contoh berikut ini, permintaan tampilan halaman dikirimkan ke URL, bersama dengan URL kanonis dokumen AMP saat ini, judulnya, dan sebuah [ID klien](analytics_basics.md#user-identification):
+Baik komponen [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) maupun [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) mengizinkan semua penggantian variabel URL standar (kunjungi [Penggantian Variabel HTML AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) ). Di dalam contoh berikut ini, permintaan tampilan halaman dikirimkan ke URL, bersama dengan URL kanonis dokumen AMP saat ini, judulnya, dan sebuah [ID klien](analytics_basics.md#user-identification):
 
 ```html
 <amp-pixel
@@ -179,7 +179,7 @@ Di dalam contoh di atas, variabel-variabel, `account`, dan `title` ditentukan da
 
 ## Identifikasi pengguna <a name="user-identification"></a>
 
-Situs web menggunakan cookie untuk menyimpan informasi tertentu terkait pengguna di browser. Cookie dapat digunakan untuk memberikan informasi bahwa seorang pengguna sebelumnya sudah pernah mengunjungi suatu situs. Di AMP, halaman dapat ditayangkan dari situs penayang atau cache (seperti Cache AMP Google). Situs web penayang dan cache kemungkinan besar memiliki domain yang berbeda. Demi keamanan, browser dapat (dan sering kali akan) membatasi akses cookie domain lain (kunjungi juga [Melacak pengguna di berbagai domain asal](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)).
+Situs web menggunakan cookie untuk menyimpan informasi tertentu terkait pengguna di browser. Cookie dapat digunakan untuk memberikan informasi bahwa seorang pengguna sebelumnya sudah pernah mengunjungi suatu situs. Di AMP, halaman dapat ditayangkan dari situs penayang atau cache (seperti Cache AMP Google). Situs web penayang dan cache kemungkinan besar memiliki domain yang berbeda. Demi keamanan, browser dapat (dan sering kali akan) membatasi akses cookie domain lain (kunjungi juga [Melacak pengguna di berbagai domain asal](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md)).
 
 Sebagai standar, AMP akan mengelola penyediaan ID klien, baik halaman diakses dari situs web asli penayang atau melalui cache. ID klien yang dibuat AMP memiliki nilai `"amp-"` yang diikuti oleh untai berkode `base64` yang acak dan tetap sama bagi pengguna tersebut jika pengguna yang sama tersebut mengunjunginya lagi.
 
@@ -197,6 +197,6 @@ Contohnya:
 
 Jika AMP menemukan bahwa cookie ini telah ditempatkan, penggantian ID klien akan mengembalikan nilai cookie tersebut. Jika AMP menemukan bahwa cookie ini belum ditempatkan, AMP akan menghasilkan nilai dalam bentuk `amp-` yang diikuti oleh untai berkode base64 acak.
 
-Pelajari lebih lanjut tentang penggantian ID klien, termasuk cara menambahkan ID notifikasi pengguna opsional, di [Variabel yang didukung dalam analitik AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
+Pelajari lebih lanjut tentang penggantian ID klien, termasuk cara menambahkan ID notifikasi pengguna opsional, di [Variabel yang didukung dalam analitik AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md).
 
 Pelajari lebih lanjut: Lanjutkan mempelajari tentang analitik dengan [Mendalami Analitik AMP](deep_dive_analytics.md) dan [Contoh Penggunaan](use_cases.md).

@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vendors-list.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vendors-list.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -148,7 +148,7 @@ limitations under the License.
 
 Значение атрибута типа: `facebookpixel`
 
-Добавляет поддержку [пикселя Facebook](https://www.facebook.com/business/a/facebook-pixel). В вашей конфигурации [`amp-analytics`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./amp-analytics.md) следует указать идентификатор пикселя как `pixelId: ВАШ-ID-ПИКСЕЛЯ`. Поддерживаемые события вместе с соответствующими значениями событий можно указать в соответствии с [документацией пикселя Facebook для разработчиков](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
+Добавляет поддержку [пикселя Facebook](https://www.facebook.com/business/a/facebook-pixel). В вашей конфигурации [`amp-analytics`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/./amp-analytics.md) следует указать идентификатор пикселя как `pixelId: ВАШ-ID-ПИКСЕЛЯ`. Поддерживаемые события вместе с соответствующими значениями событий можно указать в соответствии с [документацией пикселя Facebook для разработчиков](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
 
 ### Gemius <a name="gemius"></a>
 
@@ -190,7 +190,7 @@ limitations under the License.
 
 Тип значения атрибута: `infonline`
 
-Добавляет поддержку [INFOnline](https://www.infonline.de)/[IVW](http://www.ivw.de). Требует наличия копии [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) на поддомене, отличающемся от домена AMP-файла, инициирующего добавление ([почему?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). Файл должен выдаваться по HTTPS. Например, если ваши AMP-файлы размещены на `www.example.com`, тогда `amp-analytics-infonline.html` должен находиться на другом поддомене, таком как `iframe.example.com` или `assets.example.com`.
+Добавляет поддержку [INFOnline](https://www.infonline.de)/[IVW](http://www.ivw.de). Требует наличия копии [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) на поддомене, отличающемся от домена AMP-файла, инициирующего добавление ([почему?](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md)). Файл должен выдаваться по HTTPS. Например, если ваши AMP-файлы размещены на `www.example.com`, тогда `amp-analytics-infonline.html` должен находиться на другом поддомене, таком как `iframe.example.com` или `assets.example.com`.
 
 Дополнительно должны быть определены следующие переменные:
 
@@ -205,7 +205,7 @@ limitations under the License.
 
 Значение атрибута типа: `infonline-anonymous`
 
-Добавляет поддержку [анонимной версии INFOnline](https://www.infonline.de). Требует наличия копии [amp-analytics-infonline.html](https://www.infonline.de/amp/infonline-anonymous.html) на поддомене, отличающемся от домена AMP-файла, инициирующего добавление ([почему?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). Файл должен выдаваться по HTTPS. Например, если ваши AMP-файлы размещены на `www.example.com`, тогда `infonline-anonymous.html` должен находиться на другом поддомене, таком как `iframe.example.com` или `assets.example.com`.
+Добавляет поддержку [анонимной версии INFOnline](https://www.infonline.de). Требует наличия копии [amp-analytics-infonline.html](https://www.infonline.de/amp/infonline-anonymous.html) на поддомене, отличающемся от домена AMP-файла, инициирующего добавление ([почему?](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md)). Файл должен выдаваться по HTTPS. Например, если ваши AMP-файлы размещены на `www.example.com`, тогда `infonline-anonymous.html` должен находиться на другом поддомене, таком как `iframe.example.com` или `assets.example.com`.
 
 Дополнительно должны быть определены следующие переменные:
 
@@ -334,7 +334,7 @@ limitations under the License.
 
 Значение атрибута типа: `oewa`
 
-Добавляет поддержку <code>[OEWA](https://www.oewa.at)</code>. Требует наличия копии [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) на поддомене, отличающемся от домена AMP-файла, инициирующего добавление ([почему?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). Файл должен выдаваться по HTTPS. Например, если ваши AMP-файлы размещены на `www.example.com`, тогда `amp-analytics-oewa.html` должен находиться на другом поддомене, таком как `oewa-amp.example.com`. Дополнительные сведения о добавлении поддержки OEWA можно найти [здесь](http://www.oewa.at/Implementierung).
+Добавляет поддержку <code>[OEWA](https://www.oewa.at)</code>. Требует наличия копии [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) на поддомене, отличающемся от домена AMP-файла, инициирующего добавление ([почему?](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md)). Файл должен выдаваться по HTTPS. Например, если ваши AMP-файлы размещены на `www.example.com`, тогда `amp-analytics-oewa.html` должен находиться на другом поддомене, таком как `oewa-amp.example.com`. Дополнительные сведения о добавлении поддержки OEWA можно найти [здесь](http://www.oewa.at/Implementierung).
 
 Также должны быть определены следующие переменные:
 

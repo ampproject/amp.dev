@@ -53,7 +53,7 @@ I documenti HTML AMP DEVONO:
 
 Oltre ai requisiti di base, il nostro campione nell’intestazione comprende anche una definizione Schema.org, che non è un requisito essenziale per AMP, ma è un requisito per la distribuzione del contenuto in alcuni luoghi, ad esempio nella [demo del carosello di notizie di Ricerca Google (provala sul tuo telefono)](https://g.co/ampdemo).
 
-Per ulteriori informazioni su tutti i metadati che ti serviranno i svariate altre situazioni, come Twitter, [esamina i nostri campioni](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples). Per informazioni dettagliate su AMP in Ricerca Google, vai alla sezione [Top Stories con AMP](https://developers.google.com/structured-data/carousels/top-stories).
+Per ulteriori informazioni su tutti i metadati che ti serviranno i svariate altre situazioni, come Twitter, [esamina i nostri campioni](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples). Per informazioni dettagliate su AMP in Ricerca Google, vai alla sezione [Top Stories con AMP](https://developers.google.com/structured-data/carousels/top-stories).
 
 <hr>
 

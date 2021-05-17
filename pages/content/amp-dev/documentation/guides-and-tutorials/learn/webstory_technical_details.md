@@ -209,7 +209,7 @@ The [`auto-advance-after`](https://amp.dev/documentation/components/amp-story-pa
 
 ## Desktop experience
 
-The Web Story format supports an [optional desktop experience](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). This changes the desktop experience to an immersive full bleed mode, replacing the default three portrait panels experience and allows mobile users to view when their device is held horizontally. 
+The Web Story format supports an [optional desktop experience](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). This changes the desktop experience to an immersive full bleed mode, replacing the default three portrait panels experience and allows mobile users to view when their device is held horizontally. 
 
 Opt-in to desktop support by adding the `supports-landscape` attribute to the `<amp-story>` component. 
 

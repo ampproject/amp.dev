@@ -17,7 +17,7 @@ Pour inclure un tweet dans votre page, incluez d'abord le script suivant dans la
 Actuellement, les tweets sont automatiquement redimensionnés en fonction de la taille indiquée, mais ne s'affichent pas forcément de façon idéale.
 Modifiez manuellement la largeur et la hauteur fournies ou utilisez l'attribut média pour sélectionner le format en fonction de la largeur de l'écran.
 
-Exemple d'élément [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) tiré de [twitter.amp](https://github.com/ampproject/amphtml/blob/master/examples/twitter.amp.html) :
+Exemple d'élément [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) tiré de [twitter.amp](https://github.com/ampproject/amphtml/blob/main/examples/twitter.amp.html) :
 
 [example preview="inline" playground="true" imports="amp-twitter:0.1"]
 ```html

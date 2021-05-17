@@ -73,7 +73,7 @@ Du kannst AMP Storys in eine nicht-AMP Seite einbetten, damit Benutzer sich durc
 
 ## AMP Story Player einbetten
 
-Um eine AMP Story auf einer nicht-AMP Seite anzuzeigen, muss das Element [`amp-story-player`](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md) verwendet werden.
+Um eine AMP Story auf einer nicht-AMP Seite anzuzeigen, muss das Element [`amp-story-player`](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-story-player.md) verwendet werden.
 
 ### Skripte importieren
 

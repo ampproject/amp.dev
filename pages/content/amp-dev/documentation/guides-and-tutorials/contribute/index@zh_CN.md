@@ -28,7 +28,7 @@ AMP 项目极力鼓励大家踊跃做出技术方面的贡献！
 
 #### 提供代码方面的帮助
 
-要开始为 AMP 项目贡献代码，请仔细阅读[“贡献”文件](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)，其中详细说明了一项功能或一个问题修复从概念到提交的全过程，以及您如何参与技术设计和讨论。如果您刚刚接触开放源代码，请查看我们为您准备的[入门提示](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-code)。
+要开始为 AMP 项目贡献代码，请仔细阅读[“贡献”文件](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md)，其中详细说明了一项功能或一个问题修复从概念到提交的全过程，以及您如何参与技术设计和讨论。如果您刚刚接触开放源代码，请查看我们为您准备的[入门提示](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#contributing-code)。
 
 ### 为 AMP 贡献内容
 

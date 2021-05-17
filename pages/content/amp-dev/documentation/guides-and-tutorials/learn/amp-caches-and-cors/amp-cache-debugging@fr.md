@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-debugging.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-debugging.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -40,7 +40,7 @@ Si vous rencontrez toujours un problème après avoir suivi ces étapes, consult
     <tr>
       <td>Les polices Web n'apparaissent pas (des polices de remplacement sont utilisées)</td>
       <td>Le cache AMP n'est pas répertorié en blanc par le fournisseur de polices.</td>
-      <td>Contactez le fournisseur de polices et demandez-lui d'autoriser <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">tous les caches</a> .</td>
+      <td>Contactez le fournisseur de polices et demandez-lui d'autoriser <a href="amp-cors-requests.md#cors-security-in-amp">tous les caches</a> .</td>
     </tr>
     <tr>
       <td>Les éléments (par exemple, les polices et les images) n'apparaissent pas (<strong>origines HTTP uniquement</strong>)</td>
@@ -50,7 +50,7 @@ Si vous rencontrez toujours un problème après avoir suivi ces étapes, consult
     <tr>
       <td rowspan="2">Les éléments (par exemple, les polices et les images) n'apparaissent pas</td>
       <td>Les éléments sont diffusés avec un type MIME incorrect.</td>
-      <td>Spécifiez un <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">type MIME acceptable</a> .</td>
+      <td>Spécifiez un <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">type MIME acceptable</a> .</td>
     </tr>
     <tr>
       <td>Le cache AMP ne peut pas accéder aux éléments.</td>
@@ -59,7 +59,7 @@ Si vous rencontrez toujours un problème après avoir suivi ces étapes, consult
     <tr>
       <td>Les éléments dynamiques tels que <code><amp-form></amp-form></code>, <code><amp-list></amp-list></code>, ne se comportent pas comme prévu.</td>
       <td>En-têtes CORS cassés ou manquants.</td>
-      <td>Ces composants effectuent des requêtes vers l'origine depuis le cache AMP. Par défaut, les navigateurs bloquent ces requêtes. Pour les autoriser, émettez des <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">en-têtes CORS</a> qui permettent le listing de <a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">tous les caches</a>.</td>
+      <td>Ces composants effectuent des requêtes vers l'origine depuis le cache AMP. Par défaut, les navigateurs bloquent ces requêtes. Pour les autoriser, émettez des <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">en-têtes CORS</a> qui permettent le listing de <a href="amp-cors-requests.md">tous les caches</a>.</td>
     </tr>
     <tr>
       <td>Le contenu diffusé doit être supprimé en raison d'un avis légal de retrait.</td>

@@ -10,7 +10,6 @@ app.use(router);
 // eslint-disable-next-line new-cap
 const next = express.Router();
 next.get('/*', async (req, res) => {
-  lastRequest = req;
   res.send('next');
 });
 

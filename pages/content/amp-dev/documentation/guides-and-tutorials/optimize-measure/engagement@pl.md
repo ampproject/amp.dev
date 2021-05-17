@@ -42,6 +42,6 @@ Oto kilka szybkich porad, pozwalających zwiększyć zaangażowanie użytkownika
 
 - **Obejrzyj plan działania AMP**, przedstawiający aktualizacje i funkcje w postaci [planu działań](../../../community/roadmap.html).
 
-- **Zaangażuj się.** Dodaj kod źródłowy, pliki z błędami lub zaoferuj informacje zwrotne na [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Podziel się informacjami o AMP na [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
+- **Zaangażuj się.** Dodaj kod źródłowy, pliki z błędami lub zaoferuj informacje zwrotne na [GitHub](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md). Podziel się informacjami o AMP na [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 
 - **Dowiedz się** jak używać składników AMP dzięki [przykładom](../../../documentation/examples/index.html).

@@ -18,8 +18,8 @@ import PageExperienceCheck from './PageExperienceCheck.js';
 const AMP_PROJECT_CDN_URL = 'cdn.ampproject.org';
 
 export default class PageExperienceCacheCheck {
-  constructor() {
-    this.pageExperienceCheck = new PageExperienceCheck();
+  constructor(fetch) {
+    this.pageExperienceCheck = new PageExperienceCheck(fetch);
   }
 
   static getCheckCount() {

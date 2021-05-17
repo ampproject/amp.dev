@@ -170,4 +170,4 @@ Ulteriori informazioni su [azioni ed eventi AMP](../../../documentation/guides-a
 
 ## Convalida <a name="validation"></a>
 
-Consulta le [regole di amp-selector](https://github.com/ampproject/amphtml/blob/master/extensions/amp-selector/validator-amp-selector.protoascii) nelle specifiche dello strumento di convalida AMP.
+Consulta le [regole di amp-selector](https://github.com/ampproject/amphtml/blob/main/extensions/amp-selector/validator-amp-selector.protoascii) nelle specifiche dello strumento di convalida AMP.

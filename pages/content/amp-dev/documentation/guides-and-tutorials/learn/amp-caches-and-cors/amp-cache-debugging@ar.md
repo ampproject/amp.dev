@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-debugging.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-debugging.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -40,7 +40,7 @@ have a look and request a pull request there.
     <tr>
       <td>عدم ظهور خطوط الويب (يتم استخدام الخطوط الاحتياطية)</td>
       <td>ذاكرة AMP للتخزين المؤقت ليست مدرجة ضمن القائمة البيضاء من جانب موفر الخطوط.</td>
-      <td>اتصل بموفر الخطوط واطلب منهم إدراج <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">جميع ذاكرات التخزين المؤقت</a>.</td>
+      <td>اتصل بموفر الخطوط واطلب منهم إدراج <a href="amp-cors-requests.md#cors-security-in-amp">جميع ذاكرات التخزين المؤقت</a>.</td>
     </tr>
     <tr>
       <td>الأصول (مثل الخطوط والصور) لا تظهر (<strong>تظهر أصول HTTP فقط</strong>)</td>
@@ -50,7 +50,7 @@ have a look and request a pull request there.
     <tr>
       <td rowspan="2">الأصول (مثل الخطوط والصور) لا تظهر</td>
       <td>يجري عرض الأصول بنوع MIME غير صحيح.</td>
-      <td>حدد <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">نوع MIME مقبول</a>.</td>
+      <td>حدد <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">نوع MIME مقبول</a>.</td>
     </tr>
     <tr>
       <td>لا يمكن لذاكرة AMP للتخزين المؤقت الوصول إلى الأصول.</td>
@@ -59,7 +59,7 @@ have a look and request a pull request there.
     <tr>
       <td>العناصر الديناميكية مثل <code><amp-form></amp-form></code> و <code><amp-list></amp-list></code>، لا تتصرف بالسلوك المتوقع.</td>
       <td>رؤوس CORS مكسورة أو مفقودة.</td>
-      <td>تنشئ هذه المكونات طلبات عبر الأصول من ذاكرة AMP للتخزين المؤقت إلى الأصل الخاص بك. فيما تحظر المتصفحات هذه الطلبات بشكل افتراضي. للسماح بهذه الطلبات، قم بإصدار <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">رؤوس CORS</a> تسمح <a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">بجميع ذاكرات التخزين المؤقت</a>.</td>
+      <td>تنشئ هذه المكونات طلبات عبر الأصول من ذاكرة AMP للتخزين المؤقت إلى الأصل الخاص بك. فيما تحظر المتصفحات هذه الطلبات بشكل افتراضي. للسماح بهذه الطلبات، قم بإصدار <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">رؤوس CORS</a> تسمح <a href="amp-cors-requests.md">بجميع ذاكرات التخزين المؤقت</a>.</td>
     </tr>
     <tr>
       <td>يجري تقديم محتوى ينبغي إزالته بسبب إشعار إنهاء قانوني.</td>

@@ -19,7 +19,7 @@ AMP 分析可让您根据自己配置的触发条件将事件发送回服务器�
 
 [`amp-ad`](../../../components/reference/amp-ad.md) 扩展组件专用于在 AMP 网页上投放展示广告。目前已有超过 90 家广告技术提供商添加了对 AMP 的支持。要开始使用这款组件，请先通过阅读[`amp-ad`](../../../components/reference/amp-ad.md)比较有用，具体取决于贵公司提供的广告技术。
 
-目前已有超过 90 家广告技术提供商添加了对广告相关功能（如 [`amp-ad`](../../../components/reference/amp-ad.md) 的支持。敬请查看广告网络 [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md) 的一个[提取请求示例](https://github.com/ampproject/amphtml/pull/2299)。
+目前已有超过 90 家广告技术提供商添加了对广告相关功能（如 [`amp-ad`](../../../components/reference/amp-ad.md) 的支持。敬请查看广告网络 [Criteo](https://github.com/ampproject/amphtml/blob/main/ads/criteo.md) 的一个[提取请求示例](https://github.com/ampproject/amphtml/pull/2299)。
 
 ## 3. 使用 amp-call-tracking 扩展组件
 
@@ -29,7 +29,7 @@ AMP 分析可让您根据自己配置的触发条件将事件发送回服务器�
 
 ## 4. 添加新的扩展组件/内嵌组件
 
-如果您的用例无法通过使用 [`amp-analytics`](../../../components/reference/amp-analytics.md) [`amp-pixel`](../../../components/reference/amp-pixel.md) 或 [`amp-ad`](../../../components/reference/amp-ad.md) 来实现，请开设一个 [GitHub 问题](https://github.com/ampproject/amphtml/issues/new)以探讨替代方案。欢迎大家踊跃贡献可被众多不同公司广泛采用的新扩展组件。有关详情，请参阅[贡献扩展组件](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-extended-components)部分。
+如果您的用例无法通过使用 [`amp-analytics`](../../../components/reference/amp-analytics.md) [`amp-pixel`](../../../components/reference/amp-pixel.md) 或 [`amp-ad`](../../../components/reference/amp-ad.md) 来实现，请开设一个 [GitHub 问题](https://github.com/ampproject/amphtml/issues/new)以探讨替代方案。欢迎大家踊跃贡献可被众多不同公司广泛采用的新扩展组件。有关详情，请参阅[贡献扩展组件](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#contributing-extended-components)部分。
 
 ## 5. 使用 amp-iframe
 
@@ -37,11 +37,11 @@ AMP 分析可让您根据自己配置的触发条件将事件发送回服务器�
 
 ## 总结
 
-要开始将您的技术与 AMP 集成，请先阅读我们的[第三方开发者指南](https://github.com/ampproject/amphtml/blob/master/3p/README.md)。虽然 AMP 项目现已支持各种各样的第三方用例，但我们知道还有一些网络功能尚待开发。
+要开始将您的技术与 AMP 集成，请先阅读我们的[第三方开发者指南](https://github.com/ampproject/amphtml/blob/main/3p/README.md)。虽然 AMP 项目现已支持各种各样的第三方用例，但我们知道还有一些网络功能尚待开发。
 
 例如，动态来电跟踪即是 AMP 中尚未支持的一个用例，但我们正在[积极地与社区合作](https://github.com/ampproject/amphtml/issues/5276)来添加这项支持。
 
-如果您有任何问题或建议，欢迎随时[提出问题](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#filing-issues)或通过我们的任一[讨论渠道](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#discussion-channels)与我们联系。
+如果您有任何问题或建议，欢迎随时[提出问题](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#filing-issues)或通过我们的任一[讨论渠道](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#discussion-channels)与我们联系。
 
 ## 其他资源
 

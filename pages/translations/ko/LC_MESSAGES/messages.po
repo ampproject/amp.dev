@@ -1080,7 +1080,7 @@ msgid "You've read this document a dozen times but it doesn't really cover all o
 msgstr "이 문서를 수십 번 읽었음에도 여전히 궁금한 점이 남아 있나요? 다른 개발자들도 같은 심정일지 모릅니다. Stack Overflow에서 소통해 보세요."
 
 #: frontend/templates/views/partials/experiments/experiments.j2:4
-msgid "Enable the experiment via the button below. Some components require the AMP Dev Channel to be enabled as well."
+msgid "Enable the experiment via the button below. Some components require the AMP Beta Channel to be enabled as well."
 msgstr "아래 버튼으로 실험을 활성화할 수 있습니다. 일부 컴포넌트의 경우 AMP 개발자 채널도 함께 활성화되어야 합니다."
 
 #: frontend/templates/views/partials/structured-data.j2:54
@@ -3488,8 +3488,8 @@ msgstr "<p>AMP 프로젝트는 모두에게 열려 있으며, 기존 구성원 �
 msgid "How can an advertising or technology vendor get involved in Accelerated Mobile Pages?"
 msgstr "광고나 기술 공급업체는 AMP에 어떻게 참여할 수 있나요?"
 
-msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
-msgstr "<p><a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">기여 가이드라인</a>을 검토하고 <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>을 통해 문의해 주세요.</p>"
+msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
+msgstr "<p><a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">기여 가이드라인</a>을 검토하고 <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>을 통해 문의해 주세요.</p>"
 
 msgid "How does advertising work on Accelerated Mobile Pages?"
 msgstr "AMP 페이지에서 광고가 작동하는 원리는 무엇인가요?"
@@ -3541,3 +3541,60 @@ msgstr "지원되는 플랫폼, 공급업체 및 파트너"
 
 msgid "AMP Conf 2020: Save the date!"
 msgstr "AMP Conf 2020: 잊지 말고 참여하세요!"
+
+msgid "AMP is a web component framework to easily create user-first experiences for the web."
+msgstr ""
+
+msgid "Easily create websites with a great page experience out-of-the-box using AMP’s ready-to-go web components."
+msgstr ""
+
+msgid "All about AMP Websites"
+msgstr ""
+
+msgid "Get started"
+msgstr ""
+
+msgid "Immerse readers in visual and tappable stories they can share anywhere on the open web."
+msgstr ""
+
+msgid "All about Web Stories"
+msgstr ""
+
+msgid "Serve lightning fast and secure eye-catching creatives."
+msgstr ""
+
+msgid "Send emails of the future with personalized dynamic content and interactive elements that engage readers."
+msgstr ""
+
+msgid "The latest news"
+msgstr ""
+
+msgid "Don't want to miss any of the great stuff that happens around AMP? Then always be first in line and subscribe to our newsletter!"
+msgstr ""
+
+msgid "Don’t take our word for it - read case studies from industry success stories and see how AMP has produced positive results."
+msgstr ""
+
+msgid "A framework that amplifies page experience."
+msgstr ""
+
+msgid "AMP is a simple and robust web components framework that makes it easy to build fast websites that are user-first and makes money. AMP provides long-term success for your web strategy with distribution across popular platforms and reduced operating costs."
+msgstr ""
+
+msgid "Guaranteed Page Experience"
+msgstr ""
+
+msgid "AMP provides you with the tools needed to build websites that meet Page Experience ranking signals while remaining flexible and customizable to your needs. Page experience is a set of signals from Google that measure how users perceive their experience interacting with a web page beyond its pure information value. AMP is a straightforward way to a high page experience score. Domains built with AMP are 5 times more likely to pass* Core Web Vitals metrics than non-AMP!"
+msgstr ""
+
+msgid "Check your page’s performance"
+msgstr ""
+
+msgid "Frameworks and CMSs"
+msgstr ""
+
+msgid "Select a ready-to-go framework or integration-enabled CMS to get an AMP valid site up and running, fast. These platforms give you all the benefits of AMP without all the built-from-scratch hassle."
+msgstr ""
+
+msgid "See supported platforms"
+msgstr ""

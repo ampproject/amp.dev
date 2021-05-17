@@ -11,7 +11,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/contributing/release-schedule.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/release-schedule.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -41,7 +41,7 @@ Aşağıdaki yayın kanallarından herhangi birine PR dahil edilip edilmediğini
 
 Her gece yayınlanan sürüm, sorunları hızlı bir şekilde ve trafiği daha yoğun _haftalık_ yayın kanallarına ulaşmadan önce tespit etmek ve çözmek için bir mekanizma sağlar. Ayrıca yeni ortaya çıkan sorunlardan etkilenen kullanıcı sayısını azaltmaya da hizmet eder.
 
-Son birkaç gün içinde birleştirilen çekme taleplerini test etmek için **gecelik** kanalı seçmek mümkündür. Ayrıntılar için [DEVELOPING.md] içindeki [kaydolma bölümüne](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md#opting-in-to-pre-release-channels) bakın.
+Son birkaç gün içinde birleştirilen çekme taleplerini test etmek için **gecelik** kanalı seçmek mümkündür. Ayrıntılar için [DEVELOPING.md] içindeki [kaydolma bölümüne](https://github.com/ampproject/amphtml/blob/main/docs/developing.md#opting-in-to-pre-release-channels) bakın.
 
 ### Haftalık <a name="weekly"></a>
 
@@ -49,13 +49,13 @@ _Haftalık_ yayın kanalları, birincil "her zaman yeşil" yayın kanalları ola
 
 Sürüm derlemeleri oluştururken kullanılan iki grup derleme yapılandırması vardır: _kanarya_ yapılandırması ve _üretim_ yapılandırması. **Deneysel** ve **beta** sürüm kanalları, aynı yürütme (commit) ile oluşur. Ancak **deneysel** kanal, _kanarya_ yapılandırmasını kullanırken **beta** kanalı _üretim_ yapılandırmasını kullanır. _Kanarya_ yapılandırması, _üretimde_ kapatılabilen deneysel bileşenleri ve özellikleri etkinleştirir. <a>Deneyler sayfasından</a> **deneysel** veya <strong>beta</strong> kanallarını seçmek mümkündür.
 
-**Kararlı** sürüm kanalı, _üretim_ yapılandırmasıyla oluşturulur ve AMP trafiğinin çoğuna sunulur. **Beta** sürüm kanalı da _üretim_ yapılandırmasından oluşturulduğundan, sonraki hafta **kararlı** hale gelecek olan tam derlemeyi temsil eder (son dakika sorunlarını düzeltmek için seçim yapma olasılığı ile; [Kod Katkısı Yapma](https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md#Cherry-picks) bölümüne bakın).
+**Kararlı** sürüm kanalı, _üretim_ yapılandırmasıyla oluşturulur ve AMP trafiğinin çoğuna sunulur. **Beta** sürüm kanalı da _üretim_ yapılandırmasından oluşturulduğundan, sonraki hafta **kararlı** hale gelecek olan tam derlemeyi temsil eder (son dakika sorunlarını düzeltmek için seçim yapma olasılığı ile; [Kod Katkısı Yapma](https://github.com/ampproject/amphtml/blob/main/docs/contributing-code.md#Cherry-picks) bölümüne bakın).
 
 #### Beta ve Deneysel kanalları <a name="beta-and-experimental-channels"></a>
 
 _Beta_ ve _Deneysel Kanalları_, AMP'nin bir sonraki Kararlı sürümü için yayın öncesi adaylardır. Her Salı ([sürümün dondurulduğu](#release-freezes) haftalar hariç), geçen haftanın **gecelik** sürümü, **beta** ve **deneysel** sürümü seçimi için geliştirici seçim kanallarına yükseltilir. Bu kanallarda hiçbir özellik veya performans düşürme eyleminin yapılmadığını doğruladığımız 1 günlük bir sürenin ardından, bu sürümü Çarşamba günü trafiğin küçük bir kısmına aktarırız. Aynı sürüm, sonraki hafta Salı günü **kararlı** kanala yükseltilir.
 
-Bu kanalları seçmek mümkündür. Ayrıntılar için [DEVELOPING.md] içindeki [kaydolma bölümüne](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md#opting-in-to-pre-release-channels) bakın.
+Bu kanalları seçmek mümkündür. Ayrıntılar için [DEVELOPING.md] içindeki [kaydolma bölümüne](https://github.com/ampproject/amphtml/blob/main/docs/developing.md#opting-in-to-pre-release-channels) bakın.
 
 Şu amaçlarla _Beta Kanalına_ dahil olunur:
 
@@ -71,7 +71,7 @@ _Deneysel Kanalı_ **daha az kararlı** olabilir ve henüz tüm kullanıcılar t
 
 ### Uzun Vadeli Kararlı (lts) <a name="long-term-stable-lts"></a>
 
-**lts** sürüm yayınlama kanalı, bir aylık aralıklarla önceki bir **kararlı** derlemeyi sağlar. Her ayın ikinci Pazartesi günü, mevcut **kararlı** sürüm **lts'ye** yükseltilir. Bu kanal, tüm AMP yayıncıları için önerilmez. Bu seçenk, web sitelerinde daha az sıklıkta KG döngüsü gerçekleştirmek isteyen yayıncıların bunu **lts** kanalına belirli web sayfalarını seçerek yapabilmeleri için sağlanmıştır (bkz. <a href="https://github.com/ampproject/amphtml/blob/master/contributing/lts-release.md" data-md-type="link">**lts** readme</a>).
+**lts** sürüm yayınlama kanalı, bir aylık aralıklarla önceki bir **kararlı** derlemeyi sağlar. Her ayın ikinci Pazartesi günü, mevcut **kararlı** sürüm **lts'ye** yükseltilir. Bu kanal, tüm AMP yayıncıları için önerilmez. Bu seçenk, web sitelerinde daha az sıklıkta KG döngüsü gerçekleştirmek isteyen yayıncıların bunu **lts** kanalına belirli web sayfalarını seçerek yapabilmeleri için sağlanmıştır (bkz. <a href="https://github.com/ampproject/amphtml/blob/main/docs/lts-release.md" data-md-type="link">**lts** readme</a>).
 
 Ayın ikinci pazartesi gününün tatile denk gelmesi durumunda, yükseltme, [yayın dondurma](#release-freezes) sürecinin bitiminden sonra gerçekleştirilecektir.
 

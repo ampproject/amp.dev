@@ -22,7 +22,7 @@ const {FORMAT_WEBSITES} = require('@lib/amp/formatHelper.js');
 const DEFAULT_VERSION = 0.1;
 const EXTENSION_TYPE_ELEMENT = 'element';
 const EXTENSION_TYPE_TEMPLATE = 'template';
-const RELATIVE_PATH_BASE = 'https://github.com/ampproject/amphtml/blob/master/';
+const RELATIVE_PATH_BASE = 'https://github.com/ampproject/amphtml/blob/main/';
 
 class ComponentReferenceDocument extends MarkdownDocument {
   constructor(path, contents, extension) {
@@ -32,6 +32,13 @@ class ComponentReferenceDocument extends MarkdownDocument {
     this.version = extension.version;
     this.versions = extension.versions;
     this.latestVersion = extension.latestVersion;
+    if (!this._frontmatter['$category@']) {
+      this._frontmatter['$category@'] = 'dynamic-content';
+      log.warn(
+        `${this.title} doesn't specify '$category@' in its`,
+        `frontmatter and is defaulted to 'dynamic-content'.`
+      );
+    }
 
     // Force enable TOC for all component docs
     this.toc = true;
@@ -140,6 +147,10 @@ class ComponentReferenceDocument extends MarkdownDocument {
     this._frontmatter['layouts'] = layouts.map((layout) => {
       return layout.toLowerCase().replace('_', '-');
     });
+  }
+
+  get experimental() {
+    return this._frontmatter['experimental'] || false;
   }
 
   get bento() {

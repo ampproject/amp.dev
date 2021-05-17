@@ -6,7 +6,7 @@ formats:
   - email
 ---
 
-이메일용 AMP 지원을 고려하는 이메일 클라이언트라면 발신자의 AMP 이메일 호스팅에 [AMP 뷰어](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md)를 사용하는 것이 좋습니다. [AMP 뷰어 라이브러리](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration)로 빌드된 뷰어는 AMP 문서를 캡슐화하며 postMessage를 통해 AMP 문서와 양방향 통신을 지원하는 [기능](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md)을 제공합니다. 이러한 기능에는 이메일 가시성 제어 권한 부여, 사용자 메트릭 중계 및 이메일의 XHR 요청 안전성을 보장하는 수단 제공 등이 포함됩니다.
+이메일용 AMP 지원을 고려하는 이메일 클라이언트라면 발신자의 AMP 이메일 호스팅에 [AMP 뷰어](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md)를 사용하는 것이 좋습니다. [AMP 뷰어 라이브러리](https://github.com/ampproject/amphtml/tree/main/extensions/amp-viewer-integration)로 빌드된 뷰어는 AMP 문서를 캡슐화하며 postMessage를 통해 AMP 문서와 양방향 통신을 지원하는 [기능](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/CAPABILITIES.md)을 제공합니다. 이러한 기능에는 이메일 가시성 제어 권한 부여, 사용자 메트릭 중계 및 이메일의 XHR 요청 안전성을 보장하는 수단 제공 등이 포함됩니다.
 
 ## 뷰어 XHR 인터셉션
 
@@ -47,7 +47,7 @@ viewerIframe.contentWindow.onMessage = (xhrRequestIntercepted) => {
 
 `viewerRenderTemplate` 기능을 사용하면 뷰어에서 [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email) 및[`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=email) 템플릿 렌더링을 관리할 수 있습니다. 이 기능을 사용하도록 설정하면 AMP 런타임은 기존 XHR 호출, 템플릿 데이터 및 뷰어에 컴포넌트 콘텐츠를 렌더링하는 데 필요한 기타 세부 사항을 포함한 요청을 프록시합니다. 따라서 데이터를 확인하고 무결 처리하기 위해 뷰어는 엔드포인트 데이터 콘텐츠를 내부적으로 검사하고 [mustache](https://mustache.github.io/) 템플릿 렌더링을 관리합니다. amp-form 및 amp-list 컴포넌트에서 이 기능이 xhrInterceptor와 함께 사용될 경우, 뷰어에 요청을 프록시하는 `viewerRenderTemplate` 기능이 xhrInterceptor의 요청을 재정의한다는 점을 유념하세요.
 
-[viewer.html](https://github.com/ampproject/amphtml/blob/master/examples/viewer.html) 예제는 AMP 문서에서 전송된 `viewerRenderTemplate` 메시지 처리 방법을 보여줍니다. 해당 예제에서 Viewer.prototype.processRequest\_를 통해 `viewerRenderTemplate` 메시지가 포착되며 요청에서 지원되는 컴포넌트 유형에 따라 렌더링할 html을 다음 JSON 형식으로 되돌립니다.
+[viewer.html](https://github.com/ampproject/amphtml/blob/main/examples/viewer.html) 예제는 AMP 문서에서 전송된 `viewerRenderTemplate` 메시지 처리 방법을 보여줍니다. 해당 예제에서 Viewer.prototype.processRequest\_를 통해 `viewerRenderTemplate` 메시지가 포착되며 요청에서 지원되는 컴포넌트 유형에 따라 렌더링할 html을 다음 JSON 형식으로 되돌립니다.
 
 ```js
 Viewer.prototype.ssrRenderAmpListTemplate_ = (data) =>

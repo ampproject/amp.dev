@@ -73,7 +73,7 @@ Vous pouvez intégrer des stories AMP dans une page non-AMP, permettant aux util
 
 ## Intégrer le lecteur de story AMP
 
-L'affichage d'une story AMP dans une page non-AMP nécessite l'utilisation de l'élément [`amp-story-player`](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md).
+L'affichage d'une story AMP dans une page non-AMP nécessite l'utilisation de l'élément [`amp-story-player`](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-story-player.md).
 
 ### Importer des scripts
 

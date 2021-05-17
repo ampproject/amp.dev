@@ -61,5 +61,5 @@ Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri](../../../docum
 
 ## Doğrulama <a name="validation"></a>
 
-AMP doğrulayıcı spesifikasyonunda [amp-layout kurallarına](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) bakın.
+AMP doğrulayıcı spesifikasyonunda [amp-layout kurallarına](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) bakın.
 ,false,false

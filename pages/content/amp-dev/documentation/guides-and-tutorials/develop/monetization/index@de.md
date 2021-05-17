@@ -100,7 +100,7 @@ Gratulation! Jetzt stellst du Ads auf deiner AMP Seite bereit!
 
 ## Bereitstellung von direkt verkauften AMPHTML Ads
 
-Die Komponente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) schaltet Ads aus dem von dir angegebenen Netzwerk. Dies können standardmäßige HTML Ads oder AMPHTML Ads sein, sofern das Werbenetzwerk AMPHTML Ads unterstützt. Um deine direkt verkauften Ads als AMPHTML Ads zu schalten, erstelle die Ad in AMP HTML. Berücksichtige dabei die Anforderungen an die [Spezifikationen für AMPHTML Ads](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) und verwende einen [Werbeserver, der AMPHTML Ads schaltet](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
+Die Komponente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) schaltet Ads aus dem von dir angegebenen Netzwerk. Dies können standardmäßige HTML Ads oder AMPHTML Ads sein, sofern das Werbenetzwerk AMPHTML Ads unterstützt. Um deine direkt verkauften Ads als AMPHTML Ads zu schalten, erstelle die Ad in AMP HTML. Berücksichtige dabei die Anforderungen an die [Spezifikationen für AMPHTML Ads](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) und verwende einen [Werbeserver, der AMPHTML Ads schaltet](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/a4a-readme.md#publishers).
 
 ## Erweitern der Targeting Daten für Anzeigenanforderungen
 
@@ -112,8 +112,8 @@ In diesem YouTube Video erfährst du mehr über RTC:
 
 Oder sieh dir diese RTC Ressourcen an:
 
-- [Implementierungsleitfaden für AMP RTC Publisher](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
-- [AMP Real Time Config](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
+- [Implementierungsleitfaden für AMP RTC Publisher](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
+- [AMP Real Time Config](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-documentation.md)
 
 ## Best Practices
 
@@ -124,7 +124,7 @@ Nachfolgend findest du einige Tipps, mit denen du die Effektivität von Ads auf 
 - **Platziere auf AMP Seiten dieselbe Anzahl von Ads**, wie auf deinen nicht-AMP Seiten, um maximale Umsatz pro Seite zu erzielen.
 - **Platziere die erste Ad direkt unter dem ersten Viewport** (unter dem angezeigten Bereich), um eine optimale Benutzererfahrung zu erzielen.
 - **Stelle sicher, dass deine Ad Blöcke auf der Seite zentriert sind**, um deinen Benutzern ein optimales mobiles Web Erlebnis zu bieten, es sei denn, du verwendest erweitertes CSS oder Medienabfragen.
-- Aktiviere in deinem AMP Inventar [Anzeigenanforderungen in mehreren Größen](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests), um den Auktionsdruck der Ads zu erhöhen und den Umsatz zu steigern.
+- Aktiviere in deinem AMP Inventar [Anzeigenanforderungen in mehreren Größen](https://github.com/ampproject/amphtml/blob/main/ads/README.md#support-for-multi-size-ad-requests), um den Auktionsdruck der Ads zu erhöhen und den Umsatz zu steigern.
 
 ### Nachfrage & Preisgestaltung: Erziele den richtigen Preis für deine Ads
 

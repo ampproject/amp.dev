@@ -167,4 +167,4 @@ AMP 选择器是一种控件，可显示一系列选项并让用户从中选择�
 
 ## 验证 <a name="validation"></a>
 
-请参阅 AMP 验证工具规范中的 [amp-selector 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-selector/validator-amp-selector.protoascii)。
+请参阅 AMP 验证工具规范中的 [amp-selector 规则](https://github.com/ampproject/amphtml/blob/main/extensions/amp-selector/validator-amp-selector.protoascii)。

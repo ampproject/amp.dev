@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -33,7 +33,7 @@ limitations under the License.
 
 AMP là một công nghệ nổi tiếng để phát triển các trang web siêu nhanh cho các máy khách di động. AMP là một nhóm các thẻ HTML được hỗ trợ bởi JavaScript có thể dễ dàng cho phép các chức năng với một trọng tâm lớn hơn đến hiệu năng và bảo mật. Có các [thành phần AMP](https://amp.dev/documentation/components/) cho mọi thứ từ băng chuyền, đến các yếu tố biểu mẫu tương thích để truy xuất nội dung mới từ các điểm cuối từ xa.
 
-Định dạng AMP cho Email cung cấp một [nhóm con các thành phần AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md) mà bạn có thể sử dụng trong các tin nhắn email. Người nhận email AMP có thể xem và tương tác trực tiếp với các thành phần AMP trong email.
+Định dạng AMP cho Email cung cấp một [nhóm con các thành phần AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md) mà bạn có thể sử dụng trong các tin nhắn email. Người nhận email AMP có thể xem và tương tác trực tiếp với các thành phần AMP trong email.
 
 ## Đánh dấu bắt buộc
 
@@ -73,21 +73,21 @@ Toàn bộ đánh dấu AMPHTML phải không vượt quá 200,000 byte.
 
 AMP cho Email phụ thuộc vào loại con [MIME](https://en.wikipedia.org/wiki/MIME) `multipart/alternative` như được định nghĩa trong [RFC 1521, phần 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-_Để biết thêm thông tin, xem [Cấu trúc và render các email AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)._
+_Để biết thêm thông tin, xem [Cấu trúc và render các email AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-structure.md)._
 
 ## Các thành phần AMP được hỗ trợ <a name="supported-amp-components"></a>
 
-_Xem [Các Thành phần được Hỗ trợ của AMP cho Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)._
+_Xem [Các Thành phần được Hỗ trợ của AMP cho Email](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md)._
 
 ## Yêu cầu với HTML <a name="html-requirements"></a>
 
-_Xem [HTML được Hỗ trợ trong AMP cho Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)._
+_Xem [HTML được Hỗ trợ trong AMP cho Email](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-html.md)._
 
 ## Yêu cầu với CSS <a name="css-requirements"></a>
 
 ### Các bộ chọn và thuộc tính được hỗ trợ <a name="supported-selectors-and-properties"></a>
 
-_Xem [CSS được Hỗ trợ trong AMP cho Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)._
+_Xem [CSS được Hỗ trợ trong AMP cho Email](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-css.md)._
 
 ### Quy định CSS trong một tài liệu AMP <a name="specifying-css-in-an-amp-document"></a>
 
@@ -151,4 +151,4 @@ Việc chuyển hướng trong [`<amp-form>`](https://amp.dev/documentation/comp
 
 ## Phản hồi & Hỗ trợ <a name="feedback--support"></a>
 
-Để được hỗ trợ và phản hồi trong AMP cho Email, hãy sử dụng kênh sau đây: [ongoing-participation](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#ongoing-participation)
+Để được hỗ trợ và phản hồi trong AMP cho Email, hãy sử dụng kênh sau đây: [ongoing-participation](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#ongoing-participation)

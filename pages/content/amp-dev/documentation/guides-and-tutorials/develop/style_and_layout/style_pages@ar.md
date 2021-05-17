@@ -18,7 +18,7 @@ $title: لغة CSS المعتمدة
 تتوفّر مكوّنات AMP مع أنماط افتراضية
 لجعل إنشاء الصفحات التفاعلية سهلاً على نحو معقول.
 ويتم تحديد هذه الأنماط في
-[`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
+[`amp.css`](https://github.com/ampproject/amphtml/blob/main/css/amp.css).
 
 [/tip]
 

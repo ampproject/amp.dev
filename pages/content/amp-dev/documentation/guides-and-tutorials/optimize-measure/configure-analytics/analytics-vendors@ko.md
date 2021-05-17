@@ -31,7 +31,7 @@ $title: 애널리틱스 공급업체
 
 [tip type="success"]
 
-코드 사용에 익숙한 경우 [`vendors.js`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js) 파일에서 환경설정과 관련한 소스코드를 확인할 수 있습니다.
+코드 사용에 익숙한 경우 [`vendors.js`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/0.1/vendors.js) 파일에서 환경설정과 관련한 소스코드를 확인할 수 있습니다.
 
 [/tip]
 
@@ -151,7 +151,7 @@ Google 애널리틱스 지원을 추가합니다. Google Analytics 지원 추가
 
 타입 속성값: `infonline`
 
-[INFOnline](https://www.infonline.de) / [IVW](http://www.ivw.de) 지원을 추가합니다. [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html)의 사본이, 포함된 AMP 파일 ([이유?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md))와 다른 하위 도메인에서 필요합니다. 파일은 HTTPS를 통해 제공해야 합니다. 예를 들어, AMP 파일이 `www.example.com`에 호스팅된 경우 `amp-analytics-infonline.html`이 `iframe.example.com` 또는 `assets.example.com` 등 다른 하위 도메인에 있어야 합니다.
+[INFOnline](https://www.infonline.de) / [IVW](http://www.ivw.de) 지원을 추가합니다. [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html)의 사본이, 포함된 AMP 파일 ([이유?](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md))와 다른 하위 도메인에서 필요합니다. 파일은 HTTPS를 통해 제공해야 합니다. 예를 들어, AMP 파일이 `www.example.com`에 호스팅된 경우 `amp-analytics-infonline.html`이 `iframe.example.com` 또는 `assets.example.com` 등 다른 하위 도메인에 있어야 합니다.
 
 다음 변수도 정의되어야 합니다.
 
@@ -220,7 +220,7 @@ Nielsen Marketing Cloud 지원을 추가합니다. 자세한 내용은 [Nielsen 
 
 타입 속성값: `oewa`
 
-[OEWA](https://www.oewa.at) 지원을 추가합니다. [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html)의 사본이 포함된 AMP 파일과 다른 하위 도메인에 있어야 합니다([이유?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). 파일은 HTTPS를 통해 제공해야 합니다. 예를 들어, AMP 파일이 `www.example.com`에 호스팅된 경우, `amp-analytics-oewa.html`은 `oewa-amp.example.com` 등 다른 하위 도메인에 있어야 합니다. OEWA 지원 추가에 관한 자세한 내용은 [여기](http://www.oewa.at/Implementierung)를 참고하세요.
+[OEWA](https://www.oewa.at) 지원을 추가합니다. [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html)의 사본이 포함된 AMP 파일과 다른 하위 도메인에 있어야 합니다([이유?](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md)). 파일은 HTTPS를 통해 제공해야 합니다. 예를 들어, AMP 파일이 `www.example.com`에 호스팅된 경우, `amp-analytics-oewa.html`은 `oewa-amp.example.com` 등 다른 하위 도메인에 있어야 합니다. OEWA 지원 추가에 관한 자세한 내용은 [여기](http://www.oewa.at/Implementierung)를 참고하세요.
 
 다음 변수도 정의되어야 합니다.
 

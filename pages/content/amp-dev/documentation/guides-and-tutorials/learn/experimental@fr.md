@@ -8,7 +8,7 @@ formats:
   - ads
 ---
 
-[Les composants expérimentaux AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments) sont des fonctionnalités publiées qui ne sont pas encore prêtes pour une large utilisation, et sont donc protégées par un statut expérimental.
+[Les composants expérimentaux AMP](https://github.com/ampproject/amphtml/tree/main/tools/experiments) sont des fonctionnalités publiées qui ne sont pas encore prêtes pour une large utilisation, et sont donc protégées par un statut expérimental.
 
 Les développeurs et les utilisateurs peuvent choisir d'utiliser ces fonctionnalités avant leur sortie complète. Mais elles doivent être utilisées avec prudence, car elles peuvent contenir des bogues ou avoir des effets secondaires inattendus.
 
@@ -18,20 +18,20 @@ Les développeurs et les utilisateurs peuvent choisir d'utiliser ces fonctionnal
 
 <ul><br>{% for component in experimental_components %}<br>  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li><br>{% endfor %}<br></ul><br>{% endif %}
 
-## Activation d'AMP Dev Channel
+## Activation d'AMP Beta Channel
 
-AMP Dev CHannel est un moyen d'activer l'utilisation sur un navigateur d'une version plus récente des bibliothèques AMP JS.
+AMP Beta Channel est un moyen d'activer l'utilisation sur un navigateur d'une version plus récente des bibliothèques AMP JS.
 
-La version AMP Dev Channel **peut être moins stable** et contenir des fonctionnalités non disponibles pour tous les utilisateurs. Activez cette option si vous souhaitez aider à tester de nouvelles versions d'AMP, signaler des bogues ou créer des documents qui nécessitent une nouvelle fonctionnalité qui n'est pas encore disponible pour tout le monde.
+La version AMP Beta Channel **peut être moins stable** et contenir des fonctionnalités non disponibles pour tous les utilisateurs. Activez cette option si vous souhaitez aider à tester de nouvelles versions d'AMP, signaler des bogues ou créer des documents qui nécessitent une nouvelle fonctionnalité qui n'est pas encore disponible pour tout le monde.
 
-L'activation de Dev Channel est idéale pour:
+L'activation de Beta Channel est idéale pour:
 
 - tester et jouer avec de nouvelles fonctionnalités qui ne sont pas encore disponibles pour tous les utilisateurs.
 - une utilisation dans l'assurance qualité (QA) pour vous assurer que votre site est compatible avec la prochaine version d'AMP.
 
-Si vous trouvez un problème qui ne semble se produire que dans la version Dev Channel d'AMP, [signalez un problème](https://github.com/ampproject/amphtml/issues/new) avec une description. Incluez toujours une URL vers une page qui reproduit le problème.
+Si vous trouvez un problème qui ne semble se produire que dans la version Beta Channel d'AMP, [signalez un problème](https://github.com/ampproject/amphtml/issues/new) avec une description. Incluez toujours une URL vers une page qui reproduit le problème.
 
-Pour activer AMP Dev Channel pour votre navigateur, accédez à [la page des tests AMP](https://cdn.ampproject.org/experiments.html) et activez le test "AMP Dev Channel". Pour être informé des changements importants/récents concernant AMP, abonnez-vous à la liste de diffusion [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
+Pour activer AMP Beta Channel pour votre navigateur, accédez à [la page des tests AMP](https://cdn.ampproject.org/experiments.html) et activez le test "AMP Beta Channel". Pour être informé des changements importants/récents concernant AMP, abonnez-vous à la liste de diffusion [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
 
 ## Activer un composant expérimental
 
@@ -67,7 +67,7 @@ Un document peut choisir d'activer des contenus expérimentaux. Pour ce faire, p
 </head>
 ```
 
-Ce faisant, les contenus expérimentaux spécifiés seront activés pour tous les visiteurs du document. Cependant, tous les contenus expérimentaux ne sont pas activables par le document. Pour obtenir la liste complète des composants expérimentaux autorisés, consultez l'attribut `allow-doc-opt-in` dans le fichier [`prod-config.json`](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/prod-config.json) du projet. Notez que l'activation par le document peut être annulé par la désactivation par l'utilisateur.
+Ce faisant, les contenus expérimentaux spécifiés seront activés pour tous les visiteurs du document. Cependant, tous les contenus expérimentaux ne sont pas activables par le document. Pour obtenir la liste complète des composants expérimentaux autorisés, consultez l'attribut `allow-doc-opt-in` dans le fichier [`prod-config.json`](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/prod-config.json) du projet. Notez que l'activation par le document peut être annulé par la désactivation par l'utilisateur.
 
 ## Essais d'origine
 

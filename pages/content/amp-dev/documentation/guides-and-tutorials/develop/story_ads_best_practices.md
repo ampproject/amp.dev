@@ -16,7 +16,7 @@ Current ad formats, such as banners and boxes, do not integrate well with the AM
 
 Web Story ads conform to the following principles:
 
-- Valid AMPHTML Ad: follow the same technical specification as a classic [AMPHTML ad](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md).
+- Valid AMPHTML Ad: follow the same technical specification as a classic [AMPHTML ad](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md).
 - Visual first: Inviting, bold, context-driven invitation state.
 - Native: The ad page has the same dimensions as an organic story page.
 - Same interaction model: User can continue to the next screen just like they would with an organic story page.
@@ -35,6 +35,10 @@ To keep the user experience consistent, the Web Story runtime is responsible for
 [tip type="important"]
 **IMPORTANT –** Only the CTA button is clickable in an Web Story ad, so keep this in mind when developing your creative.
 [/tip]
+
+## Templates
+
+Please see our premade [templates](https://amp.dev/documentation/templates/) for inspiration, or as a starting point for building your creatives (make sure to select the `story ads` chip).
 
 ## Meta tag data
 

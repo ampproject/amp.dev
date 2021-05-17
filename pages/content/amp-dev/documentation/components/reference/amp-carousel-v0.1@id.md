@@ -240,4 +240,4 @@ Pada contoh berikut, terdapat carousel tiga gambar dengan tombol pratinjau di ba
 
 # Validasi <a name="validation"></a>
 
-Lihat [aturan amp-carousel](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/validator-amp-carousel.protoascii) dalam spesifikasi validator AMP.
+Lihat [aturan amp-carousel](https://github.com/ampproject/amphtml/blob/main/extensions/amp-carousel/validator-amp-carousel.protoascii) dalam spesifikasi validator AMP.

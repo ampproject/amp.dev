@@ -77,7 +77,7 @@ El componente `amp-video` acepta hasta cuatro tipos únicos de nodos HTML como e
 
 ## Analytics <a name="analytics"></a>
 
-`amp-video` admite analíticas predeterminadas. Para obtener más información, consulta esta página sobre [analíticas de vídeo](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
+`amp-video` admite analíticas predeterminadas. Para obtener más información, consulta esta página sobre [analíticas de vídeo](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-video-analytics.md).
 
 ## Atributos <a name="attributes"></a>
 
@@ -94,7 +94,7 @@ El componente `amp-video` acepta hasta cuatro tipos únicos de nodos HTML como e
       </tr>
       <tr>
         <td width="40%"><strong>autoplay</strong></td>
-        <td>Si se incluye este atributo y el navegador admite la reproducción automática, el vídeo se reproducirá automáticamente en cuanto esté visible. Hay algunas condiciones que el componente debe cumplir para reproducirse, <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-video-interface.md#autoplay">que se describen en la especificación de vídeo en AMP</a>.</td>
+        <td>Si se incluye este atributo y el navegador admite la reproducción automática, el vídeo se reproducirá automáticamente en cuanto esté visible. Hay algunas condiciones que el componente debe cumplir para reproducirse, <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md#autoplay">que se describen en la especificación de vídeo en AMP</a>.</td>
       </tr>
       <tr>
         <td width="40%"><strong>controls</strong></td>
@@ -131,7 +131,7 @@ El componente `amp-video` acepta hasta cuatro tipos únicos de nodos HTML como e
         </tr>
         <tr>
           <td width="40%"><strong>rotate-to-fullscreen</strong></td>
-          <td>Si el vídeo está visible, se mostrará en pantalla completa cuando el usuario gire su dispositivo y entre en modo de vista horizontal. Para obtener más información, consulta la <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-video-interface.md#rotate-to-fullscreen">especificación de vídeo en AMP</a>.</td>
+          <td>Si el vídeo está visible, se mostrará en pantalla completa cuando el usuario gire su dispositivo y entre en modo de vista horizontal. Para obtener más información, consulta la <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md#rotate-to-fullscreen">especificación de vídeo en AMP</a>.</td>
         </tr>
         <tr>
           <td width="40%"><strong>atributos comunes</strong></td>
@@ -184,4 +184,4 @@ Para obtener más detalles, consulta el ejemplo de [superposición de reproducci
 
 ## Validación <a name="validation"></a>
 
-Consulta las [reglas de amp-video](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) en la especificación de la herramienta de validación de AMP.
+Consulta las [reglas de amp-video](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) en la especificación de la herramienta de validación de AMP.

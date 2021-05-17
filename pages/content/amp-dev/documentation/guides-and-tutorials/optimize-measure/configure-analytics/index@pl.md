@@ -23,7 +23,7 @@ Jeśli masz własne, autorskie rozwiązanie do pomiaru zaangażowania użytkowni
 
 Analityka AMP jest specjalnie zaprojektowana tak, aby mierzyć raz i raportować do wielu. Jeśli pracujesz już z jednym lub kilkoma dostawcami rozwiązań analitycznych, sprawdź listę [Dostawcy usług analityki](analytics-vendors.md), aby sprawdzić, czy zintegrowali oni swoje rozwiązanie z AMP. Jeśli tak, przejrzyj szczegóły ich konfiguracji i postępuj zgodnie z instrukcjami.
 
-Jeśli dostawca usług analitycznych nie jest zintegrowany z AMP, zwróć się do niego z prośbą o pomoc techniczną. Zachęcamy również do [zgłoszenia w AMP Project problemu](https://github.com/ampproject/amphtml/issues/new) z prośbą o dodanie dostawcy usług. Zobacz również artykuł [Integrowanie narzędzi analitycznych w AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+Jeśli dostawca usług analitycznych nie jest zintegrowany z AMP, zwróć się do niego z prośbą o pomoc techniczną. Zachęcamy również do [zgłoszenia w AMP Project problemu](https://github.com/ampproject/amphtml/issues/new) z prośbą o dodanie dostawcy usług. Zobacz również artykuł [Integrowanie narzędzi analitycznych w AMP HTML](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md).
 
 ### Jakich danych potrzebujesz?
 

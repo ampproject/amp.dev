@@ -129,4 +129,4 @@ Con el diseño responsive (es decir, adaptable), la anchura y la altura del ejem
 
 ## Validación <a name="validation"></a>
 
-Consulta las [reglas de amp-youtube](https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube/validator-amp-youtube.protoascii) en la especificación de la herramienta de validación de AMP.
+Consulta las [reglas de amp-youtube](https://github.com/ampproject/amphtml/blob/main/extensions/amp-youtube/validator-amp-youtube.protoascii) en la especificación de la herramienta de validación de AMP.

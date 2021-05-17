@@ -8,7 +8,7 @@ formats:
   - ads
 ---
 
-[Eksperymentalne składniki AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments) to wydane funkcje, które nie są jeszcze gotowe do powszechnego stosowania, więc są chronione przez status **eksperymentalny**.
+[Eksperymentalne składniki AMP](https://github.com/ampproject/amphtml/tree/main/tools/experiments) to wydane funkcje, które nie są jeszcze gotowe do powszechnego stosowania, więc są chronione przez status **eksperymentalny**.
 
 Programiści i użytkownicy mogą zdecydować się na korzystanie z tych funkcji przed ich pełnym wydaniem. Należy jednak zachować ostrożność, ponieważ mogą one zawierać błędy lub mieć nieoczekiwane skutki uboczne.
 
@@ -18,20 +18,20 @@ Programiści i użytkownicy mogą zdecydować się na korzystanie z tych funkcji
 
 <ul>{% for component in experimental_components %}  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li>{% endfor %}</ul>{% endif %}
 
-## Wybierz kanał AMP Dev
+## Wybierz kanał AMP Beta
 
-Kanał AMP Dev to sposób na ustawienie przeglądarki do korzystania z nowszej wersji bibliotek JS AMP.
+Kanał AMP Beta to sposób na ustawienie przeglądarki do korzystania z nowszej wersji bibliotek JS AMP.
 
-Wydanie z kanału AMP Dev **&nbsp;może być mniej stabilne** i może zawierać funkcje niedostępne dla wszystkich użytkowników. Wybierz je, jeśli chcesz pomóc w testowaniu nowych wersji AMP, zgłaszaniu błędów lub tworzeniu dokumentów wymagających nowej funkcji, która nie jest jeszcze dostępna dla wszystkich.
+Wydanie z kanału AMP Beta **&nbsp;może być mniej stabilne** i może zawierać funkcje niedostępne dla wszystkich użytkowników. Wybierz je, jeśli chcesz pomóc w testowaniu nowych wersji AMP, zgłaszaniu błędów lub tworzeniu dokumentów wymagających nowej funkcji, która nie jest jeszcze dostępna dla wszystkich.
 
-Dev Channel to świetny wybór:
+Beta Channel to świetny wybór:
 
 - do testowania i zabawy nowymi funkcjami, które nie są jeszcze dostępne dla wszystkich użytkowników.
 - do stosowania w zapewnieniu jakości (QA) w celu zapewnienia, że witryna jest zgodna z następną wersją AMP.
 
-Jeśli znajdziesz problem, który wydaje się występować tylko w wersji AMP z Dev Channel, [zgłoś problem](https://github.com/ampproject/amphtml/issues/new) z opisem. Zawsze dołączaj adres URL do strony z odtworzeniem problemu.
+Jeśli znajdziesz problem, który wydaje się występować tylko w wersji AMP z Beta Channel, [zgłoś problem](https://github.com/ampproject/amphtml/issues/new) z opisem. Zawsze dołączaj adres URL do strony z odtworzeniem problemu.
 
-Aby ustawić przeglądarkę do korzystania z kanału AMP Dev Channel, przejdź do [strony eksperymentów AMP](https://cdn.ampproject.org/experiments.html) i aktywuj eksperyment „AMP Dev Channel”. Aby otrzymywać powiadomienia o ważnych/przełomowych zmianach dotyczących AMP, zapisz się na listę mailingową [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
+Aby ustawić przeglądarkę do korzystania z kanału AMP Beta Channel, przejdź do [strony eksperymentów AMP](https://cdn.ampproject.org/experiments.html) i aktywuj eksperyment „AMP Beta Channel”. Aby otrzymywać powiadomienia o ważnych/przełomowych zmianach dotyczących AMP, zapisz się na listę mailingową [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
 
 ## Włączanie składnika eksperymentalnego
 
@@ -67,7 +67,7 @@ Dokument może włączać określone eksperymenty. W tym celu należy w nagłów
 </head>
 ```
 
-W ten sposób określone eksperymenty zostaną włączone dla wszystkich odwiedzających dokument. Nie wszystkie eksperymenty pozwalają jednak na ich włączenie na poziomie dokumentu. Pełna lista dozwolonych eksperymentów znajduje się w atrybucie `allow-doc-opt-in` w pliku projektu [`prod-config.json`](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/prod-config.json). Zauważ, że opcję włączenia dokumentu może zostać zastąpiona przez opcję wyłączenia przez użytkownika.
+W ten sposób określone eksperymenty zostaną włączone dla wszystkich odwiedzających dokument. Nie wszystkie eksperymenty pozwalają jednak na ich włączenie na poziomie dokumentu. Pełna lista dozwolonych eksperymentów znajduje się w atrybucie `allow-doc-opt-in` w pliku projektu [`prod-config.json`](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/prod-config.json). Zauważ, że opcję włączenia dokumentu może zostać zastąpiona przez opcję wyłączenia przez użytkownika.
 
 ## Próby źródła
 

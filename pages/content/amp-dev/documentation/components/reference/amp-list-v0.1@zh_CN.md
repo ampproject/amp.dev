@@ -55,7 +55,7 @@ teaser:
 * 利用 `template` 属性引用现有 `template` 或 `script` 元素的 ID。
 * 在 `amp-list` 元素中直接嵌套 `template` 或 `script` 元素。
 
-如需详细了解模板，请参阅 [AMP HTML 模板](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md)。
+如需详细了解模板，请参阅 [AMP HTML 模板](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-templates.md)。
 
 *示例：显示动态列表*
 
@@ -308,7 +308,7 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 
 ```
 
-如需查看有用示例，请访问 [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) 和 [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html)。
+如需查看有用示例，请访问 [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/main/test/manual/amp-list/infinite-scroll-1.amp.html) 和 [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/main/test/manual/amp-list/infinite-scroll-1.amp.html)。
 
 ### 属性 <a name="sample-usage"></a>
 
@@ -419,7 +419,7 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 
 ## 替换 <a name="substitutions"></a>
 
-`<amp-list>` 支持所有标准网址变量替换。如需了解详情，请参阅[替换指南](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)。
+`<amp-list>` 支持所有标准网址变量替换。如需了解详情，请参阅[替换指南](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)。
 
 例如：
 ```html
@@ -429,5 +429,5 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 
 ## 验证 <a name="validation"></a>
 
-请参阅 AMP 验证工具规范中的 [amp-list 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-list/validator-amp-list.protoascii)。
+请参阅 AMP 验证工具规范中的 [amp-list 规则](https://github.com/ampproject/amphtml/blob/main/extensions/amp-list/validator-amp-list.protoascii)。
 ,false,true

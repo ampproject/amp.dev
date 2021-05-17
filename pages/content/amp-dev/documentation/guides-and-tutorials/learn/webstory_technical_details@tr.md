@@ -271,7 +271,7 @@ Amp-story-page tarafından gösterilen [`auto-advance-after`](https://amp.dev/do
 
 ## Masaüstü deneyimi
 
-Web Hikayesi biçimi, [isteğe bağlı bir masaüstü deneyimini](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in) destekler. Bu, masaüstü deneyimini sürükleyici bir tam çerçeve moduna dönüştürerek varsayılan üç dikey panel deneyiminin yerini alır ve mobil kullanıcıların cihazları yatay olarak tuttuklarında bunları görüntülemelerine olanak tanır.
+Web Hikayesi biçimi, [isteğe bağlı bir masaüstü deneyimini](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in) destekler. Bu, masaüstü deneyimini sürükleyici bir tam çerçeve moduna dönüştürerek varsayılan üç dikey panel deneyiminin yerini alır ve mobil kullanıcıların cihazları yatay olarak tuttuklarında bunları görüntülemelerine olanak tanır.
 
 `supports-landscape` özelliğini `<amp-story>` bileşenine ekleyerek masaüstü desteğini etkinleştirin.
 

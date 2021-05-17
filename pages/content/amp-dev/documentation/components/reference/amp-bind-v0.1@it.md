@@ -222,7 +222,7 @@ Le espressioni sono simili a JavaScript, con alcune differenze importanti.
 * Le variabili non definite e l'indice della matrice fuori intervallo restituiscono `null` anziché `undefined` o degli errori.
 * Per garantire buone prestazioni, in una singola espressione possono attualmente essere presenti un massimo di 50 operandi. Nel caso in cui siano insufficienti per il tuo caso d'uso, [non esitare a contattarci](https://github.com/ampproject/amphtml/issues/new).
 
-La grammatica completa e l'implementazione delle espressioni sono riportate in [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) e [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js).
+La grammatica completa e l'implementazione delle espressioni sono riportate in [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/main/extensions/amp-bind/0.1/bind-expr-impl.jison) e [bind-expression.js](https://github.com/ampproject/amphtml/blob/main/extensions/amp-bind/0.1/bind-expression.js).
 
 # Esempi <a name="examples"></a>
 
@@ -657,7 +657,7 @@ AMP raggruppa le XMLHttpRequests (XHR) negli endpoint JSON, ovvero puoi utilizza
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>L'URL dell'endpoint remoto che restituirà il JSON per aggiornare questo <code>amp-state</code>. Deve essere un servizio HTTP CORS.
-        L'attributo <code>src</code> consente tutte le sostituzioni di variabili URL standard. Per ulteriori informazioni, consulta la <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">Guida alle sostituzioni</a>.
+        L'attributo <code>src</code> consente tutte le sostituzioni di variabili URL standard. Per ulteriori informazioni, consulta la <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">Guida alle sostituzioni</a>.
         [tip type="important"]
       L'endpoint deve implementare i requisiti specificati nella specifica <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">Richieste CORS in AMP</a>.
       [/tip]</td>

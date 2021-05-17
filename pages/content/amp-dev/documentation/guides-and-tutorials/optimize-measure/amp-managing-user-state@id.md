@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -110,7 +110,7 @@ Sama seperti kasus cache AMP, bisa diperkirakan bahwa domain untuk penampil AMP 
 
 ### Multi-konteks berarti manajemen multi-status <a name="multiple-contexts-means-multiple-state-management"></a>
 
-Penayang harus disiapkan untuk mengelola status pengguna untuk setiap konteks tampilan secara terpisah. Fitur [ID Klien](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id) AMP, yang memanfaatkan cookie atau penyimpanan lokal untuk mempertahankan status, memberikan dukungan yang diperlukan untuk halaman AMP agar mempunyai pengenal yang stabil dan semu (pseudonymous) untuk pengguna. Dari sudut pandang penerapan, digunakan cookie atau penyimpanan lokal, dan AMP memutuskan mana yang akan digunakan sesuai dengan konteks tampilan. Pilihan ini dipengaruhi oleh kelayakan teknis dalam mengelola status ini yang berskala ratusan hingga ribuan penayang.
+Penayang harus disiapkan untuk mengelola status pengguna untuk setiap konteks tampilan secara terpisah. Fitur [ID Klien](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md#client-id) AMP, yang memanfaatkan cookie atau penyimpanan lokal untuk mempertahankan status, memberikan dukungan yang diperlukan untuk halaman AMP agar mempunyai pengenal yang stabil dan semu (pseudonymous) untuk pengguna. Dari sudut pandang penerapan, digunakan cookie atau penyimpanan lokal, dan AMP memutuskan mana yang akan digunakan sesuai dengan konteks tampilan. Pilihan ini dipengaruhi oleh kelayakan teknis dalam mengelola status ini yang berskala ratusan hingga ribuan penayang.
 
 Namun, penayang halaman AMP dapat dengan mudah akhirnya merancang (tanpa disengaja) perjalanan pengguna yang melibatkan banyak konteks. Mari kita kembali ke kajian tentang contoh penggunaan keranjang belanja dan tambahkan sejumlah informasi untuk membuat **cerita pengguna** lengkap:
 
@@ -120,8 +120,8 @@ Di dalam skenario ini, pengguna menerima pengalaman keranjang belanja yang konsi
 
 **Untuk memungkinkan ini dan pengalaman apa pun yang melibatkan status pengguna, semua konteks yang dilalui pengguna harus saling berbagi status yang disimpan secara individual.** “Sempurna!”, kata Anda, tentang ide berbagi nilai cookie dengan pengenal pengguna di semua batasan kontekstual ini. Ada satu masalah: walaupun setiap konteks ini menampilkan konten yang dikontrol oleh penayang yang sama, mereka saling melihat sebagai pihak ketiga karena setiap konteks berada di domain yang berbeda.
 
-<amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png" width="1030" height="868">
-  <noscript><img alt="Kemampuan AMP untuk ditampilkan dalam banyak konteks berarti bahwa setiap konteks tersebut memiliki penyimpanannya sendiri untuk pengenal" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
+<amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/contexts-with-different-storage.png" width="1030" height="868">
+  <noscript><img alt="Kemampuan AMP untuk ditampilkan dalam banyak konteks berarti bahwa setiap konteks tersebut memiliki penyimpanannya sendiri untuk pengenal" src="https://github.com/ampproject/amphtml/raw/main/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
 
 Sebagaimana Anda lihat di dalam pembahasan berikut ini, mempunyai posisi pihak ketiga saat berinteraksi dengan cookie dapat menimbulkan kesulitan, tergantung bagaimana pengaturan browser pengguna dikonfigurasi. Secara khusus, jika cookie pihak ketiga diblokir di dalam suatu situasi tertentu, maka ini akan menghalangi kemampuan berbagi informasi di semua konteks. Pada sisi lain, jika operasi cookie pihak ketiga diizinkan, maka informasi dapat dibagikan.
 
@@ -142,8 +142,8 @@ Setelah memaparkan dasarnya, kita akan membahas topik dengan kisaran yang lebih 
 
 Dalam menelusuri panduan teknis di bawah ini, kita akan menganggap bahwa Anda akan mengikatkan **status pengguna** ke sebuah **pengenal** stabil yang mewakili pengguna. Contohnya: pengenal mungkin terlihat seperti `n34ic982n2386n30`. Di bagian server, Anda kemudian mengaitkan `n34ic982n2386n30` ke seperangkat informasi status pengguna apa pun, seperti isi keranjang belanja, daftar artikel yang telah dibaca sebelumnya, atau data lain sesuai dengan contoh penggunaan.
 
-<amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
-  <noscript><img alt="Pengenal tunggal dapat digunakan untuk mengelola status pengguna untuk banyak kasus penggunaan" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png"></noscript></amp-img>
+<amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
+  <noscript><img alt="Pengenal tunggal dapat digunakan untuk mengelola status pengguna untuk banyak kasus penggunaan" src="https://github.com/ampproject/amphtml/raw/main/spec/img/identifiers-for-use-cases.png"></noscript></amp-img>
 
 Demi kejelasan di seluruh bagian dokumen berikutnya, kita akan menyebut berbagai untai karakter yang merupakan pengenal dengan nama yang lebih mudah dibaca dan diawali dengan tanda dolar (`$`):
 
@@ -242,7 +242,7 @@ Pada halaman AMP, buat ping amp-analytics yang berisi ID Klien:
 
 Perhatikan fakta bahwa parameter yang diteruskan ke dalam pengganti ID Klien, `${clientId(uid)`, adalah `uid`. Ini adalah pilihan yang disengaja yang sesuai dengan nama cookie yang digunakan di asal penayang sebagaimana dijelaskan di dalam [Tugas 1](#task1). Untuk mencapai integrasi yang paling mulus, Anda harus menerapkan teknik yang sama.
 
-Menyangkut penerapan amp-analytics selanjutnya, kunjungi dokumentasi untuk [konfigurasi amp-analytics](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) untuk mengetahui selengkapnya tentang cara menyiapkan permintaan amp-analytics atau untuk memodifikasi permintaan vendor analitis Anda. Ping dapat dimodifikasi lebih lanjut untuk mentransportasikan data tambahan yang Anda tentukan secara langsung atau dengan memanfaatkan [penggantian AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) lain.
+Menyangkut penerapan amp-analytics selanjutnya, kunjungi dokumentasi untuk [konfigurasi amp-analytics](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) untuk mengetahui selengkapnya tentang cara menyiapkan permintaan amp-analytics atau untuk memodifikasi permintaan vendor analitis Anda. Ping dapat dimodifikasi lebih lanjut untuk mentransportasikan data tambahan yang Anda tentukan secara langsung atau dengan memanfaatkan [penggantian AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) lain.
 
 > **Pengetahuan lain:**
 > Mengapa kita menggunakan nama `uid` untuk parameter yang diteruskan ke fitur ID Klien? Parameter yang diambil pengganti `clientId(...)` digunakan untuk menentukan cakupan. Anda sebenarnya dapat menggunakan fitur ID Klien untuk berbagai contoh penggunaan dan, sebagai hasilnya, menghasilkan banyak ID klien. Parameter membedakan contoh-contoh penggunaan sehingga Anda dapat menggunakannya untuk menentukan contoh penggunaan mana yang ingin Anda berikan ID Klien. Contohnya, Anda mungkin ini mengirimkan pengenal yang berbeda kepada pihak ketiga, seperti pengiklan, dan Anda dapat menggunakan parameter “cakupan” untuk melakukan hal ini.
@@ -378,12 +378,12 @@ Secara umum, jika membaca dan menulis cookie pihak ketiga tidak diizinkan, akan 
 
 Di dalam tugas ini, kita akan membahas pengoptimalan tambahan yang akan membantu saat pengguna bergerak menelusuri konteks dari satu halaman ke halaman lainnya, baik **melalui penautan maupun pengiriman formulir**. Di dalam situasi ini, dan dengan kerja penerapan yang dijelaskan di bawah ini, kita dapat menyiapkan rencana yang sepenuhnya efektif untuk mengelola status pengguna di semua konteks.
 
-<amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
-  <noscript><img alt="Tautan dapat digunakan untuk meneruskan informasi pengenal dari satu konteks ke konteks lain (terkait)" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png"></noscript></amp-img>
+<amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
+  <noscript><img alt="Tautan dapat digunakan untuk meneruskan informasi pengenal dari satu konteks ke konteks lain (terkait)" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-form-identifier-forwarding.png"></noscript></amp-img>
 
 ##### Menggunakan fitur-fitur penggantian <a name="using-substitution-features"></a>
 
-Pendekatan kita akan menggunakan dua jenis dari [penggantian variabel AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md).
+Pendekatan kita akan menggunakan dua jenis dari [penggantian variabel AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-var-substitutions.md).
 
 **Untuk memperbarui tautan keluar untuk menggunakan penggantian ID Klien**: Tentukan sebuah parameter kueri yang baru, `ref_id` (“ID perujuk”), yang akan muncul di dalam URL, dan indikasikan **pengenal konteks asal** untuk pengguna. Atur parameter kueri ini agar sama dengan nilai penggantian ID Klien AMP:
 
@@ -434,8 +434,8 @@ Dengan mengambil langkah-langkah ini, ID Klien tersedia untuk server target dan/
 https://example.com/step2.html?ref_id=$amp_client_id
 [/sourcecode]
 
-<amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
-  <noscript><img alt="Contoh bagaimana pengenal dalam konteks AMP viewer dapat diteruskan melalui link ke konteks asal penerbit" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png"></noscript></amp-img>
+<amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
+  <noscript><img alt="Contoh bagaimana pengenal dalam konteks AMP viewer dapat diteruskan melalui link ke konteks asal penerbit" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-1.png"></noscript></amp-img>
 
 Jika pengguna tiba di halaman yang berisi nilai `ref_id`, baik sebagai parameter URL atau pada tajuk, kita berpeluang untuk memproses pengenal `ref_id` bersama pengenal yang diungkap melalui halaman itu sendiri (yaitu sebuah nilai cookie). Dengan menyertakan keduanya di dalam ping analitis, server analitis Anda dapat bekerja dengan kedua nilai ini secara serentak, dan, karena mengetahui bahwa keduanya terkait, merefleksikan hubungan ini di backend Anda. Langkah selanjutnya memberikan uraian tentang cara melakukan hal ini.
 
@@ -458,8 +458,8 @@ Untuk memproses selama pengalihan, tangani permintaan di server dan ekstrak para
 
 Untuk memproses pada halaman landing atau halaman tujuan, pendekatan akan berbeda-beda tergantung apakah halaman tersebut sebuah halaman AMP atau halaman non-AMP.
 
-<amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
-  <noscript><img alt="Contoh cara membuat ping analitik yang berisi pengenal dari konteks sebelumnya yang disediakan melalui URL dan pengenal dari konteks saat ini" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
+<amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
+  <noscript><img alt="Contoh cara membuat ping analitik yang berisi pengenal dari konteks sebelumnya yang disediakan melalui URL dan pengenal dari konteks saat ini" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
 
 _Pembaruan pada halaman AMP:_ Gunakan fitur penggantian Parameter Kueri di konfigurasi amp-analytics Anda untuk memperoleh nilai pengenal `ref_id` di dalam URL tersebut. Fitur Parameter Kueri mengambil sebuah parameter yang mengindikasikan “kunci” pasangan kunci-nilai yang diinginkan di dalam URL dan menghasilkan nilai yang sesuai. Gunakan fitur ID Klien seperti yang telah kita kerjakan untuk mendapatkan pengenal untuk konteks halaman AMP.
 
@@ -594,7 +594,7 @@ Anda perlu memastikan bahwa Anda hanya memproses hal seperti `$amp_client_id` da
 
 Pada halaman non-AMP, periksa `document.referrer` langsung pada sisi klien atau teruskan nilai tersebut sebagia bagian dari ping analitis agar dapat mengesahkan pada sisi server. Jika nilai perujuk dapat Anda percayai, maka Anda dapat menerima dan memproses nilai yang dihasilkan dari URL halaman landing, seperti `orig_user_id` di dalam contoh di atas.
 
-Pada halaman AMP, gunakan variabel penggantian [Perujuk Dokumen](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#document-referrer) untuk meneruskan nilai perujuk sebagai bagian dari ping analitis. Pemrosesan sisi server adalah satu-satunya pilihan yang ada. Untuk menggambarkannya, berikut ini adalah ping analitis yang dapat dikirimkan halaman landing yang berisi (1) nilai ID Klien halaman saat ini, (2) nilai yang diteruskan melalui URL yang telah kita atur menjadi nilai ID Klien di dalam halaman rujukan, dan (3) informasi perujuk itu sendiri untuk mengesahkan nilai (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
+Pada halaman AMP, gunakan variabel penggantian [Perujuk Dokumen](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md#document-referrer) untuk meneruskan nilai perujuk sebagai bagian dari ping analitis. Pemrosesan sisi server adalah satu-satunya pilihan yang ada. Untuk menggambarkannya, berikut ini adalah ping analitis yang dapat dikirimkan halaman landing yang berisi (1) nilai ID Klien halaman saat ini, (2) nilai yang diteruskan melalui URL yang telah kita atur menjadi nilai ID Klien di dalam halaman rujukan, dan (3) informasi perujuk itu sendiri untuk mengesahkan nilai (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
 
 Jika Anda tidak dapat memercayai perujuk, maka tolak nilai apa pun yang disediakan melalui parameter URL dan jangan gunakan.
 

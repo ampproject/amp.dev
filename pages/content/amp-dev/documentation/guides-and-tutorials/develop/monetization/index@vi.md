@@ -100,7 +100,7 @@ Chúc mừng! Bạn đang phục vụ quảng cáo trên trang AMP của mình!
 
 ## Phục vụ các quảng cáo AMPHTML bán hàng trực tiếp
 
-Thành phần [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) phục vụ quảng cáo từ mạng lưới mà bạn đã chọn. Các quảng cáo này có thể là quảng cáo HTML tiêu chuẩn hay quảng cáo AMPHTML, với điều kiện mạng lưới quảng cáo này hỗ trợ quảng cáo AMPHTML. Để phục vụ các quảng cáo bán hàng trực tiếp của bạn dưới dạng quảng cáo AMPHTML, hãy tạo quảng cáo trong AMP HTML theo yêu cầu về [thông số quảng cáo AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) và sử dụng một [máy chủ quảng cáo phục vụ các quảng cáo AMPHTML](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
+Thành phần [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) phục vụ quảng cáo từ mạng lưới mà bạn đã chọn. Các quảng cáo này có thể là quảng cáo HTML tiêu chuẩn hay quảng cáo AMPHTML, với điều kiện mạng lưới quảng cáo này hỗ trợ quảng cáo AMPHTML. Để phục vụ các quảng cáo bán hàng trực tiếp của bạn dưới dạng quảng cáo AMPHTML, hãy tạo quảng cáo trong AMP HTML theo yêu cầu về [thông số quảng cáo AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) và sử dụng một [máy chủ quảng cáo phục vụ các quảng cáo AMPHTML](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/a4a-readme.md#publishers).
 
 ## Tăng cường dữ liệu mục tiêu cho các yêu cầu quảng cáo
 
@@ -112,8 +112,8 @@ Bạn có thể tìm hiểu thêm về RTC từ video YouTube này:
 
 Hoặc, tìm hiểu thêm từ các tài nguyên RTC này:
 
-- [Hướng dẫn triển khai cho nhà phát hành AMP RTC](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
-- [Cấu hình trong Thời gian Thực AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
+- [Hướng dẫn triển khai cho nhà phát hành AMP RTC](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
+- [Cấu hình trong Thời gian Thực AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-documentation.md)
 
 ## Biện pháp thực hành tiên tiến nhất
 
@@ -124,7 +124,7 @@ Sau đây là một số mẹo để tối ưu hóa hiệu quả quảng cáo ch
 - **Đặt số lượng quảng cáo giống nhau** trên các Trang AMP và Trang không phải AMP để cho doanh thu tối đa trên mỗi trang.
 - **Đặt quảng cáo đầu tiên ngay bên dưới màn hiển thị thứ nhất **("dưới bề mặt") để cung cấp một trải nghiệm người dùng tối ưu.
 - Trừ khi bạn đang sử dụng các truy vấn CSS hoặc nội dung đa phương tiện nâng cao, **hãy đảm bảo đơn vị quảng cáo của bạn được đặt chính giữa trang** để cung cấp cho người dùng một trải nghiệm web di động tối ưu.
-- Cho phép các [yêu cầu quảng cáo nhiều kích cỡ](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests) trên kho AMP của bạn để tăng áp lực đấu giá quảng cáo và thúc đẩy doanh thu.
+- Cho phép các [yêu cầu quảng cáo nhiều kích cỡ](https://github.com/ampproject/amphtml/blob/main/ads/README.md#support-for-multi-size-ad-requests) trên kho AMP của bạn để tăng áp lực đấu giá quảng cáo và thúc đẩy doanh thu.
 
 ### Nhu cầu & định giá: nhận giá tốt cho quảng cáo của bạn
 

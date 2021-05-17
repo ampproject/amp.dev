@@ -30,9 +30,9 @@ Lihat contoh iklan **DoubleClick** ini:
 </amp-ad>
 ```
 
-Seperti yang Anda lihat, konfigurasi ini sangatlah mudah. Perhatikan atribut `type`, yang menunjukkan komponen [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) dari platform iklan yang ingin kita gunakan. Dalam kasus ini, kita ingin menggunakan platform [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md), sehingga kita menentukan `doubleclick` sebagai nilainya.
+Seperti yang Anda lihat, konfigurasi ini sangatlah mudah. Perhatikan atribut `type`, yang menunjukkan komponen [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) dari platform iklan yang ingin kita gunakan. Dalam kasus ini, kita ingin menggunakan platform [DoubleClick](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md), sehingga kita menentukan `doubleclick` sebagai nilainya.
 
-`data-slot` adalah atribut yang lebih unik. Dalam [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), atribut apa pun yang diawali dengan `data-` adalah atribut khusus vendor. Artinya, tidak semua vendor akan memerlukan atribut khusus ini, dan tidak semua vendor pula akan merespons jika atribut tersebut disediakan. Contohnya: bandingkan contoh **DoubleClick** di atas dengan iklan pengujian berikut ini dari platform [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md):
+`data-slot` adalah atribut yang lebih unik. Dalam [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), atribut apa pun yang diawali dengan `data-` adalah atribut khusus vendor. Artinya, tidak semua vendor akan memerlukan atribut khusus ini, dan tidak semua vendor pula akan merespons jika atribut tersebut disediakan. Contohnya: bandingkan contoh **DoubleClick** di atas dengan iklan pengujian berikut ini dari platform [A9](https://github.com/ampproject/amphtml/blob/main/ads/a9.md):
 
 ```html
 <amp-ad

@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -100,7 +100,7 @@ AMPHTML 광고는 AMP 페이지에서 빠르고 효과적인 광고를 렌더링
 
 ### 상용구 <a name="boilerplate"></a>
 
-AMPHTML 광고에는 [일반 AMP 문서](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md)와는 다르고 훨씬 단순한 상용구 스타일 라인이 필요합니다.
+AMPHTML 광고에는 [일반 AMP 문서](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md)와는 다르고 훨씬 단순한 상용구 스타일 라인이 필요합니다.
 
 [sourcecode:html]
 
@@ -269,7 +269,7 @@ _예시:_ `<amp-lightbox>`는 아직 포함되지 않습니다. 그 이유는 �
 
 ### HTML 태그 <a name="html-tags"></a>
 
-아래 항목은 AMPHTML 광고에서 _허용되는_ 태그입니다. 명시적으로 허용되지 않은 태그는 사용 금지입니다. 이 목록은 일반 [AMP 태그 추가 허용 목록](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md)의 하위 집합입니다. 해당 목록과 마찬가지로 이 목록의 항목도 [HTML 요소](http://www.w3.org/TR/html5/single-page.html#html-elements)의 섹션 4에 명시된 HTML5 사양과 일치하는 순서로 열거됩니다.
+아래 항목은 AMPHTML 광고에서 _허용되는_ 태그입니다. 명시적으로 허용되지 않은 태그는 사용 금지입니다. 이 목록은 일반 [AMP 태그 추가 허용 목록](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/../../spec/amp-tag-addendum.md)의 하위 집합입니다. 해당 목록과 마찬가지로 이 목록의 항목도 [HTML 요소](http://www.w3.org/TR/html5/single-page.html#html-elements)의 섹션 4에 명시된 HTML5 사양과 일치하는 순서로 열거됩니다.
 
 포함되지 않은 대다수의 항목은 성능 개선이 목적이거나 HTML5 표준이 아닌 태그이므로 누락되었습니다. 예를 들어 `<noscript>` 태그가 누락된 이유는 AMPHTML 광고가 사용 가능한 JavaScript에 의존하므로 `<noscript>` 블록은 실행되지 않으며 결과적으로 광고 크기가 커지고 대역폭과 지연만 소모될 것이기 때문입니다. 이와 유사하게 `<acronym>`, `<big>` 등도 HTML5와 호환되지 않으므로 허용되지 않습니다.
 

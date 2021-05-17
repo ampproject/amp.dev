@@ -23,6 +23,7 @@ const config = require('@lib/config.js');
 const log = require('@lib/utils/log')('Sample Renderer');
 const fetch = require('node-fetch');
 const {promisify} = require('util');
+const {optimize} = require('@lib/utils/ampOptimizer.js');
 
 const fs = require('fs');
 const readFileAsync = promisify(fs.readFile);
@@ -37,7 +38,7 @@ const DIR_DOCS = utils.project.paths.PAGES_DEST;
  */
 class SampleRenderer {
   /**
-   * Creates a new SampleRendered and registers the sample handler for
+   * Creates a new SampleRenderer and registers the sample handler for
    * the given router.
    * @param {Router} router - the express router serving the sample
    * @param {Function} handler - a callback rendering the sample
@@ -70,7 +71,9 @@ class SampleRenderer {
     return async (request, response, next) => {
       try {
         const template = await this.getTemplate_(request);
-        handler(request, response, template);
+        const renderedTemplate = await handler(request, response, template);
+
+        response.send(await optimize(request, renderedTemplate));
       } catch (err) {
         log.error(err);
         next(err);

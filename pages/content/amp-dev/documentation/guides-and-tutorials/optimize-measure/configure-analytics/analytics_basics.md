@@ -71,7 +71,7 @@ insert something like the following into the body of your AMP page:
 In this example,
 the page view data gets sent to the defined URL, along with a random number.
 The `RANDOM` variable is one of many
-[substitution variables in the AMP platform](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
+[substitution variables in the AMP platform](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md).
 Learn more about
 [Variable substitution](analytics_basics.md#variable-substitution) here.
 
@@ -193,7 +193,7 @@ If you’re interested in going beyond what the default config can give you, rea
 Both the [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) and
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) components
 allow all standard URL variable substitutions (see
-[AMP HTML Variable Substitutions](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)).
+[AMP HTML Variable Substitutions](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)).
 In the following example,
 the page view request is sent to the URL,
 along with the current AMP document’s canonical URL, its title, and a
@@ -270,7 +270,7 @@ The publisher's website and the cache are likely to have different domains.
 For security reasons,
 browsers can (and often will) limit access to another domain’s cookies
 (see also
-[Tracking users across origins](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)).
+[Tracking users across origins](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md)).
 
 By default,
 AMP will manage the provision of a client ID whether the page is accessed from the publisher's original website or through a cache.
@@ -308,6 +308,6 @@ by a random base64 encoded string.
 
 Learn more about client ID substitution,
 including how to add an optional user notification ID, in
-[Variables supported in AMP analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
+[Variables supported in AMP analytics](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md).
 
 Learn more: Continue to learn about analytics with [Deep Dive into AMP Analytics](deep_dive_analytics.md) and [Use Cases](use_cases.md).

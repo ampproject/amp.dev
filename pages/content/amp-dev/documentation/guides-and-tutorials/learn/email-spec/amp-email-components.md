@@ -12,7 +12,7 @@ toc: true
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -37,6 +37,13 @@ limitations under the License.
 
 
 The following is the list of [AMP components](https://amp.dev/documentation/components/?format=email) that are currently supported in AMP email messages. The components are grouped into the following categories:
+
+<!--
+  (Do not remove or edit this comment.)
+
+  This table-of-contents is automatically generated. To generate it, run:
+    amp markdown-toc --fix
+-->
 
 -   [Dynamic Content](#dynamic-content)
 -   [Layout](#layout)

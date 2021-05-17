@@ -225,7 +225,7 @@ Pingback はオプションです。無効にするには、`noPingback` 設定�
 
 ### アクセス URL 変数 <a name="access-url-variables"></a>
 
-各種エンドポイントの URL を設定する場合、サイト運営者は代入変数を使用できます。代入変数の完全なリストは [AMP 変数の仕様](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)で定義されています。さらにこの仕様では、アクセス固有の変数（`READER_ID`、`AUTHDATA` など）がいくつか追加されています。主な変数について以下の表で説明します。
+各種エンドポイントの URL を設定する場合、サイト運営者は代入変数を使用できます。代入変数の完全なリストは [AMP 変数の仕様](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)で定義されています。さらにこの仕様では、アクセス固有の変数（`READER_ID`、`AUTHDATA` など）がいくつか追加されています。主な変数について以下の表で説明します。
 
 <table>
   <tr>
@@ -495,7 +495,7 @@ AMP では、ログインとサブスクリプションを区別しません。�
 
 ## amp-analytics** との統合 <a name="integration-with-amp-analytics"></a>
 
-amp-analytics** との統合は、[amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) に記載されています。
+amp-analytics** との統合は、[amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/amp-access-analytics.md) に記載されています。
 
 ## CORS のオリジンのセキュリティ <a name="cors-origin-security"></a>
 
@@ -562,7 +562,7 @@ AMP では、ファーストパーティのウィンドウ、ポップアップ�
 
 ## 付録 A: 「amp-access」の式の文法 <a name="appendix-a-amp-access-expression-grammar"></a>
 
-最新の BNF の文法は [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison) ファイルで確認できます。
+最新の BNF の文法は [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/0.1/access-expr-impl.jison) ファイルで確認できます。
 
 この文法の一部を以下に示します。
 
@@ -602,4 +602,4 @@ literal: STRING | NUMERIC | TRUE | FALSE | NULL
 
 ## 検証 <a name="validation"></a>
 
-AMP 検証ツールの仕様で [amp-access のルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/validator-amp-access.protoascii)をご確認ください。
+AMP 検証ツールの仕様で [amp-access のルール](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/validator-amp-access.protoascii)をご確認ください。

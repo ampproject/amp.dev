@@ -59,7 +59,7 @@ AMP sayfanızın gövdesine aşağıdakine benzer bir şey ekleyin:
 Bu örnekte,
 sayfa görünümü verileri rastgele bir sayıyla birlikte tanımlanan URL›ye gönderilir.
 `RANDOM` değişkeni,
-[AMP platformundaki değiştirme değişkenlerinden](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) bir tanesidir.
+[AMP platformundaki değiştirme değişkenlerinden](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) bir tanesidir.
 
 [Değişken değiştirme](analytics_basics.md) hakkında buradan daha fazla bilgi edinebilirsiniz.
 
@@ -119,7 +119,7 @@ Tetikleme sayfa görüntüleme isteği uyarısının ne zaman çıkacağını be
 Hem [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) hem de
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) bileşenleri
 standart URL değişken değiştirmelerin tamamına izin verir (bkz.
-[AMP HTML Değişken Değiştirme](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)).
+[AMP HTML Değişken Değiştirme](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)).
 Aşağıdaki örnekte,
 sayfa görünümü isteği
 mevcut AMP belgelerinin standart URL›si, başlığı ve bir
@@ -138,7 +138,7 @@ aynı zamanda etiket yapılandırması içerisinde özel olarak tanımlanan değ
  ya da platform tanımlı değişken için bir istek dizesi içinde kullanın.
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) etiketi, şablonu
 analitik isteğinin oluşturulduğu zamandaki gerçek değeri ile değiştirecektir (ayrıca bkz.
-[Amp-analitik içinde desteklenen değişkenler](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)).
+[Amp-analitik içinde desteklenen değişkenler](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md)).
 
 Aşağıdaki [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) örneğinde,
 sayfa görünümü isteği, [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) yapılandırması içerisinde
@@ -193,7 +193,7 @@ Yayıncının web sitesi ile önbelleğin farklı etki alanlarına sahip olması
 Güvenlik nedenleriyle,
 tarayıcılar bir başka etki alanının çerezlerine erişimi kısıtlayabilir (ve genellikle de kısıtlarlar)
 (ayrıca bkz.
-[Kaynaklar arasında kullanıcıları izleme](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/cross-origin-tracking.md)).
+[Kaynaklar arasında kullanıcıları izleme](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/cross-origin-tracking.md)).
 
 Varsayılan olarak,
 AMP sayfaya bir yayıncının orjininal web sitesinden mi yoksa bir önbellekten mi erişildiğine göre istemci kimliğinin sağlanmasını yönetecektir.
@@ -231,4 +231,4 @@ rastgele bir base64 şifreli dize oluşturacaktır.
 
 İsteğe bağlı bir kullanıcı bildirim kimliğinin nasıl ekleneceği dahil,
 istemci kimliği değişikliği hakkında daha fazla bilgi için,
-bkz. [AMP analitikte desteklenen değişkenler](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
+bkz. [AMP analitikte desteklenen değişkenler](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md).

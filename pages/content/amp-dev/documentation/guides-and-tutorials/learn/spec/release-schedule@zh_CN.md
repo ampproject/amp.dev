@@ -11,7 +11,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/contributing/release-schedule.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/release-schedule.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -41,7 +41,7 @@ AMP 运行时和扩展项通过各种不同的*发布渠道*提供。每种渠�
 
 每夜版提供了快速检测和解决问题的机制，避免问题遗留到任务量更加繁重的*每周*发布渠道中。它还可以降低受新引入问题影响的用户的数量。
 
-用户可以选择加入**每夜**渠道，以测试在过去几天合并的拉取请求。有关详细信息，请参阅 [DEVELOPING.md] 中的[选择加入](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md#opting-in-to-pre-release-channels)部分。
+用户可以选择加入**每夜**渠道，以测试在过去几天合并的拉取请求。有关详细信息，请参阅 [DEVELOPING.md] 中的[选择加入](https://github.com/ampproject/amphtml/blob/main/docs/developing.md#opting-in-to-pre-release-channels)部分。
 
 ### 每周 <a name="weekly"></a>
 
@@ -49,13 +49,13 @@ AMP 运行时和扩展项通过各种不同的*发布渠道*提供。每种渠�
 
 使用两套构建配置创建发布构建：_Canary_ 配置和*正式*配置。**实验**和 **Beta** 发布渠道源于同一提交。但是，**实验**渠道使用 _Canary_ 配置，而 **Beta** 渠道则使用*正式*配置。_Canary_ 配置支持在*正式*配置中可能会被关闭的实验性组件和功能。通过[实验页面](https://cdn.ampproject.org/experiments.html)，可以选择加入**实验**或 **Beta** 渠道。
 
-**稳定**发布渠道使用*正式*配置构建，将提供给大多数 AMP 页面。由于 **Beta** 发布渠道同样基于*正式*配置构建，因此它代表了将于下周升级到**稳定**渠道的确切构建（有可能通过挑选来解决最后时刻出现的问题；请参阅[贡献代码](https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md#Cherry-picks)）。
+**稳定**发布渠道使用*正式*配置构建，将提供给大多数 AMP 页面。由于 **Beta** 发布渠道同样基于*正式*配置构建，因此它代表了将于下周升级到**稳定**渠道的确切构建（有可能通过挑选来解决最后时刻出现的问题；请参阅[贡献代码](https://github.com/ampproject/amphtml/blob/main/docs/contributing-code.md#Cherry-picks)）。
 
 #### Beta 和实验渠道 <a name="beta-and-experimental-channels"></a>
 
 _Beta_ 和*实验*渠道是下一个稳定版 AMP 的预发布候选。每周二（[发布冻结](#release-freezes)周除外）都会将上周的**每夜**版升级到开发者选择加入的 **Beta** 和**实验**渠道。我们将用一天的时间确认这些渠道中没有引入功能退化或性能下降问题，并于周三将此版本提供给一小部分页面。然后，在下周二将同一版本升级到**稳定**渠道。
 
-可以选择加入这些渠道。有关详细信息，请参阅 [DEVELOPING.md] 中的[选择加入](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md#opting-in-to-pre-release-channels)部分。
+可以选择加入这些渠道。有关详细信息，请参阅 [DEVELOPING.md] 中的[选择加入](https://github.com/ampproject/amphtml/blob/main/docs/developing.md#opting-in-to-pre-release-channels)部分。
 
 选择加入 *Beta 渠道*的目的是：
 
@@ -71,7 +71,7 @@ _Beta_ 和*实验*渠道是下一个稳定版 AMP 的预发布候选。每周二
 
 ### 长期稳定 (lts) <a name="long-term-stable-lts"></a>
 
-**lts** 发布渠道以一个月为间隔提供之前的**稳定**构建。在每个月的第二个周一，当前的**稳定**版将升级到 **lts**。并不建议所有 AMP 发布商都加入此渠道。此渠道旨在提供给不希望频繁对其网站执行 QA 的发布商，使其可以选择特定网页加入 **lts** 渠道（请参阅 <a href="https://github.com/ampproject/amphtml/blob/master/contributing/lts-release.md" data-md-type="link">**lts** 自述文件</a>）。
+**lts** 发布渠道以一个月为间隔提供之前的**稳定**构建。在每个月的第二个周一，当前的**稳定**版将升级到 **lts**。并不建议所有 AMP 发布商都加入此渠道。此渠道旨在提供给不希望频繁对其网站执行 QA 的发布商，使其可以选择特定网页加入 **lts** 渠道（请参阅 <a href="https://github.com/ampproject/amphtml/blob/main/docs/lts-release.md" data-md-type="link">**lts** 自述文件</a>）。
 
 如果每个月的第二个周一为节假日，将在[发布冻结](#release-freezes)结束后执行升级。
 

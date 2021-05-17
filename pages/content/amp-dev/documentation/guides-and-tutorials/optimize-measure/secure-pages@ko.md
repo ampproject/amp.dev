@@ -20,6 +20,6 @@ author: CrystalOnScript
 />
 ```
 
-[여기에서 전체 예시를 확인할 수 있습니다](https://github.com/ampproject/amphtml/blob/master/examples/csp.amp.html).
+[여기에서 전체 예시를 확인할 수 있습니다](https://github.com/ampproject/amphtml/blob/main/examples/csp.amp.html).
 
 [tip type="read-on"] [여기에서 보안 취약성 및 CSP 보호에 관한 정보](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)를 자세히 알아보세요. [/tip]

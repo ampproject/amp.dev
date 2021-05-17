@@ -36,7 +36,7 @@ AMP キャッシュのすべてのドキュメントは、https プロトコル�
 
 ## ドメイン名接尾辞
 
-すべての AMP キャッシュは JSON ファイルで登録されており、[AMPHTML リポジトリ](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json)にあります。このファイルで使用されるサンプルのキャッシュレコードは、以下のようになっています。
+すべての AMP キャッシュは JSON ファイルで登録されており、[AMPHTML リポジトリ](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json)にあります。このファイルで使用されるサンプルのキャッシュレコードは、以下のようになっています。
 
 ```json
 {
@@ -179,7 +179,7 @@ AMP キャッシュの Origin ヘッダーの値は、以下のいずれかの�
 - `https://www-example-com.cdn.ampproject.org`
 - `https://v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq.cdn.ampproject.org`
 
-まず、プロトコル接頭辞（`https://`）と AMP キャッシュのドメイン接尾辞（`.cdn.ampproject.org` など）を取り除きます。この接尾辞は、[caches.json](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json) に記載されるキャッシュのいずれかの場合があります。残りの文字列が「ドメイン接頭辞」となりますが、上記の 2 つの例の場合の「ドメイン接頭辞」は、以下のようになります。
+まず、プロトコル接頭辞（`https://`）と AMP キャッシュのドメイン接尾辞（`.cdn.ampproject.org` など）を取り除きます。この接尾辞は、[caches.json](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json) に記載されるキャッシュのいずれかの場合があります。残りの文字列が「ドメイン接頭辞」となりますが、上記の 2 つの例の場合の「ドメイン接頭辞」は、以下のようになります。
 
 - `www-example-com`
 - `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq`

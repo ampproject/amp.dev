@@ -2,7 +2,7 @@
 $title: Recursos experimentais
 ---
 
-Os [componentes experimentais de AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments)
+Os [componentes experimentais de AMP](https://github.com/ampproject/amphtml/tree/main/tools/experiments)
 são recursos lançados que ainda não estão prontos para uso geral. Por isso, esses componentes são protegidos por um status **experimental**.
 
 Os desenvolvedores e os usuários podem optar por usar esses recursos antes que eles estejam totalmente disponíveis para o público.
@@ -21,7 +21,7 @@ Ativar o Canal Dev é ideal para:
 
 Se você encontrar um problema que pareça ocorrer somente na versão do Canal Dev AMP, [envie um relatório do problema](https://github.com/ampproject/amphtml/issues/new) com uma descrição. Sempre inclua o URL de uma página que mostre esse problema.
 
-Para ativar o Canal Dev AMP no navegador, acesse [a página de experimentos de AMP](https://cdn.ampproject.org/experiments.html) e ative o experimento "AMP Dev Channel" (Canal Dev AMP, em inglês). Para receber notificações sobre alterações/novidades importantes das AMP, inscreva-se na lista de e-mails [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
+Para ativar o Canal Dev AMP no navegador, acesse [a página de experimentos de AMP](https://cdn.ampproject.org/experiments.html) e ative o experimento "AMP Beta Channel" (Canal Dev AMP, em inglês). Para receber notificações sobre alterações/novidades importantes das AMP, inscreva-se na lista de e-mails [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
 
 ## Ativar um componente experimental
 

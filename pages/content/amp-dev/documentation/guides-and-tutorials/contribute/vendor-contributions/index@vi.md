@@ -20,7 +20,7 @@ Tài liệu này mô tả các kỳ vọng cho AMP bên thứ ba và định ngh
 
 # Hướng dẫn đóng góp
 
-Mọi đóng góp chung đều cần tuân thủ [Hướng dẫn chung về AMPHTML trong CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Chúng tôi kỳ vọng bên thứ ba sẽ kiểm tra, duy trì và cập nhật đóng góp của họ theo nhiều mức độ khác nhau.
+Mọi đóng góp chung đều cần tuân thủ [Hướng dẫn chung về AMPHTML trong CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md). Chúng tôi kỳ vọng bên thứ ba sẽ kiểm tra, duy trì và cập nhật đóng góp của họ theo nhiều mức độ khác nhau.
 
 Để đủ điều kiện được bao gồm, mọi cấp độ đóng góp đều phải:
 
@@ -48,7 +48,7 @@ Sau khi quyết định cấp độ đóng góp phù hợp với trường hợp
 
 Các bên thứ ba thêm cấu hình hoặc tính năng vào các phần mở rộng hiện có sử dụng API được cung cấp để triển khai chức năng của họ. Nếu thành phần này không tồn tại, họ có thể đề xuất một thành phần mới.
 
-Lôgic dành riêng cho bên thứ ba duy nhất được duyệt vào kho lưu trữ AMP là một cấu hình của bên thứ ba. Việc thêm một bên thứ ba mới vào một đóng góp cấp 1 hiện có thường sẽ không cần xem lại thiết kế. Các bên thứ ba có thể làm theo tài liệu tích hợp của thành phần, ví dụ như [Tích hợp mạng lưới quảng cáo vào AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+Lôgic dành riêng cho bên thứ ba duy nhất được duyệt vào kho lưu trữ AMP là một cấu hình của bên thứ ba. Việc thêm một bên thứ ba mới vào một đóng góp cấp 1 hiện có thường sẽ không cần xem lại thiết kế. Các bên thứ ba có thể làm theo tài liệu tích hợp của thành phần, ví dụ như [Tích hợp mạng lưới quảng cáo vào AMP](https://github.com/ampproject/amphtml/blob/main/ads/README.md).
 
 ### Các kỳ vọng cho bên thứ ba
 
@@ -61,9 +61,9 @@ Lôgic dành riêng cho bên thứ ba duy nhất được duyệt vào kho lưu 
 
 [**amp-ad**](../../../components/reference/amp-ad.md)
 
-Các nhà cung cấp quảng cáo nên đọc [tổng quan về phát triển](https://github.com/ampproject/amphtml/tree/master/ads#overview) và [hướng dẫn cho nhà phát triển](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) về việc bổ sung hỗ trợ cho [`amp-ad`](../../../components/reference/amp-ad.md). Tùy thuộc vào công nghệ quảng cáo mà công ty của bạn cung cấp, bạn có thể thấy [các hướng dẫn tích hợp này](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads) hữu ích.
+Các nhà cung cấp quảng cáo nên đọc [tổng quan về phát triển](https://github.com/ampproject/amphtml/tree/main/ads#overview) và [hướng dẫn cho nhà phát triển](https://github.com/ampproject/amphtml/tree/main/ads#developer-guidelines-for-a-pull-request) về việc bổ sung hỗ trợ cho [`amp-ad`](../../../components/reference/amp-ad.md). Tùy thuộc vào công nghệ quảng cáo mà công ty của bạn cung cấp, bạn có thể thấy [các hướng dẫn tích hợp này](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads) hữu ích.
 
-Có rất nhiều đơn vị cung cấp quảng cáo đã bổ sung hỗ trợ cho các tính năng liên quan đến quảng cáo như amp-ad. Sau đây là một [yêu cầu kéo mẫu](https://github.com/ampproject/amphtml/pull/2299) từ mạng lưới quảng cáo [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
+Có rất nhiều đơn vị cung cấp quảng cáo đã bổ sung hỗ trợ cho các tính năng liên quan đến quảng cáo như amp-ad. Sau đây là một [yêu cầu kéo mẫu](https://github.com/ampproject/amphtml/pull/2299) từ mạng lưới quảng cáo [Criteo](https://github.com/ampproject/amphtml/blob/main/ads/criteo.md).
 
 ## Đóng góp cấp 2
 

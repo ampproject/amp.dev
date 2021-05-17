@@ -61,4 +61,4 @@ Questo elemento include [attributi comuni](../../../documentation/guides-and-tut
 
 ## Convalida <a name="validation"></a>
 
-Consulta le [regole amp-layout](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) nella specifica dello Strumento di convalida AMP.
+Consulta le [regole amp-layout](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) nella specifica dello Strumento di convalida AMP.

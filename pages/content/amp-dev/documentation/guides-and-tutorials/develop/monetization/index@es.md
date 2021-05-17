@@ -100,7 +100,7 @@ Dependiendo de la red publicitaria, puede elegir mostrar un elemento de respaldo
 
 ## Cómo publicar anuncios AMPHTML de venta directa
 
-Con el componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) se publican anuncios de la red que usted especifique. Estos pueden ser anuncios HTML estándar o anuncios AMPHTML, siempre y cuando la red publicitaria sea compatible con anuncios AMPHTML. Para publicar sus anuncios de venta directa como anuncios AMPHTML, cree el anuncio en formato AMPHTML de acuerdo con los requisitos de las [especificaciones de los anuncios AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) y utilice un [servidor de anuncios que publique anuncios AMPHTML](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
+Con el componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) se publican anuncios de la red que usted especifique. Estos pueden ser anuncios HTML estándar o anuncios AMPHTML, siempre y cuando la red publicitaria sea compatible con anuncios AMPHTML. Para publicar sus anuncios de venta directa como anuncios AMPHTML, cree el anuncio en formato AMPHTML de acuerdo con los requisitos de las [especificaciones de los anuncios AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) y utilice un [servidor de anuncios que publique anuncios AMPHTML](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/a4a-readme.md#publishers).
 
 ## Cómo aumentar los datos de los objetivos de las solicitudes de anuncios
 
@@ -112,8 +112,8 @@ Puede obtener más información sobre RTC en este video de YouTube:
 
 O consulte los siguientes recursos de RTC:
 
-- [Guía de implementación para editores de AMP RTC](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
-- [Configuración de AMP en tiempo real](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
+- [Guía de implementación para editores de AMP RTC](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
+- [Configuración de AMP en tiempo real](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-documentation.md)
 
 ## Prácticas recomendadas
 
@@ -124,7 +124,7 @@ Estos son algunos consejos para maximizar la eficacia de los anuncios en sus pá
 - **Coloque la misma cantidad de anuncios** en las páginas AMP con respecto en las páginas que no son de AMP para generar la máxima cantidad de ingresos por página.
 - **Coloque el primer anuncio justo debajo de la primera ventana de visualización** (“parte inferior de la página”) para proporcionar una experiencia de usuario óptima.
 - A menos que esté utilizando CSS avanzado o consultas de medios, **asegúrese de que sus bloques de anuncios estén centrados en la página** para proporcionar a sus usuarios una experiencia web móvil óptima.
-- Habilite las [solicitudes de anuncios de varios tamaños](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests) en su inventario de AMP para aumentar la presión de las subastas publicitarias y generar ingresos.
+- Habilite las [solicitudes de anuncios de varios tamaños](https://github.com/ampproject/amphtml/blob/main/ads/README.md#support-for-multi-size-ad-requests) en su inventario de AMP para aumentar la presión de las subastas publicitarias y generar ingresos.
 
 ### Demanda y fijación de precios: obtenga el precio adecuado para sus anuncios
 

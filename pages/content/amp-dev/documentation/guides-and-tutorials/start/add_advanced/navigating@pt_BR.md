@@ -85,7 +85,7 @@ Em seguida, queremos exibir um ícone de menu. Quando tocado, ele abrirá a barr
 </header>
 ```
 
-No código acima, `alternamos` a barra lateral usando o atributo de ação [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) no elemento [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md), que é identificado pelo código `sidebar1`. Vamos adicionar a barra lateral.
+No código acima, `alternamos` a barra lateral usando o atributo de ação [`on`](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-actions-and-events.md) no elemento [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md), que é identificado pelo código `sidebar1`. Vamos adicionar a barra lateral.
 
 **Adicione** o HTML a seguir logo após o `</header>`:
 

@@ -37,7 +37,7 @@ Define e executa animações.
   </tr>
   <tr>
     <td class="col-fourty"><strong>Exemplos</strong></td>
-    <td><a href="https://github.com/ampproject/amphtml/blob/master/examples/animations.amp.html">animations.amp.html</a></td>
+    <td><a href="https://github.com/ampproject/amphtml/blob/main/examples/animations.amp.html">animations.amp.html</a></td>
   </tr>
 </table>
 

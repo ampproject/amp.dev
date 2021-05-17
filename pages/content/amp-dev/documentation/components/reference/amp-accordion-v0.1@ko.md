@@ -151,4 +151,4 @@ limitations under the License.
 
 ## 유효성 검사 <a name="validation"></a>
 
-AMP 유효성 검사기 사양의 [amp-accordion 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-accordion/validator-amp-accordion.protoascii)을 참조하세요.
+AMP 유효성 검사기 사양의 [amp-accordion 규칙](https://github.com/ampproject/amphtml/blob/main/extensions/amp-accordion/validator-amp-accordion.protoascii)을 참조하세요.

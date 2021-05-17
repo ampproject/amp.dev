@@ -68,7 +68,7 @@ For example: `<amp-analytics type="googleanalytics">` sends analytics data to th
 
 Analytics vendor configurations are a quick way to get started with [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). You should consult your vendor’s documentation and help resources for further guidance. As previously mentioned, the list of vendors who’ve already integrated with AMP, as well as links to their specific documentation can be found in the [Analytics Vendors](analytics-vendors.md) list.
 
-If you’re an analytics vendor, learn more about [integrating your own analytics configuration into AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+If you’re an analytics vendor, learn more about [integrating your own analytics configuration into AMP HTML](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md).
 
 ## Caricamento della configurazione remota: attributo config
 

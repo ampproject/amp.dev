@@ -53,9 +53,9 @@
     margin-left: auto;
     margin-left: 5px;
     padding: 5px;
+    cursor: pointer;
 
     svg {
-      cursor: pointer;
       max-width: 20px;
       max-height: 20px;
       fill: safeColor('blue');

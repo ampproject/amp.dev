@@ -11,7 +11,7 @@ toc: true
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-structure.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -42,7 +42,7 @@ To embed AMP within an email, add a new MIME part with a content type of `text/x
 <amp-img alt="AMP for Email MIME Parts Diagram"
     layout="responsive"
     width="752" height="246"
-    src="https://github.com/ampproject/amphtml/raw/master/spec/img/amp-email-mime-parts.png">
+    src="https://github.com/ampproject/amphtml/raw/main/spec/img/amp-email-mime-parts.png">
 <noscript>
 <img alt="AMP for Email MIME Parts Diagram" src="../img/amp-email-mime-parts.png" />
 </noscript>

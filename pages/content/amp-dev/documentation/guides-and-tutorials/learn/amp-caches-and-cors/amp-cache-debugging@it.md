@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-debugging.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-debugging.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -40,7 +40,7 @@ Se il problema persiste dopo aver seguito tale procedura, controllare la tabella
     <tr>
       <td>I caratteri web non vengono visualizzati (sono utilizzati i caratteri di fallback)</td>
       <td>La cache AMP non è inserita nella lista dei caratteri consentiti dal fornitore.</td>
-      <td>Contattare il fornitore dei caratteri chiedendogli di inserire nell'elenco dei consentiti <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">tutte le cache</a>.</td>
+      <td>Contattare il fornitore dei caratteri chiedendogli di inserire nell'elenco dei consentiti <a href="amp-cors-requests.md#cors-security-in-amp">tutte le cache</a>.</td>
     </tr>
     <tr>
       <td>Le risorse (quali caratteri e immagini) non vengono visualizzate (<strong>solo origini HTTP</strong>)</td>
@@ -50,7 +50,7 @@ Se il problema persiste dopo aver seguito tale procedura, controllare la tabella
     <tr>
       <td rowspan="2">Le risorse (ad esempio, caratteri e immagini) non sono visualizzate</td>
       <td>Le risorse sono fornite con il tipo MIME errato.</td>
-      <td>Indicare un <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">tipo MIME accettabile</a>.</td>
+      <td>Indicare un <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">tipo MIME accettabile</a>.</td>
     </tr>
     <tr>
       <td>La cache AMP non può accedere alle risorse.</td>
@@ -59,7 +59,7 @@ Se il problema persiste dopo aver seguito tale procedura, controllare la tabella
     <tr>
       <td>Gli elementi dinamici quali <code><amp-form></amp-form></code> e <code><amp-list></amp-list></code>, non si comportano come previsto.</td>
       <td>Intestazioni CORS danneggiate o mancanti.</td>
-      <td>Questi componenti effettuano richieste multi-origine dalla cache AMP all'origine del documento. Per impostazione predefinita, i browser bloccano queste richieste. Per consentire queste richieste, realizzare <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">intestazioni CORS</a> che inseriscono negli elenchi dei consentiti <a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">tutte le cache</a>.</td>
+      <td>Questi componenti effettuano richieste multi-origine dalla cache AMP all'origine del documento. Per impostazione predefinita, i browser bloccano queste richieste. Per consentire queste richieste, realizzare <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">intestazioni CORS</a> che inseriscono negli elenchi dei consentiti <a href="amp-cors-requests.md">tutte le cache</a>.</td>
     </tr>
     <tr>
       <td>I contenuti forniti devono essere rimossi a causa di un avviso di rimozione legale.</td>

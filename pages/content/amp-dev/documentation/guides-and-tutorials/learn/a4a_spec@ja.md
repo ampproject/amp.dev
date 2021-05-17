@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -98,7 +98,7 @@ AMPHTML 広告は、高速で高性能の広告を AMP ページにレンダリ�
 
 ### ボイラープレート <a name="boilerplate"></a>
 
-AMPHTML 広告クリエイティブには、[一般的な AMP ドキュメントが必要とする](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md)ボイラープレートとは別の、非常にシンプルなボイラープレートスタイル行が必要です。
+AMPHTML 広告クリエイティブには、[一般的な AMP ドキュメントが必要とする](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md)ボイラープレートとは別の、非常にシンプルなボイラープレートスタイル行が必要です。
 
 [sourcecode:html]
 
@@ -267,7 +267,7 @@ _例:_ `<amp-lightbox>` は、このリストにまだ含まれていません�
 
 ### HTML タグ <a name="html-tags"></a>
 
-以下は、AMPHTML 広告クリエイティブでの使用が*許可されている*タグです。明示的に示されていないタグの使用は禁止されています。このリストは、一般的な [AMP タグの allowlist 付録](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md) のサブセットです。そのリストと同様に、HTML5 仕様書のセクション 4「[The Elements of HTML](http://www.w3.org/TR/html5/single-page.html#html-elements)」に従って記載されています。
+以下は、AMPHTML 広告クリエイティブでの使用が*許可されている*タグです。明示的に示されていないタグの使用は禁止されています。このリストは、一般的な [AMP タグの allowlist 付録](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/../../spec/amp-tag-addendum.md) のサブセットです。そのリストと同様に、HTML5 仕様書のセクション 4「[The Elements of HTML](http://www.w3.org/TR/html5/single-page.html#html-elements)」に従って記載されています。
 
 以下に記載されていないもののほとんどは、パフォーマンスを維持するため、またはタグが HTML5 標準ではないため記載されていません。たとえば、`<noscript>` は、AMPHTML 広告が有効化される JavaScript に依存しており、`<noscript>` ブロックは決して実行されることがなく、したがってクリエイティブを増幅し、帯域幅とレイテンシに影響を及ぼすため、以下には含まれていません。同様に、`<acronym>`、`<big>` などは、HTML5 対応ではないため禁止されています。
 

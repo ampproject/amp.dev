@@ -22,6 +22,6 @@ Implementare un meccanismo CSP aggiungendo il meta tag appropriato all'intestazi
 />
 ```
 
-[Puoi visualizzare l'esempio completo qui](https://github.com/ampproject/amphtml/blob/master/examples/csp.amp.html).
+[Puoi visualizzare l'esempio completo qui](https://github.com/ampproject/amphtml/blob/main/examples/csp.amp.html).
 
 [tip type="read-on"] Ulteriori informazioni sulla [protezione dalle vulnerabilità della sicurezza e sui meccanismi CSP disponibili qui](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP). [/tip]

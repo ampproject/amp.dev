@@ -42,6 +42,6 @@ formats:
 
 - **شاهد المخطط** للحصول على التحديثات والميزات على [المخطط](../../../community/roadmap.html).
 
-- **شارك.** ساهم في رمز المصدر أو ملف الأخطاء أو قدّم تعليقًا على [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). شارك إدخالك حول AMP على [‏‏تجاوز سعة مكدس الذاكرة المؤقتة](https://stackoverflow.com/questions/tagged/amp-html).
+- **شارك.** ساهم في رمز المصدر أو ملف الأخطاء أو قدّم تعليقًا على [GitHub](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md). شارك إدخالك حول AMP على [‏‏تجاوز سعة مكدس الذاكرة المؤقتة](https://stackoverflow.com/questions/tagged/amp-html).
 
 - **تعرَّف على** كيفية استخدام مكونات AMP مع [أمثلة](../../../documentation/examples/index.html).

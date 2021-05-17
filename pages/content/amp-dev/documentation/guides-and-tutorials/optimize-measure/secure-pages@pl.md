@@ -22,6 +22,6 @@ Aby zaimplementować CSP, dodaj odpowiedni znacznik meta do nagłówka strony. P
 />
 ```
 
-[Pełny przykład można zobaczyć tutaj](https://github.com/ampproject/amphtml/blob/master/examples/csp.amp.html).
+[Pełny przykład można zobaczyć tutaj](https://github.com/ampproject/amphtml/blob/main/examples/csp.amp.html).
 
 [tip type="read-on"] Dowiedz się więcej o [ochronie luk w zabezpieczeniach i CSP tutaj](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP). [/tip]

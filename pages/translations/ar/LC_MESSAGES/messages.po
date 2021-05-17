@@ -1080,7 +1080,7 @@ msgid "You've read this document a dozen times but it doesn't really cover all o
 msgstr "لقد قرأت هذا المستند عشرات المرات ولكن ألم يُجِب عن جميع أسئلتك؟ ربما حصل ذات الأمر مع أشخاص آخرين: تواصل معهم على Stack Overflow."
 
 #: frontend/templates/views/partials/experiments/experiments.j2:4
-msgid "Enable the experiment via the button below. Some components require the AMP Dev Channel to be enabled as well."
+msgid "Enable the experiment via the button below. Some components require the AMP Beta Channel to be enabled as well."
 msgstr "فعِّل التجربة من خلال الزر أدناه. تتطلب بعض المكونات تفعيل \"قناة مطوِّري AMP\" كذلك."
 
 #: frontend/templates/views/partials/structured-data.j2:54
@@ -3488,8 +3488,8 @@ msgstr "<p>المشروع مفتوح للجميع، كما أن أعضاء ال�
 msgid "How can an advertising or technology vendor get involved in Accelerated Mobile Pages?"
 msgstr "كيف يمكن لمورّد إعلانات أو تكنولوجيا المشاركة في \"صفحات الجوّال المسرعة\"؟"
 
-msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
-msgstr "<p>يرجى مراجعة <a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">إرشادات المساهمة</a> والتواصل عبر <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
+msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
+msgstr "<p>يرجى مراجعة <a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">إرشادات المساهمة</a> والتواصل عبر <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
 
 msgid "How does advertising work on Accelerated Mobile Pages?"
 msgstr "كيف تعمل الإعلانات على \"صفحات الجوّال المسرَّعة\"؟"
@@ -3541,3 +3541,60 @@ msgstr "المنصات المعتمَدة والمورّدون والشركاء 
 
 msgid "AMP Conf 2020: Save the date!"
 msgstr "مؤتمر AMP لعام 2020: احفظ التاريخ!"
+
+msgid "AMP is a web component framework to easily create user-first experiences for the web."
+msgstr ""
+
+msgid "Easily create websites with a great page experience out-of-the-box using AMP’s ready-to-go web components."
+msgstr ""
+
+msgid "All about AMP Websites"
+msgstr ""
+
+msgid "Get started"
+msgstr ""
+
+msgid "Immerse readers in visual and tappable stories they can share anywhere on the open web."
+msgstr ""
+
+msgid "All about Web Stories"
+msgstr ""
+
+msgid "Serve lightning fast and secure eye-catching creatives."
+msgstr ""
+
+msgid "Send emails of the future with personalized dynamic content and interactive elements that engage readers."
+msgstr ""
+
+msgid "The latest news"
+msgstr ""
+
+msgid "Don't want to miss any of the great stuff that happens around AMP? Then always be first in line and subscribe to our newsletter!"
+msgstr ""
+
+msgid "Don’t take our word for it - read case studies from industry success stories and see how AMP has produced positive results."
+msgstr ""
+
+msgid "A framework that amplifies page experience."
+msgstr ""
+
+msgid "AMP is a simple and robust web components framework that makes it easy to build fast websites that are user-first and makes money. AMP provides long-term success for your web strategy with distribution across popular platforms and reduced operating costs."
+msgstr ""
+
+msgid "Guaranteed Page Experience"
+msgstr ""
+
+msgid "AMP provides you with the tools needed to build websites that meet Page Experience ranking signals while remaining flexible and customizable to your needs. Page experience is a set of signals from Google that measure how users perceive their experience interacting with a web page beyond its pure information value. AMP is a straightforward way to a high page experience score. Domains built with AMP are 5 times more likely to pass* Core Web Vitals metrics than non-AMP!"
+msgstr ""
+
+msgid "Check your page’s performance"
+msgstr ""
+
+msgid "Frameworks and CMSs"
+msgstr ""
+
+msgid "Select a ready-to-go framework or integration-enabled CMS to get an AMP valid site up and running, fast. These platforms give you all the benefits of AMP without all the built-from-scratch hassle."
+msgstr ""
+
+msgid "See supported platforms"
+msgstr ""

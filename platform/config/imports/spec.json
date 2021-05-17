@@ -12,7 +12,7 @@
 		"title": "AMP HTML Specification",
 		"order": 8,
 		"repo": "ampproject/amphtml",
-		"from": "spec/amp-html-format.md",
+		"from": "docs/spec/amp-html-format.md",
 		"to": "documentation/guides-and-tutorials/learn/spec/amphtml.md",
 		"formats": ["websites"]
 	},
@@ -20,7 +20,7 @@
 		"title": "AMP Boilerplate Code",
 		"order": 9,
 		"repo": "ampproject/amphtml",
-		"from": "spec/amp-boilerplate.md",
+		"from": "docs/spec/amp-boilerplate.md",
 		"to": "documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md",
 		"formats": ["websites", "stories"]
 	},
@@ -28,7 +28,7 @@
 		"title": "AMP Release Schedule",
 		"order": 10,
 		"repo": "ampproject/amphtml",
-		"from": "contributing/release-schedule.md",
+		"from": "docs/release-schedule.md",
 		"to": "documentation/guides-and-tutorials/learn/spec/release-schedule.md",
 		"formats": ["websites", "email", "stories", "ads"]
 	},
@@ -36,7 +36,7 @@
 		"title": "AMP HTML Responsive Attributes",
 		"order": 9,
 		"repo": "ampproject/amphtml",
-		"from": "spec/amp-html-responsive-attributes.md",
+		"from": "docs/spec/amp-html-responsive-attributes.md",
 		"to": "documentation/guides-and-tutorials/learn/spec/amp-html-responsive-attributes.md",
 		"formats": ["websites"]
 	},
@@ -44,7 +44,7 @@
 		"title": "AMPHTML Layout System",
 		"order": 1,
 		"repo": "ampproject/amphtml",
-		"from": "spec/amp-html-layout.md",
+		"from": "docs/spec/amp-html-layout.md",
 		"to": "documentation/guides-and-tutorials/learn/amp-html-layout/index.md",
 		"formats": ["websites","email","stories", "ads"]
 	},
@@ -52,7 +52,7 @@
 		"title": "Actions and events",
 		"order": 0,
 		"repo": "ampproject/amphtml",
-		"from": "spec/amp-actions-and-events.md",
+		"from": "docs/spec/amp-actions-and-events.md",
 		"to": "documentation/guides-and-tutorials/learn/amp-actions-and-events.md",
 		"formats": ["websites","stories", "ads"]
 	},
@@ -60,7 +60,7 @@
 		"title": "Actions and events in AMP email",
 		"order": 0,
 		"repo": "ampproject/amphtml",
-		"from": "spec/amp-email-actions-and-events.md",
+		"from": "docs/spec/amp-email-actions-and-events.md",
 		"to": "documentation/guides-and-tutorials/learn/amp-email-actions-and-events.md",
 		"formats": ["email"]
 	},
@@ -68,7 +68,7 @@
 		"title": "Debug AMP Cache issues",
 		"order": 8,
 		"repo": "ampproject/amphtml",
-		"from": "spec/amp-cache-debugging.md",
+		"from": "docs/spec/amp-cache-debugging.md",
 		"to": "documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-debugging.md",
 		"formats": ["websites", "stories", "ads"]
 	},
@@ -76,16 +76,25 @@
 		"title": "CORS in AMP",
 		"order": 12,
 		"repo": "ampproject/amphtml",
-		"from": "spec/amp-cors-requests.md",
+		"from": "docs/spec/amp-cors-requests.md",
 		"to": "documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md",
 		"toc": true,
 		"formats": ["websites","email","stories", "ads"]
 	},
 	{
+		"title": "Video in AMP",
+		"order": -1,
+		"description": "AMP pages may add video directly or through 3rd party vendors. This document explains broader video support in AMP and how 3rd parties may embed their players.",
+		"repo": "ampproject/amphtml",
+		"from": "docs/spec/amp-video-interface.md",
+		"to": "documentation/guides-and-tutorials/learn/spec/amp-video-interface.md",
+		"formats": ["websites", "stories", "ads"]
+	},
+	{
 		"title": "Help",
 		"order": 1,
 		"repo": "ampproject/amphtml",
-		"from": "SUPPORT.md",
+		"from": "docs/SUPPORT.md",
 		"to": "support/index.md",
 		"group": 1,
 		"formats": ["websites","email","stories", "ads"]
@@ -121,7 +130,7 @@
 		"title": "Manage non-authenticated user state with AMP",
 		"order": 2,
 		"repo": "ampproject/amphtml",
-		"from": "spec/amp-managing-user-state.md",
+		"from": "docs/spec/amp-managing-user-state.md",
 		"to": "documentation/guides-and-tutorials/optimize-measure/amp-managing-user-state.md",
 		"formats": ["websites"]
 	},
@@ -129,7 +138,7 @@
 		"title": "AMP for Email Format",
 		"order": 1,
 		"repo": "ampproject/amphtml",
-		"from": "spec/email/amp-email-format.md",
+		"from": "docs/spec/email/amp-email-format.md",
 		"to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-format.md",
 		"toc": true,
 		"formats": ["email"]
@@ -138,7 +147,7 @@
 		"title": "Structure and rendering of AMP emails",
 		"order": 2,
 		"repo": "ampproject/amphtml",
-		"from": "spec/email/amp-email-structure.md",
+		"from": "docs/spec/email/amp-email-structure.md",
 		"to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-structure.md",
 		"toc": true,
 		"formats": ["email"]
@@ -147,7 +156,7 @@
 		"title": "AMP for Email Supported Components",
 		"order": 3,
 		"repo": "ampproject/amphtml",
-		"from": "spec/email/amp-email-components.md",
+		"from": "docs/spec/email/amp-email-components.md",
 		"to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-components.md",
 		"toc": true,
 		"formats": ["email"]
@@ -156,7 +165,7 @@
 		"title": "AMP for Email Supported HTML",
 		"order": 4,
 		"repo": "ampproject/amphtml",
-		"from": "spec/email/amp-email-html.md",
+		"from": "docs/spec/email/amp-email-html.md",
 		"to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-html.md",
 		"toc": true,
 		"formats": ["email"]
@@ -165,7 +174,7 @@
 		"title": "AMP for Email Supported CSS",
 		"order": 5,
 		"repo": "ampproject/amphtml",
-		"from": "spec/email/amp-email-css.md",
+		"from": "docs/spec/email/amp-email-css.md",
 		"to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md",
 		"toc": true,
 		"formats": ["email"]

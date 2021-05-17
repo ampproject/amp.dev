@@ -11,7 +11,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/contributing/release-schedule.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/release-schedule.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -41,7 +41,7 @@ PR が以下のいずれかのリリースチャンネルに含まれている�
 
 ナイトリーリリースには、トラフィックが増加する*ウィークリー*父ースチャンネルに到達する前に課題を素早く検出して解決する仕組みが含まれています。また、新たに導入された課題に影響を受けるユーザー数を抑制する目的もあります。
 
-**ナイトリー**チャンネルにオプトインして、過去数日間にマージされたプルリクエストをテストすることが可能です。詳細は、[DEVELOPING.md] の[オプトインのセクション](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md#opting-in-to-pre-release-channels)を参照してください。
+**ナイトリー**チャンネルにオプトインして、過去数日間にマージされたプルリクエストをテストすることが可能です。詳細は、[DEVELOPING.md] の[オプトインのセクション](https://github.com/ampproject/amphtml/blob/main/docs/developing.md#opting-in-to-pre-release-channels)を参照してください。
 
 ### ウィークリー <a name="weekly"></a>
 
@@ -49,13 +49,13 @@ PR が以下のいずれかのリリースチャンネルに含まれている�
 
 リリースビルドの作成に使用されるビルド構成には、*カナリー*構成と*本番*構成の 2 つがあります。**実験的**および**ベータ**リリースチャンネルは、同じコミットから構築されていますが、**実験的**チャンネルは*カナリー*構成を使用するのに対し、**ベータ**チャンネルは*本番*構成を使用しています。*カナリー*構成では、*本番*では無効化される可能性のある実験的コンポーネントと機能が有効化されています。**実験的**または**ベータ**チャンネルには、[実験ページ](https://cdn.ampproject.org/experiments.html)でオプトインすることができます。
 
-**安定**リリースチャンネルは、*本番*構成で構築されており、ほとんどの AMP トラフィックに配信されます。**ベータ**リリースも*本番*構成で構築されているため、翌週には**安定版**となるビルドそのものを指すことになります（チェリーピックにより、直前に課題が修正される可能性があります。詳細は、「[コードの貢献](https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md#Cherry-picks)」を参照してください）。
+**安定**リリースチャンネルは、*本番*構成で構築されており、ほとんどの AMP トラフィックに配信されます。**ベータ**リリースも*本番*構成で構築されているため、翌週には**安定版**となるビルドそのものを指すことになります（チェリーピックにより、直前に課題が修正される可能性があります。詳細は、「[コードの貢献](https://github.com/ampproject/amphtml/blob/main/docs/contributing-code.md#Cherry-picks)」を参照してください）。
 
 #### ベータおよび実験的チャンネル <a name="beta-and-experimental-channels"></a>
 
 *ベータ*および*実験的チャンネル*は、AMP の次期安定リリースのプレリリース候補です。毎週火曜日（[リリースフリーズ](#release-freezes)がある週を除く）、前の週の**ナイトリー**が、**ベータ**と**実験的**の開発者オプトインチャンネルに昇格されます。1 日間、これらのチャンネルに機能やパフォーマンスの退行がないことを確認したのち、水曜日に一部のトラフィックに対してこのリリースが昇格されます。翌週の火曜日、この同じリリースが**安定**チャンネルに昇格されます。
 
-これらのチャンネルにオプトインすることができます。詳細は、[DEVELOPING.md] の[オプトインのセクション](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md#opting-in-to-pre-release-channels)を参照してください。
+これらのチャンネルにオプトインすることができます。詳細は、[DEVELOPING.md] の[オプトインのセクション](https://github.com/ampproject/amphtml/blob/main/docs/developing.md#opting-in-to-pre-release-channels)を参照してください。
 
 *ベータチャンネル*にオプトインすると、以下の項目を行えるようになります。
 
@@ -71,7 +71,7 @@ PR が以下のいずれかのリリースチャンネルに含まれている�
 
 ### 長期安定版（LTS） <a name="long-term-stable-lts"></a>
 
-**LTS** リリースチャンネルは、1 か月間隔で、前の**安定**ビルドを提供します。毎月第 2 月曜日、現在の**安定**リリースは **LTS** に昇格されます。これは、すべての AMP サイト運営者に推奨されるチャンネルではなく、ウェブサイトでの QA サイクルをあまり頻繁に実施する意思のないサイト運営者が、特定のウェブページを **LTS** チャンネルにオプトインして実施できるように提供されているチャンネルです（<a href="https://github.com/ampproject/amphtml/blob/master/contributing/lts-release.md" data-md-type="link">**LTS** の Readme</a> を参照してください)。
+**LTS** リリースチャンネルは、1 か月間隔で、前の**安定**ビルドを提供します。毎月第 2 月曜日、現在の**安定**リリースは **LTS** に昇格されます。これは、すべての AMP サイト運営者に推奨されるチャンネルではなく、ウェブサイトでの QA サイクルをあまり頻繁に実施する意思のないサイト運営者が、特定のウェブページを **LTS** チャンネルにオプトインして実施できるように提供されているチャンネルです（<a href="https://github.com/ampproject/amphtml/blob/main/docs/lts-release.md" data-md-type="link">**LTS** の Readme</a> を参照してください)。
 
 月の第 2 月曜日が休日である場合は、[リリースフリーズ](#release-freezes)の終了後に昇格されます。
 

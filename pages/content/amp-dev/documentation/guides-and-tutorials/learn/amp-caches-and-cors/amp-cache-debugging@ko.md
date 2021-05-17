@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-debugging.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-debugging.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -40,7 +40,7 @@ have a look and request a pull request there.
     <tr>
       <td>웹 폰트가 표시되지 않음(폴백 폰트 사용)</td>
       <td>폰트 제공 업체가 AMP 캐시를 화이트리스트에 지정하지 않음.</td>
-      <td>폰트 제공 업체에 문의하여 <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">모든 캐시</a>를 허용 목록에 추가하도록 요청.</td>
+      <td>폰트 제공 업체에 문의하여 <a href="amp-cors-requests.md#cors-security-in-amp">모든 캐시</a>를 허용 목록에 추가하도록 요청.</td>
     </tr>
     <tr>
       <td>애셋(예: 폰트 및 이미지)가 표시되지 않음(<strong>HTTP 원본 전용</strong>)</td>
@@ -50,7 +50,7 @@ have a look and request a pull request there.
     <tr>
       <td rowspan="2">애셋(예: 폰트 및 이미지)가 표시되지 않음</td>
       <td>애셋이 잘못된 MIME 유형으로 지원됨.</td>
-      <td> <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">허용 가능한 MIME 유형</a> 지정.</td>
+      <td> <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">허용 가능한 MIME 유형</a> 지정.</td>
     </tr>
     <tr>
       <td>AMP 캐시가 애셋에 액세스할 수 없음.</td>
@@ -59,7 +59,7 @@ have a look and request a pull request there.
     <tr>
       <td> <code><amp-form></amp-form></code>, <code><amp-list></amp-list></code> 등의 동적 요소가 예상대로 작동하지 않음.</td>
       <td>잘못되거나 누락된 CORS 헤더.</td>
-      <td>이러한 컴포넌트는 AMP 캐시에서 원본으로 원본 간 요청을 전송. 기본적으로 브라우저는 이 요청을 차단하므로 요청을 허용하려면 <a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">모든 캐시</a>를 허용 목록에 추가하는 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS 헤더</a>를 내보냄.</td>
+      <td>이러한 컴포넌트는 AMP 캐시에서 원본으로 원본 간 요청을 전송. 기본적으로 브라우저는 이 요청을 차단하므로 요청을 허용하려면 <a href="amp-cors-requests.md">모든 캐시</a>를 허용 목록에 추가하는 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS 헤더</a>를 내보냄.</td>
     </tr>
     <tr>
       <td>법적 게시 중단 요청으로 삭제되어야 하는 콘텐츠가 제공되고 있음.</td>

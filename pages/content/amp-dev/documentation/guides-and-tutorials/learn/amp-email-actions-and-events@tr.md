@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-email-actions-and-events.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-email-actions-and-events.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -30,7 +30,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-[tip type="note"] Bu belgeleme, AMP e-posta biçiminin eylemlerini ve etkinliklerini kapsar. AMP web siteleri, hikayeleri ve reklamları için [Eylemler ve olaylar](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) hakkında daha fazla bilgi edinin. [/tip]
+[tip type="note"] Bu belgeleme, AMP e-posta biçiminin eylemlerini ve etkinliklerini kapsar. AMP web siteleri, hikayeleri ve reklamları için [Eylemler ve olaylar](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-actions-and-events.md) hakkında daha fazla bilgi edinin. [/tip]
 
 `on` özniteliği, öğelerin üzerine olay işleyicileri yüklemek için kullanılır. Desteklenen olaylar, öğelere bağlıdır.
 
@@ -434,7 +434,7 @@ Bir öğe ancak önceden `hide` veya `toggleVisibility` eylemiyle gizlenmişse y
   <tr>
     <td><code>changeToLayoutContainer</code></td>
     <td>
-<a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">Dinamik yeniden boyutlandırmaya</a> izin vermek için <code>amp-list</code> yerleşimini <code>layout="CONTAINTER"</code> olarak günceller.</td>
+<a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">Dinamik yeniden boyutlandırmaya</a> izin vermek için <code>amp-list</code> yerleşimini <code>layout="CONTAINTER"</code> olarak günceller.</td>
   </tr>
   <tr>
     <td> <code>fetch-error</code>(düşük güven)</td>

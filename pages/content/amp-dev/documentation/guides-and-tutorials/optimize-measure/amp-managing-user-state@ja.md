@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -110,7 +110,7 @@ AMP キャッシュの場合と同様、AMP ビューアのドメインは、サ
 
 ### コンテキストが複数あるため、状態の管理も複数行う必要がある <a name="multiple-contexts-means-multiple-state-management"></a>
 
-サイト運営者は、表示コンテキストごとにユーザー常置を管理する必要があります。AMP の[クライアント ID](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id) 機能は、cookie またはローカルストレージを活用して状態を永続化していますが、AMP ページがユーザーの安定した仮名 ID を使用するために必要なサポートを提供しています。実装の観点から言えば、cookie またはローカルストレージが使用されており、AMP は表示コンテキストに応じてどちらを使用するかを決定しています。この選択は、この状態を数百から数千ものサイト運営者にわたって管理する技術的な実現可能性による影響を受けます。
+サイト運営者は、表示コンテキストごとにユーザー常置を管理する必要があります。AMP の[クライアント ID](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md#client-id) 機能は、cookie またはローカルストレージを活用して状態を永続化していますが、AMP ページがユーザーの安定した仮名 ID を使用するために必要なサポートを提供しています。実装の観点から言えば、cookie またはローカルストレージが使用されており、AMP は表示コンテキストに応じてどちらを使用するかを決定しています。この選択は、この状態を数百から数千ものサイト運営者にわたって管理する技術的な実現可能性による影響を受けます。
 
 ただし、AMP ページのサイト運営者は、（意図せずに）複数のコンテキストを伴うユーザージャーニーを設計してしまいがちです。最初の買い物かごのケースを見直し、完全な**ユーザーストーリー**を作成するための詳細をさらに追加しましょう。
 
@@ -120,8 +120,8 @@ AMP キャッシュの場合と同様、AMP ビューアのドメインは、サ
 
 **ユーザー状態を伴うエクスペリエンスを有効化するには、ユーザーが移動するすべてのコンテキスト間で、個別に管理された状態が共有されている必要があります。**これらのコンテキストの境界をまたいで cookie の値をユーザー ID と共有する、という考えに「なるほど！」と納得するかもしれませんが、アドバイスが 1 つあります。これらのコンテキストはそれぞれ、同一のサイト運営者が制御するコンテンツを表示してはいますが、コンテキストは別々のドメインに存在するため、互いをサードパーティとみなします。
 
-<amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png" width="1030" height="868">
-  <noscript><img alt="多くのコンテキストで表示されるAMPの機能は、それらのコンテキストのそれぞれが識別子用の独自のストレージを持っていることを意味します" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
+<amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/contexts-with-different-storage.png" width="1030" height="868">
+  <noscript><img alt="多くのコンテキストで表示されるAMPの機能は、それらのコンテキストのそれぞれが識別子用の独自のストレージを持っていることを意味します" src="https://github.com/ampproject/amphtml/raw/main/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
 
 次の議論からわかるように、cookie を操作する際にサードパーティであれば、ユーザーのブラウザ設定がどのように構成されているかによって、問題となることがあります。特に、特定の状況でサードパーティ cookie がブロックされている場合、コンテキスト間での情報共有が行えなくなります。一方、サードパーティ cookie の操作が許可されている場合は、情報を共有することができます。
 
@@ -142,8 +142,8 @@ AMP キャッシュの場合と同様、AMP ビューアのドメインは、サ
 
 以下の技術ガイダンスを説明するにあたり、**ユーザー状態**をユーザーを表す安定した **ID** にバインドすることを前提とします。ID を `n34ic982n2386n30` とした場合、サーバー側で `n34ic982n2386n30` を、買い物かごの内容、以前に読んだ記事のリスト、または使用事例に応じたその他のデータなどのユーザー状態情報に関連付けます。
 
-<amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
-  <noscript><img alt="単一の識別子を使用して、多くのユースケースのユーザー状態を管理できます" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png"></noscript></amp-img>
+<amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
+  <noscript><img alt="単一の識別子を使用して、多くのユースケースのユーザー状態を管理できます" src="https://github.com/ampproject/amphtml/raw/main/spec/img/identifiers-for-use-cases.png"></noscript></amp-img>
 
 このドキュメントの残りでは、わかりやすいように、ID を示す文字列をドル記号（`$`）の後に読みやすい名前をつなげた形式で示します。次にその例を示します。
 
@@ -242,7 +242,7 @@ AMP ページで、クライアント ID を含む amp-analytics ping を構築�
 
 クライアント ID の置換に渡されるパラメータ `${clientId(uid)` が `uid` であることに注意してください。これは、[タスク 1](#task1) で説明されたものと同じ、サイト運営者オリジンで使用されている cookie 名に一致するように意図的に選択されています。藤堂を最もシームレスに行えるようにするには、同じテクニックを適用するようにしてください。
 
-amp-analytics の残りの実装については、amp-analytics リクエストを設定する方法、またはアナリティクスベンダーのリクエストを変更する方法の詳細について、[amp-analytics 構成](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/)のドキュメントをご覧ください。ping は、直接定義するか、他の [AMP 置換](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)を利用して追加のデータを転送できるようにさらに変更することができます。
+amp-analytics の残りの実装については、amp-analytics リクエストを設定する方法、またはアナリティクスベンダーのリクエストを変更する方法の詳細について、[amp-analytics 構成](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/)のドキュメントをご覧ください。ping は、直接定義するか、他の [AMP 置換](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)を利用して追加のデータを転送できるようにさらに変更することができます。
 
 > **お役立ち情報:**
 > クライアント ID 機能に渡されるパラメータに `uid` という名前をなぜ使用したのでしょうか。`clientId(...)` 置換が取るパラメータは、スコープの定義に使用されます。実際のところ、クライアント ID 機能は多数の使用事例で使用できる機能であるため、結果的に多数のクライアント ID を生成することになります。これらの使用事例はパラメータによって区別することができるため、パラメータを使用して、どの使用事例にクライアント ID を使用したいのかを指定することができます。たとえば、異なる ID を広告主のようなサードパーティに送信するには、“scope” パラメータを使用して実現することができます。
@@ -380,12 +380,12 @@ AMP クライアント ID がマッピングに見つからない場合は、マ
 
 このタスクでは、ユーザーが**リンクまたはフォーム送信によって**あるページから別のページにコンテキストをまたがって移動する場合に役立つ追加の最適化方法を説明します。このような状況において、以下に説明する実装を行うと、コンテキスト間でユーザー状態を管理するための完全に有効なスキームをセットアップすることができます。
 
-<amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
-  <noscript><img alt="リンクを使用して、あるコンテキストの識別子情報を別の（リンクされた）コンテキストに渡すことができます" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png"></noscript></amp-img>
+<amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
+  <noscript><img alt="リンクを使用して、あるコンテキストの識別子情報を別の（リンクされた）コンテキストに渡すことができます" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-form-identifier-forwarding.png"></noscript></amp-img>
 
 ##### 置換機能を使用する <a name="using-substitution-features"></a>
 
-このアプローチでは、2 種類の [AMP 変数置換](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md)を利用します。
+このアプローチでは、2 種類の [AMP 変数置換](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-var-substitutions.md)を利用します。
 
 **発信リンクを更新して、クライアント ID 置換を使用する:** 新しいクエリパラメータ `ref_id`（「リファラー ID」）を定義します。これは URL 内に表示され、ユーザーの**発信元コンテキストの ID** を示します。このクエリパラメータを AMP のクライアント ID 置換の値と同等になるように設定します。
 
@@ -434,8 +434,8 @@ data-amp-replace="CLIENT_ID"
 
 [sourcecode:http] https://example.com/step2.html?ref_id=$amp_client_id [/sourcecode]
 
-<amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
-  <noscript><img alt="AMPビューアコンテキストの識別子をリンク経由でパブリッシャーオリジンコンテキストに渡す方法の例" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png"></noscript></amp-img>
+<amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
+  <noscript><img alt="AMPビューアコンテキストの識別子をリンク経由でパブリッシャーオリジンコンテキストに渡す方法の例" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-1.png"></noscript></amp-img>
 
 ユーザーが、URL パラメータとしてまたはヘッダー内に `ref_id` 値を含むページにアクセスすると、ページ自体が公開する ID（cookie 値）とともに `ref_id` ID を同時処理することができます。両方をアナリティクス ping に含めることで、アナリティクスサーバーは両方の値を同時に操作し、それらが関連していることを理解した上で、バックエンドにこの関係を反映させます。次の手順では、このやり方を説明します。
 
@@ -458,8 +458,8 @@ data-amp-replace="CLIENT_ID"
 
 ランディングページで処理するには、そのページが AMP ページであるか非 AMP ページであるかによって、アプローチが異なります。
 
-<amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
-  <noscript><img alt="URLを介して提供された以前のコンテキストからの識別子と現在のコンテキストからの識別子を含む分析pingを構築する方法の例" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
+<amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
+  <noscript><img alt="URLを介して提供された以前のコンテキストからの識別子と現在のコンテキストからの識別子を含む分析pingを構築する方法の例" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
 
 これらの手順を行うと、リンククリックやフォーム送信後にユーザーがたどり着くページ（<strong>リンク先コンテキスト</strong>）のターゲットサーバーや URL パラメータとして、クライアント ID が利用できるようになります。上記の実装で定義したように、名前（または「キー」）は `ref_id` で、クライアント ID と同じ関連付けられた値が指定されます。たとえば、上記で定義したリンク（<code><a></code> タグ）をたどると、ユーザーは次の URL に移動します。
 
@@ -594,7 +594,7 @@ https://example.com/step2.html?orig_user_id=$malicious_value
 
 非 AMP ページでは、クライアント側で直接 `document.referrer` を確認するか、サーバー側で検証できるように、アナリティクス ping の一部として値を渡します。リファラーの値が信頼できるものである場合は、上記の例では `orig_user_id` に当たる、ランディングページの URL から送信された値を受け入れて処理します。
 
-AMP ページでは、[ドキュメントリファラー](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#document-referrer)置換変数を使用して、リファラーの値をアナリティクス ping の一環として渡します。唯一利用できるオプションはサーバー側処理です。これを説明する次の URL には、ランディングページが送信できるアナリティクス ping には、（1）現在のページのクライアント ID 値、（2）参照先ページでクライアント ID となるようにセットアップした URL 経由で渡される値、（3）（2）の値を検証するためのリファラー情報そのものが含まれます。 `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
+AMP ページでは、[ドキュメントリファラー](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md#document-referrer)置換変数を使用して、リファラーの値をアナリティクス ping の一環として渡します。唯一利用できるオプションはサーバー側処理です。これを説明する次の URL には、ランディングページが送信できるアナリティクス ping には、（1）現在のページのクライアント ID 値、（2）参照先ページでクライアント ID となるようにセットアップした URL 経由で渡される値、（3）（2）の値を検証するためのリファラー情報そのものが含まれます。 `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
 
 リファラーを信頼できない場合は、URL パラメータ経由で提供される値を拒否して使用しないようにしてください。
 

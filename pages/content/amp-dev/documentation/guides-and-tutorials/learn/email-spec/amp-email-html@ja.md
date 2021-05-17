@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-html.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -33,7 +33,7 @@ limitations under the License.
 
 注意: このリストは非規範的であり、参考のみを目的としています。サポートされている HTML タグと属性については、AMP Validator ルールを信頼するようにしてください。
 
-[サポートされている AMP コンポーネント](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)のほかに、AMP for Email では以下の HTML タグを使用できます。
+[サポートされている AMP コンポーネント](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md)のほかに、AMP for Email では以下の HTML タグを使用できます。
 
 ## サポートされているタグ <a name="supported-tags"></a>
 

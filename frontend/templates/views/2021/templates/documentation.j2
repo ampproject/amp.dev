@@ -1,0 +1,68 @@
+{% extends '/views/2021/base.html' %}
+
+{% block main %}
+<main id="main" class="--sidebaropen">
+  <amp-animation  id="sidebarToggleAnimEnter" layout="nodisplay">
+    <script type="application/json">
+      {
+        "selector": "#sidebar-toggle-label",
+        "media": "(min-width: 768px)",
+        "duration": "180ms",
+        "fill": "both",
+        "keyframes": {
+          "transform": "scaleX(0)" ,
+          "opacity": "0"
+        }
+      }
+    </script>
+  </amp-animation>
+  <amp-animation  id="sidebarToggleAnimExit" layout="nodisplay">
+    <script type="application/json">
+      {
+        "selector": "#sidebar-toggle-label",
+        "media": "(min-width: 768px)",
+        "duration": "180ms",
+        "fill": "both",
+        "keyframes": {
+          "transform": "scaleX(1)" ,
+          "opacity": "1"
+        }
+      }
+    </script>
+  </amp-animation>
+
+  <div class="ap-container">
+    {% include 'views/2021/partials/sidebar.j2' %}
+
+    <div class="ap-content">
+      <div class="ap-content-sidebar-observer">
+        <amp-position-observer on="enter:sidebarToggleAnimEnter.start; exit:sidebarToggleAnimExit.start"
+            intersection-ratio="0.01"
+            layout="nodisplay">
+        </amp-position-observer>
+      </div>
+      {% include 'views/2021/partials/sidebar-toggle.j2' %}
+
+      {% include 'views/2021/partials/breadcrumbs.j2' %}
+
+      <div class="ap-content-wrapper">
+        <div>
+          {% if doc.category %}
+          <h1>{{ doc.title }}</h1>
+          {% include 'views/2021/partials/component-intro.j2' %}
+          {% endif %}
+          {{ doc.html|render|safe }}
+        </div>
+
+        <div class="ap-toc-toolbar">
+          <span id="toc-toolbar" class="ap-toc-toolbar-container"></span>
+        </div>
+
+
+      </div>
+    </div>
+
+    {% include 'views/2021/partials/toc.j2' %}
+  </div>
+</main>
+{% endblock %}

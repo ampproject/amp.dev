@@ -15,7 +15,7 @@ formats:
 
 웹 스토리 광고는 다음과 같은 원칙을 준수합니다.
 
-- 유효한 AMPHTML 광고: 기존 [AMPHTML 광고](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md)와 동일한 기술적 사양을 준수합니다.
+- 유효한 AMPHTML 광고: 기존 [AMPHTML 광고](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md)와 동일한 기술적 사양을 준수합니다.
 - 시각적 요소 중시: 편안하고 강렬한 컨텍스트 기반의 제안 상태.
 - 네이티브: 광고 페이지의 크기는 광고 없는 스토리 페이지와 동일하게 유지합니다.
 - 동일한 인터랙션 모델: 사용자는 광고 없는 스토리 페이지에서 하는 것처럼 다음 화면으로 넘어갈 수 있습니다.

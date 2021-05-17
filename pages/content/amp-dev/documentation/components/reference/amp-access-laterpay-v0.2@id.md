@@ -345,4 +345,4 @@ Anda dapat menemukan contoh yang lebih lengkap di [https://ampexample.laterpay.n
 
 ## Validasi <a name="validation"></a>
 
-Lihat [aturan amp-access-laterpay](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii) dalam spesifikasi validator AMP.
+Lihat [aturan amp-access-laterpay](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii) dalam spesifikasi validator AMP.

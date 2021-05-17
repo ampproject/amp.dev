@@ -9,7 +9,7 @@ Tous les styles doivent se trouver dans l'en-tête du document (voir [Ajouter de
 Cependant, vous pouvez utiliser des préprocesseurs CSS et des modèles pour créer des pages statiques afin de mieux gérer votre contenu.
 
 **Remarque** : Les composants AMP ont des styles par défaut pour faciliter la création de pages responsives.
-Ces styles sont définis dans l'[`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
+Ces styles sont définis dans l'[`amp.css`](https://github.com/ampproject/amphtml/blob/main/css/amp.css).
 
 ## Utiliser les préprocesseurs CSS <a name="using-css-preprocessors"></a>
 

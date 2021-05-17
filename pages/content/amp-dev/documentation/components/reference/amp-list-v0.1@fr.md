@@ -55,7 +55,7 @@ Vous pouvez spécifier un modèle de deux façons différentes :
 * Attribut `template` faisant référence à un ID d'un élément `template` ou `script` existant
 * Élément `template` ou `script` imbriqué directement dans l'élément `amp-list`
 
-Pour en savoir plus sur les modèles, reportez-vous à la section [Modèles AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md).
+Pour en savoir plus sur les modèles, reportez-vous à la section [Modèles AMP HTML](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-templates.md).
 
 *Exemple : Affichage d'une liste dynamique*
 
@@ -310,7 +310,7 @@ Les attributs `load-more` sont proposés avec les options "manual" et "auto" pou
 
 ```
 
-Pour obtenir des exemples fonctionnels, consultez les fichiers suivants : [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) et [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html).
+Pour obtenir des exemples fonctionnels, consultez les fichiers suivants : [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/main/test/manual/amp-list/infinite-scroll-1.amp.html) et [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/main/test/manual/amp-list/infinite-scroll-1.amp.html).
 
 ### Attributs <a name="sample-usage"></a>
 
@@ -423,7 +423,7 @@ Cet élément inclut des [attributs communs](../../../documentation/guides-and-t
 ## Substitutions <a name="substitutions"></a>
 
 Le composant `<amp-list>` autorise toutes les substitutions de variables d'URL standards.
-Pour plus d'informations, consultez le [Guide des substitutions](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
+Pour plus d'informations, consultez le [Guide des substitutions](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md).
 
 Par exemple :
 ```html
@@ -433,4 +433,4 @@ peut effectuer une requête vers une adresse telle que `https://foo.com/list.jso
 
 ## Validation <a name="validation"></a>
 
-Consultez les [règles relatives à amp-list](https://github.com/ampproject/amphtml/blob/master/extensions/amp-list/validator-amp-list.protoascii) dans les spécifications du validateur AMP.
+Consultez les [règles relatives à amp-list](https://github.com/ampproject/amphtml/blob/main/extensions/amp-list/validator-amp-list.protoascii) dans les spécifications du validateur AMP.

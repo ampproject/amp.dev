@@ -83,7 +83,7 @@ teaser:
 
 ## التحليلات <a name="analytics"></a>
 
-يوفر المكوِّن `amp-video` التحليلات بطريقة مبتكرة. ويمكنك الاطّلاع على [تحليلات الفيديو](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md) للحصول على مزيد من المعلومات.
+يوفر المكوِّن `amp-video` التحليلات بطريقة مبتكرة. ويمكنك الاطّلاع على [تحليلات الفيديو](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-video-analytics.md) للحصول على مزيد من المعلومات.
 
 ## السمات <a name="attributes"></a>
 
@@ -100,7 +100,7 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>autoplay</strong></td>
-    <td>في حال توفّر هذه السمة، وإتاحة المتصفح عمل التشغيل التلقائي، سيتم تشغيل الفيديو تلقائيًا بعد ظهوره. هناك بعض الشروط التي يحتاج إليها المكوِّن ليتم تشغيله <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-video-interface.md#autoplay">وهي موضحة في مواصفات الفيديو في AMP.</a></td>
+    <td>في حال توفّر هذه السمة، وإتاحة المتصفح عمل التشغيل التلقائي، سيتم تشغيل الفيديو تلقائيًا بعد ظهوره. هناك بعض الشروط التي يحتاج إليها المكوِّن ليتم تشغيله <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md#autoplay">وهي موضحة في مواصفات الفيديو في AMP.</a></td>
   </tr>
   <tr>
     <td width="40%"><strong>controls</strong></td>
@@ -137,7 +137,7 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>rotate-to-fullscreen</strong></td>
-    <td>إذا كان الفيديو مرئيًا، سيتم عرض الفيديو بملء الشاشة بعد تدوير المستخدم جهازه إلى الوضع الأفقي. لمزيد من التفاصيل، <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-video-interface.md#rotate-to-fullscreen">راجع مواصفات الفيديو في AMP</a>.</td>
+    <td>إذا كان الفيديو مرئيًا، سيتم عرض الفيديو بملء الشاشة بعد تدوير المستخدم جهازه إلى الوضع الأفقي. لمزيد من التفاصيل، <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md#rotate-to-fullscreen">راجع مواصفات الفيديو في AMP</a>.</td>
   </tr>
   <tr>
     <td width="40%"><strong>السمات المشتركة</strong></td>
@@ -192,4 +192,4 @@ teaser:
 
 ## التحقق <a name="validation"></a>
 
-اطّلع على [قواعد amp-video](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) في مواصفات مدقق AMP.
+اطّلع على [قواعد amp-video](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) في مواصفات مدقق AMP.

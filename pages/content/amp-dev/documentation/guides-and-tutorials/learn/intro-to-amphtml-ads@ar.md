@@ -48,7 +48,7 @@ formats:
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='Serving AMPHTML ads to AMP pages', caption='Serving AMPHTML ads to AMP pages', align='' ) }}
 
 1. يُدرج الناشرون شريحة إعلانية في صفحة AMP الخاصة بهم عبر العلامة [`amp-ad`](../../../documentation/components/reference/amp-ad.md)، مع تحديد شبكة الإعلانات التي يرغبون في استخدامها.
-2. يرسل وقت تشغيل AMP طلب إعلان إلى شبكة الإعلانات المحددة لاسترداد الإعلان. وتوفر شبكات الإعلانات القادرة على عرض إعلانات AMPHTML [تنفيذ الإحضار السريع](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) الذي يتحقق من صحة التصميم ويوقع عليه.
+2. يرسل وقت تشغيل AMP طلب إعلان إلى شبكة الإعلانات المحددة لاسترداد الإعلان. وتوفر شبكات الإعلانات القادرة على عرض إعلانات AMPHTML [تنفيذ الإحضار السريع](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md) الذي يتحقق من صحة التصميم ويوقع عليه.
 3. تستجيب شبكة الإعلانات بإعلان AMPHTML ويعرض وقت تشغيل AMP الإعلان على صفحة AMP.
 
 [tip type="note"] لا حاجة إلى تكامل خاص لعرض إعلانات AMPHTML على الصفحات بغير بتنسيق AMP. تحقق من شبكة الإعلانات لديك لمعرفة ما إذا كانت تدعم إعلانات AMPHTML أم لا. [/tip]
@@ -77,7 +77,7 @@ formats:
 
 ### خوادم/شبكات الإعلانات
 
-لتقديم إعلانات AMPHTML إلى صفحات AMP، يلزمك إنشاء ملحق [`amp-ad`](../../../documentation/components/reference/amp-ad.md) لشبكتك (ما لم يكن لديك واحد بالفعل) والذي يستخدم [تنفيذ طلب إعلان للإحضار السريع](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md). راجع [التكامل مع AMP لعرض الإعلانات](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md) للحصول على مزيد التفاصيل. وضع في اعتبارك أنه ليست هناك حاجة إلى تكامل خاص لعرض AMPHTML على الصفحات بغير AMP.
+لتقديم إعلانات AMPHTML إلى صفحات AMP، يلزمك إنشاء ملحق [`amp-ad`](../../../documentation/components/reference/amp-ad.md) لشبكتك (ما لم يكن لديك واحد بالفعل) والذي يستخدم [تنفيذ طلب إعلان للإحضار السريع](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md). راجع [التكامل مع AMP لعرض الإعلانات](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md) للحصول على مزيد التفاصيل. وضع في اعتبارك أنه ليست هناك حاجة إلى تكامل خاص لعرض AMPHTML على الصفحات بغير AMP.
 
 ## إنشاء إعلانات AMPHTML
 
@@ -101,7 +101,7 @@ formats:
 
 ## دعم إعلانات AMPHTML في RTB
 
-بالنسبة إلى SSPs وعمليات تبادل الإعلانات التي ترغب في دعم إعلانات AMPHTML في بيئة عروض الأسعار في الوقت الفعلي (RTB)، يُرجى الرجوع إلى [دليل التنفيذ لتبادل الإعلانات في RTB](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/RTBExchangeGuide.md) للحصول على مزيد التفاصيل.
+بالنسبة إلى SSPs وعمليات تبادل الإعلانات التي ترغب في دعم إعلانات AMPHTML في بيئة عروض الأسعار في الوقت الفعلي (RTB)، يُرجى الرجوع إلى [دليل التنفيذ لتبادل الإعلانات في RTB](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/RTBExchangeGuide.md) للحصول على مزيد التفاصيل.
 
 ## الأسئلة الشائعة
 
@@ -125,4 +125,4 @@ formats:
 
 - [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) هي الطريقة الموصى بها للعثور على إجابات للأسئلة حول AMP؛ نظرًا لأن أعضاء مجتمع AMP Project يراقبون Stack Overflow بانتظام، فمن المحتمل أن تتلقى الإجابة الأسرع عن أسئلتك هناك.
 - انضم إلى قناة [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) للحصول على حلول وأجوبة.
-- إذا واجهت خطأً في AMP أو كان لديك طلب ميزة لـ AMP، فراجع [الإبلاغ عن المشكلات مع AMP ](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp) للحصول على معلومات حول إرسال مشكلة.
+- إذا واجهت خطأً في AMP أو كان لديك طلب ميزة لـ AMP، فراجع [الإبلاغ عن المشكلات مع AMP ](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#reporting-issues-with-amp) للحصول على معلومات حول إرسال مشكلة.

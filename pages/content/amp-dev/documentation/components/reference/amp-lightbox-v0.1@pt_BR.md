@@ -151,7 +151,7 @@ Nos exemplos abaixo, demonstramos como a transição procura um anúncio HTML pa
 
 ##### Em iframes compatíveis (por exemplo, provenientes de um cache de AMP) <a name="on-friendly-iframes-eg-coming-from-an-amp-cache"></a>
 
-<amp-img alt="anúncio lightbox em iframe compatível" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-fie.gif" layout="fixed">
+<amp-img alt="anúncio lightbox em iframe compatível" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/spec/img/lightbox-ad-fie.gif" layout="fixed">
   <noscript>
     <img alt="anúncio lightbox em iframe compatível" src="../../spec/img/lightbox-ad-fie.gif">
     </noscript>
@@ -159,7 +159,7 @@ Nos exemplos abaixo, demonstramos como a transição procura um anúncio HTML pa
 
 ##### Em iframes de terceiros (por exemplo, fora do cache de AMP) <a name="on-third-party-iframes-eg-outside-the-amp-cache"></a>
 
-<amp-img alt="anúncio lightbox em iframe de terceiro" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-3p.gif" layout="fixed">
+<amp-img alt="anúncio lightbox em iframe de terceiro" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/spec/img/lightbox-ad-3p.gif" layout="fixed">
   <noscript>
     <img alt="anúncio lightbox em iframe de terceiro" src="../../spec/img/lightbox-ad-3p.gif">
     </noscript>
@@ -167,4 +167,4 @@ Nos exemplos abaixo, demonstramos como a transição procura um anúncio HTML pa
 
 ## Validação <a name="validation"></a>
 
-Veja as [regras do amp-lightbox](https://github.com/ampproject/amphtml/blob/master/extensions/amp-lightbox/validator-amp-lightbox.protoascii) (link em inglês) nas especificações do validador de AMP.
+Veja as [regras do amp-lightbox](https://github.com/ampproject/amphtml/blob/main/extensions/amp-lightbox/validator-amp-lightbox.protoascii) (link em inglês) nas especificações do validador de AMP.

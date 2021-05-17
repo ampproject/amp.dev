@@ -2,12 +2,17 @@
 @import '_functions.scss';
 @import '_mixins.scss';
 @import '_variables.scss';
+@import '../atoms/_text.scss';
 
 .#{molecule('pixi-recommendations-item')} {
   $recommendationsItem: &;
   margin-top: 30px;
   transition: transform 0.25s ease-in, background 0.25s ease-in,
     box-shadow 0.3s ease-in, border-color 0.3s ease-in;
+
+  code {
+    @include txt-mono-inline 
+  }
 
   &-box {
     padding: 30px 18px;
@@ -149,6 +154,7 @@
       direction: rtl;
       text-overflow: ellipsis;
     }
+
   }
 
   &-next-advice {

@@ -73,6 +73,6 @@ author: CrystalOnScript
 
 إذا كنت معلنًا مهتمًا بعرض إعلاناتك داخل قصص الويب، فيرجى [التواصل معنا](mailto:story-ads-wg@google.com) لمزيد من المعلومات.
 
-يمكن أيضًا للناشرين وضع إعلانات مخصصة إذا قاموا بإعداد خادم الإعلانات الخاص بهم. [العملية بالتفصيل موضحة هنا](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
+يمكن أيضًا للناشرين وضع إعلانات مخصصة إذا قاموا بإعداد خادم الإعلانات الخاص بهم. [العملية بالتفصيل موضحة هنا](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
 
 [tip type="note"] اقرأ [حركة بيانات الأعمال الإبداعية المخصصة في قصص الويب](https://support.google.com/admanager/answer/9038178) لمزيد من المعلومات حول رفع الإعلانات إلى مدير إعلانات Google وراجع الدليل الخاص بنا حول [أفضل الممارسات لإنشاء إعلانات قصص AMP](story_ads_best_practices.md). [/tip]

@@ -22,6 +22,6 @@ Implémentez un CSP en ajoutant la balise Meta appropriée dans l'en-tête de vo
 />
 ```
 
-[Vous pouvez voir l'exemple complet ici](https://github.com/ampproject/amphtml/blob/master/examples/csp.amp.html).
+[Vous pouvez voir l'exemple complet ici](https://github.com/ampproject/amphtml/blob/main/examples/csp.amp.html).
 
 [tip type="read-on"] Plus de détails sur la [protection contre les failles de sécurité et les CSP ici](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP). [/tip]

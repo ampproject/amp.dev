@@ -100,7 +100,7 @@ Congratulations! You are now serving ads on your AMP page!
 
 ## Serwowanie sprzedawanych bezpośrednio reklam AMPHTML
 
-Składnik [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) serwuje reklamy z określonej przez Ciebie sieci. Mogą to być standardowe reklamy HTML lub reklamy AMPHTML, o ile sieć reklamowa obsługuje reklamy AMPHTML. Aby serwować reklamy sprzedawane bezpośrednio jako reklamy AMPHTML, należy utworzyć reklamę w AMP HTML, zgodnie z wymaganiami [specyfikacji reklam AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) i użyć [serwera reklam, który obsługuje reklamy AMPHTML](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
+Składnik [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) serwuje reklamy z określonej przez Ciebie sieci. Mogą to być standardowe reklamy HTML lub reklamy AMPHTML, o ile sieć reklamowa obsługuje reklamy AMPHTML. Aby serwować reklamy sprzedawane bezpośrednio jako reklamy AMPHTML, należy utworzyć reklamę w AMP HTML, zgodnie z wymaganiami [specyfikacji reklam AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) i użyć [serwera reklam, który obsługuje reklamy AMPHTML](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/a4a-readme.md#publishers).
 
 ## Rozszerzenie danych dotyczących targetowania w żądaniach reklam
 
@@ -112,8 +112,8 @@ You can learn more about RTC from this YouTube video:
 
 Or, learn more from these RTC resources:
 
-- [AMP RTC — przewodnik implementacji dla wydawców](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
-- [Funkcja AMP Real Time Config](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
+- [AMP RTC — przewodnik implementacji dla wydawców](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
+- [Funkcja AMP Real Time Config](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-documentation.md)
 
 ## Najlepsze praktyki
 
@@ -124,7 +124,7 @@ Here are some tips to maximize the effectiveness of ads on your AMP pages:
 - Aby uzyskać maksymalny przychód na jedną stronę, **umieść na stronach AMP taką samą liczbę reklam**, jak na stronach bez AMP.
 - **Umieść pierwsze ogłoszenie bezpośrednio pod pierwszym okienkiem na stronie** („pod treścią”), aby zapewnić optymalne wrażenia użytkownikowi.
 - O ile nie stosujesz zaawansowanego kodu CSS lub zapytań o media, upewnij się, że Twoje jednostki reklamowe są wyśrodkowane na stronie, aby zapewnić użytkownikom optymalne wrażenia na mobilnych stronach internetowych.
-- Aby zwiększyć presję podczas aukcji reklamowych i zwiększyć przychody z aukcji, włącz [żądania reklam o wielu rozmiarach](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests).
+- Aby zwiększyć presję podczas aukcji reklamowych i zwiększyć przychody z aukcji, włącz [żądania reklam o wielu rozmiarach](https://github.com/ampproject/amphtml/blob/main/ads/README.md#support-for-multi-size-ad-requests).
 
 ### Popyt i ceny: uzyskaj właściwą cenę za reklamy
 

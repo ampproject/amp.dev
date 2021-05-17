@@ -66,7 +66,7 @@ AMP HTML ドキュメントに関するルール
 [tip type="read-on"] 詳しくは、次のリソースを参照してください。
 
 - [Google 検索用の AMP の準備方法](https://developers.google.com/amp/docs) - AMP ページを Google 検索用に準備する方法について説明します。
-- [メタデータのサンプル](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - 他のさまざまな場所（Twitter など）で必要となる全メタデータについて詳しく説明します。 [/tip]
+- [メタデータのサンプル](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples) - 他のさまざまな場所（Twitter など）で必要となる全メタデータについて詳しく説明します。 [/tip]
 
 <hr>
 

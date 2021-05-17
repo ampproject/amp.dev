@@ -100,7 +100,7 @@ formats:
 
 ## Показ рекламы AMPHTML, продаваемой напрямую
 
-Компонент [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) показывает рекламу из указанной вами сети. Эта реклама может быть как стандартной рекламой HTML, так и рекламой AMPHTML, если рекламная сеть ее поддерживает. Чтобы показывать напрямую продаваемую рекламу в формате рекламы AMPHTML, создайте рекламу в соответствии с требованиями [спецификации AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) и используйте [рекламный сервер, поддерживающий рекламу AMPHTML](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/a4a-readme.md#publishers).
+Компонент [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) показывает рекламу из указанной вами сети. Эта реклама может быть как стандартной рекламой HTML, так и рекламой AMPHTML, если рекламная сеть ее поддерживает. Чтобы показывать напрямую продаваемую рекламу в формате рекламы AMPHTML, создайте рекламу в соответствии с требованиями [спецификации AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) и используйте [рекламный сервер, поддерживающий рекламу AMPHTML](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/a4a-readme.md#publishers).
 
 ## Дополнение данных таргетинга в составе запросов рекламы
 
@@ -112,8 +112,8 @@ formats:
 
 Дополнительную информацию можно также получить из следующих ресурсов, посвященных RTC:
 
-- [Руководство по внедрению AMP RTC для издателей](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
-- [Технология AMP Real Time Config](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)
+- [Руководство по внедрению AMP RTC для издателей](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-publisher-implementation-guide.md)
+- [Технология AMP Real Time Config](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/rtc-documentation.md)
 
 ## Рекомендуемые методы
 
@@ -124,7 +124,7 @@ formats:
 - **Размещайте одинаковое число рекламных объявлений** как на AMP-страницах, так и на традиционных (не-AMP) страницах, чтобы получать максимальную выручку со страницы.
 - **Place the first ad immediately below the first viewport** ("below the fold") to provide an optimal user experience.
 - Если вы не используете расширенный CSS или медиа-запросы, **убедитесь, что ваши рекламные блоки размещены по центру страницы**, чтобы пользователям было удобно работать с мобильным сайтом.
-- Реализуйте [мультиразмерные запросы рекламы](https://github.com/ampproject/amphtml/blob/master/ads/README.md#support-for-multi-size-ad-requests) в своем AMP-инвентаре, чтобы усилить конкуренцию на аукционе рекламы и увеличить свой доход.
+- Реализуйте [мультиразмерные запросы рекламы](https://github.com/ampproject/amphtml/blob/main/ads/README.md#support-for-multi-size-ad-requests) в своем AMP-инвентаре, чтобы усилить конкуренцию на аукционе рекламы и увеличить свой доход.
 
 ### Спрос и цены: получайте правильную цену за свою рекламу
 

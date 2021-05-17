@@ -30,9 +30,9 @@ AMP 광고는 [`amp-ad`](../../../../documentation/components/reference/amp-ad.m
 </amp-ad>
 ```
 
-보시다시피 구성이 매우 단순합니다. `type` 속성에서 사용하려는 광고 플랫폼의 [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) 컴포넌트를 알 수 있습니다. 이 예제에서는 [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md) 플랫폼을 사용할 것이므로 값으로 `doubleclick`을 지정했습니다.
+보시다시피 구성이 매우 단순합니다. `type` 속성에서 사용하려는 광고 플랫폼의 [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) 컴포넌트를 알 수 있습니다. 이 예제에서는 [DoubleClick](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md) 플랫폼을 사용할 것이므로 값으로 `doubleclick`을 지정했습니다.
 
-`data-slot` 속성은 더 특별합니다. [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)에서 `data-`로 시작하는 모든 속성은 공급업체별 속성입니다. 즉, 모든 공급업체가 해당 속성을 요구하는 것은 아니며, 관련 속성이 제공된 경우에도 응답하지 않을 수 있습니다. 위의 **DoubleClick** 예시와 다음 [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md) 플랫폼의 테스트 광고를 비교하여 살펴보겠습니다.
+`data-slot` 속성은 더 특별합니다. [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)에서 `data-`로 시작하는 모든 속성은 공급업체별 속성입니다. 즉, 모든 공급업체가 해당 속성을 요구하는 것은 아니며, 관련 속성이 제공된 경우에도 응답하지 않을 수 있습니다. 위의 **DoubleClick** 예시와 다음 [A9](https://github.com/ampproject/amphtml/blob/main/ads/a9.md) 플랫폼의 테스트 광고를 비교하여 살펴보겠습니다.
 
 ```html
 <amp-ad

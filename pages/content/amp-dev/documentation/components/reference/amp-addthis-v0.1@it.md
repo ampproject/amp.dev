@@ -138,7 +138,7 @@ Guarda il nostro [video di YouTube](https://www.youtube.com/watch?v=BSkuAB4er2o)
 
 ## Convalida <a name="validation"></a>
 
-Consulta le [regole amp-addthis](https://github.com/ampproject/amphtml/blob/master/extensions/amp-addthis/validator-amp-addthis.protoascii) nella specifica dello strumento di convalida AMP.
+Consulta le [regole amp-addthis](https://github.com/ampproject/amphtml/blob/main/extensions/amp-addthis/validator-amp-addthis.protoascii) nella specifica dello strumento di convalida AMP.
 
 ## Privacy <a name="privacy"></a>
 

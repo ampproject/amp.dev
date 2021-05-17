@@ -42,6 +42,6 @@ Ecco alcuni suggerimenti rapidi per migliorare il coinvolgimento degli utenti co
 
 - **Consulta la roadmap AMP** per aggiornamenti e funzionalità nella pagina [roadmap](../../../community/roadmap.html).
 
-- **Partecipa.** Contribuisci al codice sorgente, alla risoluzione dei bug nei file o offri feedback su [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Condividi i tuoi contributi ad AMP su [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
+- **Partecipa.** Contribuisci al codice sorgente, alla risoluzione dei bug nei file o offri feedback su [GitHub](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md). Condividi i tuoi contributi ad AMP su [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 
 - **Scopri** come utilizzare i componenti AMP con gli [esempi](../../../documentation/examples/index.html).

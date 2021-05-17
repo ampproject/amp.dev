@@ -30,9 +30,9 @@ Spójrz na ten przykład reklamy **DoubleClick**:
 </amp-ad>
 ```
 
-Jak widać, jest to bardzo prosta konfiguracja. Zwróć uwagę na atrybut `type`, który informuje składnik [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) o platformie reklamowej, której chcemy użyć. W tym przypadku chcemy użyć platformy [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md), więc jako wartość podaliśmy `doubleclick`.
+Jak widać, jest to bardzo prosta konfiguracja. Zwróć uwagę na atrybut `type`, który informuje składnik [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) o platformie reklamowej, której chcemy użyć. W tym przypadku chcemy użyć platformy [DoubleClick](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md), więc jako wartość podaliśmy `doubleclick`.
 
-Atrybut `data-slot` jest bardziej unikalny. W elementach [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) wszelkie atrybuty zaczynające się od `data-` są atrybutami specyficznymi dla danego usługodawcy. To znaczy, że niekoniecznie wszyscy usługodawcy będą wymagali tego konkretnego atrybutu ani niekoniecznie będą reagować, jeśli zostanie on podany. Porównaj na przykład powyższą próbkę **DoubleClick** z następującą reklamą testową z platformy [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md):
+Atrybut `data-slot` jest bardziej unikalny. W elementach [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) wszelkie atrybuty zaczynające się od `data-` są atrybutami specyficznymi dla danego usługodawcy. To znaczy, że niekoniecznie wszyscy usługodawcy będą wymagali tego konkretnego atrybutu ani niekoniecznie będą reagować, jeśli zostanie on podany. Porównaj na przykład powyższą próbkę **DoubleClick** z następującą reklamą testową z platformy [A9](https://github.com/ampproject/amphtml/blob/main/ads/a9.md):
 
 ```html
 <amp-ad

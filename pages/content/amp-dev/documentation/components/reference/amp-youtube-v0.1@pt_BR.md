@@ -129,5 +129,5 @@ Com o layout responsivo, a largura e a altura do exemplo geram layouts corretos 
 
 ## Validação <a name="validation"></a>
 
-Consulte as [regras do amp-youtube](https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube/validator-amp-youtube.protoascii) (link em inglês) nas especificações do validador de AMP.
+Consulte as [regras do amp-youtube](https://github.com/ampproject/amphtml/blob/main/extensions/amp-youtube/validator-amp-youtube.protoascii) (link em inglês) nas especificações do validador de AMP.
 ,false,false

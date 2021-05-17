@@ -74,7 +74,7 @@ Exemple :
 </script>
 [/sourcecode]
 
-Vous trouverez plus d'exemples dans le [dossier d'exemples ampproject](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), y compris la syntaxe alternative pour l'attribut HTML.
+Vous trouverez plus d'exemples dans le [dossier d'exemples ampproject](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples), y compris la syntaxe alternative pour l'attribut HTML.
 
 Remarque : Cette définition de Schema.org est nécessaire pour que votre contenu puisse s'afficher dans la démonstration du [carrousel d'actualités de la recherche Google (essai sur mobile)](https://g.co/ampdemo).
 Consultez également [Le meilleur de l'actualité avec AMP](https://developers.google.com/structured-data/carousels/top-stories) et l'[outil de test des données structurées](https://developers.google.com/structured-data/testing-tool/).

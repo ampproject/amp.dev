@@ -138,7 +138,7 @@ Adım adım talimatlar için [YouTube videomuza](https://www.youtube.com/watch?v
 
 ## Doğrulama <a name="validation"></a>
 
-AMP doğrulayıcı spesifikasyonundaki [amp-addthis kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-addthis/validator-amp-addthis.protoascii) bakın.
+AMP doğrulayıcı spesifikasyonundaki [amp-addthis kurallarına](https://github.com/ampproject/amphtml/blob/main/extensions/amp-addthis/validator-amp-addthis.protoascii) bakın.
 
 ## Gizlilik <a name="privacy"></a>
 

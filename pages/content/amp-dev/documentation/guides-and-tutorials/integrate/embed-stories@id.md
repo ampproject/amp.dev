@@ -73,7 +73,7 @@ Anda dapat menyematkan cerita AMP di dalam halaman non-AMP, sehingga pengguna da
 
 ## Menyematkan pemutar cerita AMP
 
-Menampilkan sebuah cerita AMP di halaman non-AMP memerlukan penggunaan elemen [`amp-story-player`](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md).
+Menampilkan sebuah cerita AMP di halaman non-AMP memerlukan penggunaan elemen [`amp-story-player`](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-story-player.md).
 
 ### Mengimpor skrip
 

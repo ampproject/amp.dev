@@ -19,7 +19,7 @@ Mais de 20 fornecedores de análise já oferecem compatibilidade com a extensão
 
 A extensão [`amp-ad`](../../../components/reference/amp-ad.md)  é reservada para a veiculação de anúncios gráficos em páginas AMP. Mais de 90 fornecedores de tecnologia de anúncios já oferecem compatibilidade com AMP.  Para começar, leia a [`amp-ad`](../../../components/reference/amp-ad.md) podem ser úteis.
 
-Mais de 90 fornecedores de anúncios já oferecem compatibilidade com recursos relacionados à publicidade, como a extensão [`amp-ad`](../../../components/reference/amp-ad.md) . Veja um exemplo de [solicitação pull](https://github.com/ampproject/amphtml/pull/2299) da rede de publicidade [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
+Mais de 90 fornecedores de anúncios já oferecem compatibilidade com recursos relacionados à publicidade, como a extensão [`amp-ad`](../../../components/reference/amp-ad.md) . Veja um exemplo de [solicitação pull](https://github.com/ampproject/amphtml/pull/2299) da rede de publicidade [Criteo](https://github.com/ampproject/amphtml/blob/main/ads/criteo.md).
 
 ## 3. Usar a extensão amp-call-tracking
 
@@ -29,7 +29,7 @@ Para saber mais sobre como essa extensão pode ajudá-lo, consulte a [`amp-call-
 
 ## 4. Adicionar uma nova extensão/incorporação
 
-Se o caso de uso não puder ser atendido pelas extensões [`amp-analytics`](../../../components/reference/amp-analytics.md) , [`amp-pixel`](../../../components/reference/amp-pixel.md) ou [`amp-ad`](../../../components/reference/amp-ad.md) , [poste a questão no GitHub](https://github.com/ampproject/amphtml/issues/new) para discutir opções alternativas. Recebemos novas extensões que podem ser usadas por várias empresas. Veja a seção [componentes estendidos contribuintes](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-extended-components) para mais detalhes.
+Se o caso de uso não puder ser atendido pelas extensões [`amp-analytics`](../../../components/reference/amp-analytics.md) , [`amp-pixel`](../../../components/reference/amp-pixel.md) ou [`amp-ad`](../../../components/reference/amp-ad.md) , [poste a questão no GitHub](https://github.com/ampproject/amphtml/issues/new) para discutir opções alternativas. Recebemos novas extensões que podem ser usadas por várias empresas. Veja a seção [componentes estendidos contribuintes](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#contributing-extended-components) para mais detalhes.
 
 ## 5. Usar amp-iframe
 
@@ -37,11 +37,11 @@ Como assim? Existe uma 5ª maneira? Sim, existe, mas ela deve ser usada somente 
 
 ## Resumo
 
-Para começar, leia as [diretrizes do desenvolvedor terceirizado](https://github.com/ampproject/amphtml/blob/master/3p/README.md). O projeto AMP já é compatível com muitos casos de uso de terceiros, mas sabemos que existem recursos da Web que ainda não foram integrados.
+Para começar, leia as [diretrizes do desenvolvedor terceirizado](https://github.com/ampproject/amphtml/blob/main/3p/README.md). O projeto AMP já é compatível com muitos casos de uso de terceiros, mas sabemos que existem recursos da Web que ainda não foram integrados.
 
 Por exemplo, o rastreamento dinâmico de chamadas é um caso de uso ainda não compatível com AMP. No entanto, estamos [trabalhando ativamente](https://github.com/ampproject/amphtml/issues/5276) com a comunidade para torná-lo compatível.
 
-Caso tenha dúvidas ou sugestões, [envie seus comentários](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#filing-issues) ou entre em contato por um dos [canais de discussão](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#discussion-channels).
+Caso tenha dúvidas ou sugestões, [envie seus comentários](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#filing-issues) ou entre em contato por um dos [canais de discussão](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#discussion-channels).
 
 ## Outros recursos
 

@@ -86,7 +86,7 @@ Examinons cela étape par étape:
 
 [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
 
-1. Spécifiez les balises `<script>` pour les [extensions de retard d'affichage](https://github.com/ampproject/amphtml/blob/master/src/render-delaying-services.js) (p. ex., [`amp-experiment`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md) et [`amp-story`](../../../documentation/components/reference/amp-story.md)
+1. Spécifiez les balises `<script>` pour les [extensions de retard d'affichage](https://github.com/ampproject/amphtml/blob/main/src/render-delaying-services.js) (p. ex., [`amp-experiment`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md) et [`amp-story`](../../../documentation/components/reference/amp-story.md)
 2. Spécifiez les balises `<script>` pour les extensions restantes (par exemple, [`amp-bind`](../../../documentation/components/reference/amp-bind.md) ...). Ces extensions ne retardent l'affichage et ne doivent donc pas être préchargées car elles consommer supprimer une bande passante importante pour l'affichage initial.
 3. Spécifiez les styles personnalisés à l'aide de la balise `<style amp-custom>`.
 4. Ajoutez toutes les autres balises autorisées dans la section `<head>`. En particulier, toutes les polices externes doivent être appliquées en dernier puisqu'elles bloquent l'affichage.

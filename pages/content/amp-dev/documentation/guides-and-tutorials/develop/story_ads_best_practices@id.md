@@ -15,7 +15,7 @@ Format-format iklan saat ini, seperti spanduk dan kotak, tidak terintegrasi deng
 
 Iklan Cerita Web mengikuti prinsip-prinsip berikut ini:
 
-- Iklan AMPHTML Valid: mengikuti spesifikasi teknis yang sama seperti [iklan AMPHTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md) klasik.
+- Iklan AMPHTML Valid: mengikuti spesifikasi teknis yang sama seperti [iklan AMPHTML](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md) klasik.
 - Visual yang utama: Menarik, berani, pernyataan undangan yang dimotivasi oleh konteks
 - Asli: Halaman iklan mempunyai dimensi yang sama seperti halaman cerita organik.
 - Model interaksi yang sama: Pengguna dapat melanjutkan ke layar selanjutnya, sama seperti dengan halaman cerita organik.

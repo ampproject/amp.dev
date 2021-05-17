@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -92,7 +92,7 @@ Além disso, os criativos devem obedecer às seguintes regras:
 
 ### Boilerplate <a name="boilerplate"></a>
 
-Os criativos de anúncios AMPHTML requerem um estilo de boilerplate diferente e consideravelmente mais simples do que os [documentos gerais do AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md):
+Os criativos de anúncios AMPHTML requerem um estilo de boilerplate diferente e consideravelmente mais simples do que os [documentos gerais do AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md):
 
 [sourcecode:html]
 
@@ -108,7 +108,7 @@ _Justificativa:_ o estilo `amp-boilerplate` oculta o conteúdo do corpo até que
 
 Por fim, o boilerplate do anúncio AMPHTML usa `amp-a4a-boilerplate` em vez de `amp-boilerplate` para que os validadores possam identificá-lo com facilidade e produzir mensagens de erro mais precisas para ajudar os desenvolvedores.
 
-Observe que as mesmas regras sobre alterações para o texto boilerplate se aplicam ao [boilerplate AMP geral](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md).
+Observe que as mesmas regras sobre alterações para o texto boilerplate se aplicam ao [boilerplate AMP geral](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md).
 
 ### CSS <a name="css"></a>
 
@@ -249,7 +249,7 @@ A maior parte das omissões são ou para garantir o desempenho ou para deixar os
 
 _Example:_ O `<amp-ad>` foi omitido desta lista. Foi explicitamente proibido porque permitir um `<amp-ad>` dentro de outro `<amp-ad>` poderia levar potencialmente a cascatas ilimitadas de carregamento de anúncios, o que não adere às metas de desempenho dos anúncios AMPHTML.
 
-_Exemplo:_ O `<amp-iframe>` foi omitido desta lista. Foi proibido porque os anúncios poderiam usá-lo para executar JavaScript arbitrário e carregar conteúdo arbitrário. Os anúncios que queiram usar tais capacidades devem retornar `false` de [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40) e usar o mecanismo de renderização existente para anúncios '3p iframe'.<br><br>
+_Exemplo:_ O `<amp-iframe>` foi omitido desta lista. Foi proibido porque os anúncios poderiam usá-lo para executar JavaScript arbitrário e carregar conteúdo arbitrário. Os anúncios que queiram usar tais capacidades devem retornar `false` de [a4aRegistry](https://github.com/ampproject/amphtml/blob/main/ads/_a4a-config.js#L40) e usar o mecanismo de renderização existente para anúncios '3p iframe'.<br><br>
 
 _Exemplo:_ `<amp-facebook>`, `<amp-instagram>`, `<amp-twitter>` e `<amp-youtube>` são todos omitidos pelas mesmas razões que `<amp-iframe>`: Todos criam iframes e poderiam potencialmente consumir recursos ilimitados dentro deles.
 
@@ -259,7 +259,7 @@ _Exemplo:_ O `<amp-lightbox>` ainda não foi incluído porque mesmo alguns criat
 
 ### Tags HTML <a name="html-tags"></a>
 
-As tags a seguir são _permitidas_ em criativos de anúncios AMPHTML. Tags que não foram explicitamente permitidas são proibidas. Esta lista é um subconjunto da [lista geral de adendos permitidos a tags AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md). Assim como nessa lista, a ordenação é consistente com a especificação HTML5 na seção 4 [The Elements of HTML (Os elementos do HTML)](http://www.w3.org/TR/html5/single-page.html#html-elements).
+As tags a seguir são _permitidas_ em criativos de anúncios AMPHTML. Tags que não foram explicitamente permitidas são proibidas. Esta lista é um subconjunto da [lista geral de adendos permitidos a tags AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/../../spec/amp-tag-addendum.md). Assim como nessa lista, a ordenação é consistente com a especificação HTML5 na seção 4 [The Elements of HTML (Os elementos do HTML)](http://www.w3.org/TR/html5/single-page.html#html-elements).
 
 A maior parte das omissões foram motivadas por desempenho ou porque as tags não fazem parte do padrão HTML5. Por exemplo, `<noscript>` é omitida porque os anúncios AMPHTML dependem de JavaScript serem ativados, portanto um bloco `<noscript>` jamais será executado e apenas inchará o criativo, aumentando a latência e o custo de transferência. Da mesma forma, `<acronym>`, `<big>`, etc. são proibidos porque não são compatíveis com HTML5.
 

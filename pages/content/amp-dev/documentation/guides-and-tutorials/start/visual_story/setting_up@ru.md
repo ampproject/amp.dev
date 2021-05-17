@@ -18,7 +18,7 @@ author: bpaduch
 
 #### Шаг 1. Скачайте код
 
-1. Скачайте код для данного урока, упакованный в виде zip-файла, со следующего URL-адреса: <a href="https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip">https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip</a>
+1. Скачайте код для данного урока, упакованный в виде zip-файла, со следующего URL-адреса: <a href="/static/files/tutorials/amp-pets-story.zip">/static/files/tutorials/amp-pets-story.zip</a>
 
 2. Распакуйте содержимое zip-файла. В каталоге **amp-pets-story** находятся изображения, видео, аудио и файлы данных, которые мы будем использовать для создания нашей истории. Файл **pets.html** — это стартовая точка нашей истории. Полную версию истории можно найти в файле [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html).
 

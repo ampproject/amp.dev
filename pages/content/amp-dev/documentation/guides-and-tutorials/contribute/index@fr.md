@@ -28,7 +28,7 @@ Nous espérons que vous deviendrez un contributeur habituel de notre communauté
 
 #### Contribution au code
 
-Pour commencer à contribuer au code du Projet AMP, lisez [le fichier CONTRIBUTION](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md), qui comprend des détails sur le processus par lequel une fonctionnalité ou un correctif de bogue passe du concept à la soumission et comment vous pouvez participer aux conceptions techniques et aux discussions. Si vous êtes nouveau dans l'open source, nous avons quelques [conseils pour débutants](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-code).
+Pour commencer à contribuer au code du Projet AMP, lisez [le fichier CONTRIBUTION](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md), qui comprend des détails sur le processus par lequel une fonctionnalité ou un correctif de bogue passe du concept à la soumission et comment vous pouvez participer aux conceptions techniques et aux discussions. Si vous êtes nouveau dans l'open source, nous avons quelques [conseils pour débutants](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#contributing-code).
 
 ### Contribuer à AMP
 

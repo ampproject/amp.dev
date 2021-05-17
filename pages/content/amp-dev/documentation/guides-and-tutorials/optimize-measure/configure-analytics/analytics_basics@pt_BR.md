@@ -35,7 +35,7 @@ Para criar uma configuração simples de [`amp-pixel`](../../../../documentation
 <amp-pixel src="https://foo.com/pixel?RANDOM"></amp-pixel>
 ```
 
-Neste exemplo, os dados de exibição de página são enviados para a URL definida, juntamente com um número aleatório. A variável `RANDOM` é uma entre as muitas [variáveis ​​de substituição na plataforma AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Saiba mais sobre a [substituição de variáveis](analytics_basics.md#variable-substitution).
+Neste exemplo, os dados de exibição de página são enviados para a URL definida, juntamente com um número aleatório. A variável `RANDOM` é uma entre as muitas [variáveis ​​de substituição na plataforma AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md). Saiba mais sobre a [substituição de variáveis](analytics_basics.md#variable-substitution).
 
 O componente [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) é integrado, de modo que não é necessário fazer uma declaração de inclusão, como ocorre com os componentes estendidos de AMP, incluindo [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Entretanto, é necessário colocar a tag [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) o mais perto possível do início de `<body>`. O pixel de rastreamento será acionado somente quando a tag for exibida. Se [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) estiver posicionado perto da parte inferior da página, talvez ele não seja acionado.
 
@@ -133,7 +133,7 @@ Se você estiver interessado em ir além do que a configuração default pode of
 
 ## Substituição de variáveis <a name="user-identification"></a>
 
-Tanto o componente [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) quanto [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) permitem todas as substituições de variáveis ​​de URL padrão (consulte [Substituições de variáveis ​​de AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)). No exemplo abaixo, a solicitação de exibição de página é enviada à URL juntamente com a URL canônica do documento AMP atual, o title e um [código de cliente](analytics_basics.md#user-identification):
+Tanto o componente [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) quanto [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) permitem todas as substituições de variáveis ​​de URL padrão (consulte [Substituições de variáveis ​​de AMP HTML](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)). No exemplo abaixo, a solicitação de exibição de página é enviada à URL juntamente com a URL canônica do documento AMP atual, o title e um [código de cliente](analytics_basics.md#user-identification):
 
 ```html
 <amp-pixel
@@ -177,7 +177,7 @@ No exemplo acima, as variáveis `account` e `title` são definidas na configura�
 
 ## Identificação do usuário <a name="user-identification"></a>
 
-Os websites usam cookies para armazenar informações específicas dos usuários no navegador. Os cookies podem ser usados ​​para informar que um usuário já visitou um site antes. No AMP, as páginas podem ser veiculadas pelo site de um editor ou por um cache (como o cache de AMP do Google). O website do editor e o cache provavelmente terão domínios diferentes. Por motivos de segurança, os navegadores podem limitar o acesso a cookies de outros domínios (consulte também [Rastrear usuários em diferentes origens](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)).
+Os websites usam cookies para armazenar informações específicas dos usuários no navegador. Os cookies podem ser usados ​​para informar que um usuário já visitou um site antes. No AMP, as páginas podem ser veiculadas pelo site de um editor ou por um cache (como o cache de AMP do Google). O website do editor e o cache provavelmente terão domínios diferentes. Por motivos de segurança, os navegadores podem limitar o acesso a cookies de outros domínios (consulte também [Rastrear usuários em diferentes origens](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md)).
 
 Por default, o AMP fornecerá um código de cliente, seja a página acessada pelo site original do editor ou por um cache. O código de cliente gerado pelo AMP tem o valor da string codificada `"amp-"` seguido por um `base64` aleatório e permanece o mesmo para o usuário, caso ele volte a acessar a página.
 
@@ -195,6 +195,6 @@ Por exemplo:
 
 Se o AMP descobrir que o cookie está definido, a substituição da identificação do cliente retornará o valor do cookie. Se o AMP descobrir que esse cookie não está definido, ela gerará um valor no formato `amp-` seguido de uma string aleatória codificada base64.
 
-Saiba mais sobre a substituição da identificação do cliente, incluindo como adicionar um código de notificação de ID de usuário opcional em [Variáveis ​​suportadas em AMP Analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
+Saiba mais sobre a substituição da identificação do cliente, incluindo como adicionar um código de notificação de ID de usuário opcional em [Variáveis ​​suportadas em AMP Analytics](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md).
 
 Saiba mais: Continue seu aprendizado sobre análises em [Aprofunde-se no AMP Analytics](deep_dive_analytics.md) e [Casos de uso](use_cases.md).

@@ -15,7 +15,7 @@ Các định dạng quảng cáo hiện tại, ví dụ như bảng và hộp qu
 
 Quảng cáo Câu chuyện Web tuân thủ các nguyên tắc sau:
 
-- Quảng cáo AMPHTML hợp lệ: tuân thủ thông số kỹ thuật như một [quảng cáo AMPHTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md) truyền thống.
+- Quảng cáo AMPHTML hợp lệ: tuân thủ thông số kỹ thuật như một [quảng cáo AMPHTML](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md) truyền thống.
 - Ưu tiên hình ảnh: Cuốn hút, táo bạo, có tính mời gọi dựa trên ngữ cảnh.
 - Tự nhiên: Trang quảng cáo có cùng kích thước như một trang quảng cáo hữu cơ.
 - Mô hình tương tác giống nhau: Người dùng có thể chuyển tiếp sang màn hình tiếp theo như với một trang quảng cáo hữu cơ.

@@ -48,7 +48,7 @@ AMPHTML Ads sind flexibel und dynamisch und ermöglichen viele kreative Formate 
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='Bereitstellung von AMPHTML Ads auf AMP Seiten', caption='Bereitstellung von AMPHTML Ads auf AMP Seiten', align='' ) }}
 
 1. Publisher reservieren über das Tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md) einen Platz für die Ad auf ihrer AMP Seite und geben das Werbenetzwerk an, das sie verwenden möchten.
-2. Die AMP Runtime sendet eine Anfrage an das angegebene Werbenetzwerk, um die Ad abzurufen. Werbenetzwerke, die AMPHTML Ads bereitstellen können, bieten eine [Fast Fetch Implementierung](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md), mit der das Creative validiert und signiert wird.
+2. Die AMP Runtime sendet eine Anfrage an das angegebene Werbenetzwerk, um die Ad abzurufen. Werbenetzwerke, die AMPHTML Ads bereitstellen können, bieten eine [Fast Fetch Implementierung](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md), mit der das Creative validiert und signiert wird.
 3. Das Werbenetzwerk antwortet mit der AMPHTML Ad und die AMP Runtime rendert die Ad auf der AMP Seite.
 
 [tip type="note"] Für die Bereitstellung von AMPHTML Ads auf Seiten ohne AMP ist keine spezielle Integration erforderlich. Erkundige dich bei deinem Werbenetzwerk, ob AMPHTML Ads unterstützt werden. [/tip]
@@ -77,7 +77,7 @@ Als Kreativagentur musst du bei der Erstellung von Ads die [AMPHTML Ad Spezifika
 
 ### Werbenetzwerke/Server
 
-Um AMPHTML Ads auf AMP Seiten bereitzustellen, musst du die Erweiterung [`amp-ad`](../../../documentation/components/reference/amp-ad.md) für dein Netzwerk erstellen (sofern nicht bereits erfolgt), welche die [Fast Fetch Implementierung für Ad Anfragen](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) verwendet. Einzelheiten dazu findest du unter [AMP integrieren, um Display Ads zu schalten](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md). Beachte, dass für die Bereitstellung von AMPHTML an Seiten ohne AMP keine spezielle Integration erforderlich ist.
+Um AMPHTML Ads auf AMP Seiten bereitzustellen, musst du die Erweiterung [`amp-ad`](../../../documentation/components/reference/amp-ad.md) für dein Netzwerk erstellen (sofern nicht bereits erfolgt), welche die [Fast Fetch Implementierung für Ad Anfragen](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md) verwendet. Einzelheiten dazu findest du unter [AMP integrieren, um Display Ads zu schalten](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md). Beachte, dass für die Bereitstellung von AMPHTML an Seiten ohne AMP keine spezielle Integration erforderlich ist.
 
 ## AMPHTML Ads erstellen
 
@@ -101,7 +101,7 @@ Stelle nach der Erstellung deiner AMPHTML Ad sicher, dass die Ad die korrekte AM
 
 ## Unterstützung von AMPHTML Ads in RTB
 
-Informationen zu SSPs und Ad Exchanges, die AMPHTML Ads in einer Umgebung unterstützen möchten, die Real-Time Bidding (RTB) ermöglicht, findest du im [Implementierungshandbuch für RTB Ad Exchanges](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/RTBExchangeGuide.md).
+Informationen zu SSPs und Ad Exchanges, die AMPHTML Ads in einer Umgebung unterstützen möchten, die Real-Time Bidding (RTB) ermöglicht, findest du im [Implementierungshandbuch für RTB Ad Exchanges](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/RTBExchangeGuide.md).
 
 ## FAQs
 
@@ -125,4 +125,4 @@ Ja. Siehe [`amp-ad-exit`](../../../documentation/components/reference/amp-ad-exi
 
 - Wir empfehlen [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) für Fragen rund um AMP. Da Mitglieder der AMP Project Community regelmäßig auf Stack Overflow mitlesen, erhältst du dort mit großer Wahrscheinlichkeit die schnellste Antwort auf deine Frage.
 - Tritt dem Channel [#a4a-discuss auf Slack](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) bei, um Lösungen und Antworten zu finden.
-- Wenn du einen Bug in AMP findest oder dir eine bestimmte Funktion wünschst, findest du unter [Probleme mit AMP melden](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp) weitere Informationen zum Erstellen von Issues.
+- Wenn du einen Bug in AMP findest oder dir eine bestimmte Funktion wünschst, findest du unter [Probleme mit AMP melden](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#reporting-issues-with-amp) weitere Informationen zum Erstellen von Issues.

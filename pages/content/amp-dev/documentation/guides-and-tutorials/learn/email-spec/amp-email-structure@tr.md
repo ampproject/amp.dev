@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-structure.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -35,7 +35,7 @@ E-posta bir MIME ağacı olarak yapılandırılmıştır. Bu MIME ağacı, mesaj
 
 AMP'yi bir e-postaya yerleştirmek için, `multipart/alternative` alt öğesi olarak `text/x-amp-html` içerik türüne sahip yeni bir MIME bölümü ekleyin. Mevcut `text/html` veya `text/plain` bölümlerin yanında yaşamalıdır. Bu, e-posta mesajının tüm istemcilerde çalışmasını sağlar.
 
-<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/master/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"><img data-md-type="raw_html" alt="E-posta için AMP MIME Parça Şeması" src="../img/amp-email-mime-parts.png"></noscript></amp-img>
+<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/main/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"><img data-md-type="raw_html" alt="E-posta için AMP MIME Parça Şeması" src="../img/amp-email-mime-parts.png"></noscript></amp-img>
 
 `multipart/alternative` alt türü hakkında daha fazla bilgi için bkz: [RFC 1521, bölüm 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 

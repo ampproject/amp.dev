@@ -1,0 +1,42 @@
+.#{prefix(null, 'teaser')} {
+  position: relative;
+  grid-column: span 12;
+  min-height: 125px;
+  margin-bottom: 20px;
+  padding: 25px 25px 15px;
+  box-shadow: 0 5px 15px 0 transparentize(color('black'), 0.85);
+  color: color('river-bed');
+  transition: box-shadow .3s ease-in-out, transform .3s ease-in-out;
+
+  @include respond-to('medium') {
+    grid-column: span 6;
+  }
+
+  @include respond-to('large') {
+    grid-column: span 4;
+  }
+
+  &-tags {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+  }
+
+  &-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: color('black');
+  }
+
+  &-copy {
+    font-size: 12px;
+    line-height: 2.1;
+    font-weight: normal;
+  }
+
+  &:hover {
+    transform: translate3d(0, -2px, 0);
+    box-shadow: 0 25px 60px 0 transparentize(color('black'), 0.9);
+  }
+}

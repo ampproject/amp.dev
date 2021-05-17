@@ -1,6 +1,6 @@
 ---
 $title: 残念! 何かがうまくいかなかったようです。
-type: エラー
+type: error
 investigate: #additional-checks
 ---
 

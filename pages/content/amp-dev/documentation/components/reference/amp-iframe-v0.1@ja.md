@@ -49,7 +49,7 @@ iframe を表示します。
 * `amp-iframe` はドキュメントの上部付近には表示できません（[以下](#iframe-with-placeholder)で説明するように、`placeholder` を使用する iframe は除く）。iframe は、最上部から 600 ピクセル離れた位置、または最上部までスクロールしたときにビューポートの最初の 75% の範囲内でない位置のどちらか上の位置に配置する必要があります。
 * デフォルトでは、amp-iframe はサンドボックス化されています（[詳細](#sandbox)をご確認ください）。
 * `amp-iframe` はリソースをリクエストする際に、HTTPS、データ URI、`srcdoc` 属性のいずれかのみを使用します。
-* `amp-iframe` は、`sandbox` 属性に `allow-same-origin` を指定できる場合、コンテナと同じオリジンに含めてはなりません。iframe に使用できるオリジンについて詳しくは、[iframe オリジン ポリシー](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)をご覧ください。
+* `amp-iframe` は、`sandbox` 属性に `allow-same-origin` を指定できる場合、コンテナと同じオリジンに含めてはなりません。iframe に使用できるオリジンについて詳しくは、[iframe オリジン ポリシー](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md)をご覧ください。
 
 *例: amp-iframe に埋め込まれた Google マップ*
 
@@ -232,4 +232,4 @@ iframe は、ユーザーの直接の目的を果たさないように思える�
 
 # 検証 <a name="validation"></a>
 
-AMP 検証ツールの仕様で [amp-iframe のルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-iframe/validator-amp-iframe.protoascii)をご確認ください。
+AMP 検証ツールの仕様で [amp-iframe のルール](https://github.com/ampproject/amphtml/blob/main/extensions/amp-iframe/validator-amp-iframe.protoascii)をご確認ください。

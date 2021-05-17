@@ -12,17 +12,20 @@ import reportDataNoFieldData from '../../mocks/pageExperienceCheck/reportDataNoF
 
 import pixiConfig from '../../config.js';
 
+let pageExperienceCheck;
+let fetch;
+
 beforeEach(() => {
-  fetchMock.reset();
+  fetch = fetchMock.sandbox();
+  pageExperienceCheck = new PageExperienceCacheCheck(fetch);
 });
 
 describe('Page experience cache check', () => {
   it('creates report data for url with no errors', async () => {
     const apiEndpoint =
       pixiConfig['development'].API_ENDPOINT_PAGE_SPEED_INSIGHTS;
-    fetchMock.mock(`begin:${apiEndpoint}`, apiResponseNoErrors);
+    fetch.mock(`begin:${apiEndpoint}`, apiResponseNoErrors);
 
-    const pageExperienceCheck = new PageExperienceCacheCheck();
     const report = await pageExperienceCheck.run(
       'http://example.com',
       Promise.resolve({data: reportDataNoErrors})
@@ -41,9 +44,8 @@ describe('Page experience cache check', () => {
   it('creates report data for url with no field data', async () => {
     const apiEndpoint =
       pixiConfig['development'].API_ENDPOINT_PAGE_SPEED_INSIGHTS;
-    fetchMock.mock(`begin:${apiEndpoint}`, apiResponseNoFieldData);
+    fetch.mock(`begin:${apiEndpoint}`, apiResponseNoFieldData);
 
-    const pageExperienceCheck = new PageExperienceCacheCheck();
     const report = await pageExperienceCheck.run(
       'http://example.com',
       Promise.resolve({data: reportDataNoFieldData})
@@ -60,9 +62,8 @@ describe('Page experience cache check', () => {
   it('creates report data for url with no field data for cache', async () => {
     const apiEndpoint =
       pixiConfig['development'].API_ENDPOINT_PAGE_SPEED_INSIGHTS;
-    fetchMock.mock(`begin:${apiEndpoint}`, apiResponseNoFieldData);
+    fetch.mock(`begin:${apiEndpoint}`, apiResponseNoFieldData);
 
-    const pageExperienceCheck = new PageExperienceCacheCheck();
     const report = await pageExperienceCheck.run(
       'http://example.com',
       Promise.resolve({data: reportDataNoErrors})

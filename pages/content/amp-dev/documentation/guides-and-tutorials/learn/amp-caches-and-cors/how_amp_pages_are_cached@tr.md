@@ -31,13 +31,13 @@ AMP Önbellekleri hakkında daha fazla bilgi için aşağıdaki YouTube videosun
 - [Google AMP Önbelleği](https://developers.google.com/amp/cache/)
 - [Bing AMP Önbelleği](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
-AMP açık bir ekosistemdir ve AMP Projesi, daha fazla AMP Önbelleğinin geliştirilmesini aktif olarak destekler. AMP Önbellekleri oluşturma hakkında bilgi edinmek için [AMP Önbellek Yönergelerine](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md) bakın.
+AMP açık bir ekosistemdir ve AMP Projesi, daha fazla AMP Önbelleğinin geliştirilmesini aktif olarak destekler. AMP Önbellekleri oluşturma hakkında bilgi edinmek için [AMP Önbellek Yönergelerine](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md) bakın.
 
 ## Bir AMP önbelleğini nasıl seçerim?
 
 Bir yayıncı olarak, bir AMP önbelleği seçmezsiniz, aslında kullanmak için amp önbelleğini (varsa) seçen _içeriğinize bağlanan platformdur_.
 
-Bu, içerik dağıtımının yayıncının sorumluluğunda olduğu tipik modelin tersine çevrilmesidir. Bununla birlikte, bu model, platformların kullanıcılarına öngörülebilir yük performansı sağlamasına izin verir ve diğer şeylerin yanı sıra, AMP'nin ön oluşturma aşamasında gerekli güvenlik ve gizlilik değişmezlerini sağlamalarına izin verir. AMP Önbellekleri oluşturmak için katı kurallar hakkında bilgi edinmek için bkz. [AMP Önbellek Kuralları](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
+Bu, içerik dağıtımının yayıncının sorumluluğunda olduğu tipik modelin tersine çevrilmesidir. Bununla birlikte, bu model, platformların kullanıcılarına öngörülebilir yük performansı sağlamasına izin verir ve diğer şeylerin yanı sıra, AMP'nin ön oluşturma aşamasında gerekli güvenlik ve gizlilik değişmezlerini sağlamalarına izin verir. AMP Önbellekleri oluşturmak için katı kurallar hakkında bilgi edinmek için bkz. [AMP Önbellek Kuralları](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md).
 
 ## Önbelleğe almayı devre dışı bırakabilir miyim?
 
@@ -67,6 +67,6 @@ AMP biçimini kullanarak, içeriğinizi AMP Önbellekleri tarafından önbelleğ
 
 ## Ek kaynaklar
 
-- [AMP Projesi'nin AMP Önbellek yönergeleri](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)
+- [AMP Projesi'nin AMP Önbellek yönergeleri](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md)
 - [Google AMP Önbelleğine genel bakış](https://developers.google.com/amp/cache/overview)
 - [Bing AMP Önbellek belgeleri](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)

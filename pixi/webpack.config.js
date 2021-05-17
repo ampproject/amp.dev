@@ -1,35 +1,78 @@
+/**
+ * Copyright 2020 The AMPHTML Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 const path = require('path');
 const webpack = require('webpack');
-const ClosurePlugin = require('closure-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 
 const config = require('./config.js');
 const {calculateHash} = require('@ampproject/toolbox-script-csp');
 
 module.exports = (env, argv) => {
   const mode = argv.mode || 'production';
+  const isDevelopment = mode == 'development';
 
   return {
-    entry: path.join(__dirname, 'src/ui/PageExperience.js'),
+    entry: {
+      main: path.join(__dirname, 'src/ui/PageExperience.js'),
+    },
     output: {
-      filename: 'pixi.[name].[hash].js',
-      chunkFilename: 'pixi.[name].[chunkhash].bundle.js',
+      filename: isDevelopment
+        ? 'pixi.[name].js'
+        : 'pixi.[name].[contenthash].js',
+      chunkFilename: isDevelopment
+        ? 'pixi.[name].js'
+        : 'pixi.[name].[chunkhash].bundle.js',
       sourceMapFilename: 'pixi.[name].map',
       publicPath: '/static/page-experience/',
     },
     optimization: {
-      minimizer: [new ClosurePlugin({mode: 'AGGRESSIVE_BUNDLE'}, {})],
+      minimizer: [
+        new TerserPlugin({
+          terserOptions: {
+            ecma: '2015',
+            compress: {
+              defaults: true,
+              unsafe: true,
+            },
+          },
+        }),
+      ],
       concatenateModules: false,
     },
-    devtool: mode == 'development' ? 'cheap-module-source-map' : false,
+    devtool: isDevelopment ? 'cheap-module-source-map' : false,
     plugins: [
       new HtmlWebpackPlugin({
         template: path.join(__dirname, 'src/ui/page-experience.hbs'),
         filename: './pixi.html',
         inject: false,
         templateParameters: (compilation, assets, assetTags, options) => {
-          const js = Object.values(compilation.assets)[0].source();
+          const pixiMainSrc = Object.entries(compilation.assets).find(
+            ([name, _]) => {
+              if (name.startsWith('pixi.main')) {
+                return true;
+              }
+            }
+          )[1];
+          const pixiMainHash = calculateHash(pixiMainSrc.source());
+          const pixiMainPath = assets.js.find((path) => {
+            return path.includes('pixi.main');
+          });
 
           return {
             compilation,
@@ -38,26 +81,12 @@ module.exports = (env, argv) => {
               files: assets,
               options,
             },
-            cspHash: calculateHash(js),
+            pixiMainPath,
+            pixiMainHash,
           };
         },
       }),
-      new webpack.DefinePlugin({
-        IS_DEVELOPMENT: mode == 'development',
-        API_ENDPOINT_LINTER: JSON.stringify(config[mode].API_ENDPOINT_LINTER),
-        API_ENDPOINT_SAFE_BROWSING: JSON.stringify(
-          config[mode].API_ENDPOINT_SAFE_BROWSING
-        ),
-        API_ENDPOINT_PAGE_SPEED_INSIGHTS: JSON.stringify(
-          config[mode].API_ENDPOINT_PAGE_SPEED_INSIGHTS
-        ),
-        API_ENDPOINT_MOBILE_FRIENDLINESS: JSON.stringify(
-          config[mode].API_ENDPOINT_MOBILE_FRIENDLINESS
-        ),
-        AMP_DEV_PIXI_APIS_KEY: JSON.stringify(
-          process.env.AMP_DEV_PIXI_APIS || ''
-        ),
-      }),
+      new webpack.DefinePlugin(config.createKeyMapping(mode)),
       new FileManagerPlugin({
         events: {
           onStart: {
@@ -89,6 +118,12 @@ module.exports = (env, argv) => {
           },
         },
       }),
+      isDevelopment
+        ? new WebpackBuildNotifierPlugin({
+            title: 'amp.dev: Pixi',
+            logo: path.join(process.cwd(), '../pages/static/img/favicon.png'),
+          })
+        : () => {},
     ],
     module: {
       rules: [
@@ -106,6 +141,10 @@ module.exports = (env, argv) => {
           ],
         },
       ],
+    },
+
+    devServer: {
+      writeToDisk: true,
     },
   };
 };

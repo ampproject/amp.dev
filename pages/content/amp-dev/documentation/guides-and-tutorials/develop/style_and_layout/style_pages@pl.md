@@ -20,7 +20,7 @@ Jak wszystkie strony internetowe, strony AMP są stylizowane za pomocą CSS, ale
 
 Style można umieszczać w nagłówku dokumentu lub jako atrybuty inline `style` (patrz [Dodawanie stylów do strony](index.md#add-styles-to-a-page)). Można jednak użyć preprocesorów CSS i szablonów w celu utworzenia stron statycznych, aby lepiej zarządzać swoją zawartością.
 
-[tip type="note"] **UWAGA —** składniki AMP mają domyślne style, dzięki czemu pisanie responsywnych stron jest dość łatwe. Style te są zdefiniowane w [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css). [/tip]
+[tip type="note"] **UWAGA —** składniki AMP mają domyślne style, dzięki czemu pisanie responsywnych stron jest dość łatwe. Style te są zdefiniowane w [`amp.css`](https://github.com/ampproject/amphtml/blob/main/css/amp.css). [/tip]
 
 ## Disallowed styles
 

@@ -31,7 +31,7 @@ Pada contoh berikut, kita akan mengirim data pageview ke [Google Analytics](#goo
 
 [tip type="success"]
 
-Jika Anda sudah terbiasa mengutak-atik kode, Anda dapat mempelajari konfigurasi mentah dalam file [`vendors.js`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js).
+Jika Anda sudah terbiasa mengutak-atik kode, Anda dapat mempelajari konfigurasi mentah dalam file [`vendors.js`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/0.1/vendors.js).
 
 [/tip]
 
@@ -151,7 +151,7 @@ Menambahkan dukungan untuk Google Analytics. Detail selengkapnya tentang menamba
 
 Nilai atribut type: `infonline`
 
-Menambahkan dukungan untuk [INFOnline](https://www.infonline.de) / [IVW](http://www.ivw.de). Memerlukan salinan [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) di subdomain yang berbeda dengan file AMP yang mencakupnya ([mengapa?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). File harus ditayangkan melalui HTTPS. Sebagai contoh, jika file AMP Anda dihosting di `www.example.com`, maka `amp-analytics-infonline.html` harus berada di subdomain lain, misalnya `iframe.example.com` atau `assets.example.com`.
+Menambahkan dukungan untuk [INFOnline](https://www.infonline.de) / [IVW](http://www.ivw.de). Memerlukan salinan [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) di subdomain yang berbeda dengan file AMP yang mencakupnya ([mengapa?](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md)). File harus ditayangkan melalui HTTPS. Sebagai contoh, jika file AMP Anda dihosting di `www.example.com`, maka `amp-analytics-infonline.html` harus berada di subdomain lain, misalnya `iframe.example.com` atau `assets.example.com`.
 
 Selain itu, variabel berikut harus ditetapkan:
 
@@ -220,7 +220,7 @@ Menambahkan dukungan untuk Nielsen Marketing Cloud. Detail selengkapnya dapat di
 
 Nilai atribut type: `oewa`
 
-Menambahkan dukungan untuk [OEWA](https://www.oewa.at). Memerlukan salinan [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) di subdomain yang berbeda dengan file AMP yang mencakupnya ([mengapa?](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). File harus ditayangkan melalui HTTPS. Sebagai contoh, jika file AMP Anda dihosting di `www.example.com`, maka `amp-analytics-oewa.html` harus berada di subdomain lain, misalnya `oewa-amp.example.com`. Detail selengkapnya tentang menambahkan dukungan OEWA dapat dilihat [di sini](http://www.oewa.at/Implementierung).
+Menambahkan dukungan untuk [OEWA](https://www.oewa.at). Memerlukan salinan [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) di subdomain yang berbeda dengan file AMP yang mencakupnya ([mengapa?](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md)). File harus ditayangkan melalui HTTPS. Sebagai contoh, jika file AMP Anda dihosting di `www.example.com`, maka `amp-analytics-oewa.html` harus berada di subdomain lain, misalnya `oewa-amp.example.com`. Detail selengkapnya tentang menambahkan dukungan OEWA dapat dilihat [di sini](http://www.oewa.at/Implementierung).
 
 Selain itu, variabel berikut harus ditetapkan:
 

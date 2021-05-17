@@ -1,16 +1,19 @@
 {% if survey_questions %}
+  [% set surveys = {{ survey_questions|tojson }} %]
+  [% set fixedQuestions = {{fixed_questions|tojson }} %]
+  [% set url = "{{ doc.url }}" %]
+
   {% do doc.styles.addCssFile('css/components/organisms/survey.css') %}
 
   <amp-state id="surveyQuestions">
     <script type="application/json">
-
-      {% do survey_questions.update({"_url": request.url })%}
-      {{ survey_questions | tojson }}
+        [% set survey = surveys|random|survey(fixedQuestions, url) %]
+        [= survey|safe =]
     </script>
   </amp-state>
 
-  <amp-script src="/static/survey.js" width="450" height="1205"  id="fez-container" sandbox="allow-forms">
-    <form id="fez">
+  <amp-script src="{{ podspec.base_urls.platform }}/static/survey.js" width="450" height="1205"  id="fez-container" sandbox="allow-forms" next-page-hide>
+    <form id="fez" action="#" target="_top">
       {% do doc.icons.useIcon('icons/close.svg') %}
       <svg class="ap-a-ico icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
       <div class="slides">
@@ -49,4 +52,3 @@
   </div>
 
 {% endif %}
-

@@ -36,7 +36,7 @@ Google AMP 缓存首先会将每个 AMP 文档的域名从 [IDN (punycode)](http
 
 ## 域名后缀
 
-所有 AMP 缓存均在 JSON 文件中注册，该文件为在线文件，位于 [AMPHTML 仓库](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json)中。此文件中的缓存记录示例如下所示：
+所有 AMP 缓存均在 JSON 文件中注册，该文件为在线文件，位于 [AMPHTML 仓库](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json)中。此文件中的缓存记录示例如下所示：
 
 ```json
 {
@@ -179,7 +179,7 @@ AMP 缓存来源标头值类似于以下示例之一：
 - `https://www-example-com.cdn.ampproject.org`
 - `https://v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq.cdn.ampproject.org`
 
-首先，移除协议前缀 (`https://`) 和 AMP 缓存域名后缀（例如，`.cdn.ampproject.org`）。后缀可能来自 [caches.json](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json) 中列出的任何一个缓存。其余字符串为“域名前缀”。在上述两个示例中，“域名前缀”如下所示：
+首先，移除协议前缀 (`https://`) 和 AMP 缓存域名后缀（例如，`.cdn.ampproject.org`）。后缀可能来自 [caches.json](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json) 中列出的任何一个缓存。其余字符串为“域名前缀”。在上述两个示例中，“域名前缀”如下所示：
 
 - `www-example-com`
 - `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq`

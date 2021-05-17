@@ -1,6 +1,7 @@
 # amp.dev
 
-[![Build Status](https://travis-ci.com/ampproject/amp.dev.svg?branch=future)](https://travis-ci.com/ampproject/amp.dev)
+![Staging](https://github.com//ampproject/amp.dev/workflows/Release%3A%20Staging/badge.svg)
+![Production](https://github.com//ampproject/amp.dev/workflows/Release%3A%20Production/badge.svg)
 
 The official homepage of the AMP Project.
 
@@ -39,7 +40,7 @@ We welcome contributions to amp.dev.
       ```
    1. Run the following command to install Python. Version 3.7 is required at latest.
       ```sh
-      $ brew install python
+      $ brew install python libyaml
       ```
    1. Run the following command to add the _pip user base binary directory_ to `$PATH`.
       ```sh
@@ -64,14 +65,23 @@ We welcome contributions to amp.dev.
       ```
    1. Run the following command to use a faster YAML parser.
       ```sh
-      $ sudo apt install -y python-yaml
+      $ sudo apt install -y python-yaml libyaml-dev
       ```
 
 1. Install [Grow](http://grow.io), the static site generator used to build amp.dev. Do so by using `pip` instead of its installer. Using `pip` will enable importing from the `grow` package in Python later on.
 
    **Note**: Be sure to use the `pip` command associated with Python 3 as Grow 1 depends on Python 3.
 
+
+  **Mac**
+  ```sh
+    LDFLAGS="-L$(brew --prefix)/lib" CFLAGS="-I$(brew --prefix)/include" pip3 install --global-option="--with-libyaml" --force pyyaml
+    pip3 install --user grow
+    ```
+
+  **Linux**
    ```sh
+   $ pip3 install --global-option="--with-libyaml" --force pyyaml
    $ pip3 install --user grow
    ```
 

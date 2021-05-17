@@ -224,7 +224,7 @@ AMP 액세스를 지원하려면 게시자가 위에서 설명한 구성요소�
 
 ### URL 변수에 액세스 <a name="access-url-variables"></a>
 
-다양한 엔드포인트에 대한 URL을 구성할 때 게시자는 대체 변수를 사용할 수 있습니다. 이러한 변수의 전체 목록은 [AMP 변수 사양](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)에 정의되어 있습니다. 또한 `READER_ID` 및 `AUTHDATA`와 같은 몇몇 액세스별 변수도 추가됩니다. 가장 관련 있는 변수 중 일부는 아래 표에 설명되어 있습니다.
+다양한 엔드포인트에 대한 URL을 구성할 때 게시자는 대체 변수를 사용할 수 있습니다. 이러한 변수의 전체 목록은 [AMP 변수 사양](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)에 정의되어 있습니다. 또한 `READER_ID` 및 `AUTHDATA`와 같은 몇몇 액세스별 변수도 추가됩니다. 가장 관련 있는 변수 중 일부는 아래 표에 설명되어 있습니다.
 
 <table>
   <tr>
@@ -496,7 +496,7 @@ AMP는 로그인과 구독을 구분하지 않습니다. 이러한 구분은 다
 
 ## *amp-analytics* 와 통합 <a name="integration-with-amp-analytics"></a>
 
-*amp-analytics* 와의 통합은 [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md)에 문서화되어 있습니다.
+*amp-analytics* 와의 통합은 [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/amp-access-analytics.md)에 문서화되어 있습니다.
 
 ## CORS 오리진 보안 <a name="cors-origin-security"></a>
 
@@ -563,7 +563,7 @@ AMP는 자체 창, 팝업 또는 탭으로 로그인 대화상자를 시작합�
 
 ## 부록 A: 'amp-access' 식 문법 <a name="appendix-a-amp-access-expression-grammar"></a>
 
-최근 BNF 문법은 [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison) 파일에서 확인할 수 있습니다.
+최근 BNF 문법은 [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/0.1/access-expr-impl.jison) 파일에서 확인할 수 있습니다.
 
 이 문법의 주요 발췌 내용:
 ```javascript
@@ -602,4 +602,4 @@ literal: STRING | NUMERIC | TRUE | FALSE | NULL
 
 ## 유효성 검사 <a name="validation"></a>
 
-AMP 유효성 검사 도구 사양의 [amp-access 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/validator-amp-access.protoascii)을 참조하세요.
+AMP 유효성 검사 도구 사양의 [amp-access 규칙](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/validator-amp-access.protoascii)을 참조하세요.

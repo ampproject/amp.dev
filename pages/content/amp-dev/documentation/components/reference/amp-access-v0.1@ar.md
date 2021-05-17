@@ -229,7 +229,7 @@ limitations under the License.
 
 ### متغيرات عناوين URL للوصول <a name="access-url-variables"></a>
 
-عند تهيئة عناوين URL لنقاط النهاية المختلفة، يمكن للناشر استخدام متغيرات الاستبدال. يمكن العثور على قائمة كاملة بتعريفات هذه المتغيرات في [مواصفات متغيرات AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). بالإضافة إلى هذا، تزيد هذه المواصفات متغيرات خاصة بالوصول، مثل `READER_ID` و`AUTHDATA`. يوضّح الجدول أدناه بعضًا من أكثر المتغيرات صلة:
+عند تهيئة عناوين URL لنقاط النهاية المختلفة، يمكن للناشر استخدام متغيرات الاستبدال. يمكن العثور على قائمة كاملة بتعريفات هذه المتغيرات في [مواصفات متغيرات AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md). بالإضافة إلى هذا، تزيد هذه المواصفات متغيرات خاصة بالوصول، مثل `READER_ID` و`AUTHDATA`. يوضّح الجدول أدناه بعضًا من أكثر المتغيرات صلة:
 
 <table>
   <tr>
@@ -501,7 +501,7 @@ RETURN_URL#success=true|false
 
 ## التكامل مع *amp-analytics* <a name="integration-with-amp-analytics"></a>
 
-يتم توثيق التكامل مع *amp-analytics* في [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md).
+يتم توثيق التكامل مع *amp-analytics* في [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/amp-access-analytics.md).
 
 ## أمان أصل CORS <a name="cors-origin-security"></a>
 
@@ -566,7 +566,7 @@ RETURN_URL#success=true|false
 
 ## الملحق أ: قواعد تعبيرات "amp-access" <a name="appendix-a-amp-access-expression-grammar"></a>
 
-يوفر الملف [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison) أحدث قواعد BNF.
+يوفر الملف [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/0.1/access-expr-impl.jison) أحدث قواعد BNF.
 
 في ما يلي المقتطف الأساسي لهذه القواعد:
 ```javascript
@@ -605,4 +605,4 @@ literal: STRING | NUMERIC | TRUE | FALSE | NULL
 
 ## التحقق <a name="validation"></a>
 
-اطّلع على [قواعد amp-access](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/validator-amp-access.protoascii) في مواصفات مدقق AMP.
+اطّلع على [قواعد amp-access](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/validator-amp-access.protoascii) في مواصفات مدقق AMP.

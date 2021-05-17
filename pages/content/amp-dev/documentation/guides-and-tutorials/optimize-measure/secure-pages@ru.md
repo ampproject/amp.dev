@@ -22,6 +22,6 @@ author: CrystalOnScript
 />
 ```
 
-[Полный пример можно просмотреть здесь](https://github.com/ampproject/amphtml/blob/master/examples/csp.amp.html).
+[Полный пример можно просмотреть здесь](https://github.com/ampproject/amphtml/blob/main/examples/csp.amp.html).
 
 [tip type="read-on"] Подробнее о [защите от брешей безопасности и политиках CSP можно узнать здесь](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP). [/tip]

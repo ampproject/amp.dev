@@ -1,0 +1,84 @@
+.#{prefix(null, 'sidebar')} {
+  width: 90vw;
+  padding: 30px 20px 0 20px;
+  background: color('white');
+
+  &-toolbar {
+    width: 0;
+    position: sticky;
+    top: 80px;
+    margin-top: 35px;
+    max-height: calc(100vh - 110px);
+    transform: translateX(20px);
+    transition: transform 0.3s;
+
+    &-container {
+      grid-column: 2/4;
+      z-index: 90;
+      position: sticky;
+      left: 0;
+      top: 20px;
+      width: 0;
+      max-height: 100%;
+      margin-top: 35px;
+      margin-bottom: 55px;
+    }
+  }
+
+  &-scroll-container {
+    overflow-y: scroll;
+    max-height: calc(100vh - 74px);
+    @include scrollbar;
+
+    @include respond-to('medium') {
+      max-height: calc(100vh - 110px - 44px);
+    }
+  }
+
+  &-nav-list {
+    position: relative;
+    padding: 0;
+    list-style: none;
+
+    ul {
+      padding: 0;
+      width: 100%;
+    }
+
+    &-section {
+      & + & {
+        margin-top: 20px;
+      }
+
+      &-title {
+        cursor: default;
+        position: sticky;
+        top: 0;
+        font-family: $fontFamilyHeadline;
+        font-size: 28px;
+        text-transform: uppercase;
+        line-height: 1;
+        font-weight: bold;
+        color: color('iron');
+        background: color('white');
+      }
+    }
+
+    &-link {
+      padding: 3px 25px 3px 0;
+      font-size: 14px;
+      line-height: 1.4;
+      font-weight: normal;
+      color: color('river-bed');
+
+      &:hover {
+        color: color('blue-ribbon');
+      }
+    }
+  }
+
+  .--sidebaropen &-toolbar {
+    width: 300px;
+    transform: translateX(0);
+  }
+}

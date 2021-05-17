@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -186,7 +186,7 @@ AMP HTML 문서는
 - <a name="chrs"></a>head 태그의 첫 번째 자식으로 `<meta charset="utf-8">` 태그를 포함합니다. [🔗](#chrs)
 - <a name="vprt"></a>head 태그 안에 `<meta name="viewport" content="width=device-width">` 태그를 포함합니다. 또한 `minimum-scale=1` 및 `initial-scale=1` 을 포함하는 것이 좋습니다. [🔗](#vprt)
 - <a name="scrpt"></a>head 태그 안에 `<script async src="https://cdn.ampproject.org/v0.js"></script>` 태그를 포함합니다. [🔗](#scrpt)
-- <a name="boilerplate"></a>head 태그에 [AMP 상용구 코드](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md) ( `head > style[amp-boilerplate]` 및 `noscript > style[amp-boilerplate]` )를 포함합니다. [🔗](#boilerplate)
+- <a name="boilerplate"></a>head 태그에 [AMP 상용구 코드](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md) ( `head > style[amp-boilerplate]` 및 `noscript > style[amp-boilerplate]` )를 포함합니다. [🔗](#boilerplate)
 
 ### 메타 데이터<a name="metadata"></a>
 
@@ -289,7 +289,7 @@ HTML 태그는 AMP HTML에서 변경없이 사용할 수 있습니다. 특정 �
   <tr>
     <td width="30%">meta</td>
     <td>
-<code>http-equiv</code> 속성은 특정 허용 값에 사용할 수 있습니다. 자세한 내용은 <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP 유효성 검사기 사양</a> 을 참조하세요.</td>
+<code>http-equiv</code> 속성은 특정 허용 값에 사용할 수 있습니다. 자세한 내용은 <a href="https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii">AMP 유효성 검사기 사양</a> 을 참조하세요.</td>
   </tr>
   <tr>
     <td width="30%"><code>a</code></td>
@@ -303,7 +303,7 @@ HTML 태그는 AMP HTML에서 변경없이 사용할 수 있습니다. 특정 �
   </tr>
 </table>
 
-유효성 검사기 구현 시 HTML5 사양에 기반하며 상단의 태그들은 제거된 허용 목록을 사용해야 합니다. [AMP 태그 부록](https://github.com/ampproject/amphtml/blob/master/spec/amp-tag-addendum.md)을 참조하세요.
+유효성 검사기 구현 시 HTML5 사양에 기반하며 상단의 태그들은 제거된 허용 목록을 사용해야 합니다. [AMP 태그 부록](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-tag-addendum.md)을 참조하세요.
 
 ### 코멘트<a name="comments"></a>
 
@@ -321,7 +321,7 @@ xmlns, xml : lang, xml : base 및 xml : space와 같은 XML 관련 속성은 AMP
 
 Internal AMP class names prefixed with `-amp-` and `i-amp-` are disallowed in AMP HTML.
 
-`amp-` 접두사가 붙은 클래스 이름의 의미는 [AMP 문서](https://github.com/ampproject/amphtml/blob/master/spec/amp-css-classes.md) 를 참조하십시오. 이러한 클래스의 사용이 허용되며 AMP 런타임 및 확장의 일부 기능을 맞춤 설정할 수 있습니다.
+`amp-` 접두사가 붙은 클래스 이름의 의미는 [AMP 문서](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-css-classes.md) 를 참조하십시오. 이러한 클래스의 사용이 허용되며 AMP 런타임 및 확장의 일부 기능을 맞춤 설정할 수 있습니다.
 
 다른 모든 제작 된 클래스 이름은 AMP HTML 마크 업에서 허용됩니다.
 
@@ -331,7 +331,7 @@ Certain ID names are disallowed in AMP HTML, such as IDs prefixed with `-amp-` a
 
 `amp-access` 와 같이 이러한 확장에서 제공하는 기능과 충돌하지 않도록 `amp-` 및 `AMP` ID를 사용하기 전에 특정 확장에 대한 AMP 문서를 참조하세요.
 
-View the full list of disallowed ID names by searching for `mandatory-id-attr` [here](https://github.com/ampproject/amphtml/blob/master/spec/../validator/validator-main.protoascii).
+View the full list of disallowed ID names by searching for `mandatory-id-attr` [here](https://github.com/ampproject/amphtml/blob/main/docs/spec/../validator/validator-main.protoascii).
 
 ### 연결<a name="links"></a>
 
@@ -453,7 +453,7 @@ AMP 런타임은 언제든지 현재 뷰포트에없는 리소스를 언로드�
 
 AMP HTML은 “AMP 컴포넌트”라는 사용자 지정 요소를 활용하여 `<img>` 및 `<video>` 등의 기본 제공 리로스 로딩 태그를 대체하고 이미지 라이트박스 또는 캐러셀 등의 복잡한 인터랙션 기능을 구현합니다.
 
-지원되는 구성 요소에 대한 자세한 내용은 [AMP 구성 요소 사양](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-components.md) 을 참조하세요.
+지원되는 구성 요소에 대한 자세한 내용은 [AMP 구성 요소 사양](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-components.md) 을 참조하세요.
 
 지원되는 AMP 구성 요소에는 두 가지 유형이 있습니다.
 
@@ -468,7 +468,7 @@ AMP HTML은 “AMP 컴포넌트”라는 사용자 지정 요소를 활용하여
 
 이러한 속성은 요소의 레이아웃을 정의합니다. 여기서 핵심 목표는 요소를 표시 할 수 있고 JavaScript 또는 원격 리소스를 다운로드하기 전에 해당 공간을 적절하게 예약 할 수 있도록하는 것입니다.
 
-See the [AMP Layout System](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-layout.md) for details about the layout system.
+See the [AMP Layout System](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-layout.md) for details about the layout system.
 
 #### `on` <a name="on"></a>
 
@@ -495,7 +495,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 
 예 : `on="submit-success:lightbox1;submit-error:lightbox2"`
 
-[AMP 작업 및 이벤트](https://github.com/ampproject/amphtml/blob/master/spec/./amp-actions-and-events.md) 에 대해 자세히 알아보세요.
+[AMP 작업 및 이벤트](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-actions-and-events.md) 에 대해 자세히 알아보세요.
 
 ### 확장 구성 요소<a name="extended-components"></a>
 
@@ -529,13 +529,13 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 
 ##### 버전 관리<a name="versioning"></a>
 
-[AMP 버전 관리 정책을](https://github.com/ampproject/amphtml/blob/master/spec/amp-versioning-policy.md) 참조하세요.
+[AMP 버전 관리 정책을](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-versioning-policy.md) 참조하세요.
 
 ### 템플릿<a name="templates"></a>
 
 템플릿은 언어 별 템플릿 및 제공된 JSON 데이터를 기반으로 HTML 콘텐츠를 렌더링합니다.
 
-지원되는 템플릿에 대한 자세한 내용은 [AMP 템플릿 사양](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md) 을 참조하세요.
+지원되는 템플릿에 대한 자세한 내용은 [AMP 템플릿 사양](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-templates.md) 을 참조하세요.
 
 템플릿은 AMP 런타임과 함께 제공되지 않으며 확장 요소와 마찬가지로 다운로드해야합니다. 확장 구성 요소는 다음과 같이 문서 헤드에 `<script>` 태그를 포함하여로드됩니다.
 
@@ -565,7 +565,7 @@ Hello {% raw %}{{you}}{% endraw %}!
 
 템플릿 요소 내의 구문은 특정 템플릿 언어에 따라 다릅니다. 그러나 템플릿 언어는 AMP 내에서 제한 될 수 있습니다. 예를 들어, "템플릿"요소에 따라 모든 프로덕션은 올바른 형식의 유효한 DOM을 거쳐야합니다. AMP 유효 출력을 보장하기 위해 모든 템플릿 출력도 삭제됩니다.
 
-템플릿의 구문 및 제한 사항에 대해 알아 보려면 [템플릿 설명서를 참조하십시오](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md#templates) .
+템플릿의 구문 및 제한 사항에 대해 알아 보려면 [템플릿 설명서를 참조하십시오](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-templates.md#templates) .
 
 ##### URL<a name="url-1"></a>
 

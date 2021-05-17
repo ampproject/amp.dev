@@ -1,0 +1,15 @@
+{% do doc.icons.useIcon('/icons/sidebar-toggle.svg') %}
+
+<button class="ap-sidebar-toggle --mobile" on="tap:sidebar.toggle" for="sidebar">
+  <span id="sidebar-toggle-label" class="ap-sidebar-toggle-label">
+    <span>{{ _('Toggle Sidebar') }}</span>
+  </span>
+  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sidebar-toggle"></use></svg>
+</button>
+
+<button class="ap-sidebar-toggle --desktop" on="tap:main.toggleClass(class=--sidebaropen)">
+  <span id="sidebar-toggle-label" class="ap-sidebar-toggle-label">
+    <span>{{ _('Toggle Sidebar') }}</span>
+  </span>
+  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sidebar-toggle"></use></svg>
+</button>

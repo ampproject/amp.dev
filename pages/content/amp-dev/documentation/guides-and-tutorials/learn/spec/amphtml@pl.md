@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -186,7 +186,7 @@ Dokumenty AMP HTML muszą:
 - <a name="chrs"></a>Zawierać znacznik `<meta charset="utf-8">` jako pierwszy element podrzędny w sekcji head. [🔗](#chrs)
 - <a name="vprt"></a>Zawierać znacznik `<meta name="viewport" content="width=device-width">` w sekcji head. Zalecane jest również dodanie właściwości `minimum-scale=1` i `initial-scale=1`. [🔗](#vprt)
 - <a name="scrpt"></a>Zawierać znacznik `<script async src="https://cdn.ampproject.org/v0.js"></script>` w sekcji head. [🔗](#scrpt)
-- <a name="boilerplate"></a>Zawierać [kod standardowy AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md) (`head > style[amp-boilerplate]` i `noscript > style[amp-boilerplate]`) w sekcji head. [🔗](#boilerplate)
+- <a name="boilerplate"></a>Zawierać [kod standardowy AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md) (`head > style[amp-boilerplate]` i `noscript > style[amp-boilerplate]`) w sekcji head. [🔗](#boilerplate)
 
 ### Metadane <a name="metadata"></a>
 
@@ -283,7 +283,7 @@ Znaczników HTML można używać w AMP HTML bez żadnych zmian. Niektóre znaczn
   </tr>
   <tr>
     <td width="30%">meta</td>
-    <td>Atrybutu <code>http-equiv</code> można użyć w przypadku określonych dozwolonych wartości; szczegółowe informacje zawiera <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">specyfikacja walidatora AMP</a>.</td>
+    <td>Atrybutu <code>http-equiv</code> można użyć w przypadku określonych dozwolonych wartości; szczegółowe informacje zawiera <a href="https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii">specyfikacja walidatora AMP</a>.</td>
   </tr>
   <tr>
     <td width="30%"><code><a id="ancr"></a>a</code></td>
@@ -314,7 +314,7 @@ Wewnętrzne atrybuty AMP z prefiksem <code>i-amp-</code> są niedozwolone w AMP 
 
 Wewnętrzne nazwy klas AMP z prefiksami `-amp-` i <code>i-amp-</code> są niedozwolone w AMP HTML.
 
-[Dokumentacja AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-css-classes.md) zawiera informacje o znaczeniu nazw klas z prefiksem `amp-`. Stosowanie tych klas jest dozwolone i ma na celu umożliwienie dostosowania niektórych funkcji środowiska uruchomieniowego i rozszerzeń AMP.
+[Dokumentacja AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-css-classes.md) zawiera informacje o znaczeniu nazw klas z prefiksem `amp-`. Stosowanie tych klas jest dozwolone i ma na celu umożliwienie dostosowania niektórych funkcji środowiska uruchomieniowego i rozszerzeń AMP.
 
 Wszystkie inne autorskie nazwy klas są dozwolone w znaczniku AMP HTML.
 
@@ -324,7 +324,7 @@ Niektóre nazwy identyfikatorów są niedozwolone w AMP HTML, na przykład ident
 
 Przed użyciem identyfikatorów `amp-` i `AMP` należy zapoznać się z dokumentacją AMP dotyczącą określonych rozszerzeń, aby uniknąć konfliktu z funkcjami zapewnianymi przez te rozszerzenia, takie jak <code>amp-access</code>.
 
-Pełną listę niedozwolonych nazw identyfikatorów można wyświetlić, wyszukując hasło `mandatory-id-attr` [tutaj](https://github.com/ampproject/amphtml/blob/master/spec/../validator/validator-main.protoascii).
+Pełną listę niedozwolonych nazw identyfikatorów można wyświetlić, wyszukując hasło `mandatory-id-attr` [tutaj](https://github.com/ampproject/amphtml/blob/main/docs/spec/../validator/validator-main.protoascii).
 
 ### Linki <a name="links"></a>
 
@@ -446,7 +446,7 @@ Nie ma żadnych szczególnych gwarancji co do sposobu działania ładowania śro
 
 W AMP HTML używane są elementy niestandardowe, zwane „składnikami AMP”, służące do zastępowania wbudowanych znaczników ładowania zasobów, takich jak `<img>` i `<video>` oraz do implementacji funkcji o złożonych interakcjah, takich jak lightboxy czy karuzele.
 
-Szczegółowe informacje o obsługiwanych składnikach zawiera [specyfikacja składników AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-components.md).
+Szczegółowe informacje o obsługiwanych składnikach zawiera [specyfikacja składników AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-components.md).
 
 Obsługiwane są 2 typy składników AMP:
 
@@ -461,7 +461,7 @@ Wbudowane składniki są zawsze dostępne w dokumencie AMP i mają dedykowany el
 
 Atrybuty te definiują układ elementu. Głównym celem jest tu zapewnienie wyświetlania elementu i odpowiednie zarezerwowane miejsca na niego przed pobraniem kodu JavaScript lub jakichkolwiek zasobów zdalnych.
 
-Szczegółowe informacje na temat systemu rozmieszczania zawiera artykuł [System układu AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-layout.md).
+Szczegółowe informacje na temat systemu rozmieszczania zawiera artykuł [System układu AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-layout.md).
 
 #### `on` <a name="on"></a>
 
@@ -488,7 +488,7 @@ Możesz nasłuchiwać wielu zdarzeń w jednym elemencie, oddzielając zdarzenia 
 
 Przykład: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
-Dowiedz się więcej o [działaniach i zdarzeniach AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-actions-and-events.md).
+Dowiedz się więcej o [działaniach i zdarzeniach AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-actions-and-events.md).
 
 ### Składniki rozszerzone <a name="extended-components"></a>
 
@@ -522,13 +522,13 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 
 ##### Przechowywanie wersji <a name="versioning"></a>
 
-Patrz [zasady przechowywania wersji AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-versioning-policy.md).
+Patrz [zasady przechowywania wersji AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-versioning-policy.md).
 
 ### Szablony <a name="templates"></a>
 
 Szablony renderują zawartość HTML w oparciu o szablon zależny od języka i dostarczone dane JSON.
 
-Szczegółowe informacje na temat obsługiwanych szablonów przedstawia [specyfikacja szablonów AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md).
+Szczegółowe informacje na temat obsługiwanych szablonów przedstawia [specyfikacja szablonów AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-templates.md).
 
 Szablony nie są dostarczane z środowiskiem uruchomieniowym AMP i muszą być pobierane tak samo jak elementy rozszerzone. Składniki rozszerzone ładuje się poprzez umieszczenie w sekcji head dokumentu znacznika `<script>` w następujący sposób:
 
@@ -558,7 +558,7 @@ Atrybut `id` jest opcjonalny. Poszczególne elementy AMP odnajdują swoje własn
 
 Składnia w elemencie szablonu zależy od języka szablonu. Język szablonu można jednak ograniczyć w AMP. Na przykład zgodnie z elementem "template" wszystkie produkcje muszą znajdować się nad prawidłowym, dobrze sformułowanym modelem DOM. Wszystkie dane wyjściowe szablonów są również poddawane oczyszczaniu, aby zapewnić, że są zgodne z AMP.
 
-Aby dowiedzieć się więcej o składni i ograniczeniach dotyczących szablonu, odwiedź [dokumentację szablonu](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md#templates)<a>.</a>
+Aby dowiedzieć się więcej o składni i ograniczeniach dotyczących szablonu, odwiedź [dokumentację szablonu](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-templates.md#templates)<a>.</a>
 
 ##### Adres URL <a name="url-1"></a>
 

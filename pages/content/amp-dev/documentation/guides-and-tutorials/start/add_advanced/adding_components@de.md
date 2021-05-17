@@ -30,9 +30,9 @@ Sieh dir dieses Beispiel eines **DoubleClick** Ads an:
 </amp-ad>
 ```
 
-Wie du siehst, ist das eine sehr einfache Konfiguration. Beachte das Attribut `type`, das der Komponente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) die Ad Plattform mitteilt, die wir verwenden wollen. In diesem Fall möchten wir die Plattform [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md) verwenden und haben deshalb als Wert `doubleclick` angegeben.
+Wie du siehst, ist das eine sehr einfache Konfiguration. Beachte das Attribut `type`, das der Komponente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) die Ad Plattform mitteilt, die wir verwenden wollen. In diesem Fall möchten wir die Plattform [DoubleClick](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md) verwenden und haben deshalb als Wert `doubleclick` angegeben.
 
-Das Attribut `data-slot` ist etwas spezieller. In [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) sind alle Attribute, die mit `data-` beginnen, anbieterspezifische Attribute. Das bedeutet, dass nicht alle Anbieter dieses Attribut benötigen und bei seiner Angabe auch nicht unbedingt reagieren werden. Vergleiche das obige **DoubleClick** Beispiel mit der folgenden Testanzeige der Plattform [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md):
+Das Attribut `data-slot` ist etwas spezieller. In [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) sind alle Attribute, die mit `data-` beginnen, anbieterspezifische Attribute. Das bedeutet, dass nicht alle Anbieter dieses Attribut benötigen und bei seiner Angabe auch nicht unbedingt reagieren werden. Vergleiche das obige **DoubleClick** Beispiel mit der folgenden Testanzeige der Plattform [A9](https://github.com/ampproject/amphtml/blob/main/ads/a9.md):
 
 ```html
 <amp-ad

@@ -540,7 +540,7 @@ Using the documentation for [`<amp-bind>`]({{g.doc('/content/amp-dev/documentati
 
 ### Solution
 
-The solution can be found in this Glitch example. The portion of the page containing the changes should look like this:
+The solution can be found in [this Glitch example](https://glitch.com/edit/#!/nice-consonant). The portion of the page containing the changes should look like this:
 
 [sourcecode:html]
 {% raw %}

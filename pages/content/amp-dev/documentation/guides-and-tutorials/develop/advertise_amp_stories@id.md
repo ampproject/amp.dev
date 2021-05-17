@@ -73,6 +73,6 @@ Server iklan yang saat ini mendukung iklan Cerita AMP:
 
 Jika Anda adalah pengiklan yang tertarik menjalankan iklan Anda di dalam Cerita Web, harap [hubungi kami](mailto:story-ads-wg@google.com) untuk mendapatkan informasi lebih lanjut.
 
-Penayang juga dapat menempatkan iklan kustom jika mereka membuat server iklan sendiri. [. Prosesnya diuraikan di sini](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
+Penayang juga dapat menempatkan iklan kustom jika mereka membuat server iklan sendiri. [. Prosesnya diuraikan di sini](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
 
 [tip type="note"] Bacalah [Kreatif kustom lalu lintas di Cerita Web](https://support.google.com/admanager/answer/9038178) untuk mendapatkan informasi tentang mengunggah iklan ke Google Ad Manager dan buka panduan kami tentang [Praktik terbaik untuk membuat iklan Cerita AMP](story_ads_best_practices.md). [/tip]

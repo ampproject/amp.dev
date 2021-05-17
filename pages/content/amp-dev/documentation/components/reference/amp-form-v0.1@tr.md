@@ -151,9 +151,9 @@ Daha ayrıntılı bilgi için [Özel Doğrulama](#custom-validations) bölümün
 * `<input type=button>`, `<input type=image>`
 * Girişlerdeki formla ilgili çoğu özellik; örneğin: `form`, `formaction`, `formtarget`, `formmethod` ve diğerleri.
 
-(Gelecekte bu kurallardan bazılarının gevşetilmesi yeniden değerlendirilebilir; sizin için gerekli olanlar varsa [lütfen bunları bize bildirin](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#suggestions-and-feature-requests) ve kullanım örnekleri sağlayın).
+(Gelecekte bu kurallardan bazılarının gevşetilmesi yeniden değerlendirilebilir; sizin için gerekli olanlar varsa [lütfen bunları bize bildirin](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#suggestions-and-feature-requests) ve kullanım örnekleri sağlayın).
 
-Geçerli girişler ve alanlarla ilgili ayrıntılar için AMP doğrulayıcı spesifikasyonundaki [amp-form kurallarına](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) bakın.
+Geçerli girişler ve alanlarla ilgili ayrıntılar için AMP doğrulayıcı spesifikasyonundaki [amp-form kurallarına](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) bakın.
 
 # İşlemler <a name="actions"></a>
 
@@ -193,7 +193,7 @@ Bu etkinlikler, [`on` özelliği](../../../documentation/guides-and-tutorials/le
 
 ```
 
-[Tam örneği burada](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) görebilirsiniz.
+[Tam örneği burada](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html) görebilirsiniz.
 
 # Giriş etkinlikleri <a name="input-events"></a>
 
@@ -225,7 +225,7 @@ AMP, alt `<input>` öğelerinde `change` ve `input-debounced` etkinliklerini gö
 ```
 [/example]
 
-[Tam örneği burada](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) görebilirsiniz.
+[Tam örneği burada](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html) görebilirsiniz.
 
 # Analiz tetikleyicileri <a name="analytics-triggers"></a>
 
@@ -383,7 +383,7 @@ to confirm! After that we'll start sending you weekly articles on {{#interests}}
 {% endraw %}
 ```
 
-[Tam örneği burada](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) görebilirsiniz.
+[Tam örneği burada](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html) görebilirsiniz.
 
 # Veri bağlama ile bir başarılı yanıtı oluşturmak için <a name="to-render-a-successful-response-with-data-binding"></a>
 
@@ -497,7 +497,7 @@ Aşağıda bir örnek verilmiştir:
 ```
 [/example]
 
-Daha fazla örnek için [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) sayfasına bakın.
+Daha fazla örnek için [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html) sayfasına bakın.
 
 Doğrulama mesajlarında, öğenizin içinde herhangi bir metin içeriği yoksa AMP, öğenizi tarayıcının varsayılan doğrulama mesajıyla doldurur. Yukarıdaki örnekte `name5` girişi boş olduğunda ve doğrulama işlemi başlatıldığında (ör. kullanıcı, formu göndermeyi denediğinde) AMP, `<span visible-when-invalid="valueMissing" validation-for="name5"></span>` öğesini, tarayıcının doğrulama mesajıyla doldurur ve bu `span` öğesini kullanıcıya gösterir.
 
@@ -587,11 +587,11 @@ Bir hata yanıtının doğrulama için nasıl görüneceği burada gösterilmekt
 
 `verify-xhr` isteğinden bir alanı kaldırmak için giriş öğesine `no-verify` özelliğini ekleyin.
 
-Daha fazla örnek için [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) sayfasına bakın.
+Daha fazla örnek için [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html) sayfasına bakın.
 
 # Değişken değişiklikleri <a name="variable-substitutions"></a>
 
-`amp-form` uzantısı, gizli olan ve `data-amp-replace` özelliğine sahip girişler için [platform değişken değişikliklerine](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) olanak tanır. Her form gönderiminde `amp-form`, formun içindeki tüm `input[type=hidden][data-amp-replace]` öğelerini bulur ve değişken değişikliklerini `value` özelliğine uygulayıp bunu, değişikliğin sonucuyla değiştirir.
+`amp-form` uzantısı, gizli olan ve `data-amp-replace` özelliğine sahip girişler için [platform değişken değişikliklerine](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) olanak tanır. Her form gönderiminde `amp-form`, formun içindeki tüm `input[type=hidden][data-amp-replace]` öğelerini bulur ve değişken değişikliklerini `value` özelliğine uygulayıp bunu, değişikliğin sonucuyla değiştirir.
 
 Her bir girişte, `data-amp-replace` öğesinde kullanılan boşlukla ayrılmış değişken dizesini belirterek her değişiklik için kullandığınız değişkenleri sağlamanız gerekir (aşağıdaki örneğe bakın). AMP, açıkça belirtilmeyen değişkenleri değiştirmez.
 
@@ -626,7 +626,7 @@ Kullanıcı formu göndermeyi denedikten sonra, AMP değişkenleri çözmeye ve 
 
 Yukarıdaki `CANONICAL_HOSTNAME` öğesinin, ilk alandaki `data-amp-replace` özelliği aracılığıyla beyaz listeye alınmadığı için değiştirilmemiş olmasına dikkat edin.
 
-Değişiklikler, bir sonraki gönderimde gerçekleşir. [AMP'deki değişken değişiklikleri](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) hakkında daha fazla bilgi edinin.
+Değişiklikler, bir sonraki gönderimde gerçekleşir. [AMP'deki değişken değişiklikleri](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) hakkında daha fazla bilgi edinin.
 
 # Çoklu dolgular <a name="polyfills"></a>
 
@@ -676,7 +676,7 @@ Aşağıdaki sınıflar, [kullanıcı etkileşimi sözde sınıfları için bir 
 
 Yayıncılar, girişlerini ve alan ayarlarını kullanıcı işlemlerine duyarlı olacak (ör. kullanıcı ayrıldıktan sonra sonra geçersiz bir girişi kırmızı bir kenarlık ile vurgulama) biçimde şekillendirmek için bu sınıfları kullanabilir.
 
-Bunların kullanımıyla ilgili [tam örneği burada](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) bulabilirsiniz.
+Bunların kullanımıyla ilgili [tam örneği burada](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html) bulabilirsiniz.
 
 [tip type="success"]
 AMP sayfalarınızda kullanabileceğiniz duyarlı, önceden şekillendirilmiş AMP formu öğeleri için [AMP Start](https://ampstart.com/components#form-elements) sayfasını ziyaret edin.

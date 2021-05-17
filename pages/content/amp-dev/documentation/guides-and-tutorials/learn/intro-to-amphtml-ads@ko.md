@@ -48,7 +48,7 @@ AMP HTML 광고는 유연하고 동적인 데다가 캐러셀, 시차 및 라이
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='AMP 페이지에 AMP HTML 광고 게재', caption='AMP 페이지에 AMP HTML 광고 게재', align='' ) }}
 
 1. 게시자가 [`amp-ad`](../../../documentation/components/reference/amp-ad.md) 태그를 통해 AMP 페이지에 광고 슬롯을 삽입하여 사용하려는 광고 네트워크를 지정합니다.
-2. AMP 런타임이 지정된 광고 네트워크에 광고 요청을 보내 광고를 가져옵니다. AMP HTML 광고를 게재할 수 있는 광고 네트워크는 광고 소재를 검사하고 서명하는 [빠른 가져오기 구현](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)을 지원합니다.
+2. AMP 런타임이 지정된 광고 네트워크에 광고 요청을 보내 광고를 가져옵니다. AMP HTML 광고를 게재할 수 있는 광고 네트워크는 광고 소재를 검사하고 서명하는 [빠른 가져오기 구현](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md)을 지원합니다.
 3. 광고 네트워크가 AMP HTML 광고로 응답하고 AMP 런타임이 AMP 페이지에 광고를 렌더링합니다.
 
 [tip type="note"] AMP가 아닌 페이지에 AMPHTML 광고를 게재하기 위해 특별한 통합이 필요하지 않습니다. 광고 네트워크에서 AMPHTML 광고를 지원하는지 확인하세요. [/tip]
@@ -77,7 +77,7 @@ AMP HTML 광고는 유연하고 동적인 데다가 캐러셀, 시차 및 라이
 
 ### 광고 네트워크/서버
 
-AMP HTML 광고를 AMP 페이지에 게재하려면 네트워크에서 [빠른 가져오기 광고 요청 구현](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) 기능을 사용하는 `amp-ad` 확장자를 만들어야 합니다(없는 경우). 자세한 내용은 [AMP와 통합하여 디스플레이 광고 게재](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md)를 참조하세요. 비 AMP 페이지에 AMP HTML을 게재할 경우 특별한 통합이 필요하지 않습니다.
+AMP HTML 광고를 AMP 페이지에 게재하려면 네트워크에서 [빠른 가져오기 광고 요청 구현](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md) 기능을 사용하는 `amp-ad` 확장자를 만들어야 합니다(없는 경우). 자세한 내용은 [AMP와 통합하여 디스플레이 광고 게재](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md)를 참조하세요. 비 AMP 페이지에 AMP HTML을 게재할 경우 특별한 통합이 필요하지 않습니다.
 
 ## AMP HTML 광고 만들기
 
@@ -101,7 +101,7 @@ AMP HTML 광고를 만든 후 광고가 적절한 AMP HTML 구문을 사용하�
 
 ## RTB의 AMP HTML 광고 지원
 
-실시간 입찰(RTB) 환경에서 AMP HTML 광고를 지원하려는 SSP 및 Ad Exchange의 경우 자세한 내용을 확인하려면 [RTB Ad Exchange를 위한 구현 가이드](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/RTBExchangeGuide.md)를 참조하세요.
+실시간 입찰(RTB) 환경에서 AMP HTML 광고를 지원하려는 SSP 및 Ad Exchange의 경우 자세한 내용을 확인하려면 [RTB Ad Exchange를 위한 구현 가이드](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/RTBExchangeGuide.md)를 참조하세요.
 
 ## FAQ
 
@@ -125,4 +125,4 @@ AMP HTML 광고를 만든 후 광고가 적절한 AMP HTML 구문을 사용하�
 
 - AMP 관련 질문의 답변은 [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html)에서 찾아보는 것이 좋습니다. AMP 프로젝트 커뮤니티 구성원이 정기적으로 Stack Overflow를 모니터링하므로 질문을 가장 빠르게 해결할 수 있는 방법입니다.
 - [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) 채널에 참여하여 솔루션 및 답변을 확인해 보세요.
-- AMP에서 버그가 발생하거나 AMP에 요청할 기능이 있다면 [AMP 문제 신고](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp)에서 문제를 신고하는 방법을 확인하세요.
+- AMP에서 버그가 발생하거나 AMP에 요청할 기능이 있다면 [AMP 문제 신고](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#reporting-issues-with-amp)에서 문제를 신고하는 방법을 확인하세요.

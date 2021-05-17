@@ -31,7 +31,7 @@ No exemplo a seguir, enviamos dados de page view para o [Google Analytics](#goog
 
 [tip type="success"]
 
-Se você tiver experiência em editar código, veja as configurações brutas no arquivo [`vendors.js`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/0.1/vendors.js) (em inglês).
+Se você tiver experiência em editar código, veja as configurações brutas no arquivo [`vendors.js`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/0.1/vendors.js) (em inglês).
 
 [/tip]
 
@@ -151,7 +151,7 @@ Adiciona compatibilidade com o Google Analytics. Veja mais detalhes sobre como a
 
 Valor do atributo de tipo: `infonline`
 
-Adiciona compatibilidade com o [INFOnline](https://www.infonline.de) / [IVW](http://www.ivw.de) (indisponível em português). Exige uma cópia de [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) em um subdomínio diferente daquele que inclui os arquivos AMP ([saiba mais nesta postagem em inglês](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). O arquivo precisa ser disponibilizado por HTTPS. Por exemplo, se os arquivos AMP estiverem hospedados em `www.example.com`, `amp-analytics-infonline.html` precisará estar em outro subdomínio, como `iframe.example.com` ou `assets.example.com`.
+Adiciona compatibilidade com o [INFOnline](https://www.infonline.de) / [IVW](http://www.ivw.de) (indisponível em português). Exige uma cópia de [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) em um subdomínio diferente daquele que inclui os arquivos AMP ([saiba mais nesta postagem em inglês](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md)). O arquivo precisa ser disponibilizado por HTTPS. Por exemplo, se os arquivos AMP estiverem hospedados em `www.example.com`, `amp-analytics-infonline.html` precisará estar em outro subdomínio, como `iframe.example.com` ou `assets.example.com`.
 
 Além disso, as seguintes variáveis precisam ser definidas:
 
@@ -220,7 +220,7 @@ Adiciona compatibilidade com o Nielsen Marketing Cloud. Veja mais detalhes em [N
 
 Valor do atributo de tipo: `oewa`
 
-Adiciona compatibilidade com [OEWA](https://www.oewa.at) (indisponível em português). Exige uma cópia de [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) em um subdomínio diferente daquele que inclui os arquivos AMP ([saiba mais nesta postagem em inglês](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)). O arquivo precisa ser disponibilizado por HTTPS. Por exemplo, se os arquivos AMP estiverem hospedados em `www.example.com`, `amp-analytics-oewa.html` precisará estar em outro subdomínio, como `oewa-amp.example.com`. Veja mais detalhes sobre [como adicionar compatibilidade com o OEWA](http://www.oewa.at/Implementierung) (indisponível em português).
+Adiciona compatibilidade com [OEWA](https://www.oewa.at) (indisponível em português). Exige uma cópia de [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) em um subdomínio diferente daquele que inclui os arquivos AMP ([saiba mais nesta postagem em inglês](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md)). O arquivo precisa ser disponibilizado por HTTPS. Por exemplo, se os arquivos AMP estiverem hospedados em `www.example.com`, `amp-analytics-oewa.html` precisará estar em outro subdomínio, como `oewa-amp.example.com`. Veja mais detalhes sobre [como adicionar compatibilidade com o OEWA](http://www.oewa.at/Implementierung) (indisponível em português).
 
 Além disso, as seguintes variáveis precisam ser definidas:
 

@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/amp-a4a-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -97,7 +97,7 @@ AMPHTML 广告是一种在 AMP 网页上快速高效渲染广告的机制。为�
 
 ### 样板 <a name="boilerplate"></a>
 
-AMPHTML 广告素材需要与[常规 AMP 文档](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md)不同且更为简单的样板样式行。
+AMPHTML 广告素材需要与[常规 AMP 文档](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md)不同且更为简单的样板样式行。
 
 [sourcecode:html]
 
@@ -113,7 +113,7 @@ AMPHTML 广告素材需要与[常规 AMP 文档](https://github.com/ampproject/a
 
 最后，AMPHTML 广告样板使用 `amp-a4a-boilerplate`，而不是 `amp-boilerplate`，因此，验证工具可以轻松识别它，并且可以生成更准确的错误消息，以便为开发者提供帮助。
 
-请注意，有关样板文本变化的规则同样也适用于[常规 AMP 样板](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md)。
+请注意，有关样板文本变化的规则同样也适用于[常规 AMP 样板](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md)。
 
 ### CSS <a name="css"></a>
 
@@ -255,7 +255,7 @@ width: 100%;
 
 _示例_：上述列表中未列出 `<amp-ad>`。明确禁止的原因在于，如果允许在 `<amp-ad>` 内放入 `<amp-ad>`，可能会导致生成不受控制的广告加载瀑布流，从而无法满足 AMPHTML 广告的性能目标。
 
-_示例_：上述列表中未列出 `<amp-iframe>`。禁止的原因在于，广告可以使用该标记执行任意 Javascript 并加载任意内容。如果广告想使用此类功能，它们应当在 [a4aRegistry](https://github.com/ampproject/amphtml/blob/master/ads/_a4a-config.js#L40) 条目中返回 <code>false</code>，并使用现有的“3p iframe”广告渲染机制。
+_示例_：上述列表中未列出 `<amp-iframe>`。禁止的原因在于，广告可以使用该标记执行任意 Javascript 并加载任意内容。如果广告想使用此类功能，它们应当在 [a4aRegistry](https://github.com/ampproject/amphtml/blob/main/ads/_a4a-config.js#L40) 条目中返回 <code>false</code>，并使用现有的“3p iframe”广告渲染机制。
 
 _示例_：上述列表中未列出 `<amp-facebook>`、`<amp-instagram>`、`<amp-twitter>` 和 `<amp-youtube>`，原因与 `<amp-iframe>` 相同：这些标记全部都会创建 iframe，并且可能会在 iframe 中占用无限多的资源。
 
@@ -265,7 +265,7 @@ _示例_：尚未包括 `<amp-lightbox>` 的原因在于，有些 AMPHTML 广告
 
 ### HTML 标记 <a name="html-tags"></a>
 
-*允许*在 AMPHTML 广告素材中使用以下标记。只能使用明确允许的标记。以下列表是常规 [AMP 标记附录许可名单](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/../../spec/amp-tag-addendum.md)的一部分。与许可名单一样，以下列表按照 HTML5 规范中的第 4 节 [HTML 的元素](http://www.w3.org/TR/html5/single-page.html#html-elements)排序。
+*允许*在 AMPHTML 广告素材中使用以下标记。只能使用明确允许的标记。以下列表是常规 [AMP 标记附录许可名单](https://github.com/ampproject/amphtml/blob/main/extensions/amp-a4a/../../spec/amp-tag-addendum.md)的一部分。与许可名单一样，以下列表按照 HTML5 规范中的第 4 节 [HTML 的元素](http://www.w3.org/TR/html5/single-page.html#html-elements)排序。
 
 出于性能考虑或者是因为标记不符合 HTML5 标准，大部分标记均未列出。例如，未列出 `<noscript>` 的原因在于，AMPHTML 广告依赖于启用的 JavaScript，因此，`<noscript>` 块从不执行，只会使广告素材膨胀，占用带宽并增加延迟。同样地，也不允许使用 `<acronym>`、`<big>` 等标记，因为它们与 HTML5 标准不兼容。
 

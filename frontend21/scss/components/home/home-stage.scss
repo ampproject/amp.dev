@@ -1,0 +1,68 @@
+.#{project('home-stage')} {
+  --spacing: 50px;
+
+  position: relative;
+  @include grid;
+  padding: var(--spacing) 0;
+  text-align: center;
+  grid-column: 1/-1;
+  max-width: $maxWidth;
+  margin: 0 auto;
+  color: color('charade');
+
+  @include respond-to('medium') {
+    --spacing: 100px;
+
+    text-align: left;
+  }
+
+  &-text {
+    grid-column: 2/24;
+
+    @include respond-to('small') {
+      grid-column: 4/22;
+    }
+
+    @include respond-to('medium') {
+      grid-column: 2/16;
+      grid-row: 1;
+    }
+
+    @include respond-to('large') {
+      grid-column: 2/14;
+    }
+  }
+
+  &-logo {
+    grid-column: 1/-1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      height: 52vw;
+      width: 52vw;
+      max-width: 194px;
+      max-height: 194px;
+    }
+
+    @include respond-to('medium') {
+      grid-column: 16/24;
+      grid-row: 1;
+
+      svg {
+        max-width: 341px;
+        max-height: 341px;
+        position: absolute;
+      }
+    }
+
+    @include respond-to('large') {
+      grid-column: 14/24;
+      svg {
+        max-width: 514px;
+        max-height: 514px;
+      }
+    }
+  }
+}

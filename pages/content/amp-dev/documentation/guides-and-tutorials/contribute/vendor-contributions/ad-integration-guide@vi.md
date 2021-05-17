@@ -9,13 +9,13 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/ads/_integration-guide.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/ads/_integration-guide.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-Nếu bạn là một đơn vị cung cấp công nghệ quảng cáo và muốn tích hợp với AMP HTML, hãy xem các hướng dẫn dưới đây. Để đảm bảo độ trễ tối thiểu và chất lượng tốt, hãy tuân thủ các hướng dẫn được liệt kê [ở đây](https://github.com/ampproject/amphtml/blob/master/ads/../3p/README.md#ads) trước khi gửi một yêu cầu kéo cho dự án mã nguồn mở AMP. Để biết hướng dẫn chung về cách bắt đầu đóng góp cho AMP, hãy xem <a class="" href="https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a>.
+Nếu bạn là một đơn vị cung cấp công nghệ quảng cáo và muốn tích hợp với AMP HTML, hãy xem các hướng dẫn dưới đây. Để đảm bảo độ trễ tối thiểu và chất lượng tốt, hãy tuân thủ các hướng dẫn được liệt kê [ở đây](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads) trước khi gửi một yêu cầu kéo cho dự án mã nguồn mở AMP. Để biết hướng dẫn chung về cách bắt đầu đóng góp cho AMP, hãy xem <a class="" href="https://github.com/ampproject/amphtml/blob/main/docs/contributing.md">CONTRIBUTING.md</a>.
 
 ## Máy chủ Quảng cáo <a name="ad-server"></a>
 
@@ -39,9 +39,9 @@ data-aax_src="302"
 > </amp-ad>
 > [/sourcecode]
 
-Lưu ý rằng mỗi thuộc tính theo sau `type` (loại) đều phụ thuộc vào các tham số mà máy chủ Amazon A9 kỳ vọng để cung cấp một quảng cáo. Tập tin [a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) hiển thị cho bạn cách các tham số được ánh xạ để thực hiện một lệnh gọi JavaScript và gọi máy chủ A9 thông qua URL `https://c.amazon-adsystem.com/aax2/assoc.js`. Các tham số tương ứng được phê duyệt bởi thẻ quảng cáo AMP sẽ được chèn vào URL để trả về một quảng cáo.
+Lưu ý rằng mỗi thuộc tính theo sau `type` (loại) đều phụ thuộc vào các tham số mà máy chủ Amazon A9 kỳ vọng để cung cấp một quảng cáo. Tập tin [a9.js](https://github.com/ampproject/amphtml/blob/main/ads/./a9.js) hiển thị cho bạn cách các tham số được ánh xạ để thực hiện một lệnh gọi JavaScript và gọi máy chủ A9 thông qua URL `https://c.amazon-adsystem.com/aax2/assoc.js`. Các tham số tương ứng được phê duyệt bởi thẻ quảng cáo AMP sẽ được chèn vào URL để trả về một quảng cáo.
 
-Để biết thêm chi tiết về cách tích hợp mạng lưới quảng cáo của bạn vào AMP, hãy xem [Tích hợp các mạng lưới quảng cáo vào AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+Để biết thêm chi tiết về cách tích hợp mạng lưới quảng cáo của bạn vào AMP, hãy xem [Tích hợp các mạng lưới quảng cáo vào AMP](https://github.com/ampproject/amphtml/blob/main/ads/README.md).
 
 ## Nền tảng Bên Cung cấp (SSP) hoặc một Sàn Quảng cáo <a name="supply-side-platform-ssp-or-an-ad-exchange"></a>
 
@@ -63,7 +63,7 @@ Làm việc với nhà phát hành của bạn để đảm bảo các quảng c
 
 _Ví dụ: Brightcove, Ooyala_
 
-Một trình phát video hoạt động trong các trang HTML thông thường sẽ không hoạt động trong AMP và do đó một thẻ cụ thể phải được tạo để cho phép Thời gian chạy AMP tải trình phát của bạn. Brightcove đã tạo một thẻ [amp-brightcove](https://github.com/ampproject/amphtml/blob/master/extensions/amp-brightcove/amp-brightcove.md) cho phép các nội dung đa phương tiện và quảng cáo được phát trong các trang AMP.
+Một trình phát video hoạt động trong các trang HTML thông thường sẽ không hoạt động trong AMP và do đó một thẻ cụ thể phải được tạo để cho phép Thời gian chạy AMP tải trình phát của bạn. Brightcove đã tạo một thẻ [amp-brightcove](https://github.com/ampproject/amphtml/blob/main/extensions/amp-brightcove/amp-brightcove.md) cho phép các nội dung đa phương tiện và quảng cáo được phát trong các trang AMP.
 
 Một trình phát Brightcove có thể được gọi như sau:
 
@@ -106,10 +106,10 @@ Nhà cung cấp khả năng xem thường tích hợp với các nhà phát hàn
 
 Ví dụ cho MOAT, đảm bảo rằng `http://js.moatads.com` được chuyển thành `https://z.moatads.com`
 
-Đồng thời, xem lối tiếp cận để sử dụng [mô hình quan sát đa phần](https://github.com/ampproject/amphtml/blob/master/ads/README.md#ad-viewability).
+Đồng thời, xem lối tiếp cận để sử dụng [mô hình quan sát đa phần](https://github.com/ampproject/amphtml/blob/main/ads/README.md#ad-viewability).
 
 ## Nền tảng Khuyến nghị Nội dung <a name="content-recommendation-platform"></a>
 
 _Ví dụ: Taboola, Outbrain_
 
-Hữu ích nếu bạn có một số đoạn JavaScript được nhúng trên website của nhà phát hành hôm nay, nhưng lối tiếp cận này có thể không hoạt động trên các trang AMP. Nếu bạn muốn khuyến nghị nội dung trên một trang AMP, chúng tôi khuyên bạn nên sử dụng [phần mở rộng `amp-embed`](https://amp.dev/documentation/components/amp-ad) để yêu cầu chi tiết nội dung. Vui lòng xem ví dụ về [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md).
+Hữu ích nếu bạn có một số đoạn JavaScript được nhúng trên website của nhà phát hành hôm nay, nhưng lối tiếp cận này có thể không hoạt động trên các trang AMP. Nếu bạn muốn khuyến nghị nội dung trên một trang AMP, chúng tôi khuyên bạn nên sử dụng [phần mở rộng `amp-embed`](https://amp.dev/documentation/components/amp-ad) để yêu cầu chi tiết nội dung. Vui lòng xem ví dụ về [Taboola](https://github.com/ampproject/amphtml/blob/main/ads/taboola.md).

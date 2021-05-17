@@ -1,6 +1,6 @@
 ---
 $title: URL này là phiên bản trong bộ nhớ đệm của một trang AMP.
-type: lỗi
+type: error
 hide_share: true
 ---
 

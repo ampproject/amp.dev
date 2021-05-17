@@ -41,9 +41,9 @@ Ad esempio, il server Amazon A9 può essere richiamato con la seguente sintassi:
 </amp-ad>
 ```
 
-Nel codice precedente, l'attributo `type` indica la rete di annunci, che in questo caso è A9. Gli attributi `data-*` dipendono dai parametri che il server A9 di Amazon si aspetta per fornire un annuncio. Il file [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) mostra come sono mappati i parametri per effettuare una chiamata JavaScript all'URL del server A9. I parametri corrispondenti passati dal tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md) vengono aggiunti in coda all'URL per restituire l'annuncio.
+Nel codice precedente, l'attributo `type` indica la rete di annunci, che in questo caso è A9. Gli attributi `data-*` dipendono dai parametri che il server A9 di Amazon si aspetta per fornire un annuncio. Il file [`a9.js`](https://github.com/ampproject/amphtml/blob/main/ads/a9.js) mostra come sono mappati i parametri per effettuare una chiamata JavaScript all'URL del server A9. I parametri corrispondenti passati dal tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md) vengono aggiunti in coda all'URL per restituire l'annuncio.
 
-Per ulteriori istruzioni su come integrare un elemento [`amp-ad`](../../../documentation/components/reference/amp-ad.md), consultare la pagina [Integrazione di reti di annunci in AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+Per ulteriori istruzioni su come integrare un elemento [`amp-ad`](../../../documentation/components/reference/amp-ad.md), consultare la pagina [Integrazione di reti di annunci in AMP](https://github.com/ampproject/amphtml/blob/main/ads/README.md).
 
 ## Creazione di un'integrazione Fast Fetch <a name="creating-a-fast-fetch-integration"></a>
 
@@ -54,10 +54,10 @@ Per ulteriori istruzioni su come integrare un elemento [`amp-ad`](../../../docum
 Per fornire annunci AMPHTML dal tuo server, devi garantire un'integrazione Fast Fetch che comprenda:
 
 1. Supporto delle comunicazioni di rete SSL.
-2. Fornitura di codice JavaScript per creare la richiesta di annuncio (consulta le implementazioni di esempio: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) e [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
+2. Fornitura di codice JavaScript per creare la richiesta di annuncio (consulta le implementazioni di esempio: [AdSense](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-adsense-impl) e [DoubleClick](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-doubleclick-impl)).
 3. Convalida e firma dei contenuti creativi tramite un servizio di convalida. [Cloudflare](https://blog.cloudflare.com/firebolt/) offre un servizio di verifica degli annunci AMP, che consente a qualsiasi fornitore di annunci indipendente di pubblicare annunci più veloci, snelli e coinvolgenti.
 
-Per ulteriori istruzioni sulla creazione di un'integrazione Fast Fetch, si può consultare la [Guida all'implementazione della rete Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).
+Per ulteriori istruzioni sulla creazione di un'integrazione Fast Fetch, si può consultare la [Guida all'implementazione della rete Fast Fetch](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md).
 
 ## Risorse correlate
 

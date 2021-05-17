@@ -12,7 +12,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cors-requests.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -274,7 +274,7 @@ res.setHeader('Access-Control-Allow-Origin', origin);
 }
 [/sourcecode]
 
-**참고**: 동작하는 코드 샘플은 [amp-cors.js](https://github.com/ampproject/amphtml/blob/master/build-system/server/amp-cors.js)를 참조하세요.
+**참고**: 동작하는 코드 샘플은 [amp-cors.js](https://github.com/ampproject/amphtml/blob/main/build-system/server/amp-cors.js)를 참조하세요.
 
 ### 시나리오 1: 동일 출처의 AMP 페이지에서 요청 받기 <a name="scenario-1-get-request-from-amp-page-on-same-origin"></a>
 

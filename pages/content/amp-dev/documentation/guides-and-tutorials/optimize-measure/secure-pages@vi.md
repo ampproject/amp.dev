@@ -22,6 +22,6 @@ Thực thi một CSP bằng cách thêm vào siêu thẻ phù hợp vào đầu 
 />
 ```
 
-[Bạn có thể xem ví dụ đầy đủ ở đây](https://github.com/ampproject/amphtml/blob/master/examples/csp.amp.html).
+[Bạn có thể xem ví dụ đầy đủ ở đây](https://github.com/ampproject/amphtml/blob/main/examples/csp.amp.html).
 
 [tip type="read-on"] Tìm hiểu thêm về [việc bảo vệ trước những lỗ hổng bảo mật và CSP tại đây](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP). [/tip]

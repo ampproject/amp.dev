@@ -26,7 +26,8 @@ const EXAMPLE_SITEMAP_PATH = path.join(
   project.paths.STATICS_DEST,
   '/samples/samples.json'
 );
-const EXAMPLE_COMPONENT_PATTERN = /^(?:https?:\/\/[^/]+)?(?:\/[^/]+)?\/documentation\/examples\/components\/(amp-[^/]+)\/?/;
+const EXAMPLE_COMPONENT_PATTERN =
+  /^(?:https?:\/\/[^/]+)?(?:\/[^/]+)?\/documentation\/examples\/components\/(amp-[^/]+)\/?/;
 
 function getExamplePreviewUrl(exampleUrl) {
   let path = url.parse(exampleUrl).pathname;

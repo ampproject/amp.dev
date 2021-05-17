@@ -171,4 +171,4 @@ limitations under the License.
 
 ## Validation
 
-请参阅 AMP 验证工具规范中的 [`amp-access-poool` 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-poool/validator-amp-access-poool.protoascii)。
+请参阅 AMP 验证工具规范中的 [`amp-access-poool` 规则](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access-poool/validator-amp-access-poool.protoascii)。
