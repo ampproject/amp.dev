@@ -146,6 +146,16 @@ creation:
       height: 3
     formats:
       - stories
+  - name: Zmooz
+    description: Turn automatically articles into templated web stories. WYSIVYG Studio and Apps to edit and share
+    url:
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/zmooz-9e90a49586e8.jpg
+      width: 700
+      height: 310
+    formats:
+      - stories
   - name: Tappable
     description: The collaborative Web Stories builder. Design immersive Stories, publish on a blazing fast CDN and measure engagement with zero-config analytics.
     url: https://tappable.co
@@ -205,7 +215,7 @@ creation:
       width: 1000
       height: 491
     formats:
-      - stories    
+      - stories
   - name: Unbounce
     description: Unbounce is a platform to create landing pages, website popups, and sticky bars.
     url: https://unbounce.com
