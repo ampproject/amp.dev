@@ -382,6 +382,14 @@ function buildPages(done) {
     },
     // eslint-disable-next-line prefer-arrow-callback
     async function publishPages() {
+      if (!config.options.locales.includes(config.getDefaultLocale())) {
+        console.log(
+          'Skipping page publishing. Default language is not build, only:',
+          config.options.locales
+        );
+        return;
+      }
+
       await copyFile(
         `${project.paths.GROW_BUILD_DEST}/index-2021.html`,
         `${project.paths.PAGES_DEST}/index.html`
