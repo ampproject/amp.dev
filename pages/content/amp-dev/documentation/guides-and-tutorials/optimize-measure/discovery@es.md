@@ -76,7 +76,7 @@ Ejemplo:
 </script>
 [/sourcecode]
 
-Puedes encontrar más ejemplos en la [carpeta de ejemplos de ampproject](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), que incluye la sintaxis de atributo HTML alternativa).
+Puedes encontrar más ejemplos en la [carpeta de ejemplos de ampproject](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples), que incluye la sintaxis de atributo HTML alternativa).
 
 [tip type="read-on"] Visita estas páginas para más información sobre datos estructurados:
 

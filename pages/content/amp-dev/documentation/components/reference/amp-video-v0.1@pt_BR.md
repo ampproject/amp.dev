@@ -94,7 +94,7 @@ O `amp-video` é compatível com análises prontas. Consulte a seção [análise
       </tr>
       <tr>
         <td width="40%"><strong>autoplay</strong></td>
-        <td>Se este atributo estiver presente e o navegador for compatível com a reprodução automática, o vídeo será iniciado automaticamente assim que ficar visível. Há algumas condições que o componente precisa atender para ser reproduzido, <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md#autoplay">descritas na especificações de vídeo em AMP</a> (link em inglês).</td>
+        <td>Se este atributo estiver presente e o navegador for compatível com a reprodução automática, o vídeo será iniciado automaticamente assim que ficar visível. Há algumas condições que o componente precisa atender para ser reproduzido, <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md#autoplay">descritas na especificações de vídeo em AMP</a> (link em inglês).</td>
       </tr>
       <tr>
         <td width="40%"><strong>controls</strong></td>
@@ -131,7 +131,7 @@ O `amp-video` é compatível com análises prontas. Consulte a seção [análise
         </tr>
         <tr>
           <td width="40%"><strong>rotate-to-fullscreen</strong></td>
-          <td>Se o vídeo estiver visível, ele será exibido em tela cheia depois que o usuário girar o dispositivo para o modo paisagem. Para ver mais detalhes, consulte as <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md#rotate-to-fullscreen">especificações de vídeo em AMP</a> (link em inglês).</td>
+          <td>Se o vídeo estiver visível, ele será exibido em tela cheia depois que o usuário girar o dispositivo para o modo paisagem. Para ver mais detalhes, consulte as <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md#rotate-to-fullscreen">especificações de vídeo em AMP</a> (link em inglês).</td>
         </tr>
         <tr>
           <td width="40%"><strong>common attributes</strong></td>

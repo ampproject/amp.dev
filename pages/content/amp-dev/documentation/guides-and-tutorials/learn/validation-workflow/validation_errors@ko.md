@@ -132,7 +132,7 @@ AMP 형식에서는 AMP 프로젝트에서 자체 제공하는 자바스크립�
 
 필요한 자바스크립트 사용 사례를 찾을 수 없다면 AMP 프로젝트에
 새로운 구성요소를 추가할 수도 있습니다. 자세한 내용은 AMP 프로젝트의
-[참여하기](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md)
+[참여하기](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md)
 문서를 확인하세요.
 
 ### 필수 속성 누락

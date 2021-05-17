@@ -259,7 +259,7 @@ amp-social-share[type="twitter"] {
 
 ## 变量替换 <a name="variable-substitution"></a>
 
-您可以在 `<amp-social-share>` 元素中使用[全局 AMP 变量替换](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)。在下面的示例中，`TITLE` 替换为网页标题，`CANONICAL_URL` 替换为文档的规范网址。
+您可以在 `<amp-social-share>` 元素中使用[全局 AMP 变量替换](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)。在下面的示例中，`TITLE` 替换为网页标题，`CANONICAL_URL` 替换为文档的规范网址。
 
 ```html
 <amp-social-share type="whatsapp"

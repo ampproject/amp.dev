@@ -3497,8 +3497,8 @@ msgstr "<p>Le projet est ouvert à tous, et les membres du projet sont très ent
 msgid "How can an advertising or technology vendor get involved in Accelerated Mobile Pages?"
 msgstr "Comment un fournisseur publicitaire ou technologique peut-il participer au projet AMP ?"
 
-msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
-msgstr "<p>Veuillez consulter les <a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">instructions relatives à la participation</a> et contactez-nous via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
+msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
+msgstr "<p>Veuillez consulter les <a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">instructions relatives à la participation</a> et contactez-nous via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
 
 msgid "How does advertising work on Accelerated Mobile Pages?"
 msgstr "Comment fonctionne la publicité sur les pages AMP ?"

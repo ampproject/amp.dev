@@ -73,7 +73,7 @@ Bạn có thể nhúng các câu chuyện AMP trong một trang không phải AM
 
 ## Nhúng trình phát AMP Story
 
-Việc hiển thị một AMP Story trong một trang không phải AMP đòi hỏi yếu tố [`amp-story-player`](https://github.com/ampproject/amphtml/blob/main/spec/amp-story-player.md).
+Việc hiển thị một AMP Story trong một trang không phải AMP đòi hỏi yếu tố [`amp-story-player`](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-story-player.md).
 
 ### Nhập kịch bản
 

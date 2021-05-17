@@ -54,7 +54,7 @@ Instrukcje dotyczące tworzenia integracji składnika [`amp-ad`](../../../docume
 Aby serwować reklamy AMPHTML ze swojego serwera reklam, musisz zapewnić integrację mechanizmu Fast Fetch, która obejmuje:
 
 1. Obsługę komunikacji w sieci SSL.
-2. Dostarczenie skryptu JavaScript do tworzenia żądania reklam (przykładowe implementacje: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) & [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
+2. Dostarczenie skryptu JavaScript do tworzenia żądania reklam (przykładowe implementacje: [AdSense](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-adsense-impl) & [DoubleClick](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-doubleclick-impl)).
 3. Walidacja i podpisanie kreacji za pomocą usługi walidacji. [Cloudflare](https://blog.cloudflare.com/firebolt/) zapewnia usługę weryfikacji reklam AMP, umożliwiając każdemu niezależnemu dostawcy reklam dostarczanie szybszych, lżejszych i bardziej angażujących reklam.
 
 Instrukcje dotyczące tworzenia integracji Fast Fetch zawiera [Przewodnik implementacji sieci Fast Fetch](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md).

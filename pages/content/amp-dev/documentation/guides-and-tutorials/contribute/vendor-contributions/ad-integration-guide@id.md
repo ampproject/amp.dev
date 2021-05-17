@@ -15,7 +15,7 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-Jika Anda adalah penyedia teknologi iklan yang ingin berintegrasi dengan HTML AMP, silakan baca panduan di bawah ini. Untuk memastikan latensi yang minimum dan mutu, harap ikuti instruksi yang dicantumkan [di sini](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads) sebelum mengirimkan permintaan penarikan (pull request) ke proyek sumber terbuka AMP. Untuk mendapatkan panduan umum tentang cara memulai berkontribusi di AMP, silakan buka [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../CONTRIBUTING.md).
+Jika Anda adalah penyedia teknologi iklan yang ingin berintegrasi dengan HTML AMP, silakan baca panduan di bawah ini. Untuk memastikan latensi yang minimum dan mutu, harap ikuti instruksi yang dicantumkan [di sini](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads) sebelum mengirimkan permintaan penarikan (pull request) ke proyek sumber terbuka AMP. Untuk mendapatkan panduan umum tentang cara memulai berkontribusi di AMP, silakan buka [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../docs/contributing.md).
 
 ## Server Iklan <a name="ad-server"></a>
 

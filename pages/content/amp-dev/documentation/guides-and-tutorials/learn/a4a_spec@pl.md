@@ -96,7 +96,7 @@ Ponadto kreacje muszą być zgodne z następującymi regułami:
 
 ### Boilerplate <a name="boilerplate"></a>
 
-Kreacje reklamowe AMPHTML wymagają innej i znacznie prostszej linii stylu boilerplate niż [ogólne dokumenty AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md):
+Kreacje reklamowe AMPHTML wymagają innej i znacznie prostszej linii stylu boilerplate niż [ogólne dokumenty AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md):
 
 [sourcecode:html]
 
@@ -112,7 +112,7 @@ _Uzasadnienie:_ styl `amp-boilerplate` ukrywa zawartość sekcji body aż do mom
 
 Wreszcie, w standardowym kodzie AMPHTML reklamy używany jest składnik `amp-a4a-boilerplate`, zamiast `amp-boilerplate`, aby walidatory mogły go z łatwością zidentyfikować i wygenerować dokładniejsze komunikaty o błędach, pomocne dla programistów.
 
-Należy pamiętać, że obowiązują te same zasady dotyczące modyfikacji tekstu standardowego, co w przypadku [ogólnego kodu standardowego AMP ](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md).
+Należy pamiętać, że obowiązują te same zasady dotyczące modyfikacji tekstu standardowego, co w przypadku [ogólnego kodu standardowego AMP ](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md).
 
 ### CSS <a name="css"></a>
 

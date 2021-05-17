@@ -92,7 +92,7 @@ Além disso, os criativos devem obedecer às seguintes regras:
 
 ### Boilerplate <a name="boilerplate"></a>
 
-Os criativos de anúncios AMPHTML requerem um estilo de boilerplate diferente e consideravelmente mais simples do que os [documentos gerais do AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md):
+Os criativos de anúncios AMPHTML requerem um estilo de boilerplate diferente e consideravelmente mais simples do que os [documentos gerais do AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md):
 
 [sourcecode:html]
 
@@ -108,7 +108,7 @@ _Justificativa:_ o estilo `amp-boilerplate` oculta o conteúdo do corpo até que
 
 Por fim, o boilerplate do anúncio AMPHTML usa `amp-a4a-boilerplate` em vez de `amp-boilerplate` para que os validadores possam identificá-lo com facilidade e produzir mensagens de erro mais precisas para ajudar os desenvolvedores.
 
-Observe que as mesmas regras sobre alterações para o texto boilerplate se aplicam ao [boilerplate AMP geral](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md).
+Observe que as mesmas regras sobre alterações para o texto boilerplate se aplicam ao [boilerplate AMP geral](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md).
 
 ### CSS <a name="css"></a>
 

@@ -259,7 +259,7 @@ amp-social-share[type="twitter"] {
 
 ## Değişken Değişikliği <a name="variable-substitution"></a>
 
-`<amp-social-share>` öğesinde [genel AMP değişkeni değişikliklerini](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) kullanabilirsiniz. Aşağıdaki örnekte, `TITLE` değişkeni, doküman başlığı ve `CANONICAL_URL` değişkeni, dokümanın standart URL'si ile değiştirilmiştir.
+`<amp-social-share>` öğesinde [genel AMP değişkeni değişikliklerini](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) kullanabilirsiniz. Aşağıdaki örnekte, `TITLE` değişkeni, doküman başlığı ve `CANONICAL_URL` değişkeni, dokümanın standart URL'si ile değiştirilmiştir.
 
 ```html
 <amp-social-share type="whatsapp"

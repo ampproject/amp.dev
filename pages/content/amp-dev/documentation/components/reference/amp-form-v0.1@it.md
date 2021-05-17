@@ -151,7 +151,7 @@ Per ulteriori dettagli, consulta la sezione [Convalida personalizzata](#custom-v
 * `<input type=button>`, `<input type=image>`
 * La maggior parte degli attributi relativi ai moduli negli input, tra cui: `form`, `formaction`, `formtarget`, `formmethod` e altri.
 
-(In futuro alcune di queste regole potrebbero essere rese più flessibili; [contattaci](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#suggestions-and-feature-requests) se ne hai bisogno fornendoci casi d'uso).
+(In futuro alcune di queste regole potrebbero essere rese più flessibili; [contattaci](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#suggestions-and-feature-requests) se ne hai bisogno fornendoci casi d'uso).
 
 Per informazioni dettagliate su campi e input validi, consulta le [regole relative ad amp-form](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) nella specifica dello strumento di convalida AMP.
 
@@ -591,7 +591,7 @@ Per ulteriori esempi, consulta [esempi/forms.amp.html](https://github.com/amppro
 
 # Sostituzioni delle variabili <a name="variable-substitutions"></a>
 
-L'estensione `amp-form` consente la [sostituzione delle variabili di piattaforma](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) per gli input che sono nascosti e hanno l'attributo `data-amp-replace`. Per ogni invio di modulo, `amp-form` trova tutto l' `input[type=hidden][data-amp-replace]` all'interno del modulo e applica sostituzioni di variabili al relativo attributo `value` e lo sostituisce con il risultato della sostituzione.
+L'estensione `amp-form` consente la [sostituzione delle variabili di piattaforma](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) per gli input che sono nascosti e hanno l'attributo `data-amp-replace`. Per ogni invio di modulo, `amp-form` trova tutto l' `input[type=hidden][data-amp-replace]` all'interno del modulo e applica sostituzioni di variabili al relativo attributo `value` e lo sostituisce con il risultato della sostituzione.
 
 Devi specificare le variabili che stai utilizzando per ogni sostituzione sugli input specificando una stringa separata da spazi delle variabili utilizzate in `data-amp-replace` (vedi esempio di seguito). AMP non sostituirà le variabili non esplicitamente specificate.
 
@@ -626,7 +626,7 @@ Una volta che l'utente tenta di inviare il modulo, AMP proverà a risolvere le v
 
 Nota che `CANONICAL_HOSTNAME` non è stato sostituito perché non era incluso nella allowlist tramite l'attributo `data-amp-replace` nel primo campo.
 
-Le sostituzioni avverranno a ogni invio successivo. Ulteriori informazioni sulle [sostituzioni di variabili in AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md).
+Le sostituzioni avverranno a ogni invio successivo. Ulteriori informazioni sulle [sostituzioni di variabili in AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md).
 
 # Polyfill <a name="polyfills"></a>
 

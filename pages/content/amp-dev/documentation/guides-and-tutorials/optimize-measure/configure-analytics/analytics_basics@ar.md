@@ -60,7 +60,7 @@ $title: "Analytics: الأساسيات"
 في هذا النموذج،
 يتم إرسال بيانات مشاهدة الصفحة إلى عنوان URL محدد مع رقم عشوائي.
 المتغير `RANDOM` هو واحد من كثير من
-[متغيرات الاستبدال في النظام الأساسي لـ AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md).
+[متغيرات الاستبدال في النظام الأساسي لـ AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md).
 تعرّف على المزيد بشأن
 [استبدال المتغير](analytics_basics.md) هنا.
 
@@ -122,7 +122,7 @@ $title: "Analytics: الأساسيات"
 يسمح كلّ من المكون [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) وكذلك
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) بكل
 عمليات استبدال متغير عنوان URL القياسية (انظر
-[عمليات استبدال متغير <span dir="ltr" class="nowrap">AMP HTML</span>](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)).
+[عمليات استبدال متغير <span dir="ltr" class="nowrap">AMP HTML</span>](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)).
 في النموذج التالي،
 يتم إرسال طلب مشاهدة الصفحة إلى عنوان URL،
 مع عنوان URL المتعارف عليه لمستند AMP الحالي، وعنوانه، فضلاً عن

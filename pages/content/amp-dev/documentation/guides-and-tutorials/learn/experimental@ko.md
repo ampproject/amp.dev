@@ -2,7 +2,7 @@
 $title: 실험 기능
 ---
 
-[AMP 실험 구성요소](https://github.com/ampproject/amphtml/tree/master/tools/experiments)는
+[AMP 실험 구성요소](https://github.com/ampproject/amphtml/tree/main/tools/experiments)는
 이미 출시된 기능이지만 폭넓게 사용되기에는 아직 부족한 점이 있어 **실험** 상태로 보호됩니다.
 
 개발자와 사용자는 AMP 실험 구성요소가 완전히 출시되기 전에 실험 기능을 사용하겠다고 선택할 수 있습니다.

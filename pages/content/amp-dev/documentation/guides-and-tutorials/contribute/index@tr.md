@@ -28,7 +28,7 @@ Açık kaynak topluluğumuzda sürekli bir katılımcı olacağınızı umuyoruz
 
 #### Kod konusunda yardım
 
-AMP Projesine kod katkısında bulunmaya başlamak için, bir özelliğin veya hata düzeltmesinin konseptten teslimata kadar gittiği sürecin ayrıntılarını ve teknik tasarımlara ve tartışmalara nasıl katılabileceğinize dair bilgileri içeren [KATKI KOYMA dosyasını](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md) okuyun. Açık kaynak konusunda yeniyseniz, [başlamak için bazı ipuçlarımız](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#contributing-code) var.
+AMP Projesine kod katkısında bulunmaya başlamak için, bir özelliğin veya hata düzeltmesinin konseptten teslimata kadar gittiği sürecin ayrıntılarını ve teknik tasarımlara ve tartışmalara nasıl katılabileceğinize dair bilgileri içeren [KATKI KOYMA dosyasını](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md) okuyun. Açık kaynak konusunda yeniyseniz, [başlamak için bazı ipuçlarımız](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#contributing-code) var.
 
 ### AMP'ye içerik katkıları koyma
 

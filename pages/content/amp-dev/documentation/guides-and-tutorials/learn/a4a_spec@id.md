@@ -96,7 +96,7 @@ Selain itu, kreatif harus mematuhi aturan-aturan berikut ini:
 
 ### Boilerplate (templat) <a name="boilerplate"></a>
 
-Kreatif iklan AMPHTML membutuhkan baris gaya boilerplate yang jauh lebih sederhana dan berbeda dibanding [yang dilakukan dokumen AMP umum](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md):
+Kreatif iklan AMPHTML membutuhkan baris gaya boilerplate yang jauh lebih sederhana dan berbeda dibanding [yang dilakukan dokumen AMP umum](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md):
 
 [sourcecode:html]
 
@@ -112,7 +112,7 @@ _Alasan:_ Gaya `amp-boilerplate` menyembunyikan konten isi hingga runtime AMP si
 
 Terakhir, boilerplate iklan AMPHTML menggunakan `amp-a4a-boilerplate`, bukan `amp-boilerplate`, sehingga validator dapat dengan mudah mengidentifikasinya dan menghasilkan pesan kesalahan (eror) yang lebih akurat untuk membantu pengembang.
 
-Perhatikan bahwa aturan yang sama tentang mutasi pada teks boilerplate berlaku seperti pada [boilerplate AMP umum](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md).
+Perhatikan bahwa aturan yang sama tentang mutasi pada teks boilerplate berlaku seperti pada [boilerplate AMP umum](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md).
 
 ### CSS <a name="css"></a>
 

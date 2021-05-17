@@ -151,7 +151,7 @@ Lihat bagian [Validasi Kustom](#custom-validations) untuk penjelasan selengkapny
 * `<input type=button>`, `<input type=image>`
 * Sebagian besar atribut terkait formulir pada input, yang meliputi: `form`, `formaction`, `formtarget`, `formmethod`, dan sebagainya.
 
-(Penyesuaian pada beberapa aturan ini dapat dipertimbangkan kembali di masa mendatang - [harap beri tahu kami](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#suggestions-and-feature-requests) jika Anda memerlukannya dan berikan kasus penggunaan).
+(Penyesuaian pada beberapa aturan ini dapat dipertimbangkan kembali di masa mendatang - [harap beri tahu kami](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#suggestions-and-feature-requests) jika Anda memerlukannya dan berikan kasus penggunaan).
 
 Untuk detail tentang input dan kolom yang valid, lihat [aturan amp-form](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) dalam spesifikasi validator AMP.
 

@@ -3067,8 +3067,8 @@ msgstr "<p>该项目对所有人开放，现有成员非常热衷于主动与消
 msgid "How can an advertising or technology vendor get involved in Accelerated Mobile Pages?"
 msgstr "广告或技术供应商如何参与 Accelerated Mobile Pages？"
 
-msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
-msgstr "<p>请阅读<a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">贡献指南</a>，并通过 <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a> 与我们联系。</p>"
+msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
+msgstr "<p>请阅读<a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">贡献指南</a>，并通过 <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a> 与我们联系。</p>"
 
 msgid "How does advertising work on Accelerated Mobile Pages?"
 msgstr "Accelerated Mobile Pages 的广告如何运作？"

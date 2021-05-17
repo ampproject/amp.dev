@@ -74,7 +74,7 @@ Inoltre, i contenuti creativi devono rispettare le seguenti regole:
 
 ### Boilerplate <a name="boilerplate"></a>
 
-Gli elementi creativi di annunci AMPHTML richiedono una linea di stile boilerplate diversa e notevolmente più semplice rispetto a quella dei [documenti AMP generali](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md):
+Gli elementi creativi di annunci AMPHTML richiedono una linea di stile boilerplate diversa e notevolmente più semplice rispetto a quella dei [documenti AMP generali](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md):
 
 [sourcecode:html]
 
@@ -86,7 +86,7 @@ Gli elementi creativi di annunci AMPHTML richiedono una linea di stile boilerpla
 
 Infine, il boilerplate degli annunci AMPHTML utilizza l'elemento `amp-a4a-boilerplate` al posto di `amp-boilerplate` in modo che gli strumenti di convalida possano identificarlo facilmente e produrre messaggi di errore più accurati a beneficio degli sviluppatori.
 
-Nota: si applicano le stesse regole sulle variazioni del testo boilerplate applicate agli elementi [boilerplate AMP generali](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md).
+Nota: si applicano le stesse regole sulle variazioni del testo boilerplate applicate agli elementi [boilerplate AMP generali](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md).
 
 ### CSS <a name="css"></a>
 

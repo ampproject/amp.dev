@@ -92,7 +92,7 @@ AMP Optimizer 提供了能够胜任大多数用例的合理默认配置。但是
 
 一些值得注意的选项包括：
 
-- `lts: true`：为 AMP 运行时和组件启用[长期稳定网址](https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md)。
+- `lts: true`：为 AMP 运行时和组件启用[长期稳定网址](https://github.com/ampproject/amphtml/blob/main/docs/lts-release.md)。
 - `verbose: true`：用于详细的调试输出。在确定无法移除 AMP 样板的原因方面尤为实用。
 - `imageOptimizer`：通过提供为给定图片 src 计算 srcset 网址的函数，启用自动生成图片 srcset。该函数应返回一个网址，指向具有给定宽度的 `src` 图片版本。如果没有可用的图片，则应返回假值。下一部分中详细介绍了相关内容。
 

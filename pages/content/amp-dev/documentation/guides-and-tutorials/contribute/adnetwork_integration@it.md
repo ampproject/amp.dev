@@ -54,7 +54,7 @@ Per ulteriori istruzioni su come integrare un elemento [`amp-ad`](../../../docum
 Per fornire annunci AMPHTML dal tuo server, devi garantire un'integrazione Fast Fetch che comprenda:
 
 1. Supporto delle comunicazioni di rete SSL.
-2. Fornitura di codice JavaScript per creare la richiesta di annuncio (consulta le implementazioni di esempio: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) e [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
+2. Fornitura di codice JavaScript per creare la richiesta di annuncio (consulta le implementazioni di esempio: [AdSense](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-adsense-impl) e [DoubleClick](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-doubleclick-impl)).
 3. Convalida e firma dei contenuti creativi tramite un servizio di convalida. [Cloudflare](https://blog.cloudflare.com/firebolt/) offre un servizio di verifica degli annunci AMP, che consente a qualsiasi fornitore di annunci indipendente di pubblicare annunci più veloci, snelli e coinvolgenti.
 
 Per ulteriori istruzioni sulla creazione di un'integrazione Fast Fetch, si può consultare la [Guida all'implementazione della rete Fast Fetch](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md).

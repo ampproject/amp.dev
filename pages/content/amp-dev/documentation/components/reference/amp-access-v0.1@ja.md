@@ -225,7 +225,7 @@ Pingback はオプションです。無効にするには、`noPingback` 設定�
 
 ### アクセス URL 変数 <a name="access-url-variables"></a>
 
-各種エンドポイントの URL を設定する場合、サイト運営者は代入変数を使用できます。代入変数の完全なリストは [AMP 変数の仕様](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)で定義されています。さらにこの仕様では、アクセス固有の変数（`READER_ID`、`AUTHDATA` など）がいくつか追加されています。主な変数について以下の表で説明します。
+各種エンドポイントの URL を設定する場合、サイト運営者は代入変数を使用できます。代入変数の完全なリストは [AMP 変数の仕様](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)で定義されています。さらにこの仕様では、アクセス固有の変数（`READER_ID`、`AUTHDATA` など）がいくつか追加されています。主な変数について以下の表で説明します。
 
 <table>
   <tr>

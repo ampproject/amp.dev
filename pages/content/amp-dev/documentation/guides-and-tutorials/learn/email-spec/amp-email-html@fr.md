@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-html.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-html.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -33,7 +33,7 @@ limitations under the License.
 
 Remarque : cette liste n'est pas normative et est fournie à titre indicatif uniquement. Les règles du validateur AMP prévalent sur les balises et attributs HTML pris en charge.
 
-Outre les [composants AMP pris en charge](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-components.md), les balises HTML suivantes sont autorisées dans AMP pour e-mail.
+Outre les [composants AMP pris en charge](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md), les balises HTML suivantes sont autorisées dans AMP pour e-mail.
 
 ## Balises prises en charge <a name="supported-tags"></a>
 

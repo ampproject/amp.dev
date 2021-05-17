@@ -92,7 +92,7 @@ AMP Optimizer, çoğu durumda iyi çalışan makul bir varsayılan yapılandırm
 
 Birkaç önemli seçenek aşağıda verilmiştir:
 
-- AMP çalışma zamanı ve bileşenleri için [uzun dönemli kararlı URL'ler](https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md) etkinleştirmek için `lts: true`
+- AMP çalışma zamanı ve bileşenleri için [uzun dönemli kararlı URL'ler](https://github.com/ampproject/amphtml/blob/main/docs/lts-release.md) etkinleştirmek için `lts: true`
 - Detaylı hata ayıklama çıkışları için `verbose: true`. AMP standart metninin neden kaldırılamadığını belirlemek için özellikle iyi.
 - `imageOptimizer` : belirli bir görüntü kaynağı adına srcset URL'lerini hesaplamak için bir fonksiyon sağlayarak otomatik görüntü srcset oluşturmayı etkinleştirir. Fonksiyon, `src` görüntüsünün verilen genişliğe sahip bir sürümüne işaret eden bir URL döndürmelidir. Görüntü yoksa, yanlış bir değer döndürür. Sonraki bölümde bununla ilgili daha fazla bilgi bulabilirsiniz.
 

@@ -3486,8 +3486,8 @@ msgstr "<p>このプロジェクトはすべての人に開かれており、プ
 msgid "How can an advertising or technology vendor get involved in Accelerated Mobile Pages?"
 msgstr "広告またはテクノロジーベンダーはどのように Accelerated Mobile Pages に携わることができますか？"
 
-msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
-msgstr "<p><a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">貢献ガイドライン</a>を確認し、<a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a> からご連絡ください。</p>"
+msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
+msgstr "<p><a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">貢献ガイドライン</a>を確認し、<a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a> からご連絡ください。</p>"
 
 msgid "How does advertising work on Accelerated Mobile Pages?"
 msgstr "Accelerated Mobile Pages での広告の仕組みはどうなっていますか？"

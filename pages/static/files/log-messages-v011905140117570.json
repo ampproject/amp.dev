@@ -84,7 +84,7 @@
 		"message": "3p iframe url must not include query string %s in element %s."
 	},
 	"28": {
-		"message": "3p iframe url must not be on the same origin as the current document %s (%s) in element %s. See https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md for details."
+		"message": "3p iframe url must not be on the same origin as the current document %s (%s) in element %s. See https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md for details."
 	},
 	"29": {
 		"message": "Iframe doesn't support %s"
@@ -2976,7 +2976,7 @@
 		"message": "Invalid <amp-iframe> src. Must start with https://. Found %s"
 	},
 	"g0": {
-		"message": "Origin of <amp-iframe> must not be equal to container %sif allow-same-origin is set. See https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md for details."
+		"message": "Origin of <amp-iframe> must not be equal to container %sif allow-same-origin is set. See https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md for details."
 	},
 	"g1": {
 		"message": "amp-iframe does not allow embedding of frames from ampproject.*: %s"

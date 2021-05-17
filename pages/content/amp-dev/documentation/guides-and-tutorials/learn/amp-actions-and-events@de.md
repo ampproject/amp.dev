@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-actions-and-events.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-actions-and-events.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -32,7 +32,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-[tip type="note"]Diese Dokumentation beschreibt Aktionen und Events für AMP Websites, Storys und Ads. Infos über das AMP E-Mail Format findest du in [Aktionen und Events in AMP E-Mail](https://github.com/ampproject/amphtml/blob/main/spec/amp-email-actions-and-events.md). [/tip]
+[tip type="note"]Diese Dokumentation beschreibt Aktionen und Events für AMP Websites, Storys und Ads. Infos über das AMP E-Mail Format findest du in [Aktionen und Events in AMP E-Mail](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-email-actions-and-events.md). [/tip]
 
 Das Attribut `on` wird verwendet, um Event Handler für Elemente zu installieren.
 
@@ -235,7 +235,7 @@ In AMP ist beispielsweise Folgendes möglich:
   </tr>
   <tr>
     <td><code>changeToLayoutContainer</code></td>
-    <td>Aktualisiert das Layout von <code>amp-list</code> zu <code>layout="CONTAINTER"</code>, um eine <a href="https://github.com/ampproject/amphtml/blob/main/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">dynamische Größenänderung</a> zu ermöglichen.</td>
+    <td>Aktualisiert das Layout von <code>amp-list</code> zu <code>layout="CONTAINTER"</code>, um eine <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">dynamische Größenänderung</a> zu ermöglichen.</td>
   </tr>
   <tr>
     <td> <code>fetch-error</code>(low-trust)</td>
@@ -673,7 +673,7 @@ Das Ziel `AMP` wird von der AMP Runtime bereitgestellt und implementiert Aktione
   <tr>
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
-      <p>Navigiert das aktuelle Fenster zur angegebenen URL oder zum optional definierten Ziel, sofern angegeben (unterstützt derzeit nur <code>_top</code> und <code>_blank </code>). Der optionale Parameter <code>opener</code> kann angegeben werden, wenn ein Ziel von <code>_blank</code> verwendet wird, damit die neu geöffnete Seite auf <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener</code></a> zugreifen kann. Unterstützt <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md">standardmäßige URL <br>Substitutionen</a>.</p>
+      <p>Navigiert das aktuelle Fenster zur angegebenen URL oder zum optional definierten Ziel, sofern angegeben (unterstützt derzeit nur <code>_top</code> und <code>_blank </code>). Der optionale Parameter <code>opener</code> kann angegeben werden, wenn ein Ziel von <code>_blank</code> verwendet wird, damit die neu geöffnete Seite auf <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener</code></a> zugreifen kann. Unterstützt <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">standardmäßige URL <br>Substitutionen</a>.</p>
       <p><strong>Warnung:</strong> Es wird empfohlen, nach Möglichkeit normale <code><a></code> Links zu verwenden, da <code>AMP.navigateTo</code> von Webcrawlern nicht erkannt wird.</p>
     </td>
   </tr>

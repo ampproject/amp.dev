@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -33,7 +33,7 @@ limitations under the License.
 
 AMP, mobil istemcilerde süper hızlı web sayfaları geliştirmek için bilinen bir teknolojidir. AMP, performans ve güvenliğe daha fazla odaklanarak işlevselliği kolayca sağlayan JavaScript tarafından desteklenen bir dizi HTML etiketidir. Resim döngüsü, duyarlı form öğelerine, uzak uç noktalardan taze içerik almaya kadar her şey için [AMP bileşenleri](https://amp.dev/documentation/components/) vardır.
 
-E-posta için AMP biçimi, e-posta mesajlarında kullanabileceğiniz [AMP bileşenlerinin bir alt kümesini](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-components.md) sağlar. AMP e-postalarının alıcıları, doğrudan e-postada AMP bileşenlerini görüntüleyebilir ve bunlarla etkileşim kurabilir.
+E-posta için AMP biçimi, e-posta mesajlarında kullanabileceğiniz [AMP bileşenlerinin bir alt kümesini](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md) sağlar. AMP e-postalarının alıcıları, doğrudan e-postada AMP bileşenlerini görüntüleyebilir ve bunlarla etkileşim kurabilir.
 
 ## Gerekli işaretleme
 
@@ -73,21 +73,21 @@ AMPHTML işaretlemesinin tamamı 200.000 baytı aşmamalıdır.
 
 E-posta için AMP, [RFC 1521, bölüm 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3)'te tanımlandığı gibi standart `multipart/alternative` [MIME](https://en.wikipedia.org/wiki/MIME) alt türüne dayanır.
 
-_Daha fazla bilgi için bkz. [AMP e-postalarının yapısı ve işlenmesi](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-structure.md)._
+_Daha fazla bilgi için bkz. [AMP e-postalarının yapısı ve işlenmesi](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-structure.md)._
 
 ## Desteklenen AMP bileşenleri <a name="supported-amp-components"></a>
 
-_[E-posta Desteklenen Bileşenler için AMP](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-components.md) bakın._
+_[E-posta Desteklenen Bileşenler için AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md) bakın._
 
 ## HTML gereksinimleri <a name="html-requirements"></a>
 
-_[E-posta için AMP'de desteklenen HTML](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-html.md) bakın._
+_[E-posta için AMP'de desteklenen HTML](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-html.md) bakın._
 
 ## CSS gereksinimleri <a name="css-requirements"></a>
 
 ### Desteklenen seçiciler ve özellikler <a name="supported-selectors-and-properties"></a>
 
-_[E-posta için AMP'de desteklenen CSS](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-css.md) bakın._
+_[E-posta için AMP'de desteklenen CSS](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-css.md) bakın._
 
 ### AMP belgesinde CSS belirtme <a name="specifying-css-in-an-amp-document"></a>
 
@@ -151,4 +151,4 @@ Aşağıdaki AMP'ye özgü analitik teknikler desteklenmez:
 
 ## Geri Bildirim ve Destek <a name="feedback--support"></a>
 
-E-posta için AMP ile ilgili destek ve geri bildirim için lütfen aşağıdaki kanalı kullanın: [ongoing-participation](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#ongoing-participation)
+E-posta için AMP ile ilgili destek ve geri bildirim için lütfen aşağıdaki kanalı kullanın: [ongoing-participation](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#ongoing-participation)

@@ -54,7 +54,7 @@ Trong đoạn mã trên, thuộc tính `type` (loại) quy định mạng lướ
 Để phục vụ quảng cáo AMPHTML từ máy chủ quảng cáo của bạn, bạn phải cung cấp một tích hợp Fast Fetch bao gồm:
 
 1. Hỗ trợ giao tiếp mạng SSL.
-2. Cung cấp JavaScript để xây dựng yêu cầu quảng cáo (ví dụ triển khai: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) & [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
+2. Cung cấp JavaScript để xây dựng yêu cầu quảng cáo (ví dụ triển khai: [AdSense](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-adsense-impl) & [DoubleClick](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-doubleclick-impl)).
 3. Xác thực và ký kết cho quảng cáo thông qua một dịch vụ xác thực. [Cloudflare](https://blog.cloudflare.com/firebolt/) cung cấp một dịch vụ xác minh quảng cáo AMP, cho phép mọi nhà cung cấp quảng cáo độc lập có thể cung cấp các quảng cáo nhanh, nhẹ và cuốn hút hơn.
 
 Để được hướng dẫn về việc tạo tích hợp Fast Fetch, hãy xem [Hướng dẫn Triển khai Mạng lưới Fast Fetch](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md).

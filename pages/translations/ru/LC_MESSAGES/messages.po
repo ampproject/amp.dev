@@ -3485,8 +3485,8 @@ msgstr "<p>Проект открыт для всех, и действующие 
 msgid "How can an advertising or technology vendor get involved in Accelerated Mobile Pages?"
 msgstr "Как поставщик рекламы или технологий может принять участие в проекте AMP?"
 
-msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
-msgstr "<p>Ознакомьтесь с <a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">руководством по участию</a> и свяжитесь с нами на <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
+msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
+msgstr "<p>Ознакомьтесь с <a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">руководством по участию</a> и свяжитесь с нами на <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
 
 msgid "How does advertising work on Accelerated Mobile Pages?"
 msgstr "Как работает реклама на AMP?"

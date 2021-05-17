@@ -2,7 +2,7 @@
 $title: 实验性功能
 ---
 
-[AMP 实验性组件](https://github.com/ampproject/amphtml/tree/master/tools/experiments)
+[AMP 实验性组件](https://github.com/ampproject/amphtml/tree/main/tools/experiments)
 是已发布但尚不能广泛使用的功能，因此我们采用**实验性**状态对其进行保护。
 
 在这些功能完全发布之前，开发者和用户可以选择启用它们。

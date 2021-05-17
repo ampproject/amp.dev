@@ -161,7 +161,7 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 
 #### リモート設定の読み込み <a name="loading-remote-configuration"></a>
 
-リモート設定を読み込むには、`<amp-analytics>` 要素で、`config` 属性と設定データの URL を指定します。URL の指定では HTTPS スキームを使用する必要があります。URL には [AMP URL 変数](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)を含めることができます。Cookie にアクセスする場合は、[`data-credentials`](#data-credentials) 属性を確認してください。レスポンスは [AMP CORS セキュリティ ガイドライン](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)に準拠する必要があります。
+リモート設定を読み込むには、`<amp-analytics>` 要素で、`config` 属性と設定データの URL を指定します。URL の指定では HTTPS スキームを使用する必要があります。URL には [AMP URL 変数](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)を含めることができます。Cookie にアクセスする場合は、[`data-credentials`](#data-credentials) 属性を確認してください。レスポンスは [AMP CORS セキュリティ ガイドライン](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)に準拠する必要があります。
 
 次の例では、指定した URL から設定データを読み込むように `config` 属性を指定しています。
 
@@ -196,7 +196,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 変数グループは、ユーザーが簡単に有効化できる定義済みの変数セットをアナリティクス プロバイダがグループ化するための機能です。これらの変数は解決され、指定の `configRewriter` エンドポイントに送信されます。
 
-アナリティクス プロバイダはこの機能を有効にするために、`configRewriter` 設定の内部に新しい `varGroups` オブジェクトを作成する必要があります。サイト運営者はその後、指名したアナリティクス プロバイダが作成した有効化対象の `varGroups` をアナリティクス設定に含めることができます。[AMP HTML の置換ガイド](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)でサポートされている変数はすべて使用できます。*重要な注意事項*: ${varName} バリアントは使用できません。
+アナリティクス プロバイダはこの機能を有効にするために、`configRewriter` 設定の内部に新しい `varGroups` オブジェクトを作成する必要があります。サイト運営者はその後、指名したアナリティクス プロバイダが作成した有効化対象の `varGroups` をアナリティクス設定に含めることができます。[AMP HTML の置換ガイド](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)でサポートされている変数はすべて使用できます。*重要な注意事項*: ${varName} バリアントは使用できません。
 
 あるベンダーによる設定例を以下に示します。
 ```js
@@ -341,7 +341,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 #### 変数 <a name="vars"></a>
 
-`amp-analytics` コンポーネントでは、リクエストで使用できる各種の基本的な変数が定義されています。そのすべての変数のリストを [`amp-analytics` 変数ガイド](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md)で確認できます。また、[AMP HTML の置換ガイド](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)でサポートされている変数はすべて使用できます。
+`amp-analytics` コンポーネントでは、リクエストで使用できる各種の基本的な変数が定義されています。そのすべての変数のリストを [`amp-analytics` 変数ガイド](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md)で確認できます。また、[AMP HTML の置換ガイド](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)でサポートされている変数はすべて使用できます。
 
 `vars` 設定オブジェクトを使用すると、新しい Key-Value ペアを定義したり、`request` の値で参照可能な既存の変数をオーバーライドしたりできます。新しい変数は一般に、サイト運営者固有の情報を指定するために使用します。配列を使用すると、カンマ区切り記号を維持しながら、個別に URL エンコードする必要がある値のリストを指定できます。
 
@@ -507,7 +507,7 @@ AMP 要素または AMP ドキュメントの最初のコンテンツが読み�
 }
 ```
 
-セレクタは、要素のコレクションではなく単一の要素を指定する場合にのみ使用できます。要素には、[AMP 拡張要素](https://github.com/ampproject/amphtml/blob/main/spec/amp-tag-addendum.md#amp-specific-tags)またはドキュメント ルートのいずれかを指定できます。
+セレクタは、要素のコレクションではなく単一の要素を指定する場合にのみ使用できます。要素には、[AMP 拡張要素](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-tag-addendum.md#amp-specific-tags)またはドキュメント ルートのいずれかを指定できます。
 
 要素の表示トリガーは、`visibilitySpec` の `waitFor` プロパティで指定されたシグナルを受け取ってから要素の表示をトラッキングします。`waitFor` が指定されていない場合は、要素の [`ini-load`](#initial-load-trigger) シグナルを待機します。詳しくは、`waitFor` のドキュメントをご覧ください。`reportWhen` が指定されている場合、トリガーはそのシグナルを受け取ってからイベントを送信します。これは、ページが閉じているときにアナリティクス イベントを送信する場合などに役立ちます。
 
@@ -803,7 +803,7 @@ MRC 認定ベンダーは URL 文字列を iframe-transport-vendors.js に追加
 
 #### Cookie <a name="cookies"></a>
 
-`cookies` 機能を使用すると、ドキュメントの URL から [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#query-parameter) と [`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md#linker-param) の情報を抽出して、元のドメインに Cookie を書き込むことができます。`linkers` 機能とともに使用すると、AMP プロキシ ドメインからサイト運営者のドメイン上の AMP ページへの ID の同期を実行できます。
+`cookies` 機能を使用すると、ドキュメントの URL から [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md#query-parameter) と [`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md#linker-param) の情報を抽出して、元のドメインに Cookie を書き込むことができます。`linkers` 機能とともに使用すると、AMP プロキシ ドメインからサイト運営者のドメイン上の AMP ページへの ID の同期を実行できます。
 
 `cookies` の設定方法について詳しくは、[AMP ページでのリンカー パラメータの受信](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md#receiving-linker-params-on-amp-pages)をご覧ください。
 
@@ -827,7 +827,7 @@ AMP 検証ツールの仕様で [amp-analytics のルール](https://github.com/
 
 **config**
 
-このオプションの属性を使用すると、指定したリモート URL から設定を読み込むことができます。URL の指定では HTTPS スキームを使用する必要があります。以下の `data-include-credentials` 属性もご確認ください。URL には [AMP URL 変数](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)を含めることができます。レスポンスは [AMP CORS セキュリティ ガイドライン](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)に準拠する必要があります。
+このオプションの属性を使用すると、指定したリモート URL から設定を読み込むことができます。URL の指定では HTTPS スキームを使用する必要があります。以下の `data-include-credentials` 属性もご確認ください。URL には [AMP URL 変数](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)を含めることができます。レスポンスは [AMP CORS セキュリティ ガイドライン](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)に準拠する必要があります。
 
 例:
 

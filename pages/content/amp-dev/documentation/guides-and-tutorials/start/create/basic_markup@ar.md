@@ -66,7 +66,7 @@ contributors:
 [tip type="read-on"]زر هذه الموارد لتعلم المزيد:
 
 - [الشروع في العمل مع AMP على بحث Google](https://developers.google.com/amp/docs) - تعلم كيفية تحضير صفحات AMP لبحث Google.
-- [أمثلة بيانات التعريف](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - تعلم المزيد حول كافة بيانات التعريف التي ستحتاج إليها في العديد من الأماكن الأخرى (مثل Twitter). [/tip]
+- [أمثلة بيانات التعريف](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples) - تعلم المزيد حول كافة بيانات التعريف التي ستحتاج إليها في العديد من الأماكن الأخرى (مثل Twitter). [/tip]
 
 <hr>
 

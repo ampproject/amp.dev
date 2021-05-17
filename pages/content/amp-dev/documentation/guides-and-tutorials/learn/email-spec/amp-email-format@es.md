@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -33,7 +33,7 @@ limitations under the License.
 
 AMP es una tecnología que se caracteriza por desarrollar páginas web súper rápidas para los clientes que utilizan dispositivos móviles. AMP consiste en un conjunto de etiquetas HTML que se apoya en JavaScript para habilitar fácilmente la funcionalidad poniendo especial atención en el desempeño y la seguridad. Hay [componentes de AMP](https://amp.dev/documentation/components/) para todo, desde carruseles hasta elementos del formulario que son adaptables, e incluso recuperación de contenido nuevo desde endpoints remotos.
 
-El formulario de AMP for Email proporciona [un subconjunto de componentes de AMP](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-components.md) que pueden utilizarse en los mensajes de correo electrónico. Los receptores de los correos electrónicos de AMP pueden ver e interactuar directamente con los componentes de AMP en el correo electrónico.
+El formulario de AMP for Email proporciona [un subconjunto de componentes de AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md) que pueden utilizarse en los mensajes de correo electrónico. Los receptores de los correos electrónicos de AMP pueden ver e interactuar directamente con los componentes de AMP en el correo electrónico.
 
 ## Etiquetas necesarias
 
@@ -73,21 +73,21 @@ El total de etiquetas AMP HTML no debe exceder los 200,000 bytes.
 
 AMP for Email se basa en el subtipo [MIME](https://en.wikipedia.org/wiki/MIME) estándar `multipart/alternative` como se define en el [RFC 1521, sección 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-_Para obtener más información, consulte [Estructura y renderización de los correos electrónicos en AMP](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-structure.md)._
+_Para obtener más información, consulte [Estructura y renderización de los correos electrónicos en AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-structure.md)._
 
 ## Componentes que son compatibles con AMP <a name="supported-amp-components"></a>
 
-_Consulte el artículo [Componentes que son compatibles con AMP for Email](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-components.md)._
+_Consulte el artículo [Componentes que son compatibles con AMP for Email](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md)._
 
 ## Requisitos de HTML <a name="html-requirements"></a>
 
-_Consulte el artículo [Compatibilidad de HTML con AMP for Email](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-html.md)._
+_Consulte el artículo [Compatibilidad de HTML con AMP for Email](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-html.md)._
 
 ## Requisitos del CSS <a name="css-requirements"></a>
 
 ### Selectores y propiedades que son compatibles <a name="supported-selectors-and-properties"></a>
 
-_Consulte el artículo [Compatibilidad de CSS con AMP for Email](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-css.md)._
+_Consulte el artículo [Compatibilidad de CSS con AMP for Email](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-css.md)._
 
 ### Cómo especificar CSS en un documento de AMP <a name="specifying-css-in-an-amp-document"></a>
 
@@ -151,4 +151,4 @@ Los redireccionamientos hacia [`<amp-form>`](https://amp.dev/documentation/compo
 
 ## Comentarios y asistencia <a name="feedback--support"></a>
 
-Para obtener asistencia y realizar comentarios sobre AMP for Email, utilice el siguiente canal: [Participación continua](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#ongoing-participation)
+Para obtener asistencia y realizar comentarios sobre AMP for Email, utilice el siguiente canal: [Participación continua](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#ongoing-participation)

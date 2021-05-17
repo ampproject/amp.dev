@@ -91,7 +91,7 @@ Contoh:
 
 [/sourcecode]
 
-Contoh-contoh lainnya dapat ditemukan di [folder contoh ampproject](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), termasuk sintaksis atribut HTML alternatif).
+Contoh-contoh lainnya dapat ditemukan di [folder contoh ampproject](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples), termasuk sintaksis atribut HTML alternatif).
 
 [tip type="read-on"] Kunjungi sumber daya ini untuk mendapatkan informasi lebih lanjut tentang data terstruktur:
 

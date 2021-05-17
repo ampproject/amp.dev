@@ -132,7 +132,7 @@ digunakan untuk menyempurnakan halaman HTML AMP.
 
 Jika kasus penggunaan Anda tidak tercakup, Anda juga dapat menyertakan komponen
 baru ke Project AMP. Lihat dokumen
-[berkontribusi](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md)
+[berkontribusi](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md)
 Project AMP untuk informasi selengkapnya.
 
 ### Atribut wajib tidak tersedia

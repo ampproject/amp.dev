@@ -165,7 +165,7 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。如果您已在�
 
 #### 加载远程配置 <a name="loading-remote-configuration"></a>
 
-要加载远程配置，请在 `<amp-analytics>` 元素中指定配置数据的 `config` 属性和网址。指定的网址应使用 HTTPS 架构。该网址可以包含 [AMP 网址变量](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)。要访问 Cookie，请参阅 [`data-credentials`](#data-credentials) 属性。响应必须遵循 [AMP CORS 安全指南](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)。
+要加载远程配置，请在 `<amp-analytics>` 元素中指定配置数据的 `config` 属性和网址。指定的网址应使用 HTTPS 架构。该网址可以包含 [AMP 网址变量](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)。要访问 Cookie，请参阅 [`data-credentials`](#data-credentials) 属性。响应必须遵循 [AMP CORS 安全指南](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)。
 
 在以下示例中，我们指定了 `config` 属性，以便从指定网址加载配置数据。
 
@@ -200,7 +200,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 通过“变量组”功能，分析服务提供商可以将一组预定义的变量组合在一起，以便用户轻松启用。然后，系统会解析这些变量，并将其发送到指定的 `configRewriter` 端点。
 
-分析服务提供商需要在 `configRewriter` 配置内创建一个新的 `varGroups` 对象，以便启用该功能。这样一来，如果发布商希望启用任何由指定的分析服务提供商创建的 `varGroups`，则可以将其添加到自己的分析配置中。可以使用 [AMP HTML 替代指南](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)中列出的所有受支持的变量。重要提示：${varName} 变体将无法使用。**
+分析服务提供商需要在 `configRewriter` 配置内创建一个新的 `varGroups` 对象，以便启用该功能。这样一来，如果发布商希望启用任何由指定的分析服务提供商创建的 `varGroups`，则可以将其添加到自己的分析配置中。可以使用 [AMP HTML 替代指南](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)中列出的所有受支持的变量。重要提示：${varName} 变体将无法使用。**
 
 例如，供应商的配置可能如下所示：
 ```js
@@ -342,7 +342,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 #### 变量 <a name="vars"></a>
 
-`amp-analytics` 组件定义了很多可在请求中使用的基本变量。[`amp-analytics` 变量指南](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md)中提供了所有此类变量的列表。此外，该组件还支持 [AMP HTML 替代指南](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)中列出的所有受支持的变量。
+`amp-analytics` 组件定义了很多可在请求中使用的基本变量。[`amp-analytics` 变量指南](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md)中提供了所有此类变量的列表。此外，该组件还支持 [AMP HTML 替代指南](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)中列出的所有受支持的变量。
 
 `vars` 配置对象可用于定义新的键值对，或用于覆盖可在 `request` 值中引用的现有变量。新变量通常用于指定发布商专用信息。可以使用数组指定应单独进行网址编码（保留英文逗号分隔符）的一系列值。
 
@@ -508,7 +508,7 @@ AMP 元素或 AMP 文档的初始内容加载完毕时，初始加载事件 (`"o
 }
 ```
 
-请注意，该选择器只能用于指定单个元素，而不能指定集合。元素可以是 [AMP 扩展元素](https://github.com/ampproject/amphtml/blob/main/spec/amp-tag-addendum.md#amp-specific-tags)，也可以是文档根目录。
+请注意，该选择器只能用于指定单个元素，而不能指定集合。元素可以是 [AMP 扩展元素](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-tag-addendum.md#amp-specific-tags)，也可以是文档根目录。
 
 在跟踪元素可见性之前，元素可见触发器会等待通过 `visibilitySpec` 中的 `waitFor` 属性指定的信号。如果未指定 `waitFor`，则会等待元素的 [`ini-load`](#initial-load-trigger) 信号。如需了解更多详情，请参阅 `waitFor` 文档。如果指定了 `reportWhen`，该触发器会在发送事件之前等待该信号。这非常有用，比如可以在页面关闭时发送分析事件。
 
@@ -804,7 +804,7 @@ transport: {
 
 #### Cookie <a name="cookies"></a>
 
-`cookies` 功能支持通过从文档网址提取 [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#query-parameter) 和 [`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md#linker-param) 信息的方式将 Cookie 写入原始网域。它可以与 `linkers` 功能配合使用，以便将 ID 从 AMP 代理网域同步到发布商网域中的 AMP 网页。
+`cookies` 功能支持通过从文档网址提取 [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md#query-parameter) 和 [`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md#linker-param) 信息的方式将 Cookie 写入原始网域。它可以与 `linkers` 功能配合使用，以便将 ID 从 AMP 代理网域同步到发布商网域中的 AMP 网页。
 
 如需详细了解如何设置 `cookies` 配置，请参阅[接收 AMP 网页上的链接器参数](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md#receiving-linker-params-on-amp-pages)
 
@@ -828,7 +828,7 @@ transport: {
 
 **config**
 
-这是一个可选属性，可用于从指定的远程网址加载配置。指定的网址应使用 HTTPS 架构。另请参阅下面的 `data-include-credentials` 属性。该网址可以包含 [AMP 网址变量](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)。响应必须遵循 [AMP CORS 安全指南](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)。
+这是一个可选属性，可用于从指定的远程网址加载配置。指定的网址应使用 HTTPS 架构。另请参阅下面的 `data-include-credentials` 属性。该网址可以包含 [AMP 网址变量](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)。响应必须遵循 [AMP CORS 安全指南](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)。
 
 示例：
 

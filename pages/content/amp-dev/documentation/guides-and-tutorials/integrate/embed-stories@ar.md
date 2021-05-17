@@ -73,7 +73,7 @@ formats:
 
 ## تضمين مشغل قصص AMP
 
-يتطلب عرض قصة AMP في صفحة غير مدعومة من AMP استعمال العنصر [`amp-story-player`](https://github.com/ampproject/amphtml/blob/main/spec/amp-story-player.md).
+يتطلب عرض قصة AMP في صفحة غير مدعومة من AMP استعمال العنصر [`amp-story-player`](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-story-player.md).
 
 ### استيراد النصوص البرمجية
 

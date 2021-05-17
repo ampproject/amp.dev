@@ -2,7 +2,7 @@
 $title: Recursos experimentais
 ---
 
-Os [componentes experimentais de AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments)
+Os [componentes experimentais de AMP](https://github.com/ampproject/amphtml/tree/main/tools/experiments)
 são recursos lançados que ainda não estão prontos para uso geral. Por isso, esses componentes são protegidos por um status **experimental**.
 
 Os desenvolvedores e os usuários podem optar por usar esses recursos antes que eles estejam totalmente disponíveis para o público.

@@ -165,7 +165,7 @@ Jika data konfigurasi dari beberapa sumber digunakan, objek konfigurasi (variabe
 
 #### Memuat konfigurasi jarak jauh <a name="loading-remote-configuration"></a>
 
-Untuk memuat konfigurasi jarak jauh, dalam elemen `<amp-analytics>`, tentukan atribut `config` dan URL untuk data konfigurasi. URL yang ditentukan harus menggunakan skema HTTPS. URL ini dapat menyertakan [variabel URL AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md). Untuk mengakses cookie, lihat atribut [`data-credentials`](#data-credentials). Responsnya harus mengikuti [panduan keamanan CORS AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
+Untuk memuat konfigurasi jarak jauh, dalam elemen `<amp-analytics>`, tentukan atribut `config` dan URL untuk data konfigurasi. URL yang ditentukan harus menggunakan skema HTTPS. URL ini dapat menyertakan [variabel URL AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md). Untuk mengakses cookie, lihat atribut [`data-credentials`](#data-credentials). Responsnya harus mengikuti [panduan keamanan CORS AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
 
 Dalam contoh ini, kami menentukan atribut `config` untuk memuat data konfigurasi dari URL yang ditentukan.
 
@@ -200,7 +200,7 @@ Selanjutnya, runtime menggabungkan semua konfigurasi yang disediakan untuk menen
 
 Grup Variabel adalah fitur yang memungkinkan penyedia analisis untuk mengelompokkan sekumpulan variabel yang ditentukan sebelumnya agar dapat diaktifkan dengan mudah oleh pengguna. Variabel ini kemudian ditetapkan dan dikirim ke endpoint `configRewriter` yang ditentukan.
 
-Penyedia analisis harus membuat objek `varGroups` baru di dalam konfigurasi `configRewriter` untuk mengaktifkan fitur ini. Selanjutnya penayang dapat menyertakan penyedia analisis bernama yang membuat `varGroups` yang ingin mereka aktifkan dalam konfigurasi analisisnya. Semua variabel yang didukung oleh [Panduan Substitusi HTML AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) dapat digunakan. *Catatan penting*: varian ${varName} tidak akan berfungsi.
+Penyedia analisis harus membuat objek `varGroups` baru di dalam konfigurasi `configRewriter` untuk mengaktifkan fitur ini. Selanjutnya penayang dapat menyertakan penyedia analisis bernama yang membuat `varGroups` yang ingin mereka aktifkan dalam konfigurasi analisisnya. Semua variabel yang didukung oleh [Panduan Substitusi HTML AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) dapat digunakan. *Catatan penting*: varian ${varName} tidak akan berfungsi.
 
 Misalnya, kami mungkin memiliki vendor yang konfigurasinya terlihat seperti ini:
 ```js
@@ -345,7 +345,7 @@ Konfigurasi berikut mengirimkan ping permintaan pertama setelah 1 detik dan kemu
 
 #### Variabel <a name="vars"></a>
 
-Komponen `amp-analytics` menentukan banyak variabel dasar yang dapat digunakan dalam permintaan. Daftar semua variabel tersebut tersedia di [Panduan Variabel `amp-analytics`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md). Selain itu, semua variabel yang didukung oleh [Panduan Substitusi HTML AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) juga didukung.
+Komponen `amp-analytics` menentukan banyak variabel dasar yang dapat digunakan dalam permintaan. Daftar semua variabel tersebut tersedia di [Panduan Variabel `amp-analytics`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md). Selain itu, semua variabel yang didukung oleh [Panduan Substitusi HTML AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) juga didukung.
 
 Objek konfigurasi `vars` dapat digunakan untuk menentukan key-value pair baru atau mengganti variabel yang sudah ada yang dapat dirujuk dalam nilai `request`. Variabel baru biasanya digunakan untuk menentukan informasi khusus penayang.  Array dapat digunakan untuk menentukan daftar nilai yang harus dienkode URL secara terpisah dengan tetap mempertahankan koma pemisah.
 
@@ -512,7 +512,7 @@ Pemicu visibilitas elemen dapat dikonfigurasi untuk setiap elemen AMP atau root 
 }
 ```
 
-Perhatikan bahwa selektor dapat digunakan hanya untuk menentukan satu elemen, bukan kumpulan elemen. Elemen ini dapat berupa [elemen AMP yang diperluas](https://github.com/ampproject/amphtml/blob/main/spec/amp-tag-addendum.md#amp-specific-tags) atau root dokumen.
+Perhatikan bahwa selektor dapat digunakan hanya untuk menentukan satu elemen, bukan kumpulan elemen. Elemen ini dapat berupa [elemen AMP yang diperluas](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-tag-addendum.md#amp-specific-tags) atau root dokumen.
 
 Pemicu visibilitas elemen menunggu sinyal yang ditentukan oleh properti `waitFor` dalam `visibilitySpec` sebelum memantau visibilitas elemen. Jika `waitFor` tidak ditentukan, maka sinyal [`ini-load`](#initial-load-trigger) elemen akan terus ditunggu. Lihat dokumen `waitFor` untuk penjelasan selengkapnya.
 Jika `reportWhen` ditentukan, pemicu akan menunggu sinyal sebelum mengirim peristiwa. Hal ini berguna, misalnya, dalam mengirimkan peristiwa analisis saat halaman ditutup.
@@ -808,7 +808,7 @@ Jika Anda perlu menyerap parameter ini, informasi tentang pembuatan parameter in
 
 #### Cookie <a name="cookies"></a>
 
-Fitur `cookies` mendukung penulisan cookie ke domain asal dengan mengekstrak informasi [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#query-parameter) dan [`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md#linker-param) dari URL dokumen. Fitur ini dapat digunakan bersama fitur `linkers` untuk menjalankan sinkronisasi ID dari domain ber-proxy AMP ke halaman AMP di domain penayang.
+Fitur `cookies` mendukung penulisan cookie ke domain asal dengan mengekstrak informasi [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md#query-parameter) dan [`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md#linker-param) dari URL dokumen. Fitur ini dapat digunakan bersama fitur `linkers` untuk menjalankan sinkronisasi ID dari domain ber-proxy AMP ke halaman AMP di domain penayang.
 
 Detail tentang cara menyiapkan konfigurasi `cookies` dapat ditemukan di [Menerima Parameter Linker di Halaman AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md#receiving-linker-params-on-amp-pages)
 
@@ -832,7 +832,7 @@ Contoh:
 
 **config**
 
-Ini adalah atribut opsional yang dapat digunakan untuk memuat konfigurasi dari URL jarak jauh yang ditentukan. URL yang ditentukan harus menggunakan skema HTTPS. Lihat juga atribut `data-include-credentials` di bawah. URL ini dapat menyertakan [variabel URL AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md). Responsnya harus mengikuti [panduan keamanan CORS AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
+Ini adalah atribut opsional yang dapat digunakan untuk memuat konfigurasi dari URL jarak jauh yang ditentukan. URL yang ditentukan harus menggunakan skema HTTPS. Lihat juga atribut `data-include-credentials` di bawah. URL ini dapat menyertakan [variabel URL AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md). Responsnya harus mengikuti [panduan keamanan CORS AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
 
 Contoh:
 

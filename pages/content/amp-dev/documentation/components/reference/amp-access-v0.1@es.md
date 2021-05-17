@@ -225,7 +225,7 @@ Es posible especificar varios proveedores de acceso utilizando una matriz en lug
 
 ### Variables de URL de acceso <a name="access-url-variables"></a>
 
-Al configurar las URL de varios puntos de conexión, el editor puede utilizar las variables de sustitución. La lista completa de estas variables se encuentra en la [especificación de las variables de AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md). Además, en esta especificación se incluyen algunas variables específicas de acceso, como `READER_ID` y `AUTHDATA`. En la tabla que aparece a continuación, se describen algunas de las variables más relevantes:
+Al configurar las URL de varios puntos de conexión, el editor puede utilizar las variables de sustitución. La lista completa de estas variables se encuentra en la [especificación de las variables de AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md). Además, en esta especificación se incluyen algunas variables específicas de acceso, como `READER_ID` y `AUTHDATA`. En la tabla que aparece a continuación, se describen algunas de las variables más relevantes:
 
 <table>
   <tr>

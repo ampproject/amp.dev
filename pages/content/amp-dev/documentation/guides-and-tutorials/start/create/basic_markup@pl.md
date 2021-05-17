@@ -66,7 +66,7 @@ Oprócz wymaganego kodu nasza próbka zawiera w sekcji head również definicję
 [tip type="read-on"] Odwiedź te zasoby, aby uzyskać więcej informacji:
 
 - [Rozpoczęcie pracy z AMP w wyszukiwarce Google](https://developers.google.com/amp/docs) — naucz się przygotowywać strony AMP do wyszukiwania w Google.
-- [Próbki metadanych](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) — dowiedz się więcej o wszystkich metadanych, których będziesz potrzebować w różnych innych miejscach (takich jak Twitter). [/tip]
+- [Próbki metadanych](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples) — dowiedz się więcej o wszystkich metadanych, których będziesz potrzebować w różnych innych miejscach (takich jak Twitter). [/tip]
 
 <hr>
 

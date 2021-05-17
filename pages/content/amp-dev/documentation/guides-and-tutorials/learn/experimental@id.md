@@ -2,7 +2,7 @@
 $title: Fitur eksperimental
 ---
 
-[Komponen eksperimental AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments)
+[Komponen eksperimental AMP](https://github.com/ampproject/amphtml/tree/main/tools/experiments)
 adalah fitur rilis yang masih belum siap untuk digunakan secara luas, sehingga komponen ini dilindungi dengan status **eksperimental**.
 
 Developer dan pengguna dapat ikut serta menggunakan fitur ini sebelum dirilis sepenuhnya.

@@ -16,8 +16,8 @@ author: CrystalOnScript
 
 يؤخذ المحتوى الموجود على amp.dev من مستودعين، [amp.dev](https://github.com/ampproject/amp.dev) و [AMPHTML](https://github.com/ampproject/amphtml). ويتم أخذ جميع المستندات المرجعية تحت المكونات من AMPHTML إما من الوحدات المدمجة أو من الملحقات.
 
-- [المكونات المدمجة ](https://github.com/ampproject/amphtml/tree/master/builtins)
-- [المكونات](https://github.com/ampproject/amphtml/tree/master/extensions)
+- [المكونات المدمجة ](https://github.com/ampproject/amphtml/tree/main/builtins)
+- [المكونات](https://github.com/ampproject/amphtml/tree/main/extensions)
 - [الدورات](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/courses)
 - [الأمثلة](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/examples)
 - [الأدلة والبرامج التعليمية](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/guides-and-tutorials)

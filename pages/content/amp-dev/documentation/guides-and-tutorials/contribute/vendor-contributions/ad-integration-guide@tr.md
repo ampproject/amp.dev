@@ -15,7 +15,7 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-AMP HTML'e entegre olmak isteyen bir reklam teknolojisi sağlayıcısıysanız, lütfen aşağıdaki kılavuzlara göz atın. Gecikmeyi en aza indirdiğinizden ve kaliteyi yüksek tuttuğunuzdan emin olmak için açık kaynaklı AMP projesine çekme isteği göndermeden önce lütfen [burada](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads) listelenen talimatları izleyin. AMP'ye nasıl katkı koymaya başlayabileceğinize dair genel bir kılavuz için lütfen [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../CONTRIBUTING.md) bölümüne bakın.
+AMP HTML'e entegre olmak isteyen bir reklam teknolojisi sağlayıcısıysanız, lütfen aşağıdaki kılavuzlara göz atın. Gecikmeyi en aza indirdiğinizden ve kaliteyi yüksek tuttuğunuzdan emin olmak için açık kaynaklı AMP projesine çekme isteği göndermeden önce lütfen [burada](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads) listelenen talimatları izleyin. AMP'ye nasıl katkı koymaya başlayabileceğinize dair genel bir kılavuz için lütfen [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../docs/contributing.md) bölümüne bakın.
 
 ## Reklam Sunucusu <a name="ad-server"></a>
 

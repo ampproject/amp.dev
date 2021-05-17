@@ -8,7 +8,7 @@ formats:
   - ads
 ---
 
-[Experimentelle AMP Komponenten](https://github.com/ampproject/amphtml/tree/master/tools/experiments) sind veröffentlichte Funktionen, die noch nicht für den breiten Einsatz bereit sind. Zur Sicherheit tragen sie daher den Status **geschützt**.
+[Experimentelle AMP Komponenten](https://github.com/ampproject/amphtml/tree/main/tools/experiments) sind veröffentlichte Funktionen, die noch nicht für den breiten Einsatz bereit sind. Zur Sicherheit tragen sie daher den Status **geschützt**.
 
 Entwickler und Benutzer können der Nutzung dieser Funktionen zustimmen, noch bevor sie vollständig freigegeben werden. Sie sollten jedoch mit Vorsicht zum Einsatz kommen, da sie Fehler verursachen oder unerwartete Nebenwirkungen haben können.
 

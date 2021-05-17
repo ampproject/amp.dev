@@ -6,7 +6,7 @@ formats:
   - email
 ---
 
-Các trình khách email muốn hỗ trợ AMP cho Email nên sử dụng [AMP Viewer](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) để lưu trữ các email AMP của người gửi. Một trình xem được xây dựng với [Thư viện AMP Viewer](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) sẽ bọc lấy một tài liệu AMP và hỗ trợ các [chức năng](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/CAPABILITIES.md) cho phép giao tiếp hai chiều với tài liệu AMP thông qua postMessage. Các chức năng này bao gồm cấp quyền kiểm soát hiển thị email, chuyển tiếp thông số người dùng và cung cấp các cách để đảm bảo sự an toàn cho các yêu cầu XHR được thực hiện từ email.
+Các trình khách email muốn hỗ trợ AMP cho Email nên sử dụng [AMP Viewer](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) để lưu trữ các email AMP của người gửi. Một trình xem được xây dựng với [Thư viện AMP Viewer](https://github.com/ampproject/amphtml/tree/main/extensions/amp-viewer-integration) sẽ bọc lấy một tài liệu AMP và hỗ trợ các [chức năng](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/CAPABILITIES.md) cho phép giao tiếp hai chiều với tài liệu AMP thông qua postMessage. Các chức năng này bao gồm cấp quyền kiểm soát hiển thị email, chuyển tiếp thông số người dùng và cung cấp các cách để đảm bảo sự an toàn cho các yêu cầu XHR được thực hiện từ email.
 
 ## Tiếp quản XHR của Trình xem
 

@@ -125,4 +125,4 @@ Evet. [`amp-ad-exit`](../../../documentation/components/reference/amp-ad-exit.md
 
 - [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html), AMP ile ilgili soruların yanıtlarını bulmanız için önerdiğimiz yerdir; AMP Projesi topluluk üyeleri Stack Overflow'u düzenli olarak takip ettiğinden, sorularınıza muhtemelen en hızlı yanıtı orada alacaksınız.
 - Çözümler ve yanıtlar için [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) kanalına katılın.
-- AMP'de bir hatayla karşılaşırsanız veya AMP için bir özellik isteğiniz varsa, sorun bildirme hakkında bilgi için [AMP ile ilgili sorunları bildirme](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#reporting-issues-with-amp) bölümüne bakın.
+- AMP'de bir hatayla karşılaşırsanız veya AMP için bir özellik isteğiniz varsa, sorun bildirme hakkında bilgi için [AMP ile ilgili sorunları bildirme](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#reporting-issues-with-amp) bölümüne bakın.

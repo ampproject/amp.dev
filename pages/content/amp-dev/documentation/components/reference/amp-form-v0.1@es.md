@@ -151,7 +151,7 @@ Para obtener más información, consulta la sección [Validaciones personalizada
 * `<input type=button>` ni `<input type=image>`
 * La mayoría de los atributos de campos de entrada relacionados con los formularios, como `form`, `formaction`, `formtarget`, `formmethod` y otros
 
-Es posible que modifiquemos algunas de estas normas en el futuro para hacerlas menos estrictas; [ponte en contacto con nosotros](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#suggestions-and-feature-requests) si te hacen falta y descríbenos casos prácticos.
+Es posible que modifiquemos algunas de estas normas en el futuro para hacerlas menos estrictas; [ponte en contacto con nosotros](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#suggestions-and-feature-requests) si te hacen falta y descríbenos casos prácticos.
 
 Para obtener más información sobre los campos de entrada válidos, consulta las [reglas de amp-form](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) en la especificación de la herramienta de validación de AMP.
 
@@ -591,7 +591,7 @@ Para obtener más ejemplos, consulta [examples/forms.amp.html](https://github.co
 
 # Sustituciones de variables <a name="variable-substitutions"></a>
 
-La extensión `amp-form` permite la [sustitución de variables de plataforma](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) a los campos de entrada que están ocultos y que tienen el atributo `data-amp-replace`. En cada envío de formulario, `amp-form` localiza todas las cadenas `input[type=hidden][data-amp-replace]` y aplica sustituciones a las variables de su atributo `value`.
+La extensión `amp-form` permite la [sustitución de variables de plataforma](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) a los campos de entrada que están ocultos y que tienen el atributo `data-amp-replace`. En cada envío de formulario, `amp-form` localiza todas las cadenas `input[type=hidden][data-amp-replace]` y aplica sustituciones a las variables de su atributo `value`.
 
 Debes indicar las variables que utilizas para cada sustitución de cada campo de entrada. Para ello, introduce una cadena con las variables utilizadas en el parámetro `data-amp-replace` separadas por espacios (consulta el ejemplo que aparece más abajo). AMP no reemplazará las variables que no se especifiquen de forma explícita.
 
@@ -626,7 +626,7 @@ Cuando el usuario intenta enviar el formulario, AMP intenta aplicar las sustituc
 
 Fíjate en cómo `CANONICAL_HOSTNAME` no se ha sustituido porque no estaba incluida en la lista blanca mediante el atributo `data-amp-replace` del primer campo.
 
-Se producirán sustituciones en cada envío posterior. Obtén más información sobre las [sustituciones de variables en AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md).
+Se producirán sustituciones en cada envío posterior. Obtén más información sobre las [sustituciones de variables en AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md).
 
 # Polyfills <a name="polyfills"></a>
 

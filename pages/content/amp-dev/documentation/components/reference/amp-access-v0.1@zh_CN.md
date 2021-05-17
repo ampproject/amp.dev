@@ -226,7 +226,7 @@ Pingback 是可选组件。将 `noPingback` 配置属性设置为 `true` 即可�
 
 ### 访问网址变量 <a name="access-url-variables"></a>
 
-在为各种端点配置网址时，发布商可以使用替换变量。[AMP 变量规范](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)中定义了所有此类变量。此外，该规范还添加了一些特定于访问权限的变量，如 `READER_ID` 和 `AUTHDATA`。部分相关程度最高的变量如下表所示：
+在为各种端点配置网址时，发布商可以使用替换变量。[AMP 变量规范](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)中定义了所有此类变量。此外，该规范还添加了一些特定于访问权限的变量，如 `READER_ID` 和 `AUTHDATA`。部分相关程度最高的变量如下表所示：
 
 <table>
   <tr>

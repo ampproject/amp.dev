@@ -55,7 +55,7 @@ Anda dapat menentukan template melalui salah satu dari dua cara berikut:
 * atribut `template` yang mereferensikan ID dari elemen `template` atau `script` yang sudah ada.
 * elemen `template` atau `script` yang bersarang langsung di dalam elemen `amp-list`.
 
-Untuk penjelasan selengkapnya tentang template, lihat [Template HTML AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-html-templates.md).
+Untuk penjelasan selengkapnya tentang template, lihat [Template HTML AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-templates.md).
 
 *Contoh: Menampilkan daftar dinamis*
 
@@ -422,7 +422,7 @@ Elemen ini mencakup [atribut umum](../../../documentation/guides-and-tutorials/l
 ## Substitusi <a name="substitutions"></a>
 
 `<amp-list>` memungkinkan semua substitusi variabel URL standar.
-Lihat [Panduan Substitusi](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) untuk informasi selengkapnya.
+Lihat [Panduan Substitusi](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) untuk informasi selengkapnya.
 
 Misalnya:
 ```html

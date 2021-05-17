@@ -92,7 +92,7 @@ Bộ tối ưu hoá AMP cung cấp cấu hình mặc định hợp lí vốn có
 
 Một vài tuỳ chọn đáng chú ý:
 
-- `lts: true` để cho phép [các URL ổn định dài hạn](https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md) cho thời gian chạy và các thành phần AMP.
+- `lts: true` để cho phép [các URL ổn định dài hạn](https://github.com/ampproject/amphtml/blob/main/docs/lts-release.md) cho thời gian chạy và các thành phần AMP.
 - `verbose: true` cho đầu ra gỡ lỗi chi tiết. Đặc biệt tốt để nhận diện lí do code soạn sẵn AMP không thể được xoá bỏ.
 - `imageOptimizer`: cho phép tạo srcset của hình ảnh được tự động, bằng cách cung ứng một chức năng để tính toán URL srcset đối với một src hình ảnh cho trước. Chức năng này có thể trả về một URL trỏ đến một phiên bản của hình ảnh `src` với độ rộng cho trước. Nếu không có hình ảnh nào, nó có thể trả về giá trị sai lệch. Thông tin thêm về điều này ở phần tiếp theo.
 

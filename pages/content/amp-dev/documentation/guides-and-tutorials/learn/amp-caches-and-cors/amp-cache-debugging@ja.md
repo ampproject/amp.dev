@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-debugging.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-debugging.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -50,7 +50,7 @@ have a look and request a pull request there.
     <tr>
       <td rowspan="2">アセット（フォントや画像など）が表示されない</td>
       <td>アセットの MIME タイプが誤って配信されている。</td>
-      <td> <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">許可される MIME タイプ</a>を指定してください。</td>
+      <td> <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">許可される MIME タイプ</a>を指定してください。</td>
     </tr>
     <tr>
       <td>AMP キャッシュからアセットにアクセスできない。</td>

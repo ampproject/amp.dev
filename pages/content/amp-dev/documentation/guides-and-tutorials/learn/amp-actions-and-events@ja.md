@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-actions-and-events.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-actions-and-events.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -32,7 +32,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-[tip type="note"] このドキュメントでは、AMP ウェブサイト、ストーリー、および広告のアクションとイベントについて説明します。AMP メール形式については、「[AMP メールのアクションとイベント](https://github.com/ampproject/amphtml/blob/main/spec/amp-email-actions-and-events.md)」を参照してください。 [/tip]
+[tip type="note"] このドキュメントでは、AMP ウェブサイト、ストーリー、および広告のアクションとイベントについて説明します。AMP メール形式については、「[AMP メールのアクションとイベント](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-email-actions-and-events.md)」を参照してください。 [/tip]
 
 `on` 属性は、要素にイベントハンドラをインストールするために使用されます。サポートされているイベントは、要素によって異なります。
 
@@ -241,7 +241,7 @@ AMP は、HTML 要素（AMP 要素を含む）でリスンできる `tap` イベ
   <tr>
     <td><code>changeToLayoutContainer</code></td>
     <td>
-<code>amp-list</code> のレイアウトを <code>layout="CONTAINTER"</code> に更新し、<a href="https://github.com/ampproject/amphtml/blob/main/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">動的なサイズ変更</a>を行えるようにします。</td>
+<code>amp-list</code> のレイアウトを <code>layout="CONTAINTER"</code> に更新し、<a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">動的なサイズ変更</a>を行えるようにします。</td>
   </tr>
   <tr>
     <td> <code>fetch-error</code>(低信頼)</td>
@@ -684,7 +684,7 @@ AMP は、HTML 要素（AMP 要素を含む）でリスンできる `tap` イベ
   <tr>
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
-      <p>現在のウィンドウを指定された URL に移動し、指定されている場合はオプションのターゲットで開きます（現在、<code>_top</code> と <code>_blank </code> のみがサポートされています）。オプションの <code>opener</code> パラメータは  <code>_blank</code> のターゲットが使用されている場合に指定し、新たに開いたページが <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener</code></a> にアクセスできるようにします。<a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md">標準的な URL 置換</a> をサポートしています。</p>
+      <p>現在のウィンドウを指定された URL に移動し、指定されている場合はオプションのターゲットで開きます（現在、<code>_top</code> と <code>_blank </code> のみがサポートされています）。オプションの <code>opener</code> パラメータは  <code>_blank</code> のターゲットが使用されている場合に指定し、新たに開いたページが <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener</code></a> にアクセスできるようにします。<a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">標準的な URL 置換</a> をサポートしています。</p>
       <p><strong>警告:</strong> できる限り通常の <code><a></code> リンクを使用することが推奨されます。これは、<code>AMP.navigateTo</code> がウェブクローラに認識されないためです。</p>
     </td>
   </tr>

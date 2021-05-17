@@ -20,7 +20,7 @@ Aby móc dodać swoją usługę analityczną do środowiska uruchomieniowego AMP
 - Zidentyfikować rodzaje [zmiennych](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md) i [żądań](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-analytics.md#requests), których będziesz potrzebować w dokumencie AMP HTML swojej usługi analitycznej.
 - Określić, czy funkcja wtyczki dozującej jest wymagana do skonstruowania ostatecznego adresu URL, jeśli stosowane są żądania wymagające dzielenia danych na partie.
 - Zidentyfikować wyzwalacze powodujące wysyłanie żądań analitycznych ze strony reprezentatywnej dla danego serwisu.
-- Zastanowić się, czy i jak będziesz [śledzić użytkowników](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md) w kontekstach AMP strony pierwszej i stron trzecich.
+- Zastanowić się, czy i jak będziesz [śledzić użytkowników](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md) w kontekstach AMP strony pierwszej i stron trzecich.
 - Określić, w jaki sposób Twój pulpit nawigacyjny analityki obsługuje ruch AMP.
 - Zidentyfikować ewentualne brakujące funkcje w składniku `amp-analytics` oraz [złożyć wnioski](https://github.com/ampproject/amphtml/issues/new) o opracowanie potrzebnych funkcji.
 - AMP Analytics wysyła swoje zmienne do wstępnie skonfigurowanego punktu końcowego. Jeśli nie masz jeszcze istniejącego punktu końcowego, sprawdź [ten przykład](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample), aby dowiedzieć się, jak go utworzyć.
@@ -30,9 +30,9 @@ Aby móc dodać swoją usługę analityczną do środowiska uruchomieniowego AMP
 
 ## Dodawanie konfiguracji do środowiska uruchomieniowego AMP HTML <a name="adding-your-configuration-to-the-amp-html-runtime"></a>
 
-1. Utwórz [zgłoszenie zamiaru wprowadzenia](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features) stwierdzające, że będziesz dodawać konfigurację usługi analitycznej do środowiska uruchomieniowego AMP HTML. W opisie umieść wzmiankę **cc @ampproject/wg-analytics**.
+1. Utwórz [zgłoszenie zamiaru wprowadzenia](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../docs/contributing.md#contributing-features) stwierdzające, że będziesz dodawać konfigurację usługi analitycznej do środowiska uruchomieniowego AMP HTML. W opisie umieść wzmiankę **cc @ampproject/wg-analytics**.
 2. Opracuj poprawkę implementującą co następuje:
-   1. Nowy plik konfiguracyjny json `${vendorName}.json` w [folderze ](https://github.com/ampproject/amphtml/tree/master/extensions/amp-analytics/0.1/vendors) dostawców, zawierający wszystkie powyższe i wykraczające poza domyślne opcje, np:
+   1. Nowy plik konfiguracyjny json `${vendorName}.json` w [folderze ](https://github.com/ampproject/amphtml/tree/main/extensions/amp-analytics/0.1/vendors) dostawców, zawierający wszystkie powyższe i wykraczające poza domyślne opcje, np:
       1. `"vars": {}` — dodatkowe opcje domyślne.
       2. `"requests": {}` — żądania, których będzie używać serwis.
       3. W razie potrzeby `"optout":`. Obecnie nie mamy świetnego systemu rezygnacji, więc skontaktuj się z nami, aby pomóc nam zaprojektować taki, którego działanie będzie Ci odpowiadać.
@@ -68,7 +68,7 @@ Aby przyjąć takie podejście, należy zapoznać się z dokumentacją dotycząc
 ## Dodatkowe zasoby <a name="further-resources"></a>
 
 - Głębokie wody: [Dlaczego po prostu nie użyć iframe?](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/why-not-iframe.md)
-- Głębokie wody: [Zarządzanie stanem użytkownika nieuwierzytelnionego za pomocą AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md)
+- Głębokie wody: [Zarządzanie stanem użytkownika nieuwierzytelnionego za pomocą AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md)
 - [Przykład kodu amp-analytics](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
 - Dokumentacja referencyjna [amp-analytics](https://amp.dev/documentation/components/amp-analytics)
 - Dokumentacja referencyjna [zmiennych amp-analytics](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md)

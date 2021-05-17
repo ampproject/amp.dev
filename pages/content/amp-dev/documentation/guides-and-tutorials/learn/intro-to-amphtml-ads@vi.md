@@ -125,4 +125,4 @@ Có. Xem [`amp-ad-exit`](../../../documentation/components/reference/amp-ad-exit
 
 - Chúng tôi khuyến nghị [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) để tìm câu trả lời cho các thắc mắc về AMP; bởi các thành viên của cộng đồng Dự án AMP thường xuyên theo dõi Stack Overflow, bạn sẽ có nhiều khả năng nhận được câu trả lời nhanh chóng cho các câu hỏi của mình trên đó.
 - Tham gia kênh [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) để xem các giải pháp và câu trả lời.
-- Nếu bạn gặp một lỗi trong AMP hoặc có một yêu cầu tính năng đối với AMP, hãy xem phần [Báo cáo các vấn đề với AMP](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#reporting-issues-with-amp) để biết thêm thông tin về việc gửi đi một vấn đề.
+- Nếu bạn gặp một lỗi trong AMP hoặc có một yêu cầu tính năng đối với AMP, hãy xem phần [Báo cáo các vấn đề với AMP](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#reporting-issues-with-amp) để biết thêm thông tin về việc gửi đi một vấn đề.

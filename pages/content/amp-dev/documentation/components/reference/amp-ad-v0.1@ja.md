@@ -180,7 +180,7 @@ AMP は、独自のドメインなどのカスタム ドメインから広告を
 <meta name="amp-3p-iframe-src" content="https://assets.your-domain.com/path/to/remote.html">
 ```
 
-  メタタグの `content` 属性には、ウェブサーバーにコピーした remote.html ファイルの絶対 URL を指定します。この URL には「https」スキーマを使用する必要があります。このファイルを AMP ファイルと同じオリジンに格納することはできません。たとえば、AMP ファイルを `www.example.com` にホストする場合、この URL に `www.example.com` を指定することはできませんが、`something-else.example.com` は指定できます。iframe 用に使用できるオリジンについて詳しくは、[iframe のオリジン ポリシー](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md)をご覧ください。
+  メタタグの `content` 属性には、ウェブサーバーにコピーした remote.html ファイルの絶対 URL を指定します。この URL には「https」スキーマを使用する必要があります。このファイルを AMP ファイルと同じオリジンに格納することはできません。たとえば、AMP ファイルを `www.example.com` にホストする場合、この URL に `www.example.com` を指定することはできませんが、`something-else.example.com` は指定できます。iframe 用に使用できるオリジンについて詳しくは、[iframe のオリジン ポリシー](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md)をご覧ください。
 
 ### セキュリティ <a name="security"></a>
 

@@ -35,7 +35,7 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 <amp-pixel src="https://foo.com/pixel?RANDOM"></amp-pixel>
 ```
 
-在此示例中，网页浏览数据将与一个随机数一起发送到定义的网址。`RANDOM` 变量是 [AMP 平台中诸多替换变量](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)中的一个。点击此处详细了解[变量替换](analytics_basics.md)。
+在此示例中，网页浏览数据将与一个随机数一起发送到定义的网址。`RANDOM` 变量是 [AMP 平台中诸多替换变量](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)中的一个。点击此处详细了解[变量替换](analytics_basics.md)。
 
 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 组件是内置组件，因此您无需像处理 AMP 扩展组件（包括 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)）一样为其添加包含声明。但您应将 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 标记放在尽可能靠近 `<body>` 开头的位置。只有当标记本身进入视线范围内时，跟踪像素才会触发。如果将 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 放在靠近网页底部的位置，则可能不会触发跟踪像素。
 
@@ -133,7 +133,7 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 
 ## 变量替换 <a name="variable-substitution"></a>
 
-[`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 和 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 组件均允许所有标准网址变量替换（请参阅 [AMP HTML 变量替换](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)）。在以下示例中，网页浏览请求将随当前 AMP 文档的规范网址、其标题以及[客户端 ID](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) 一起发送到相应网址：
+[`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 和 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 组件均允许所有标准网址变量替换（请参阅 [AMP HTML 变量替换](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)）。在以下示例中，网页浏览请求将随当前 AMP 文档的规范网址、其标题以及[客户端 ID](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) 一起发送到相应网址：
 
 ```html
 <amp-pixel
@@ -177,7 +177,7 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 
 ## 用户识别 <a name="user-identification"></a>
 
-网站使用 Cookie 在浏览器中存储与用户相关的信息。Cookie 可用于判断用户之前是否访问过某个网站。在 AMP 中，网页可通过发布商的网站提供，也可通过缓存（例如 Google AMP 缓存）提供。发布商的网站和缓存很可能具有不同的网域。为了安全起见，浏览器可能（并且通常）会限制访问其他网域的 Cookie（另请参阅[跨来源跟踪用户](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md)）。
+网站使用 Cookie 在浏览器中存储与用户相关的信息。Cookie 可用于判断用户之前是否访问过某个网站。在 AMP 中，网页可通过发布商的网站提供，也可通过缓存（例如 Google AMP 缓存）提供。发布商的网站和缓存很可能具有不同的网域。为了安全起见，浏览器可能（并且通常）会限制访问其他网域的 Cookie（另请参阅[跨来源跟踪用户](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md)）。
 
 默认情况下，不管用户是从发布商的原始网站还是通过缓存访问网页，AMP 都将管理客户端 ID 的配置。AMP 生成的客户端 ID 的值为 `"amp-"` 后跟一个随机 `base64` 编码字符串，如果同一用户再次访问某网页，该用户的客户端 ID 将保持不变。
 
