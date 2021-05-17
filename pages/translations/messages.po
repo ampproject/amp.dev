@@ -3161,3 +3161,9 @@ msgstr ""
 
 msgid "See supported platforms"
 msgstr ""
+
+msgid "Check out AMP in action"
+msgstr ""
+
+msgid "Exemplary websites built with AMP out in the wild."
+msgstr ""
