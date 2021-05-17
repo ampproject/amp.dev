@@ -185,7 +185,7 @@ Per attivarlo, copia il file [remote.html](https://github.com/ampproject/amphtml
 <meta name="amp-3p-iframe-src" content="https://assets.your-domain.com/path/to/remote.html">
 ```
 
-  L'attributo `content` del meta tag è l'URL assoluto della tua copia del file html remoto sul server web. L'URL deve utilizzare uno schema "https" e non può trovarsi sulla stessa origine dei file AMP. Ad esempio, se i file AMP sono ospitati su `www.example.com`, l'URL non deve trovarsi su `www.example.com` ma su `something-else.example.com`. Consulta le [norme relative alle origini di iframe](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md) per ulteriori dettagli sulle origini consentite per iframe.
+  L'attributo `content` del meta tag è l'URL assoluto della tua copia del file html remoto sul server web. L'URL deve utilizzare uno schema "https" e non può trovarsi sulla stessa origine dei file AMP. Ad esempio, se i file AMP sono ospitati su `www.example.com`, l'URL non deve trovarsi su `www.example.com` ma su `something-else.example.com`. Consulta le [norme relative alle origini di iframe](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md) per ulteriori dettagli sulle origini consentite per iframe.
 
 ### Sicurezza <a name="security"></a>
 

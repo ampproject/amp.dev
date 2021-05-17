@@ -54,7 +54,7 @@ formats:
 광고 서버에서 AMP HTML 광고를 게재하려면 다음을 포함하는 빠른 가져오기 통합을 제공해야 합니다.
 
 1. SSL 네트워크 통신 지원
-2. 광고 요청을 작성하는 JavaScript 제공(예제 구현: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) 및 [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl))
+2. 광고 요청을 작성하는 JavaScript 제공(예제 구현: [AdSense](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-adsense-impl) 및 [DoubleClick](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-doubleclick-impl))
 3. 유효성 검사 서비스를 통한 광고 소재 유효성 검사 및 서명. [Cloudflare](https://blog.cloudflare.com/firebolt/)는 AMP 광고 확인 서비스를 제공하여, 독립 광고 제공업체에서 더 빠르고, 가볍고, 참여를 유도하는 광고를 게재할 수 있도록 지원합니다.
 
 빠른 가져오기 통합을 생성하는 방법은 [빠른 가져오기 네트워크 구현 가이드](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md)를 참조하세요.

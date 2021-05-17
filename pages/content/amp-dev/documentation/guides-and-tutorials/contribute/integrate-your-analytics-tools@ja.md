@@ -26,7 +26,7 @@ have a look and request a pull request there.
 
 - 分析サービスを使用する上で AMP HTML ドキュメントに必要となる[変数](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md)と[リクエスト](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-analytics.md#requests)の種類を特定する。
 - サービスに関連するページから分析リクエストが送信されるようにするトリガーを特定する。
-- ファーストパーティとサードパーティ AMP のコンテキストで[ユーザーを追跡する](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md)かどうか、そしてその方法を検討する。
+- ファーストパーティとサードパーティ AMP のコンテキストで[ユーザーを追跡する](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md)かどうか、そしてその方法を検討する。
 - 分析ダッシュボードが AMP トラフィックをどのように処理するかを確認する。
 - `amp-analytics` に欠落した機能がないかを確認し、必要な機能について[リクエストを提出](https://github.com/ampproject/amphtml/issues/new)する。
 - AMP アナリティクスは、あらかじめ構成されたエンドポイントに変数を送信します。既存のエンドポイントがない場合、その構築方法の概要について、[こちらのサンプル](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)を参照してください。
@@ -36,9 +36,9 @@ have a look and request a pull request there.
 
 ## AMP HTML ランタイムへの構成の追加 <a name="adding-your-configuration-to-the-amp-html-runtime"></a>
 
-1. 分析サービスを AMP HTML のランタイムに追加することを述べた [Intent-To-Implement（実装意図）の課題](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features) を作成します。説明に **cc @ampproject/wg-analytics** を必ず含めてください。
+1. 分析サービスを AMP HTML のランタイムに追加することを述べた [Intent-To-Implement（実装意図）の課題](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../docs/contributing.md#contributing-features) を作成します。説明に **cc @ampproject/wg-analytics** を必ず含めてください。
 2. 以下の内容を実装するパッチを開発します。
-   1. 以下のような、デフォルト外のオプションを含めた新しい構成 json ファイル `${vendorName}.json` を vendors [フォルダ](https://github.com/ampproject/amphtml/tree/master/extensions/amp-analytics/0.1/vendors):
+   1. 以下のような、デフォルト外のオプションを含めた新しい構成 json ファイル `${vendorName}.json` を vendors [フォルダ](https://github.com/ampproject/amphtml/tree/main/extensions/amp-analytics/0.1/vendors):
       1. 追加のデフォルト変数用の `"vars": {}`。
       2. サービスが使用するリクエスト用の `"requests": {}`。
       3. 必要な場合は `"optout":`。現時点では、優れたオプトアウトシステムが用意されていないため、あなたに合ったものを設計できるように、お問い合わせください。
@@ -73,7 +73,7 @@ config="https://my-awesome-tag-manager.example.com/user-id.json"
 ## その他のリソース <a name="further-resources"></a>
 
 - ディープダイブ: [Why not just use an iframe?](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/why-not-iframe.md)
-- ディープダイブ: [Managing non-authenticated user state with AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md)
+- ディープダイブ: [Managing non-authenticated user state with AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md)
 - [amp-analytics サンプル](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
 - [amp-analytics](https://amp.dev/documentation/components/amp-analytics) リファレンスドキュメント
 - [amp-analytics variables](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md) リファレンスドキュメント

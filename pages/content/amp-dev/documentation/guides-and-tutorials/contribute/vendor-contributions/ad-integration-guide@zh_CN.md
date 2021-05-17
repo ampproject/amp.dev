@@ -15,7 +15,7 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-如果您是一家想要与 AMP HTML 集成的广告技术提供商，请参阅以下准则。为了确保最大程度降低延迟并提高质量，请先按照[此处](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads)列出的说明操作，然后再将拉取请求提交到 AMP 开放源代码项目。有关如何开始为 AMP 做贡献的常规指导，请参阅 [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../CONTRIBUTING.md)。
+如果您是一家想要与 AMP HTML 集成的广告技术提供商，请参阅以下准则。为了确保最大程度降低延迟并提高质量，请先按照[此处](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads)列出的说明操作，然后再将拉取请求提交到 AMP 开放源代码项目。有关如何开始为 AMP 做贡献的常规指导，请参阅 [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../docs/contributing.md)。
 
 ## 广告服务器 <a name="ad-server"></a>
 

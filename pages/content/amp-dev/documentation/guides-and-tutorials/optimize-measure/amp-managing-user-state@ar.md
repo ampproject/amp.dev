@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -110,7 +110,7 @@ limitations under the License.
 
 ### السياقات المتعددة تعني إدارة حالات متعددة <a name="multiple-contexts-means-multiple-state-management"></a>
 
-يجب أن يكون الناشرون على استعداد لإدارة حالة المستخدم لكل سياق عرض على حدة. توفر ميزة [معرّف العميل](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#client-id) في AMP، والتي تستفيد من ملفات تعريف الارتباط أو التخزين المحلي للمحافظة على الحالة، الدعم اللازم لصفحات AMP للحصول على معرّف ثابت وسبه مستعار للمستخدم. من وجهة نظر التنفيذ، يتم استخدام ملفات تعريف الارتباط أو التخزين المحلي، وتتخذ AMP القرار الذي يجب استخدامه بناءً على سياق العرض. يتأثر هذا الاختيار بالجدوى الفنية لإدارة هذه الحالة التي تشمل مئات أو آلاف الناشرين.
+يجب أن يكون الناشرون على استعداد لإدارة حالة المستخدم لكل سياق عرض على حدة. توفر ميزة [معرّف العميل](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md#client-id) في AMP، والتي تستفيد من ملفات تعريف الارتباط أو التخزين المحلي للمحافظة على الحالة، الدعم اللازم لصفحات AMP للحصول على معرّف ثابت وسبه مستعار للمستخدم. من وجهة نظر التنفيذ، يتم استخدام ملفات تعريف الارتباط أو التخزين المحلي، وتتخذ AMP القرار الذي يجب استخدامه بناءً على سياق العرض. يتأثر هذا الاختيار بالجدوى الفنية لإدارة هذه الحالة التي تشمل مئات أو آلاف الناشرين.
 
 ومع ذلك، يمكن أن ينتهي الأمر بناشري صفحات AMP بسهولة (عن غير قصد) إلى تصميم رحلات مستخدمين تتضمن سياقات متعددة. دعنا نلقي نظرة مجددًا على نظرتنا السابقة الخاصة بحالة استخدام عربة التسوق ونضيف بعض التفاصيل إليها لنصنع **قصة مستخدم** كاملة:
 
@@ -120,8 +120,8 @@ limitations under the License.
 
 **لتمكين هذا وأي تجربة تتعلق بحالة المستخدم، يجب على جميع السياقات التي يمر بها المستخدم مشاركة كل حالة تم الحصول عليه بشكل فردي مع بعضها البعض.** "مثالية!"، كما تقول، عن فكرة مشاركة قيم ملفات تعريف الارتباط مع معرفات المستخدم عبر هذه الحدود التي تصنعها السياقات. ولكن توجد مشكلة صغيرة واحدة: على الرغم من أن كل سياق من هذه السياقات يعرض محتوى يتحكم فيه الناشر بنفسه، فإن كل منهما يرى الآخر كطرف ثالث لأن كل سياق يتمركز في نطاقات مختلفة.
 
-<amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png" width="1030" height="868">
-  <noscript><img alt="تعني إمكانية عرض AMP في العديد من السياقات أن لكل من هذه السياقات مساحة تخزين خاصة به للمعرفات" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
+<amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/contexts-with-different-storage.png" width="1030" height="868">
+  <noscript><img alt="تعني إمكانية عرض AMP في العديد من السياقات أن لكل من هذه السياقات مساحة تخزين خاصة به للمعرفات" src="https://github.com/ampproject/amphtml/raw/main/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
 
 كما سترى في المناقشة التالية، فإن كونك في موقع الطرف الثالث عند التفاعل مع ملفات تعريف الارتباط قد يمثل تحديات، اعتمادًا على كيفية تكوين إعدادات متصفح المستخدم. على وجه الخصوص، إذا تم حظر ملفات تعريف ارتباط الطرف الثالث في موقف معين، فسيؤدي ذلك إلى منع إمكانية مشاركة المعلومات عبر السياقات. من ناحية أخرى، إذا تم السماح بعمليات ملفات تعريف الارتباط للجهات الثالثة، فيمكن عندئذٍ مشاركة المعلومات.
 
@@ -142,8 +142,8 @@ limitations under the License.
 
 في مقدمة جولة الدليل الفني أدناه، لنفترض أنك ستربط **حالة المستخدم** **بمعرّف** ثابت يمثل المستخدم. على سبيل المثال، قد يبدو المعرّف في هذا الشكل `n34ic982n2386n30`. من طرف الخادم، تقوم بعد ذلك بربط `n34ic982n2386n30` بأي مجموعة من معلومات حالة المستخدم، مثل محتوى عربة التسوق، أو قائمة المقالات التي تمت قراءتها مسبقًا، أو البيانات الأخرى بناءً على حالة الاستخدام.
 
-<amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
-  <noscript><img alt="يمكن استخدام معرّف واحد لإدارة حالة المستخدم للعديد من حالات الاستخدام" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png"></noscript></amp-img>
+<amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
+  <noscript><img alt="يمكن استخدام معرّف واحد لإدارة حالة المستخدم للعديد من حالات الاستخدام" src="https://github.com/ampproject/amphtml/raw/main/spec/img/identifiers-for-use-cases.png"></noscript></amp-img>
 
 من أجل الوضوح في باقي هذا المستند، سنقوم باستدعاء سلاسل مختلفة من الأحرف والتي تكون معرّفات بأسماء أكثر قابلية للقراءة مسبوقة بعلامة الدولار (`$`):
 
@@ -242,7 +242,7 @@ user_id=$publisher_origin_identifier
 
 لاحظ حقيقة أن المعلمة التي تم تمريرها إلى بديل معرّف العميل، `${clientId(uid)`، تكون `uid`. كان هذا اختيارًا متعمدًا يطابق نفس اسم ملف تعريف الارتباط المستخدم في مصدر الناشر كما هو موضح في [المهمة 1](#task1). لتحقيق التكامل الأكثر سلاسة، يجب عليك تطبيق نفس التقنية.
 
-فيما يتعلق ببقية تنفيذ تحليلات AMP، راجع وثائق [تكوين تحليلات AMP](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) لمزيد من التفاصيل حول كيفية إعداد طلبات amp-analytics أو لتعديل طلبات مورد التحليلات الخاص بك. يمكن تعديل رسالة الفحص بشكل إضافي لنقل البيانات الإضافية التي تحددها مباشرة أو من خلال الاستفادة من [بدائل AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) الأخرى.
+فيما يتعلق ببقية تنفيذ تحليلات AMP، راجع وثائق [تكوين تحليلات AMP](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) لمزيد من التفاصيل حول كيفية إعداد طلبات amp-analytics أو لتعديل طلبات مورد التحليلات الخاص بك. يمكن تعديل رسالة الفحص بشكل إضافي لنقل البيانات الإضافية التي تحددها مباشرة أو من خلال الاستفادة من [بدائل AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) الأخرى.
 
 > **من المفيد أن تعلم مايلي:**
 > لماذا استخدمنا الاسم `uid` للمعلمة التي تم تمريرها إلى ميزة معرّف العميل؟ يتم استخدام المعلمة التي يستخدمها بديل `clientId(...)` لتحديد النطاق التي تُستخدم فيه. يمكنك بالفعل استخدام ميزة Client ID للعديد من حالات الاستخدام، ونتيجة لذلك، يمكنك إنشاء العديد من معرفات العملاء. تميّز المعلمة بين حالات الاستخدام هذه ولذا تستخدمها لتحديد حالة الاستخدام التي تريد معرّف العميل لها. على سبيل المثال، قد ترغب في إرسال معرّفات مختلفة إلى جهات ثالثة مثل أحد القائمين على الإعلان ويمكنك استخدام معلمة "النطاق" لتحقيق ذلك.
@@ -379,12 +379,12 @@ https://analytics.example.com/ping?type=pageview&user_id=$amp_client_id
 
 في هذه المهمة، سنغطي تحسينًا إضافيًا يساعد عندما يتنقل المستخدم عبر السياقات من صفحة إلى صفحة أخرى إما **عن طريق الارتباط أو عمليات إرسال النموذج**. في هذه المواقف، ومع أعمال التنفيذ الموضحة أدناه، من الممكن إعداد مخطط فعال بالكامل لإدارة حالة المستخدم عبر السياقات.
 
-<amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
-  <noscript><img alt="يمكن استخدام الروابط لتمرير معلومات المعرف الخاصة بسياق ما إلى سياق آخر (مرتبط)" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png"></noscript></amp-img>
+<amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
+  <noscript><img alt="يمكن استخدام الروابط لتمرير معلومات المعرف الخاصة بسياق ما إلى سياق آخر (مرتبط)" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-form-identifier-forwarding.png"></noscript></amp-img>
 
 ##### استخدام ميزات بديلة <a name="using-substitution-features"></a>
 
-المنهج الخاص بنا سيستفيد من فئتين من [بدائل AMP المختلفة](https://github.com/ampproject/amphtml/blob/main/spec/./amp-var-substitutions.md).
+المنهج الخاص بنا سيستفيد من فئتين من [بدائل AMP المختلفة](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-var-substitutions.md).
 
 **&nbsp;لتحديث الروابط الخارجية لاستخدام بديل لمعرف العميل: ** حدد معلمة جديدًا للاستعلام، `ref_id` (“referrer ID”)، والذي سيظهر داخل عنوان URL ويشير إلى **إنشاء معرّف السياق** للمستخدم. عيِّن معلمة الاستعلام هذه بحيث تساوي قيمة بديل معرِّف عميل AMP:
 
@@ -435,8 +435,8 @@ data-amp-replace="CLIENT_ID"
 https://example.com/step2.html?ref_id=$amp_client_id
 [/sourcecode]
 
-<amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
-  <noscript><img alt="مثال على كيفية تمرير معرّف في سياق عارض AMP عبر رابط إلى سياق أصل الناشر" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png"></noscript></amp-img>
+<amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
+  <noscript><img alt="مثال على كيفية تمرير معرّف في سياق عارض AMP عبر رابط إلى سياق أصل الناشر" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-1.png"></noscript></amp-img>
 
 عندما يصل المستخدم إلى صفحة تحتوي على قيمة `ref_id` إما كمعلمة عنوان URL أو في رأس الصفحة، تتاح لنا الفرصة لمعالجة المعرّف `ref_id` جنبًا إلى جنب مع معرّف يتم عرضه عبر الصفحة نفسها (أي قيمة ملف تعريف الارتباط). من خلال تضمين كلاهما في رسائل فحص التحليلات، يمكن لخادم التحليلات الخاص بك العمل مع كلتا القيمتين في وقت واحد، ومع العلم أنهما مرتبطان، يعكسلن هذه العلاقة في الواجهة الخلفية الخاصة بك. تُقدم الخطوة التالية تفاصيل حول كيفية القيام بذلك.
 
@@ -459,8 +459,8 @@ https://example.com/step2.html?ref_id=$amp_client_id
 
 للمعالجة على صفحة الوصول، سيختلف الأسلوب اعتمادًا على ما إذا كانت هذه الصفحة داعمة لـ AMP أو غير ذلك.
 
-<amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
-  <noscript><img alt="مثال على كيفية إنشاء تحليل ping يحتوي على معرف من السياق السابق المقدم عبر عنوان URL ومعرف من السياق الحالي" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
+<amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
+  <noscript><img alt="مثال على كيفية إنشاء تحليل ping يحتوي على معرف من السياق السابق المقدم عبر عنوان URL ومعرف من السياق الحالي" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
 
 _تحديثات صفحة AMP:_ استخدم ميزة استبدال "معلمة الاستفسار" في تهيئة amp-analytics للحصول على قيمة المعرف `ref_id` داخل عنوان URL. تأخذ ميزة "معلمة الاستفسار" معلمة تشير إلى "مفتاح" زوج القيمة الرئيسية المطلوب في عنوان URL وتعيد القيمة المقابلة. استخدم ميزة معرّف العميل كما فعلنا للحصول على المعرّف لسياق صفحة AMP.
 
@@ -595,7 +595,7 @@ https://example.com/step2.html?orig_user_id=$malicious_value
 
 على إحدى الصفحات التي لا تدعم AMP، تحقق من `مرجع المستند` مباشرةً من جانب العميل أو مرِّر القيمة كجزء من اختبار ping للتحليلات لتتمكّن من التحقق من صحة جانب الخادم. إذا كانت قيمة المرجع واحدة يمكنك الوثوق بها، فيمكنك قبول القيم التي نشأت من عنوان URL للصفحة المقصودة ومعالجتها، مثل `orig_user_id` في المثال الوارد أعلاه.
 
-على إحدى صفحات AMP، استخدم المتغير البديل [مرجع المستند](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#document-referrer) substitution لتمرير قيمة المرجع كجزء من اختبار ping للتحليلات. المعالجة من جانب الخادم هي الخيار الوحيد المتوفر. للتوضيح، في ما يلي اختبار ping للتحليلات يمكن أن ترسله الصفحة المقصودة والذي يحتوي على (1) قيمة معرّف العميل للصفحة الحالية، (2) قيمة تم تمريرها من خلال عنوان URL الذي أعددناه ليكون قيمة معرّف العميل في الإحالة الصفحة و(3) معلومات المرجع نفسها للتحقق من قيمة (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
+على إحدى صفحات AMP، استخدم المتغير البديل [مرجع المستند](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md#document-referrer) substitution لتمرير قيمة المرجع كجزء من اختبار ping للتحليلات. المعالجة من جانب الخادم هي الخيار الوحيد المتوفر. للتوضيح، في ما يلي اختبار ping للتحليلات يمكن أن ترسله الصفحة المقصودة والذي يحتوي على (1) قيمة معرّف العميل للصفحة الحالية، (2) قيمة تم تمريرها من خلال عنوان URL الذي أعددناه ليكون قيمة معرّف العميل في الإحالة الصفحة و(3) معلومات المرجع نفسها للتحقق من قيمة (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
 
 إذا كان لا يمكنك الوثوق بالمرجع، ارفض أي قيم يتم توفيرها عبر معلمات URL ولا تستخدمها.
 

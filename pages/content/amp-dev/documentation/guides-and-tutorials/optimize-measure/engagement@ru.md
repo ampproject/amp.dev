@@ -42,6 +42,6 @@ formats:
 
 - **Просматривайте [дорожную карту](../../../community/roadmap.html) AMP, чтобы быть в курсе** обновлений и новых функций.
 
-- **Принимайте участие.** Делайте свой вклад в исходный код, сообщайте об ошибках или оставляйте отзывы на [GitHub](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md). Делитесь своим мнением об AMP на [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
+- **Принимайте участие.** Делайте свой вклад в исходный код, сообщайте об ошибках или оставляйте отзывы на [GitHub](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md). Делитесь своим мнением об AMP на [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 
 - **Узнайте,** как использовать компоненты AMP в разделе [Примеры](../../../documentation/examples/index.html).

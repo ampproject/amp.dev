@@ -66,7 +66,7 @@ AMP HTML 文档必须满足以下条件：
 [tip type="read-on"]请访问以下资源了解详情：
 
 - [针对 Google 搜索完善 AMP 内容](https://developers.google.com/amp/docs) - 了解如何使 AMP 网页符合在 Google 搜索结果中显示的条件。
-- [元数据示例](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - 详细了解您会在其他各个位置（例如 Twitter）中用到的所有元数据。
+- [元数据示例](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples) - 详细了解您会在其他各个位置（例如 Twitter）中用到的所有元数据。
   [/tip]
 
 <hr>

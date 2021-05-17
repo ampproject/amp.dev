@@ -47,7 +47,7 @@ Yukarıdaki kodda, `type` özniteliği, bu durumda A9 olan reklam ağını belir
 Reklam sunucunuzdan AMPHTML reklamları sunmak için aşağıdakileri içeren bir Hızlı Getirme entegrasyonu sağlamalısınız:
 
 1. SSL ağ iletişimini destekleme.
-2. Reklam isteğini oluşturmak için JavaScript sağlama (örnek uygulamalar: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) ve [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
+2. Reklam isteğini oluşturmak için JavaScript sağlama (örnek uygulamalar: [AdSense](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-adsense-impl) ve [DoubleClick](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-doubleclick-impl)).
 3. Bir doğrulama hizmeti aracılığıyla reklam öğesini doğrulama ve imzalama. [Cloudflare](https://blog.cloudflare.com/firebolt/), herhangi bir bağımsız reklam sağlayıcısının daha hızlı, daha hafif ve daha ilgi çekici reklamlar sunmasını sağlayan bir AMP reklam doğrulama hizmeti sağlar.
 
 Bir Hızlı Getirme entegrasyonu oluşturmayla ilgili talimatlar için [Hızlı Getirme Ağa Uygulama Kılavuzu'na bakın](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md).

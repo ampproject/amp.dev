@@ -29,7 +29,7 @@ AMP 分析可让您根据自己配置的触发条件将事件发送回服务器�
 
 ## 4. 添加新的扩展组件/内嵌组件
 
-如果您的用例无法通过使用 [`amp-analytics`](../../../components/reference/amp-analytics.md) [`amp-pixel`](../../../components/reference/amp-pixel.md) 或 [`amp-ad`](../../../components/reference/amp-ad.md) 来实现，请开设一个 [GitHub 问题](https://github.com/ampproject/amphtml/issues/new)以探讨替代方案。欢迎大家踊跃贡献可被众多不同公司广泛采用的新扩展组件。有关详情，请参阅[贡献扩展组件](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#contributing-extended-components)部分。
+如果您的用例无法通过使用 [`amp-analytics`](../../../components/reference/amp-analytics.md) [`amp-pixel`](../../../components/reference/amp-pixel.md) 或 [`amp-ad`](../../../components/reference/amp-ad.md) 来实现，请开设一个 [GitHub 问题](https://github.com/ampproject/amphtml/issues/new)以探讨替代方案。欢迎大家踊跃贡献可被众多不同公司广泛采用的新扩展组件。有关详情，请参阅[贡献扩展组件](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#contributing-extended-components)部分。
 
 ## 5. 使用 amp-iframe
 
@@ -41,7 +41,7 @@ AMP 分析可让您根据自己配置的触发条件将事件发送回服务器�
 
 例如，动态来电跟踪即是 AMP 中尚未支持的一个用例，但我们正在[积极地与社区合作](https://github.com/ampproject/amphtml/issues/5276)来添加这项支持。
 
-如果您有任何问题或建议，欢迎随时[提出问题](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#filing-issues)或通过我们的任一[讨论渠道](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#discussion-channels)与我们联系。
+如果您有任何问题或建议，欢迎随时[提出问题](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#filing-issues)或通过我们的任一[讨论渠道](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#discussion-channels)与我们联系。
 
 ## 其他资源
 

@@ -61,7 +61,7 @@ Mustache est une syntaxe de modèle sans logique. Pour plus d'informations, cons
 
 ## Utilisation <a name="usage"></a>
 
-Le modèle `amp-mustache` doit être défini et utilisé conformément aux [spécifications du modèle AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-html-templates.md).
+Le modèle `amp-mustache` doit être défini et utilisé conformément aux [spécifications du modèle AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-templates.md).
 
 Tout d'abord,`amp-mustache` doit être déclaré et chargé comme suit :
 

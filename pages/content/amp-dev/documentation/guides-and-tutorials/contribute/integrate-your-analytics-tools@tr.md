@@ -19,7 +19,7 @@ Analiz hizmetinizi AMP HTML çalışma zamanına eklemeden önce şunları yapma
 
 - Analiz hizmetiniz için bir AMP HTML belgesinde ihtiyaç duyacağınız [değişken](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md) ve [istek](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-analytics.md#requests) türlerini tanımlamak.
 - Hizmetinizle ilgili olabilecek bir sayfadan analiz isteklerinin gönderilmesine neden olan tetikleyicileri belirlemek.
-- Birinci ve üçüncü taraf AMP bağlamları boyuna [kullanıcıları nasıl takip edeceğinizi veya takip edip etmeyeceğinizi](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md) hesaba katmak.
+- Birinci ve üçüncü taraf AMP bağlamları boyuna [kullanıcıları nasıl takip edeceğinizi veya takip edip etmeyeceğinizi](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md) hesaba katmak.
 - Analiz panelinizin AMP trafiğini nasıl işlediğini belirlemek.
 - `amp-analytics` içindeki eksik işlevleri belirlemek ve gerekli özellikler için [istekte bulunmak](https://github.com/ampproject/amphtml/issues/new).
 - AMP Analytics, değişkenlerini, önceden yapılandırılmış bir uç noktaya gönderir. Halihazırda mevcut bir uç noktanız yoksa, nasıl oluşturulacağına dair genel bir bakış için [bu örneği inceleyin](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample).
@@ -29,7 +29,7 @@ Analiz hizmetinizi AMP HTML çalışma zamanına eklemeden önce şunları yapma
 
 ## Yapılandırmanızı AMP HTML çalışma zamanına ekleme<a name="adding-your-configuration-to-the-amp-html-runtime"></a>
 
-1. Analiz hizmetinizin yapılandırmasını AMP HTML'nin çalışma zamanına ekleyeceğinizi belirten bir [Uygulama Amacı konusu](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features) oluşturun. Açıklamanıza **cc @ampproject/wg-analytics**'i eklediğinizden emin olun.
+1. Analiz hizmetinizin yapılandırmasını AMP HTML'nin çalışma zamanına ekleyeceğinizi belirten bir [Uygulama Amacı konusu](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../docs/contributing.md#contributing-features) oluşturun. Açıklamanıza **cc @ampproject/wg-analytics**'i eklediğinizden emin olun.
 2. Aşağıdakileri uygulayan bir yama geliştirin:
    1. A new configuration json file <code>${vendorName}.json</code> in the vendors <a>folder</a> including any options above and beyond the default, such as:
       1. `"vars": {}` ek varsayılan değişkenler için.
@@ -66,7 +66,7 @@ Bu yaklaşımı benimsemek için, yayıncıların AMP Analytics ile entegrasyonu
 ## Diğer Kaynaklar<a name="further-resources"></a>
 
 - Ayrıntılı İnceleme: [Neden sadece bir iframe kullanılmıyor?](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/why-not-iframe.md)
-- Ayrıntılı İnceleme: [Kimliği doğrulanmamış kullanıcı durumunu AMP ile yönetme](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md)
+- Ayrıntılı İnceleme: [Kimliği doğrulanmamış kullanıcı durumunu AMP ile yönetme](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md)
 - [amp-analytics örneği](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
 - [amp-analytics](https://amp.dev/documentation/components/amp-analytics) referans belgeleri
 - [amp-analytics değişkenleri](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md) referans belgeleri

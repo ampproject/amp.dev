@@ -91,7 +91,7 @@ Ví dụ:
 
 [/sourcecode]
 
-Xem thêm ví dụ ở [thư mục ví dụ ampproject](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), bao gồm cú pháp thuộc tính HTML thay thế.
+Xem thêm ví dụ ở [thư mục ví dụ ampproject](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples), bao gồm cú pháp thuộc tính HTML thay thế.
 
 [tip type="read-on"] Truy cập những nguồn này để biết thêm thông tin về dữ liệu có cấu trúc:
 

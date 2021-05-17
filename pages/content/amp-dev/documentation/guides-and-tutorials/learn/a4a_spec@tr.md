@@ -98,7 +98,7 @@ Ayrıca, reklam öğelerinin aşağıdaki kurallara uyması gerekir:
 
 ### Ortak Metin <a name="boilerplate"></a>
 
-AMPHTML reklam öğeleri [genel AMP belgelerindekinden](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md) farklı ve çok daha basit bir ortak metin stil satırı gerektirir:
+AMPHTML reklam öğeleri [genel AMP belgelerindekinden](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md) farklı ve çok daha basit bir ortak metin stil satırı gerektirir:
 
 [sourcecode:html]
 
@@ -114,7 +114,7 @@ _Gerekçe:_ `amp-boilerplate` stili, AMP çalışma zamanı hazır olana ve onu 
 
 Son olarak, AMPHTML reklam ortak metni, `amp-boilerplate` yerine `amp-a4a-boilerplate` kullanır böylece doğrulayıcılar onu kolayca tespit edebilir ve geliştiricilere yardım etmek için doğru hata mesajları üretebilir.
 
-[Genel AMP ortak metin](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md) kurallarının aynısının, ortak metin içeriğindeki değişikliklere uygulandığını unutmayın.
+[Genel AMP ortak metin](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md) kurallarının aynısının, ortak metin içeriğindeki değişikliklere uygulandığını unutmayın.
 
 ### CSS <a name="css"></a>
 

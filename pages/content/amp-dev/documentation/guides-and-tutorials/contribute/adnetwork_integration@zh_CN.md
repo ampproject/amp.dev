@@ -54,7 +54,7 @@ formats:
 要从您的广告服务器投放 AMPHTML 广告，您必须提供满足以下条件的“快速获取”集成：
 
 1. 支持 SSL 网络通信。
-2. 提供 JavaScript 以构建广告请求（示例实现：[AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) 和 [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)）。
+2. 提供 JavaScript 以构建广告请求（示例实现：[AdSense](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-adsense-impl) 和 [DoubleClick](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-doubleclick-impl)）。
 3. 通过验证服务验证广告素材并进行签名。[Cloudflare](https://blog.cloudflare.com/firebolt/) 提供 AMP 广告验证服务，使所有独立广告提供商都能提供更快速、更精简且更具吸引力的广告。
 
 有关创建“快速获取”集成的说明，请参阅[快速获取网络实现指南](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md)。

@@ -85,7 +85,7 @@ article {
 </header>
 ```
 
-在上面的代码中，我们通过 [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) 元素（由 `sidebar1` ID 标识）的 [`on`](https://github.com/ampproject/amphtml/blob/main/spec/amp-actions-and-events.md) 操作属性来 `toggle` 边栏。下面我们来添加边栏。
+在上面的代码中，我们通过 [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) 元素（由 `sidebar1` ID 标识）的 [`on`](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-actions-and-events.md) 操作属性来 `toggle` 边栏。下面我们来添加边栏。
 
 **添加**以下 HTML（使其紧跟在 `</header>` 后面）：
 

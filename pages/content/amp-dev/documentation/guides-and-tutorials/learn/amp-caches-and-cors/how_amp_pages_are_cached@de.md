@@ -31,13 +31,13 @@ Derzeit gibt es zwei Anbieter von AMP Cache:
 - [Google AMP Cache](https://developers.google.com/amp/cache/)
 - [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
-AMP ist ein offenes Ökosystem und das AMP Projekt fördert aktiv die Entwicklung weiterer AMP Caches. Informationen zum Erstellen von AMP Caches findest du in den [Richtlinien zu AMP Caches](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md).
+AMP ist ein offenes Ökosystem und das AMP Projekt fördert aktiv die Entwicklung weiterer AMP Caches. Informationen zum Erstellen von AMP Caches findest du in den [Richtlinien zu AMP Caches](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md).
 
 ## Wie wähle ich einen AMP Cache?
 
 Als Publisher wählst du den AMP Cache nicht selbst. _Die Plattform_, die auf deine Inhalte verweist, wählt bei Bedarf den zu verwendenden AMP Cache.
 
-Das ist eine Umkehrung des typischen Modells, bei dem die Bereitstellung von Inhalten in der Verantwortung des Publishers liegt. Mit diesem Modell können Plattformen ihren Benutzern jedoch eine vorhersehbare Auslastung bieten und unter anderem die erforderlichen Invarianten für Sicherheit und Datenschutz während der Pre-Rendering Phase von AMP sicherstellen. Informationen zu den strengen Richtlinien zum Erstellen von AMP Caches findest du in den [Richtlinien zum AMP Cache](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md).
+Das ist eine Umkehrung des typischen Modells, bei dem die Bereitstellung von Inhalten in der Verantwortung des Publishers liegt. Mit diesem Modell können Plattformen ihren Benutzern jedoch eine vorhersehbare Auslastung bieten und unter anderem die erforderlichen Invarianten für Sicherheit und Datenschutz während der Pre-Rendering Phase von AMP sicherstellen. Informationen zu den strengen Richtlinien zum Erstellen von AMP Caches findest du in den [Richtlinien zum AMP Cache](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md).
 
 ## Kann ich das Caching umgehen?
 
@@ -67,6 +67,6 @@ Wenn du das AMP Format verwendest, stellst du deine Inhalte AMP Caches zur Zwisc
 
 ## Zusätzliche Ressourcen
 
-- [Richtlinien für den AMP Cache des AMP Projekts](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md)
+- [Richtlinien für den AMP Cache des AMP Projekts](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md)
 - [Übersicht über den Google AMP Cache](https://developers.google.com/amp/cache/overview)
 - [Bing AMP Cache Dokumentation](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)

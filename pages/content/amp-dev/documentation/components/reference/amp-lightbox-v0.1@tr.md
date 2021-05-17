@@ -152,7 +152,7 @@ Aşağıdaki örneklerde, bir güvenilir iframe ve bir üçüncü taraf iframe i
 
 ##### Güvenilir iframe'lerde (ör. AMP önbelleğinden gelmektedir) <a name="on-friendly-iframes-eg-coming-from-an-amp-cache"></a>
 
-<amp-img alt="güvenilir iframe içindeki lightbox reklamı" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-fie.gif" layout="fixed">
+<amp-img alt="güvenilir iframe içindeki lightbox reklamı" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/spec/img/lightbox-ad-fie.gif" layout="fixed">
   <noscript>
     <img alt="güvenilir iframe içindeki lightbox reklamı" src="../../spec/img/lightbox-ad-fie.gif">
     </noscript>
@@ -160,7 +160,7 @@ Aşağıdaki örneklerde, bir güvenilir iframe ve bir üçüncü taraf iframe i
 
 ##### Üçüncü taraf iframe'lerde (ör. AMP önbelleği dışındadır) <a name="on-third-party-iframes-eg-outside-the-amp-cache"></a>
 
-<amp-img alt="3p iframe içindeki lightbox reklamı" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-3p.gif" layout="fixed">
+<amp-img alt="3p iframe içindeki lightbox reklamı" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/spec/img/lightbox-ad-3p.gif" layout="fixed">
   <noscript>
     <img alt="3p iframe içindeki lightbox reklamı" src="../../spec/img/lightbox-ad-3p.gif">
     </noscript>

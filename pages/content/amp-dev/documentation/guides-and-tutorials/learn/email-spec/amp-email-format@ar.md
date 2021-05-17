@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -33,7 +33,7 @@ limitations under the License.
 
 تمثل AMP تقنية تختص بتطوير صفحات ويب فائقة السرعة لعملاء الأجهزة المحمولة. وتعد AMP مجموعة من علامات HTML المدعومة بـ JavaScript والتي تتيح الوظائف بسهولة مع التركيز الإضافي على الأداء والأمان. ويوجد [مكونات AMP](https://amp.dev/documentation/components/) لكل شيء بدء من وحدات العرض الدوار، ومرورًا بعناصر نماذج الاستجابة، وحتى استلام محتوى حديث من نقاط النهاية البعيدة.
 
-يوفر تنسيق AMP للبريد الإلكتروني [مجموعة فرعية من مكونات AMP](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-components.md) التي يمكنك استخدامها في رسائل البريد الإلكتروني. ويمكن لمستلمي رسائل AMP الإلكترونية عرض مكونات AMP والتفاعل معها مباشرة في البريد الإلكتروني.
+يوفر تنسيق AMP للبريد الإلكتروني [مجموعة فرعية من مكونات AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md) التي يمكنك استخدامها في رسائل البريد الإلكتروني. ويمكن لمستلمي رسائل AMP الإلكترونية عرض مكونات AMP والتفاعل معها مباشرة في البريد الإلكتروني.
 
 ## لغة الترميز المطلوبة
 
@@ -73,21 +73,21 @@ limitations under the License.
 
 يعتمد AMP للبريد الإلكتروني على النوع الفرعي `multipart/alternative` من [MIME](https://en.wikipedia.org/wiki/MIME)، كما هو محدد في [RFC 1521، القسم 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-_لمزيد من المعلومات، راجع [الهيكل والعرض لرسائل AMP الإلكترونية](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-structure.md)._
+_لمزيد من المعلومات، راجع [الهيكل والعرض لرسائل AMP الإلكترونية](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-structure.md)._
 
 ## مكونات AMP المدعومة<a name="supported-amp-components"></a>
 
-_راجع [المكونات المدعومة مع AMP للبريد الإلكتروني](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-components.md)._
+_راجع [المكونات المدعومة مع AMP للبريد الإلكتروني](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md)._
 
 ## متطلباتHTML <a name="html-requirements"></a>
 
-_راجع [HTML المدعوم في AMP للبريد الإلكتروني](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-html.md)._
+_راجع [HTML المدعوم في AMP للبريد الإلكتروني](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-html.md)._
 
 ## متطلبات CSS<a name="css-requirements"></a>
 
 ### المحددات والخواص المدعومة <a name="supported-selectors-and-properties"></a>
 
-_راجع [CSS المدعومة في AMP للبريد الإلكتروني](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-css.md)._
+_راجع [CSS المدعومة في AMP للبريد الإلكتروني](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-css.md)._
 
 ### تحديد CSS في مستند AMP<a name="specifying-css-in-an-amp-document"></a>
 
@@ -151,4 +151,4 @@ _راجع [CSS المدعومة في AMP للبريد الإلكتروني](http
 
 ## التعقيبات والدعم <a name="feedback--support"></a>
 
-للحصول على دعم وتقديم تعقيبات بشأن AMP للبريد الإلكتروني، يرجى استخدام القناة التالية: [المشاركة المستمرة](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#ongoing-participation)
+للحصول على دعم وتقديم تعقيبات بشأن AMP للبريد الإلكتروني، يرجى استخدام القناة التالية: [المشاركة المستمرة](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#ongoing-participation)

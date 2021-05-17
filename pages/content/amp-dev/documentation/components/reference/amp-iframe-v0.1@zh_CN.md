@@ -49,7 +49,7 @@ limitations under the License.
 * `amp-iframe` 不能靠近文档顶部（使用 `placeholder` 的 iframe 除外，如[下](#iframe-with-placeholder)所述）。iframe 必须与文档顶部相距 600 像素，或者滚动到顶部时不在视口的前 75% 范围内，以较小距离为准。
 * 默认情况下，amp-iframe 已经过沙盒化（查看[详细信息](#sandbox)）。
 * `amp-iframe` 只能通过 HTTPS、数据-URI 或 `srcdoc` 属性请求资源。
-* `amp-iframe` 与容器不得同源，除非两者在 `sandbox` 属性中均不支持 `allow-same-origin`。如需详细了解 iframe 支持的来源，请参阅[“iframe 来源政策”](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md)文档。
+* `amp-iframe` 与容器不得同源，除非两者在 `sandbox` 属性中均不支持 `allow-same-origin`。如需详细了解 iframe 支持的来源，请参阅[“iframe 来源政策”](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md)文档。
 
 *示例：在 amp-iframe 中嵌入 Google 地图*
 

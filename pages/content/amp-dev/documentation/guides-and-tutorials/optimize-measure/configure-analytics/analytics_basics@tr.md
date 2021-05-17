@@ -59,7 +59,7 @@ AMP sayfanızın gövdesine aşağıdakine benzer bir şey ekleyin:
 Bu örnekte,
 sayfa görünümü verileri rastgele bir sayıyla birlikte tanımlanan URL›ye gönderilir.
 `RANDOM` değişkeni,
-[AMP platformundaki değiştirme değişkenlerinden](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) bir tanesidir.
+[AMP platformundaki değiştirme değişkenlerinden](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) bir tanesidir.
 
 [Değişken değiştirme](analytics_basics.md) hakkında buradan daha fazla bilgi edinebilirsiniz.
 
@@ -119,7 +119,7 @@ Tetikleme sayfa görüntüleme isteği uyarısının ne zaman çıkacağını be
 Hem [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) hem de
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) bileşenleri
 standart URL değişken değiştirmelerin tamamına izin verir (bkz.
-[AMP HTML Değişken Değiştirme](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)).
+[AMP HTML Değişken Değiştirme](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)).
 Aşağıdaki örnekte,
 sayfa görünümü isteği
 mevcut AMP belgelerinin standart URL›si, başlığı ve bir

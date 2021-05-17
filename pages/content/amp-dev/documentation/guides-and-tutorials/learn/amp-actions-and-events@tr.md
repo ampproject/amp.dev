@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-actions-and-events.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-actions-and-events.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -32,7 +32,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-[tip type="note"] Bu belgeleme web siteleri, hikayeler ve reklamlar için eylemleri ve olayları kapsar. AMP e-posta biçimi için [AMP e-postasında eylemler ve olaylar](https://github.com/ampproject/amphtml/blob/main/spec/amp-email-actions-and-events.md) sayfasını okuyun. [/tip]
+[tip type="note"] Bu belgeleme web siteleri, hikayeler ve reklamlar için eylemleri ve olayları kapsar. AMP e-posta biçimi için [AMP e-postasında eylemler ve olaylar](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-email-actions-and-events.md) sayfasını okuyun. [/tip]
 
 `on` özniteliği, öğelerde olay işleyicisi yüklemek için kullanılır. Desteklenen olaylar, öğelere bağlıdır.
 
@@ -240,7 +240,7 @@ Bir öğe ancak önceden `hide` veya `toggleVisibility` eylemiyle gizlenmişse y
   <tr>
     <td><code>changeToLayoutContainer</code></td>
     <td>
-<a href="https://github.com/ampproject/amphtml/blob/main/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">Dinamik yeniden boyutlandırmaya</a> izin vermek için <code>amp-list</code> yerleşimini <code>layout="CONTAINTER"</code> olarak günceller.</td>
+<a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">Dinamik yeniden boyutlandırmaya</a> izin vermek için <code>amp-list</code> yerleşimini <code>layout="CONTAINTER"</code> olarak günceller.</td>
   </tr>
   <tr>
     <td> <code>fetch-error</code>(düşük güven)</td>
@@ -683,7 +683,7 @@ Aşağıdakiler, AMP sistemi tarafından sağlanan ve özel gereksinimleri olan 
   <tr>
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
-      <p>Navigates current window to given URL, to the optional specified target if given (currenly only supporting <code>_top</code> and <code>_blank </code>). The optional <code>opener</code> parameter can be specified when using a target of <code>_blank</code> to allow the newly opened page to access <a><code>window.opener</code></a>. Supports <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md">standard URL substitutions</a>.</p>
+      <p>Navigates current window to given URL, to the optional specified target if given (currenly only supporting <code>_top</code> and <code>_blank </code>). The optional <code>opener</code> parameter can be specified when using a target of <code>_blank</code> to allow the newly opened page to access <a><code>window.opener</code></a>. Supports <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">standard URL substitutions</a>.</p>
       <p><strong>Caveat:</strong> Using normal <code>&lt;a></code> links is recommended wherever possible since <code>AMP.navigateTo</code> is not recognized by web crawlers.</p>
     </td>
   </tr>

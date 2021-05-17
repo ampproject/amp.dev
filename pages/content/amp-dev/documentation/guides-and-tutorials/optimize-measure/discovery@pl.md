@@ -91,7 +91,7 @@ Przykład:
 
 [/sourcecode]
 
-Więcej przykładów można znaleźć w [folderze ampproject examples](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), włącznie z alternatywną składnią atrybutu HTML).
+Więcej przykładów można znaleźć w [folderze ampproject examples](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples), włącznie z alternatywną składnią atrybutu HTML).
 
 [tip type="read-on"] Odwiedź te zasoby, aby uzyskać więcej informacji na temat danych strukturalnych:
 

@@ -162,7 +162,7 @@ teaser:
 
 ##### إطارات iframe صديقة (من ذاكرة التخزين المؤقت لصفحات AMP مثلاً) <a name="on-friendly-iframes-eg-coming-from-an-amp-cache"></a>
 
-<amp-img alt="إعلان العرض المبسط في إطار iframe صديق" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-fie.gif" layout="fixed">
+<amp-img alt="إعلان العرض المبسط في إطار iframe صديق" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/spec/img/lightbox-ad-fie.gif" layout="fixed">
 <noscript>
 <img alt="إعلان العرض المبسط في إطار iframe صديق" src="../../spec/img/lightbox-ad-fie.gif">
 </noscript>
@@ -170,7 +170,7 @@ teaser:
 
 ##### إطارات iframe خارجية (من خارج ذاكرة التخزين المؤقت لصفحات AMP مثلاً) <a name="on-third-party-iframes-eg-outside-the-amp-cache"></a>
 
-<amp-img alt="إعلان العرض المبسط في إطار iframe خارجي" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-3p.gif" layout="fixed">
+<amp-img alt="إعلان العرض المبسط في إطار iframe خارجي" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/spec/img/lightbox-ad-3p.gif" layout="fixed">
 <noscript>
 <img alt="إعلان العرض المبسط في إطار iframe خارجي" src="../../spec/img/lightbox-ad-3p.gif">
 </noscript>

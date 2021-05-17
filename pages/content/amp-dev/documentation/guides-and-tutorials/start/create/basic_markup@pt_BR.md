@@ -66,7 +66,7 @@ Além dos requisitos básicos, nosso exemplo também inclui a definição da Sch
 [tip type="read-on"] Acesse estes recursos para saber mais:
 
 - [Primeiros passos com as AMP na Busca Google](https://developers.google.com/amp/docs): aprenda a preparar as páginas AMP para a Pesquisa Google.
-- [Amostras de metadados](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples): saiba mais sobre todos os metadados necessários em outros lugares, por exemplo, no Twitter. [/tip]
+- [Amostras de metadados](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples): saiba mais sobre todos os metadados necessários em outros lugares, por exemplo, no Twitter. [/tip]
 
 <hr>
 

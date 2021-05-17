@@ -15,7 +15,7 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-AMP HTML 통합을 고려하는 광고 기술 제공업체라면 아래 가이드라인을 확인해 보세요. 최소 지연 시간과 높은 품질을 확보하려면 AMP 오픈소스 프로젝트에 Pull 요청을 제출하기 전 [이곳](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads)에 열거된 지침을 따르시는 편이 좋습니다. AMP 기여 방법과 관련한 일반 가이드는 [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../CONTRIBUTING.md) 페이지를 참조하세요.
+AMP HTML 통합을 고려하는 광고 기술 제공업체라면 아래 가이드라인을 확인해 보세요. 최소 지연 시간과 높은 품질을 확보하려면 AMP 오픈소스 프로젝트에 Pull 요청을 제출하기 전 [이곳](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads)에 열거된 지침을 따르시는 편이 좋습니다. AMP 기여 방법과 관련한 일반 가이드는 [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../docs/contributing.md) 페이지를 참조하세요.
 
 ## 광고 서버<a name="ad-server"></a>
 

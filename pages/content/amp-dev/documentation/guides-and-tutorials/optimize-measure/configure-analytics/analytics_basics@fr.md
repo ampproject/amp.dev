@@ -135,7 +135,7 @@ Si vous souhaitez aller au-delà de ce que la configuration par défaut peut vou
 
 ## Substitution des variables <a name="user-identification"></a>
 
-Les composants [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) et [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) autorisent toutes les substitutions de variables d'URL standard (voir [Substitutions de variables HTML AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)). Dans l'exemple suivant, la demande de vue de page est envoyée à l'URL, avec l'URL canonique du document AMP actuel, son titre et un [ID client](analytics_basics.md#user-identification):
+Les composants [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) et [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) autorisent toutes les substitutions de variables d'URL standard (voir [Substitutions de variables HTML AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)). Dans l'exemple suivant, la demande de vue de page est envoyée à l'URL, avec l'URL canonique du document AMP actuel, son titre et un [ID client](analytics_basics.md#user-identification):
 
 ```html
 <amp-pixel
@@ -179,7 +179,7 @@ Dans l'exemple ci-dessus, les variables `account` et `title` sont définis dans 
 
 ## Identification des utilisateurs <a name="user-identification"></a>
 
-Les sites Web utilisent des cookies pour stocker des informations spécifiques sur un utilisateur dans le navigateur. Les cookies peuvent être utilisés pour indiquer qu'un utilisateur a déjà visité un site. Dans AMP, les pages peuvent être diffusées à partir du site Web d'un éditeur ou d'un cache (comme Google AMP Cache). Le site Web de l'éditeur et le cache sont susceptibles d'avoir des domaines différents. Pour des raisons de sécurité, les navigateurs peuvent (et vont souvent) limiter l'accès aux cookies d'un autre domaine (voir aussi [Suivi des utilisateurs selon les origines](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md)).
+Les sites Web utilisent des cookies pour stocker des informations spécifiques sur un utilisateur dans le navigateur. Les cookies peuvent être utilisés pour indiquer qu'un utilisateur a déjà visité un site. Dans AMP, les pages peuvent être diffusées à partir du site Web d'un éditeur ou d'un cache (comme Google AMP Cache). Le site Web de l'éditeur et le cache sont susceptibles d'avoir des domaines différents. Pour des raisons de sécurité, les navigateurs peuvent (et vont souvent) limiter l'accès aux cookies d'un autre domaine (voir aussi [Suivi des utilisateurs selon les origines](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md)).
 
 Par défaut, AMP gère la fourniture d'un ID client, que la page soit accessible depuis le site Web d'origine de l'éditeur ou via un cache. L'ID client généré par AMP a une valeur de `"amp-"` suivi d'une chaîne aléatoire encodée en `base64` et reste le même pour l'utilisateur si ce même utilisateur visite à nouveau.
 

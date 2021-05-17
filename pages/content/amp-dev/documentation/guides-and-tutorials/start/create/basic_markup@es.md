@@ -66,7 +66,7 @@ Además de los requisitos básicos, nuestra muestra también incluye una definic
 [tip type="read-on"] Visite estos recursos para obtener más información:
 
 - [Empezar a utilizar AMP en Google Search](https://developers.google.com/amp/docs): descubra cómo preparar sus páginas AMP para que se muestren en Google Search.
-- [Muestras de metadatos](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples): consulte más información sobre los metadatos que necesitará en otros lugares (por ejemplo, Twitter). [/tip]
+- [Muestras de metadatos](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples): consulte más información sobre los metadatos que necesitará en otros lugares (por ejemplo, Twitter). [/tip]
 
 <hr>
 

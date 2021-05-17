@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-html-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -188,7 +188,7 @@ limitations under the License.
 - <a name="chrs"></a>تحتوي على علامة `<meta charset="utf-8">` كفرع أول لعلامة الرأس الخاصة بها. [🔗](#chrs)
 - <a name="vprt"></a>تحتوي على علامة `<meta name="viewport" content="width=device-width">` داخل علامة رأسها. ويوصى أيضًا بتضمين`minimum-scale=1` و`initial-scale=1`. [🔗](#vprt)
 - <a name="scrpt"></a>تحتوي على علامة `<script async src="https://cdn.ampproject.org/v0.js"></script>` داخل علامة الرأس الخاصة بها. [🔗](#scrpt)
-- <a name="boilerplate"></a>تحتوي [ على رمز فقرة AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md) (`head > style[amp-boilerplate]` و`noscript > style[amp-boilerplate]` في علامة رؤوسهم. [🔗](#boilerplate)
+- <a name="boilerplate"></a>تحتوي [ على رمز فقرة AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md) (`head > style[amp-boilerplate]` و`noscript > style[amp-boilerplate]` في علامة رؤوسهم. [🔗](#boilerplate)
 
 ### بيانات التعريف<a name="metadata"></a>
 
@@ -299,7 +299,7 @@ limitations under the License.
   </tr>
 </table>
 
-يجب أن تستخدم تطبيقات مسؤول التحقق من الصحة قائمة بيضاء بناءً على مواصفات HTML5 مع إزالة العلامات أعلاه. راجع [إضافة علامة AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-tag-addendum.md).
+يجب أن تستخدم تطبيقات مسؤول التحقق من الصحة قائمة بيضاء بناءً على مواصفات HTML5 مع إزالة العلامات أعلاه. راجع [إضافة علامة AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-tag-addendum.md).
 
 ### التعليقات<a name="comments"></a>
 
@@ -317,7 +317,7 @@ limitations under the License.
 
 غير مسموح بأسماء فئات AMP الداخلية المسبوقة بـ `-amp-` و`i-amp-` في AMP HTML.
 
-راجع [وثائق AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-css-classes.md) للتعريف على معنى أسماء الفئات المسبوقة بـ `amp-`. إذ يُسمح باستخدام هذه الفئات ويقصد بها السماح بتخصيص بعض ميزات وقت تشغيل AMP وملحقاته.
+راجع [وثائق AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-css-classes.md) للتعريف على معنى أسماء الفئات المسبوقة بـ `amp-`. إذ يُسمح باستخدام هذه الفئات ويقصد بها السماح بتخصيص بعض ميزات وقت تشغيل AMP وملحقاته.
 
 يُسمح بجميع أسماء الفئات المختلقة الأخرى في لغة ترميز AMP HTML.
 
@@ -327,7 +327,7 @@ limitations under the License.
 
 راجع وثائق AMP للحصول على ملحقات معينة قبل استخدام معرِّفات`amp-` و`AMP` لتفادي التعارض مع الميزات التي توفرها هذه الملحقات، مثل `amp-access`.
 
-واعرض القائمة الكاملة لأسماء المعرِّفات غير المسموح بها من خلال البحث عن `mandatory-id-attr` [هنا](https://github.com/ampproject/amphtml/blob/main/spec/../validator/validator-main.protoascii).
+واعرض القائمة الكاملة لأسماء المعرِّفات غير المسموح بها من خلال البحث عن `mandatory-id-attr` [هنا](https://github.com/ampproject/amphtml/blob/main/docs/spec/../validator/validator-main.protoascii).
 
 ### الروابط<a name="links"></a>
 
@@ -449,7 +449,7 @@ limitations under the License.
 
 يستخدم AMP HTML عناصر مخصصة تسمى "مكونات AMP" لاستبدال علامات تحميل الموارد المضمنة مثل `<img>` و`<video>` ولتنفيذ ميزات ذات تفاعلات مركَّبة مثل مكتبات الفيديو أو lightbox للصور.
 
-راجع [مواصفات مكون AMP](https://github.com/ampproject/amphtml/blob/main/spec/./amp-html-components.md) للحصول على مزيد من التفاصيل حول المكونات المدعومة.
+راجع [مواصفات مكون AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-components.md) للحصول على مزيد من التفاصيل حول المكونات المدعومة.
 
 هناك نوعان من مكونات AMP المدعومة:
 
@@ -464,7 +464,7 @@ limitations under the License.
 
 تحدد هذه السمات تخطيط العنصر، حيث إن الهدف الرئيسي هنا عبارة عن ضمان إمكانية عرض العنصر وحجز مساحته على نحو صحيح قبل تنزيل أي من JavaScript أو الموارد عن بُعد.
 
-راجع [نظام تخطيط AMP](https://github.com/ampproject/amphtml/blob/main/spec/./amp-html-layout.md) لمزيد من التفاصيل حول نظام التخطيط.
+راجع [نظام تخطيط AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-layout.md) لمزيد من التفاصيل حول نظام التخطيط.
 
 #### `on` <a name="on"></a>
 
@@ -491,7 +491,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 
 Example: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
-[اقرأ المزيد حول أحداث وإجراءات AMP](https://github.com/ampproject/amphtml/blob/main/spec/./amp-actions-and-events.md).
+[اقرأ المزيد حول أحداث وإجراءات AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-actions-and-events.md).
 
 ### مكونات موسَّعة <a name="extended-components"></a>
 
@@ -525,13 +525,13 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 
 ##### تعيين الإصدار <a name="versioning"></a>
 
-[راجع سياسة تعيين إصدار AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-versioning-policy.md).
+[راجع سياسة تعيين إصدار AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-versioning-policy.md).
 
 ### القوالب <a name="templates"></a>
 
 تعرض القوالب محتوى HTML بناءً على النموذج الخاص باللغة وبيانات JSON المقدمة.
 
-راجع [مواصفات قوالب AMP](https://github.com/ampproject/amphtml/blob/main/spec/./amp-html-templates.md) للحصول على مزيد من التفاصيل حول القوالب المدعومة.
+راجع [مواصفات قوالب AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-templates.md) للحصول على مزيد من التفاصيل حول القوالب المدعومة.
 
 لا يتم نقل النماذج مع وقت تشغيل AMP ويجب تنزيلها تمامًا كما هو الحال مع العناصر الموسَّعة. إذ يتم تحميل المكونات الموسَّعة بتضمين علامة `<script>` في رأس المستند مثل ما يلي:
 
@@ -561,7 +561,7 @@ Hello {% raw %}{{you}}{% endraw %}!
 
 ويعتمد بناء الجملة داخل عنصر القالب على لغة القالب المحددة. على الرغم من ذلك، يمكن تقييد لغة القالب داخل AMP. على سبيل المثال، وفقًا لعنصر "القالب"، يجب أن تكون كل عمليات الإنتاج عبارة عن نموذج كائن مستند صالح جيد التشكيل. إذ تخضع كل مخرجات القالب أيضًا إلى التصحاح لضمان إخراج AMP صالح.
 
-ومن أجل التعرف على بناء الجملة والقيود الخاصة بقالب ما، يرجى زيارة [وثائق القوالب](https://github.com/ampproject/amphtml/blob/main/spec/./amp-html-templates.md#templates).
+ومن أجل التعرف على بناء الجملة والقيود الخاصة بقالب ما، يرجى زيارة [وثائق القوالب](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-templates.md#templates).
 
 ##### عنوان URL <a name="url-1"></a>
 

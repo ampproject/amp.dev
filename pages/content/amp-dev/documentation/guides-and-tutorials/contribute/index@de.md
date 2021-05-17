@@ -28,7 +28,7 @@ Wir hoffen natürlich, dass du dich aktiv an unserer Open Source Community betei
 
 #### Code beitragen
 
-Bevor du das AMP Projekt mit Code unterstützt, lies dir [die Datei CONTRIBUTING](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md) durch. Sie beschreibt den Prozess, den ein Feature oder ein Bugfix vom Entwurf bis zur Einreichung durchläuft. Außerdem erfährst du, wie du an technischen Entwürfen und Diskussionen teilnehmen kannst. Wenn du dich zum ersten Mal an Open Source beteiligst, haben wir hier einige [Tipps für den Anfang](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#contributing-code).
+Bevor du das AMP Projekt mit Code unterstützt, lies dir [die Datei CONTRIBUTING](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md) durch. Sie beschreibt den Prozess, den ein Feature oder ein Bugfix vom Entwurf bis zur Einreichung durchläuft. Außerdem erfährst du, wie du an technischen Entwürfen und Diskussionen teilnehmen kannst. Wenn du dich zum ersten Mal an Open Source beteiligst, haben wir hier einige [Tipps für den Anfang](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#contributing-code).
 
 ### Content Beiträge zu AMP leisten
 

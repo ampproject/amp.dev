@@ -126,4 +126,4 @@ SSP やアド エクスチェンジのリアルタイム ビッダー（RTB）�
 
 *   AMP に関する質問の投稿先には、[Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) をおすすめします。AMP プロジェクト コミュニティのメンバーは、定期的にこのサイトをチェックしているため、短時間で質問への回答を得られる可能性があります。
 *   [Slack の #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) チャネルに参加すると、質問を投稿して問題の解決策や回答を得られます。
-*   AMP のバグを見つけた場合や、AMP の機能をリクエストしたい場合は、[AMP に関する問題を報告](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#reporting-issues-with-amp)する方法についての説明をご覧ください。
+*   AMP のバグを見つけた場合や、AMP の機能をリクエストしたい場合は、[AMP に関する問題を報告](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#reporting-issues-with-amp)する方法についての説明をご覧ください。

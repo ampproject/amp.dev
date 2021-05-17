@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -33,7 +33,7 @@ limitations under the License.
 
 AMP è una popolare tecnologia per lo sviluppo di pagine web molto veloci su client mobili. AMP è costituito da un insieme di tag HTML supportato da JavaScript che consente un'agevole disponibilità delle funzionalità offerte e rivolge un'attenzione particolare alle prestazioni e alla sicurezza. Ci sono [componenti AMP](https://amp.dev/documentation/components/) per le più svariate applicazioni, quale sequenze, elementi di moduli reattivi, recupero di contenuti aggiornati da endpoint remoti.
 
-Il formato AMP per e-mail fornisce [un sottoinsieme di componenti AMP](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-components.md) che possono essere utilizzati nei messaggi e-mail. I destinatari delle e-mail AMP possono visualizzare e interagire con i componenti AMP direttamente nelle e-mail.
+Il formato AMP per e-mail fornisce [un sottoinsieme di componenti AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md) che possono essere utilizzati nei messaggi e-mail. I destinatari delle e-mail AMP possono visualizzare e interagire con i componenti AMP direttamente nelle e-mail.
 
 ## Markup obbligatori
 
@@ -73,21 +73,21 @@ L'intero markup AMPHTML non deve superare i 200.000 byte.
 
 Il formato AMP per E-mail si basa sul sottotipo <a>MIME</a> <code>multipart/alternative</code> standard, come definito nel documento [RFC 1521, sezione 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-_Per ulteriori informazioni, consultare la sezione [Struttura e rendering delle e-mail AMP](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-structure.md)._
+_Per ulteriori informazioni, consultare la sezione [Struttura e rendering delle e-mail AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-structure.md)._
 
 ## Componenti AMP supportati <a name="supported-amp-components"></a>
 
-_Consultare il documento [Componenti supportati da AMP per e-mail](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-components.md)._
+_Consultare il documento [Componenti supportati da AMP per e-mail](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md)._
 
 ## Requisiti HTML <a name="html-requirements"></a>
 
-_Consultare il documento [Elementi HTML supportati in AMP per E-mail](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-html.md)._
+_Consultare il documento [Elementi HTML supportati in AMP per E-mail](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-html.md)._
 
 ## Requisiti CSS <a name="css-requirements"></a>
 
 ### Selettori e proprietà supportati <a name="supported-selectors-and-properties"></a>
 
-_Consultare il documento [Elementi CSS supportati in AMP per E-mail](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-css.md)._
+_Consultare il documento [Elementi CSS supportati in AMP per E-mail](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-css.md)._
 
 ### Inserimento di elementi CSS in un documento AMP <a name="specifying-css-in-an-amp-document"></a>
 
@@ -151,4 +151,4 @@ I reindirizzamenti in [`<amp-form>`](https://amp.dev/documentation/components/am
 
 ## Feedback e assistenza <a name="feedback--support"></a>
 
-Per richieste di assistenza e invio di feedback su AMP per e-mail, potete utilizzare il seguente canale: [ongoing-participation](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#ongoing-participation)
+Per richieste di assistenza e invio di feedback su AMP per e-mail, potete utilizzare il seguente canale: [ongoing-participation](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#ongoing-participation)

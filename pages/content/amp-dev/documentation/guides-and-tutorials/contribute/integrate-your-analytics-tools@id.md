@@ -26,7 +26,7 @@ Sebelum Anda dapat menambahkan layanan analitis Anda ke runtime HTML AMP, Anda m
 
 - Mengidentifikasi jenis [variabel](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md) dan [permintaan](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-analytics.md#requests) yang akan Anda butuhkan di dalam dokumen HTML AMP untuk layanan analitis Anda.
 - Mengidentifikasi pemicu yang akan menghasilkan permintaan analitis dikirimkan dari halaman yang relevan dengan layanan Anda.
-- Mempertimbangkan jika dan bagaimana Anda akan [melacak pengguna](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md) konteks AMP pihak pertama dan pihak ketiga.
+- Mempertimbangkan jika dan bagaimana Anda akan [melacak pengguna](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md) konteks AMP pihak pertama dan pihak ketiga.
 - Menentukan cara dasbor analitis Anda menangani lalu lintas AMP
 - Mengidentifikasi fungsionalitas apa pun yang tidak ada di dalam `amp-analytics`, dan [mengajukan permintaan](https://github.com/ampproject/amphtml/issues/new) untuk fitur-fitur yang dibutuhkan.
 - Analitis AMP mengirimkan variabelnya ke endpoint yang telah dikonfigurasi sebelumnya. Jika Anda belum mempunyai endpoint, kaji [sampel ini](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample) untuk mengetahui gambaran umum tentang cara membuatnya.
@@ -36,9 +36,9 @@ Sebelum Anda dapat menambahkan layanan analitis Anda ke runtime HTML AMP, Anda m
 
 ## Menambahkan konfigurasi Anda ke runtime HTML AMP <a name="adding-your-configuration-to-the-amp-html-runtime"></a>
 
-1. Buat [masalah Rencana yang Ingin Diterapkan](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features) yang menyatakan bahwa Anda akan menambahkan konfigurasi layanan analitis Anda ke runtime HTML AMP. Pastikan untuk menyertakan **cc @ampproject/wg-analytics** di dalam deskripsi Anda.
+1. Buat [masalah Rencana yang Ingin Diterapkan](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../docs/contributing.md#contributing-features) yang menyatakan bahwa Anda akan menambahkan konfigurasi layanan analitis Anda ke runtime HTML AMP. Pastikan untuk menyertakan **cc @ampproject/wg-analytics** di dalam deskripsi Anda.
 2. Kembangkan patch yang akan menerapkan yang berikut ini:
-   1. Sebuah berkas JSON konfigurasi baru `${vendorName}.json` di dalam [folder](https://github.com/ampproject/amphtml/tree/master/extensions/amp-analytics/0.1/vendors) vendor, termasuk opsi apa pun di atas dan luar default, seperti:
+   1. Sebuah berkas JSON konfigurasi baru `${vendorName}.json` di dalam [folder](https://github.com/ampproject/amphtml/tree/main/extensions/amp-analytics/0.1/vendors) vendor, termasuk opsi apa pun di atas dan luar default, seperti:
       1. `"vars": {}` untuk variabel default tambahan.
       2. `"requests": {}` untuk permintaan yang akan digunakan layanan Anda.
       3. `"optout":` jika diperlukan. Saat ini, kami tidak mempunyai sistem penolakan (opt-out) yang bagus, jadi silakan hubungi kami untuk membantu mendesain yang berfungsi dengan baik untuk Anda.
@@ -73,7 +73,7 @@ Untuk mengambil pendekatan ini, kaji dokumentasi untuk integrasi penayang dengan
 ## Sumber Daya Lebih Lanjut <a name="further-resources"></a>
 
 - Kajian Mendalam: [Mengapa tidak menggunakan iframe saja?](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/why-not-iframe.md)
-- Kajian Mendalam: [Mengelola status pengguna yang belum disahkan dengan AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md)
+- Kajian Mendalam: [Mengelola status pengguna yang belum disahkan dengan AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md)
 - [Sampel amp-analytics](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
 - Dokumentasi referensi [amp-analytics](https://amp.dev/documentation/components/amp-analytics)
 - Dokumentasi referensi [variabel amp-analytics](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md)

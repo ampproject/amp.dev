@@ -3478,8 +3478,8 @@ msgstr "<p>Proje herkese açıktır ve projenin mevcut üyeleri, inisiyatif üze
 msgid "How can an advertising or technology vendor get involved in Accelerated Mobile Pages?"
 msgstr "Bir reklam veya teknoloji tedarikçisi Hızlandırılmış Mobil Sayfalara nasıl dahil olabilir?"
 
-msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
-msgstr "<p>Lütfen <a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">katılım kılavuzlarına</a> göz atın ve <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a> yoluyla iletişim kurun.</p>"
+msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
+msgstr "<p>Lütfen <a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">katılım kılavuzlarına</a> göz atın ve <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a> yoluyla iletişim kurun.</p>"
 
 msgid "How does advertising work on Accelerated Mobile Pages?"
 msgstr "Hızlandırılmış Mobil Sayfalarda reklamlar nasıl çalışır?"

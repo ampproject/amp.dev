@@ -650,7 +650,7 @@ O AMP cria lotes XMLHttpRequests (XHRs) em endpoints JSON, ou seja, você pode u
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>O URL do endpoint remoto que retornará o JSON que atualizará esse <code>amp-state</code>. Ele precisa ser um serviço HTTP CORS.
-        O atributo <code>src</code> permite todas as substituições de variáveis de URL padrão. Consulte o <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md">Guia de substituições</a> (em inglês) para ver mais informações.
+        O atributo <code>src</code> permite todas as substituições de variáveis de URL padrão. Consulte o <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">Guia de substituições</a> (em inglês) para ver mais informações.
         [tip type="important"]
       o endpoint precisa implementar os requisitos definidos nas especificações de <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">Solicitações CORS nas AMP</a> (link em inglês).
       [/tip]</td>

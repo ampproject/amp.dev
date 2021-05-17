@@ -16,8 +16,8 @@ Các hướng dẫn và thực hành được gửi trong [Markdown](https://www
 
 Nội dung trên amp.dev được kéo từ hai kho lưu trữ, [amp.dev](https://github.com/ampproject/amp.dev) và [AMPHTML](https://github.com/ampproject/amphtml). Mọi tài liệu tham khảo trong các thành phần đều được kéo từ AMPHTML, từ các thành phần tích hợp hoặc mở rộng.
 
-- [Thành phần tích hợp ](https://github.com/ampproject/amphtml/tree/master/builtins)
-- [Thành phần](https://github.com/ampproject/amphtml/tree/master/extensions)
+- [Thành phần tích hợp ](https://github.com/ampproject/amphtml/tree/main/builtins)
+- [Thành phần](https://github.com/ampproject/amphtml/tree/main/extensions)
 - [Khóa học](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/courses)
 - [Ví dụ](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/examples)
 - [Hướng dẫn & thực hành](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/guides-and-tutorials)

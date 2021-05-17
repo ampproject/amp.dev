@@ -48,4 +48,4 @@ Insert name here
 Please provide an image (min. 800x400 pixels) to appear on the [Tools](https://amp.dev/documentation/tools) page, as well as a short description (max. 100 characters).
 
 #### 4.2 If you chose 2 in Step 4:
-Please provide link(s) to your documentation page(s) on your domain and for ads, the configuration page in the [ads/](https://github.com/ampproject/amphtml/tree/master/ads) folder of the `amphtml` repository.
+Please provide link(s) to your documentation page(s) on your domain and for ads, the configuration page in the [ads/](https://github.com/ampproject/amphtml/tree/main/ads) folder of the `amphtml` repository.

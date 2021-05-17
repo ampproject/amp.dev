@@ -2,7 +2,7 @@
 $title: 試験運用機能
 ---
 
-[AMP 試験運用コンポーネント](https://github.com/ampproject/amphtml/tree/master/tools/experiments)
+[AMP 試験運用コンポーネント](https://github.com/ampproject/amphtml/tree/main/tools/experiments)
 は、一般公開する前の機能としてリリースされており、**試験運用**というステータスの下で保護されています。
 
 デベロッパーやユーザーは、完全リリースされる前のこれらの機能を使用するかどうか、ご自身の意思で選択できます。

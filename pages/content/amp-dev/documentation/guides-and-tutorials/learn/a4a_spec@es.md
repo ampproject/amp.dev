@@ -79,7 +79,7 @@ Adicionalmente, los creativos deben cumplir las siguientes reglas:
 
 ### Código repetitivo <a name="boilerplate"></a>
 
-Los creativos de los anuncios AMPHTML requieren de un código repetitivo diferente y con un estilo considerablemente más simple en comparación con lo que [hacen los documentos generales de AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md):
+Los creativos de los anuncios AMPHTML requieren de un código repetitivo diferente y con un estilo considerablemente más simple en comparación con lo que [hacen los documentos generales de AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md):
 
 [sourcecode:html]
 

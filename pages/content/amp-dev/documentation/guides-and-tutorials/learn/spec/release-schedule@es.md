@@ -11,7 +11,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/contributing/release-schedule.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/release-schedule.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -41,7 +41,7 @@ El canal de lanzamientos **nocturnos** se actualiza (como su nombre lo indica) c
 
 Los lanzamientos nocturnos proporcionan un mecanismo para detectar y solucionar problemas rápidamente, y todo esto antes de que lleguen a los canales para los lanzamientos _semanales_ con mayor tráfico. También sirven para reducir el número de usuarios que resultan afectados por problemas que aparecieron recientemente.
 
-Es posible inclinarse por el canal **nocturno** para probar las solicitudes de extracción que se fusionaron en los últimos días. Para obtener más información, consulte la [sección de suscripción](https://github.com/ampproject/amphtml/blob/main/contributing/DEVELOPING.md#opting-in-to-pre-release-channels) en [DEVELOPING.md].
+Es posible inclinarse por el canal **nocturno** para probar las solicitudes de extracción que se fusionaron en los últimos días. Para obtener más información, consulte la [sección de suscripción](https://github.com/ampproject/amphtml/blob/main/docs/developing.md#opting-in-to-pre-release-channels) en [DEVELOPING.md].
 
 ### Semanales <a name="weekly"></a>
 
@@ -49,13 +49,13 @@ Los canales de lanzamientos _semanales_ se consideran los principales canales �
 
 En la configuración de las compilaciones existen dos conjuntos de validaciones que se utilizan con la finalidad de crear validaciones automáticas para el lanzamiento: la configuración _canary_ y la configuración*production*. Los canales de lanzamientos **Experimental** y **Beta** se construyen a partir del mismo compromiso. Sin embargo, el canal **Experimental** utiliza la configuración _canary_ mientras que el canal **Beta** usa la configuración _production_. La configuración _canary_ activa componentes y funciones experimentales que pueden desactivarse en _production_. Es posible elegir los canales **Experimental** o **Beta** mediante la [página de experimentos](https://cdn.ampproject.org/experiments.html).
 
-El canal de lanzamientos **estable** se crea con la configuración _production_ y se utiliza para la mayoría del tráfico de AMP. Dado que el canal **Beta** también se construye a partir de la configuración _production_, representa la estructura exacta que será **estable** la siguiente semana (con la posibilidad de pasar por selecciones cuidadosas para reparar los problemas que surjan en el último momento, consulte el [Código de contribución](https://github.com/ampproject/amphtml/blob/main/contributing/contributing-code.md#Cherry-picks)).
+El canal de lanzamientos **estable** se crea con la configuración _production_ y se utiliza para la mayoría del tráfico de AMP. Dado que el canal **Beta** también se construye a partir de la configuración _production_, representa la estructura exacta que será **estable** la siguiente semana (con la posibilidad de pasar por selecciones cuidadosas para reparar los problemas que surjan en el último momento, consulte el [Código de contribución](https://github.com/ampproject/amphtml/blob/main/docs/contributing-code.md#Cherry-picks)).
 
 #### Canales Beta y Experimental <a name="beta-and-experimental-channels"></a>
 
 Los _canales Beta_ y _Experimental_ son versiones preliminares de los candidatos para el próximo lanzamiento estable de AMP. Cada martes (con excepción de las semanas en las que hay algún [lanzamiento congelado](#release-freezes))), en la última semana el lanzamiento **nocturno** es promocionado por los canales de suscripción del desarrollador **Beta** y **Experimental**. Cuando concluye el periodo de 1 día en el que verificamos que no se introdujeron retrocesos en las funciones o en el desempeño de estos canales, posteriormente promocionamos este lanzamiento el miércoles aprovechando un pequeño porcentaje del tráfico. Este mismo lanzamiento después se promociona en el canal **estable** el martes de la siguiente semana.
 
-Es posible elegir estos canales. Para obtener más información, consulte la [sección de suscripción](https://github.com/ampproject/amphtml/blob/main/contributing/DEVELOPING.md#opting-in-to-pre-release-channels) en [DEVELOPING.md].
+Es posible elegir estos canales. Para obtener más información, consulte la [sección de suscripción](https://github.com/ampproject/amphtml/blob/main/docs/developing.md#opting-in-to-pre-release-channels) en [DEVELOPING.md].
 
 La suscripción en el _canal Beta_ tiene la finalidad de:
 
@@ -71,7 +71,7 @@ El _canal Experimental_ **puede ser poco estable** e incluir funciones que aún 
 
 ### Estabilidad a largo plazo (lts) <a name="long-term-stable-lts"></a>
 
-En el canal de lanzamiento **lts** se proporciona una validación automática **estable** previa en intervalos de un mes. El segundo lunes de cada mes, el lanzamiento **estable** actual se promueve a **lts**. Este canal no es recomendable para todos los editores de AMP. Este se proporciona para que los editores que quieran llevar a cabo un proceso de control de calidad (QA) con menos frecuencia en su sitio web pueden hacerlo seleccionando páginas web específicas en el canal **lts** (consulte el archivo <a href="https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md" data-md-type="link">Léame sobre **lts**</a>).
+En el canal de lanzamiento **lts** se proporciona una validación automática **estable** previa en intervalos de un mes. El segundo lunes de cada mes, el lanzamiento **estable** actual se promueve a **lts**. Este canal no es recomendable para todos los editores de AMP. Este se proporciona para que los editores que quieran llevar a cabo un proceso de control de calidad (QA) con menos frecuencia en su sitio web pueden hacerlo seleccionando páginas web específicas en el canal **lts** (consulte el archivo <a href="https://github.com/ampproject/amphtml/blob/main/docs/lts-release.md" data-md-type="link">Léame sobre **lts**</a>).
 
 En caso de que el segundo lunes del mes sea un día no laboral, la promoción se realizará una vez que finalice la [congelación del lanzamiento](#release-freezes).
 

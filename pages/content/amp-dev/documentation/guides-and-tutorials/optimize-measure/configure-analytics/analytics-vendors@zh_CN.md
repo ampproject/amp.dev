@@ -151,7 +151,7 @@ type 属性值：`googleanalytics`
 
 type 属性值：`infonline`
 
-添加对 [INFOnline](https://www.infonline.de)/[IVW](http://www.ivw.de) 的支持。需要一个 [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) 副本，且该副本必须位于不同于 AMP 文件所在网域的子网域上（[为什么？](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md)）。该文件必须通过 HTTPS 提供。例如，如果您的 AMP 文件托管在 `www.example.com` 上，则 `amp-analytics-infonline.html` 必须位于其他子网域（例如 `iframe.example.com` 或 `assets.example.com`）上。
+添加对 [INFOnline](https://www.infonline.de)/[IVW](http://www.ivw.de) 的支持。需要一个 [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) 副本，且该副本必须位于不同于 AMP 文件所在网域的子网域上（[为什么？](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md)）。该文件必须通过 HTTPS 提供。例如，如果您的 AMP 文件托管在 `www.example.com` 上，则 `amp-analytics-infonline.html` 必须位于其他子网域（例如 `iframe.example.com` 或 `assets.example.com`）上。
 
 此外，还必须定义以下变量：
 
@@ -220,7 +220,7 @@ type 属性值：`nielsen-marketing-cloud`
 
 type 属性值：`oewa`
 
-添加对 [OEWA](https://www.oewa.at) 的支持。需要一个 [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) 副本，且该副本必须位于不同于 AMP 文件所在网域的子网域上（[为什么？](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md)）。该文件必须通过 HTTPS 提供。例如，如果您的 AMP 文件托管在 `www.example.com` 上，则 `amp-analytics-oewa.html` 必须位于其他子网域（例如 `oewa-amp.example.com`）上。要详细了解如何添加 OEWA 支持，请点击[此处](http://www.oewa.at/Implementierung)。
+添加对 [OEWA](https://www.oewa.at) 的支持。需要一个 [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) 副本，且该副本必须位于不同于 AMP 文件所在网域的子网域上（[为什么？](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md)）。该文件必须通过 HTTPS 提供。例如，如果您的 AMP 文件托管在 `www.example.com` 上，则 `amp-analytics-oewa.html` 必须位于其他子网域（例如 `oewa-amp.example.com`）上。要详细了解如何添加 OEWA 支持，请点击[此处](http://www.oewa.at/Implementierung)。
 
 此外，还必须定义以下变量：
 

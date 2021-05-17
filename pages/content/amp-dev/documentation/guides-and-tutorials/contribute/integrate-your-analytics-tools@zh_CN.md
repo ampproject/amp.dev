@@ -26,7 +26,7 @@ have a look and request a pull request there.
 
 - 在 AMP HTML 文档中确定您的分析服务所需的[变量](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md)和[请求](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-analytics.md#requests)种类。
 - 确定可导致从与您的服务相关的网页发送分析请求的触发器。
-- 考虑您是否以及如何跨第一方和第三方 AMP 上下文[跟踪用户](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md)。
+- 考虑您是否以及如何跨第一方和第三方 AMP 上下文[跟踪用户](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md)。
 - 确定您的分析信息中心如何处理 AMP 流量。
 - 确定 `amp-analytics` 中缺失的功能，在[文件请求](https://github.com/ampproject/amphtml/issues/new)中请求所需功能。
 - AMP Analytics 会将其变量发送到一个预配置的端点。如果您还没有端点，请查看[此示例](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)，简要了解如何构建端点。
@@ -36,9 +36,9 @@ have a look and request a pull request there.
 
 ## 将您的配置添加到 AMP HTML 运行时 <a name="adding-your-configuration-to-the-amp-html-runtime"></a>
 
-1. 创建一个[意图实现问题](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features)，表明您要将您的分析服务配置添加到 AMP HTML 的运行时。确保在您的说明中添加 **cc @ampproject/wg-analytics**。
+1. 创建一个[意图实现问题](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../docs/contributing.md#contributing-features)，表明您要将您的分析服务配置添加到 AMP HTML 的运行时。确保在您的说明中添加 **cc @ampproject/wg-analytics**。
 2. 开发一个补丁来实现以下内容：
-   1. 在 vendors [文件夹](https://github.com/ampproject/amphtml/tree/master/extensions/amp-analytics/0.1/vendors)中创建一个新的配置 json 文件 `${vendorName}.json`，其中包括默认选项之外的所有选项，例如：
+   1. 在 vendors [文件夹](https://github.com/ampproject/amphtml/tree/main/extensions/amp-analytics/0.1/vendors)中创建一个新的配置 json 文件 `${vendorName}.json`，其中包括默认选项之外的所有选项，例如：
       1. `"vars": {}` 表示额外的默认变量。
       2. `"requests": {}` 表示您的服务将使用的请求。
       3. `"optout"`：如果需要。我们目前没有一个很好的选择退出系统，欢迎您与我们联系，帮助我们设计一个，以便更好地为您所用。
@@ -73,7 +73,7 @@ config="https://my-awesome-tag-manager.example.com/user-id.json"
 ## 更多资源 <a name="further-resources"></a>
 
 - 深入挖掘：[为何不能单单使用一个 iframe？](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/why-not-iframe.md)
-- 深入挖掘：[使用 AMP 管理未经过身份验证的用户状态](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md)
+- 深入挖掘：[使用 AMP 管理未经过身份验证的用户状态](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md)
 - [amp-analytics sample](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
 - [amp-analytics](https://amp.dev/documentation/components/amp-analytics) 参考文档
 - [amp-analytics 变量](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md)参考文档

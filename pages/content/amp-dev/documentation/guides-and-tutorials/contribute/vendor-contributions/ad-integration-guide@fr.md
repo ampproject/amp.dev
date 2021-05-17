@@ -15,7 +15,7 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-Si vous êtes un fournisseur de technologie publicitaire et souhaitez une intégration du format HTML AMP, veuillez consulter les consignes ci-dessous. Pour optimiser la qualité et le temps de latence, veuillez suivre les instructions répertoriées [ici](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads) avant de soumettre une demande de tirage au projet open source AMP. Pour obtenir des conseils généraux sur les premiers pas en tant que contributeur AMP, veuillez consulter le fichier [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../CONTRIBUTING.md) .
+Si vous êtes un fournisseur de technologie publicitaire et souhaitez une intégration du format HTML AMP, veuillez consulter les consignes ci-dessous. Pour optimiser la qualité et le temps de latence, veuillez suivre les instructions répertoriées [ici](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads) avant de soumettre une demande de tirage au projet open source AMP. Pour obtenir des conseils généraux sur les premiers pas en tant que contributeur AMP, veuillez consulter le fichier [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../docs/contributing.md) .
 
 ## Serveur publicitaire <a name="ad-server"></a>
 

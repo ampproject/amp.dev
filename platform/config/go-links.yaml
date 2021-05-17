@@ -11,10 +11,10 @@
 /auto-sw: https://github.com/ampproject/amp-sw/
 /axios-case-study: https://blog.amp.dev/2020/04/07/people-behind-the-code-the-axios-ascent/
 /camp-code: https://github.com/ampproject/samples/tree/master/amp-camp
-/cherry-picks: https://github.com/ampproject/amphtml/blob/main/contributing/contributing-code.md#Cherry-picks
+/cherry-picks: https://github.com/ampproject/amphtml/blob/main/docs/contributing-code.md#Cherry-picks
 /components: https://amp.dev/documentation/components/
 /contribute: https://amp.dev/documentation/guides-and-tutorials/contribute/
-/contribute/code: https://github.com/ampproject/amphtml/blob/main/contributing/contributing-code.md
+/contribute/code: https://github.com/ampproject/amphtml/blob/main/docs/contributing-code.md
 /contribute/code-samples: /documentation/guides-and-tutorials/contribute/contribute-documentation/formatting/?format=websites#preview-code-samples
 /contribute/docs: /documentation/guides-and-tutorials/contribute/contribute-documentation/
 /contribute/samples: /documentation/examples/

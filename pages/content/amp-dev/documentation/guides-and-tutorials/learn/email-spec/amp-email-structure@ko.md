@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-structure.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-structure.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -35,7 +35,7 @@ limitations under the License.
 
 이메일에 AMP를 임베딩하려면 콘텐츠 유형이 `text/x-amp-html`인 새 MIME 부분을 `multipart/alternative`의 하위 요소로 추가합니다. 해당 부분은 기존의 `text/html` 또는 `text/plain` 부분과 함께 사용되어야 하며 이를 통해 이메일 메시지가 모든 클라이언트에서 작동할 수 있습니다.
 
-<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/master/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"><img data-md-type="raw_html" alt="AMP for Email MIME 부품 다이어그램" src="../img/amp-email-mime-parts.png"></noscript></amp-img>
+<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/main/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"><img data-md-type="raw_html" alt="AMP for Email MIME 부품 다이어그램" src="../img/amp-email-mime-parts.png"></noscript></amp-img>
 
 `multipart/alternative` 서브타입과 관련한 자세한 정보는 [RFC 1521, 섹션 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3)을 참조하세요.
 

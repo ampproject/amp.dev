@@ -28,7 +28,7 @@ formats:
 
 #### المساعدة من خلال رمز
 
-للبدء في المساهمة برمز في مشروع AMP اقرأ [ملف المساهمة](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md)، الذي يتضمن تفاصيل العملية التي يجري من خلالها إصلاح ميزة أو خطأ بدء من وضع المفهوم حتى الإرسال وكيف يمكنك المشاركة في التصاميم التقنية والمناقشات. إذا كنت مستجدًا في التعامل مع المصدر المفتوح فلدينا بعض [النصائح للشروع في العمل](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#contributing-code).
+للبدء في المساهمة برمز في مشروع AMP اقرأ [ملف المساهمة](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md)، الذي يتضمن تفاصيل العملية التي يجري من خلالها إصلاح ميزة أو خطأ بدء من وضع المفهوم حتى الإرسال وكيف يمكنك المشاركة في التصاميم التقنية والمناقشات. إذا كنت مستجدًا في التعامل مع المصدر المفتوح فلدينا بعض [النصائح للشروع في العمل](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#contributing-code).
 
 ### تقديم مساهمات المحتوى إلى AMP
 

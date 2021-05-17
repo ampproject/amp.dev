@@ -62,7 +62,7 @@ Mustache adalah sintaks template tanpa logika. Lihat [dokumen Mustache.js](https
 
 ## Penggunaan <a name="usage"></a>
 
-Template `amp-mustache` harus ditentukan dan digunakan sesuai dengan [Spesifikasi Template AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-html-templates.md).
+Template `amp-mustache` harus ditentukan dan digunakan sesuai dengan [Spesifikasi Template AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-templates.md).
 
 Pertama, `amp-mustache` harus dinyatakan/dimuat seperti ini:
 

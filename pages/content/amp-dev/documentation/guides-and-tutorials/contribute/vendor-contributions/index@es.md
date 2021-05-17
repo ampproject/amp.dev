@@ -19,7 +19,7 @@ Hay más de 20 proveedores de análisis que han añadido soporte a [`amp-analyti
 
 ## 2. Usando la extensión `amp-ad`
 
-La extensión amp-ad está reservada para publicar anuncios de visualización en las páginas de AMP. Más de 90 proveedores de tecnología de anuncios han añadido soporte a AMP. Para empezar, lea la [descripción general del desarrollo](https://github.com/ampproject/amphtml/tree/master/ads#overview) o salte a las [instrucciones del desarrollador](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) para agregar su soporte a la extensión amp-ad. Dependiendo de la tecnología de anuncios que su empresa proporcione, es posible que encuentre útiles estas [instrucciones de integración](ad-integration-guide.md).
+La extensión amp-ad está reservada para publicar anuncios de visualización en las páginas de AMP. Más de 90 proveedores de tecnología de anuncios han añadido soporte a AMP. Para empezar, lea la [descripción general del desarrollo](https://github.com/ampproject/amphtml/tree/main/ads#overview) o salte a las [instrucciones del desarrollador](https://github.com/ampproject/amphtml/tree/main/ads#developer-guidelines-for-a-pull-request) para agregar su soporte a la extensión amp-ad. Dependiendo de la tecnología de anuncios que su empresa proporcione, es posible que encuentre útiles estas [instrucciones de integración](ad-integration-guide.md).
 
 Hay más de 90 proveedores de anuncios que han añadido soporte para funciones publicitarias relacionadas, como [`amp-ad`](../../../components/reference/amp-ad.md) . A continuación se muestra una [solicitud de extracción](https://github.com/ampproject/amphtml/pull/2299) de muestra de la red publicitaria [Criteo](https://github.com/ampproject/amphtml/blob/main/ads/criteo.md).
 
@@ -31,7 +31,7 @@ Para obtener más información sobre cómo esta extensión podría funcionar par
 
 ## 4. Agregar una nueva extensión o incrustar
 
-Si su caso de uso no se puede acomodar mediante [`amp-analytics`](../../../components/reference/amp-analytics.md) , [`amp-pixel`](../../../components/reference/amp-pixel.md) o [`amp-ad`](../../../components/reference/amp-ad.md) , reporte un [problema en GitHub](https://github.com/ampproject/amphtml/issues/new) para discutir opciones alternativas. Damos la bienvenida a las nuevas extensiones que pueden ser ampliamente utilizados por un número de diferentes empresas. Consulte la [sección de componentes ampliados](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#contributing-extended-components) para obtener más detalles.
+Si su caso de uso no se puede acomodar mediante [`amp-analytics`](../../../components/reference/amp-analytics.md) , [`amp-pixel`](../../../components/reference/amp-pixel.md) o [`amp-ad`](../../../components/reference/amp-ad.md) , reporte un [problema en GitHub](https://github.com/ampproject/amphtml/issues/new) para discutir opciones alternativas. Damos la bienvenida a las nuevas extensiones que pueden ser ampliamente utilizados por un número de diferentes empresas. Consulte la [sección de componentes ampliados](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#contributing-extended-components) para obtener más detalles.
 
 ## 5. Usando el `amp-iframe`
 
@@ -43,7 +43,7 @@ Para empezar, empiece leyendo las [directrices para desarrolladores de terceros]
 
 Por ejemplo, el seguimiento dinámico de llamadas es un caso de uso que aún no soportamos en AMP, pero estamos [trabajando activamente](https://github.com/ampproject/amphtml/issues/5276) con la comunidad para añadir ese soporte.
 
-Si tiene alguna pregunta o sugerencia, no dude en [reportar un problema](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#filing-issues) o llegar a uno de nuestros [canales de discusión](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#discussion-channels).
+Si tiene alguna pregunta o sugerencia, no dude en [reportar un problema](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#filing-issues) o llegar a uno de nuestros [canales de discusión](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#discussion-channels).
 
 ## Recursos adicionales
 

@@ -54,7 +54,7 @@ Anweisungen zum Erstellen einer [`amp-ad`](../../../documentation/components/ref
 Um AMPHTML Ads von deinem Werbeserver aus bereitzustellen, musst du eine Fast Fetch Integration implementieren, die Folgendes umfasst:
 
 1. Unterstützung der SSL Netzwerkkommunikation.
-2. Bereitstellung von JavaScript, um die Ad Anforderung zu erstellen (Beispiele für Implementierungen: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) & [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
+2. Bereitstellung von JavaScript, um die Ad Anforderung zu erstellen (Beispiele für Implementierungen: [AdSense](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-adsense-impl) & [DoubleClick](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-doubleclick-impl)).
 3. Validieren und Signieren des Creative über einen Validierungsdienst. [Cloudflare](https://blog.cloudflare.com/firebolt/) bietet einen Validierungsdienst für AMP Ads, mit dem jeder unabhängige Ads Anbieter seine Ads schneller, einfacher und ansprechender liefern kann.
 
 Anweisungen zum Erstellen einer Fast Fetch Integration findest du im [Leitfaden zur Netzwerkimplementierung von Fast Fetch](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md).

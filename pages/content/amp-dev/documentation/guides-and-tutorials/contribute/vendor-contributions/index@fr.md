@@ -20,7 +20,7 @@ Ce document décrit les attentes AMP pour les tiers et définit les niveaux de c
 
 # Directives de contribution
 
-Toutes les contributions générales sont soumises aux [directives universelles AMPHTML répertoriées dans le fichier CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md). Les contributeurs tiers doivent procéder à des tests, maintenances et mises à jour de leurs contributions à divers degrés.
+Toutes les contributions générales sont soumises aux [directives universelles AMPHTML répertoriées dans le fichier CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md). Les contributeurs tiers doivent procéder à des tests, maintenances et mises à jour de leurs contributions à divers degrés.
 
 Pour être admissibles à l'inclusion, tous les niveaux de contribution doivent:
 
@@ -61,7 +61,7 @@ La seule logique spécifique au tiers archivée dans le référentiel AMP est un
 
 [**amp-ad**](../../../components/reference/amp-ad.md)
 
-Les fournisseurs d'annonces doivent lire les sections [Vue d'ensemble du développement](https://github.com/ampproject/amphtml/tree/master/ads#overview) et [Instructions pour développeurs](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) pour ajouter votre prise en charge à [`amp-ad`](../../../components/reference/amp-ad.md). En fonction de la technologie publicitaire fournie par votre entreprise, vous pourriez trouver [ces instructions d'intégration ](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads)utiles.
+Les fournisseurs d'annonces doivent lire les sections [Vue d'ensemble du développement](https://github.com/ampproject/amphtml/tree/main/ads#overview) et [Instructions pour développeurs](https://github.com/ampproject/amphtml/tree/main/ads#developer-guidelines-for-a-pull-request) pour ajouter votre prise en charge à [`amp-ad`](../../../components/reference/amp-ad.md). En fonction de la technologie publicitaire fournie par votre entreprise, vous pourriez trouver [ces instructions d'intégration ](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads)utiles.
 
 De nombreux fournisseurs de publicité ont ajouté la prise en charge des fonctionnalités liées à la publicité telles que amp-ad. Voici un [exemple de demande de tirage](https://github.com/ampproject/amphtml/pull/2299) du réseau publicitaire [Criteo](https://github.com/ampproject/amphtml/blob/main/ads/criteo.md) .
 
