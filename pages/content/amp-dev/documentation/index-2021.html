@@ -86,4 +86,52 @@ frameworks:
       {% endfor %}
     </amp-base-carousel>
   </section>
+  <section class="ap-section --col-3-22">
+    <div class="ap-text-media">
+      <div class="ap-text-media-col">
+        <amp-img alt="{{ _('A white gear with a bolt inside') }}" src="/static/img/documentation/amp-optimizer.png"
+          width="1020" height="702" layout="responsive">
+        </amp-img>
+      </div>
+      <div class="ap-text-media-col">
+        <div class="ap-text-block">
+          <h2 class="ap-h1">
+            {{ _('Page Experience, optimized') }}
+          </h2>
+          <p>
+            {{ _('If you’re working with a custom or in-house solution, AMP can meet you there! Through tools like the
+            AMP optimizer, you can apply common performance best practices to your websites, automagically.') }}
+          </p>
+        </div>
+        <a class="ap-button"
+          href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-optimizer-guide/index.md', locale=doc.locale).url.path }}">
+          {{ _('Using an AMP Optimizer') }}
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="ap-section --col-3-22">
+    <div class="ap-text-media">
+      <div class="ap-text-media-col">
+        <amp-img alt="{{ _('Bento components') }}" src="/static/img/documentation/bento.png" width="1020" height="696"
+          layout="responsive">
+        </amp-img>
+      </div>
+      <div class="ap-text-media-col">
+        <div class="ap-text-block">
+          <h2 class="ap-h1">
+            {{ _('Powerful components, anywhere') }}
+          </h2>
+          <p>
+            {{ _('Not ready to fully commit to AMP but love our components? No problem! Through Bento, you can use
+            AMP\'s well-tested, cross-browser compatible and accessible components anywhere on the web!') }}
+          </p>
+        </div>
+        <a class="ap-button"
+          href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/bento_guide.md', locale=doc.locale).url.path }}">
+          {{ _('Bento Guide') }}
+        </a>
+      </div>
+    </div>
+  </section>
 </main>
