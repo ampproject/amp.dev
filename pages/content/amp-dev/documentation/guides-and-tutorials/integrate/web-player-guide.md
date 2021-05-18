@@ -111,12 +111,6 @@ This guide contains mainly features that are available on the non-AMP version of
   </tr>
 </table>
 
-## Contents
-
-
-[TOC]
-
-
 ## Common implementations
 
 You can use the web story player to create a number of experiences in your own platform ranging from carousels to singleton cards to directly embedding the Story into a page. We have developed a [detailed UX guide](https://services.google.com/fh/files/events/web_stories_playbook_external.pdf#page=14) with best practices to go with these examples. The most common pattern that we recommend is a carousel. We will outline the best practices to create such an experience, but you should feel free to experiment and implement what works best for your use case. We will share a broader list of UX patterns in the coming weeks.
