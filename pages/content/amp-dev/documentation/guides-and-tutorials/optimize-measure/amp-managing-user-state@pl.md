@@ -120,8 +120,8 @@ W tym scenariuszu użytkownik otrzymuje spójną obsługę koszyka, mimo że prz
 
 **Aby umożliwić tę i każdą inną obsługę zależną od stanu użytkownika, wszystkie konteksty, przez które przechodzą użytkownicy, muszą udostępniać sobie nawzajem swój indywidualnie utrzymywany stan.**. Powiesz „Doskonale!”, mając na myśli pomysł udostępniania wartości plików cookie z identyfikatorami użytkowników ponad tymi granicami kontekstowymi. Jest pewien drobiazg: mimo że każdy z tych kontekstów wyświetla treści kontrolowane przez tego samego wydawcę, każdy z nich postrzega drugi kontekst jako stronę trzecią, ponieważ każdy z kontekstów znajduje się w innej domenie.
 
-<amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/contexts-with-different-storage.png" width="1030" height="868">
-  <noscript><img alt="Łącza mogą służyć do przekazywania informacji identyfikujących jeden kontekst do innego (połączonego) kontekstu" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-form-identifier-forwarding.png"></noscript></amp-img>
+<amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/contexts-with-different-storage.png" width="1030" height="868">
+  <noscript><img alt="Łącza mogą służyć do przekazywania informacji identyfikujących jeden kontekst do innego (połączonego) kontekstu" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-form-identifier-forwarding.png"></noscript></amp-img>
 
 Jak zobaczysz w poniższym omówieniu, działanie z pozycji strony trzeciej podczas interakcji z plikami cookie może stanowić wyzwanie, w zależności od tego, jak skonfigurowane są ustawienia przeglądarki użytkownika. W szczególności, jeśli pliki cookie stron trzecich zostaną zablokowane w określonej sytuacji, uniemożliwi to udostępnianie informacji między różnymi kontekstami. Z drugiej strony, jeśli operacje z plikami cookie stron trzecich są dozwolone, informacje można udostępniać.
 
@@ -142,8 +142,8 @@ Po ułożeniu fundamentów odwiedzimy temat o węższym zakresie zastosowań, al
 
 Przechodząc przez poniższe wskazówki techniczne, załóżmy, że będziesz wiązać **stan użytkownika** ze stabilnym **identyfikatorem**, reprezentującym użytkownika. Identyfikator może wyglądać na przykład tak: `n34ic982n2386n30`. Po stronie serwera należy wówczas powiązać identyfikator `n34ic982n2386n30` z dowolnym zestawem informacji o stanie użytkownika, takim jak zawartość koszyka, lista wcześniej przeczytanych artykułów lub inne dane zależne od przypadku użycia.
 
-<amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
-  <noscript><img alt="Przykład tego, jak identyfikator w kontekście przeglądarki AMP można przekazać za pośrednictwem linku do kontekstu źródła wydawcy" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-1.png"></noscript></amp-img>
+<amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
+  <noscript><img alt="Przykład tego, jak identyfikator w kontekście przeglądarki AMP można przekazać za pośrednictwem linku do kontekstu źródła wydawcy" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-identifier-forwarding-example-1.png"></noscript></amp-img>
 
 Dla przejrzystości w pozostałej części tego dokumentu będziemy nazywać różne ciągi znaków, będące identyfikatorami, stosując bardziej zrozumiałe nazwy poprzedzone znakiem dolara (`$`):
 
@@ -378,8 +378,8 @@ Gdy odczytywanie i zapisywanie plików cookie stron trzecich jest niedozwolone, 
 
 W tym zadaniu zajmiemy się dodatkową optymalizacją, która pozwala użytkownikowi przechodzić między kontekstami z jednej strony na drugą **za pomocą linków lub wysyłania formularzy**. W tych sytuacjach oraz dzięki opisanej poniżej implementacji możliwe jest utworzenie w pełni efektywnego schematu zarządzania stanem użytkownika w różnych kontekstach.
 
-<amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
-  <noscript><img alt="Przykład tworzenia analitycznego polecenia ping, które zawiera identyfikator z poprzedniego kontekstu podany za pośrednictwem adresu URL i identyfikator z bieżącego kontekstu" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
+<amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
+  <noscript><img alt="Przykład tworzenia analitycznego polecenia ping, które zawiera identyfikator z poprzedniego kontekstu podany za pośrednictwem adresu URL i identyfikator z bieżącego kontekstu" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
 
 ##### Stosowanie funkcji podstawiania <a name="using-substitution-features"></a>
 
@@ -434,8 +434,8 @@ Dzięki podjęciu tych kroków Client ID jest dostępny dla serwera docelowego i
 https://example.com/step2.html?ref_id=$amp_client_id
 [/sourcecode]
 
-<amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
-  <noscript><img alt="Możliwość wyświetlania AMP w wielu kontekstach oznacza, że każdy z tych kontekstów ma własną pamięć na identyfikatory" src="https://github.com/ampproject/amphtml/raw/main/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
+<amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
+  <noscript><img alt="Możliwość wyświetlania AMP w wielu kontekstach oznacza, że każdy z tych kontekstów ma własną pamięć na identyfikatory" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
 
 Gdy użytkownik wyląduje na stronie zawierającej wartość `ref_id` w postaci parametru adresu URL lub w nagłówku, mamy możliwość wspólnego przetwarzania identyfikatora `ref_id` wraz z identyfikatorem wyeksponowanym za pomocą samej strony (czyli wartością pliku cookie). Dzięki zawarciu obu tych wartości w analitycznym pakiecie ping Twój serwer analityki może pracować z obiema wartościami jednocześnie, a wiedząc, że są one powiązane, odzwierciedlać tę zależność w Twoim zapleczu. W następnym kroku podano szczegóły wykonania.
 
@@ -458,8 +458,8 @@ Aby przetwarzać żądanie podczas przekierowania, należy obsłużyć je na ser
 
 W przypadku przetwarzania żądania na stronie docelowej podejście będzie się różnić w zależności od tego, czy strona ta jest stroną AMP, czy bez AMP.
 
-<amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
-  <noscript><img alt="Pojedynczy identyfikator może służyć do zarządzania stanem użytkownika w wielu przypadkach użycia" src="https://github.com/ampproject/amphtml/raw/main/spec/img/identifiers-for-use-cases.png"></noscript></amp-img>
+<amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
+  <noscript><img alt="Pojedynczy identyfikator może służyć do zarządzania stanem użytkownika w wielu przypadkach użycia" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/identifiers-for-use-cases.png"></noscript></amp-img>
 
 _Aktualizacje strony AMP:_ w konfiguracji składnika amp-analytics użyj funkcji podstawiania parametru zapytania, aby uzyskać wartość identyfikatora `ref_id` w adresie URL. Funkcja parametru zapytania pobiera parametr, który wskazuje „klucz” żądanej pary klucz-wartość w adresie URL i zwraca odpowiednią wartość. Użyj funkcji Client ID, tak jak to robiliśmy, aby uzyskać identyfikator do kontekstu strony AMP.
 
