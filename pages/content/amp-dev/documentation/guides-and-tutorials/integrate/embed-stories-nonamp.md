@@ -1,13 +1,13 @@
 ---
-$title: Embed Web Stories in non-AMP pages
+$title: Integrate Web Stories in non-AMP pages
 $order: 4
-description: 'The AMP Story Player enables you to embed stories that users are able to tap or click through, inside of a web page. Follow this step-by-step guide to learn how.'
+description: 'The AMP Story Player enables you to integrate stories that users are able to tap or click through, inside of a web page. Follow this step-by-step guide to learn how.'
 formats:
   - websites
   - stories
 ---
 
-Web Stories are a full-screen immersive content experience that user’s tap or click through at their own pace. They live on the open web with their own URL, making them easily shareable. This guide teaches you how to embed Web Stories in a non-AMP page and surface them to readers. 
+Web Stories are a full-screen immersive content experience that user’s tap or click through at their own pace. They live on the open web with their own URL, making them easily shareable. This guide teaches you how to integrate Web Stories in a non-AMP page and surface them to readers.
 
 [example preview="top-frame" playground="true" orientation="portrait"]
 ```html
@@ -87,13 +87,13 @@ Web Stories are a full-screen immersive content experience that user’s tap or 
 
 # Include the Web Story Player
 
-Web Stories rely on the AMP Story Player, in the form of the `<amp-story-player>` element, to embed and play stories on non-AMP sites. Implement the `amp-story-player` element by including the following two scripts in the head of your document:
+Web Stories rely on the AMP Story Player, in the form of the `<amp-story-player>` element, to integrate and play stories on non-AMP sites. Implement the `amp-story-player` element by including the following two scripts in the head of your document:
 
 `<script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>`
 
 `<link href="https://cdn.ampproject.org/amp-story-player-v0.css" rel="stylesheet" type="text/css">`
 
-The first script imports the logic for the AMP Story Player. The second script sets the default styling. 
+The first script imports the logic for the AMP Story Player. The second script sets the default styling.
 
 After including each script, include an `<amp-story-player>` element inside the document body.
 
@@ -141,7 +141,7 @@ html
 </amp-story-player>
 ```
 
-# Display a Web Story 
+# Display a Web Story
 
 Link to a Web Story by including an `<a>` tag with the `href` attribute pointed to the desired Web Story URL within the `<amp-story-player>` element. The `href` endpoint may be the URL of a hosted Web Story or a relative path. Place the title of the story within the `<a>` tags.
 
@@ -281,7 +281,7 @@ Include the desired number of `<a>` tags, with each `href` attribute pointed to 
 [/example]
 
 
-The Web Story Player displays the first embedded story. It automatically presents the user with the next story’s cover page after finishing the previous, or using the swiping motion to skip. The Web Story Player does not have any built-in UI functionality to inform the user there are multiple stories embedded in a single player. Instead, build [user entry points](#user-entry-points) to display available stories and allow user selection.  
+The Web Story Player displays the first story. It automatically presents the user with the next story’s cover page after finishing the previous, or using the swiping motion to skip. The Web Story Player does not have any built-in UI functionality to inform the user there are multiple stories in a single player. Instead, build [user entry points](#user-entry-points) to display available stories and allow user selection.
 
 
 ### Circular story wrapping
@@ -302,9 +302,9 @@ You can create a circular consumption of a set of stories by adding the `circula
  <a href="./story2.html"> ... </a>
   ...
 </amp-story-player>
-``` 
+```
 
-The JSON configuration must be a direct child of the `<amp-story-player>` element and include the `type="application/json"` attribute. 
+The JSON configuration must be a direct child of the `<amp-story-player>` element and include the `type="application/json"` attribute.
 
 
 ### Personalized and infinite stories
@@ -391,7 +391,7 @@ You may customize the controls of the Web Story Player UI. You can add new contr
 
 ## Close control
 
-By default, the Web Story Player does not include a close control. You may add a close icon to the Web Story Player by specifying a control object with the “close” name. This is recommended when using the player in implementations that display the player in a lightbox or fullscreen view. 
+By default, the Web Story Player does not include a close control. You may add a close icon to the Web Story Player by specifying a control object with the “close” name. This is recommended when using the player in implementations that display the player in a lightbox or fullscreen view.
 
 The “close” control supports the following customizable properties:
 
@@ -403,7 +403,7 @@ The “close” control supports the following customizable properties:
 *   `backgroundImageUrl`: string with url or data string (escaped).
     *   Changes the icon image to the provided url or data string (for inline svgs).
 
-The close button dispatches the `amp-story-player-close` event when clicked/tapped by the user. 
+The close button dispatches the `amp-story-player-close` event when clicked/tapped by the user.
 
 ```html
 <amp-story-player>
@@ -442,7 +442,7 @@ The “share” control supports the following customizable properties:
 
 ## Skip to next control <a name="skip-to-next-control"></a>
 
-Add a control that skips to the next story inside the player by specifying a control object with the “skip-to-next” name. This feature is only available on desktop, as mobile users may use the “swipe” gesture to skip to the next story. 
+Add a control that skips to the next story inside the player by specifying a control object with the “skip-to-next” name. This feature is only available on desktop, as mobile users may use the “swipe” gesture to skip to the next story.
 
 The “skip-to-next” control supports the following customizable properties:
 
@@ -508,13 +508,13 @@ const playerEl = document.body.querySelector('amp-story-player');
 playerEl.play()
 ```
 
-Available methods are exposed on the HTML element: 
+Available methods are exposed on the HTML element:
 
 ```html
 const playerEl = document.querySelector('amp-story-player')
 ```
 
-When creating a player dynamically, such as `document.createElement('amp-story-player')`, you may use the global class variable `AmpStoryPlayer` to load the player manually. 
+When creating a player dynamically, such as `document.createElement('amp-story-player')`, you may use the global class variable `AmpStoryPlayer` to load the player manually.
 
 ```html
 const player = new AmpStoryPlayer(window, playerEl)
@@ -529,7 +529,7 @@ See the list of methods in the [Web Story Player spec](https://github.com/amppro
 
 # Interactive events
 
-The Web Story Player dispatches events you can listen for and react to. Use these events to create interactive experiences and track analytics. The full list of events can be found on the [Web Story Player spec](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-story-player.md#custom-events). 
+The Web Story Player dispatches events you can listen for and react to. Use these events to create interactive experiences and track analytics. The full list of events can be found on the [Web Story Player spec](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-story-player.md#custom-events).
 
 In the example below, we use the `page-attachment-close`, `page-attachment-open` and `amp-story-player-back` events to change the background of a different element on our page.
 
@@ -548,7 +548,5 @@ player.addEventListener('amp-story-back', () => {
 
 # User entry points <a name="user-entry-points"></a>
 
-Now that you have your Web Story Player displaying your stories, you must introduce them to your site users via entry points. The examples below display common patterns, but there are many ways you can create entry points on your website.
-
-<!-- TODO: Update with amp.dev example when added -->
-[This example displays available stories in a carousel with circular avatars](https://codepen.io/maenrique/pen/wvWjNYr). When the user selects an avatar, the Web Story Player begins playing that story.
+<!-- TODO: delete once we integrate the web-player-guide into this page. -->
+Now that you have your Web Story Player displaying your stories, you must introduce them to your site users via entry points. [The following guide](https://amp.dev/documentation/guides-and-tutorials/integrate/web-player-guide/?format=stories) will teach you how to create entry points that follow the best UX practices.
