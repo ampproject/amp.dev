@@ -1,23 +1,23 @@
 ---
-$title: Web Story Player - User’s guide
+$title: Creating Web Story experiences using the Web Story Player on non-AMP sites
 description: 'The Web Story Player is the best way for you to give users a rich user experience on your sites using Web Stories.'
 formats:
   - websites
   - stories
 ---
 
-# Web Story Player - User’s guide
 
-The Web Player has significantly matured (thanks for all the feedback and insights), and is in a great place for publishers, developers, tools and platforms to start using in their site experiences. This update recaps key capabilities from the Web Story Player, and provides guides on common implementation patterns.
+## What is the Web Story Player?
 
-
-## What is the Web Player?
-
-{{ image('/static/img/docs/web-player-main.gif', 750, 625,   align='center', caption='Web Story Player demo' alt='web player demo' ) }}
+{{ image('/static/img/docs/web-player-main.gif', 750, 625,   align='center', caption='Web Story Player demo' alt='web story player demo' ) }}
 
 The Web Story Player is the best way for you to give users a rich user experience on your sites using Web Stories.  Think of it like a video player: having a single video in your device is fine, but put it in a video player live on the web, and it unlocks a number of features and benefits: There’s additional controls (e.g. captions), it lives among millions of other videos that can provide related content at the end of your original video – which adds discoverability, and more.
 
-You can think similarly of the web player. By only linking to a single story, you can miss out on a number of features and experiences that are found in other story platforms (e.g. Instagram, Snapchat) and are natural to story users. See table below for a few examples.
+You can think similarly of the web story player. By only linking to a single story, you can miss out on a number of features and experiences that are found in other story platforms (e.g. Instagram, Snapchat) and are natural to story users. See table below for a few examples.
+
+[tip type="note"]
+This guide contains mainly features that are available on the non-AMP version of the player. To learn what's possible with the AMP-compatible version of the player, visit the [Integrate stories in AMP pages](https://amp.dev/documentation/guides-and-tutorials/integrate/embed-stories/?format=stories) article.
+[/tip]
 
 
 <table>
@@ -26,7 +26,7 @@ You can think similarly of the web player. By only linking to a single story, yo
    </td>
    <td><strong>Single Story</strong>
    </td>
-   <td><strong>Web player</strong>
+   <td><strong>Web story player</strong>
    </td>
   </tr>
   <tr>
@@ -119,13 +119,13 @@ You can think similarly of the web player. By only linking to a single story, yo
 
 ## Common implementations
 
-You can use the web player to create a number of experiences in your own platform ranging from carousels to singleton cards to directly embedding the Story into a page. We have developed a [detailed UX guide](https://services.google.com/fh/files/events/web_stories_playbook_external.pdf#page=14) with best practices to go with these examples. The most common pattern that we recommend is a carousel. We will outline the best practices to create such an experience, but you should feel free to experiment and implement what works best for your use case. We will share a broader list of UX patterns in the coming weeks.
+You can use the web story player to create a number of experiences in your own platform ranging from carousels to singleton cards to directly embedding the Story into a page. We have developed a [detailed UX guide](https://services.google.com/fh/files/events/web_stories_playbook_external.pdf#page=14) with best practices to go with these examples. The most common pattern that we recommend is a carousel. We will outline the best practices to create such an experience, but you should feel free to experiment and implement what works best for your use case. We will share a broader list of UX patterns in the coming weeks.
 
 
 ### Carousel ([UX details](https://services.google.com/fh/files/events/web_stories_playbook_external.pdf#page=39))
 
 
-{{ image('/static/img/docs/web-player-carousel.gif', 799, 792, align='center', caption='Web Player carousel' alt='web player carousel of stories' ) }}
+{{ image('/static/img/docs/web-player-carousel.gif', 799, 792, align='center', caption='Web Story Player carousel' alt='web story player carousel of stories' ) }}
 
 
 A carousel of stories has multiple stories next to each other. It generally includes a preview of the story like a thumbnail and title. When clicked, it will open the story. The user can then consume the story or swipe between stories.
@@ -170,7 +170,7 @@ If you only want to display a static set of stories in your player, your best op
 
 ### Display stories
 
-The simplest way to display and add stories to the player is to declare them directly in the HTML where the `<amp-story-player>` element is located as &lt;a> tags. See code sample in the “[Display a Web Story](https://amp.dev/documentation/guides-and-tutorials/integrate/embed-stories-nonamp/?format=stories#display-a-web-story)” section of the guide.
+The simplest way to display and add stories to the player is to declare them directly in the HTML where the `<amp-story-player>` element is located as `<a>` tags. See code sample in the “[Display a Web Story](https://amp.dev/documentation/guides-and-tutorials/integrate/embed-stories-nonamp/?format=stories#display-a-web-story)” section of the guide.
 
 
 ### Fetch more stories from an endpoint
@@ -191,7 +191,7 @@ The player unlocks a number of features that allow you to customize the UI of th
 ### Add attribution for creator / publisher
 
 
-{{ image('/static/img/docs/story-attribution.png', 716, 1198, align='center', caption='Attribution in web stories' alt='web player showing story attribution' ) }}
+{{ image('/static/img/docs/story-attribution.png', 716, 1198, align='center', caption='Attribution in web stories' alt='web story player showing story attribution' ) }}
 
 
 _Creator’s title at the top of the story_
@@ -227,7 +227,7 @@ See examples below to get an idea of what you can do.
 </table>
 
 
-To configure them, specify a JSON configuration with the `type=”application/json”` attribute as a child of the `&lt;amp-story-player>` element.
+To configure them, specify a JSON configuration with the `type=”application/json”` attribute as a child of the `<amp-story-player>` element.
 
 Inside the configuration, specify an array of “controls”. The “controls” structure is described below.
 
