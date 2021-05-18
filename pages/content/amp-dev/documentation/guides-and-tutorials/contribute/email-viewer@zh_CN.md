@@ -6,7 +6,7 @@ formats:
   - email
 ---
 
-希望支持 AMP 电子邮件的电子邮件客户端应使用 [AMP 查看工具](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md)托管他们发件人的 AMP 电子邮件。使用 [AMP Viewer 库](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration)构建的查看工具包含一个 AMP 文档，并启用了相应的[功能](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/CAPABILITIES.md)，允许通过 postMessage 与 AMP 文档进行双向通信。这些功能包括授予电子邮件可见性控制权限、中继用户指标，以及提供方法来确保从电子邮件发出的 XHR 请求的安全性。
+希望支持 AMP 电子邮件的电子邮件客户端应使用 [AMP 查看工具](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md)托管他们发件人的 AMP 电子邮件。使用 [AMP Viewer 库](https://github.com/ampproject/amphtml/tree/main/extensions/amp-viewer-integration)构建的查看工具包含一个 AMP 文档，并启用了相应的[功能](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/CAPABILITIES.md)，允许通过 postMessage 与 AMP 文档进行双向通信。这些功能包括授予电子邮件可见性控制权限、中继用户指标，以及提供方法来确保从电子邮件发出的 XHR 请求的安全性。
 
 ## 查看工具 XHR 拦截
 

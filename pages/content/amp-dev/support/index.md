@@ -11,7 +11,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/SUPPORT.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/SUPPORT.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -38,8 +38,8 @@ If you are looking for help to get started using AMP on your site or you are hav
 
 **Found a bug? Suggest a feature?**
 
-If you encounter a bug in AMP or have a feature request for AMP, see [Reporting issues with AMP](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#reporting-issues-with-amp) for information on filing an issue or requesting features.
+If you encounter a bug in AMP or have a feature request for AMP, see [Reporting issues with AMP](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#reporting-issues-with-amp) for information on filing an issue or requesting features.
 
 **Contributing to AMP?**
 
-[Contributing to AMP HTML](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#ongoing-participation) is a great place to find out how you can make contributions to the AMP open source project and how you can get help if you run into questions when contributing to AMP.
+[Contributing to AMP HTML](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#ongoing-participation) is a great place to find out how you can make contributions to the AMP open source project and how you can get help if you run into questions when contributing to AMP.

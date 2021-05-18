@@ -658,7 +658,7 @@ AMP ترسل XMLHttpRequests (XHRs) إلى نقاط نهاية JSON في دفع�
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>هي عنوان URL لنقطة النهاية البعيدة التي ستعرض JSON الذي سيعمل على تعديل <code>amp-state</code> هذا. ويجب أن تكون خدمة CORS HTTP.
-      تتيح السمة <code>src</code> جميع استبدالات متغيرات عنوان URL القياسية. اطّلِع على <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md">دليل الاستبدالات</a> للحصول على المزيد من المعلومات.
+      تتيح السمة <code>src</code> جميع استبدالات متغيرات عنوان URL القياسية. اطّلِع على <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">دليل الاستبدالات</a> للحصول على المزيد من المعلومات.
       [tip type="important"]
       يجب أن تنفذ نقطة النهاية المتطلبات المحددة في مواصفات <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">طلبات CORS في AMP</a>.
       [/tip]

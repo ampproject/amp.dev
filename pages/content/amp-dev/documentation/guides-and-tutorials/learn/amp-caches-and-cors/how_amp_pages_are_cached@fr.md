@@ -31,13 +31,13 @@ Actuellement, il existe deux fournisseurs de cache AMP :
 - [Google AMP Cache](https://developers.google.com/amp/cache/)
 - [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
-AMP est un écosystème ouvert et le Projet AMP encourage activement le développement d'autres caches AMP. Pour en savoir plus sur la création de caches AMP, consultez les [instructions relatives au cache AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md).
+AMP est un écosystème ouvert et le Projet AMP encourage activement le développement d'autres caches AMP. Pour en savoir plus sur la création de caches AMP, consultez les [instructions relatives au cache AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md).
 
 ## Comment choisir un cache AMP ?
 
 En tant qu'éditeur, vous ne choisissez pas un cache AMP, c'est en fait _la plateforme_ liée à votre contenu qui choisit le cache AMP (le cas échéant) à utiliser.
 
-Il s'agit d'une inversion du modèle typique où la diffusion du contenu est la responsabilité de l'éditeur. Cependant, ce modèle permet aux plateformes de fournir à leurs utilisateurs des performances de chargement prévisibles et, entre autres, leur permet de garantir les invariants de sécurité et de confidentialité requis pendant la phase de pré-affichage d'AMP. Pour en savoir plus sur les directives strictes de création de caches AMP, consultez les [directives relatives au cache AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md).
+Il s'agit d'une inversion du modèle typique où la diffusion du contenu est la responsabilité de l'éditeur. Cependant, ce modèle permet aux plateformes de fournir à leurs utilisateurs des performances de chargement prévisibles et, entre autres, leur permet de garantir les invariants de sécurité et de confidentialité requis pendant la phase de pré-affichage d'AMP. Pour en savoir plus sur les directives strictes de création de caches AMP, consultez les [directives relatives au cache AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md).
 
 ## Puis-je désactiver la mise en cache ?
 
@@ -67,6 +67,6 @@ En utilisant le format AMP, vous rendez votre contenu disponible pour la mise en
 
 ## Ressources supplémentaires
 
-- [Directives du cache AMP du Projet AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md)
+- [Directives du cache AMP du Projet AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md)
 - [Présentation du cache AMP de Google](https://developers.google.com/amp/cache/overview)
 - [Documentation du cache AMP de Bing](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)

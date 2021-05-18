@@ -20,7 +20,7 @@ Dieses Dokument beschreibt die Erwartungen von AMP an Drittanbieter und definier
 
 # Richtlinien für Beiträge
 
-Alle allgemeinen Beiträge unterliegen den [allgemeinen AMPHTML Richtlinien in CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md). Wir erwarten, dass externe Mitwirkende ihre Beiträge in unterschiedlichem Maße testen, warten und aktualisieren.
+Alle allgemeinen Beiträge unterliegen den [allgemeinen AMPHTML Richtlinien in CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md). Wir erwarten, dass externe Mitwirkende ihre Beiträge in unterschiedlichem Maße testen, warten und aktualisieren.
 
 Folgende Annahmevoraussetzungen gelten für alle Beitragsebenen:
 
@@ -61,7 +61,7 @@ Die einzige drittanbieterspezifische Logik, die in der AMP Repository eingecheck
 
 [**amp-ad**](../../../components/reference/amp-ad.md)
 
-Ad Anbieter sollten den [Überblick zum Thema Entwicklung](https://github.com/ampproject/amphtml/tree/master/ads#overview) und die [Anleitung für Entwickler](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) lesen, um die Unterstützung für deine Funktionen zu [`amp-ad`](../../../components/reference/amp-ad.md) hinzuzufügen. Je nach der von deinem Unternehmen bereitgestellten Ad Technologie könnte auch [diese Anleitung zur Integration](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads) für dich relevant sein.
+Ad Anbieter sollten den [Überblick zum Thema Entwicklung](https://github.com/ampproject/amphtml/tree/main/ads#overview) und die [Anleitung für Entwickler](https://github.com/ampproject/amphtml/tree/main/ads#developer-guidelines-for-a-pull-request) lesen, um die Unterstützung für deine Funktionen zu [`amp-ad`](../../../components/reference/amp-ad.md) hinzuzufügen. Je nach der von deinem Unternehmen bereitgestellten Ad Technologie könnte auch [diese Anleitung zur Integration](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads) für dich relevant sein.
 
 Es gibt viele Ad Anbieter, die Unterstützung für werbebezogene Funktionen wie amp-ad implementiert haben. Hier ist ein [Beispiel für einen Pull Request](https://github.com/ampproject/amphtml/pull/2299) vom Ad Netzwerk [Criteo](https://github.com/ampproject/amphtml/blob/main/ads/criteo.md).
 

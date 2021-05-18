@@ -20,7 +20,7 @@ Dokumen ini menguraikan ekspektasi pihak ketiga AMP dan menentukan tingkat kontr
 
 # Panduan berkontribusi
 
-Semua kontribusi umum tunduk terhadap [panduan universal HTML AMP di CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md). Kami mengharapkan pihak ketiga untuk menguji, memelihara, dan memperbarui kontribusinya ke berbagai tingkatan.
+Semua kontribusi umum tunduk terhadap [panduan universal HTML AMP di CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md). Kami mengharapkan pihak ketiga untuk menguji, memelihara, dan memperbarui kontribusinya ke berbagai tingkatan.
 
 Agar memenuhi syarat untuk dimasukkan, semua tingkat kontribusi harus:
 
@@ -44,7 +44,7 @@ Setelah memutuskan tingkat kontribusi yang sesuai dengan contoh penggunaan Anda,
 
 ## Kontribusi tingkat 1
 
-Ekstensi amp-ad digunakan untuk menayangkan iklan Display di halaman AMP. Lebih dari 90 penyedia teknologi iklan telah menambahkan dukungan ke AMP. Untuk memulai, baca [ringkasan pengembangan](https://github.com/ampproject/amphtml/tree/master/ads#overview) atau lihat bagian [petunjuk developer](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) untuk menambahkan dukungan Anda ke ekstensi amp-ad. Bergantung pada teknologi iklan yang disediakan oleh perusahaan Anda, [petunjuk integrasi](ad-integration-guide.md) ini mungkin berguna.
+Ekstensi amp-ad digunakan untuk menayangkan iklan Display di halaman AMP. Lebih dari 90 penyedia teknologi iklan telah menambahkan dukungan ke AMP. Untuk memulai, baca [ringkasan pengembangan](https://github.com/ampproject/amphtml/tree/main/ads#overview) atau lihat bagian [petunjuk developer](https://github.com/ampproject/amphtml/tree/main/ads#developer-guidelines-for-a-pull-request) untuk menambahkan dukungan Anda ke ekstensi amp-ad. Bergantung pada teknologi iklan yang disediakan oleh perusahaan Anda, [petunjuk integrasi](ad-integration-guide.md) ini mungkin berguna.
 
 Ada lebih dari 90 penyedia iklan yang telah menambahkan dukungan untuk fitur yang berkaitan dengan iklan seperti [`amp-ad`](../../../components/reference/amp-ad.md) . Berikut adalah contoh [pull request](https://github.com/ampproject/amphtml/pull/2299) dari jaringan iklan [Criteo](https://github.com/ampproject/amphtml/blob/main/ads/criteo.md).
 
@@ -61,7 +61,7 @@ Satu-satunya logika yang spesifik untuk pihak ketiga yang masuk ke dalam reposit
 
 [**amp-ad**](../../../components/reference/amp-ad.md)
 
-Penayang iklan harus membaca [gambaran umum pengembangan](https://github.com/ampproject/amphtml/tree/master/ads#overview) dan [petunjuk pengembang](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) untuk menambahkan dukungan Anda ke [`amp-ad`](../../../components/reference/amp-ad.md). Bergantung pada teknologi iklan yang disediakan perusahaan Anda, [petunjuk integrasi ini](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads) mungkin berguna bagi Anda.
+Penayang iklan harus membaca [gambaran umum pengembangan](https://github.com/ampproject/amphtml/tree/main/ads#overview) dan [petunjuk pengembang](https://github.com/ampproject/amphtml/tree/main/ads#developer-guidelines-for-a-pull-request) untuk menambahkan dukungan Anda ke [`amp-ad`](../../../components/reference/amp-ad.md). Bergantung pada teknologi iklan yang disediakan perusahaan Anda, [petunjuk integrasi ini](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads) mungkin berguna bagi Anda.
 
 Banyak penyedia iklan yang telah menambahkan dukungan untuk fitur terkait periklanan, seperti amp-ad. Berikut ini [contoh permintaan perubahan](https://github.com/ampproject/amphtml/pull/2299) dari jaringan iklan [Criteo](https://github.com/ampproject/amphtml/blob/main/ads/criteo.md).
 

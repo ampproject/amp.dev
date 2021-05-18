@@ -157,7 +157,7 @@ Negli esempi riportati di seguito, dimostriamo come si presenta la transizione p
 
 ##### In iframe semplici, ad esempio, provenienti da cache AMP <a name="on-friendly-iframes-eg-coming-from-an-amp-cache"></a>
 
-<amp-img alt="lightbox ad in friendly iframe" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-fie.gif" layout="fixed">
+<amp-img alt="lightbox ad in friendly iframe" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/spec/img/lightbox-ad-fie.gif" layout="fixed">
   <noscript>
     <img alt="lightbox ad in friendly iframe" src="../../spec/img/lightbox-ad-fie.gif">
     </noscript>
@@ -165,7 +165,7 @@ Negli esempi riportati di seguito, dimostriamo come si presenta la transizione p
 
 ##### In iframe di terze parti, ad esempio, esterni a cache AMP <a name="on-third-party-iframes-eg-outside-the-amp-cache"></a>
 
-<amp-img alt="lightbox ad in 3p iframe" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-3p.gif" layout="fixed">
+<amp-img alt="lightbox ad in 3p iframe" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/spec/img/lightbox-ad-3p.gif" layout="fixed">
   <noscript>
     <img alt="lightbox ad in 3p iframe" src="../../spec/img/lightbox-ad-3p.gif">
     </noscript>

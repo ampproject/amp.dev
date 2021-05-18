@@ -94,7 +94,7 @@ El componente `amp-video` acepta hasta cuatro tipos únicos de nodos HTML como e
       </tr>
       <tr>
         <td width="40%"><strong>autoplay</strong></td>
-        <td>Si se incluye este atributo y el navegador admite la reproducción automática, el vídeo se reproducirá automáticamente en cuanto esté visible. Hay algunas condiciones que el componente debe cumplir para reproducirse, <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md#autoplay">que se describen en la especificación de vídeo en AMP</a>.</td>
+        <td>Si se incluye este atributo y el navegador admite la reproducción automática, el vídeo se reproducirá automáticamente en cuanto esté visible. Hay algunas condiciones que el componente debe cumplir para reproducirse, <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md#autoplay">que se describen en la especificación de vídeo en AMP</a>.</td>
       </tr>
       <tr>
         <td width="40%"><strong>controls</strong></td>
@@ -131,7 +131,7 @@ El componente `amp-video` acepta hasta cuatro tipos únicos de nodos HTML como e
         </tr>
         <tr>
           <td width="40%"><strong>rotate-to-fullscreen</strong></td>
-          <td>Si el vídeo está visible, se mostrará en pantalla completa cuando el usuario gire su dispositivo y entre en modo de vista horizontal. Para obtener más información, consulta la <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md#rotate-to-fullscreen">especificación de vídeo en AMP</a>.</td>
+          <td>Si el vídeo está visible, se mostrará en pantalla completa cuando el usuario gire su dispositivo y entre en modo de vista horizontal. Para obtener más información, consulta la <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md#rotate-to-fullscreen">especificación de vídeo en AMP</a>.</td>
         </tr>
         <tr>
           <td width="40%"><strong>atributos comunes</strong></td>

@@ -27,7 +27,7 @@ Prima di poter aggiungere i tuoi servizi e strumenti di analisi al sistema runti
 - Individuare i tipi di [variabili](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md) e [richieste](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-analytics.md#requests) di cui avrai bisogno in un documento AMP HTML per il tuo servizio di analisi.
 - Determinare se la funzione di plug-in per invio in batch è necessaria per costruire l'URL finale in caso di utilizzo dell'invio in batch di richieste.
 - Identificare gli eventi che determinano l'invio di richieste di analisi da parte di pagine che sono pertinenti per il tuo servizio.
-- Valutare se e in che modo [tracciare gli utenti in](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md) contesti AMP proprietari e di terzi.
+- Valutare se e in che modo [tracciare gli utenti in](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md) contesti AMP proprietari e di terzi.
 - Determinare come il pannello di controllo del tuo strumento di analisi gestisce il traffico AMP.
 - Individuare eventuali funzionalità mancanti in `amp-analytics` e [richieste di file](https://github.com/ampproject/amphtml/issues/new) per le funzionalità necessarie.
 - AMP Analytics invia le sue variabili a un endpoint preconfigurato. Se non si dispone già di un endpoint esistente, si può consultare [questo esempio](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample) su come realizzarne uno.
@@ -37,9 +37,9 @@ Prima di poter aggiungere i tuoi servizi e strumenti di analisi al sistema runti
 
 ## Aggiunta della propria configurazione al sistema di runtime AMP HTML<a name="adding-your-configuration-to-the-amp-html-runtime"></a>
 
-1. Creare una segnalazione [Intent-to-Implement](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features) che dichiara l'aggiunta della configurazione del proprio servizio di analisi al sistema runtime di AMP HTML. Assicurarsi di includere **cc @ ampproject / wg-analytics** nella descrizione.
+1. Creare una segnalazione [Intent-to-Implement](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../docs/contributing.md#contributing-features) che dichiara l'aggiunta della configurazione del proprio servizio di analisi al sistema runtime di AMP HTML. Assicurarsi di includere **cc @ ampproject / wg-analytics** nella descrizione.
 2. Sviluppare una patch che implementa quanto segue:
-   1. Un nuovo file json di configurazione `${vendorName}.json` nella [cartella](https://github.com/ampproject/amphtml/tree/master/extensions/amp-analytics/0.1/vendors) dei fornitori, che include le opzioni suddette oltre a quelle predefinite, quali:
+   1. Un nuovo file json di configurazione `${vendorName}.json` nella [cartella](https://github.com/ampproject/amphtml/tree/main/extensions/amp-analytics/0.1/vendors) dei fornitori, che include le opzioni suddette oltre a quelle predefinite, quali:
       1. `"vars": {}` per ulteriori variabili predefinite.
       2. `"requests": {}` per le richieste che verranno utilizzate dal servizio.
       3. `"optout":` se necessario. Al momento non abbiamo un buon sistema di annullamento delle sottoscrizioni, quindi ti chiediamo di aiutarci a progettarne uno che funzioni bene per i tuoi servizi.
@@ -75,7 +75,7 @@ Per adottare questo approccio, consultare la documentazione per l'integrazione d
 ## Altre risorse <a name="further-resources"></a>
 
 - Approfondimento: [Perché non usare semplicemente un iframe?](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/why-not-iframe.md)
-- Approfondimento: [Gestione dello stato di utenti non autenticati con AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md)
+- Approfondimento: [Gestione dello stato di utenti non autenticati con AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md)
 - [Esempio di amp-analytics](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
 - Documentazione di riferimento di [amp-analytics](https://amp.dev/documentation/components/amp-analytics)
 - Documentazione di riferimento sulle [variabili di amp-analytics](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md)

@@ -15,7 +15,7 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-Bist du Anbieter von Ad Technologien und möchtest AMP HTML integrieren? Dann beachte bitte die folgenden Richtlinien. Um eine minimale Latenz und eine angemessene Qualität zu gewährleisten, befolge bitte die [hier](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads) beschriebene Anleitung, bevor du einen Pull Request im AMP Open Source Projekt erstellst. Allgemeine Hinweise für Interessenten, die zu AMP beitragen möchten, findest du in [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../CONTRIBUTING.md).
+Bist du Anbieter von Ad Technologien und möchtest AMP HTML integrieren? Dann beachte bitte die folgenden Richtlinien. Um eine minimale Latenz und eine angemessene Qualität zu gewährleisten, befolge bitte die [hier](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads) beschriebene Anleitung, bevor du einen Pull Request im AMP Open Source Projekt erstellst. Allgemeine Hinweise für Interessenten, die zu AMP beitragen möchten, findest du in [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../docs/contributing.md).
 
 ## Ad Server <a name="ad-server"></a>
 

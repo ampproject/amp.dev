@@ -91,7 +91,7 @@ teaser:
 
 [/sourcecode]
 
-要查看更多示例（包括备用 HTML 属性语法），请访问 [ampproject 示例文件夹](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples)。
+要查看更多示例（包括备用 HTML 属性语法），请访问 [ampproject 示例文件夹](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples)。
 
 [tip type="read-on"] 要详细了解结构化数据，请访问以下资源。
 

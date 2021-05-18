@@ -35,7 +35,7 @@ AMP プラットフォームを統合するにあたり、データの取得や�
 <amp-pixel src="https://foo.com/pixel?RANDOM"></amp-pixel>
 ```
 
-この例では、ページビューデータは乱数とともに指定の URL に送信されます。`RANDOM` 変数は、数ある [AMP プラットフォームの変数置換](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)の 1 つです。[変数置換](analytics_basics.md)に関する詳細は、こちらをご覧ください。
+この例では、ページビューデータは乱数とともに指定の URL に送信されます。`RANDOM` 変数は、数ある [AMP プラットフォームの変数置換](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)の 1 つです。[変数置換](analytics_basics.md)に関する詳細は、こちらをご覧ください。
 
 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) は組み込みのコンポーネントであるため、[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) などの AMP 拡張コンポーネントと違って、宣言を追加する必要はありません。ただし [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) タグは、極力 `<body>` の先頭付近に配置してください。トラッキングピクセルはタグが表示されてからのみ呼び出されるため、[`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) がページの下の方に配置されている場合、トラッキングピクセルが呼び出されない可能性があります。
 
@@ -179,7 +179,7 @@ AMP アナリティクスでは、アナリティクスベンダーを使って�
 
 ## ユーザーの識別 <a name="user-identification"></a>
 
-ウェブサイトは、ブラウザの cookie を使用してユーザー固有の情報を格納しています。cookie は、ユーザーが過去にサイトに訪問したことがあるかを知るために使用することができます。AMP では、ページはサイト運営者のウェブサイトかキャッシュ（Google AMP キャッシュなど）から配信されます。サイト運営者のウェブサイトとキャッシュのドメインは異なることがほとんどですが、セキュリティの理由により、ブラウザは別のドメインの cookie へのアクセスを制限することができます（ほとんどにおいて制限します）。[オリジン上でのユーザーのトラッキング](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md)も参照してください。
+ウェブサイトは、ブラウザの cookie を使用してユーザー固有の情報を格納しています。cookie は、ユーザーが過去にサイトに訪問したことがあるかを知るために使用することができます。AMP では、ページはサイト運営者のウェブサイトかキャッシュ（Google AMP キャッシュなど）から配信されます。サイト運営者のウェブサイトとキャッシュのドメインは異なることがほとんどですが、セキュリティの理由により、ブラウザは別のドメインの cookie へのアクセスを制限することができます（ほとんどにおいて制限します）。[オリジン上でのユーザーのトラッキング](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md)も参照してください。
 
 デフォルトでは、AMP は、ページがサイト運営者の元のウェブサイトからアクセスされているか、キャッシュからアクセスされているのかを指定するクライアント ID を管理しています。AMP が生成するクライアント ID には、`"amp-"` とそれに続くランダムの `base64` でエンコードされた文字列の値が使用されており、同じユーザーがもう一度アクセスすると、同じ ID がそのまま使用されます。
 

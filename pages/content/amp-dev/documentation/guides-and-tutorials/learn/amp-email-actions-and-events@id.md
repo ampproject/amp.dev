@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-email-actions-and-events.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-email-actions-and-events.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -30,7 +30,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-[tip type="note"] Dokumentasi ini mencakup tindakan dan peristiwa untuk format email AMP. Bacalah [Tindakan dan peristiwa](https://github.com/ampproject/amphtml/blob/main/spec/amp-actions-and-events.md) untuk iklan, cerita, dan situs web AMP.[/tip]
+[tip type="note"] Dokumentasi ini mencakup tindakan dan peristiwa untuk format email AMP. Bacalah [Tindakan dan peristiwa](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-actions-and-events.md) untuk iklan, cerita, dan situs web AMP.[/tip]
 
 Atribut `on` digunakan untuk menginstal pengurus (handler) peristiwa pada elemen. Peristiwa-peristiwa yang didukung bergantung pada elemen.
 
@@ -426,7 +426,7 @@ Contohnya, yang berikut ini mungkin dilakukan di AMP:
   </tr>
   <tr>
     <td><code>changeToLayoutContainer</code></td>
-    <td>Perbarui tata letak <code>amp-list</code> ke <code>layout="CONTAINTER"</code> untuk memungkinkan <a href="https://github.com/ampproject/amphtml/blob/main/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">pengubahan ukuran dinamis</a>.</td>
+    <td>Perbarui tata letak <code>amp-list</code> ke <code>layout="CONTAINTER"</code> untuk memungkinkan <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">pengubahan ukuran dinamis</a>.</td>
   </tr>
   <tr>
     <td> <code>fetch-error</code> (kepercayaan rendah)</td>

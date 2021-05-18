@@ -92,7 +92,7 @@ HTML5 `video` タグの代替機能です。HTML5 動画ファイルを直接埋
       </tr>
       <tr>
         <td width="40%"><strong>autoplay</strong></td>
-        <td>この属性が存在し、ブラウザが自動再生をサポートしている場合、動画は表示されるとすぐに自動的に再生されます。自動再生を行うには、いくつかのコンポーネント要件を満たす必要があります。詳細については、<a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md#autoplay">AMP 内動画に関する仕様</a>をご覧ください。</td>
+        <td>この属性が存在し、ブラウザが自動再生をサポートしている場合、動画は表示されるとすぐに自動的に再生されます。自動再生を行うには、いくつかのコンポーネント要件を満たす必要があります。詳細については、<a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md#autoplay">AMP 内動画に関する仕様</a>をご覧ください。</td>
       </tr>
       <tr>
         <td width="40%"><strong>controls</strong></td>
@@ -128,7 +128,7 @@ HTML5 `video` タグの代替機能です。HTML5 動画ファイルを直接埋
       </tr>
       <tr>
         <td width="40%"><strong>rotate-to-fullscreen</strong></td>
-        <td>動画が表示されている場合、ユーザーがデバイスを横向きに回転すると、動画が全画面表示されます。詳細については、<a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md#rotate-to-fullscreen">AMP 内動画に関する仕様</a>をご覧ください。</td>
+        <td>動画が表示されている場合、ユーザーがデバイスを横向きに回転すると、動画が全画面表示されます。詳細については、<a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md#rotate-to-fullscreen">AMP 内動画に関する仕様</a>をご覧ください。</td>
       </tr>
       <tr>
         <td width="40%"><strong>共通の属性</strong></td>

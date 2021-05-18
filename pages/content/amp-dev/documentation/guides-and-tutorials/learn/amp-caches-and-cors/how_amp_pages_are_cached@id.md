@@ -31,13 +31,13 @@ Saat ini, ada dua penyedia Cache AMP:
 - [Cache AMP Google](https://developers.google.com/amp/cache/)
 - [Cache AMP Bing](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
-AMP adalah ekosistem terbuka dan Proyek AMP secara aktif mendorong pengembangan lebih banyak Cache AMP. Untuk mempelajari tentang cara membuat Cache AMP, kunjungi [Panduan Cache AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md).
+AMP adalah ekosistem terbuka dan Proyek AMP secara aktif mendorong pengembangan lebih banyak Cache AMP. Untuk mempelajari tentang cara membuat Cache AMP, kunjungi [Panduan Cache AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md).
 
 ## Bagaimana cara memilih Cache AMP?
 
 Sebagai penayang, Anda tidak memilih Cache AMP, _sebenarnya, platform_ yang ditautkan ke konten Anda yang memilih Cache AMP (jika ada) untuk digunakan.
 
-Ini adalah kebalikan dari model pada umumnya yang mana penayangan konten adalah tanggung jawab dari penayang. Namun, model ini memungkinkan platform memberikan kinerja pemuatan yang dapat diprediksi kepada penggunanya. Selain itu, model ini juga memungkinkan platform memastikan invarian privasi dan keamanan yang diperlukan selama fase sebelum perenderan AMP. Untuk mempelajari tentang panduan ketat dalam membuat Cache AMP, kunjungi [Panduan Cache AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md).
+Ini adalah kebalikan dari model pada umumnya yang mana penayangan konten adalah tanggung jawab dari penayang. Namun, model ini memungkinkan platform memberikan kinerja pemuatan yang dapat diprediksi kepada penggunanya. Selain itu, model ini juga memungkinkan platform memastikan invarian privasi dan keamanan yang diperlukan selama fase sebelum perenderan AMP. Untuk mempelajari tentang panduan ketat dalam membuat Cache AMP, kunjungi [Panduan Cache AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md).
 
 ## Apakah saya dapat memilih menolak menyimpan di dalam cache?
 
@@ -67,6 +67,6 @@ Dengan menggunakan format AMP, Anda membuat konten Anda dapat disimpan di dalam 
 
 ## Sumber daya tambahan
 
-- [Panduan Cache AMP untuk Proyek AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md)
+- [Panduan Cache AMP untuk Proyek AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md)
 - [Gambaran umum Cache AMP Google](https://developers.google.com/amp/cache/overview)
 - [Dokumentasi Cache AMP Bing](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)

@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-debugging.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-debugging.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -50,7 +50,7 @@ have a look and request a pull request there.
     <tr>
       <td rowspan="2">애셋(예: 폰트 및 이미지)가 표시되지 않음</td>
       <td>애셋이 잘못된 MIME 유형으로 지원됨.</td>
-      <td> <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">허용 가능한 MIME 유형</a> 지정.</td>
+      <td> <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">허용 가능한 MIME 유형</a> 지정.</td>
     </tr>
     <tr>
       <td>AMP 캐시가 애셋에 액세스할 수 없음.</td>

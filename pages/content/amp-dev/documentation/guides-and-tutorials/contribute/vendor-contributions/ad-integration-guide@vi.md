@@ -15,7 +15,7 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-Nếu bạn là một đơn vị cung cấp công nghệ quảng cáo và muốn tích hợp với AMP HTML, hãy xem các hướng dẫn dưới đây. Để đảm bảo độ trễ tối thiểu và chất lượng tốt, hãy tuân thủ các hướng dẫn được liệt kê [ở đây](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads) trước khi gửi một yêu cầu kéo cho dự án mã nguồn mở AMP. Để biết hướng dẫn chung về cách bắt đầu đóng góp cho AMP, hãy xem <a class="" href="https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.
+Nếu bạn là một đơn vị cung cấp công nghệ quảng cáo và muốn tích hợp với AMP HTML, hãy xem các hướng dẫn dưới đây. Để đảm bảo độ trễ tối thiểu và chất lượng tốt, hãy tuân thủ các hướng dẫn được liệt kê [ở đây](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads) trước khi gửi một yêu cầu kéo cho dự án mã nguồn mở AMP. Để biết hướng dẫn chung về cách bắt đầu đóng góp cho AMP, hãy xem <a class="" href="https://github.com/ampproject/amphtml/blob/main/docs/contributing.md">CONTRIBUTING.md</a>.
 
 ## Máy chủ Quảng cáo <a name="ad-server"></a>
 

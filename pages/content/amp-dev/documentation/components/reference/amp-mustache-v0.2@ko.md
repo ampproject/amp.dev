@@ -60,7 +60,7 @@ Mustache는 로직이 없는 템플릿 구문입니다. 자세한 내용은 [Mus
 
 ## 사용 <a name="usage"></a>
 
-[AMP 템플릿 사양](https://github.com/ampproject/amphtml/blob/main/spec/amp-html-templates.md)에 따라 `amp-mustache` 템플릿을
+[AMP 템플릿 사양](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-templates.md)에 따라 `amp-mustache` 템플릿을
 정의하고 사용해야 합니다.
 
 먼저 `amp-mustache`를 선언/로드해야 합니다.

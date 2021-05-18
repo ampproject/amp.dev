@@ -94,7 +94,7 @@ teaser:
       </tr>
       <tr>
         <td width="40%"><strong>autoplay</strong></td>
-        <td>如果此属性存在并且浏览器支持自动播放，则视频将在变为可见时自动播放。该组件需要满足一些条件才能播放，<a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md#autoplay">在“AMP 中的视频”规范中列出了这些条件</a>。</td>
+        <td>如果此属性存在并且浏览器支持自动播放，则视频将在变为可见时自动播放。该组件需要满足一些条件才能播放，<a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md#autoplay">在“AMP 中的视频”规范中列出了这些条件</a>。</td>
       </tr>
       <tr>
         <td width="40%"><strong>controls</strong></td>
@@ -130,7 +130,7 @@ teaser:
       </tr>
       <tr>
         <td width="40%"><strong>rotate-to-fullscreen</strong></td>
-        <td>如果视频可见，则在用户将设备旋转到横屏模式后会全屏显示。如需了解更多详情，请参阅<a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md#rotate-to-fullscreen">“AMP 中的视频”规范</a>。</td>
+        <td>如果视频可见，则在用户将设备旋转到横屏模式后会全屏显示。如需了解更多详情，请参阅<a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md#rotate-to-fullscreen">“AMP 中的视频”规范</a>。</td>
       </tr>
       <tr>
         <td width="40%"><strong>常见属性</strong></td>

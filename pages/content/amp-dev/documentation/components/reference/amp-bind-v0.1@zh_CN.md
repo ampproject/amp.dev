@@ -648,7 +648,7 @@ AMP 会对向 JSON 端点发出的 XMLHttpRequest (XHR) 进行批处理，也就
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>远程端点的网址，该端点将返回 JSON，以便更新此 <code>amp-state</code>。这必须是 CORS HTTP 服务。
-      <code>src</code> 属性支持所有标准网址变量替换。如需了解详情，请参阅<a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md">替换指南</a>。
+      <code>src</code> 属性支持所有标准网址变量替换。如需了解详情，请参阅<a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">替换指南</a>。
           [tip type="important"]
         该端点必须符合 <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">AMP 中的 CORS 请求</a>规范中规定的要求。
         [/tip]</td>

@@ -55,7 +55,7 @@ Bir şablonu şu iki yöntemden biriyle belirtebilirsiniz:
 * mevcut bir `template` veya `script` öğesinin bir kimliğine başvuran `template` özelliği.
 * doğrudan `amp-list` öğesinin içine yerleştirilmiş bir `template` veya `script` öğesi.
 
-Şablonlar hakkında daha fazla bilgi için [AMP HTML Şablonları](https://github.com/ampproject/amphtml/blob/main/spec/amp-html-templates.md) bölümüne bakın.
+Şablonlar hakkında daha fazla bilgi için [AMP HTML Şablonları](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-templates.md) bölümüne bakın.
 
 *Örnek: Dinamik liste görüntüleme*
 
@@ -424,7 +424,7 @@ Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri](../../../docum
 ## Değişiklikler <a name="substitutions"></a>
 
 `<amp-list>` tüm standart URL değişkeni değişikliklerine izin verir.
-Daha fazla bilgi için [Değişiklik Kılavuzu](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md) dokümanına bakın.
+Daha fazla bilgi için [Değişiklik Kılavuzu](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) dokümanına bakın.
 
 Örneğin:
 ```html

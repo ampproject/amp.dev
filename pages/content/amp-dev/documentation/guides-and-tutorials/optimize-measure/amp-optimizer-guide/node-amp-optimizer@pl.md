@@ -92,7 +92,7 @@ Optymalizator AMP zapewnia rozsądną konfigurację domyślną, która powinna d
 
 Kilka wartych uwagi opcji:
 
-- `lts: true` do włączania [długoterminowo stabilnych adresów URL](https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md) środowiska uruchomieniowego i składników AMP.
+- `lts: true` do włączania [długoterminowo stabilnych adresów URL](https://github.com/ampproject/amphtml/blob/main/docs/lts-release.md) środowiska uruchomieniowego i składników AMP.
 - `verbose: true` do generowania szczegółowych danych wyjściowych debugowania. Jest to szczególnie przydatne do identyfikowania przyczyn, dla których nie można było usunąć kodu standardowego AMP.
 - `imageOptimizer`: włączyć automatyczne generowanie atrybutów srcset obrazów, udostępniając funkcję obliczania adresów URL srcset dla danego src obrazu. Funkcja powinna zwracać adres URL wskazujący na wersję obrazu `src` o danej szerokości. Jeśli obraz nie jest dostępny, powinna zwracać wartość false. Więcej informacji na ten temat zawiera następna sekcja.
 

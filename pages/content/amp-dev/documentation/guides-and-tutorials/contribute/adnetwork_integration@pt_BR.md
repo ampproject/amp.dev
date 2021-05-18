@@ -54,7 +54,7 @@ O [Fast Fetch](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/) 
 Para veicular anúncios HTML para AMP no servidor de anúncios, é necessário fornecer uma integração Fast Fetch que inclua:
 
 1. compatibilidade com comunicação de rede SSL
-2. JavaScript para criar a solicitação de anúncio (exemplos de implementação: [AdSense](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-adsense-impl) e [DoubleClick](https://github.com/ampproject/amphtml/tree/master/extensions/amp-ad-network-doubleclick-impl)).
+2. JavaScript para criar a solicitação de anúncio (exemplos de implementação: [AdSense](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-adsense-impl) e [DoubleClick](https://github.com/ampproject/amphtml/tree/main/extensions/amp-ad-network-doubleclick-impl)).
 3. validação e assinatura do criativo por meio de um serviço de validação (O [Cloudflare](https://blog.cloudflare.com/firebolt/) oferece um serviço de verificação de anúncios AMP. Com ele, qualquer provedor de anúncios independente pode exibir anúncios mais rápidos, leves e interessantes.)
 
 Para ver instruções sobre como criar uma integração com o Fast Fetch, confira o [guia de implementação de rede do Fast Fetch](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md) (em inglês).

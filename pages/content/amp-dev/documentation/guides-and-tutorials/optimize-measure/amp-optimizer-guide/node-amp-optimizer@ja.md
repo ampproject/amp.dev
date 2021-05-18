@@ -92,7 +92,7 @@ AMP オプティマイザは妥当なデフォルト構成を提供しており�
 
 特筆すべきオプションをいくつか以下に示します。
 
-- `lts: true`: AMP ランタイムとコンポーネントの[長期的安定 URL](https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md) を可能にします。
+- `lts: true`: AMP ランタイムとコンポーネントの[長期的安定 URL](https://github.com/ampproject/amphtml/blob/main/docs/lts-release.md) を可能にします。
 - `verbose: true`: 詳細なデバッグ出力を得られます。特に、AMP ボイラープレートを削除できない理由を特定する上で役立ちます。
 - `imageOptimizer`: 特定の画像 src の srcset URL を計算するための関数を提供し、画像 srcset の生成を自動化します。この関数は、ある幅が指定された `src` 画像バージョンをポイントする URL を返します。利用できる画像がない場合は、偽の値を返します。この詳細は次のセクションで説明します。
 

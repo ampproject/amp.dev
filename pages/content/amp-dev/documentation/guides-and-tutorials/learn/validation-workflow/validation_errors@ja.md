@@ -132,7 +132,7 @@ AMP HTML ライブラリに対応する実装があります。AMP HTML ペー�
 
 ご自分の使用例が取り上げられていない場合は、AMP プロジェクトに
 新しいコンポーネントを提案することもできます。詳しくは、AMP プロジェクトの
-[貢献](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md)
+[貢献](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md)
 に関するドキュメントをご覧ください。
 
 ### 必須属性がない

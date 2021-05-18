@@ -100,7 +100,7 @@ AMPHTML 광고는 AMP 페이지에서 빠르고 효과적인 광고를 렌더링
 
 ### 상용구 <a name="boilerplate"></a>
 
-AMPHTML 광고에는 [일반 AMP 문서](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md)와는 다르고 훨씬 단순한 상용구 스타일 라인이 필요합니다.
+AMPHTML 광고에는 [일반 AMP 문서](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md)와는 다르고 훨씬 단순한 상용구 스타일 라인이 필요합니다.
 
 [sourcecode:html]
 

@@ -74,7 +74,7 @@ Bu sadece AMP sayfalarıyla değil, tüm web sayfalarıyla ilgilidir. Bazı plat
 </script>
 [/sourcecode]
 
-HTML özniteliği alternatif sözdizimini de içeren daha fazla örneği [ampproject örnekleri klasöründe](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) bulabilirsiniz.
+HTML özniteliği alternatif sözdizimini de içeren daha fazla örneği [ampproject örnekleri klasöründe](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples) bulabilirsiniz.
 
 Not: Bu Schema.org tanımı, içeriğinizin [Google Arama haber atlı karıncası (mobil cihazda deneyin)](https://g.co/ampdemo) tanıtımında görünmeye uygun hale getirilmesi için gereklidir.
 Ayrıca, [AMP ile En Çok Okunan Haberler](https://developers.google.com/structured-data/carousels/top-stories) ve [Yapısal Veri Testi Aracı](https://developers.google.com/structured-data/testing-tool/) konularına da bakın.

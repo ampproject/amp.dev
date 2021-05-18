@@ -52,7 +52,7 @@ limitations under the License.
 * قد لا يظهر `amp-iframe` بالقرب من أعلى المستند (باستثناء إطارات iframe التي تستخدم `placeholder` كما هو موضح [أدناه](#iframe-with-placeholder)). يجب أن يقع iframe على بعد 600 بكسل من الأعلى أو ألا يقع ضمن 75٪ الأولى من إطار العرض عند التمرير إلى الأعلى، أيهما أقل.
 * تتم إضافة إطار amp-iframe تلقائيًا إلى وضع الحماية (راجِع [التفاصيل](#sandbox)).
 * يجب على `amp-iframe` طلب الموارد فقط عبر HTTPS أو من data-URI أو عبر السمة `srcdoc`.
-* يجب ألا يكون `amp-iframe` في نفس الأصل الذي تقع فيه الحاوية إلا في حال عدم السماح بسياسة `allow-same-origin` في السمة `sandbox`. راجِع مستند ["سياسة أصل إطارات Iframe"](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md) للحصول على مزيد من التفاصيل عن الأصول المسموح بها في iframe.
+* يجب ألا يكون `amp-iframe` في نفس الأصل الذي تقع فيه الحاوية إلا في حال عدم السماح بسياسة `allow-same-origin` في السمة `sandbox`. راجِع مستند ["سياسة أصل إطارات Iframe"](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md) للحصول على مزيد من التفاصيل عن الأصول المسموح بها في iframe.
 
 *مثال: تضمين إحدى "خرائط Google" في amp-iframe*
 

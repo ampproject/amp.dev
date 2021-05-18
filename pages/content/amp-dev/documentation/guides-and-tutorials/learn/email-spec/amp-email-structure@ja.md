@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-structure.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-structure.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -35,7 +35,7 @@ limitations under the License.
 
 メール内に AMP を埋め込むには、コンテンツタイプ `text/x-amp-html` の新しい MIME パートを `multipart/alternative` の子孫として追加します。既存の `text/html` または `text/plain` パートとともに存在する必要があります。こうすることで、メールメッセージがすべてのクライアントで機能するようにすることができます。
 
-<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/master/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"><img data-md-type="raw_html" alt="AMP for Email MIMEパーツ図" src="../img/amp-email-mime-parts.png"></noscript></amp-img>
+<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/main/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"><img data-md-type="raw_html" alt="AMP for Email MIMEパーツ図" src="../img/amp-email-mime-parts.png"></noscript></amp-img>
 
 `multipart/alternative` サブタイプについての詳細は、[RFC 1521, section 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3) を参照してください。
 

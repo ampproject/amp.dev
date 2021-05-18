@@ -27,7 +27,7 @@ Trước khi bạn có thể thêm dịch vụ phân tích của mình vào th�
 - Xác định loại [biến số](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md) và [yêu cầu](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-analytics.md#requests) bạn sẽ cần trong một tài liệu AMP HTML cho dịch vụ phân tích của mình.
 - Xác định liệu chức năng tiện ích chia lô có là cần thiết để xây dựng URL cuối cùng hay không nếu sử dụng các yêu cầu có hành vi chia lô.
 - Xác định các yếu tố kích hoạt dẫn đến yêu cầu phân tích được gửi từ một trang liên quan đến dịch vụ của bạn.
-- Cân nhắc cách bạn sẽ [theo dõi người dùng](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md) trong các ngữ cảnh AMP bên thứ nhất và bên thứ ba.
+- Cân nhắc cách bạn sẽ [theo dõi người dùng](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md) trong các ngữ cảnh AMP bên thứ nhất và bên thứ ba.
 - Xác định cách bảng điều khiển phân tích của bạn xử lý lưu lượng AMP.
 - Xác định các chức năng còn thiếu trong `amp-analytics`, và [gửi yêu cầu](https://github.com/ampproject/amphtml/issues/new) cho các tính năng cần thiết.
 - AMP Analytics sẽ gửi các biến số của nó đến một điểm cuối được cấu hình sẵn. Nếu bạn chưa có một điểm cuối hiện có, hãy xem lại [mẫu này](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample) để có cái nhìn tổng quan về cách xây dựng nó.
@@ -37,9 +37,9 @@ Trước khi bạn có thể thêm dịch vụ phân tích của mình vào th�
 
 ## Thêm cấu hình của bạn vào thời gian chạy AMP HTML <a name="adding-your-configuration-to-the-amp-html-runtime"></a>
 
-1. Tạo một [vấn đề Ý định Triển khai](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features), tuyên bố rằng bạn sẽ thêm cấu hình của dịch vụ phân tích của mình vào thời gian chạy AMP HTML. Hãy nhớ bao gồm **cc @ampproject/wg-analytics** trong mô tả của bạn.
+1. Tạo một [vấn đề Ý định Triển khai](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../docs/contributing.md#contributing-features), tuyên bố rằng bạn sẽ thêm cấu hình của dịch vụ phân tích của mình vào thời gian chạy AMP HTML. Hãy nhớ bao gồm **cc @ampproject/wg-analytics** trong mô tả của bạn.
 2. Phát triển một bản vá triển khai những nội dung sau:
-   1. Một tập tin json cấu hình mới `${vendorName}.json` trong [thư mục](https://github.com/ampproject/amphtml/tree/master/extensions/amp-analytics/0.1/vendors) nhà cung cấp, bao gồm mọi tùy chọn ngoài tùy chọn mặc định như:
+   1. Một tập tin json cấu hình mới `${vendorName}.json` trong [thư mục](https://github.com/ampproject/amphtml/tree/main/extensions/amp-analytics/0.1/vendors) nhà cung cấp, bao gồm mọi tùy chọn ngoài tùy chọn mặc định như:
       1. `"vars": {}` cho các biến số mặc định bổ sung.
       2. `"requests": {}` cho các yêu cầu mà dịch vụ của bạn sẽ sử dụng.
       3. `"optout":` nếu cần. Hiện tại, chúng tôi không có một hệ thống bỏ đăng ký hoàn hảo, vậy nên hãy liên hệ để giúp chúng tôi thiết kế một hệ thống hoạt động tốt đối với bạn.
@@ -75,7 +75,7 @@ config="https://my-awesome-tag-manager.example.com/user-id.json"
 ## Tài nguyên bổ sung <a name="further-resources"></a>
 
 - Deep Dive: [Tại sao lại không sử dụng một iframe?](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/why-not-iframe.md)
-- Deep Dive: [Quản lý trạng thái người dùng chưa xác thực với AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md)
+- Deep Dive: [Quản lý trạng thái người dùng chưa xác thực với AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md)
 - [Mẫu amp-analytics](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
 - Tài liệu tham khảo [amp-analytics](https://amp.dev/documentation/components/amp-analytics)
 - Tài liệu tham khảo [biến số amp-analytics](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md)

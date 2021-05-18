@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-html-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -186,7 +186,7 @@ AMP HTML belgelerinde şunlar ZORUNLUDUR:
 - <a name="chrs"></a>başlık (head) etiketinin ilk alt öğesi olarak bir `<meta charset="utf-8">` etiketi içermek. [🔗](#chrs)
 - <a name="vprt"></a> head (başlık) etiketlerinin içinde bir `<meta name="viewport" content="width=device-width">` etiketi içermek. Ayrıca `minimum-scale=1` ve `initial-scale=1` dahil edilmesi önerilir. [🔗](#vprt)
 - <a name="scrpt"></a> head (başlık) etiketlerinin içinde bir `<script async src="https://cdn.ampproject.org/v0.js"></script>` etiketi içermek. [🔗](#scrpt)
-- <a name="boilerplate"></a> head (başlık) etiketinde [AMP ortak metin kodunu](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md) ( `head > style[amp-boilerplate]` ve `noscript > style[amp-boilerplate]` ) içermek. [🔗](#boilerplate)
+- <a name="boilerplate"></a> head (başlık) etiketinde [AMP ortak metin kodunu](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md) ( `head > style[amp-boilerplate]` ve `noscript > style[amp-boilerplate]` ) içermek. [🔗](#boilerplate)
 
 ### Meta veriler <a name="metadata"></a>
 
@@ -304,7 +304,7 @@ HTML etiketleri, AMP HTML'de değiştirilmeden kullanılabilir. Bazı etiketleri
   </tr>
 </table>
 
-Doğrulayıcı uygulamaları, yukarıdaki etiketler kaldırılarak HTML5 teknik özelliklerine dayalı bir beyaz liste kullanmalıdır. [AMP Etiketi Eki'ne](https://github.com/ampproject/amphtml/blob/main/spec/amp-tag-addendum.md) bakın.
+Doğrulayıcı uygulamaları, yukarıdaki etiketler kaldırılarak HTML5 teknik özelliklerine dayalı bir beyaz liste kullanmalıdır. [AMP Etiketi Eki'ne](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-tag-addendum.md) bakın.
 
 ### Yorumlar <a name="comments"></a>
 
@@ -322,7 +322,7 @@ AMP HTML'de `i-amp-` ön ekine sahip dahili AMP özniteliklerine izin verilmez.
 
 AMP HTML'de `-amp-` ve `i-amp-` ön ekine sahip dahili AMP sınıf adlarına izin verilmez.
 
-<code>amp-</code> ön ekine sahip sınıf adlarının anlamı için <a class="" href="https://github.com/ampproject/amphtml/blob/main/spec/amp-css-classes.md">AMP belgelerine</a> bakın. Bu sınıfların kullanımına izin verilir ve AMP çalışma zamanı ve uzantılarının bazı özelliklerinin özelleştirilmesine izin verilmesi amaçlanır.
+<code>amp-</code> ön ekine sahip sınıf adlarının anlamı için <a class="" href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-css-classes.md">AMP belgelerine</a> bakın. Bu sınıfların kullanımına izin verilir ve AMP çalışma zamanı ve uzantılarının bazı özelliklerinin özelleştirilmesine izin verilmesi amaçlanır.
 
 AMP HTML işaretlemesinde diğer tüm özel olarak oluşturulmuş sınıf adlarına izin verilir.
 
@@ -454,7 +454,7 @@ AMP çalışma zamanı, herhangi bir zamanda, halihazırda görünüm alanında 
 
 AMP HTML, `<img>` ve `<video>` gibi yerleşik kaynak yükleme etiketlerini değiştirmek ve resim lightbox'ları veya döngüler gibi karmaşık etkileşimli özellikleri uygulamak için "AMP bileşenleri" adı verilen özel öğeler kullanır.
 
-Desteklenen bileşenlerle ilgili ayrıntılar için [AMP bileşen teknik özelliklerine](https://github.com/ampproject/amphtml/blob/main/spec/./amp-html-components.md) bakın.
+Desteklenen bileşenlerle ilgili ayrıntılar için [AMP bileşen teknik özelliklerine](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-components.md) bakın.
 
 Desteklenen 2 tür AMP bileşeni vardır:
 
@@ -469,7 +469,7 @@ Yerleşik bileşenler her zaman bir AMP belgesinde bulunur ve `<amp-img>` gibi �
 
 Bu öznitelikler bir öğenin yerleşimini tanımlar. Buradaki temel amaç, herhangi bir JavaScript veya uzak kaynak indirilmeden önce alanının uygun şekilde rezerve edilebilmesini ve öğenin görüntülenebilmesini sağlamaktır.
 
-Yerleşim sistemi hakkında ayrıntılar için [AMP Yerleşim Sistemine](https://github.com/ampproject/amphtml/blob/main/spec/./amp-html-layout.md) göz atın.
+Yerleşim sistemi hakkında ayrıntılar için [AMP Yerleşim Sistemine](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-layout.md) göz atın.
 
 #### `on` <a name="on"></a>
 
@@ -496,7 +496,7 @@ Belgelendikleri takdirde bazı eylemler argümanlar kabul edebilir. Bağımsız 
 
 Örnek: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
-[AMP Eylemleri ve Olayları](https://github.com/ampproject/amphtml/blob/main/spec/./amp-actions-and-events.md) hakkında daha fazla bilgi edinin.
+[AMP Eylemleri ve Olayları](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-actions-and-events.md) hakkında daha fazla bilgi edinin.
 
 ### Genişletilmiş bileşenler <a name="extended-components"></a>
 
@@ -530,13 +530,13 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 
 ##### Sürüm oluşturma <a name="versioning"></a>
 
-[AMP sürüm oluşturma politikasına](https://github.com/ampproject/amphtml/blob/main/spec/amp-versioning-policy.md) bakın.
+[AMP sürüm oluşturma politikasına](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-versioning-policy.md) bakın.
 
 ### Şablonlar <a name="templates"></a>
 
 Şablonlar, dile özgü şablona ve sağlanan JSON verilerine göre HTML içeriğini oluşturur.
 
-Desteklenen şablonlarla ilgili ayrıntılar için [AMP şablon teknik özelliklerine](https://github.com/ampproject/amphtml/blob/main/spec/./amp-html-templates.md) bakın.
+Desteklenen şablonlarla ilgili ayrıntılar için [AMP şablon teknik özelliklerine](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-templates.md) bakın.
 
 Şablonlar, AMP çalışma zamanıyla birlikte gönderilmez ve genişletilmiş öğelerde olduğu gibi indirilmeleri gerekir. Genişletilmiş bileşenler, aşağıdaki gibi belgenin başlığına bir `<script>` etiketi eklenerek yüklenir:
 
@@ -566,7 +566,7 @@ Hello {% raw %}{{you}}{% endraw %}!
 
 Şablon öğesi içindeki sözdizimi, belirli bir şablon diline bağlıdır. Bununla birlikte, şablon dili AMP içinde kısıtlanabilir. Örneğin, "template" öğesine göre, tüm oluşturmaların geçerli, iyi biçimlendirilmiş bir DOM üzerinde olması gerekir. Tüm şablon çıktıları, AMP için geçerli çıktı oluşturulduğundan emin olmak için temizlenir.
 
-Bir şablonun sözdizimi ve kısıtlamaları hakkında bilgi edinmek için [şablonun belgelerine](https://github.com/ampproject/amphtml/blob/main/spec/./amp-html-templates.md#templates) bakın.
+Bir şablonun sözdizimi ve kısıtlamaları hakkında bilgi edinmek için [şablonun belgelerine](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-templates.md#templates) bakın.
 
 ##### URL <a name="url-1"></a>
 

@@ -66,7 +66,7 @@ Moustache هو بنية نموذج بمنطق أقل. راجِع [مستندات
 
 ## الاستخدام <a name="usage"></a>
 
-يجب تعريف نموذج `amp-mustache` واستخدامه وفقًا [لمواصفات نماذج AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-html-templates.md).
+يجب تعريف نموذج `amp-mustache` واستخدامه وفقًا [لمواصفات نماذج AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-templates.md).
 
 يجب أولاً إعلان/تحميل `amp-mustache` على هذا النحو:
 

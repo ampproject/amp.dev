@@ -6,7 +6,7 @@ formats:
   - email
 ---
 
-Почтовые клиенты, которые стремятся реализовать поддержку AMP для писем, должны использовать [средство просмотра AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) в качестве «оболочки» AMP-писем отправителя. Средство просмотра, созданное с помощью [библиотеки AMP Viewer](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration), инкапсулирует документ AMP и обеспечивает [возможности](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/CAPABILITIES.md), позволяющие осуществлять двунаправленную связь с документом AMP через postMessage. В числе этих возможностей управление видимостью письма, ретрансляция пользовательских метрик и обеспечение безопасности запросов XHR, сделанных из письма.
+Почтовые клиенты, которые стремятся реализовать поддержку AMP для писем, должны использовать [средство просмотра AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) в качестве «оболочки» AMP-писем отправителя. Средство просмотра, созданное с помощью [библиотеки AMP Viewer](https://github.com/ampproject/amphtml/tree/main/extensions/amp-viewer-integration), инкапсулирует документ AMP и обеспечивает [возможности](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/CAPABILITIES.md), позволяющие осуществлять двунаправленную связь с документом AMP через postMessage. В числе этих возможностей управление видимостью письма, ретрансляция пользовательских метрик и обеспечение безопасности запросов XHR, сделанных из письма.
 
 ## Перехват XHR-запросов с помощью средства просмотра
 

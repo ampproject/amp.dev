@@ -91,7 +91,7 @@ Exemplo:
 
 [/sourcecode]
 
-Há mais material na [pasta de exemplos do ampproject](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), incluindo a sintaxe alternativa de atributo HTML.
+Há mais material na [pasta de exemplos do ampproject](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples), incluindo a sintaxe alternativa de atributo HTML.
 
 [tip type="read-on"] Acesse estes recursos para saber mais sobre os dados estruturados:
 

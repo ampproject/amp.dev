@@ -6,7 +6,7 @@ formats:
   - email
 ---
 
-이메일용 AMP 지원을 고려하는 이메일 클라이언트라면 발신자의 AMP 이메일 호스팅에 [AMP 뷰어](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md)를 사용하는 것이 좋습니다. [AMP 뷰어 라이브러리](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration)로 빌드된 뷰어는 AMP 문서를 캡슐화하며 postMessage를 통해 AMP 문서와 양방향 통신을 지원하는 [기능](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/CAPABILITIES.md)을 제공합니다. 이러한 기능에는 이메일 가시성 제어 권한 부여, 사용자 메트릭 중계 및 이메일의 XHR 요청 안전성을 보장하는 수단 제공 등이 포함됩니다.
+이메일용 AMP 지원을 고려하는 이메일 클라이언트라면 발신자의 AMP 이메일 호스팅에 [AMP 뷰어](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md)를 사용하는 것이 좋습니다. [AMP 뷰어 라이브러리](https://github.com/ampproject/amphtml/tree/main/extensions/amp-viewer-integration)로 빌드된 뷰어는 AMP 문서를 캡슐화하며 postMessage를 통해 AMP 문서와 양방향 통신을 지원하는 [기능](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/CAPABILITIES.md)을 제공합니다. 이러한 기능에는 이메일 가시성 제어 권한 부여, 사용자 메트릭 중계 및 이메일의 XHR 요청 안전성을 보장하는 수단 제공 등이 포함됩니다.
 
 ## 뷰어 XHR 인터셉션
 

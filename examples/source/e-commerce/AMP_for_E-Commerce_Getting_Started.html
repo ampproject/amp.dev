@@ -147,7 +147,7 @@ author: sebastianbenz
   <!--
     ## Personalization and Login
 
-    An easy way to provide personalized content in AMPs is to use `amp-list`. You can either use cookies (using the attribute `credentials="include"`) or AMP's [client id](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#client-id):
+    An easy way to provide personalized content in AMPs is to use `amp-list`. You can either use cookies (using the attribute `credentials="include"`) or AMP's [client id](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md#client-id):
   -->
 
   <amp-list credentials="include" height="24" layout="fixed-height" src="/static/samples/json/product.json?clientId=CLIENT_ID(myCookieId)" binding="no" class="m1">
@@ -158,7 +158,7 @@ author: sebastianbenz
 
   <!--
 
-    **Best Practice:** make sure to configure the [AMP CORS headers](https://github.com/ampproject/amphtml/blob/main/spec/amp-cors-requests.md) when using `amp-list` for personalization.
+    **Best Practice:** make sure to configure the [AMP CORS headers](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cors-requests.md) when using `amp-list` for personalization.
 
     If you rely on logged-in users, you can use the [amp-access](/documentation/components/amp-access) component to log users into your website directly from an AMP page. Check out [this sample](/documentation/examples/e-commerce/checkout_flow/) for how to implement a login flow in AMP.
 

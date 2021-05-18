@@ -225,7 +225,7 @@ Anda dapat menentukan beberapa penyedia akses menggunakan array, bukan objek tun
 
 ### Variabel URL Akses <a name="access-url-variables"></a>
 
-Saat mengonfigurasi URL untuk berbagai endpoint, Penayang dapat menggunakan variabel substitusi. Daftar lengkap variabel ini ditetapkan dalam [Spesifikasi Variabel AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md). Selain itu, spesifikasi ini menambahkan beberapa variabel khusus akses seperti `READER_ID` dan `AUTHDATA`. Beberapa variabel yang paling relevan dijelaskan dalam tabel di bawah:
+Saat mengonfigurasi URL untuk berbagai endpoint, Penayang dapat menggunakan variabel substitusi. Daftar lengkap variabel ini ditetapkan dalam [Spesifikasi Variabel AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md). Selain itu, spesifikasi ini menambahkan beberapa variabel khusus akses seperti `READER_ID` dan `AUTHDATA`. Beberapa variabel yang paling relevan dijelaskan dalam tabel di bawah:
 
 <table>
   <tr>

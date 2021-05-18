@@ -8,7 +8,7 @@ formats:
   - ads
 ---
 
-[Les composants expérimentaux AMP](https://github.com/ampproject/amphtml/tree/master/tools/experiments) sont des fonctionnalités publiées qui ne sont pas encore prêtes pour une large utilisation, et sont donc protégées par un statut expérimental.
+[Les composants expérimentaux AMP](https://github.com/ampproject/amphtml/tree/main/tools/experiments) sont des fonctionnalités publiées qui ne sont pas encore prêtes pour une large utilisation, et sont donc protégées par un statut expérimental.
 
 Les développeurs et les utilisateurs peuvent choisir d'utiliser ces fonctionnalités avant leur sortie complète. Mais elles doivent être utilisées avec prudence, car elles peuvent contenir des bogues ou avoir des effets secondaires inattendus.
 

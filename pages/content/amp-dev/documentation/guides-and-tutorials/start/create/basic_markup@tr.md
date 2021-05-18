@@ -53,7 +53,7 @@ AMP HTML belgeleri şu özelliklere sahip olmalıdır:
 
 Açık gerekliliklerin yanı sıra, verdiğimiz örnekte baştaki Schema.org tanımı da yer alır; bu AMP için katı bir gereklilik değildir, ancak içeriğinizin belli yerlere dağıtılması için, örneğin [Google Arama haberler karusel demosuna (telefonunuzda deneyin)](https://g.co/ampdemo) bir gerekliliktir.
 
-Twitter vb. diğer çeşitli yerlerde ihtiyacını olan tüm meta-veriler hakkında daha fazla bilgi için, [örneklerimizi inceleyin](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples). Spesifik olarak Google Arama›daki AMP hakkında öğrenmek için, bkz. [En İyi AMP Hikayeleri](https://developers.google.com/structured-data/carousels/top-stories).
+Twitter vb. diğer çeşitli yerlerde ihtiyacını olan tüm meta-veriler hakkında daha fazla bilgi için, [örneklerimizi inceleyin](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples). Spesifik olarak Google Arama›daki AMP hakkında öğrenmek için, bkz. [En İyi AMP Hikayeleri](https://developers.google.com/structured-data/carousels/top-stories).
 
 <hr>
 

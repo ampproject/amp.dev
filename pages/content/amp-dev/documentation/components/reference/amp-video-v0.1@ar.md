@@ -100,7 +100,7 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>autoplay</strong></td>
-    <td>في حال توفّر هذه السمة، وإتاحة المتصفح عمل التشغيل التلقائي، سيتم تشغيل الفيديو تلقائيًا بعد ظهوره. هناك بعض الشروط التي يحتاج إليها المكوِّن ليتم تشغيله <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md#autoplay">وهي موضحة في مواصفات الفيديو في AMP.</a></td>
+    <td>في حال توفّر هذه السمة، وإتاحة المتصفح عمل التشغيل التلقائي، سيتم تشغيل الفيديو تلقائيًا بعد ظهوره. هناك بعض الشروط التي يحتاج إليها المكوِّن ليتم تشغيله <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md#autoplay">وهي موضحة في مواصفات الفيديو في AMP.</a></td>
   </tr>
   <tr>
     <td width="40%"><strong>controls</strong></td>
@@ -137,7 +137,7 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>rotate-to-fullscreen</strong></td>
-    <td>إذا كان الفيديو مرئيًا، سيتم عرض الفيديو بملء الشاشة بعد تدوير المستخدم جهازه إلى الوضع الأفقي. لمزيد من التفاصيل، <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-video-interface.md#rotate-to-fullscreen">راجع مواصفات الفيديو في AMP</a>.</td>
+    <td>إذا كان الفيديو مرئيًا، سيتم عرض الفيديو بملء الشاشة بعد تدوير المستخدم جهازه إلى الوضع الأفقي. لمزيد من التفاصيل، <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md#rotate-to-fullscreen">راجع مواصفات الفيديو في AMP</a>.</td>
   </tr>
   <tr>
     <td width="40%"><strong>السمات المشتركة</strong></td>

@@ -3051,7 +3051,7 @@ msgstr ""
 msgid "How can an advertising or technology vendor get involved in Accelerated Mobile Pages?"
 msgstr ""
 
-msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
+msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
 msgstr ""
 
 msgid "How does advertising work on Accelerated Mobile Pages?"
@@ -3160,4 +3160,10 @@ msgid "Select a ready-to-go framework or integration-enabled CMS to get an AMP v
 msgstr ""
 
 msgid "See supported platforms"
+msgstr ""
+
+msgid "Check out AMP in action"
+msgstr ""
+
+msgid "Exemplary websites built with AMP out in the wild."
 msgstr ""

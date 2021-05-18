@@ -152,7 +152,7 @@ type 属性の値: `googleanalytics`
 
 type 属性の値: `infonline`
 
-この値を指定すると、[INFOnline](https://www.infonline.de) や [IVW](http://www.ivw.de) を利用できるようになります。使用する AMP ファイルとは別のサブドメインに [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) のコピーが必要です（[理由](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md)）。このファイルは HTTPS 経由で配信する必要があります。たとえば、AMP ファイルが `www.example.com` でホストされている場合、`amp-analytics-infonline.html` は別のサブドメイン（`iframe.example.com` や `assets.example.com` など）になければなりません。
+この値を指定すると、[INFOnline](https://www.infonline.de) や [IVW](http://www.ivw.de) を利用できるようになります。使用する AMP ファイルとは別のサブドメインに [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) のコピーが必要です（[理由](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md)）。このファイルは HTTPS 経由で配信する必要があります。たとえば、AMP ファイルが `www.example.com` でホストされている場合、`amp-analytics-infonline.html` は別のサブドメイン（`iframe.example.com` や `assets.example.com` など）になければなりません。
 
 さらに、次の変数も指定する必要があります。
 
@@ -221,7 +221,7 @@ type 属性の値: `nielsen-marketing-cloud`
 
 type 属性の値: `oewa`
 
-この値を指定すると、[OEWA](https://www.oewa.at) を使用できるようになります。使用する AMP ファイルとは別のサブドメインに [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) のコピーが必要です（[理由](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md)）。このファイルは HTTPS 経由で配信する必要があります。たとえば、AMP ファイルが `www.example.com` でホストされている場合、`amp-analytics-oewa.html` は別のサブドメイン（`oewa-amp.example.com` など）になければなりません。OEWA の利用を有効にする方法について詳しくは、[こちら](http://www.oewa.at/Implementierung)をご覧ください。
+この値を指定すると、[OEWA](https://www.oewa.at) を使用できるようになります。使用する AMP ファイルとは別のサブドメインに [amp-analytics-oewa.html](http://www.oewa.at/fileadmin/downloads/amp-analytics-oewa.html) のコピーが必要です（[理由](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md)）。このファイルは HTTPS 経由で配信する必要があります。たとえば、AMP ファイルが `www.example.com` でホストされている場合、`amp-analytics-oewa.html` は別のサブドメイン（`oewa-amp.example.com` など）になければなりません。OEWA の利用を有効にする方法について詳しくは、[こちら](http://www.oewa.at/Implementierung)をご覧ください。
 
 さらに、次の変数も指定する必要があります。
 

@@ -6,7 +6,7 @@ formats:
   - email
 ---
 
-Email clients looking to support AMP for Email should use the [AMP Viewer](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) to host their sender’s AMP emails. A viewer built with the [AMP Viewer library](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) encapsulates an AMP document and enables [capabilities](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/CAPABILITIES.md) that allow for bidirectional communication with the AMP document via postMessage. These capabilities include granting control of the email’s visibility, relaying of user metrics, and providing means of ensuring the safety of XHR requests made from the email.
+Email clients looking to support AMP for Email should use the [AMP Viewer](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) to host their sender’s AMP emails. A viewer built with the [AMP Viewer library](https://github.com/ampproject/amphtml/tree/main/extensions/amp-viewer-integration) encapsulates an AMP document and enables [capabilities](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/CAPABILITIES.md) that allow for bidirectional communication with the AMP document via postMessage. These capabilities include granting control of the email’s visibility, relaying of user metrics, and providing means of ensuring the safety of XHR requests made from the email.
 
 ## Viewer XHR interception
 

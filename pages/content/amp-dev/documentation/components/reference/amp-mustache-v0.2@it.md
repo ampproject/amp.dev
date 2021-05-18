@@ -61,7 +61,7 @@ Mustache è una sintassi template che non utilizza la logica. Per ulteriori info
 
 ## Utilizzo <a name="usage"></a>
 
-Il modello `amp-mustache` deve essere definito e utilizzato secondo le [specifiche del modello AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-html-templates.md).
+Il modello `amp-mustache` deve essere definito e utilizzato secondo le [specifiche del modello AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-templates.md).
 
 In primo luogo, `amp-mustache` deve essere dichiarato/caricato come segue:
 

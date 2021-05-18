@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/amp-email-actions-and-events.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-email-actions-and-events.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -30,7 +30,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-[tip type="note"] Tài liệu này bàn về các hành động và sự kiện cho định dạng email AMP. Đọc [Hành động và sự kiện](https://github.com/ampproject/amphtml/blob/main/spec/amp-actions-and-events.md) cho các website, câu chuyện và quảng cáo trong AMP. [/tip]
+[tip type="note"] Tài liệu này bàn về các hành động và sự kiện cho định dạng email AMP. Đọc [Hành động và sự kiện](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-actions-and-events.md) cho các website, câu chuyện và quảng cáo trong AMP. [/tip]
 
 Thuộc tính `on` (bật) được sử dụng để cài đặt bộ xử lý sự kiện cho các yếu tố. Các sự kiện được hỗ trợ tùy thuộc vào yếu tố.
 
@@ -428,7 +428,7 @@ Ví dụ, những việc sau có thể được thực hiện trong AMP:
   </tr>
   <tr>
     <td><code>changeToLayoutContainer</code></td>
-    <td>Cập nhật bố cục của <code>amp-list</code> thành  <code>layout="CONTAINTER"</code> để cho phép <a href="https://github.com/ampproject/amphtml/blob/main/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">đổi kích cỡ năng động</a>.</td>
+    <td>Cập nhật bố cục của <code>amp-list</code> thành  <code>layout="CONTAINTER"</code> để cho phép <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">đổi kích cỡ năng động</a>.</td>
   </tr>
   <tr>
     <td> <code>fetch-error</code>(low-trust)</td>

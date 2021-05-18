@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-html.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-html.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -33,7 +33,7 @@ limitations under the License.
 
 Uwaga: niniejszy wykaz nie ma charakteru normatywnego i służy wyłącznie do celów informacyjnych. Gdy chodzi o obsługiwane znaczniki i atrybuty HTML, miarodajne są reguły narzędzia AMP Validator.
 
-Oprócz obsługiwanych składników [AMP](https://github.com/ampproject/amphtml/blob/main/spec/email/amp-email-components.md), w AMP dla poczty e-mail dozwolone są następujące znaczniki HTML.
+Oprócz obsługiwanych składników [AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md), w AMP dla poczty e-mail dozwolone są następujące znaczniki HTML.
 
 ## Obsługiwane znaczniki <a name="supported-tags"></a>
 

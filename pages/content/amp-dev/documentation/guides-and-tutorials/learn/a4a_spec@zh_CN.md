@@ -97,7 +97,7 @@ AMPHTML 广告是一种在 AMP 网页上快速高效渲染广告的机制。为�
 
 ### 样板 <a name="boilerplate"></a>
 
-AMPHTML 广告素材需要与[常规 AMP 文档](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md)不同且更为简单的样板样式行。
+AMPHTML 广告素材需要与[常规 AMP 文档](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md)不同且更为简单的样板样式行。
 
 [sourcecode:html]
 
@@ -113,7 +113,7 @@ AMPHTML 广告素材需要与[常规 AMP 文档](https://github.com/ampproject/a
 
 最后，AMPHTML 广告样板使用 `amp-a4a-boilerplate`，而不是 `amp-boilerplate`，因此，验证工具可以轻松识别它，并且可以生成更准确的错误消息，以便为开发者提供帮助。
 
-请注意，有关样板文本变化的规则同样也适用于[常规 AMP 样板](https://github.com/ampproject/amphtml/blob/main/spec/amp-boilerplate.md)。
+请注意，有关样板文本变化的规则同样也适用于[常规 AMP 样板](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md)。
 
 ### CSS <a name="css"></a>
 

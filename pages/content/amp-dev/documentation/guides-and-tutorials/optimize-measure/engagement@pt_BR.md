@@ -42,6 +42,6 @@ Veja algumas dicas rápidas para melhorar o engajamento dos usuários com as pá
 
 - **Acompanhe o roadmap do AMP** para conhecer novos recursos e atualizações em [roadmap/](../../../community/roadmap.html).
 
-- **Envolva-se.** Contribua com código-fonte, comunique bugs ou faça comentários no [GitHub](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md). Compartilhe sua opinião sobre as AMP no [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
+- **Envolva-se.** Contribua com código-fonte, comunique bugs ou faça comentários no [GitHub](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md). Compartilhe sua opinião sobre as AMP no [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 
 - **Saiba** como usar os componentes de AMP com [Exemplos](../../../documentation/examples/index.html).

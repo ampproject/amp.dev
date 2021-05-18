@@ -131,7 +131,7 @@ HTML 库中找到等效实现。要查看
 
 如果其中未涵盖您的用例，您也可以考虑向 AMP 项目
 中贡献新的组件。有关详情，
-请参阅 AMP 项目的[贡献](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md)
+请参阅 AMP 项目的[贡献](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md)
 文档。
 
 ### 缺少必需的属性

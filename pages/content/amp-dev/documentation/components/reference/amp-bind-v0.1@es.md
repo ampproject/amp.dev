@@ -650,7 +650,7 @@ AMP envía XMLHttpRequests (XHR) por lotes a puntos de conexión JSON. Es decir,
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>URL del punto de conexión remoto que devolverá el JSON que actualizará este <code>amp-state</code>. Debe ser un servicio CORS HTTP.
-        El atributo <code>src</code> admite todas las sustituciones estándar de variables de URL. Para obtener más información, consulta la <a href="https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md">guía de sustituciones</a>.
+        El atributo <code>src</code> admite todas las sustituciones estándar de variables de URL. Para obtener más información, consulta la <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">guía de sustituciones</a>.
         [tip type="important"]
       El punto de conexión debe implementar los requisitos que se detallan en la <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">especificación de las solicitudes CORS de AMP</a>.
       [/tip]</td>

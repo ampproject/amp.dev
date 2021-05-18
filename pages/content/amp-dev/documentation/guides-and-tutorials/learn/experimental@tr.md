@@ -2,7 +2,7 @@
 $title: Deneysel Bileşenler
 ---
 
-[AMP deneysel bileşenleri](https://github.com/ampproject/amphtml/tree/master/tools/experiments), henüz yaygın kullanım için hazır olmadıklarından bir deneysel durumla korunan yayınlanmış özelliklerdir.
+[AMP deneysel bileşenleri](https://github.com/ampproject/amphtml/tree/main/tools/experiments), henüz yaygın kullanım için hazır olmadıklarından bir deneysel durumla korunan yayınlanmış özelliklerdir.
 
 Geliştiriciler ve kullanıcılar, tam olarak yayınlanmadan bu özelliklerin kullanımını etkinleştirebilirler.
 Ancak hataları veya beklenmedik yan etkileri olabileceği için dikkatli bir şekilde kullanılmaları gerekir.

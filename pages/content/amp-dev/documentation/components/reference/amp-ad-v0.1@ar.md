@@ -183,7 +183,7 @@ limitations under the License.
 <meta name="amp-3p-iframe-src" content="https://assets.your-domain.com/path/to/remote.html">
 ```
 
-السمة `content` للعلامة الوصفية هي عنوان URL الكامل لنسختك من ملف remote.html على خادم الويب لديك. ويجب أن يستخدم عنوان URL هذا مخطط "https". لا يمكن استضافة العنوان على الأصل نفسه الذي عليه ملفات AMP. إذا استضفت مثلاً ملفات AMP على `www.example.com`، يجب ألا يكون عنوان URL هذا على النطاق `www.example.com` ولكن النطاق `something-else.example.com` مقبول. يمكنك مراجعة ["سياسة أصل إطارات Iframe"](https://github.com/ampproject/amphtml/blob/main/spec/amp-iframe-origin-policy.md) للحصول على مزيد من التفاصيل عن الأصول المسموح بها لإطارات iframe.
+السمة `content` للعلامة الوصفية هي عنوان URL الكامل لنسختك من ملف remote.html على خادم الويب لديك. ويجب أن يستخدم عنوان URL هذا مخطط "https". لا يمكن استضافة العنوان على الأصل نفسه الذي عليه ملفات AMP. إذا استضفت مثلاً ملفات AMP على `www.example.com`، يجب ألا يكون عنوان URL هذا على النطاق `www.example.com` ولكن النطاق `something-else.example.com` مقبول. يمكنك مراجعة ["سياسة أصل إطارات Iframe"](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md) للحصول على مزيد من التفاصيل عن الأصول المسموح بها لإطارات iframe.
 
 ### الأمان <a name="security"></a>
 

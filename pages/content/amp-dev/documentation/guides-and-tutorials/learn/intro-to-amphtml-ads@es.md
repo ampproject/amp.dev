@@ -126,4 +126,4 @@ Sí. Consulta [`amp-ad-exit`](../../../documentation/components/reference/amp-ad
 
 *   [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) es la herramienta que recomendamos para encontrar respuestas a preguntas sobre AMP. Como los miembros de la comunidad del proyecto AMP supervisan Stack Overflow con regularidad, probablemente esta sea la forma más rápida de solucionar tus dudas.
 *   Únete al canal [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) para encontrar soluciones y respuestas.
-*   Si encuentras un error en AMP o tienes una solicitud de funciones para AMP, consulta la sección sobre [cómo notificar problemas con AMP](https://github.com/ampproject/amphtml/blob/main/CONTRIBUTING.md#reporting-issues-with-amp) para obtener más información.
+*   Si encuentras un error en AMP o tienes una solicitud de funciones para AMP, consulta la sección sobre [cómo notificar problemas con AMP](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#reporting-issues-with-amp) para obtener más información.

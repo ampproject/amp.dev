@@ -26,7 +26,7 @@ Antes que você possa adicionar o seu serviço de análise ao runtime AMPHTML, v
 
 - Identificar os tipos de [variáveis](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md) e [solicitações](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-analytics.md#requests) que você vai precisar em um documento AMP HTML para o seu serviço de análise.
 - Identificar os gatilhos que resultam em solicitações de análise enviadas a partir de uma página que seria relevante para o seu serviço.
-- Considerar se e como você irá [rastrear os usuários através de](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md) contextos AMP principais e de terceiros.
+- Considerar se e como você irá [rastrear os usuários através de](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md) contextos AMP principais e de terceiros.
 - Determinar como seu painel de análise irá lidar com o tráfego AMP.
 - Identificar qualquer funcionalidade em falta no `amp-analytics` e [registrar solicitações](https://github.com/ampproject/amphtml/issues/new) de recursos necessários.
 - A análise AMP envia suas variáveis para um endpoint pré-configurado. Se você ainda não possui um endpoint existente, consulte [este exemplo](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample) para uma visão geral sobre como construir um.
@@ -36,9 +36,9 @@ Antes que você possa adicionar o seu serviço de análise ao runtime AMPHTML, v
 
 ## Como adicionar a sua configuração ao runtime AMP HTML <a name="adding-your-configuration-to-the-amp-html-runtime"></a>
 
-1. Crie um [Intent-To-Implement issue](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features) declarando que você adicionará a configuração do seu serviço de análise ao runtime do AMP HTML. Certifique-se de incluir **cc @ampproject/wg-analytics** na sua descrição.
+1. Crie um [Intent-To-Implement issue](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/../../docs/contributing.md#contributing-features) declarando que você adicionará a configuração do seu serviço de análise ao runtime do AMP HTML. Certifique-se de incluir **cc @ampproject/wg-analytics** na sua descrição.
 2. Desenvolva um patch que implemente o seguinte:
-   1. Um novo arquivo json de configuração `${vendorName}.json` na [pasta](https://github.com/ampproject/amphtml/tree/master/extensions/amp-analytics/0.1/vendors) de fornecedores, incluindo quaisquer opções acima e além do default, tais como:
+   1. Um novo arquivo json de configuração `${vendorName}.json` na [pasta](https://github.com/ampproject/amphtml/tree/main/extensions/amp-analytics/0.1/vendors) de fornecedores, incluindo quaisquer opções acima e além do default, tais como:
       1. `"vars": {}` para variáveis default adicionais.
       2. `"requests": {}` para solicitações que seu serviço irá usar.
       3. `"optout":` se necessário. Atualmente não temos um grande sistema de opt-out, então por favor entre em contato para nos ajudar a projetar um que funcione bem para você.
@@ -73,7 +73,7 @@ Para seguir esta abordagem, revise a documentação para a integração de edito
 ## Outros Recursos <a name="further-resources"></a>
 
 - Deep Dive: [Por que não simplesmente usar um iframe?](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/why-not-iframe.md)
-- Deep Dive: [Gerenciando o estado de usuário não-autenticado com o AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-managing-user-state.md)
+- Deep Dive: [Gerenciando o estado de usuário não-autenticado com o AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md)
 - [amp-analytics sample](https://github.com/ampproject/amp-publisher-sample#amp-analytics-sample)
 - documentação de referência do [amp-analytics](https://amp.dev/documentation/components/amp-analytics)
 - documentação de referência do [amp-analytics variables](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md)

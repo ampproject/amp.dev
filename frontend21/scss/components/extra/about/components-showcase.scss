@@ -19,6 +19,8 @@
   }
 
   &-demos {
+    margin-bottom: 150px;
+
     .show {
       position: relative;
       display: block;
@@ -39,7 +41,7 @@
       width: 95%;
       height: 100%;
       max-height: 420px;
-      
+
       @include respond-to('small') {
         width: 65%;
       }
@@ -69,7 +71,7 @@
       .grap-lnk {
         margin-top: 20px;
         width: 100%;
-        
+
         @include respond-to("small") {
           margin-top: 15px;
           width: 50%;
@@ -84,7 +86,7 @@
       &[title="amp-carousel"] {
         .grap-lnk {
           margin-top: 300px;
-          
+
           @include respond-to('small') {
             margin-top: 15px;
           }
@@ -94,7 +96,7 @@
       &[title="amp-accordion"] {
         .grap-lnk {
           margin-top: 140px;
-          
+
           @include respond-to('small') {
             margin-top: 15px;
           }
@@ -104,7 +106,7 @@
       &[title="amp-autocomplete"] {
         .grap-lnk {
           margin-top: 90px;
-          
+
           @include respond-to('small') {
             margin-top: 15px;
           }
@@ -120,7 +122,7 @@
       right: 0;
       bottom: 0;
       background: color("white");
-      
+
       @include respond-to('small') {
         width: 55%;
       }
@@ -140,7 +142,7 @@
         left: -3px;
         bottom: calc(100% + 3px);
         padding: 3px 6px;
-        
+
         @include ci-websites;
         font-family: $fontFamilyCode;
         font-size: 12px;

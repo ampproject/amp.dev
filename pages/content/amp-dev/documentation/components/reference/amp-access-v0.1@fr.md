@@ -224,7 +224,7 @@ Il est possible de spécifier plusieurs fournisseurs d'accès en utilisant un ta
 
 ### Variables d'URL d'accès <a name="access-url-variables"></a>
 
-Lors de la configuration des URL de différents points de terminaison, l'éditeur peut utiliser des variables de substitution. La liste complète de ces variables est définie dans la [spécification des variables AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md). Cette spécification ajoute également quelques variables spécifiques à l'accès, telles que `READER_ID` et `AUTHDATA`. Certaines des variables les plus pertinentes sont décrites dans le tableau ci-dessous :
+Lors de la configuration des URL de différents points de terminaison, l'éditeur peut utiliser des variables de substitution. La liste complète de ces variables est définie dans la [spécification des variables AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md). Cette spécification ajoute également quelques variables spécifiques à l'accès, telles que `READER_ID` et `AUTHDATA`. Certaines des variables les plus pertinentes sont décrites dans le tableau ci-dessous :
 
 <table>
   <tr>

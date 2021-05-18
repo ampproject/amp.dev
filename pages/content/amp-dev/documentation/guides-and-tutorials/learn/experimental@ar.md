@@ -2,7 +2,7 @@
 $title: المكونات التجريبية
 ---
 
-[مكونات AMP التجريبية](https://github.com/ampproject/amphtml/tree/master/tools/experiments)
+[مكونات AMP التجريبية](https://github.com/ampproject/amphtml/tree/main/tools/experiments)
 هي عبارة عن ميزات تم إصدارها ولكنها غير جاهزة للاستخدام على نطاق واسع، ومن ثمّ تتم حمايتها عن طريق إضافة حالة تجريبية.
 
 يمكن لمطوّري البرامج والمستخدمين تمكين استخدام هذه الميزات قبل إصدارها بشكل كامل.

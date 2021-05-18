@@ -170,7 +170,7 @@ limitations under the License.
 
 #### تحميل التهيئة عن بُعد <a name="loading-remote-configuration"></a>
 
-لتحميل التهيئة عن بُعد، حدِد السمة `config` وعنوان URL لبيانات التهيئة في العنصر `<amp-analytics>`. يجب أن يتبع عنوان URL المحدد مخطط HTTPS. قد يتضمن العنوان [متغيرات عناوين URL لصفحات AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-subutions.md). ويمكنك الاطّلاع على السمة [`data-credentials`](#data-credentials) للوصول إلى ملف تعريف الارتباط. ويجب أن تتبع الاستجابة [إرشادات أمان CORS لصفحات AMP](https://github.com/ampproject/amphtml/blob/main/specs-requests.md).
+لتحميل التهيئة عن بُعد، حدِد السمة `config` وعنوان URL لبيانات التهيئة في العنصر `<amp-analytics>`. يجب أن يتبع عنوان URL المحدد مخطط HTTPS. قد يتضمن العنوان [متغيرات عناوين URL لصفحات AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-subutions.md). ويمكنك الاطّلاع على السمة [`data-credentials`](#data-credentials) للوصول إلى ملف تعريف الارتباط. ويجب أن تتبع الاستجابة [إرشادات أمان CORS لصفحات AMP](https://github.com/ampproject/amphtml/blob/main/docs/specs-requests.md).
 
 في هذا المثال، نحدِد السمة `config` لتحميل بيانات التهيئة من عنوان URL المحدد.
 
@@ -204,7 +204,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 "مجموعات المتغيرات" هي ميزة تسمح لموفري خدمات التحليلات بتجميع مجموعة محددة مسبقًا من المتغيرات التي يمكن للمستخدِم تفعيلها بسهولة. وسيتم بعد ذلك حل هذه المتغيرات وإرسالها إلى نقطة نهاية `configRewriter` المحددة.
 
-يحتاج موفرو خدمات التحليلات إلى إنشاء كائن `varGroups` جديد في التهيئة `configRewriter` لتفعيل هذه الميزة. ويمكن للناشرين بعد ذلك تضمين `varGroups` التي أنشأها موفر معين والمراد تفعليها في تهيئة التحليلات لديهم. يمكن استخدام جميع المتغيرات التي يتيحها [دليل استبدالات رمز HTML لصفحات AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-subutions.md). *ملاحظة مهمة*: لن تعمل الصيغ ${varName}.
+يحتاج موفرو خدمات التحليلات إلى إنشاء كائن `varGroups` جديد في التهيئة `configRewriter` لتفعيل هذه الميزة. ويمكن للناشرين بعد ذلك تضمين `varGroups` التي أنشأها موفر معين والمراد تفعليها في تهيئة التحليلات لديهم. يمكن استخدام جميع المتغيرات التي يتيحها [دليل استبدالات رمز HTML لصفحات AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-subutions.md). *ملاحظة مهمة*: لن تعمل الصيغ ${varName}.
 
 قد يكون هناك مثلاً مورد تأخذ تهيئته الشكل التالي:
 ```js
@@ -346,7 +346,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 #### الكائن Vars <a name="vars"></a>
 
-يعرّف المكوِّن `amp-analytics` العديد من المتغيرات الأساسية التي يمكن استخدامها في الطلبات. تتوفر قائمة بجميع هذه المتغيرات في [دليل متغيرات `amp-analytics`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md). بالإضافة إلى ذلك، تُقبل جميع المتغيرات التي يتيحها [دليل استبدالات رمز HTML لصفحات AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-subutions.md).
+يعرّف المكوِّن `amp-analytics` العديد من المتغيرات الأساسية التي يمكن استخدامها في الطلبات. تتوفر قائمة بجميع هذه المتغيرات في [دليل متغيرات `amp-analytics`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md). بالإضافة إلى ذلك، تُقبل جميع المتغيرات التي يتيحها [دليل استبدالات رمز HTML لصفحات AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-subutions.md).
 
 يمكن استخدام كائن التهيئة `vars` لتحديد أزواج المفتاح/القيمة الجديدة أو لإلغاء المتغيرات الحالية التي يمكن الإشارة إليها في قيم `request`. وتستخدم المتغيرات الجديدة بشكل شائع لتحديد معلومات معينة عن الناشر.  ويمكن استخدام المصفوفات لتحديد قائمة من القيم التي يجب أن يكون عنوان URL مشفرًا بشكل منفصل مع الحفاظ على مُحدِد الفاصلة.
 
@@ -513,7 +513,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 }
 ```
 
-لاحظ أنه يمكن استخدام المحدِّد لتحديد عنصر واحد فقط، وليس مجموعة. يمكن أن يكون العنصر إما [عنصر AMP تم توسيعه](https://github.com/ampproject/amphtml/blob/main/spec/amp-tag-addendum.md#amp-specific-tags) أو جذر المستند.
+لاحظ أنه يمكن استخدام المحدِّد لتحديد عنصر واحد فقط، وليس مجموعة. يمكن أن يكون العنصر إما [عنصر AMP تم توسيعه](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-tag-addendum.md#amp-specific-tags) أو جذر المستند.
 
 ينتظر مشغِل مستوى رؤية العنصر الإشارة التي تحددها الخاصية `waitFor` في `visibilitySpec` قبل تتبع مستوى رؤية العنصر. إذا لم يتم تحديد `waitFor`، ينتظر إشارة [`ini-load`](#initial-load-trigger) للعنصر. ويمكنك مراجعة مستندات `waitFor` للحصول على مزيد من التفاصيل.
 في حالة تحديد `reportWhen`، ينتظر المشغِل هذه الإشارة قبل إرسال الحدث. ويفيد هذا مثلاً في إرسال أحداث التحليلات عند إغلاق الصفحة.
@@ -811,7 +811,7 @@ visibilitySpec: {
 
 #### الميزة Cookies <a name="cookies"></a>
 
-تتيح الميزة `cookies` كتابة ملف تعريف الارتباط إلى النطاق الأصل من خلال استخلاص المعلومات [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md#query-parameter) و[`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md#linker-param) من عنوان URL للمستند. ويمكن استخدامها مع ميزات `linkers` لإجراء مزامنة المعرفات من نطاق خادم AMP الوكيل مع صفحات AMP على نطاق الناشر.
+تتيح الميزة `cookies` كتابة ملف تعريف الارتباط إلى النطاق الأصل من خلال استخلاص المعلومات [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md#query-parameter) و[`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md#linker-param) من عنوان URL للمستند. ويمكن استخدامها مع ميزات `linkers` لإجراء مزامنة المعرفات من نطاق خادم AMP الوكيل مع صفحات AMP على نطاق الناشر.
 
 يمكن العثور على تفاصيل حول إعداد تهيئة `cookies` في [تلقي معلمات الروابط على صفحات AMP.](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/linker-id-receiving.md#receiving-linker-params-on-amp-pages)
 
@@ -835,7 +835,7 @@ visibilitySpec: {
 
 **config**
 
-هذه سمة اختيارية يمكن استخدامها لتحميل تهيئة من عنوان URL بعيد محدد. يجب أن يستخدم عنوان URL المحدد المخطط HTTPS. يمكنك أيضًا مراجعة السمة `data-include-credentials` أدناه. قد يتضمن العنوان [متغيرات عناوين URL لصفحات AMP](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-subutions.md). ويجب أن تتبع الاستجابة [إرشادات أمان CORS لصفحات AMP](https://github.com/ampproject/amphtml/blob/main/specs-requests.md).
+هذه سمة اختيارية يمكن استخدامها لتحميل تهيئة من عنوان URL بعيد محدد. يجب أن يستخدم عنوان URL المحدد المخطط HTTPS. يمكنك أيضًا مراجعة السمة `data-include-credentials` أدناه. قد يتضمن العنوان [متغيرات عناوين URL لصفحات AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-subutions.md). ويجب أن تتبع الاستجابة [إرشادات أمان CORS لصفحات AMP](https://github.com/ampproject/amphtml/blob/main/docs/specs-requests.md).
 
 مثال:
 

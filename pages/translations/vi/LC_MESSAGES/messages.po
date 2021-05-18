@@ -3068,8 +3068,8 @@ msgstr "<p>Dự án này được mở cho tất cả mọi người, và các t
 msgid "How can an advertising or technology vendor get involved in Accelerated Mobile Pages?"
 msgstr "Làm thế nào để một nhà cung cấp quảng cáo hoặc công nghệ tham gia Trang Di động Gia tốc?"
 
-msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
-msgstr "<p>Hãy xem lại <a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">hướng dẫn đóng góp</a> và liên hệ qua <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
+msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
+msgstr "<p>Hãy xem lại <a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">hướng dẫn đóng góp</a> và liên hệ qua <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
 
 msgid "How does advertising work on Accelerated Mobile Pages?"
 msgstr "Cách thức hoạt động của quảng cáo trong Trang Di động Gia tốc?"

@@ -92,7 +92,7 @@ AMP Optimizer는 대다수의 경우 적절히 작동하는 합리적인 기본 
 
 몇 가지 중요 옵션은 다음과 같습니다.
 
-- `lts: true`는 AMP 런타임 및 컴포넌트의 [안정적인 장기 URL](https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md) 활성화 시 사용됩니다.
+- `lts: true`는 AMP 런타임 및 컴포넌트의 [안정적인 장기 URL](https://github.com/ampproject/amphtml/blob/main/docs/lts-release.md) 활성화 시 사용됩니다.
 - `verbose: true`는 세부적인 디버그 출력 값에 사용됩니다. 특히 AMP 상용구를 삭제할 수 없는 이유를 식별하는 데 유용합니다.
 - `imageOptimizer`: 주어진 이미지 src의 srcset URL을 계산하는 함수를 제공하여 자동 이미지 srcset 생성을 활성화합니다. 함수는 주어진 너비의 `src` 이미지 버전을 가리키는 URL을 반환해야 합니다. 이미지가 지원되지 않는 경우 거짓 같은(Falsy) 값을 반환해야 합니다. 다음 섹션에서 자세한 내용을 확인하세요.
 

@@ -60,7 +60,7 @@ CORS JSON 엔드포인트에서 동적으로 콘텐츠를 가져오고 제공된
 * 기존 `template` 또는 `script` 요소의 ID를 참조하는 `template` 속성
 * `amp-list` 요소 내에 직접 중첩된 `template` 또는 `script` 요소
 
-템플릿에 관한 자세한 내용은 [AMP HTML 템플릿](https://github.com/ampproject/amphtml/blob/main/spec/amp-html-templates.md)을 참조하세요.
+템플릿에 관한 자세한 내용은 [AMP HTML 템플릿](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-templates.md)을 참조하세요.
 
 *예: 동적 목록 표시*
 
@@ -434,7 +434,7 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 ## 대체 <a name="validation"></a>
 
 `<amp-list>`를 사용하면 모든 표준 URL 변수를 대체할 수 있습니다.
-자세한 정보는 [대체 가이드](https://github.com/ampproject/amphtml/blob/main/spec/amp-var-substitutions.md)를 참조하세요.
+자세한 정보는 [대체 가이드](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)를 참조하세요.
 
 예를 들어 다음과 같습니다.
 ```html

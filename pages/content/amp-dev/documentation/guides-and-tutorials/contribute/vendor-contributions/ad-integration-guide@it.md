@@ -15,7 +15,7 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-Se sei un fornitore di tecnologie per annunci che intende integrare i propri contenuti in AMP HTML, consulta le seguenti linee guida. Per garantire la necessaria qualità e ridurre al minimo i ritardi, è possibile applicare le istruzioni riportate [qui](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads) prima di inviare richieste pull al progetto open-source AMP. Le linee guida generali per iniziare a contribuire al progetto AMP sono disponibili alla pagina [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../CONTRIBUTING.md).
+Se sei un fornitore di tecnologie per annunci che intende integrare i propri contenuti in AMP HTML, consulta le seguenti linee guida. Per garantire la necessaria qualità e ridurre al minimo i ritardi, è possibile applicare le istruzioni riportate [qui](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads) prima di inviare richieste pull al progetto open-source AMP. Le linee guida generali per iniziare a contribuire al progetto AMP sono disponibili alla pagina [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../docs/contributing.md).
 
 ## Server di annunci <a name="ad-server"></a>
 
