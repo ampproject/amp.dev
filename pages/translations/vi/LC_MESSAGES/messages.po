@@ -92,11 +92,11 @@ msgstr "Hoạt họa và tương tác"
 
 #: /content/amp-dev/about/stories.html:255
 msgid "Check out Web Stories on the web"
-msgstr "Xem Câu chuyện Web trên mạng"
+msgstr "Xem Web Stories trên mạng"
 
 #: /content/amp-dev/about/stories.html:327
 msgid "Story Ads are full screen, single page ads that appear within Web Stories. Advertisers/ Publishers can invite users to a web page, an AMP page or an App with a single tap. A story ad has a rich, flexible canvas that allows images, videos, animations or a combination of all those elements.<br>  Story ads are supported by Google Ad Manager and Google DV360 (Beta) with additional ad server support coming soon!"
-msgstr "Story Ads là các quảng cáo đơn trang toàn màn hình xuất hiện trong các Câu chuyện Web. Nhà quảng cáo/Nhà phát hành có thể mời người dùng đến một trang web, một trang AMP hoặc một Ứng dụng chỉ với một chạm. Một story ad có một khung hình linh hoạt, đa dạng cho phép hiển thị ảnh, video, hình hoạt họa hoặc một tổ hợp tất cả các yếu tố đó.<br>  Story ads được hỗ trợ bởi Google Ad Manager và Google DV360 (Beta), với hỗ trợ bổ sung từ máy chủ quảng cáo sẽ sớm được triển khai!"
+msgstr "Story Ads là các quảng cáo đơn trang toàn màn hình xuất hiện trong các Web Stories. Nhà quảng cáo/Nhà phát hành có thể mời người dùng đến một trang web, một trang AMP hoặc một Ứng dụng chỉ với một chạm. Một story ad có một khung hình linh hoạt, đa dạng cho phép hiển thị ảnh, video, hình hoạt họa hoặc một tổ hợp tất cả các yếu tố đó.<br>  Story ad được hỗ trợ bởi Google Ad Manager và Google DV360 (Beta), với hỗ trợ bổ sung từ máy chủ quảng cáo sẽ sớm được triển khai!"
 
 #: /content/amp-dev/about/stories.html:415
 msgid "Discover All Templates"
@@ -1161,7 +1161,7 @@ msgstr "Bắt đầu với AMP"
 
 #: /content/amp-dev/index.html:414
 msgid "As a source for breaking news and information, Web Stories allow us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage."
-msgstr "Là nguồn cung cấp các tin tức và thông tin nóng hổi, Câu chuyện Web cho phép chúng tôi tác nghiệp phóng viên khi có nhiều yếu tố mà chúng tôi muốn kết hợp với nhau.\n"
+msgstr "Là nguồn cung cấp các tin tức và thông tin nóng hổi, Web Stories cho phép chúng tôi tác nghiệp phóng viên khi có nhiều yếu tố mà chúng tôi muốn kết hợp với nhau.\n"
 "Chúng tôi có thể kết hợp báo cáo, nhiếp ảnh, video và hình hoạt họa để mang đến độc giả một cái nhìn trực quan hơn về bản tin của mình."
 
 #: /content/amp-dev/index.html:416
@@ -1210,7 +1210,7 @@ msgstr "Bạn không cần tải về AMP và cũng không cần cài đặt.<br
 
 #: /content/amp-dev/about/stories.html:90
 msgid "Web Stories"
-msgstr "Câu chuyện Web"
+msgstr "Web Stories"
 
 #: /content/amp-dev/about/stories.html:94
 msgid "Start developing"
@@ -1222,7 +1222,7 @@ msgstr "Kể một câu chuyện"
 
 #: /content/amp-dev/about/stories.html:106
 msgid "Web<br> Stories"
-msgstr "Câu chuyện<br>Web"
+msgstr "Web<br> Stories"
 
 #: /content/amp-dev/about/stories.html:107
 msgid "visual storytelling for the open web"
@@ -1230,11 +1230,11 @@ msgstr "kể chuyện trực quan cho web mở"
 
 #: /content/amp-dev/about/stories.html:108
 msgid "Web Stories immerse your readers in fast-loading full-screen experiences. Easily create visual narratives, with engaging animations and tappable interactions. The Web Story format (formerly known as AMP Stories) is free and part of the open web and are available for everyone to try on their websites. They can be shared and embedded across the web without being confined to a closed ecosystem or platform."
-msgstr "Các Câu chuyện Web sẽ mang đến những trải nghiệm toàn màn hình nhanh cho các độc giả của bạn. Bạn có thể dễ dàng tạo các câu chuyện trực quan với hình hoạt họa thú vị và tương tác được. Định dạng Câu chuyện Web (trước đây là Câu chuyện AMP) là một phần miễn phí của web mở và có thể được sử dụng trên mọi website. Chúng có thể được chia sẻ và nhúng trên các trang web mà không chỉ bị giới hạn trong một hệ sinh thái hoặc nền tảng khép kín."
+msgstr "Các Web Stories sẽ mang đến những trải nghiệm toàn màn hình nhanh cho các độc giả của bạn. Bạn có thể dễ dàng tạo các câu chuyện trực quan với hình hoạt họa thú vị và tương tác được. Định dạng Web Stories (trước đây là AMP Stories) là một phần miễn phí của web mở và có thể được sử dụng trên mọi website. Chúng có thể được chia sẻ và nhúng trên các trang web mà không chỉ bị giới hạn trong một hệ sinh thái hoặc nền tảng khép kín."
 
 #: /content/amp-dev/about/stories.html:109
 msgid "Web Stories provide content publishers with a mobile-focused format for delivering news and information as visually rich, tap-through stories. Web Stories offers a robust set of advertising opportunities for advertisers and publishers to reach a unique audience on the web with immersive experiences."
-msgstr "Câu chuyện Web cung cấp cho các nhà phát hành một định dạng chú trọng đến thiết bị di động để hiển thị tin tức và thông tin thông qua các câu chuyện trực quan, sinh động, có thể tương tác. Câu chuyện Web là một nhóm các cơ hội quảng cáo để những nhà quảng cáo và nhà phát hành có thể tiếp cận một đối tượng khách hàng độc đáo trên mạng Internet thông qua những trải nghiệm đắm chìm."
+msgstr "Web Stories cung cấp cho các nhà phát hành một định dạng chú trọng đến thiết bị di động để hiển thị tin tức và thông tin thông qua các câu chuyện trực quan, sinh động, có thể tương tác. Web Stories là một nhóm các cơ hội quảng cáo để những nhà quảng cáo và nhà phát hành có thể tiếp cận một đối tượng khách hàng độc đáo trên mạng Internet thông qua những trải nghiệm đắm chìm."
 
 #: /content/amp-dev/about/stories.html:119
 msgid "Build your first story"
@@ -1250,7 +1250,7 @@ msgstr "Đọc các Câu chuyện thành công"
 
 #: /content/amp-dev/about/stories.html:175
 msgid "The benefits of Web Stories"
-msgstr "Lợi ích của Câu chuyện Web"
+msgstr "Lợi ích của Web Stories"
 
 #: /content/amp-dev/about/stories.html:223
 msgid "Read on how AMP works"
@@ -1258,7 +1258,7 @@ msgstr "Tìm hiểu về cách thức hoạt động của AMP"
 
 #: /content/amp-dev/about/stories.html:235
 msgid "Web Stories are built with visually rich media, and whether you utilize pictures, videos or GIF assets is up to you. Images and videos expand to visually fill the readers’ screens, providing a smooth and fully engaging experience. AMP allows you to specify the file type to account for the user’s network connection and browser capabilities."
-msgstr "Câu chuyện Web được tạo với các nội dung đa phương tiện trực quan, sinh động, bạn có thể tùy ý sử dụng ảnh, video hoặc hình động GIF. Ảnh và video sẽ được mở rộng để lấp đầy màn hình của khán giả, mang đến một trải nghiệm mượt mà và gắn kết. AMP cho phép bạn quy định loại tập tin để xét đến kết nối mạng của người dùng và khả năng của trình duyệt."
+msgstr "Web Stories được tạo với các nội dung đa phương tiện trực quan, sinh động, bạn có thể tùy ý sử dụng ảnh, video hoặc hình động GIF. Ảnh và video sẽ được mở rộng để lấp đầy màn hình của khán giả, mang đến một trải nghiệm mượt mà và gắn kết. AMP cho phép bạn quy định loại tập tin để xét đến kết nối mạng của người dùng và khả năng của trình duyệt."
 
 #: /content/amp-dev/about/stories.html:234
 msgid "Images, videos and GIFs"
@@ -1278,7 +1278,7 @@ msgstr "Rất dễ để tạo các hiệu ứng thị giác và tương tác đ
 
 #: /content/amp-dev/about/stories.html:325
 msgid "Web Stories <br />Monetization Options"
-msgstr "Tùy chọn Kiếm tiền từ<br />Câu chuyện Web"
+msgstr "Tùy chọn Kiếm tiền từ<br />Web Stories"
 
 #: /content/amp-dev/about/stories.html:326
 msgid "Single Page Story Ad"
@@ -1587,8 +1587,8 @@ msgstr "Thống nhất và có khả năng mở rộng"
 msgid "AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms."
 msgstr "Các trang AMP được tải gần như tức thì, cho phép bạn cung cấp một trải nghiệm nhanh trên tất cả các thiết bị và nền tảng."
 
-msgid "You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal."
-msgstr "Bạn có thể chuyển đổi toàn bộ kho lưu trữ của mình chỉ trong vài ngày, đặc biệt nếu bạn sử dụng các CMS phổ biến như Wordpress hoặc Drupal."
+msgid "You can often convert your entire archive in days especially if you use a popular CMS such as WordPress or Drupal."
+msgstr "Bạn có thể chuyển đổi toàn bộ kho lưu trữ của mình chỉ trong vài ngày, đặc biệt nếu bạn sử dụng các CMS phổ biến như WordPress hoặc Drupal."
 
 msgid "Used by popular and global platforms like Google, Bing and Twitter, AMP allows you to ensure users from all these surfaces get an unparalleled, often instantaneous and native-feeling experience by defaulting to AMP pages when available."
 msgstr "Được sử dụng bởi các nền tảng phổ biến và toàn cầu như Google, Bing và Twitter, AMP cho phép bạn đảm bảo người dùng từ mọi giao diện này đều nhận được một trải nghiệm tốt nhất, tức thì và tự nhiên bằng cách sử dụng các trang AMP mỗi khi có thể."
@@ -1618,22 +1618,22 @@ msgid "Supports analytics and bookend capabilities for viral sharing and monetiz
 msgstr "Hỗ trợ chức năng phân tích và bookend để chia sẻ lan tỏa và kiếm tiền."
 
 msgid "Web Stories are lightening fast so that your audience stays engaged and entertained."
-msgstr "Câu chuyện Web được tải rất nhanh, để luôn hấp dẫn và gắn kết độc giả của bạn."
+msgstr "Web Stories được tải rất nhanh, để luôn hấp dẫn và gắn kết độc giả của bạn."
 
 msgid "Web Stories are a new and modern way to reach existing readers."
-msgstr "Câu chuyện Web là một cách mới và hiện đại để tiếp cận những độc giả hiện có."
+msgstr "Web Stories là một cách mới và hiện đại để tiếp cận những độc giả hiện có."
 
 msgid "Web Stories enable monetization capability for publishers using full-screen immersive story ads and using affiliate links. For advertisers, Stories is a way to reach a unique audience within a new storytelling experience."
-msgstr "Câu chuyện Web cho phép các nhà phát hành kiếm tiền thông qua những story ads toàn màn hình và các đường dẫn liên kết. Đối với nhà quảng cáo, các Câu chuyện là một cách để tiếp cận một đối tượng khách hàng độc đáo trong một trải nghiệm kể chuyện hoàn toàn mới."
+msgstr "Web Stories cho phép các nhà phát hành kiếm tiền thông qua những story ads toàn màn hình và các đường dẫn liên kết. Đối với nhà quảng cáo, các Câu chuyện là một cách để tiếp cận một đối tượng khách hàng độc đáo trong một trải nghiệm kể chuyện hoàn toàn mới."
 
 msgid "Web Stories make the production of stories as easy as possible from a technical perspective."
-msgstr "Câu chuyện Web giúp bạn dễ dàng tạo ra các câu chuyện từ khía cạnh kỹ thuật."
+msgstr "Web Stories giúp bạn dễ dàng tạo ra các câu chuyện từ khía cạnh kỹ thuật."
 
 msgid "The Web Stories format comes with preset but flexible layout templates, standardized UI controls, and components for sharing and adding follow-on content."
-msgstr "Định dạng Câu chuyện Web đi kèm các khuôn mẫu bố cục linh hoạt được thiết lập sẵn, các nút điều khiển giao diện tiêu chuẩn, và các thành phần để chia sẻ và bổ sung nội dung nối tiếp."
+msgstr "Định dạng Web Stories đi kèm các khuôn mẫu bố cục linh hoạt được thiết lập sẵn, các nút điều khiển giao diện tiêu chuẩn, và các thành phần để chia sẻ và bổ sung nội dung nối tiếp."
 
 msgid "Web Stories are part of the open web and can be shared and embedded across sites and apps without being confined to a single ecosystem."
-msgstr "Câu chuyện Web là một phần của web mở và có thể được chia sẻ và nhúng trên nhiều website và ứng dụng mà không chỉ bị giới hạn vào một hệ sinh thái đơn lẻ."
+msgstr "Web Stories là một phần của web mở và có thể được chia sẻ và nhúng trên nhiều website và ứng dụng mà không chỉ bị giới hạn vào một hệ sinh thái đơn lẻ."
 
 msgid "AMPHTML ads are 6x faster than regular ads on AMP pages, making them more viewable, more effective and more likely to perform well. You can monitor performance and adjust pricing accordingly, and offer the most engaging ad products to optimize your ad placements. In AMP, tweaking your pages to drive higher viewability rate or views is easy for publishers using the ‘data-loading-strategy’ attribute on the `amp-ad` component."
 msgstr "Các quảng cáo AMPHTML được tải nhanh gấp 6 lần quảng cáo thưởng trên các trang AMP, giúp chúng được xem nhiều hơn, hiệu quả hơn và nhiều khả năng cho kết quả tốt hơn. Bạn có thể giám sát hiệu quả và điều chỉnh giá cả tương ứng, và mang đến những sản phẩm quảng cáo hấp dẫn nhất để tối ưu vị trí đặt quảng cáo. Với AMP, các nhà phát hành có thể dễ dàng tinh chỉnh các trang của mình để tăng tỷ lệ xem hoặc lượt xem sử dụng thuộc tính ‘data-loading-strategy’ (chiến lược tải dữ liệu) trên thành phần `amp-ad`."
@@ -2864,8 +2864,8 @@ msgstr "Ý kiến của Người dùng"
 msgid "Validator"
 msgstr "Trình xác thực"
 
-msgid "You can often convert your entire archive in days – especially when using common CMS like Wordpress or Drupal."
-msgstr "Bạn có thể chuyển đổi toàn bộ kho lưu trữ của mình chỉ trong vài ngày – đặc biệt khi sử dụng các CMS phổ biến như Wordpress hoặc Drupal."
+msgid "You can often convert your entire archive in days – especially when using common CMS like WordPress or Drupal."
+msgstr "Bạn có thể chuyển đổi toàn bộ kho lưu trữ của mình chỉ trong vài ngày – đặc biệt khi sử dụng các CMS phổ biến như WordPress hoặc Drupal."
 
 msgid "All"
 msgstr "Tất cả"
@@ -2981,10 +2981,8 @@ msgstr "<p>Chịu trách nhiệm cho việc truy cập có kiểm soát của m�
 msgid "What is the Accelerated Mobile Pages project?"
 msgstr "Dự án Trang Di động Gia tốc là gì?"
 
-msgid "<p>The Accelerated Mobile Pages (AMP) Project is an open source initiative that came out of discussions between publishers and technology companies about the need to improve the entire mobile content ecosystem for everyone -- publishers, consumer platforms, advertisers, creators, and users.</p>\n"
-"<p>Today, the expectation is that content should load super fast and be easy to explore. The reality is that content can take several seconds to load, or, because the user abandons the slow page, never fully loads at all. Accelerated Mobile Pages are web pages designed to load near instantaneously -- they are a step towards a better mobile web for all.</p>"
-msgstr "<p>Dự án Trang Di động Gia tốc (AMP) là một sáng kiến mã nguồn mở ra đời từ những cuộc thảo luận giữa các nhà phát hành và công ty công nghệ về nhu cầu cải thiện hệ sinh thái nội dung di động cho tất cả mọi người -- các nhà phát hành, nền tảng người tiêu dùng, nhà quảng cáo, nhà sáng tạo nội dung và người dùng.</p>\n"
-"<p>Ngày nay, kỳ vọng của mọi người là các nội dung cần được tải siêu nhanh và dễ khám phá. Thực tế là nội dung có thể mất một vài giây để tải, hoặc, bởi người dùng sẽ từ bỏ các trang tải chậm, không bao giờ được tải hoàn toàn. Trang Di động Gia tốc là các trang web được thiết kế để tải gần như tức thì -- chúng là một bước tiến đến một Internet tốt hơn cho di động cho tất cả mọi người.</p>"
+msgid "<p>The Accelerated Mobile Pages (AMP) Project is an open source initiative that came out of discussions between publishers and technology companies about the need to improve the entire mobile content ecosystem for everyone -- publishers, consumer platforms, advertisers, creators, and users.</p>\n<p>Today, the expectation is that content should load super fast and be easy to explore. The reality is that content can take several seconds to load, or, because the user abandons the slow page, never fully loads at all. Accelerated Mobile Pages are web pages designed to load near instantaneously -- they are a step towards a better mobile web for all.</p>"
+msgstr "<p>Dự án Trang Di động Gia tốc (AMP) là một sáng kiến mã nguồn mở ra đời từ những cuộc thảo luận giữa các nhà phát hành và công ty công nghệ về nhu cầu cải thiện hệ sinh thái nội dung di động cho tất cả mọi người -- các nhà phát hành, nền tảng người tiêu dùng, nhà quảng cáo, nhà sáng tạo nội dung và người dùng.</p>\n<p>Ngày nay, kỳ vọng của mọi người là các nội dung cần được tải siêu nhanh và dễ khám phá. Thực tế là nội dung có thể mất một vài giây để tải, hoặc, bởi người dùng sẽ từ bỏ các trang tải chậm, không bao giờ được tải hoàn toàn. Trang Di động Gia tốc là các trang web được thiết kế để tải gần như tức thì -- chúng là một bước tiến đến một Internet tốt hơn cho di động cho tất cả mọi người.</p>"
 
 msgid "What are the benefits of Accelerated Mobile Pages?"
 msgstr "Lợi ích của Trang Di động Gia tốc là gì?"
@@ -2995,14 +2993,8 @@ msgstr "<p>Tốc độ rất quan trọng và tức thì là lý tưởng nhất
 msgid "How do Accelerated Mobile Pages work?"
 msgstr "Trang Di động Gia tốc hoạt động như thế nào?"
 
-msgid "<p>Accelerated Mobile Pages are just like any other HTML page, but with a limited set of allowed technical functionality that is defined and governed by the open source AMP spec. Just like all web pages, Accelerated Mobile Pages will load in any modern browser or app webview.</p>\n"
-"<p>AMP files take advantage of various technical and architectural approaches that prioritize speed to provide a faster experience for users. AMP developers can use a rich and growing library of web components that offer the ability to embed rich media objects like video and social posts, display advertising, or collect analytics. The goal is not to homogenize how content looks and feels, but instead to build a more common technical core between pages that speeds up load times.</p>\n"
-"<p>In addition, AMP files can be cached in the cloud in order to reduce the time content takes to get to a user’s mobile device. By using the AMP format, content producers are making the content in AMP files available to be cached by third parties. Under this type of framework, publishers and advertisers continue to control their content, but platforms can easily cache or mirror the content for optimal delivery speed to users. Google has provided the <a href=\"https://developers.google.com/amp/cache/\">Google AMP Cache</a> that can be used by anyone at no cost, and all AMPs will be cached by the Google AMP Cache. Other companies may build their own AMP cache as well.</p>\n"
-"<p>In summary, the goal is that the combination of limited technical functionality with a distribution system built around caching will lead to better performing pages, and increased audience development.</p>"
-msgstr "<p>Trang Di động Gia tốc cũng giống như mọi trang HTML khác, nhưng chỉ với một nhóm các chức năng kỹ thuật được cho phép, được quy định và quản lý bởi thông số AMP mã nguồn mở. Cũng như mọi trang web khác, Trang Di động Gia tốc sẽ tải trong mọi trình duyệt hoặc ứng dụng webview hiện đại.</p>\n"
-"<p>Các tập tin AMP sẽ tận dụng những lối tiếp cận kỹ thuật và cấu trúc khác nhau để ưu tiên cho tốc độ nhằm cung cấp một trải nghiệm nhanh hơn cho người dùng. Các nhà phát triển AMP có thể sử dụng một thư viện các thành phần web phong phú và ngày càng lớn mạnh, cho khả năng nhúng các đối tượng đa phương tiện phong phú như video và bài đăng mạng xã hội, hiển thị quảng cáo hoặc thu thập thông tin phân tích. Mục tiêu không phải là đồng nhất vẻ ngoài và trải nghiệm của nội dung khác nhau, mà thay vào đó, xây dựng một lõi kỹ thuật phổ biến hơn giữa các trang để tăng tốc độ tải.</p>\n"
-"<p>Ngoài ra, các tập tin AMP có thể được lưu trong bộ nhớ đệm trên mây để giảm thời gian mà nó được tải đến thiết bị di động của người dùng. Thông qua việc sử dụng định dạng AMP, các nhà sản xuất nội dung có thể cung cấp các tập tin AMP thông qua bộ nhớ đệm của các bên thứ ba. Trong loại khung này, các nhà phát hành và nhà quảng cáo sẽ tiếp tục kiểm soát nội dung của họ, nhưng các nền tảng có thể dễ dàng lưu bộ nhớ đệm hay sao chép nội dung để đảm bảo tốc độ cung cấp cho người dùng được tối ưu. Google đã cung cấp <a href=\"https://developers.google.com/amp/cache/\">Bộ nhớ đệm AMP của Google</a>, có thể được sử dụng miễn phí bởi tất cả mọi người, và mọi AMP đều sẽ được lưu trong Bộ nhớ đệm AMP của Google. Các công ty khác cũng có thể xây dựng bộ nhớ đệm AMP của riêng họ.</p>\n"
-"<p>Tóm lại, mục tiêu là việc kết hợp chức năng kỹ thuật giới hạn với một hệ thống phân phối được xây dựng trên nền tảng bộ nhớ đệm sẽ giúp tăng hiệu quả của các trang web, và phát triển đối tượng khách hàng.</p>"
+msgid "<p>Accelerated Mobile Pages are just like any other HTML page, but with a limited set of allowed technical functionality that is defined and governed by the open source AMP spec. Just like all web pages, Accelerated Mobile Pages will load in any modern browser or app webview.</p>\n<p>AMP files take advantage of various technical and architectural approaches that prioritize speed to provide a faster experience for users. AMP developers can use a rich and growing library of web components that offer the ability to embed rich media objects like video and social posts, display advertising, or collect analytics. The goal is not to homogenize how content looks and feels, but instead to build a more common technical core between pages that speeds up load times.</p>\n<p>In addition, AMP files can be cached in the cloud in order to reduce the time content takes to get to a user’s mobile device. By using the AMP format, content producers are making the content in AMP files available to be cached by third parties. Under this type of framework, publishers and advertisers continue to control their content, but platforms can easily cache or mirror the content for optimal delivery speed to users. Google has provided the <a href=\"https://developers.google.com/amp/cache/\">Google AMP Cache</a> that can be used by anyone at no cost, and all AMPs will be cached by the Google AMP Cache. Other companies may build their own AMP cache as well.</p>\n<p>In summary, the goal is that the combination of limited technical functionality with a distribution system built around caching will lead to better performing pages, and increased audience development.</p>"
+msgstr "<p>Trang Di động Gia tốc cũng giống như mọi trang HTML khác, nhưng chỉ với một nhóm các chức năng kỹ thuật được cho phép, được quy định và quản lý bởi thông số AMP mã nguồn mở. Cũng như mọi trang web khác, Trang Di động Gia tốc sẽ tải trong mọi trình duyệt hoặc ứng dụng webview hiện đại.</p>\n<p>Các tập tin AMP sẽ tận dụng những lối tiếp cận kỹ thuật và cấu trúc khác nhau để ưu tiên cho tốc độ nhằm cung cấp một trải nghiệm nhanh hơn cho người dùng. Các nhà phát triển AMP có thể sử dụng một thư viện các thành phần web phong phú và ngày càng lớn mạnh, cho khả năng nhúng các đối tượng đa phương tiện phong phú như video và bài đăng mạng xã hội, hiển thị quảng cáo hoặc thu thập thông tin phân tích. Mục tiêu không phải là đồng nhất vẻ ngoài và trải nghiệm của nội dung khác nhau, mà thay vào đó, xây dựng một lõi kỹ thuật phổ biến hơn giữa các trang để tăng tốc độ tải.</p>\n<p>Ngoài ra, các tập tin AMP có thể được lưu trong bộ nhớ đệm trên mây để giảm thời gian mà nó được tải đến thiết bị di động của người dùng. Thông qua việc sử dụng định dạng AMP, các nhà sản xuất nội dung có thể cung cấp các tập tin AMP thông qua bộ nhớ đệm của các bên thứ ba. Trong loại khung này, các nhà phát hành và nhà quảng cáo sẽ tiếp tục kiểm soát nội dung của họ, nhưng các nền tảng có thể dễ dàng lưu bộ nhớ đệm hay sao chép nội dung để đảm bảo tốc độ cung cấp cho người dùng được tối ưu. Google đã cung cấp <a href=\"https://developers.google.com/amp/cache/\">Bộ nhớ đệm AMP của Google</a>, có thể được sử dụng miễn phí bởi tất cả mọi người, và mọi AMP đều sẽ được lưu trong Bộ nhớ đệm AMP của Google. Các công ty khác cũng có thể xây dựng bộ nhớ đệm AMP của riêng họ.</p>\n<p>Tóm lại, mục tiêu là việc kết hợp chức năng kỹ thuật giới hạn với một hệ thống phân phối được xây dựng trên nền tảng bộ nhớ đệm sẽ giúp tăng hiệu quả của các trang web, và phát triển đối tượng khách hàng.</p>"
 
 msgid "Why does the Accelerated Mobile Pages Project take an open source approach?"
 msgstr "Vì sao Dự án Trang Di động Gia tốc lại sử dụng một lối tiếp cận mã nguồn mở?"
@@ -3025,12 +3017,8 @@ msgstr "<p>Thông qua việc sử dụng định dạng AMP, các nhà sản xu�
 msgid "What responsibilities do I have when using Accelerated Mobile Pages?"
 msgstr "Tôi có trách nhiệm gì khi sử dụng Trang Di động Gia tốc?"
 
-msgid "<p>If a publisher or advertiser collects data from users who view its AMP pages, such data collection is governed by their privacy policy.  It is the publisher or advertiser’s responsibility to disclose its privacy policy, ideally by including a link to it within each of their AMP pages.</p>\n"
-"<p>Furthermore, the laws in many jurisdictions, such as in the European Union, require a website to give visitors information about cookies and other forms of local storage used on the site (including AMP pages). In many cases, these laws also require that the website obtain consent.  It is the website's responsibility to determine, based on its use of cookies, what type of notice would be appropriate.  Additional information and tools for generating cookie notices can be found at www.cookiechoices.org.  Note that the AMP component <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user-notification</a> provides a way to display a dismissable notification to the user.</p>\n"
-"<p>If an AMP page is shown within a viewer on a third party platform, such as a Google AMP Viewer on Google Search, the viewer may be a hybrid environment in which the AMP page and the third party platform may each collect data about the user.  In such a case, data collection by each party is governed by that party’s privacy policy (i.e., in a hybrid viewer environment, data collected by the AMP page is governed by its privacy policy and data collected by the third party platform is governed by the platform’s privacy policy).  It is each party’s responsibility to disclose its privacy policy and comply with relevant data regulations, including European laws relating to its use of cookies.</p>"
-msgstr "<p>Nếu một nhà phát hành hoặc nhà quảng cáo thu thập dữ liệu từ những người dùng xem trang AMP của họ, việc thu thập dữ liệu đó sẽ được quản lý bởi chính sách quyền riêng tư của họ. Nhà phát hành hoặc nhà quảng cáo có trách nhiệm tiết lộ chính sách quyền riêng tư của họ, tốt nhất là bằng cách bao gồm một liên kết đến nó trong mỗi trang AMP của họ.</p>\n"
-"<p>Thêm vào đó, luật pháp ở nhiều khu vực tài phán, ví dụ như Liên minh Châu Âu, đòi hỏi một website cung cấp cho khách truy cập thông tin về cookie và các loại hình lưu trữ cục bộ khác được sử dụng trên website (bao gồm các trang AMP). Trong nhiều trường hợp, các luật pháp này cũng yêu cầu website có được sự đồng ý từ khách truy cập. Website đó có trách nhiệm xác định, dựa trên việc sử dụng cookie của họ, loại thông báo phù hợp. Thông tin bổ sung và các công cụ để tạo thông báo về cookie có thể được tìm thấy tại www.cookiechoices.org. Lưu ý rằng thành phần AMP <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user-notification</a> là một cách để hiển thị một thông báo có thể tắt cho người dùng.</p>\n"
-"<p>Nếu một trang AMP được hiển thị trong một trình xem trên một nền tảng của bên thứ ba, ví dụ như Google AMP Viewer trên Google Tìm kiếm, trình xem đó có thể là một môi trường lai, trong đó cả trang AMP và nền tảng của bên thứ ba đều có thể thu thập dữ liệu về người dùng. Trong trường hợp đó, việc thu thập dữ liệu bởi mỗi bên đều được quản lý bởi chính sách quyền riêng tư của bên đó (nghĩa là, trong một môi trường trình xem lai, dữ liệu được thu thập bởi trang AMP sẽ được quản lý bởi chính sách quyền riêng tư của họ và dữ liệu được thu thập bởi nền tảng của bên thứ ba sẽ được quản lý bởi chính sách quyền riêng tư của nền tảng đó). Mỗi bên đều có trách nhiệm tiết lộ chính sách quyền riêng tư của họ và tuân thủ các quy định liên quan về dữ liệu, bao gồm luật pháp Châu Âu về việc sử dụng cookie của họ.</p>"
+msgid "<p>If a publisher or advertiser collects data from users who view its AMP pages, such data collection is governed by their privacy policy.  It is the publisher or advertiser’s responsibility to disclose its privacy policy, ideally by including a link to it within each of their AMP pages.</p>\n<p>Furthermore, the laws in many jurisdictions, such as in the European Union, require a website to give visitors information about cookies and other forms of local storage used on the site (including AMP pages). In many cases, these laws also require that the website obtain consent.  It is the website's responsibility to determine, based on its use of cookies, what type of notice would be appropriate.  Additional information and tools for generating cookie notices can be found at www.cookiechoices.org.  Note that the AMP component <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user-notification</a> provides a way to display a dismissable notification to the user.</p>\n<p>If an AMP page is shown within a viewer on a third party platform, such as a Google AMP Viewer on Google Search, the viewer may be a hybrid environment in which the AMP page and the third party platform may each collect data about the user.  In such a case, data collection by each party is governed by that party’s privacy policy (i.e., in a hybrid viewer environment, data collected by the AMP page is governed by its privacy policy and data collected by the third party platform is governed by the platform’s privacy policy).  It is each party’s responsibility to disclose its privacy policy and comply with relevant data regulations, including European laws relating to its use of cookies.</p>"
+msgstr "<p>Nếu một nhà phát hành hoặc nhà quảng cáo thu thập dữ liệu từ những người dùng xem trang AMP của họ, việc thu thập dữ liệu đó sẽ được quản lý bởi chính sách quyền riêng tư của họ. Nhà phát hành hoặc nhà quảng cáo có trách nhiệm tiết lộ chính sách quyền riêng tư của họ, tốt nhất là bằng cách bao gồm một liên kết đến nó trong mỗi trang AMP của họ.</p>\n<p>Thêm vào đó, luật pháp ở nhiều khu vực tài phán, ví dụ như Liên minh Châu Âu, đòi hỏi một website cung cấp cho khách truy cập thông tin về cookie và các loại hình lưu trữ cục bộ khác được sử dụng trên website (bao gồm các trang AMP). Trong nhiều trường hợp, các luật pháp này cũng yêu cầu website có được sự đồng ý từ khách truy cập. Website đó có trách nhiệm xác định, dựa trên việc sử dụng cookie của họ, loại thông báo phù hợp. Thông tin bổ sung và các công cụ để tạo thông báo về cookie có thể được tìm thấy tại www.cookiechoices.org. Lưu ý rằng thành phần AMP <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user-notification</a> là một cách để hiển thị một thông báo có thể tắt cho người dùng.</p>\n<p>Nếu một trang AMP được hiển thị trong một trình xem trên một nền tảng của bên thứ ba, ví dụ như Google AMP Viewer trên Google Tìm kiếm, trình xem đó có thể là một môi trường lai, trong đó cả trang AMP và nền tảng của bên thứ ba đều có thể thu thập dữ liệu về người dùng. Trong trường hợp đó, việc thu thập dữ liệu bởi mỗi bên đều được quản lý bởi chính sách quyền riêng tư của bên đó (nghĩa là, trong một môi trường trình xem lai, dữ liệu được thu thập bởi trang AMP sẽ được quản lý bởi chính sách quyền riêng tư của họ và dữ liệu được thu thập bởi nền tảng của bên thứ ba sẽ được quản lý bởi chính sách quyền riêng tư của nền tảng đó). Mỗi bên đều có trách nhiệm tiết lộ chính sách quyền riêng tư của họ và tuân thủ các quy định liên quan về dữ liệu, bao gồm luật pháp Châu Âu về việc sử dụng cookie của họ.</p>"
 
 msgid "What type of content works best using Accelerated Mobile Pages?"
 msgstr "Loại nội dung thích hợp nhất với Trang Di động Gia tốc?"
@@ -3123,58 +3111,58 @@ msgid "AMP Conf 2020: Save the date!"
 msgstr "AMP Conf 2020: Hãy ghi vào lịch!"
 
 msgid "AMP is a web component framework to easily create user-first experiences for the web."
-msgstr ""
+msgstr "AMP là một khung quy chuẩn web cho phép người dùng dễ dàng tạo các trải nghiệm đặt người dùng làm ưu tiên hàng đầu cho trang web."
 
 msgid "Easily create websites with a great page experience out-of-the-box using AMP’s ready-to-go web components."
-msgstr ""
+msgstr "Dễ dàng tạo các website có trải nghiệm mặc định tuyệt vời với các thành phần web sẵn dùng của AMP."
 
 msgid "All about AMP Websites"
-msgstr ""
+msgstr "Toàn bộ thông tin về các Website AMP"
 
 msgid "Get started"
-msgstr ""
+msgstr "Bắt đầu"
 
 msgid "Immerse readers in visual and tappable stories they can share anywhere on the open web."
-msgstr ""
+msgstr "Đắm chìm người dùng trong các câu chuyện trực quan và có thể tương tác mà họ có thể chia sẻ bất cứ đâu trên web mở."
 
 msgid "All about Web Stories"
-msgstr ""
+msgstr "Toàn bộ thông tin về Web Stories"
 
 msgid "Serve lightning fast and secure eye-catching creatives."
-msgstr ""
+msgstr "Phân phát các quảng cáo bắt mắt, bảo mật và siêu nhanh."
 
 msgid "Send emails of the future with personalized dynamic content and interactive elements that engage readers."
-msgstr ""
+msgstr "Gửi các email thế hệ kế tiếp với những nội dung năng động, cá nhân hóa cùng các yếu tố tương tác có thể gắn kết độc giả."
 
 msgid "The latest news"
-msgstr ""
+msgstr "Tin tức mới nhất"
 
 msgid "Don't want to miss any of the great stuff that happens around AMP? Then always be first in line and subscribe to our newsletter!"
-msgstr ""
+msgstr "Bạn không muốn bỏ lỡ những tin tức tuyệt vời của AMP? Hãy đăng ký theo dõi bản tin của chúng tôi để luôn là người đầu tiên được nhận tin!"
 
 msgid "Don’t take our word for it - read case studies from industry success stories and see how AMP has produced positive results."
-msgstr ""
+msgstr "Đừng chỉ tin lời chúng tôi - hãy đọc các nghiên cứu trường hợp về các câu chuyện thành công trong ngành và xem AMP có thể mang đến kết quả tích cực như thế nào."
 
 msgid "A framework that amplifies page experience."
-msgstr ""
+msgstr "Một khung nhấn mạnh trải nghiệm trang."
 
 msgid "AMP is a simple and robust web components framework that makes it easy to build fast websites that are user-first and makes money. AMP provides long-term success for your web strategy with distribution across popular platforms and reduced operating costs."
-msgstr ""
+msgstr "AMP là một khung thành phần web đơn giản và mạnh mẽ để giúp bạn có thể dễ dàng xây dựng các website có thể được tải nhanh, đặt người dùng làm ưu tiên hàng đầu, và kiếm được tiền. AMP cung cấp thành công dài hạn cho chiến lược web của bạn bằng cách phân bổ trên nhiều nền tảng phổ biến và giảm chi phí vận hành."
 
 msgid "Guaranteed Page Experience"
-msgstr ""
+msgstr "Trải nghiệm trang được đảm bảo"
 
 msgid "AMP provides you with the tools needed to build websites that meet Page Experience ranking signals while remaining flexible and customizable to your needs. Page experience is a set of signals from Google that measure how users perceive their experience interacting with a web page beyond its pure information value. AMP is a straightforward way to a high page experience score. Domains built with AMP are 5 times more likely to pass* Core Web Vitals metrics than non-AMP!"
-msgstr ""
+msgstr "AMP cung cấp cho bạn công cụ mà bạn cần để xây dựng các website đáp ứng tín hiệu xếp hạng Trải nghiệm trang, nhưng vẫn đủ linh hoạt và tùy chỉnh theo nhu cầu của bạn. Trải nghiệm trang là một nhóm các tín hiệu từ Google đo lường cách người dùng cảm nhận trải nghiệm của họ khi tương tác với một trang web ngoài giá trị thông tin thuần túy của nó. AMP là một cách đơn giản để có điểm trải nghiệm trang cao. Các tên miền được xây dựng với AMP có khả năng đáp ứng* tiêu chuẩn Chỉ số cốt lõi web cao gấp 5 lần so với tên miền không phải AMP!"
 
 msgid "Check your page’s performance"
-msgstr ""
+msgstr "Kiểm tra hiệu năng trang web của bạn"
 
 msgid "Frameworks and CMSs"
-msgstr ""
+msgstr "Khung và CMS"
 
 msgid "Select a ready-to-go framework or integration-enabled CMS to get an AMP valid site up and running, fast. These platforms give you all the benefits of AMP without all the built-from-scratch hassle."
-msgstr ""
+msgstr "Chọn một khung sẵn dùng hoặc CMS được tích hợp để thiết lập và vận hành nhanh chóng một website tương thích AMP. Các nền tảng này cho bạn toàn bộ lợi ích của AMP mà không phải mất công xây dựng từ đầu."
 
 msgid "See supported platforms"
-msgstr ""
+msgstr "Xem các nền tảng được hỗ trợ"
