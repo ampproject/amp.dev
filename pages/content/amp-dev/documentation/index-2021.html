@@ -6,15 +6,15 @@ frameworks:
   - name: Next.js
     headline: Next.js
     logo:
-      src: /static/img/documentation/nextjs.png
-      width: 105
+      id: nextjs
+      width: 102
       height: 64
     text: "Turn any React page into an AMP page."
     url: https://nextjs.org/docs/advanced-features/amp-support/introduction
   - name: WordPress
     headline: WordPress
     logo:
-      src: /static/img/documentation/wordpress.png
+      id: wordpress-inverted
       width: 64
       height: 64
     text: "All the AMP benefits in the WordPress CMS."
@@ -22,8 +22,8 @@ frameworks:
   - name: Eleventy
     headline: 11ty
     logo:
-      src: /static/img/documentation/11ty.png
-      width: 64
+      id: eleventy
+      width: 67
       height: 65
     text: "Build performant static sites quickly."
     url: https://github.com/ampproject/eleventy-plugin-amp
@@ -37,7 +37,12 @@ frameworks:
       {% for framework in doc.frameworks %}
       <div class="ap-cards-item --stretch-column" role="listitem">
         <div class="ap-cards-item-icon">
-          <amp-img alt="{{ framework.name }}" src="{{ framework.logo.src }}" width="{{ framework.logo.width }}" height="{{ framework.logo.height }}" layout="fixed"></amp-img>
+          <svg width="{{ framework.logo.width }}" height="{{ framework.logo.height }}">
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="/static/frontend/sprite.svg#{{framework.logo.id }}"
+            ></use>
+          </svg>
         </div>
 
         <h3>{{ _(framework.headline) }}</h3>
@@ -61,13 +66,17 @@ frameworks:
       height="320"
       layout="fixed-height"
       role="list"
-      type="slides"
       visible-count="(min-width: 1024px) 3, (min-width: 768px) 2, 1"
       aria-label="{{ _('Frameworks') }}">
       {% for framework in doc.frameworks %}
       <div class="ap-cards-item --stretch-column" role="listitem">
         <div class="ap-cards-item-icon">
-          <amp-img alt="{{ framework.name }}" src="{{ framework.logo.src }}" width="{{ framework.logo.width }}" height="{{ framework.logo.height }}" layout="fixed"></amp-img>
+          <svg width="{{ framework.logo.width }}" height="{{ framework.logo.height }}">
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="/static/frontend/sprite.svg#{{framework.logo.id }}"
+            ></use>
+          </svg>
         </div>
 
         <h3>{{ _(framework.headline) }}</h3>

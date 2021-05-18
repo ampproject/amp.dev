@@ -35,6 +35,10 @@
       width: 64px;
       height: 64px;
       margin-bottom: 20px;
+
+      svg {
+        max-width: none;
+      }
     }
 
     p {
