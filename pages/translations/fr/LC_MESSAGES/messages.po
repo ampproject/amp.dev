@@ -36,7 +36,7 @@ msgstr "Framework AMP"
 
 #: /content/amp-dev/documentation/guides-and-tutorials/learn/spec/_blueprint.yaml
 msgid "AMP HTML Specification"
-msgstr "Spécification AMP HTML"
+msgstr "Spécification HTML AMP"
 
 #: /content/amp-dev/support/faq/overview.md
 msgid "AMP Overview"
@@ -92,11 +92,11 @@ msgstr "Animations et interactions"
 
 #: /content/amp-dev/about/stories.html:255
 msgid "Check out Web Stories on the web"
-msgstr "Consultez des stories Web sur le Web"
+msgstr "Consultez des Web Stories sur le Web"
 
 #: /content/amp-dev/about/stories.html:327
 msgid "Story Ads are full screen, single page ads that appear within Web Stories. Advertisers/ Publishers can invite users to a web page, an AMP page or an App with a single tap. A story ad has a rich, flexible canvas that allows images, videos, animations or a combination of all those elements.<br>  Story ads are supported by Google Ad Manager and Google DV360 (Beta) with additional ad server support coming soon!"
-msgstr "Les stories publicitaires sont des publicités d'une page en plein écran qui apparaissent dans les stories Web. Les annonceurs/éditeurs peuvent inviter les utilisateurs sur une page Web, une page AMP, ou une application en un clic. Une story publicitaire représente un cadre de travail riche et flexible permettant l'utilisation d'images, de vidéos, d'animations, ou d'une combinaison de tous ces éléments.<br>Les stories publicitaires sont prises en charge par Google Ad Manager et Google DV360 (Beta). De plus, la prise en charge par un serveur publicitaire supplémentaire sera bientôt disponible !"
+msgstr "Les stories publicitaires sont des publicités d'une page en plein écran qui apparaissent dans les Web Stories. Les annonceurs/éditeurs peuvent inviter les utilisateurs sur une page Web, une page AMP, ou une application en un clic. Une story publicitaire représente un cadre de travail riche et flexible permettant l'utilisation d'images, de vidéos, d'animations, ou d'une combinaison de tous ces éléments.<br>Les stories publicitaires sont prises en charge par Google Ad Manager et Google DV360 (Beta). De plus, la prise en charge par un serveur publicitaire supplémentaire sera bientôt disponible !"
 
 #: /content/amp-dev/about/stories.html:415
 msgid "Discover All Templates"
@@ -1161,7 +1161,7 @@ msgstr "Premiers pas avec AMP"
 
 #: /content/amp-dev/index.html:414
 msgid "As a source for breaking news and information, Web Stories allow us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage."
-msgstr "En tant que sources d'informations et d'actualités récentes, les Stories Web nous permettent de mettre en valeur la qualité de notre journalisme lorsque nous souhaitons rassembler de nombreux éléments. En combinant reportages, photographies, vidéos et images animées, elles représentent des points d'accès plus visuels pour les lecteurs qui recherchent notre couverture d'un fait."
+msgstr "En tant que sources d'informations et d'actualités récentes, les Web Stories nous permettent de mettre en valeur la qualité de notre journalisme lorsque nous souhaitons rassembler de nombreux éléments. En combinant reportages, photographies, vidéos et images animées, elles représentent des points d'accès plus visuels pour les lecteurs qui recherchent notre couverture d'un fait."
 
 #: /content/amp-dev/index.html:416
 msgid "Greg Manifold, Design Director of The Washington Post"
@@ -1209,7 +1209,7 @@ msgstr "Pas besoin de télécharger AMP et aucune installation n'est requise.<br
 
 #: /content/amp-dev/about/stories.html:90
 msgid "Web Stories"
-msgstr "Stories Web"
+msgstr "Web Stories"
 
 #: /content/amp-dev/about/stories.html:94
 msgid "Start developing"
@@ -1221,7 +1221,7 @@ msgstr "Publier une story"
 
 #: /content/amp-dev/about/stories.html:106
 msgid "Web<br> Stories"
-msgstr "Stories<br> Web"
+msgstr "Web<br> Stories"
 
 #: /content/amp-dev/about/stories.html:107
 msgid "visual storytelling for the open web"
@@ -1229,11 +1229,11 @@ msgstr "une narration visuelle pour le Web ouvert"
 
 #: /content/amp-dev/about/stories.html:108
 msgid "Web Stories immerse your readers in fast-loading full-screen experiences. Easily create visual narratives, with engaging animations and tappable interactions. The Web Story format (formerly known as AMP Stories) is free and part of the open web and are available for everyone to try on their websites. They can be shared and embedded across the web without being confined to a closed ecosystem or platform."
-msgstr "Les Stories Web plongent vos lecteurs dans des expériences en plein écran à chargement rapide. Créez facilement des récits visuels contenant des animations attrayantes et des options interactives. Le format des stories AMP est gratuit, fait partie du Web ouvert, et tout le monde peut l'essayer sur son site Web. Elles peuvent être partagées et intégrées sur le Web sans être confinées à un écosystème ou une plateforme fermé(e)."
+msgstr "Les Web Stories plongent vos lecteurs dans des expériences en plein écran à chargement rapide. Créez facilement des récits visuels contenant des animations attrayantes et des options interactives. Le format des stories AMP est gratuit, fait partie du Web ouvert, et tout le monde peut l'essayer sur son site Web. Elles peuvent être partagées et intégrées sur le Web sans être confinées à un écosystème ou une plateforme fermé(e)."
 
 #: /content/amp-dev/about/stories.html:109
 msgid "Web Stories provide content publishers with a mobile-focused format for delivering news and information as visually rich, tap-through stories. Web Stories offers a robust set of advertising opportunities for advertisers and publishers to reach a unique audience on the web with immersive experiences."
-msgstr "Stories Web offrent aux éditeurs de contenu un format pour appareils mobiles permettant de diffuser des nouvelles et des informations sous forme de stories visuelles riches et interactives. Elles leur proposent également, ainsi qu'aux annonceurs, une vaste panoplie de moyens d'atteindre un public unique sur le Web grâce à des expériences immersives."
+msgstr "Les Web Stories offrent aux éditeurs de contenu un format pour appareils mobiles permettant de diffuser des nouvelles et des informations sous forme de stories visuelles riches et interactives. Elles leur proposent également, ainsi qu'aux annonceurs, une vaste panoplie de moyens d'atteindre un public unique sur le Web grâce à des expériences immersives."
 
 #: /content/amp-dev/about/stories.html:119
 msgid "Build your first story"
@@ -1249,7 +1249,7 @@ msgstr "Lire un exemple de réussite"
 
 #: /content/amp-dev/about/stories.html:175
 msgid "The benefits of Web Stories"
-msgstr "Les avantages des Stories Web"
+msgstr "Les avantages des Web Stories"
 
 #: /content/amp-dev/about/stories.html:223
 msgid "Read on how AMP works"
@@ -1257,7 +1257,7 @@ msgstr "En apprendre plus sur le fonctionnement d'AMP"
 
 #: /content/amp-dev/about/stories.html:235
 msgid "Web Stories are built with visually rich media, and whether you utilize pictures, videos or GIF assets is up to you. Images and videos expand to visually fill the readers’ screens, providing a smooth and fully engaging experience. AMP allows you to specify the file type to account for the user’s network connection and browser capabilities."
-msgstr "Stories Web sont créées avec des médias visuellement riches, et c'est à vous de décider si vous utilisez des images, des vidéos, ou des GIF. Les images et les vidéos s'agrandissent pour remplir les écrans des lecteurs, offrant ainsi une expérience fluide et attrayante. AMP vous permet de spécifier le type de fichier en fonction de la connexion réseau de l'utilisateur et des capacités de son navigateur."
+msgstr "Les Web Stories sont créées avec des médias visuellement riches, et c'est à vous de décider si vous utilisez des images, des vidéos, ou des GIF. Les images et les vidéos s'agrandissent pour remplir les écrans des lecteurs, offrant ainsi une expérience fluide et attrayante. AMP vous permet de spécifier le type de fichier en fonction de la connexion réseau de l'utilisateur et des capacités de son navigateur."
 
 #: /content/amp-dev/about/stories.html:234
 msgid "Images, videos and GIFs"
@@ -1277,7 +1277,7 @@ msgstr "Il est facile de créer des effets visuels et des options interactives q
 
 #: /content/amp-dev/about/stories.html:325
 msgid "Web Stories <br />Monetization Options"
-msgstr "Options de monétisation <br />des Stories Web"
+msgstr "Options de monétisation <br />des Web Stories"
 
 #: /content/amp-dev/about/stories.html:326
 msgid "Single Page Story Ad"
@@ -1617,22 +1617,22 @@ msgid "Supports analytics and bookend capabilities for viral sharing and monetiz
 msgstr "Prend en charge les fonctions d'analyse et bookend pour le partage viral et la monétisation."
 
 msgid "Web Stories are lightening fast so that your audience stays engaged and entertained."
-msgstr "Les Stories Web sont ultra rapides et contribuent à garder l'attention du public et à le divertir."
+msgstr "Les Web Stories sont ultra rapides et contribuent à garder l'attention du public et à le divertir."
 
 msgid "Web Stories are a new and modern way to reach existing readers."
-msgstr "Les stories Web sont un moyen nouveau et moderne d'atteindre les lecteurs."
+msgstr "Les Web Stories sont un moyen nouveau et moderne d'atteindre les lecteurs."
 
 msgid "Web Stories enable monetization capability for publishers using full-screen immersive story ads and using affiliate links. For advertisers, Stories is a way to reach a unique audience within a new storytelling experience."
-msgstr "Les stories Web proposent une option de monétisation aux éditeurs utilisant des stories publicitaires immersives en plein écran et des liens affiliés. Pour les annonceurs, les stories sont un moyen d'atteindre un public unique au moyen d'une nouvelle expérience de narration."
+msgstr "Les Web Stories proposent une option de monétisation aux éditeurs utilisant des stories publicitaires immersives en plein écran et des liens affiliés. Pour les annonceurs, les stories sont un moyen d'atteindre un public unique au moyen d'une nouvelle expérience de narration."
 
 msgid "Web Stories make the production of stories as easy as possible from a technical perspective."
-msgstr "Stories Web rendent la création de stories aussi facile que possible d'un point de vue technique."
+msgstr "Les Web Stories rendent la création de stories aussi facile que possible d'un point de vue technique."
 
 msgid "The Web Stories format comes with preset but flexible layout templates, standardized UI controls, and components for sharing and adding follow-on content."
-msgstr "Le format de Stories Web est fourni avec des modèles de mise en page prédéfinis mais flexibles, des contrôles d'interface utilisateur normalisés, et des composants pour le partage et l'ajout de contenu supplémentaire."
+msgstr "Le format des Web Stories est fourni avec des modèles de mise en page prédéfinis mais flexibles, des contrôles d'interface utilisateur normalisés, et des composants pour le partage et l'ajout de contenu supplémentaire."
 
 msgid "Web Stories are part of the open web and can be shared and embedded across sites and apps without being confined to a single ecosystem."
-msgstr "Les stories Web font partie du Web ouvert et peuvent être partagées et intégrées sur plusieurs sites et applications sans être confinées à un unique écosystème."
+msgstr "Les Web Stories font partie du Web ouvert et peuvent être partagées et intégrées sur plusieurs sites et applications sans être confinées à un unique écosystème."
 
 msgid "AMPHTML ads are 6x faster than regular ads on AMP pages, making them more viewable, more effective and more likely to perform well. You can monitor performance and adjust pricing accordingly, and offer the most engaging ad products to optimize your ad placements. In AMP, tweaking your pages to drive higher viewability rate or views is easy for publishers using the ‘data-loading-strategy’ attribute on the `amp-ad` component."
 msgstr "Les annonces AMPHTML sont 6 fois plus rapides que les annonces ordinaires sur les pages AMP, ce qui les rend plus visibles et plus efficaces. Vous pouvez surveiller les performances, ajuster les prix et proposer les produits publicitaires les plus intéressants pour optimiser vos placements d'annonces. Grâce à AMP, il est facile de peaufiner vos pages afin d'augmenter le taux de visibilité ou les vues pour les éditeurs en utilisant l'attribut « data-loading-strategy » du composant « amp-ad »."
@@ -2980,8 +2980,10 @@ msgstr "<p>Responsable du contrôle de l'accès utilisateur spécifique au conte
 msgid "What is the Accelerated Mobile Pages project?"
 msgstr "Qu'est-ce que le projet Accelerated Mobile Pages (AMP) ?"
 
-msgid "<p>The Accelerated Mobile Pages (AMP) Project is an open source initiative that came out of discussions between publishers and technology companies about the need to improve the entire mobile content ecosystem for everyone -- publishers, consumer platforms, advertisers, creators, and users.</p>\n<p>Today, the expectation is that content should load super fast and be easy to explore. The reality is that content can take several seconds to load, or, because the user abandons the slow page, never fully loads at all. Accelerated Mobile Pages are web pages designed to load near instantaneously -- they are a step towards a better mobile web for all.</p>"
-msgstr "<p>Le projet AMP (Accelerated Mobile Pages) est une initiative open source née de discussions entre éditeurs et sociétés technologiques sur la nécessité d'améliorer l'ensemble de l'écosystème de contenu mobile pour tous : éditeurs, plateformes grand public, annonceurs, créateurs et utilisateurs.</p>\n<p>Aujourd'hui, on s'attend à ce que le chargement des contenus soit très rapide et que ceux-ci soient faciles à explorer. La réalité est que le chargement des contenus peut prendre quelques secondes, ou même ne jamais se terminer lorsque l'utilisateur abandonne la page trop lente. Les pages AMP sont des pages Web conçues pour se charger quasi instantanément : elles constituent un pas de plus vers un meilleur Web mobile pour tous.</p>"
+msgid "<p>The Accelerated Mobile Pages (AMP) Project is an open source initiative that came out of discussions between publishers and technology companies about the need to improve the entire mobile content ecosystem for everyone -- publishers, consumer platforms, advertisers, creators, and users.</p>\n"
+"<p>Today, the expectation is that content should load super fast and be easy to explore. The reality is that content can take several seconds to load, or, because the user abandons the slow page, never fully loads at all. Accelerated Mobile Pages are web pages designed to load near instantaneously -- they are a step towards a better mobile web for all.</p>"
+msgstr "<p>Le projet AMP (Accelerated Mobile Pages) est une initiative open source née de discussions entre éditeurs et sociétés technologiques sur la nécessité d'améliorer l'ensemble de l'écosystème de contenu mobile pour tous : éditeurs, plateformes grand public, annonceurs, créateurs et utilisateurs.</p>\n"
+"<p>Aujourd'hui, on s'attend à ce que le chargement des contenus soit très rapide et que ceux-ci soient faciles à explorer. La réalité est que le chargement des contenus peut prendre quelques secondes, ou même ne jamais se terminer lorsque l'utilisateur abandonne la page trop lente. Les pages AMP sont des pages Web conçues pour se charger quasi instantanément : elles constituent un pas de plus vers un meilleur Web mobile pour tous.</p>"
 
 msgid "What are the benefits of Accelerated Mobile Pages?"
 msgstr "Quels sont les avantages des pages AMP ?"
@@ -2992,8 +2994,14 @@ msgstr "<p>La vitesse compte et l'exécution instantanée est l'idéal recherch�
 msgid "How do Accelerated Mobile Pages work?"
 msgstr "Comment fonctionnent les pages AMP ?"
 
-msgid "<p>Accelerated Mobile Pages are just like any other HTML page, but with a limited set of allowed technical functionality that is defined and governed by the open source AMP spec. Just like all web pages, Accelerated Mobile Pages will load in any modern browser or app webview.</p>\n<p>AMP files take advantage of various technical and architectural approaches that prioritize speed to provide a faster experience for users. AMP developers can use a rich and growing library of web components that offer the ability to embed rich media objects like video and social posts, display advertising, or collect analytics. The goal is not to homogenize how content looks and feels, but instead to build a more common technical core between pages that speeds up load times.</p>\n<p>In addition, AMP files can be cached in the cloud in order to reduce the time content takes to get to a user’s mobile device. By using the AMP format, content producers are making the content in AMP files available to be cached by third parties. Under this type of framework, publishers and advertisers continue to control their content, but platforms can easily cache or mirror the content for optimal delivery speed to users. Google has provided the <a href=\"https://developers.google.com/amp/cache/\">Google AMP Cache</a> that can be used by anyone at no cost, and all AMPs will be cached by the Google AMP Cache. Other companies may build their own AMP cache as well.</p>\n<p>In summary, the goal is that the combination of limited technical functionality with a distribution system built around caching will lead to better performing pages, and increased audience development.</p>"
-msgstr "<p>Les pages AMP sont comme n'importe quelle autre page HTML, mais avec un ensemble limité de fonctionnalités techniques autorisées définies et régies par la spécification AMP open source. Comme toutes les pages Web, les pages AMP s'ouvrent dans n'importe quel navigateur ou application Web moderne.</p>\n<p>Les fichiers AMP bénéficient de diverses approches techniques et architecturales qui mettent en avant la vitesse pour offrir une expérience plus rapide aux utilisateurs. Les développeurs AMP peuvent exploiter une bibliothèque riche et croissante de composants Web qui offrent la possibilité d'incorporer des objets multimédias riches comme des vidéos et des publications de réseaux sociaux, d'afficher de la publicité ou de collecter des analyses. L'objectif n'est pas d'homogénéiser l'apparence et la convivialité des contenus, mais plutôt de créer un noyau technique plus commun entre les pages qui accélère les temps de chargement.</p>\n<p>De plus, les fichiers AMP peuvent être mis en cache dans le cloud afin de réduire le temps nécessaire aux contenus pour accéder à l'appareil mobile de l'utilisateur. En utilisant le format AMP, les producteurs de contenus rendent le contenu des fichiers AMP disponible à la mise en cache par des tiers. Ce type d'environnement de travail permet aux éditeurs et annonceurs de garder le contrôle de leurs contenus, et aux plateformes de facilement mettre en cache ou refléter ces contenus pour assurer une vitesse d'accès optimale auprès des utilisateurs. Google a fourni le <a href=\"https://developers.google.com/amp/cache/\">Google AMP Cache</a> qui peut être utilisé gratuitement par tous, et toutes les pages AMP seront mises en cache par celui-ci. D'autres sociétés peuvent également créer leur propre cache AMP.</p>\n<p>En résumé, l'objectif est que la combinaison de fonctionnalités techniques limitées avec un système de distribution basé sur la mise en cache conduise à des pages plus performantes et à un public plus large.</p>"
+msgid "<p>Accelerated Mobile Pages are just like any other HTML page, but with a limited set of allowed technical functionality that is defined and governed by the open source AMP spec. Just like all web pages, Accelerated Mobile Pages will load in any modern browser or app webview.</p>\n"
+"<p>AMP files take advantage of various technical and architectural approaches that prioritize speed to provide a faster experience for users. AMP developers can use a rich and growing library of web components that offer the ability to embed rich media objects like video and social posts, display advertising, or collect analytics. The goal is not to homogenize how content looks and feels, but instead to build a more common technical core between pages that speeds up load times.</p>\n"
+"<p>In addition, AMP files can be cached in the cloud in order to reduce the time content takes to get to a user’s mobile device. By using the AMP format, content producers are making the content in AMP files available to be cached by third parties. Under this type of framework, publishers and advertisers continue to control their content, but platforms can easily cache or mirror the content for optimal delivery speed to users. Google has provided the <a href=\"https://developers.google.com/amp/cache/\">Google AMP Cache</a> that can be used by anyone at no cost, and all AMPs will be cached by the Google AMP Cache. Other companies may build their own AMP cache as well.</p>\n"
+"<p>In summary, the goal is that the combination of limited technical functionality with a distribution system built around caching will lead to better performing pages, and increased audience development.</p>"
+msgstr "<p>Les pages AMP sont comme n'importe quelle autre page HTML, mais avec un ensemble limité de fonctionnalités techniques autorisées définies et régies par la spécification AMP open source. Comme toutes les pages Web, les pages AMP s'ouvrent dans n'importe quel navigateur ou application Web moderne.</p>\n"
+"<p>Les fichiers AMP bénéficient de diverses approches techniques et architecturales qui mettent en avant la vitesse pour offrir une expérience plus rapide aux utilisateurs. Les développeurs AMP peuvent exploiter une bibliothèque riche et croissante de composants Web qui offrent la possibilité d'incorporer des objets multimédias riches comme des vidéos et des publications de réseaux sociaux, d'afficher de la publicité ou de collecter des analyses. L'objectif n'est pas d'homogénéiser l'apparence et la convivialité des contenus, mais plutôt de créer un noyau technique plus commun entre les pages qui accélère les temps de chargement.</p>\n"
+"<p>De plus, les fichiers AMP peuvent être mis en cache dans le cloud afin de réduire le temps nécessaire aux contenus pour accéder à l'appareil mobile de l'utilisateur. En utilisant le format AMP, les producteurs de contenus rendent le contenu des fichiers AMP disponible à la mise en cache par des tiers. Ce type d'environnement de travail permet aux éditeurs et annonceurs de garder le contrôle de leurs contenus, et aux plateformes de facilement mettre en cache ou refléter ces contenus pour assurer une vitesse d'accès optimale auprès des utilisateurs. Google a fourni le <a href=\"https://developers.google.com/amp/cache/\">Google AMP Cache</a> qui peut être utilisé gratuitement par tous, et toutes les pages AMP seront mises en cache par celui-ci. D'autres sociétés peuvent également créer leur propre cache AMP.</p>\n"
+"<p>En résumé, l'objectif est que la combinaison de fonctionnalités techniques limitées avec un système de distribution basé sur la mise en cache conduise à des pages plus performantes et à un public plus large.</p>"
 
 msgid "Why does the Accelerated Mobile Pages Project take an open source approach?"
 msgstr "Pourquoi le projet AMP adopte-t-il une approche open source ?"
@@ -3016,8 +3024,12 @@ msgstr "<p>En utilisant le format AMP, les producteurs de contenus rendent le co
 msgid "What responsibilities do I have when using Accelerated Mobile Pages?"
 msgstr "Quelles sont mes responsabilités en tant qu'utilisateur de pages AMP ?"
 
-msgid "<p>If a publisher or advertiser collects data from users who view its AMP pages, such data collection is governed by their privacy policy.  It is the publisher or advertiser’s responsibility to disclose its privacy policy, ideally by including a link to it within each of their AMP pages.</p>\n<p>Furthermore, the laws in many jurisdictions, such as in the European Union, require a website to give visitors information about cookies and other forms of local storage used on the site (including AMP pages). In many cases, these laws also require that the website obtain consent.  It is the website's responsibility to determine, based on its use of cookies, what type of notice would be appropriate.  Additional information and tools for generating cookie notices can be found at www.cookiechoices.org.  Note that the AMP component <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user-notification</a> provides a way to display a dismissable notification to the user.</p>\n<p>If an AMP page is shown within a viewer on a third party platform, such as a Google AMP Viewer on Google Search, the viewer may be a hybrid environment in which the AMP page and the third party platform may each collect data about the user.  In such a case, data collection by each party is governed by that party’s privacy policy (i.e., in a hybrid viewer environment, data collected by the AMP page is governed by its privacy policy and data collected by the third party platform is governed by the platform’s privacy policy).  It is each party’s responsibility to disclose its privacy policy and comply with relevant data regulations, including European laws relating to its use of cookies.</p>"
-msgstr "<p>Si un éditeur ou un annonceur collecte des données des utilisateurs qui consultent ses pages AMP, cette collecte de données est régie par la politique de confidentialité de l'éditeur/annonceur. Il est de sa responsabilité de divulguer sa politique de confidentialité, idéalement en incluant un lien vers celle-ci dans chacune de ses pages AMP.</p>\n<p>En outre, les lois de nombreuses juridictions, par exemple dans l'Union européenne, exigent qu'un site Web fournisse aux visiteurs des informations sur les cookies et autres formes de stockage local utilisées sur le site (y compris les pages AMP). Dans de nombreux cas, ces lois exigent également que le site Web obtienne le consentement des visiteurs. Il est de la responsabilité du site Web de déterminer, en fonction de son utilisation des cookies, le moyen de notification approprié. Vous trouverez plus de détails et d'outils pour générer des notifications de cookies sur www.cookiechoices.org. Notez que le composant AMP <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user-notification</a> fournit un moyen d'afficher une notification à l'utilisateur avec une option de refus.</p>\n<p>Si une page AMP est affichée dans une visionneuse sur une plate-forme tierce, telle qu'une visionneuse Google AMP dans la recherche Google, la visionneuse peut être un environnement hybride dans lequel la page AMP et la plate-forme tierce peuvent chacune collecter des données sur l'utilisateur. Dans ce cas, la collecte de données par chaque partie est régie par sa politique de confidentialité respective (en d'autres termes, dans une visionneuse hybride, les données collectées par la page AMP sont régies par sa politique de confidentialité et les données collectées par la plateforme tierce sont régies par la politique de confidentialité de cette dernière). Il est de la responsabilité de chaque partie de divulguer sa politique de confidentialité et de se conformer aux réglementations applicables en matière de traitement des données, y compris les lois européennes relatives à l'utilisation des cookies.</p>"
+msgid "<p>If a publisher or advertiser collects data from users who view its AMP pages, such data collection is governed by their privacy policy.  It is the publisher or advertiser’s responsibility to disclose its privacy policy, ideally by including a link to it within each of their AMP pages.</p>\n"
+"<p>Furthermore, the laws in many jurisdictions, such as in the European Union, require a website to give visitors information about cookies and other forms of local storage used on the site (including AMP pages). In many cases, these laws also require that the website obtain consent.  It is the website's responsibility to determine, based on its use of cookies, what type of notice would be appropriate.  Additional information and tools for generating cookie notices can be found at www.cookiechoices.org.  Note that the AMP component <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user-notification</a> provides a way to display a dismissable notification to the user.</p>\n"
+"<p>If an AMP page is shown within a viewer on a third party platform, such as a Google AMP Viewer on Google Search, the viewer may be a hybrid environment in which the AMP page and the third party platform may each collect data about the user.  In such a case, data collection by each party is governed by that party’s privacy policy (i.e., in a hybrid viewer environment, data collected by the AMP page is governed by its privacy policy and data collected by the third party platform is governed by the platform’s privacy policy).  It is each party’s responsibility to disclose its privacy policy and comply with relevant data regulations, including European laws relating to its use of cookies.</p>"
+msgstr "<p>Si un éditeur ou un annonceur collecte des données des utilisateurs qui consultent ses pages AMP, cette collecte de données est régie par la politique de confidentialité de l'éditeur/annonceur. Il est de sa responsabilité de divulguer sa politique de confidentialité, idéalement en incluant un lien vers celle-ci dans chacune de ses pages AMP.</p>\n"
+"<p>En outre, les lois de nombreuses juridictions, par exemple dans l'Union européenne, exigent qu'un site Web fournisse aux visiteurs des informations sur les cookies et autres formes de stockage local utilisées sur le site (y compris les pages AMP). Dans de nombreux cas, ces lois exigent également que le site Web obtienne le consentement des visiteurs. Il est de la responsabilité du site Web de déterminer, en fonction de son utilisation des cookies, le moyen de notification approprié. Vous trouverez plus de détails et d'outils pour générer des notifications de cookies sur www.cookiechoices.org. Notez que le composant AMP <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user-notification</a> fournit un moyen d'afficher une notification à l'utilisateur avec une option de refus.</p>\n"
+"<p>Si une page AMP est affichée dans une visionneuse sur une plate-forme tierce, telle qu'une visionneuse Google AMP dans la recherche Google, la visionneuse peut être un environnement hybride dans lequel la page AMP et la plate-forme tierce peuvent chacune collecter des données sur l'utilisateur. Dans ce cas, la collecte de données par chaque partie est régie par sa politique de confidentialité respective (en d'autres termes, dans une visionneuse hybride, les données collectées par la page AMP sont régies par sa politique de confidentialité et les données collectées par la plateforme tierce sont régies par la politique de confidentialité de cette dernière). Il est de la responsabilité de chaque partie de divulguer sa politique de confidentialité et de se conformer aux réglementations applicables en matière de traitement des données, y compris les lois européennes relatives à l'utilisation des cookies.</p>"
 
 msgid "What type of content works best using Accelerated Mobile Pages?"
 msgstr "Quel type de contenu fonctionne le mieux avec les pages AMP ?"
@@ -3125,7 +3137,7 @@ msgid "Immerse readers in visual and tappable stories they can share anywhere on
 msgstr "Plongez les lecteurs dans des stories visuelles et interactives qu'ils peuvent partager n'importe où sur le Web ouvert."
 
 msgid "All about Web Stories"
-msgstr "Tout sur les stories Web"
+msgstr "Tout sur les Web Stories"
 
 msgid "Serve lightning fast and secure eye-catching creatives."
 msgstr "Diffusez des créations accrocheuses rapides comme l'éclair."
@@ -3165,4 +3177,3 @@ msgstr "Sélectionnez un framework prêt à l'emploi ou un CMS compatible à l'i
 
 msgid "See supported platforms"
 msgstr "Voir les plateformes prises en charge"
-
