@@ -137,9 +137,9 @@ In this scenario, the user receives a consistent shopping cart experience even t
 
 **To enable this and any experience involving user state, all contexts the user traverses must share their individually-maintained state with each other.** "Perfect!", you say, with the idea to share the cookie values with user identifiers across these contextual boundaries. One wrinkle: even though each of these contexts displays content controlled by the same publisher, they each see the other as a third-party because each context lives on different domains.
 
-<amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/contexts-with-different-storage.png" width="1030" height="868">
+<amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/contexts-with-different-storage.png" width="1030" height="868">
   <noscript>
-    <img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" src="https://github.com/ampproject/amphtml/raw/main/spec/img/contexts-with-different-storage.png" />
+    <img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/contexts-with-different-storage.png" />
   </noscript>
 </amp-img>
 
@@ -163,9 +163,9 @@ After laying the foundation, we then visit a topic with a narrower range of use 
 
 In walking through the technical guidance below, let's assume that you’ll be binding **user state** to a stable **identifier** that represents the user. For example, the identifier might look like `n34ic982n2386n30`. On the server side you then associate `n34ic982n2386n30` to any set of user state information, such as shopping cart content, a list of previously read articles, or other data depending on the use case.
 
-<amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
+<amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
   <noscript>
-    <img alt="A single identifier could be used to manage user state for many use cases" src="https://github.com/ampproject/amphtml/raw/main/spec/img/identifiers-for-use-cases.png" />
+    <img alt="A single identifier could be used to manage user state for many use cases" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/identifiers-for-use-cases.png" />
   </noscript>
 </amp-img>
 
@@ -396,9 +396,9 @@ In general, when reading and writing third-party cookies is disallowed, there wi
 
 In this task, we’ll cover an additional optimization that helps when the user is navigating across contexts from one page to another page either **via linking or form submissions**. In these situations, and with the implementation work described below, it is possible to set up a fully effective scheme for managing user state across contexts.
 
-<amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
+<amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
   <noscript>
-    <img alt="Links can be used to pass the identifier information of one context into another (linked) context" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-form-identifier-forwarding.png" />
+    <img alt="Links can be used to pass the identifier information of one context into another (linked) context" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-form-identifier-forwarding.png" />
   </noscript>
 </amp-img>
 
@@ -452,9 +452,9 @@ By taking these steps, the Client ID is available to the target server and/or as
 https://example.com/step2.html?ref_id=$amp_client_id
 [/sourcecode]
 
-<amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
+<amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
   <noscript>
-    <img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-1.png" />
+    <img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-identifier-forwarding-example-1.png" />
   </noscript>
 </amp-img>
 
@@ -479,9 +479,9 @@ To process during redirect, handle the request on the server and extract the rel
 
 To process on the landing page, the approach will vary depending on whether that page is an AMP page or a non-AMP page.
 
-<amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
+<amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
   <noscript>
-    <img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-2.png" />
+    <img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-identifier-forwarding-example-2.png" />
   </noscript>
 </amp-img>
 
