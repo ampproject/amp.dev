@@ -2,9 +2,88 @@
 $title: Get Started
 $view: /views/2021/base.html
 
+frameworks:
+  - name: Next.js
+    headline: Next.js
+    logo:
+      src: /static/img/documentation/nextjs.png
+      width: 105
+      height: 64
+    text: "Turn any React page into an AMP page."
+    url: https://nextjs.org/docs/advanced-features/amp-support/introduction
+  - name: WordPress
+    headline: WordPress
+    logo:
+      src: /static/img/documentation/wordpress.png
+      width: 64
+      height: 64
+    text: "All the AMP benefits in the WordPress CMS."
+    url: https://amp-wp.org/documentation/success-with-wordpress/
+  - name: Eleventy
+    headline: 11ty
+    logo:
+      src: /static/img/documentation/11ty.png
+      width: 64
+      height: 65
+    text: "Build performant static sites quickly."
+    url: https://github.com/ampproject/eleventy-plugin-amp
 ---
 <main>
   <section class="ap-section">
     <h1 class="ap-h1">{{ _('Start building websites with AMP') }}</h1>
+  </section>
+  <section class="ap-cards --no-background">
+    <div class="ap-cards-grid" role="list">
+      {% for framework in doc.frameworks %}
+      <div class="ap-cards-item --stretch-column" role="listitem">
+        <div class="ap-cards-item-icon">
+          <amp-img alt="{{ framework.name }}" src="{{ framework.logo.src }}" width="{{ framework.logo.width }}" height="{{ framework.logo.height }}" layout="fixed"></amp-img>
+        </div>
+
+        <h3>{{ _(framework.headline) }}</h3>
+        <p>{{ _(framework.text) }}</p>
+
+        <div class="ap-m-lnk">
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+            </svg>
+          </div>
+          <span class="ap-m-lnk-text">{{ _('Start with') }} {{ framework.name }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <amp-base-carousel
+      class="ap-cards-carousel"
+      height="320"
+      layout="fixed-height"
+      role="list"
+      type="slides"
+      visible-count="(min-width: 1024px) 3, (min-width: 768px) 2, 1"
+      aria-label="{{ _('Frameworks') }}">
+      {% for framework in doc.frameworks %}
+      <div class="ap-cards-item --stretch-column" role="listitem">
+        <div class="ap-cards-item-icon">
+          <amp-img alt="{{ framework.name }}" src="{{ framework.logo.src }}" width="{{ framework.logo.width }}" height="{{ framework.logo.height }}" layout="fixed"></amp-img>
+        </div>
+
+        <h3>{{ _(framework.headline) }}</h3>
+        <p>{{ _(framework.text) }}</p>
+
+        <div class="ap-m-lnk">
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+            </svg>
+          </div>
+          <span class="ap-m-lnk-text">{{ _('Start with') }} {{ framework.name }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </amp-base-carousel>
   </section>
 </main>

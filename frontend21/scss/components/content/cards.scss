@@ -8,6 +8,12 @@
     margin-top: -30px;
   }
 
+  &.--no-background {
+    &:after {
+      display: none;
+    }
+  }
+
   &:after {
     content: '';
     @include fill;
@@ -27,6 +33,14 @@
       width: 64px;
       height: 64px;
       margin-bottom: 20px;
+    }
+
+    &.--stretch-column {
+      display: flex;
+      flex-direction: column;
+      p {
+        flex-grow: 2;
+      }
     }
   }
 
