@@ -13,6 +13,8 @@ The Web Player has significantly matured (thanks for all the feedback and insigh
 
 ## What is the Web Player?
 
+{{ image('/static/img/docs/web-player-main.gif', 750, 625,   align='center', caption='Web Story Player demo' alt='web player demo' ) }}
+
 The Web Story Player is the best way for you to give users a rich user experience on your sites using Web Stories.  Think of it like a video player: having a single video in your device is fine, but put it in a video player live on the web, and it unlocks a number of features and benefits: There’s additional controls (e.g. captions), it lives among millions of other videos that can provide related content at the end of your original video – which adds discoverability, and more.
 
 You can think similarly of the web player. By only linking to a single story, you can miss out on a number of features and experiences that are found in other story platforms (e.g. Instagram, Snapchat) and are natural to story users. See table below for a few examples.
@@ -36,7 +38,7 @@ You can think similarly of the web player. By only linking to a single story, yo
    </td>
   </tr>
   <tr>
-   <td>Swipe down to exit the Story and return t to your site
+   <td>Swipe down to exit the Story and return to your site
    </td>
    <td>❌
    </td>
@@ -111,8 +113,6 @@ You can think similarly of the web player. By only linking to a single story, yo
 
 ## Contents
 
-Please refer to the document outline to get familiar with the contents of this document before diving into the next sections.
-
 
 [TOC]
 
@@ -124,28 +124,35 @@ You can use the web player to create a number of experiences in your own platfor
 
 ### Carousel ([UX details](https://services.google.com/fh/files/events/web_stories_playbook_external.pdf#page=39))
 
+
+{{ image('/static/img/docs/web-player-carousel.gif', 799, 792, align='center', caption='Web Player carousel' alt='web player carousel of stories' ) }}
+
+
 A carousel of stories has multiple stories next to each other. It generally includes a preview of the story like a thumbnail and title. When clicked, it will open the story. The user can then consume the story or swipe between stories.
 
 
 
-    *   [Flagship example from playbook](https://000615502.deployed.codepen.website)
+    *   [See the demo live here](https://000615502.deployed.codepen.website)
 
-Important aspects to note on this sample:
+Important aspects in this sample:
 
 
 
 *   On desktop:
-    *   Entry points reveal background cards on hover
     *   Player has a [“close” button](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-story-player.md#close) to exit the lightbox experience
     *   Player has a [“skip to next”](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-story-player.md#skip-to-next) button to skip to the next story
+    *   Entry points reveal background cards on hover
 *   On a mobile device:
+    *   Swiping is supported to navigate between stories
+    *   The [“scroll background page”](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-story-player.md#page-scrolling) is disabled to yield that gesture for swiping to close
     *   Entry point cards have smaller size than desktop
     *   There are no background cards (since there is no hover in mobile)
-    *   Swiping is supported to navigate between stories
     *   Swiping down is enabled to close the story
-    *   The [“scroll background page”](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-story-player.md#page-scrolling) is disabled to yield that gesture for swiping to close
 *   On both screen sizes:
     *   The player starts paused and only starts [playing](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-story-player.md#playpause) once the user clicks on the entry point.
+    *   The carousel follows the UX [best practices from the playbook](https://services.google.com/fh/files/events/web_stories_playbook_external.pdf#page=39).
+
+To see the entire code required to build this, visit the [codepen project](https://codepen.io/maenrique/project/editor/ZMnWyV).
 
 
 ## Adding stories to the player
@@ -184,7 +191,7 @@ The player unlocks a number of features that allow you to customize the UI of th
 ### Add attribution for creator / publisher
 
 
-![alt_text](images/image1.png "image_tooltip")
+{{ image('/static/img/docs/story-attribution.png', 716, 1198, align='center', caption='Attribution in web stories' alt='web player showing story attribution' ) }}
 
 
 _Creator’s title at the top of the story_
@@ -208,23 +215,16 @@ Read more about these attributes on the [Metadata Guidelines of amp-story.](http
 
 This includes a “close” button for creating lightbox-like experiences and a “skip-to-next” button for navigating between stories on desktop. You can also add your own custom controls and listen to their events to perform custom actions.
 
-See [examples](#Example-#1---Close-button-on-the-start-position) below to get an idea of what you can do.
+See examples below to get an idea of what you can do.
 
 
-
-
-
-![alt_text](images/image2.png "image_tooltip")
-
-
-
-
-![alt_text](images/image3.png "image_tooltip")
-
-
-
-
-![alt_text](images/image4.png "image_tooltip")
+<table>
+  <tr>
+    <td><img src="https://github.com/ampproject/amphtml/blob/main/src/amp-story-player/img/close-button-left.png?raw=true"></td>
+    <td><img src="https://github.com/ampproject/amphtml/blob/main/src/amp-story-player/img/close-and-skip-next.png?raw=true"></td>
+<td><img src="https://github.com/ampproject/amphtml/blob/main/src/amp-story-player/img/close-button-custom-background.png?raw=true"></td>
+  </tr>
+</table>
 
 
 To configure them, specify a JSON configuration with the `type=”application/json”` attribute as a child of the `&lt;amp-story-player>` element.
@@ -234,8 +234,9 @@ Inside the configuration, specify an array of “controls”. The “controls”
 The configuration will end up looking like the following:
 
 
-```
+```html
 <amp-story-player>
+
  <script type="application/json">
    {
      "controls": [
@@ -244,13 +245,14 @@ The configuration will end up looking like the following:
          "position": "start"
        },
        {
-         "name": "skip-next"
+         "name": "skip-to-next"
        }
      ]
    }
  </script>
- <a href="./story1.html"> ... </a>
- <a href="./story2.html"> ... </a>
+
+<a href="./story1.html"> ... </a>
+<a href="./story2.html"> ... </a>
 </amp-story-player>
 ```
 
@@ -263,27 +265,24 @@ Since the default (when including a custom UI configuration JSON) will set all t
 
 <table>
   <tr>
-   <td><code><amp-story-player> \
- &lt;script type="application/json"> \
-   { \
-     "controls": [ \
-       { \
-         "name": "close", \
-         "position": "start" \
-       } \
-     ], \
-   } \
- &lt;/script> \
- ... \
-&lt;/amp-story-player></code>
-   </td>
-   <td>
-
-
-
-<img src="images/image5.png" width="" alt="alt_text" title="image_tooltip">
-
-   </td>
+    <td>
+      <pre lang="html">
+<amp-story-player>
+ <script type="application/json">
+   {
+     "controls": [
+       {
+         "name": "close",
+         "position": "start"
+       }
+     ],
+   }
+ </script>
+ ...
+</amp-story-player>
+      </pre>
+    </td>
+    <td><img src="https://github.com/ampproject/amphtml/blob/main/src/amp-story-player/img/lightbox-close-button.png?raw=true"></td>
   </tr>
 </table>
 
@@ -296,26 +295,23 @@ On desktop, you can now display a button that navigates from the current story t
 
 <table>
   <tr>
-   <td><code><amp-story-player> \
- &lt;script type="application/json"> \
-   { \
-     "controls": [ \
-       { \
-         "name": "skip-next" \
-       } \
-     ], \
-   } \
- &lt;/script> \
- ... \
-&lt;/amp-story-player></code>
-   </td>
-   <td>
-
-
-
-<img src="images/image6.png" width="" alt="alt_text" title="image_tooltip">
-
-   </td>
+    <td>
+      <pre lang="html">
+<amp-story-player>
+ <script type="application/json">
+   {
+     "controls": [
+       {
+         "name": "skip-to-next"
+       }
+     ],
+   }
+ </script>
+ ...
+</amp-story-player>
+      </pre>
+    </td>
+    <td><img src="https://github.com/ampproject/amphtml/blob/main/src/amp-story-player/img/skip-next-desktop.png?raw=true"></td>
   </tr>
 </table>
 
@@ -326,27 +322,25 @@ On desktop, you can now display a button that navigates from the current story t
 
 <table>
   <tr>
-   <td><code><amp-story-player> \
- &lt;script type="application/json"> \
-   { \
-     "controls": [ \
-       { \
-         "name": "close", \
-         "backgroundImageUrl": "https://example.com/assets/red-x.png", \
-         "position": "start" \
-       } \
-     ] \
-   } \
- &lt;/script> \
- ... \
-&lt;/amp-story-player></code>
-   </td>
-   <td>
-
-
-<img src="images/image7.png" width="" alt="alt_text" title="image_tooltip">
-
-   </td>
+    <td>
+      <pre lang="html">
+<amp-story-player>
+ <script type="application/json">
+   {
+     "controls": [
+       {
+         "name": "close",
+         "backgroundImageUrl": "data:image\/svg+xml;charset=utf-8,<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M5.77778 9.33333H4V4H9.33333V5.77778H5.77778V9.33333ZM4 14.6667H5.77778V18.2222H9.33333V20H4V14.6667ZM18.2222 18.2222H14.6667V20H20V14.6667H18.2222V18.2222ZM14.6667 5.77778V4H20V9.33333H18.2222V5.77778H14.6667Z\" fill=\"white\"\/><\/svg>",
+         "position": "start"
+       }
+     ]
+   }
+ </script>
+ ...
+</amp-story-player>
+      </pre>
+    </td>
+    <td><img src="https://github.com/ampproject/amphtml/blob/main/src/amp-story-player/img/close-button-custom-background.png?raw=true"></td>
   </tr>
 </table>
 
