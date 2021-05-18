@@ -151,7 +151,7 @@ Dans les exemples ci-dessous, vous pouvez voir comment la transition recherche u
 
 ##### Sur des friendly iframes (provenant, par exemple, d'un cache AMP) <a name="on-friendly-iframes-eg-coming-from-an-amp-cache"></a>
 
-<amp-img alt="annonce Lightbox dans un friendly iframe" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/spec/img/lightbox-ad-fie.gif" layout="fixed">
+<amp-img alt="annonce Lightbox dans un friendly iframe" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/lightbox-ad-fie.gif" layout="fixed">
   <noscript>
     <img alt="annonce Lightbox dans un friendly iframe" src="../../spec/img/lightbox-ad-fie.gif">
     </noscript>
@@ -159,7 +159,7 @@ Dans les exemples ci-dessous, vous pouvez voir comment la transition recherche u
 
 ##### Sur des cadres iFrame tiers (par exemple, en dehors du cache AMP) <a name="on-third-party-iframes-eg-outside-the-amp-cache"></a>
 
-<amp-img alt="annonce Lightbox dans un iFrame 3p" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/spec/img/lightbox-ad-3p.gif" layout="fixed">
+<amp-img alt="annonce Lightbox dans un iFrame 3p" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/lightbox-ad-3p.gif" layout="fixed">
   <noscript>
     <img alt="annonce Lightbox dans un iFrame 3p" src="../../spec/img/lightbox-ad-3p.gif">
     </noscript>

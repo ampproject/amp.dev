@@ -120,8 +120,8 @@ Bu senaryoda, kullanıcı, AMP görüntüleyici bağlamından yayıncı kaynak b
 
 **Bunu ve kullanıcı durumunu içeren herhangi bir deneyimi etkinleştirmek için, kullanıcının geçtiği tüm bağlamların ayrı ayrı tutulan durumlarını birbirleriyle paylaşması gerekir.** Çerez değerlerini bu bağlamsal sınırlar boyunca kullanıcı tanımlayıcılarla paylaşma fikrini düşünüp "Mükemmel!" diyeceksinizdir. Ama bir pürüz var: Bu bağlamların her biri aynı yayıncının kontrolündeki içeriği görüntülese de, her biri diğerini üçüncü taraf olarak görüyor çünkü her bağlam farklı etki alanında barındırılıyor.
 
-<amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/contexts-with-different-storage.png" width="1030" height="868">
-  <noscript><img alt="AMP'nin birçok bağlamda görüntülenebilme yeteneği, bu bağlamların her birinin tanımlayıcılar için kendi depolamasına sahip olduğu anlamına gelir" src="https://github.com/ampproject/amphtml/raw/main/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
+<amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/contexts-with-different-storage.png" width="1030" height="868">
+  <noscript><img alt="AMP'nin birçok bağlamda görüntülenebilme yeteneği, bu bağlamların her birinin tanımlayıcılar için kendi depolamasına sahip olduğu anlamına gelir" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
 
 Aşağıdaki tartışmada göreceğiniz gibi, çerezlerle etkileşim kurarken üçüncü taraf konumunda olmak, kullanıcının tarayıcı ayarlarının nasıl yapılandırıldığına bağlı olarak zorluklara neden olabilir. Özellikle, üçüncü taraf çerezleri belirli bir durumda engellenirse, bilgiler bağlamlar arasında paylaşılamayacaktır. Öte yandan, üçüncü taraf çerez işlemlerine izin verilirse, bilgiler paylaşılabilecektir.
 
@@ -142,8 +142,8 @@ Temeli oluşturduktan sonra, daha dar bir kullanım alanı yelpazesine sahip anc
 
 Aşağıdaki teknik kılavuzu incelerken, **kullanıcı durumunu**, kullanıcıyı temsil eden kararlı bir **tanımlayıcıya** bağlayacağınızı varsayalım. Örneğin, tanımlayıcı `n34ic982n2386n30` şeklinde görünebilir. Ardından, sunucu tarafında, `n34ic982n2386n30` tanımlayıcısını alışveriş sepeti içeriği, önceden okunan makalelerin listesi veya kullanım durumuna bağlı olarak diğer veriler gibi herhangi bir kullanıcı durumu bilgisi kümesiyle ilişkilendirirsiniz.
 
-<amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
-  <noscript><img alt="Birçok kullanım durumunda kullanıcı durumunu yönetmek için tek bir tanımlayıcı kullanılabilir" src="https://github.com/ampproject/amphtml/raw/main/spec/img/identifiers-for-use-cases.png"></noscript></amp-img>
+<amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
+  <noscript><img alt="Birçok kullanım durumunda kullanıcı durumunu yönetmek için tek bir tanımlayıcı kullanılabilir" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/identifiers-for-use-cases.png"></noscript></amp-img>
 
 Bu belgenin geri kalanında netlik sağlamak için, önünde dolar işareti (`$`) bulunan, daha okunabilir adlara sahip tanımlayıcılardan oluşan çeşitli karakter dizilerini çağıracağız:
 
@@ -381,8 +381,8 @@ Genel olarak, üçüncü taraf çerezlerinin okunmasına ve yazılmasına izin v
 
 Bu görevde, kullanıcı **bağlantı veya form gönderimleri yoluyla** bir sayfadan diğerine bağlamlar arasında gezinirken yardımcı olan ek bir optimizasyonu ele alacağız. Bu durumlarda ve aşağıda açıklanan uygulama çalışmasıyla, bağlamlar arasında kullanıcı durumunu yönetmek için tamamen etkili bir şema kurmak mümkündür.
 
-<amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
-  <noscript><img alt="Bağlantılar, bir bağlamın tanımlayıcı bilgilerini başka bir (bağlantılı) bağlama geçirmek için kullanılabilir." src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-form-identifier-forwarding.png"></noscript></amp-img>
+<amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
+  <noscript><img alt="Bağlantılar, bir bağlamın tanımlayıcı bilgilerini başka bir (bağlantılı) bağlama geçirmek için kullanılabilir." src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-form-identifier-forwarding.png"></noscript></amp-img>
 
 ##### Değiştirme özelliklerini kullanma <a name="using-substitution-features"></a>
 
@@ -437,8 +437,8 @@ Bu adımları uygulayarak, İstemci Kimliği, hedef sunucu tarafından kullanıl
 https://example.com/step2.html?ref_id=$amp_client_id
 [/sourcecode]
 
-<amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
-  <noscript><img alt="AMP görüntüleyici bağlamındaki bir tanımlayıcının bağlantı yoluyla bir yayıncı kaynak bağlamına nasıl geçirilebileceğine ilişkin örnek" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-1.png"></noscript></amp-img>
+<amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
+  <noscript><img alt="AMP görüntüleyici bağlamındaki bir tanımlayıcının bağlantı yoluyla bir yayıncı kaynak bağlamına nasıl geçirilebileceğine ilişkin örnek" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-identifier-forwarding-example-1.png"></noscript></amp-img>
 
 Kullanıcı, URL parametresi olarak veya başlık içinde bir `ref_id` değeri bulunan bir sayfaya geldiğinde, `ref_id` tanımlayıcısını sayfa aracılığıyla gösterilen tanımlayıcı (yani bir çerez değeri) ile birlikte işleme şansımız olur. Analiz sunucunuz her ikisini de bir analiz ping'ine dahil ederek her iki değerle aynı anda çalışabilir ve birbirleriyle ilişkili olduklarını bilerek bu ilişkiyi arka ucunuza yansıtabilir. Bir sonraki adım, bunun nasıl yapılacağına dair ayrıntıları sunuyor.
 
@@ -461,8 +461,8 @@ Yeniden yönlendirme sırasında işlemek için, sunucudaki isteği gerçekleşt
 
 Açılış sayfasında işlemek için yaklaşım, söz konusu sayfanın bir AMP sayfası veya AMP olmayan bir sayfa olmasına bağlı olarak değişecektir.
 
-<amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
-  <noscript><img alt="URL aracılığıyla sağlanan önceki bağlamdan bir tanımlayıcı ve geçerli bağlamdan bir tanımlayıcı içeren bir analiz pinginin nasıl oluşturulacağına ilişkin örnek" src="https://github.com/ampproject/amphtml/raw/main/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
+<amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
+  <noscript><img alt="URL aracılığıyla sağlanan önceki bağlamdan bir tanımlayıcı ve geçerli bağlamdan bir tanımlayıcı içeren bir analiz pinginin nasıl oluşturulacağına ilişkin örnek" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
 
 _AMP sayfasında yapılan güncellemeler:_ URL içindeki `ref_id` tanımlayıcı değerini almak için amp-analytics yapılandırmanızdaki Sorgu Parametresi değiştirme özelliğini kullanın. Sorgu Parametresi özelliği, URL'de istenen anahtar/değer çiftinin "anahtarını" belirten bir parametre alır ve karşılık gelen değeri yanıt olarak döndürür. AMP sayfa bağlamı tanımlayıcısını almak için yaptığımız gibi İstemci Kimliği özelliğini kullanın.
 

@@ -35,7 +35,7 @@ Email được cấu trúc là một cây MIME. Cây MIME chứa nội dung emai
 
 Để nhúng AMP trong một email, bạn chỉ cần bổ sung một phần MIME mới với loại nội dung là `text/x-amp-html` làm con cháu của `multipart/alternative`. Nó phải cùng tồn tại với các phần `text/html` hoặc `text/plain` hiện có. Điều này đảm bảo nội dung email sẽ hoạt động trên tất cả các máy khách.
 
-<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/main/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"><img data-md-type="raw_html" alt="Sơ đồ bộ phận AMP cho Email MIME" src="../img/amp-email-mime-parts.png"></noscript></amp-img>
+<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"><img data-md-type="raw_html" alt="Sơ đồ bộ phận AMP cho Email MIME" src="../img/amp-email-mime-parts.png"></noscript></amp-img>
 
 Để biết thêm thông tin về loại con `multipart/alternative`, hãy tham khảo [RFC 1521, phần 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
