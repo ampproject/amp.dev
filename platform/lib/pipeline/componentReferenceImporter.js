@@ -156,7 +156,7 @@ class ComponentReferenceImporter {
       version: DEFAULT_VERSION,
       versions: [DEFAULT_VERSION],
       latestVersion: DEFAULT_VERSION,
-      githubPath: path.join(BUILT_IN_PATH, `${name}.md`),
+      githubPath: path.join(BUILT_IN_PATH, name, `${name}.md`),
     });
   }
 
