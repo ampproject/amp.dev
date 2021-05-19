@@ -3167,3 +3167,54 @@ msgstr ""
 
 msgid "Exemplary websites built with AMP out in the wild."
 msgstr ""
+
+msgid "Start building websites with AMP"
+msgstr ""
+
+msgid "Create a website"
+msgstr ""
+
+msgid "AMP is the ultimate team player. Many CMS' and frameworks have AMP integrations to get your site up and running as quickly as an AMP page loads! If you're using an in-house solution, AMP provides tools and optimizations for easy integration. Keep scrolling to find the best solution to amplify your site and delight your users."
+msgstr ""
+
+msgid "AMP is different from other frameworks. Build rich and interactive web experiences with an extensive library of HTML components. Copy, paste and customize components to quickly and easily build pages that put the user-first and keep your site performant. Start coding your first AMP page to begin learning the basics or start mastering web development, the AMP way."
+msgstr ""
+
+msgid "Build your first AMP page"
+msgstr ""
+
+msgid "Start building, quickly"
+msgstr ""
+
+msgid "View all frameworks"
+msgstr ""
+
+msgid "Turn any React page into an AMP page."
+msgstr ""
+
+msgid "All the AMP benefits in the WordPress CMS."
+msgstr ""
+
+msgid "Build performant static sites quickly."
+msgstr ""
+
+msgid "Start with"
+msgstr ""
+
+msgid "Page Experience, optimized"
+msgstr ""
+
+msgid "If you’re working with a custom or in-house solution, AMP can meet you there! Through tools like the AMP optimizer, you can apply common performance best practices to your websites, automagically."
+msgstr ""
+
+msgid "Using an AMP Optimizer"
+msgstr ""
+
+msgid "Powerful components, anywhere"
+msgstr ""
+
+msgid "Not ready to fully commit to AMP but love our components? No problem! Through Bento, you can use AMP's well-tested, cross-browser compatible and accessible components anywhere on the web!"
+msgstr ""
+
+msgid "Bento Guide"
+msgstr ""

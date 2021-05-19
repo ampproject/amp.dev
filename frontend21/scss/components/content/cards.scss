@@ -8,6 +8,12 @@
     margin-top: -30px;
   }
 
+  &.--no-background {
+    &:after {
+      display: none;
+    }
+  }
+
   &:after {
     content: '';
     @include fill;
@@ -22,11 +28,21 @@
     color: color('black');
     background: color('white');
     box-shadow: 0 5px 10px 0px rgb(0 0 0 / 8%);
+    display: flex;
+    flex-direction: column;
 
     &-icon {
       width: 64px;
       height: 64px;
       margin-bottom: 20px;
+
+      svg {
+        max-width: none;
+      }
+    }
+
+    p {
+      flex-grow: 2;
     }
   }
 
