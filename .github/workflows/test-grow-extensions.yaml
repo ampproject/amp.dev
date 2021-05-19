@@ -41,10 +41,6 @@ jobs:
           sudo apt-get install libyaml-dev
           pip install grow --upgrade-strategy eager
 
-      - name: Preparing test resources
-        run: |
-          gulp buildComponentVersions
-
       - name: Running Grow tests
         working-directory: /home/runner/work/amp.dev/amp.dev/pages/extensions
         run: |
