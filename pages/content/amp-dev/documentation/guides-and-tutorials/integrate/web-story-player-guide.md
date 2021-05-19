@@ -9,7 +9,7 @@ formats:
 
 ## What is the Web Story Player?
 
-{{ image('/static/img/docs/web-player-main.gif', 750, 625,   align='center', caption='Web Story Player demo' alt='web story player demo' ) }}
+{{ image('/static/img/docs/web-player-main.gif', 750, 625, align='center', caption='Web Story Player demo', alt='web story player demo' ) }}
 
 The Web Story Player is the best way for you to give users a rich user experience on your sites using Web Stories.  Think of it like a video player: having a single video in your device is fine, but put it in a video player live on the web, and it unlocks a number of features and benefits: There’s additional controls (e.g. captions), it lives among millions of other videos that can provide related content at the end of your original video – which adds discoverability, and more.
 
