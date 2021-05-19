@@ -119,7 +119,7 @@ You can use the web story player to create a number of experiences in your own p
 ### Carousel ([UX details](https://services.google.com/fh/files/events/web_stories_playbook_external.pdf#page=39))
 
 
-{{ image('/static/img/docs/web-player-carousel.gif', 799, 792, align='center', caption='Web Story Player carousel' alt='web story player carousel of stories' ) }}
+{{ image('/static/img/docs/web-player-carousel.gif', 799, 792, align='center', caption='Web Story Player carousel', alt='web story player carousel of stories' ) }}
 
 
 A carousel of stories has multiple stories next to each other. It generally includes a preview of the story like a thumbnail and title. When clicked, it will open the story. The user can then consume the story or swipe between stories.
@@ -185,7 +185,7 @@ The player unlocks a number of features that allow you to customize the UI of th
 ### Add attribution for creator / publisher
 
 
-{{ image('/static/img/docs/story-attribution.png', 716, 1198, align='center', caption='Attribution in web stories' alt='web story player showing story attribution' ) }}
+{{ image('/static/img/docs/story-attribution.png', 716, 1198, align='center', caption='Attribution in web stories', alt='web story player showing story attribution' ) }}
 
 
 _Creator’s title at the top of the story_
