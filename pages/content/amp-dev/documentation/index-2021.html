@@ -29,8 +29,21 @@ frameworks:
     url: https://github.com/ampproject/eleventy-plugin-amp
 ---
 <main>
-  <section class="ap-section">
-    <h1 class="ap-h1">{{ _('Start building websites with AMP') }}</h1>
+  <section class="ap-logo-stage">
+    <div class="ap-logo-stage-content">
+      <div class="ap-logo-stage-logo">
+        {% do doc.icons.useIcon('/icons/amp-websites.svg') %}
+        <div class="ap-circular-icon --websites">
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-websites"></use>
+          </svg>
+        </div>
+      </div>
+      <div class="ap-text-block">
+        <h1 class="ap-h1 ap-logo-stage-headline">{{ _('Start building websites with AMP') }}</h1>
+      </div>
+    </div>
+  </section>
   </section>
   <section class="ap-cards --no-background">
     <div class="ap-cards-grid" role="list">
