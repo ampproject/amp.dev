@@ -68,7 +68,6 @@ class ComponentReferenceImporter {
     const bentoComponents = new Map();
     for (const growDoc of importedExtensions) {
       if (growDoc.bento) {
-        console.log('BENTO', growDoc.title);
         bentoComponents.set(growDoc.title, {
           name: growDoc.title,
           experimental: growDoc.experimental,
