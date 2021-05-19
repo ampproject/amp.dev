@@ -68,7 +68,6 @@ class ComponentReferenceImporter {
     const bentoComponents = new Map();
     for (const growDoc of importedExtensions) {
       if (growDoc.bento) {
-        console.log('BENTO', growDoc.title);
         bentoComponents.set(growDoc.title, {
           name: growDoc.title,
           experimental: growDoc.experimental,
@@ -156,7 +155,7 @@ class ComponentReferenceImporter {
       version: DEFAULT_VERSION,
       versions: [DEFAULT_VERSION],
       latestVersion: DEFAULT_VERSION,
-      githubPath: path.join(BUILT_IN_PATH, `${name}.md`),
+      githubPath: path.join(BUILT_IN_PATH, name, `${name}.md`),
     });
   }
 
