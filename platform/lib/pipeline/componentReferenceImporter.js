@@ -62,10 +62,13 @@ class ComponentReferenceImporter {
     this.extensions = await this._listExtensions();
 
     log.start('Beginning to import extension docs ...');
-    const importedExtensions = (await this._importExtensions()).flat();
+    const importedExtensions = (await this._importExtensions())
+      .flat()
+      .filter((ext) => ext != null);
     const bentoComponents = new Map();
     for (const growDoc of importedExtensions) {
-      if (growDoc && growDoc.bento) {
+      if (growDoc.bento) {
+        console.log('BENTO', growDoc.title);
         bentoComponents.set(growDoc.title, {
           name: growDoc.title,
           experimental: growDoc.experimental,
