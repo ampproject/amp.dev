@@ -8,6 +8,10 @@
     margin-top: -30px;
   }
 
+  .#{project('section')} + & {
+    margin-top: 100px;
+  }
+
   &.--no-background {
     &:after {
       display: none;
@@ -27,7 +31,7 @@
     border-radius: 8px;
     color: color('black');
     background: color('white');
-    box-shadow: 0 5px 10px 0px rgb(0 0 0 / 8%);
+    @include shadow-large;
     display: flex;
     flex-direction: column;
 
@@ -65,7 +69,7 @@
     z-index: 1;
     grid-column: 2 / span 22;
     border-radius: 8px;
-    box-shadow: 0 5px 10px 0px rgb(0 0 0 / 8%);
+    @include shadow-large;
 
     @include respond-to('small') {
       display: none;
