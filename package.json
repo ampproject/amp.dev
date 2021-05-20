@@ -64,6 +64,7 @@
 		"@ampproject/toolbox-optimizer": "2.8.0-canary.20",
 		"@google-cloud/datastore": "6.4.0",
 		"acorn": "8.2.4",
+		"buffer": "5.6.0",
 		"casual": "1.6.2",
 		"cheerio": "1.0.0-rc.3",
 		"client-sessions": "0.8.0",
