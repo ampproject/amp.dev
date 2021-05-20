@@ -29,8 +29,21 @@ frameworks:
     url: https://github.com/ampproject/eleventy-plugin-amp
 ---
 <main>
-  <section class="ap-section">
-    <h1 class="ap-h1">{{ _('Start building websites with AMP') }}</h1>
+  <section class="ap-logo-stage">
+    <div class="ap-logo-stage-content">
+      <div class="ap-logo-stage-logo">
+        {% do doc.icons.useIcon('/icons/amp-websites.svg') %}
+        <div class="ap-circular-icon --websites">
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-websites"></use>
+          </svg>
+        </div>
+      </div>
+      <div class="ap-text-block">
+        <h1 class="ap-h1 ap-logo-stage-headline">{{ _('Start building websites with AMP') }}</h1>
+      </div>
+    </div>
+  </section>
   </section>
   <section class="ap-cards --no-background">
     <div class="ap-cards-grid" role="list">
@@ -104,7 +117,7 @@ frameworks:
       </div>
       <div class="ap-text-media-col">
         <div class="ap-text-block">
-          <h2 class="ap-h1">
+          <h2 class="ap-h2">
             {{ _('Page Experience, optimized') }}
           </h2>
           <p>
@@ -112,9 +125,13 @@ frameworks:
             AMP optimizer, you can apply common performance best practices to your websites, automagically.') }}
           </p>
         </div>
-        <a class="ap-button"
+        <a class="ap-m-lnk ap-m-lnk-square"
           href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-optimizer-guide/index.md', locale=doc.locale).url.path }}">
-          {{ _('Using an AMP Optimizer') }}
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ap-m-lnk-text">{{ _('Using an AMP Optimizer') }}</span>
         </a>
       </div>
     </div>
@@ -128,7 +145,7 @@ frameworks:
       </div>
       <div class="ap-text-media-col">
         <div class="ap-text-block">
-          <h2 class="ap-h1">
+          <h2 class="ap-h2">
             {{ _('Powerful components, anywhere') }}
           </h2>
           <p>
@@ -136,9 +153,13 @@ frameworks:
             AMP\'s well-tested, cross-browser compatible and accessible components anywhere on the web!') }}
           </p>
         </div>
-        <a class="ap-button"
+        <a class="ap-m-lnk ap-m-lnk-square"
           href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/bento_guide.md', locale=doc.locale).url.path }}">
-          {{ _('Bento Guide') }}
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ap-m-lnk-text">{{ _('Bento Guide') }}</span>
         </a>
       </div>
     </div>

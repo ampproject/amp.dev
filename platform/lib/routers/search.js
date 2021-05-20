@@ -15,6 +15,7 @@
  */
 'use strict';
 
+const validatorRules = require('@ampproject/toolbox-validator-rules');
 const express = require('express');
 const path = require('path');
 const config = require('@lib/config.js');
@@ -53,29 +54,25 @@ const DESCRIPTION_META_TAG = 'twitter:description';
 
 const COMPONENT_EXAMPLES = samples.getComponentExampleMap();
 
-const COMPONENT_VERSIONS_PATH = path.join(
-  project.paths.DIST,
-  '/static/files/component-versions.json'
-);
-
 const HIGHLIGHTS_FOLDER_PATH = path.join(
   project.paths.DIST,
   '/static/files/search-promoted-pages/'
 );
 
-function buildAutosuggestComponentResult() {
-  const componentVersions = require(COMPONENT_VERSIONS_PATH);
-  const components = Object.keys(componentVersions).concat(
-    BUILT_IN_COMPONENTS,
-    IMPORTANT_INCLUDED_ELEMENTS
-  );
-  components.sort();
-  return {
-    items: components,
-  };
+let items = null;
+async function buildAutosuggestComponentResult() {
+  if (!items) {
+    const rules = await validatorRules.fetch();
+    const components = rules.extensions
+      .map((e) => e.name)
+      .concat(BUILT_IN_COMPONENTS, IMPORTANT_INCLUDED_ELEMENTS);
+    components.sort();
+    items = {
+      items: components,
+    };
+  }
+  return items;
 }
-
-const AUTOSUGGEST_COMPONENT_RESULT = buildAutosuggestComponentResult();
 
 // eslint-disable-next-line new-cap
 const search = express.Router();
@@ -86,9 +83,9 @@ search.get('/search/do', handleSearchRequest);
 search.get('/search/latest-query', handleNullResponse);
 search.get('/search/clear-latest-query', handleNullResponse);
 
-function handleAutosuggestRequest(request, response) {
+async function handleAutosuggestRequest(request, response) {
   setMaxAge(response, RESPONSE_MAX_AGE.autosuggest);
-  response.json(AUTOSUGGEST_COMPONENT_RESULT);
+  response.json(await buildAutosuggestComponentResult());
 }
 
 function handleHighlightsRequest(request, response) {

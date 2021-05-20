@@ -125,8 +125,11 @@ You can use the web story player to create a number of experiences in your own p
 A carousel of stories has multiple stories next to each other. It generally includes a preview of the story like a thumbnail and title. When clicked, it will open the story. The user can then consume the story or swipe between stories.
 
 
+[tip type="success"]
 
-    *   [See the demo live here](https://000615502.deployed.codepen.website)
+[See the demo live here!](https://000615502.deployed.codepen.website)
+
+[/tip]
 
 Important aspects in this sample:
 
@@ -185,7 +188,7 @@ The player unlocks a number of features that allow you to customize the UI of th
 ### Add attribution for creator / publisher
 
 
-{{ image('/static/img/docs/story-attribution.png', 716, 1198, align='center', caption='Attribution in web stories', alt='web story player showing story attribution' ) }}
+{{ image('/static/img/docs/story-attribution.png', 716, 1198, align='center third', caption='Attribution in web stories', alt='web story player showing story attribution' ) }}
 
 
 _Creator’s title at the top of the story_
@@ -207,19 +210,7 @@ Read more about these attributes on the [Metadata Guidelines of amp-story.](http
 
 ### Modify & add existing controls
 
-This includes a “close” button for creating lightbox-like experiences and a “skip-to-next” button for navigating between stories on desktop. You can also add your own custom controls and listen to their events to perform custom actions.
-
-See examples below to get an idea of what you can do.
-
-
-<table>
-  <tr>
-    <td><img src="https://github.com/ampproject/amphtml/blob/main/src/amp-story-player/img/close-button-left.png?raw=true"></td>
-    <td><img src="https://github.com/ampproject/amphtml/blob/main/src/amp-story-player/img/close-and-skip-next.png?raw=true"></td>
-<td><img src="https://github.com/ampproject/amphtml/blob/main/src/amp-story-player/img/close-button-custom-background.png?raw=true"></td>
-  </tr>
-</table>
-
+This includes a “close” button for creating lightbox-like experiences and a “skip-to-next” button for navigating between stories on desktop. You can also add your own custom controls and listen to their events to perform custom actions. See examples below to get an idea of what you can do.
 
 To configure them, specify a JSON configuration with the `type=”application/json”` attribute as a child of the `<amp-story-player>` element.
 
@@ -256,11 +247,7 @@ The configuration will end up looking like the following:
 
 Since the default (when including a custom UI configuration JSON) will set all these buttons to the right, all we have to do is move the close button to the start.
 
-
-<table>
-  <tr>
-    <td>
-      <pre lang="html">
+```html
 <amp-story-player>
  <script type="application/json">
    {
@@ -273,12 +260,8 @@ Since the default (when including a custom UI configuration JSON) will set all t
    }
  </script>
  ...
-</amp-story-player>
-      </pre>
-    </td>
-    <td><img src="https://github.com/ampproject/amphtml/blob/main/src/amp-story-player/img/lightbox-close-button.png?raw=true"></td>
-  </tr>
-</table>
+```
+{{ image('https://github.com/ampproject/amphtml/blob/main/src/amp-story-player/img/lightbox-close-button.png?raw=true', 716, 1198, align='center third', caption='Close control of the player in the start position', alt='web story player showing custom controls' ) }}
 
 
 
@@ -286,11 +269,7 @@ Since the default (when including a custom UI configuration JSON) will set all t
 
 On desktop, you can now display a button that navigates from the current story to the next one. It will also automatically be disabled once the user reaches the end of the stories in the player.
 
-
-<table>
-  <tr>
-    <td>
-      <pre lang="html">
+```html
 <amp-story-player>
  <script type="application/json">
    {
@@ -303,21 +282,14 @@ On desktop, you can now display a button that navigates from the current story t
  </script>
  ...
 </amp-story-player>
-      </pre>
-    </td>
-    <td><img src="https://github.com/ampproject/amphtml/blob/main/src/amp-story-player/img/skip-next-desktop.png?raw=true"></td>
-  </tr>
-</table>
-
+```
+{{ image('https://github.com/ampproject/amphtml/blob/main/src/amp-story-player/img/skip-next-desktop.png?raw=true', 1351, 962, align='center', caption='Skip-to-next control of the player', alt='web story player showing custom controls' ) }}
 
 
 #### Example #3 - Changing the icon of the close button
 
 
-<table>
-  <tr>
-    <td>
-      <pre lang="html">
+```html
 <amp-story-player>
  <script type="application/json">
    {
@@ -332,11 +304,8 @@ On desktop, you can now display a button that navigates from the current story t
  </script>
  ...
 </amp-story-player>
-      </pre>
-    </td>
-    <td><img src="https://github.com/ampproject/amphtml/blob/main/src/amp-story-player/img/close-button-custom-background.png?raw=true"></td>
-  </tr>
-</table>
+```
+{{ image('https://github.com/ampproject/amphtml/blob/main/src/amp-story-player/img/close-button-custom-background.png?raw=true', 716, 1198, align='center third', caption='Close control of the player with custom icon', alt='web story player showing custom controls' ) }}
 
 
 

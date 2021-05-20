@@ -55,13 +55,6 @@ function handler(data, resolve, reject) {
     return message;
   }
 
-  if (message.includes(MESSAGES.COMPONENT_VERSIONS)) {
-    log.warn(
-      'The component-versions.json seems to be missing.',
-      'Run `gulp buildComponentVersions` and try again.'
-    );
-  }
-
   if (
     message.includes(MESSAGES.ERROR_1) ||
     message.includes(MESSAGES.ERROR_2) ||
