@@ -79,10 +79,15 @@ class ComponentReferenceImporter {
         });
       }
     }
+    // Store a list of the latest prod component versions
     const prodComponentVersions = {};
     for (const growDoc of importedExtensions) {
       const bentoComponent = bentoComponents.get(growDoc.title);
-      if (!growDoc.experimental) {
+      if (
+        !growDoc.experimental &&
+        (!prodComponentVersions[growDoc.title] ||
+          growDoc.version > prodComponentVersions[growDoc.title])
+      ) {
         prodComponentVersions[growDoc.title] = growDoc.version;
       }
       if (bentoComponent) {
