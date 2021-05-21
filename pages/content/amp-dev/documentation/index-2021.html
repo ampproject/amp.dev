@@ -111,7 +111,7 @@ frameworks:
         <h3>{{ _(framework.headline) }}</h3>
         <p>{{ _(framework.text) }}</p>
 
-        <a class="ap-m-lnk">
+        <a href="{{ framework.url }}" class="ap-m-lnk">
           <div class="ap-a-ico ap-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
             <svg>
@@ -145,7 +145,7 @@ frameworks:
         <h3>{{ _(framework.headline) }}</h3>
         <p>{{ _(framework.text) }}</p>
 
-        <div class="ap-m-lnk">
+        <a href="{{ framework.url }}" class="ap-m-lnk">
           <div class="ap-a-ico ap-m-lnk-icon">
             {% do doc.icons.useIcon('icons/internal.svg') %}
             <svg>
@@ -153,7 +153,7 @@ frameworks:
             </svg>
           </div>
           <span class="ap-m-lnk-text">{{ _('Start with') }} {{ framework.name }}</span>
-        </div>
+        </a>
       </div>
       {% endfor %}
     </amp-base-carousel>
