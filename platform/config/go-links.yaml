@@ -30,9 +30,10 @@
 /email-support: /support/faq/email-support/
 /email-tools: /documentation/tools/?format=email
 /email-viewer: https://github.com/ampproject/amp-email-viewer
+/getting-started: https://github.com/ampproject/amphtml/blob/main/docs/getting-started-quick.md
 /github: https://github.com/ampproject/amphtml
 /governance: /community/governance/
-/i2i: https://github.com/ampproject/amphtml/issues/new?assignees=&labels=INTENT+TO+IMPLEMENT&template=intent-to-implement--i2i-.md&title=I2I:%20%3Cyour%20change/update%3E
+/i2i: https://github.com/ampproject/amphtml/issues/new?assignees=&labels=INTENT+TO+IMPLEMENT&template=intent-to-implement.yml
 /io-email: /documentation/examples/interactivity-dynamic-content/conference_survey_email/
 /learn: /documentation/courses/
 /learn-advanced: /documentation/guides-and-tutorials/start/add_advanced/
