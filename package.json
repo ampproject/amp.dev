@@ -81,7 +81,7 @@
 		"helmet-csp": "3.4.0",
 		"http-proxy": "1.18.1",
 		"iltorb": "2.4.5",
-		"ioredis": "4.27.2",
+		"ioredis": "4.27.3",
 		"jimp": "0.16.1",
 		"joi": "17.4.0",
 		"js-yaml": "4.1.0",
