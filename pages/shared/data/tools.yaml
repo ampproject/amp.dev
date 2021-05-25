@@ -205,7 +205,17 @@ creation:
       width: 1000
       height: 491
     formats:
-      - stories    
+      - stories  
+  - name: Clever Push
+    description: Easily create, publish and analyze professional Web Stories with CleverPush.
+    url: https://cleverpush.com/
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/cleverpushgliastory.jpg
+      width: 1000
+      height: 550
+    formats:
+      - stories 
   - name: Unbounce
     description: Unbounce is a platform to create landing pages, website popups, and sticky bars.
     url: https://unbounce.com
