@@ -211,7 +211,7 @@ creation:
     url: https://cleverpush.com/
     type: WYSIWYG Editor
     image:
-      src: /static/img/tools/cleverpushgliastory.jpg
+      src: /static/img/tools/cleverpush.jpg
       width: 1000
       height: 550
     formats:
