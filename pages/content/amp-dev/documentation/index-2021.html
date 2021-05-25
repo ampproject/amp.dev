@@ -85,14 +85,12 @@ frameworks:
           These platforms give you all the benefits of AMP without all the built-from-scratch hassle.') }}
         </p>
       </div>
-      <a class="ap-m-lnk ap-m-lnk-square"
-        href="{{ g.doc('/content/amp-dev/support/faq/platform-and-vendor-partners.md', locale=doc.locale).url.path }}">
-        <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        </div>
-        <span class="ap-m-lnk-text">{{ _('View all frameworks') }}</span>
-      </a>
+      {% with %}
+        {% set square = true %}
+        {% set href = g.doc("/content/amp-dev/support/faq/platform-and-vendor-partners.md", locale=doc.locale).url.path %}
+        {% set text = _("View all frameworks") %}
+        {% include '/views/2021/partials/content/link.j2' %}
+      {% endwith %}
     </div>
   </section>
   <section class="ap-cards --no-background">
@@ -111,15 +109,11 @@ frameworks:
         <h3>{{ _(framework.headline) }}</h3>
         <p>{{ _(framework.text) }}</p>
 
-        <a href="{{ framework.url }}" class="ap-m-lnk">
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
-            </svg>
-          </div>
-          <span class="ap-m-lnk-text">{{ _('Start with') }} {{ framework.name }}</span>
-        </a>
+        {% with %}
+          {% set href = framework.url %}
+          {% set text = _("Start with") + ' ' + framework.name %}
+          {% include '/views/2021/partials/content/link.j2' %}
+        {% endwith %}
       </div>
       {% endfor %}
     </div>
@@ -145,15 +139,11 @@ frameworks:
         <h3>{{ _(framework.headline) }}</h3>
         <p>{{ _(framework.text) }}</p>
 
-        <a href="{{ framework.url }}" class="ap-m-lnk">
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
-            </svg>
-          </div>
-          <span class="ap-m-lnk-text">{{ _('Start with') }} {{ framework.name }}</span>
-        </a>
+        {% with %}
+          {% set href = framework.url %}
+          {% set text = _("Start with") + ' ' + framework.name %}
+          {% include '/views/2021/partials/content/link.j2' %}
+        {% endwith %}
       </div>
       {% endfor %}
     </amp-base-carousel>
@@ -175,14 +165,12 @@ frameworks:
             AMP optimizer, you can apply common performance best practices to your websites, automagically.') }}
           </p>
         </div>
-        <a class="ap-m-lnk ap-m-lnk-square"
-          href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-optimizer-guide/index.md', locale=doc.locale).url.path }}">
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          </div>
-          <span class="ap-m-lnk-text">{{ _('Using an AMP Optimizer') }}</span>
-        </a>
+        {% with %}
+          {% set square = true %}
+          {% set href = g.doc("/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-optimizer-guide/index.md", locale=doc.locale).url.path %}
+          {% set text = _("Using an AMP Optimizer") %}
+          {% include '/views/2021/partials/content/link.j2' %}
+        {% endwith %}
       </div>
     </div>
   </section>
@@ -203,14 +191,12 @@ frameworks:
             AMP\'s well-tested, cross-browser compatible and accessible components anywhere on the web!') }}
           </p>
         </div>
-        <a class="ap-m-lnk ap-m-lnk-square"
-          href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/bento_guide.md', locale=doc.locale).url.path }}">
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          </div>
-          <span class="ap-m-lnk-text">{{ _('Bento Guide') }}</span>
-        </a>
+        {% with %}
+          {% set square = true %}
+          {% set href = g.doc("/content/amp-dev/documentation/guides-and-tutorials/start/bento_guide.md", locale=doc.locale).url.path %}
+          {% set text = _("Bento Guide") %}
+          {% include '/views/2021/partials/content/link.j2' %}
+        {% endwith %}
       </div>
     </div>
   </section>

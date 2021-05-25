@@ -49,6 +49,7 @@
 @import 'components/content/circular-icon.scss';
 @import 'components/content/logo-stage.scss';
 @import 'components/extra/documentation/text-aside.scss';
+@import 'components/content/link.scss';
 
 main {
   @include grid;
@@ -103,6 +104,10 @@ h3,
 }
 
 h4 {
+  font-size: 16px;
+}
+
+a {
   font-size: 16px;
 }
 

@@ -1,0 +1,52 @@
+.#{project('link')} {
+  $link: &;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 0 1.5em;
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  line-height: 1.3;
+
+  &-icon {
+    padding: 0.438em 0;
+    margin-bottom: auto;
+    margin-right: 0.625em;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+  }
+
+  &:hover {
+    transform: translateX(10px);
+  }
+
+  &.--square {
+    border-bottom: 1px solid color('athens-gray');
+    font-family: $fontFamilyHeadline;
+    color: color('charade');
+
+    .#{project('link')}-icon {
+      width: 1.375em;
+      height: 1.375em;
+      fill: color('white');
+      background-color: color('blue-ribbon');
+      overflow: hidden;
+      padding: 0.563em;
+      margin-right: 0.9375em;
+      @include shadow-large;
+    }
+
+    &:hover {
+      svg {
+        animation: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) duepduep;
+      }
+    }
+  }
+}
+
+@keyframes duepduep {
+  0% { transform: translate(0, 0); }
+  49% { transform: translate(40px, 0); }
+  50% { transform: translate(-40px, 0); }
+  100% { transform: translate(0, 0); }
+}
