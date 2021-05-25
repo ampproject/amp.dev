@@ -206,7 +206,7 @@ creation:
       height: 491
     formats:
       - stories  
-  - name: Clever Push
+  - name: CleverPush
     description: Easily create, publish and analyze professional Web Stories with CleverPush.
     url: https://cleverpush.com/
     type: WYSIWYG Editor
