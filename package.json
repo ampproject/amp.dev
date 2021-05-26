@@ -137,7 +137,7 @@
 		"eslint-config-google": "0.14.0",
 		"eslint-config-prettier": "8.3.0",
 		"eslint-plugin-prettier": "3.4.0",
-		"expect-puppeteer": "5.0.3",
+		"expect-puppeteer": "5.0.4",
 		"fetch-mock": "9.11.0",
 		"file-loader": "6.2.0",
 		"filemanager-webpack-plugin": "5.0.0",
