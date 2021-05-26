@@ -159,7 +159,7 @@
 		"husky": "6.0.0",
 		"jasmine": "3.7.0",
 		"jest": "26.6.3",
-		"jest-puppeteer": "5.0.3",
+		"jest-puppeteer": "5.0.4",
 		"js-base64": "3.6.0",
 		"js-beautify": "1.13.13",
 		"keymaster": "1.6.2",
