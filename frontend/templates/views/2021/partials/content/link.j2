@@ -1,4 +1,10 @@
-<a class="ap-link{% if external %} --external{% else %} --internal{% endif %}{% if square %} --square{% endif %}"
+<a class="ap-link{% if external %} --external{% else %} --internal{% endif %}{% if square %} --square{% endif %}{% if icon %} --icon{% endif %}"
   href="{{ href }}">
+  {% if icon %}
+    <div class="ap-icon ap-link-icon">
+      {% do doc.icons.useIcon('icons/' + icon + '.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ icon }}"></use></svg>
+    </div>
+  {% endif %}
   {{ text }}
 </a>
