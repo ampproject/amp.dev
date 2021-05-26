@@ -4,11 +4,16 @@
   align-items: center;
   margin: 0;
   padding: 0 0 1.5em;
-  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
   line-height: 1.3;
 
+  &:before, &-text {
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
   &:hover {
-    transform: translateX(10px);
+    &:before, .#{project('link')}-text {
+      transform: translateX(10px);
+    }
   }
 
   &.--internal, &.--external {
