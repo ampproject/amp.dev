@@ -185,7 +185,7 @@
 		"url-loader": "4.1.1",
 		"url-search-params": "1.1.0",
 		"wade": "0.3.3",
-		"webpack": "5.37.0",
+		"webpack": "5.38.1",
 		"webpack-build-notifier": "2.2.1",
 		"webpack-cli": "4.7.0",
 		"webpack-dev-server": "3.11.2",
