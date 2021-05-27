@@ -35,7 +35,7 @@ L'e-mail est structuré comme une arborescence MIME. Cette arborescence MIME con
 
 Pour intégrer AMP dans un e-mail, ajoutez une nouvelle partie MIME avec un type de contenu `text/x-amp-html` descendant de `multipart/alternative`. Il doit cohabiter avec les parties `text/html` ou `text/plain` existantes. Cela garantit que le message électronique fonctionne sur tous les clients.
 
-<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/main/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"><img data-md-type="raw_html" alt="AMP pour le diagramme des pièces MIME de courrier électronique" src="../img/amp-email-mime-parts.png"></noscript></amp-img>
+<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"><img data-md-type="raw_html" alt="AMP pour le diagramme des pièces MIME de courrier électronique" src="../img/amp-email-mime-parts.png"></noscript></amp-img>
 
 Pour plus d'informations sur le sous-type `multipart/alternative`, reportez-vous à la [RFC 1521, section 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 

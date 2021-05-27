@@ -44,7 +44,6 @@ jobs:
       - name: Running tests
         run: |
           gulp updateTestResources
-          gulp buildComponentVersions
           gulp buildPixiFunctions
           gulp lintNode
           gulp lintYaml

@@ -21,7 +21,8 @@ const LATEST_VERSION = 'latest';
 
 const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
 const {BUILT_IN_COMPONENTS} = require('@lib/common/AmpConstants.js');
-const {BENTO_COMPONENTS_LIST} = require('@lib/utils/project.js').paths;
+const {BENTO_COMPONENTS_LIST, COMPONENT_VERSIONS} =
+  require('@lib/utils/project.js').paths;
 const fs = require('fs').promises;
 const path = require('path');
 const del = require('del');
@@ -62,10 +63,12 @@ class ComponentReferenceImporter {
     this.extensions = await this._listExtensions();
 
     log.start('Beginning to import extension docs ...');
-    const importedExtensions = (await this._importExtensions()).flat();
+    const importedExtensions = (await this._importExtensions())
+      .flat()
+      .filter((ext) => ext != null);
     const bentoComponents = new Map();
     for (const growDoc of importedExtensions) {
-      if (growDoc && growDoc.bento) {
+      if (growDoc.bento) {
         bentoComponents.set(growDoc.title, {
           name: growDoc.title,
           experimental: growDoc.experimental,
@@ -76,8 +79,17 @@ class ComponentReferenceImporter {
         });
       }
     }
+    // Store a list of the latest prod component versions
+    const prodComponentVersions = {};
     for (const growDoc of importedExtensions) {
       const bentoComponent = bentoComponents.get(growDoc.title);
+      if (
+        !growDoc.experimental &&
+        (!prodComponentVersions[growDoc.title] ||
+          growDoc.version > prodComponentVersions[growDoc.title])
+      ) {
+        prodComponentVersions[growDoc.title] = growDoc.version;
+      }
       if (bentoComponent) {
         growDoc.bentoPath = bentoComponent.path;
       }
@@ -87,6 +99,11 @@ class ComponentReferenceImporter {
         log.error(`Failed to write ${growDoc.path}`, e);
       }
     }
+    fs.writeFile(
+      COMPONENT_VERSIONS,
+      JSON.stringify(prodComponentVersions, null, 2),
+      'utf-8'
+    );
     fs.writeFile(
       BENTO_COMPONENTS_LIST,
       JSON.stringify(Array.from(bentoComponents.values()), null, 2),
@@ -153,7 +170,7 @@ class ComponentReferenceImporter {
       version: DEFAULT_VERSION,
       versions: [DEFAULT_VERSION],
       latestVersion: DEFAULT_VERSION,
-      githubPath: path.join(BUILT_IN_PATH, `${name}.md`),
+      githubPath: path.join(BUILT_IN_PATH, name, `${name}.md`),
     });
   }
 

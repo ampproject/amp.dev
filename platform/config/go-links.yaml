@@ -30,9 +30,10 @@
 /email-support: /support/faq/email-support/
 /email-tools: /documentation/tools/?format=email
 /email-viewer: https://github.com/ampproject/amp-email-viewer
+/getting-started: https://github.com/ampproject/amphtml/blob/main/docs/getting-started-quick.md
 /github: https://github.com/ampproject/amphtml
 /governance: /community/governance/
-/i2i: https://github.com/ampproject/amphtml/issues/new?assignees=&labels=INTENT+TO+IMPLEMENT&template=intent-to-implement--i2i-.md&title=I2I:%20%3Cyour%20change/update%3E
+/i2i: https://github.com/ampproject/amphtml/issues/new?assignees=&labels=INTENT+TO+IMPLEMENT&template=intent-to-implement.yml
 /io-email: /documentation/examples/interactivity-dynamic-content/conference_survey_email/
 /learn: /documentation/courses/
 /learn-advanced: /documentation/guides-and-tutorials/start/add_advanced/
@@ -50,7 +51,7 @@
 /owners: https://ampproject-owners-bot.appspot.com/tree
 /publishing-checklist: /documentation/guides-and-tutorials/optimize-and-measure/publishing_checklist/
 /px-faq: https://support.google.com/webmasters/thread/104436075
-/px-video-series: https://www.youtube.com/watch?v=elyFuXoRZv8
+/px-video-series: https://www.youtube.com/playlist?list=PLKoqnv2vTMUPC5r00xToO6wPtxkmprj13
 /reftemplate: https://docs.google.com/document/d/1lRFcErFBnqsuv6W9mZsfYk2qnXO9nPzMkeog4Xtunl8/edit?usp=sharing
 /service: https://blog.amp.dev/2020/06/29/amp-as-a-service-2020-roadmap/
 /shopify-apps: https://blog.amp.dev/2019/04/15/shopify-apps-make-amp-easy-and-effective-for-ecommerce
@@ -64,7 +65,8 @@
 /validate: /documentation/guides-and-tutorials/learn/validation-workflow/validate_amp/
 /verizonmedia: https://developer.verizonmedia.com/mail/amp-for-email/
 /vision-mission: /about/mission-and-vision/
-/web-player: /documentation/guides-and-tutorials/integrate/embed-stories-nonamp/?format=stories
+/web-story-player: /documentation/guides-and-tutorials/integrate/web-story-player-guide/?format=stories
+/web-player: /documentation/guides-and-tutorials/integrate/web-story-player-guide/?format=stories
 /websites: /about/websites/
 /wg: https://github.com/ampproject/meta/tree/master/working-groups
 /wg-updates: https://github.com/search?o=desc&q=org%3Aampproject+label%3A%22Type%3A+Status+Update%22&s=created&

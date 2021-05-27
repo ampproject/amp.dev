@@ -151,7 +151,7 @@ Pada contoh di bawah, kami menunjukkan tampilan transisi untuk iklan AMPHTML den
 
 ##### Pada iframe yang sesuai (misalnya, yang berasal dari cache AMP) <a name="on-friendly-iframes-eg-coming-from-an-amp-cache"></a>
 
-<amp-img alt="iklan lightbox dalam iframe yang sesuai" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/spec/img/lightbox-ad-fie.gif" layout="fixed">
+<amp-img alt="iklan lightbox dalam iframe yang sesuai" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/lightbox-ad-fie.gif" layout="fixed">
   <noscript>
     <img alt="iklan lightbox dalam iframe yang sesuai" src="../../spec/img/lightbox-ad-fie.gif">
     </noscript>
@@ -159,7 +159,7 @@ Pada contoh di bawah, kami menunjukkan tampilan transisi untuk iklan AMPHTML den
 
 ##### Pada iframe pihak ketiga (misalnya, dari luar cache AMP) <a name="on-third-party-iframes-eg-outside-the-amp-cache"></a>
 
-<amp-img alt="iklan lightbox dalam iframe 3p" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/spec/img/lightbox-ad-3p.gif" layout="fixed">
+<amp-img alt="iklan lightbox dalam iframe 3p" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/lightbox-ad-3p.gif" layout="fixed">
   <noscript>
     <img alt="iklan lightbox dalam iframe 3p" src="../../spec/img/lightbox-ad-3p.gif">
     </noscript>
