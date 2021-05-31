@@ -25,6 +25,6 @@ test('Test first headline removal', (done) => {
       '# Section\n' +
       'Lorem ipsum dolor sit amet.'
   );
-  
+
   done();
 });
