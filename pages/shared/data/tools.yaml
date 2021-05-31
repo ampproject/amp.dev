@@ -136,6 +136,16 @@ creation:
       height: 3
     formats:
       - stories
+  - name: Zmooz
+    description: Turn automatically articles into templated web stories. WYSIVYG Studio and Apps to edit and share
+    url:
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/zmooz-9e90a49586e8.jpg
+      width: 800
+      height: 354
+    formats:
+      - stories
   - name: Visual Stories
     description: Multi-site, multi-author blogging tools and WYSIWYG editor to create Web Stories on your own domain.
     url: https://visualstories.com
@@ -205,7 +215,7 @@ creation:
       width: 1000
       height: 491
     formats:
-      - stories  
+      - stories
   - name: CleverPush
     description: Easily create, publish and analyze professional Web Stories with CleverPush.
     url: https://cleverpush.com/
@@ -215,7 +225,7 @@ creation:
       width: 1000
       height: 550
     formats:
-      - stories 
+      - stories
   - name: Unbounce
     description: Unbounce is a platform to create landing pages, website popups, and sticky bars.
     url: https://unbounce.com
