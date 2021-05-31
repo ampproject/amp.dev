@@ -5,7 +5,7 @@ $gap: 10px;
 .#{project('formats')} {
   --width: 100vw;
   --skew-angle: #{$skew-angle};
-  --skew-tan: #{math.tan($skew-angle) / 2};
+  --skew-tan: #{math.div(math.tan($skew-angle), 2)};
   --skew-padding: calc(var(--width) * var(--skew-tan));
 
   grid-column: 1/-1;
@@ -141,7 +141,8 @@ $gap: 10px;
       }
     }
 
-    &.websites, &.ads {
+    &.websites,
+    &.ads {
       color: color('white');
     }
 
@@ -154,11 +155,13 @@ $gap: 10px;
     @include respond-to('medium') {
       transform: skewY(0deg);
       @include shadow-large;
-      transition: box-shadow .3s ease-in-out, transform 0.3s ease-in-out;
+      transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
       flex: 1 0 calc(50% - (2 * #{$gap}));
       border-radius: 4px;
 
-      &:hover, &:focus, &:focus-within {
+      &:hover,
+      &:focus,
+      &:focus-within {
         transform: translateY(-0.125em);
         @include shadow-small;
       }
@@ -205,7 +208,8 @@ $gap: 10px;
     @include respond-to('medium') {
       display: initial;
 
-      .websites &, .ads & {
+      .websites &,
+      .ads & {
         fill: color('white');
       }
     }
