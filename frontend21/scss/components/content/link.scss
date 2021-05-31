@@ -75,21 +75,6 @@
       }
     }
   }
-
-  &.--icon {
-    .#{project('link')}-icon {
-      padding: 0.438em 0;
-      margin-bottom: auto;
-      margin-right: 0.625em;
-      width: 1em;
-      height: 1em;
-      fill: currentColor;
-    }
-
-    &:before {
-      display: none;
-    }
-  }
 }
 
 @keyframes duepduep {
