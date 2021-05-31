@@ -67,6 +67,8 @@ class ComponentReferenceImporter {
       .flat()
       .filter((ext) => ext != null);
     const bentoComponents = new Map();
+    const latestStableComponents = new Map();
+
     for (const growDoc of importedExtensions) {
       if (growDoc.bento) {
         bentoComponents.set(growDoc.title, {
@@ -77,6 +79,19 @@ class ComponentReferenceImporter {
             `/documentation/components/${growDoc.title}-v${growDoc.version}/`,
           version: growDoc.version,
         });
+      }
+
+      const latestStableComponent = latestStableComponents.get(growDoc.title);
+      if (!latestStableComponent) {
+        latestStableComponents.set(growDoc.title, growDoc);
+      } else {
+        if (
+          parseFloat(latestStableComponent.version) <
+            parseFloat(growDoc.version) &&
+          !growDoc.experimental
+        ) {
+          latestStableComponents.set(growDoc.title, growDoc);
+        }
       }
     }
     // Store a list of the latest prod component versions
@@ -93,6 +108,14 @@ class ComponentReferenceImporter {
       if (bentoComponent) {
         growDoc.bentoPath = bentoComponent.path;
       }
+
+      const latestStableComponent = latestStableComponents.get(growDoc.title);
+      growDoc.latestVersion = latestStableComponents.version;
+      if (latestStableComponent.version == growDoc.version) {
+        growDoc.isCurrent = true;
+        growDoc.servingPath = `/documentation/components/${growDoc.title}`;
+      }
+
       try {
         await growDoc.save(growDoc.path);
       } catch (e) {
