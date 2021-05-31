@@ -59,7 +59,7 @@
 	],
 	"dependencies": {
 		"@ampproject/toolbox-cache-list": "2.7.4",
-		"@ampproject/toolbox-cors": "2.8.0-canary.15",
+		"@ampproject/toolbox-cors": "2.8.0",
 		"@ampproject/toolbox-linter": "2.8.0-canary.18",
 		"@ampproject/toolbox-optimizer": "2.8.0-canary.21",
 		"@ampproject/toolbox-validator-rules": "2.7.4",
