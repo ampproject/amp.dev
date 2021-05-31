@@ -61,7 +61,7 @@
 		"@ampproject/toolbox-cache-list": "2.7.4",
 		"@ampproject/toolbox-cors": "2.8.0-canary.15",
 		"@ampproject/toolbox-linter": "2.8.0-canary.18",
-		"@ampproject/toolbox-optimizer": "2.8.0-canary.20",
+		"@ampproject/toolbox-optimizer": "2.8.0-canary.21",
 		"@ampproject/toolbox-validator-rules": "2.7.4",
 		"@google-cloud/datastore": "6.4.0",
 		"acorn": "8.3.0",
