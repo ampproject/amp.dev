@@ -63,8 +63,8 @@ module.exports = (env, argv) => {
           svgo: {
             plugins: [
               {
-                removeAttrs: {},
-              },
+                name: 'removeAttrs'
+              }
             ],
           },
           filename: 'static/sprite.svg',
@@ -101,10 +101,10 @@ module.exports = (env, argv) => {
       new webpack.HotModuleReplacementPlugin({}),
       isDevelopment
         ? new WebpackBuildNotifierPlugin({
-            title: 'amp.dev: Frontend',
-            logo: path.join(process.cwd(), '../pages/static/img/favicon.png'),
-          })
-        : () => {},
+          title: 'amp.dev: Frontend',
+          logo: path.join(process.cwd(), '../pages/static/img/favicon.png'),
+        })
+        : () => { },
     ],
     module: {
       rules: [
