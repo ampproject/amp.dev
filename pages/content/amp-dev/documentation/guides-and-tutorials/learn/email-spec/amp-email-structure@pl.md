@@ -35,7 +35,7 @@ Wiadomości e-mail nadawana jest struktura drzewa MIME. To drzewo MIME zawiera t
 
 Aby móc osadzić AMP w wiadomości e-mail, należy dodać nową część MIME z typem zawartości `text/x-amp-html` jako elementem potomnym wezła `multipart/alternative`. Powinna ona znajdować się obok istniejących części `text/html` lub `text/plain`. To zapewni działanie wiadomości e-mail na wszystkich klientach.
 
-<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/main/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"><img data-md-type="raw_html" alt="Diagram części AMP dla poczty e-mail MIME" src="../img/amp-email-mime-parts.png"></noscript></amp-img>
+<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"><img data-md-type="raw_html" alt="Diagram części AMP dla poczty e-mail MIME" src="../img/amp-email-mime-parts.png"></noscript></amp-img>
 
 Więcej informacji o podtypie `multipart/alternative` zawiera [dokument RFC 1521, sekcja 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 

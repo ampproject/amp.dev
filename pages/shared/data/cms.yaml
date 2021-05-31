@@ -58,6 +58,12 @@ cmsUsers:
       alt: Squarespace logo
     label: Squarespace
     url: https://support.squarespace.com/hc/en-us/articles/223766868-Using-AMP-with-Squarespace
+    
+  - image:
+      src: '/static/img/docs/guides/cms_logos/statamic.jpg'
+      alt: Statamic logo
+    label: Statamic
+    url: https://statamic.dev/amp
 
   - image:
       src: '/static/img/docs/guides/cms_logos/textpattern.jpg'

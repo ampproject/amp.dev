@@ -1,0 +1,167 @@
+---
+$title: Get Started
+$view: /views/2021/base.html
+
+frameworks:
+  - name: Next.js
+    headline: Next.js
+    logo:
+      id: nextjs
+      width: 102
+      height: 64
+    text: "Turn any React page into an AMP page."
+    url: https://nextjs.org/docs/advanced-features/amp-support/introduction
+  - name: WordPress
+    headline: WordPress
+    logo:
+      id: wordpress-inverted
+      width: 64
+      height: 64
+    text: "All the AMP benefits in the WordPress CMS."
+    url: https://amp-wp.org/documentation/success-with-wordpress/
+  - name: Eleventy
+    headline: 11ty
+    logo:
+      id: eleventy
+      width: 67
+      height: 65
+    text: "Build performant static sites quickly."
+    url: https://github.com/ampproject/eleventy-plugin-amp
+---
+<main>
+  <section class="ap-logo-stage">
+    <div class="ap-logo-stage-content">
+      <div class="ap-logo-stage-logo">
+        {% do doc.icons.useIcon('/icons/amp-websites.svg') %}
+        <div class="ap-circular-icon --websites">
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-websites"></use>
+          </svg>
+        </div>
+      </div>
+      <div class="ap-text-block">
+        <h1 class="ap-h1 ap-logo-stage-headline">{{ _('Start building websites with AMP') }}</h1>
+      </div>
+    </div>
+  </section>
+  </section>
+  <section class="ap-cards --no-background">
+    <div class="ap-cards-grid" role="list">
+      {% for framework in doc.frameworks %}
+      <div class="ap-cards-item --stretch-column" role="listitem">
+        <div class="ap-cards-item-icon">
+          <svg width="{{ framework.logo.width }}" height="{{ framework.logo.height }}">
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="/static/frontend/sprite.svg#{{framework.logo.id }}"
+            ></use>
+          </svg>
+        </div>
+
+        <h3>{{ _(framework.headline) }}</h3>
+        <p>{{ _(framework.text) }}</p>
+
+        <div class="ap-m-lnk">
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+            </svg>
+          </div>
+          <span class="ap-m-lnk-text">{{ _('Start with') }} {{ framework.name }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <amp-base-carousel
+      class="ap-cards-carousel"
+      height="320"
+      layout="fixed-height"
+      role="list"
+      visible-count="(min-width: 1024px) 3, (min-width: 768px) 2, 1"
+      aria-label="{{ _('Frameworks') }}">
+      {% for framework in doc.frameworks %}
+      <div class="ap-cards-item --stretch-column" role="listitem">
+        <div class="ap-cards-item-icon">
+          <svg width="{{ framework.logo.width }}" height="{{ framework.logo.height }}">
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="/static/frontend/sprite.svg#{{framework.logo.id }}"
+            ></use>
+          </svg>
+        </div>
+
+        <h3>{{ _(framework.headline) }}</h3>
+        <p>{{ _(framework.text) }}</p>
+
+        <div class="ap-m-lnk">
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+            </svg>
+          </div>
+          <span class="ap-m-lnk-text">{{ _('Start with') }} {{ framework.name }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </amp-base-carousel>
+  </section>
+  <section class="ap-section --col-3-22">
+    <div class="ap-text-media">
+      <div class="ap-text-media-col">
+        <amp-img alt="{{ _('A white gear with a bolt inside') }}" src="/static/img/documentation/amp-optimizer.png"
+          width="1020" height="702" layout="responsive">
+        </amp-img>
+      </div>
+      <div class="ap-text-media-col">
+        <div class="ap-text-block">
+          <h2 class="ap-h2">
+            {{ _('Page Experience, optimized') }}
+          </h2>
+          <p>
+            {{ _('If you’re working with a custom or in-house solution, AMP can meet you there! Through tools like the
+            AMP optimizer, you can apply common performance best practices to your websites, automagically.') }}
+          </p>
+        </div>
+        <a class="ap-m-lnk ap-m-lnk-square"
+          href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-optimizer-guide/index.md', locale=doc.locale).url.path }}">
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ap-m-lnk-text">{{ _('Using an AMP Optimizer') }}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="ap-section --col-3-22">
+    <div class="ap-text-media">
+      <div class="ap-text-media-col">
+        <amp-img alt="{{ _('Bento components') }}" src="/static/img/documentation/bento.png" width="1020" height="696"
+          layout="responsive">
+        </amp-img>
+      </div>
+      <div class="ap-text-media-col">
+        <div class="ap-text-block">
+          <h2 class="ap-h2">
+            {{ _('Powerful components, anywhere') }}
+          </h2>
+          <p>
+            {{ _('Not ready to fully commit to AMP but love our components? No problem! Through Bento, you can use
+            AMP\'s well-tested, cross-browser compatible and accessible components anywhere on the web!') }}
+          </p>
+        </div>
+        <a class="ap-m-lnk ap-m-lnk-square"
+          href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/bento_guide.md', locale=doc.locale).url.path }}">
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          </div>
+          <span class="ap-m-lnk-text">{{ _('Bento Guide') }}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>

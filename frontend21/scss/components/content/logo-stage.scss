@@ -1,0 +1,45 @@
+.#{project('logo-stage')} {
+  --spacing: 50px;
+  --gap: 20px;
+
+  position: relative;
+  @include grid;
+  grid-column: 2/24;
+  padding: var(--spacing) 0;
+  color: color('charade');
+
+  @include respond-to('small') {
+    --spacing: 100px;
+    grid-column: 1/-1;
+  }
+
+  &-content {
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+
+    @include respond-to('small') {
+      --gap: 30px;
+      grid-column: 3/23;
+      flex-direction: row;
+    }
+
+    @include respond-to('max') {
+      grid-column: 2/24;
+    }
+  }
+
+  &-logo {
+    flex: 1 0 25%;
+    max-width: 168px;
+
+   @include respond-to('small') {
+     max-width: 180px;
+   }
+  }
+
+  &-headline {
+    text-align: left;
+  }
+}

@@ -1,0 +1,34 @@
+.#{project('circular-icon')} {
+  position:relative;
+  width:100%;
+  padding-bottom: 100%;
+  border-radius: 50%;
+  background: none;
+  min-width: 20px;
+  min-height: 20px;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 50%;
+    max-height: 50%;
+  }
+
+  &.--websites {
+    @include ci-websites;
+  }
+
+  &.--stories {
+    @include ci-stories;
+  }
+
+  &.--email {
+    @include ci-e-mails;
+  }
+
+  &.--ads {
+    @include ci-ads;
+  }
+}

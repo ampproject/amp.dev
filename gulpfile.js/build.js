@@ -40,7 +40,6 @@ const importWorkingGroups = require('./import/importWorkingGroups.js');
 const importAdVendorList = require('./import/importAdVendorList.js');
 const {thumborImageIndex} = require('./thumbor.js');
 const CleanCSS = require('clean-css');
-const validatorRules = require('@ampproject/toolbox-validator-rules');
 const {PIXI_CLOUD_ROOT} = require('@lib/utils/project').paths;
 const {copyFile} = require('fs/promises');
 
@@ -174,31 +173,6 @@ function buildPixiFunctions() {
 }
 
 /**
- * Generate component versions
- * @return {Promise}
- */
-async function buildComponentVersions() {
-  const rules = await validatorRules.fetch();
-  const componentVersions = {};
-  rules.extensions.forEach((e) => {
-    const versions = e.version.filter((v) => v !== 'latest');
-    if (
-      componentVersions[e.name] &&
-      parseFloat(componentVersions[e.name]) >=
-        parseFloat(versions[versions.length - 1])
-    ) {
-      return;
-    }
-    componentVersions[e.name] = versions[versions.length - 1];
-  });
-  const content = JSON.stringify(componentVersions, null, 2);
-  const dir = path.join(project.paths.DIST, 'static/files');
-
-  mkdirp(dir);
-  fs.writeFileSync(path.join(dir, 'component-versions.json'), content, 'utf-8');
-}
-
-/**
  * Builds the boilerplate generator
  * @return {Promise}
  */
@@ -286,7 +260,6 @@ function buildPrepare(done) {
     // Build playground and boilerplate that early in the flow as they are
     // fairly quick to build and would be annoying to eventually fail downstream
     gulp.parallel(
-      buildComponentVersions,
       buildPlayground,
       buildBoilerplate,
       buildPixi,
@@ -578,7 +551,6 @@ exports.buildFrontend = buildFrontend;
 exports.buildSamples = buildSamples;
 exports.zipTemplates = zipTemplates;
 exports.buildPages = buildPages;
-exports.buildComponentVersions = buildComponentVersions;
 exports.buildPrepare = buildPrepare;
 exports.minifyPages = minifyPages;
 exports.unpackArtifacts = unpackArtifacts;

@@ -35,7 +35,7 @@ limitations under the License.
 
 لتضمين AMP داخل بريد إلكتروني، أضف جزء MIME جديد بنوع محتوى `text/x-amp-html` كتابع لـ`multipart/alternative`. يجب أن يتواجد بجانب أجزاء `text/html` أو `text/plain` الموجودة. هذا يضمن أن رسالة البريد الإلكتروني تعمل على جميع العملاء.
 
-<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/main/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"><img data-md-type="raw_html" alt="مخطط أجزاء AMP للبريد الإلكتروني MIME" src="../img/amp-email-mime-parts.png"></noscript></amp-img>
+<amp-img alt="AMP for Email MIME Parts Diagram" layout="responsive" width="752" height="246" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/amp-email-mime-parts.png"><noscript data-md-type="raw_html" data-segment-id="12596198"><img data-md-type="raw_html" alt="مخطط أجزاء AMP للبريد الإلكتروني MIME" src="../img/amp-email-mime-parts.png"></noscript></amp-img>
 
 لمزيد من المعلومات حول النوع الفرعي `multipart/alternative` ، راجع [RFC 1521، القسم 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 

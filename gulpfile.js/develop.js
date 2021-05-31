@@ -26,7 +26,6 @@ const {samplesBuilder} = require('@lib/build/samplesBuilder');
 
 function bootstrap(done) {
   gulp.parallel(
-    build.buildComponentVersions,
     build.buildBoilerplate,
     build.buildPlayground,
     build.buildPixiFunctions,
