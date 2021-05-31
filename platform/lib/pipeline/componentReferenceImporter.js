@@ -74,7 +74,7 @@ class ComponentReferenceImporter {
           experimental: growDoc.experimental,
           path:
             growDoc.servingPath ||
-            `/documentation/components/${growDoc.title}-v${growDoc.version}/`,
+            `/documentation/components/${growDoc.title}-v${growDoc.version}.html`,
           version: growDoc.version,
         });
       }
