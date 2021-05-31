@@ -45,6 +45,54 @@ frameworks:
     </div>
   </section>
   </section>
+  <section class="ap-section ap-text-aside">
+    <div class="ap-text-aside-item --start">
+      <div class="ap-text-block">
+        <h2 class="ap-h2">
+          {{ _('Create a website') }}
+        </h2>
+        <p>
+          {{ _('AMP is the ultimate team player. Many CMS\' and frameworks have AMP integrations to get your site up and
+          running as quickly as an AMP page loads! If you\'re using an in-house solution, AMP provides tools and
+          optimizations for easy integration. Keep scrolling to find the best solution to amplify your site and delight
+          your users.') }}
+        </p>
+      </div>
+    </div>
+    <div class="ap-text-aside-item --right">
+      <div class="ap-text-block">
+        <h2>
+          {{ _('Learn AMP') }}
+        </h2>
+        <p>
+          {{ _('AMP is different from other frameworks. Build rich and interactive web experiences with an extensive
+          library of HTML components. Copy, paste and customize components to quickly and easily build pages that put the
+          user-first and keep your site performant. Start coding your first AMP page to begin learning the basics or start
+          mastering web development, the AMP way.') }}
+        </p>
+      </div>
+      <a class="ap-button"
+        href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/index.md', locale=doc.locale).url.path }}">
+        {{ _('Build your first AMP page') }}</a>
+    </div>
+    <div class="ap-text-aside-item --end">
+      <div class="ap-text-block">
+        <h2 class="ap-h2">
+          {{ _('Start building, quickly') }}
+        </h2>
+        <p>
+          {{ _('Select a ready-to-go framework or integration-enabled CMS to get an AMP valid site up and running, fast.
+          These platforms give you all the benefits of AMP without all the built-from-scratch hassle.') }}
+        </p>
+      </div>
+      {% with %}
+        {% set square = true %}
+        {% set href = g.doc("/content/amp-dev/support/faq/platform-and-vendor-partners.md", locale=doc.locale).url.path %}
+        {% set text = _("View all frameworks") %}
+        {% include '/views/2021/partials/content/link.j2' %}
+      {% endwith %}
+    </div>
+  </section>
   <section class="ap-cards --no-background">
     <div class="ap-cards-grid" role="list">
       {% for framework in doc.frameworks %}
@@ -61,15 +109,11 @@ frameworks:
         <h3>{{ _(framework.headline) }}</h3>
         <p>{{ _(framework.text) }}</p>
 
-        <div class="ap-m-lnk">
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
-            </svg>
-          </div>
-          <span class="ap-m-lnk-text">{{ _('Start with') }} {{ framework.name }}</span>
-        </div>
+        {% with %}
+          {% set href = framework.url %}
+          {% set text = _("Start with") + ' ' + framework.name %}
+          {% include '/views/2021/partials/content/link.j2' %}
+        {% endwith %}
       </div>
       {% endfor %}
     </div>
@@ -95,15 +139,11 @@ frameworks:
         <h3>{{ _(framework.headline) }}</h3>
         <p>{{ _(framework.text) }}</p>
 
-        <div class="ap-m-lnk">
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
-            </svg>
-          </div>
-          <span class="ap-m-lnk-text">{{ _('Start with') }} {{ framework.name }}</span>
-        </div>
+        {% with %}
+          {% set href = framework.url %}
+          {% set text = _("Start with") + ' ' + framework.name %}
+          {% include '/views/2021/partials/content/link.j2' %}
+        {% endwith %}
       </div>
       {% endfor %}
     </amp-base-carousel>
@@ -125,14 +165,12 @@ frameworks:
             AMP optimizer, you can apply common performance best practices to your websites, automagically.') }}
           </p>
         </div>
-        <a class="ap-m-lnk ap-m-lnk-square"
-          href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-optimizer-guide/index.md', locale=doc.locale).url.path }}">
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          </div>
-          <span class="ap-m-lnk-text">{{ _('Using an AMP Optimizer') }}</span>
-        </a>
+        {% with %}
+          {% set square = true %}
+          {% set href = g.doc("/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-optimizer-guide/index.md", locale=doc.locale).url.path %}
+          {% set text = _("Using an AMP Optimizer") %}
+          {% include '/views/2021/partials/content/link.j2' %}
+        {% endwith %}
       </div>
     </div>
   </section>
@@ -153,14 +191,12 @@ frameworks:
             AMP\'s well-tested, cross-browser compatible and accessible components anywhere on the web!') }}
           </p>
         </div>
-        <a class="ap-m-lnk ap-m-lnk-square"
-          href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/bento_guide.md', locale=doc.locale).url.path }}">
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          </div>
-          <span class="ap-m-lnk-text">{{ _('Bento Guide') }}</span>
-        </a>
+        {% with %}
+          {% set square = true %}
+          {% set href = g.doc("/content/amp-dev/documentation/guides-and-tutorials/start/bento_guide.md", locale=doc.locale).url.path %}
+          {% set text = _("Bento Guide") %}
+          {% include '/views/2021/partials/content/link.j2' %}
+        {% endwith %}
       </div>
     </div>
   </section>

@@ -1,0 +1,85 @@
+.#{project('link')} {
+  $link: &;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 0 1.5em;
+  line-height: 1.3;
+
+  &:before, &-text {
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  &:hover {
+    &:before, .#{project('link')}-text {
+      transform: translateX(10px);
+    }
+  }
+
+  &.--internal, &.--external {
+    &:before {
+      content: '';
+      padding: 0.438em 0;
+      margin-bottom: auto;
+      margin-right: 0.625em;
+      width: 1em;
+      height: 1em;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &.--internal {
+    &:before {
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2064%2064%27%20fill%3D%27%23005af0%27%3E%3Cpath%20d%3D%22M43.16%2010.18c-0.881-0.881-2.322-0.881-3.203%200s-0.881%202.322%200%203.203l16.335%2016.335h-54.051c-1.281%200-2.242%201.041-2.242%202.242%200%201.281%200.961%202.322%202.242%202.322h54.051l-16.415%2016.335c-0.881%200.881-0.881%202.322%200%203.203s2.322%200.881%203.203%200l20.259-20.259c0.881-0.881%200.881-2.322%200-3.203l-20.179-20.179z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+    }
+  }
+
+  &.--external {
+    &:before {
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2064%2064%27%20fill%3D%27%23005af0%27%3E%3Cpath%20d%3D%22M28.879%2011.24c-0.841-0.841-2.206-0.841-3.048%200s-0.841%202.207%200%203.048l15.543%2015.543h-39.241c-1.219%200-2.133%200.987-2.133%202.133%200%201.219%200.914%202.207%202.133%202.207h39.241l-15.616%2015.543c-0.841%200.841-0.841%202.206%200%203.048%200.835%200.841%202.206%200.841%203.048%200l19.273-19.279c0.841-0.841%200.841-2.206%200-3.048l-19.2-19.194zM59.429%2027.392c2.511%200%204.571%202.060%204.571%204.571s-2.060%204.571-4.571%204.571-4.571-2.060-4.571-4.571%202.060-4.571%204.571-4.571z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+    }
+  }
+
+  &.--square {
+    border-bottom: 1px solid color('athens-gray');
+    font-family: $fontFamilyHeadline;
+    color: color('charade');
+
+    &:before {
+      width: 1.375em;
+      height: 1.375em;
+      background-color: color('blue-ribbon');
+      overflow: hidden;
+      padding: 0.563em;
+      margin-right: 0.9375em;
+      @include shadow-large;
+      background-size: 1.375em;
+    }
+
+    &.--internal {
+      &:before {
+        background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2064%2064%27%20fill%3D%27%23ffffff%27%3E%3Cpath%20d%3D%22M43.16%2010.18c-0.881-0.881-2.322-0.881-3.203%200s-0.881%202.322%200%203.203l16.335%2016.335h-54.051c-1.281%200-2.242%201.041-2.242%202.242%200%201.281%200.961%202.322%202.242%202.322h54.051l-16.415%2016.335c-0.881%200.881-0.881%202.322%200%203.203s2.322%200.881%203.203%200l20.259-20.259c0.881-0.881%200.881-2.322%200-3.203l-20.179-20.179z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+      }
+    }
+
+    &.--external {
+      &:before {
+        background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2064%2064%27%20fill%3D%27%23ffffff%27%3E%3Cpath%20d%3D%22M28.879%2011.24c-0.841-0.841-2.206-0.841-3.048%200s-0.841%202.207%200%203.048l15.543%2015.543h-39.241c-1.219%200-2.133%200.987-2.133%202.133%200%201.219%200.914%202.207%202.133%202.207h39.241l-15.616%2015.543c-0.841%200.841-0.841%202.206%200%203.048%200.835%200.841%202.206%200.841%203.048%200l19.273-19.279c0.841-0.841%200.841-2.206%200-3.048l-19.2-19.194zM59.429%2027.392c2.511%200%204.571%202.060%204.571%204.571s-2.060%204.571-4.571%204.571-4.571-2.060-4.571-4.571%202.060-4.571%204.571-4.571z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+      }
+    }
+
+    &:hover {
+      &:before {
+        animation: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) duepduep;
+      }
+    }
+  }
+}
+
+@keyframes duepduep {
+  0% { background-position-x: center; }
+  49% { background-position-x: 40px; }
+  50% { background-position-x: -40px; }
+  100% { background-position-x: center; }
+}
