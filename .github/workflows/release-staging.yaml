@@ -207,4 +207,4 @@ jobs:
       - name: Deploying
         run: |
           gcloud config set app/cloud_build_timeout 1800
-          gcloud app deploy --quiet --version=1 --no-cache
+          gcloud beta app deploy --quiet --version=1 --no-cache
