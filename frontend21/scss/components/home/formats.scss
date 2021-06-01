@@ -22,6 +22,10 @@ $gap: 10px;
     grid-gap: $gap;
     padding: 0 $gap;
     grid-column: 2/22;
+
+    & + .#{project('section')} {
+      margin-top: 200px;
+    }
   }
 
   @include respond-to('large') {
@@ -115,22 +119,16 @@ $gap: 10px;
       flex-direction: column;
       height: 100%;
 
-      h5 {
+      .#{project('h5')} {
         flex-grow: 2;
-        margin: 25px 0 40px;
+        margin: 15px 0 40px;
       }
 
-      a {
+      .#{project('link')} {
         color: inherit;
-      }
-
-      .ap-m-lnk {
         padding-bottom: 0;
         &-text {
           color: inherit;
-        }
-        .ap-a-ico {
-          fill: currentColor;
         }
       }
     }
@@ -202,7 +200,7 @@ $gap: 10px;
   &-logo {
     width: 50px;
     height: 50px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     display: none;
 
     @include respond-to('medium') {

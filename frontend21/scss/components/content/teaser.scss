@@ -4,6 +4,7 @@
   justify-content: center;
 
   &-card {
+    display: flex;
     flex-direction: column;
     max-width: 320px;
     white-space: normal;
@@ -58,7 +59,8 @@
 
     &-logo {
       position: relative;
-      height: 30px;
+      height: 40px;
+      margin: 5px 0 10px;
 
       amp-img img {
         object-fit: contain;
@@ -67,14 +69,13 @@
     }
 
     &-body {
-      padding: 25px 30px 20px;
+      padding: 20px 30px;
       flex-grow: 2;
       display: flex;
       flex-direction: column;
     }
 
     &-headline {
-      margin-top: 10px;
       margin-bottom: 39px;
       flex-grow: 2;
     }

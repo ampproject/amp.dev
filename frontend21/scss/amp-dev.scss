@@ -103,8 +103,24 @@ h3,
   font-size: 20px;
 }
 
-h4 {
+h4,
+.#{project('h4')} {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+h5,
+.#{project('h5')} {
   font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+}
+
+h6,
+.#{project('h6')} {
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.5px;
 }
 
 a {
