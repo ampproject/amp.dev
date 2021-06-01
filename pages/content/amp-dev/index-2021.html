@@ -125,13 +125,11 @@ success_stories:
         {% if format.cta %}
           <a href="documentation/index.html" class="ap-button --inverted cta">{{ _(format.cta) }}</a>
         {% endif %}
-        <a href="{{ format.url }}" class="ap-m-lnk">
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          </div>
-          <span class="ap-m-lnk-text">{{ _(format.link) }}</span>
-        </a>
+        {% with %}
+          {% set href = format.url %}
+          {% set text = _(format.link) %}
+          {% include '/views/2021/partials/content/link.j2' %}
+        {% endwith %}
       </div>
     </div>
     {% endfor %}
@@ -140,21 +138,21 @@ success_stories:
   <section class="ap-intro ap-section --col-left">
     <h1>{{ _('The latest news') }}</h1>
     <p>{{ _('Don\'t want to miss any of the great stuff that happens around AMP? Then always be first in line and subscribe to our newsletter!') }}</p>
-    <a href="https://services.google.com/fb/forms/ampnewsletter-doubleopt-in/" class="ap-m-lnk ap-m-lnk-square ap-newsletter-double">
-      <div class="ap-a-ico ap-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/internal.svg') %}
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-      </div>
-      <span class="ap-m-lnk-text">{{ _('Subscribe') }}</span>
-    </a>
+    {% with %}
+      {% set square = true %}
+      {% set class= "ap-newsletter-double" %}
+      {% set href = "https://services.google.com/fb/forms/ampnewsletter-doubleopt-in/" %}
+      {% set text = _("Subscribe") %}
+      {% include '/views/2021/partials/content/link.j2' %}
+    {% endwith %}
 
-    <a href="https://services.google.com/fb/forms/ampnewsletter/" class="ap-m-lnk ap-m-lnk-square ap-newsletter">
-      <div class="ap-a-ico ap-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/internal.svg') %}
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-      </div>
-      <span class="ap-m-lnk-text">{{ _('Subscribe') }}</span>
-    </a>
+    {% with %}
+      {% set square = true %}
+      {% set class= "ap-newsletter" %}
+      {% set href = "https://services.google.com/fb/forms/ampnewsletter/" %}
+      {% set text = _("Subscribe") %}
+      {% include '/views/2021/partials/content/link.j2' %}
+    {% endwith %}
   </section>
   <section class="ap-section --fullscreen">
     [% set posts = []|importBlog %]
@@ -163,7 +161,7 @@ success_stories:
       <div class="ap-teaser-carousel-container">
         <amp-base-carousel
           id="teaser-carousel-news"
-          height="573"
+          height="523"
           layout="fixed-height"
           role="region"
           visible-count="(min-width: 1024px) 3, (min-width: 768px) 2, 1"
@@ -200,15 +198,16 @@ success_stories:
   </section>
 
   <section class="ap-intro ap-section --col-right">
-    <h1>{{ _('Explore AMP<br/> success stories') }}</h1>
-    <p>{{ _('Don’t take our word for it - read case studies from industry success stories and see how AMP has produced positive results.') }}</p>
-    <a href="about/success-stories/index.html" class="ap-m-lnk ap-m-lnk-square">
-      <div class="ap-a-ico ap-m-lnk-icon">
-        {% do doc.icons.useIcon('icons/internal.svg') %}
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-      </div>
-      <span class="ap-m-lnk-text">{{ _('See all success stories') }}</span>
-    </a>
+    <div class="ap-text-block">
+      <h1>{{ _('Explore AMP success stories') }}</h1>
+      <p>{{ _('Don’t take our word for it - read case studies from industry success stories and see how AMP has produced positive results.') }}</p>
+      {% with %}
+        {% set square = true %}
+        {% set href = "about/success-stories/index.html" %}
+        {% set text = _("See all success stories") %}
+        {% include '/views/2021/partials/content/link.j2' %}
+      {% endwith %}
+    </div>
   </section>
 
   {% set slider_id = 'success-stories' %}
