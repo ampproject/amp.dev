@@ -113,7 +113,7 @@ class ComponentReferenceImporter {
       growDoc.latestVersion = latestStableComponents.version;
       if (latestStableComponent.version == growDoc.version) {
         growDoc.isCurrent = true;
-        growDoc.servingPath = `/documentation/components/${growDoc.title}`;
+        growDoc.servingPath = `/documentation/components/${growDoc.title}.html`;
       }
 
       try {
