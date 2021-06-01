@@ -1,4 +1,4 @@
-<a class="ap-link{% if external %} --external{% else %} --internal{% endif %}{% if square %} --square{% endif %}"
+<a class="ap-link{% if external %} --external{% else %} --internal{% endif %}{% if square %} --square{% endif %}{% if class %} {{ class }}{% endif %}"
   href="{{ href }}">
   <span class="ap-link-text">{{ text }}</span>
 </a>
