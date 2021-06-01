@@ -313,6 +313,7 @@ function unpackArtifacts() {
     through.obj(async (artifact, encoding, callback) => {
       console.log('Unpacking', artifact.path, '...');
       await sh(`tar xf ${artifact.path}`);
+      await sh(`rm ${artifact.path}`);
       stream.push(artifact);
       callback();
     })
