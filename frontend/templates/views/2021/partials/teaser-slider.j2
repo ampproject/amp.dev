@@ -1,6 +1,6 @@
 <section class="ap-teaser-carousel --success-stories">
   <div class="ap-teaser-carousel-container">
-    <amp-base-carousel id="{{ slider_id }}" height="573" layout="fixed-height" role="region" snap-align="center"
+    <amp-base-carousel id="{{ slider_id }}" height="573" layout="fixed-height" role="region" snap-align="(min-width: 768px) start, center"
       visible-count="(min-width: 1024px) 3, (min-width: 768px) 2, 1.05" aria-label="{{ _('Success stories') }}"
       on="slideChange:teaser-carousel-pagination-success-stories.toggle(index=event.index, value=true)">
       {% for teaser_doc in teaser_docs %}
