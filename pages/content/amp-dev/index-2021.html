@@ -154,46 +154,45 @@ success_stories:
       {% include '/views/2021/partials/content/link.j2' %}
     {% endwith %}
   </section>
-  <section class="ap-section --fullscreen">
+  <section class="ap-teaser-carousel --news">
     [% set posts = []|importBlog %]
     [% if posts|length %]
-    <div class="ap-teaser-carousel --news">
-      <div class="ap-teaser-carousel-container">
-        <amp-base-carousel
-          id="teaser-carousel-news"
-          height="523"
-          layout="fixed-height"
-          role="region"
-          visible-count="(min-width: 1024px) 3, (min-width: 768px) 2, 1"
-          aria-label="{{ _('News') }}"
-          on="slideChange:teaser-carousel-pagination-news.toggle(index=event.index, value=true)">
-          [% for post in posts %]
-          {% set teaser_doc = {
-            'type': 'news',
-            'title': '[= post.title =]',
-            'image': '[= post.image =]',
-            'url': '[= post.url =]',
-            'headline': '[= post.headline =]',
-            'date': '[= post.date =]'
-          } %}
-          {% include '/views/2021/partials/teaser.j2' %}
-          [% endfor %]
-          <button slot="next-arrow"></button>
-          <button slot="prev-arrow"></button>
-        </amp-base-carousel>
-      </div>
-      <div class="ap-teaser-carousel-controls --prev">
-        <button on="tap: teaser-carousel-news.prev()" class="amp-carousel-button amp-carousel-button-prev" aria-label="Previous"></button>
-      </div>
-      <div class="ap-teaser-carousel-controls --next">
-        <button on="tap: teaser-carousel-news.next()" class="amp-carousel-button amp-carousel-button-next" aria-label="Next"></button>
-      </div>
-      <amp-selector class="ap-teaser-carousel-pagination" id="teaser-carousel-pagination-news" layout="container" on="select: teaser-carousel-news.goToSlide(index=event.targetOption)">
+    <div class="ap-teaser-carousel-container">
+      <amp-base-carousel
+        id="teaser-carousel-news"
+        height="523"
+        layout="fixed-height"
+        role="region"
+        snap-align="center"
+        visible-count="(min-width: 1024px) 3, (min-width: 768px) 2, 1.05"
+        aria-label="{{ _('News') }}"
+        on="slideChange:teaser-carousel-pagination-news.toggle(index=event.index, value=true)">
         [% for post in posts %]
-          <div class="ap-teaser-carousel-pagination-item" option="[= loop.index0 =]" [% if loop.index0 == 0 %]selected[% endif %]></div>
+        {% set teaser_doc = {
+          'type': 'news',
+          'title': '[= post.title =]',
+          'image': '[= post.image =]',
+          'url': '[= post.url =]',
+          'headline': '[= post.headline =]',
+          'date': '[= post.date =]'
+        } %}
+        {% include '/views/2021/partials/teaser.j2' %}
         [% endfor %]
-      </amp-selector>
+        <button slot="next-arrow"></button>
+        <button slot="prev-arrow"></button>
+      </amp-base-carousel>
     </div>
+    <div class="ap-teaser-carousel-controls --prev">
+      <button on="tap: teaser-carousel-news.prev()" class="amp-carousel-button amp-carousel-button-prev" aria-label="Previous"></button>
+    </div>
+    <div class="ap-teaser-carousel-controls --next">
+      <button on="tap: teaser-carousel-news.next()" class="amp-carousel-button amp-carousel-button-next" aria-label="Next"></button>
+    </div>
+    <amp-selector class="ap-teaser-carousel-pagination" id="teaser-carousel-pagination-news" layout="container" on="select: teaser-carousel-news.goToSlide(index=event.targetOption)">
+      [% for post in posts %]
+        <div class="ap-teaser-carousel-pagination-item" option="[= loop.index0 =]" [% if loop.index0 == 0 %]selected[% endif %]></div>
+      [% endfor %]
+    </amp-selector>
     [% endif %]
   </section>
 

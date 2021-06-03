@@ -6,7 +6,7 @@
   &-card {
     display: flex;
     flex-direction: column;
-    max-width: 320px;
+    max-width: calc(100% - 10px);
     white-space: normal;
     color: color('charade');
     border-radius: 8px;
@@ -14,19 +14,7 @@
     transition: box-shadow .3s ease-in-out, transform 0.3s ease-in-out;
 
     @include respond-to('small') {
-      max-width: 291px;
-    }
-
-    @include respond-to('medium') {
-      max-width: 277px;
-    }
-
-    @include respond-to('large') {
-      max-width: 350px;
-    }
-
-    @include respond-to('xlarge') {
-      max-width: 390px;
+      max-width: calc(100% - 30px);
     }
 
     &:hover,
@@ -76,7 +64,6 @@
     }
 
     &-headline {
-      margin-bottom: 39px;
       flex-grow: 2;
     }
 

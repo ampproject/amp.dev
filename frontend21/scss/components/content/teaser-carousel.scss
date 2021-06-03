@@ -2,16 +2,35 @@
   --spacing: 43px;
 
   position: relative;
-  display: grid;
-  grid-gap: 14px;
-  grid-template-columns: var(--spacing) 1fr var(--spacing);
+  @include grid;
+  grid-row-gap: unset;
   max-width: $maxWidth;
-  margin: 0 auto;
-  padding: 0 21px;
+  grid-column: 1/-1;
 
-  @include respond-to('medium') {
+  &:last-child {
+    margin-bottom: 100px;
+  }
+
+  @include respond-to('-small') {
+    .#{project('teaser')} {
+      &:first-child {
+        padding-left: 15px;
+      }
+
+      &:last-child {
+        padding-right: 15px;
+      }
+    }
+  }
+
+  @include respond-to('small') {
     grid-gap: 22px;
     padding: 0 15px;
+    margin: 0 auto;
+
+    &:last-child {
+      margin-bottom: 200px;
+    }
   }
 
   &.--news {
@@ -40,7 +59,7 @@
     }
 
     &.--next {
-      grid-column: 3;
+      grid-column-end: -1;
     }
 
     .amp-carousel-button {
@@ -75,10 +94,9 @@
 
     @include respond-to('small') {
       display: initial;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      position: relative;
       grid-row: 1;
+      align-self: center;
     }
   }
 
