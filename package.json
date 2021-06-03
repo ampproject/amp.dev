@@ -174,7 +174,7 @@
 		"puppeteer": "9.1.1",
 		"quoted-printable": "1.0.1",
 		"recursive-search": "1.0.1",
-		"sass": "1.34.0",
+		"sass": "1.34.1",
 		"sass-loader": "11.1.1",
 		"snarkdown": "2.0.0",
 		"striptags": "3.1.1",
