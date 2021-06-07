@@ -91,23 +91,12 @@ success_stories:
             performance.') }}
           </p>
         </div>
-        <a
-          href="{{ g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path }}"
-          class="ap-m-lnk ap-m-lnk-square"
-        >
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg>
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="#internal"
-              ></use>
-            </svg>
-          </div>
-          <span class="ap-m-lnk-text"
-            >{{ _('See the full component library') }}</span
-          >
-        </a>
+        {% with %}
+          {% set square = true %}
+          {% set href = g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path %}
+          {% set text = _("See the full component library") %}
+          {% include '/views/2021/partials/content/link.j2' %}
+        {% endwith %}
 
         <p>
           {{ _('Want just the components without the AMP ecosystem? ')}}
@@ -157,21 +146,11 @@ success_stories:
           {{ _('Check your page’s performance') }}
         </a>
 
-        <a
-          href="{{g.doc('/content/amp-dev/about/page-experience.html', locale=doc.locale).url.path}}"
-          class="ap-m-lnk ap-m-lnk-square"
-        >
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg>
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="#internal"
-              ></use>
-            </svg>
-          </div>
-          <span class="ap-m-lnk-text">{{ _('Learn more') }}</span>
-        </a>
+        {% with %}
+          {% set href = g.doc('/content/amp-dev/about/page-experience.html', locale=doc.locale).url.path %}
+          {% set text = _("Learn more") %}
+          {% include '/views/2021/partials/content/link.j2' %}
+        {% endwith %}
       </div>
     </div>
   </section>
@@ -259,21 +238,12 @@ success_stories:
             }}
           </p>
         </div>
-        <a
-          href="{{ g.doc('/content/amp-dev/support/faq/platform-and-vendor-partners.md', locale=doc.locale).url.path }}"
-          class="ap-m-lnk ap-m-lnk-square"
-        >
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg>
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="#internal"
-              ></use>
-            </svg>
-          </div>
-          <span class="ap-m-lnk-text">{{ _('See supported platforms') }}</span>
-        </a>
+        {% with %}
+          {% set square = true %}
+          {% set href = g.doc('/content/amp-dev/support/faq/platform-and-vendor-partners.md', locale=doc.locale).url.path %}
+          {% set text = _("See supported platforms") %}
+          {% include '/views/2021/partials/content/link.j2' %}
+        {% endwith %}
       </div>
       <div class="ap-text-media-col">
         <figure>
@@ -330,21 +300,12 @@ success_stories:
           </p>
         </div>
 
-        <a
-          href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path }}"
-          class="ap-m-lnk ap-m-lnk-square"
-        >
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg>
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="#internal"
-              ></use>
-            </svg>
-          </div>
-          <span class="ap-m-lnk-text">{{ _('Start contributing') }}</span>
-        </a>
+        {% with %}
+          {% set square = true %}
+          {% set href = g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path %}
+          {% set text = _("Start contributing") %}
+          {% include '/views/2021/partials/content/link.j2' %}
+        {% endwith %}
       </div>
     </div>
   </section>
