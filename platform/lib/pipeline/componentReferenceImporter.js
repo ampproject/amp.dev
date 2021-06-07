@@ -21,14 +21,14 @@ const LATEST_VERSION = 'latest';
 
 const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
 const {BUILT_IN_COMPONENTS} = require('@lib/common/AmpConstants.js');
-const {BENTO_COMPONENTS_LIST, COMPONENT_VERSIONS} =
-  require('@lib/utils/project.js').paths;
+const {BENTO_COMPONENTS_LIST} = require('@lib/utils/project.js').paths;
 const fs = require('fs').promises;
 const path = require('path');
 const del = require('del');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
 
 const ComponentReferenceDocument = require('./componentReferenceDocument.js');
+const ComponentVersionImporter = require('./ComponentVersionImporter');
 
 const log = require('@lib/utils/log')('Component Reference Importer');
 const config = require(__dirname +
@@ -62,12 +62,13 @@ class ComponentReferenceImporter {
     // Gives the contents of ampproject/amphtml/extensions
     this.extensions = await this._listExtensions();
 
+    log.info('Importing latest component versions');
+    const latestStableComponents = await new ComponentVersionImporter().run();
     log.start('Beginning to import extension docs ...');
     const importedExtensions = (await this._importExtensions())
       .flat()
       .filter((ext) => ext != null);
     const bentoComponents = new Map();
-    const latestStableComponents = new Map();
 
     for (const growDoc of importedExtensions) {
       if (growDoc.bento) {
@@ -80,38 +81,17 @@ class ComponentReferenceImporter {
           version: growDoc.version,
         });
       }
-
-      const latestStableComponent = latestStableComponents.get(growDoc.title);
-      if (!latestStableComponent) {
-        latestStableComponents.set(growDoc.title, growDoc);
-      } else {
-        if (
-          parseFloat(latestStableComponent.version) <
-            parseFloat(growDoc.version) &&
-          !growDoc.experimental
-        ) {
-          latestStableComponents.set(growDoc.title, growDoc);
-        }
-      }
     }
-    // Store a list of the latest prod component versions
-    const prodComponentVersions = {};
+
     for (const growDoc of importedExtensions) {
       const bentoComponent = bentoComponents.get(growDoc.title);
-      if (
-        !growDoc.experimental &&
-        (!prodComponentVersions[growDoc.title] ||
-          growDoc.version > prodComponentVersions[growDoc.title])
-      ) {
-        prodComponentVersions[growDoc.title] = growDoc.version;
-      }
       if (bentoComponent) {
         growDoc.bentoPath = bentoComponent.path;
       }
 
-      const latestStableComponent = latestStableComponents.get(growDoc.title);
-      growDoc.latestVersion = latestStableComponents.version;
-      if (latestStableComponent.version == growDoc.version) {
+      const latestStableComponent = latestStableComponents[growDoc.title];
+      growDoc.latestVersion = latestStableComponent;
+      if (latestStableComponent === growDoc.version) {
         growDoc.isCurrent = true;
         growDoc.servingPath = `/documentation/components/${growDoc.title}.html`;
       }
@@ -122,11 +102,6 @@ class ComponentReferenceImporter {
         log.error(`Failed to write ${growDoc.path}`, e);
       }
     }
-    fs.writeFile(
-      COMPONENT_VERSIONS,
-      JSON.stringify(prodComponentVersions, null, 2),
-      'utf-8'
-    );
     fs.writeFile(
       BENTO_COMPONENTS_LIST,
       JSON.stringify(Array.from(bentoComponents.values()), null, 2),
