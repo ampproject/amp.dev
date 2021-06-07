@@ -159,6 +159,17 @@
       &.--carousel {
         amp-carousel {
           height: 100%;
+
+          .amp-carousel-button {
+            position: absolute;
+            margin: 0;
+          }
+
+          amp-img {
+            img {
+              object-fit: cover;
+            }
+          }
         }
       }
 
