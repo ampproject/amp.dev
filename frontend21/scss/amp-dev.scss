@@ -51,6 +51,10 @@
 @import 'components/extra/documentation/text-aside.scss';
 @import 'components/content/link.scss';
 
+html, body {
+  color: color('charade');
+}
+
 main {
   @include grid;
   width: 100%;

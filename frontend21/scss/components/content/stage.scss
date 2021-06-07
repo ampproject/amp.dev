@@ -36,6 +36,10 @@
     @include respond-to('small') {
       grid-column: 2 / span 11;
     }
+
+    p {
+      color: inherit;
+    }
   }
 
   &-media {
