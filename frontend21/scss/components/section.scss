@@ -1,7 +1,15 @@
 .#{prefix(null, 'section')} {
   grid-column: 2 / 22;
   width: 100%;
-  margin-top: 100px;
+  margin-top: 120px;
+
+  @include respond-to('small') {
+    margin-top: 160px;
+  }
+
+  @include respond-to('medium') {
+    margin-top: 200px;
+  }
 
   &:first-child {
     margin-top: 80px;
