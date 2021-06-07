@@ -211,27 +211,37 @@ success_stories:
       {% endfor %}
     </div>
 
-    <amp-carousel
+    <amp-base-carousel
+      id="cards-carousel"
       class="ap-cards-carousel"
       role="list"
       layout="fixed-height"
-      height="300"
-      type="slides"
+      height="350"
+      controls="never"
+      on="slideChange:cards-carousel-pagination.toggle(index=event.index, value=true)"
     >
       {% for card in doc.cards %}
-      <div class="ap-cards-item" role="listitem">
-        <svg class="ap-cards-item-icon" width="30" height="30">
-          <use
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xlink:href="/static/frontend/sprite.svg#{{ card.icon }}"
-          ></use>
-        </svg>
+      <div class="ap-cards-item-wrapper">
+        <div class="ap-cards-item" role="listitem">
+          <svg class="ap-cards-item-icon" width="30" height="30">
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="/static/frontend/sprite.svg#{{ card.icon }}"
+            ></use>
+          </svg>
 
-        <h3>{{ card.headline }}</h3>
-        <p>{{ card.text }}</p>
+          <h3>{{ card.headline }}</h3>
+          <p>{{ card.text }}</p>
+        </div>
       </div>
       {% endfor %}
-    </amp-carousel>
+    </amp-base-carousel>
+    <amp-selector class="ap-cards-carousel-pagination" id="cards-carousel-pagination" layout="container" on="select: cards-carousel.goToSlide(index=event.targetOption)">
+      {% for card in doc.cards %}
+        <div class="ap-cards-carousel-pagination-item" option="{{ loop.index0 }}" {% if loop.index0==0 %}selected{% endif
+          %}></div>
+      {% endfor %}
+    </amp-selector>
   </section>
 
   <section class="ap-section --col-4-23">

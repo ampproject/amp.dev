@@ -29,7 +29,7 @@
     min-height: 320px;
     padding: 20px;
     border-radius: 8px;
-    color: color('black');
+    color: color('charade');
     background: color('white');
     @include shadow-large;
     display: flex;
@@ -56,10 +56,16 @@
     grid-column: 2 / span 22;
     display: grid;
     grid-gap: 15px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+    max-width: $maxWidth;
 
     @include respond-to('-small') {
       display: none;
+    }
+
+    @include respond-to('medium') {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
@@ -67,21 +73,56 @@
     display: flex;
     position: relative;
     z-index: 1;
-    grid-column: 2 / span 22;
+    grid-column: 1 / -1;
     border-radius: 8px;
-    @include shadow-large;
 
     @include respond-to('small') {
       display: none;
     }
 
+    &-pagination {
+      grid-column: 1/-1;
+      margin: 0 auto;
+
+      @include respond-to('small') {
+        display: none;
+      }
+
+      &-item {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: 0 5px;
+        background-color: color('iron');
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &[option][selected] {
+          outline: none;
+        }
+
+        &[selected] {
+          @include ci-websites;
+        }
+      }
+    }
+
     .#{project('cards')}-item {
       width: 90vw;
-      margin-right: 15px;
       box-shadow: none;
+      @include shadow-large;
 
-      &:last-child {
-        margin-right: 0;
+      &-wrapper {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 10px;
       }
     }
   }
