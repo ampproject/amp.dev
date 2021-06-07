@@ -51,6 +51,10 @@
 @import 'components/extra/documentation/text-aside.scss';
 @import 'components/content/link.scss';
 
+html, body {
+  color: color('charade');
+}
+
 main {
   @include grid;
   width: 100%;
@@ -127,13 +131,20 @@ a {
   font-size: 16px;
 }
 
-p {
+p, .#{project('p')} {
   max-width: 920px;
   font-size: 16px;
-  line-height: 1.63;
+  line-height: 1.625;
   margin-top: 1.1em;
   margin-bottom: 0;
-  color: currentColor;
+  color: inherit;
+}
+
+.#{project('p')} {
+  &-large {
+    font-size: 18px;
+    line-height: 1.78;
+  }
 }
 
 button {
