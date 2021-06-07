@@ -350,7 +350,7 @@ The following tags are required in AMP pages. Valid AMP pages must:
 
 - Contain a `<meta charset="utf-8">` tag as the first child of their `<head>` tag.
 
-- Contain a `<meta name="viewport" content="width=device-width"> **Note**: It's also recommended to include `initial-scale=1`.
+- Contain a `<meta name="viewport" content="width=device-width">` **Note**: It's also recommended to include `initial-scale=1`.
 
 The following rules are specifically for setting up the AMP runtime. Valid AMP pages must also:
 
