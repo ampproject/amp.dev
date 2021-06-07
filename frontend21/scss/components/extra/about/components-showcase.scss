@@ -22,13 +22,17 @@
     margin-bottom: 150px;
 
     .show {
-      position: relative;
       display: block;
       height: 455px;
+      visibility: visible;
+      opacity: 1;
+      transition: .3s ease-in-out;
     }
 
     .hide {
-      display: none;
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
     }
   }
 
