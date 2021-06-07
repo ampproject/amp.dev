@@ -43,7 +43,7 @@
     }
   }
 
-  &.--col-left, &.--col-right {
+  &.--col-left, &.--col-right, &.--offset {
     grid-column: 2/24;
   }
 
@@ -70,5 +70,15 @@
   &.--fullscreen {
     margin: 0;
     grid-column: 1 / -1;
+  }
+
+  &.--offset {
+    max-width: $maxWidth;
+
+    @include respond-to('max') {
+      margin-left: auto;
+      margin-right: auto;
+      grid-column: 1/-1;
+    }
   }
 }
