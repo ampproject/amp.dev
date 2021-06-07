@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const {nextNode, hasAttribute, firstChildByTag} =
+const { nextNode, hasAttribute, firstChildByTag } =
   require('@ampproject/toolbox-optimizer').NodeUtils;
 const rcs = require('rcs-core');
 
@@ -90,6 +90,11 @@ const SAFE_CLASS_NAMES = [
   'ap-t-template',
   'ap-t-use-cases',
   'ap-t-what-is-amp',
+  'ap-header',
+  'ap-home-stage',
+  'ap-stage',
+  'ap-intro',
+  'ap-teaser',
 ];
 
 rcs.selectorsLibrary.setExclude(
@@ -127,7 +132,7 @@ class CssTransformer {
 
     // Rewrite the selectors inside the CSS
     const css = style.children[0].data;
-    rcs.fillLibraries(css, {prefix: '-', ignoreCssVariables: true});
+    rcs.fillLibraries(css, { prefix: '-', ignoreCssVariables: true });
     const styles = rcs.replace.css(css);
     style.children[0].data = styles;
 

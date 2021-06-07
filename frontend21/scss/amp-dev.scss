@@ -7,9 +7,6 @@
 @import 'functions.scss';
 @import 'mixins.scss';
 
-@import 'components/sidebar.scss';
-@import 'components/sidebar-toggle.scss';
-@import 'components/toc.scss';
 @import 'components/section.scss';
 @import 'components/text-media.scss';
 @import 'components/text-block.scss';
@@ -17,25 +14,13 @@
 @import 'components/pie-chart.scss';
 @import 'components/highlight-stripes.scss';
 @import 'components/header.scss';
+
 @import 'components/format-toggle.scss';
 @import 'components/banner.scss';
 @import 'components/language-selector.scss';
 @import 'components/search-trigger.scss';
 @import 'components/nav-link.scss';
 @import 'components/icon.scss';
-@import 'components/content.scss';
-@import 'components/icon-text.scss';
-@import 'components/teaser-grid.scss';
-@import 'components/table-component.scss';
-@import 'components/component-intro.scss';
-@import 'components/code-snippet.scss';
-@import 'components/code-preview.scss';
-@import 'components/copy-script.scss';
-@import 'components/clip.scss';
-@import 'components/breadcrumbs.scss';
-@import 'components/tag.scss';
-@import 'components/filter-bubbles-list.scss';
-@import 'components/pill.scss';
 @import 'components/content/stage.scss';
 @import 'components/content/center-stage.scss';
 @import 'components/content/cards.scss';
@@ -51,7 +36,8 @@
 @import 'components/extra/documentation/text-aside.scss';
 @import 'components/content/link.scss';
 
-html, body {
+html,
+body {
   color: color('charade');
 }
 
@@ -131,7 +117,8 @@ a {
   font-size: 16px;
 }
 
-p, .#{project('p')} {
+p,
+.#{project('p')} {
   max-width: 920px;
   font-size: 16px;
   line-height: 1.625;
