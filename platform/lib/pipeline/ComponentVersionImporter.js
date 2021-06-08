@@ -15,7 +15,8 @@
  */
 
 const {GitHubImporter} = require('./gitHubImporter');
-const {COMPONENT_VERSIONS} = require('@lib/utils/project.js').paths;
+const {COMPONENT_VERSIONS, COMPONENT_VERSIONS_STATIC} =
+  require('@lib/utils/project.js').paths;
 const {writeFile} = require('fs').promises;
 const validatorRulesProvider = require('@ampproject/toolbox-validator-rules');
 
@@ -44,11 +45,11 @@ class ComponentVersionImporter {
         }
       }
     }
-    await writeFile(
-      COMPONENT_VERSIONS,
-      JSON.stringify(latestComponentVersions, null, 2),
-      'utf-8'
-    );
+    const contents = JSON.stringify(latestComponentVersions, null, 2);
+    // required by grow and express
+    await writeFile(COMPONENT_VERSIONS, contents, 'utf-8');
+    // required by playground
+    await writeFile(COMPONENT_VERSIONS_STATIC, contents, 'utf-8');
     return latestComponentVersions;
   }
 }
