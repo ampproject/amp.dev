@@ -70,7 +70,10 @@ const paths = {
   THUMBOR_ROOT: absolute('thumbor'),
   PIXI_CLOUD_ROOT: absolute('pixi/cloud-function'),
   THUMBOR_IMAGE_INDEX: absolute(`${DIST_DIR}/static/imageIndex.json`),
-  COMPONENT_VERSIONS: absolute(`pages/static/files/component-versions.json`),
+  COMPONENT_VERSIONS: absolute(`platform/config/component-versions.json`),
+  COMPONENT_VERSIONS_STATIC: absolute(
+    `${DIST_DIR}/static/files/component-versions.json`
+  ),
 };
 
 module.exports = {
