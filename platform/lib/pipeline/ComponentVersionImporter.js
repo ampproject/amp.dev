@@ -17,6 +17,7 @@
 const {GitHubImporter} = require('./gitHubImporter');
 const {COMPONENT_VERSIONS} = require('@lib/utils/project.js').paths;
 const {writeFile} = require('fs').promises;
+const validatorRulesProvider = require('@ampproject/toolbox-validator-rules');
 
 class ComponentVersionImporter {
   constructor(githubImporter = new GitHubImporter()) {
@@ -24,6 +25,10 @@ class ComponentVersionImporter {
   }
 
   async run() {
+    const validatorRules = await validatorRulesProvider.fetch();
+    const storyTags = validatorRules.raw.tags.filter((tag) => {
+      return tag.tagName.toLowerCase().startsWith('amp-story-');
+    });
     const componentInfo = JSON.parse(
       await this.githubImporter_.fetchFile(
         '/build-system/compile/bundles.config.extensions.json'
@@ -32,6 +37,12 @@ class ComponentVersionImporter {
     const latestComponentVersions = {};
     for (const component of componentInfo) {
       latestComponentVersions[component.name] = component.latestVersion;
+      if (component.name === 'amp-story') {
+        for (const storyTag of storyTags) {
+          const storyTagName = storyTag.tagName.toLowerCase();
+          latestComponentVersions[storyTagName] = component.latestVersion;
+        }
+      }
     }
     await writeFile(
       COMPONENT_VERSIONS,
