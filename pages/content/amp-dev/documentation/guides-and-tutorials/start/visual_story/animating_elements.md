@@ -126,7 +126,7 @@ Explore the different animation effects by adding the `animate-in="<animation pr
 [/tip]
 
 [tip type="note"]
-Animations can help make your Web Story more visually exciting and engaging, but use them sparingly. Some users may find long, continuous animations distracting. Other users may have motion sensitivity and be adversely affected by excessive use of motion and parallax effects.
+Animations can help make your Web Story more visually exciting and engaging, but use them sparingly. Some users may find long, continuous animations distracting. Other users may have motion sensitivity and be adversely affected by excessive use of motion and parallax effects. This [tracking issue](https://github.com/ampproject/amphtml/issues/24821) follows the effort to respect the `prefers-reduced-motion` directive.
 [/tip]
 
 ## Animation timing
