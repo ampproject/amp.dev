@@ -62,7 +62,6 @@
 		"@ampproject/toolbox-cors": "2.8.0-canary.15",
 		"@ampproject/toolbox-linter": "2.8.0-canary.18",
 		"@ampproject/toolbox-optimizer": "2.8.0-canary.20",
-		"@ampproject/toolbox-validator-rules": "2.7.4",
 		"@google-cloud/datastore": "6.4.0",
 		"acorn": "8.3.0",
 		"buffer": "6.0.3",
@@ -111,6 +110,7 @@
 	},
 	"devDependencies": {
 		"@ampproject/toolbox-cache-url": "2.7.2",
+		"@ampproject/toolbox-validator-rules": "2.7.4",
 		"@babel/cli": "7.14.3",
 		"@babel/core": "7.14.3",
 		"@babel/node": "7.14.2",
