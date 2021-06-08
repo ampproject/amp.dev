@@ -1,202 +1,174 @@
 ---
-$title: Interactive Release Calendar
+$title: Release Schedule
 ---
 {% do doc.styles.addCssFile('/css/components/organisms/release-schedule.css') %}
+{% do doc.styles.addCssFile('css/components/molecules/pixi-tooltip.css') %}
+
+<h2>Introduction</h2>
 
 <p>This interactive calendar visualizes the process via which new code that is merged into the <a href="https://github.com/ampproject/amphtml">amphtml GitHub repository</a> progresses through time to reach publishers, developers, and end-users.</p>
-<p>For a detailed description of the various release channels, see <a href="/content/amp-dev/documentation/guides-and-tutorials/learn/spec/release-schedule.md">AMP Release Schedule</a>. There is also a <a href="./release-schedule-accessible.html">screen-reader accessible</a> version of this page.</p>
+<p></p>
+{% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
+<div class="ap-m-tip">
+  <div class="ap-a-ico ap-m-tip-icon">
+    {% do doc.icons.useIcon('icons/bookmark.svg') %}
+    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use></svg>
+  </div>
+  <div class="ap-m-tip-content">
+    For a detailed description of the various release channels, see <a href="/content/amp-dev/documentation/guides-and-tutorials/learn/spec/release-schedule.md">AMP Release Schedule</a>. There is also a <a href="./release-schedule-accessible.html">screen-reader accessible</a> version of this page.
+  </div>
+</div>
 
-<amp-script id="calendar-container" layout="fixed-height" height="1000" script="calendar-script">
-  <div class="calendar desktop" data-direction="initialized">
-    <div class="box header">Week</div>
-    <div class="box header day-sunday">Sunday</div>
-    <div class="box header day-monday">Monday</div>
-    <div class="box header day-tuesday">Tuesday</div>
-    <div class="box header day-wednesday">Wednesday</div>
-    <div class="box header day-thursday">Thursday</div>
-    <div class="box header day-friday">Friday</div>
-    <div class="box header day-saturday">Saturday</div>
+<h3>Select a day to see when the code merged on that day will be available on each release channel</h3>
 
-    <div class="box instructions week-1-instructions" data-week="1"><span class="touch-only">Tap</span><span class="no-touch-only">Hover</span> on days above to see when the code merged on that day will be available on each release channel</div>
-    <div class="box instructions week-5-instructions" data-week="5"><span class="touch-only">Tap</span><span class="no-touch-only">Hover</span> on days below to see when the latest code merge occurred so as to be included in each release channel</div>
 
-    <div class="box sidebar week-1" data-week="1">
-      <span class="top">N</span>
-      <span class="bottom">Last week of the previous month</span>
-    </div>
-    <div class="box sidebar week-2" data-week="2">
-      <span class="top">N+1</span>
-      <span class="bottom">N-3</span>
-    </div>
-    <div class="box sidebar week-3" data-week="3">
-      <span class="top">N+2</span>
-      <span class="bottom">N-2</span>
-    </div>
-    <div class="box sidebar week-4" data-week="4">
-      <span class="top">N+3</span>
-      <span class="bottom">N-1</span>
-    </div>
-    <div class="box sidebar week-5" data-week="5">
-      <span class="top">2<sup>nd</sup> week of the next month</span>
-      <span class="bottom">N</span>
+<amp-script id="calendar-container" layout="container" script="calendar-script" sandbox="allow-forms">
+  <div class="calendar">
+    <div class="calendar-header">
+      {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
+      <button class="ap-a-btn calendar-button" data-week="1" data-day="sunday"><span class="compressed">SUN</span><span class="full">SUNDAY</span></button>
+      <button class="ap-a-btn calendar-button" data-week="1" data-day="monday"><span class="compressed">MON</span><span class="full">MONDAY</span></button>
+      <button class="ap-a-btn calendar-button" data-week="1" data-day="tuesday"><span class="compressed">TUE</span><span class="full">TUESDAY</span></button>
+      <button class="ap-a-btn calendar-button" data-week="1" data-day="wednesday"><span class="compressed">WED</span><span class="full">WEDNESDAY</span></button>
+      <button class="ap-a-btn calendar-button" data-week="1" data-day="thursday"><span class="compressed">THU</span><span class="full">THURSDAY</span></button>
+      <button class="ap-a-btn calendar-button" data-week="1" data-day="friday"><span class="compressed">FRI</span><span class="full">FRIDAY</span></button>
+      <button class="ap-a-btn calendar-button" data-week="1" data-day="saturday"><span class="compressed">SAT</span><span class="full">SATURDAY</span></button>
     </div>
 
-    <div class="box sidebar ellipsis ellipsis-top">⋮</div>
+    <div class="calendar-output">
+      <div class="calendar-week">
+        <div class="calendar-week-label mobile">Week N</div>
+        <div class="calendar-day week-1 sunday" data-week-label="Week N" data-label="SUN" data-week="1" data-day="sunday"></div>
+        <div class="calendar-day week-1 monday" data-label="MON" data-week="1" data-day="monday"></div>
+        <div class="calendar-day week-1 tuesday" data-label="TUE" data-week="1" data-day="tuesday"></div>
+        <div class="calendar-day week-1 wednesday" data-label="WED" data-week="1" data-day="wednesday"></div>
+        <div class="calendar-day week-1 thursday" data-label="THU" data-week="1" data-day="thursday"></div>
+        <div class="calendar-day week-1 friday" data-label="FRI" data-week="1" data-day="friday"></div>
+        <div class="calendar-day week-1 saturday" data-label="SAT" data-week="1" data-day="saturday"></div>
+      </div>
+      
+      <div class="calendar-week">
+        <div class="calendar-week-label mobile">Week N+1</div>
+        <div class="calendar-day week-2 sunday" data-week-label="Week N+1" data-label="SUN" data-week="2" data-day="sunday"></div>
+        <div class="calendar-day week-2 monday" data-label="MON" data-week="2" data-day="monday"></div>
+        <div class="calendar-day week-2 tuesday" data-label="TUE" data-week="2" data-day="tuesday"></div>
+        <div class="calendar-day week-2 wednesday" data-label="WED" data-week="2" data-day="wednesday"></div>
+        <div class="calendar-day week-2 thursday" data-label="THU" data-week="2" data-day="thursday"></div>
+        <div class="calendar-day week-2 friday" data-label="FRI" data-week="2" data-day="friday"></div>
+        <div class="calendar-day week-2 saturday" data-label="SAT" data-week="2" data-day="saturday"></div>
+      </div>
 
-    <div class="box ellipsis ellipsis-top">⋮</div>
-    <div class="box ellipsis ellipsis-top">⋮</div>
-    <div class="box ellipsis ellipsis-top">⋮</div>
-    <div class="box ellipsis ellipsis-top">⋮</div>
-    <div class="box ellipsis ellipsis-top">⋮</div>
-    <div class="box ellipsis ellipsis-top">⋮</div>
-    <div class="box ellipsis ellipsis-top">⋮</div>
+      <div class="calendar-week">
+        <div class="calendar-week-label mobile">Week N+2</div>
+        <div class="calendar-day week-3 sunday" data-week-label="Week N+2" data-label="SUN" data-week="3" data-day="sunday"></div>
+        <div class="calendar-day week-3 monday" data-label="MON" data-week="3" data-day="monday"></div>
+        <div class="calendar-day week-3 tuesday" data-label="TUE" data-week="3" data-day="tuesday"></div>
+        <div class="calendar-day week-3 wednesday" data-label="WED" data-week="3" data-day="wednesday"></div>
+        <div class="calendar-day week-3 thursday" data-label="THU" data-week="3" data-day="thursday"></div>
+        <div class="calendar-day week-3 friday" data-label="FRI" data-week="3" data-day="friday"></div>
+        <div class="calendar-day week-3 saturday" data-label="SAT" data-week="3" data-day="saturday"></div>
+      </div>
 
-    <div class="box sidebar ellipsis ellipsis-bottom">⋮</div>
+      <div class="calendar-week">
+        <div class="calendar-week-label mobile">2nd week of the next month</div>
+        <div class="calendar-day week-4 sunday" data-week-label="Week N+3" data-label="SUN" data-week="4" data-day="sunday"></div>
+        <div class="calendar-day week-4 monday" data-label="MON" data-week="4" data-day="monday"></div>
+        <div class="calendar-day week-4 tuesday" data-label="TUE" data-week="4" data-day="tuesday"></div>
+        <div class="calendar-day week-4 wednesday" data-label="WED" data-week="4" data-day="wednesday"></div>
+        <div class="calendar-day week-4 thursday" data-label="THU" data-week="4" data-day="thursday"></div>
+        <div class="calendar-day week-4 friday" data-label="FRI" data-week="4" data-day="friday"></div>
+        <div class="calendar-day week-4 saturday" data-label="SAT" data-week="4" data-day="saturday"></div>
+      </div>
 
-    <div class="box ellipsis ellipsis-bottom">⋮</div>
-    <div class="box ellipsis ellipsis-bottom">⋮</div>
-    <div class="box ellipsis ellipsis-bottom">⋮</div>
-    <div class="box ellipsis ellipsis-bottom">⋮</div>
-    <div class="box ellipsis ellipsis-bottom">⋮</div>
-    <div class="box ellipsis ellipsis-bottom">⋮</div>
-    <div class="box ellipsis ellipsis-bottom">⋮</div>
+      <div class="ellipsis"><span class="mobile">⋮</span><span class="desktop">…</span></div>
 
-    <div class="box content week-1 day-sunday" data-week="1" data-day="sunday"></div>
-    <div class="box content week-1 day-monday" data-week="1" data-day="monday"></div>
-    <div class="box content week-1 day-tuesday" data-week="1" data-day="tuesday"></div>
-    <div class="box content week-1 day-wednesday" data-week="1" data-day="wednesday"></div>
-    <div class="box content week-1 day-thursday" data-week="1" data-day="thursday"></div>
-    <div class="box content week-1 day-friday" data-week="1" data-day="friday"></div>
-    <div class="box content week-1 day-saturday" data-week="1" data-day="saturday"></div>
-
-    <div class="box content week-2 day-sunday" data-week="2" data-day="sunday"></div>
-    <div class="box content week-2 day-monday" data-week="2" data-day="monday"></div>
-    <div class="box content week-2 day-tuesday" data-week="2" data-day="tuesday"></div>
-    <div class="box content week-2 day-wednesday" data-week="2" data-day="wednesday"></div>
-    <div class="box content week-2 day-thursday" data-week="2" data-day="thursday"></div>
-    <div class="box content week-2 day-friday" data-week="2" data-day="friday"></div>
-    <div class="box content week-2 day-saturday" data-week="2" data-day="saturday"></div>
-
-    <div class="box content week-3 day-sunday" data-week="3" data-day="sunday"></div>
-    <div class="box content week-3 day-monday" data-week="3" data-day="monday"></div>
-    <div class="box content week-3 day-tuesday" data-week="3" data-day="tuesday"></div>
-    <div class="box content week-3 day-wednesday" data-week="3" data-day="wednesday"></div>
-    <div class="box content week-3 day-thursday" data-week="3" data-day="thursday"></div>
-    <div class="box content week-3 day-friday" data-week="3" data-day="friday"></div>
-    <div class="box content week-3 day-saturday" data-week="3" data-day="saturday"></div>
-
-    <div class="box content week-4 day-sunday" data-week="4" data-day="sunday"></div>
-    <div class="box content week-4 day-monday" data-week="4" data-day="monday"></div>
-    <div class="box content week-4 day-tuesday" data-week="4" data-day="tuesday"></div>
-    <div class="box content week-4 day-wednesday" data-week="4" data-day="wednesday"></div>
-    <div class="box content week-4 day-thursday" data-week="4" data-day="thursday"></div>
-    <div class="box content week-4 day-friday" data-week="4" data-day="friday"></div>
-    <div class="box content week-4 day-saturday" data-week="4" data-day="saturday"></div>
-
-    <div class="box content week-5 day-sunday" data-week="5" data-day="sunday"></div>
-    <div class="box content week-5 day-monday" data-week="5" data-day="monday"></div>
-    <div class="box content week-5 day-tuesday" data-week="5" data-day="tuesday"></div>
-    <div class="box content week-5 day-wednesday" data-week="5" data-day="wednesday"></div>
-    <div class="box content week-5 day-thursday" data-week="5" data-day="thursday"></div>
-    <div class="box content week-5 day-friday" data-week="5" data-day="friday"></div>
-    <div class="box content week-5 day-saturday" data-week="5" data-day="saturday"></div>
+      <div class="calendar-week">
+        <div class="calendar-week-label mobile">2nd week of the next month</div>
+        <div class="calendar-day week-5 sunday" data-week-label="2nd week of the next month" data-label="SUN" data-week="5" data-day="sunday"></div>
+        <div class="calendar-day week-5 monday" data-label="MON" data-week="5" data-day="monday"></div>
+        <div class="calendar-day week-5 tuesday" data-label="TUE" data-week="5" data-day="tuesday"></div>
+        <div class="calendar-day week-5 wednesday" data-label="WED" data-week="5" data-day="wednesday"></div>
+        <div class="calendar-day week-5 thursday" data-label="THU" data-week="5" data-day="thursday"></div>
+        <div class="calendar-day week-5 friday" data-label="FRI" data-week="5" data-day="friday"></div>
+        <div class="calendar-day week-5 saturday" data-label="SAT" data-week="5" data-day="saturday"></div>
+      </div>
+    </div>
   </div>
 </amp-script>
 
-<amp-script id="calendar-container-mobile" layout="fixed-height" height="550" script="calendar-script">
-  <div class="calendar mobile" data-direction="initialized">
-    <div class="box header">Week</div>
-    <div class="box header day-sunday">Sunday</div>
-    <div class="box header day-monday">Monday</div>
-    <div class="box header day-tuesday">Tuesday</div>
-    <div class="box header day-wednesday">Wednesday</div>
-    <div class="box header day-thursday">Thursday</div>
-    <div class="box header day-friday">Friday</div>
-    <div class="box header day-saturday">Saturday</div>
+<h3>Select a day to see when the latest code merge occurred so as to be included in each release channel</h3>
 
-    <div class="box instructions week-1-instructions" data-week="1"><span class="touch-only">Tap</span><span class="no-touch-only">Hover</span> on days above to see when the code merged on that day will be available on each release channel</div>
-    <div class="box instructions week-5-instructions" data-week="5"><span class="touch-only">Tap</span><span class="no-touch-only">Hover</span> on days below to see when the latest code merge occurred so as to be included in each release channel</div>
-
-    <div class="box sidebar week-1" data-week="1">
-      <span class="top">N</span>
-      <span class="bottom">Last week of the previous month</span>
-    </div>
-    <div class="box sidebar week-2" data-week="2">
-      <span class="top">N+1</span>
-      <span class="bottom">N-3</span>
-    </div>
-    <div class="box sidebar week-3" data-week="3">
-      <span class="top">N+2</span>
-      <span class="bottom">N-2</span>
-    </div>
-    <div class="box sidebar week-4" data-week="4">
-      <span class="top">N+3</span>
-      <span class="bottom">N-1</span>
-    </div>
-    <div class="box sidebar week-5" data-week="5">
-      <span class="top">2<sup>nd</sup> week of the next month</span>
-      <span class="bottom">N</span>
+<amp-script id="calendar-container" layout="container" script="calendar-script" sandbox="allow-forms">
+  <div class="calendar desktop">
+    <div class="calendar-header">
+      {% do doc.styles.addCssFile('css/components/atoms/button.css') %}
+      <button class="ap-a-btn calendar-button" data-week="5" data-day="sunday"><span class="compressed">SUN</span><span class="full">SUNDAY</span></button>
+      <button class="ap-a-btn calendar-button" data-week="5" data-day="monday"><span class="compressed">MON</span><span class="full">MONDAY</span></button>
+      <button class="ap-a-btn calendar-button" data-week="5" data-day="tuesday"><span class="compressed">TUE</span><span class="full">TUESDAY</span></button>
+      <button class="ap-a-btn calendar-button" data-week="5" data-day="wednesday"><span class="compressed">WED</span><span class="full">WEDNESDAY</span></button>
+      <button class="ap-a-btn calendar-button" data-week="5" data-day="thursday"><span class="compressed">THU</span><span class="full">THURSDAY</span></button>
+      <button class="ap-a-btn calendar-button" data-week="5" data-day="friday"><span class="compressed">FRI</span><span class="full">FRIDAY</span></button>
+      <button class="ap-a-btn calendar-button" data-week="5" data-day="saturday"><span class="compressed">SAT</span><span class="full">SATURDAY</span></button>
     </div>
 
-    <div class="box sidebar ellipsis ellipsis-top">⋮</div>
+    <div class="calendar-output">
+      <div class="calendar-week">
+        <div class="calendar-week-label mobile">Last week of previous month</div>
+        <div class="calendar-day week-1 sunday" data-week-label="Last week of previous month" data-label="SUN" data-week="1" data-day="sunday"></div>
+        <div class="calendar-day week-1 monday" data-label="MON" data-week="1" data-day="monday"></div>
+        <div class="calendar-day week-1 tuesday" data-label="TUE" data-week="1" data-day="tuesday"></div>
+        <div class="calendar-day week-1 wednesday" data-label="WED" data-week="1" data-day="wednesday"></div>
+        <div class="calendar-day week-1 thursday" data-label="THU" data-week="1" data-day="thursday"></div>
+        <div class="calendar-day week-1 friday" data-label="FRI" data-week="1" data-day="friday"></div>
+        <div class="calendar-day week-1 saturday" data-label="SAT" data-week="1" data-day="saturday"></div>
+      </div>
 
-    <div class="box ellipsis ellipsis-top">⋮</div>
-    <div class="box ellipsis ellipsis-top">⋮</div>
-    <div class="box ellipsis ellipsis-top">⋮</div>
-    <div class="box ellipsis ellipsis-top">⋮</div>
-    <div class="box ellipsis ellipsis-top">⋮</div>
-    <div class="box ellipsis ellipsis-top">⋮</div>
-    <div class="box ellipsis ellipsis-top">⋮</div>
+      <div class="ellipsis"><span class="mobile">⋮</span><span class="desktop">…</span></div>
+      
+      <div class="calendar-week">
+        <div class="calendar-week-label mobile">Week N-3</div>
+        <div class="calendar-day week-2 sunday" data-week-label="Week N-3" data-label="SUN" data-week="2" data-day="sunday"></div>
+        <div class="calendar-day week-2 monday" data-label="MON" data-week="2" data-day="monday"></div>
+        <div class="calendar-day week-2 tuesday" data-label="TUE" data-week="2" data-day="tuesday"></div>
+        <div class="calendar-day week-2 wednesday" data-label="WED" data-week="2" data-day="wednesday"></div>
+        <div class="calendar-day week-2 thursday" data-label="THU" data-week="2" data-day="thursday"></div>
+        <div class="calendar-day week-2 friday" data-label="FRI" data-week="2" data-day="friday"></div>
+        <div class="calendar-day week-2 saturday" data-label="SAT" data-week="2" data-day="saturday"></div>
+      </div>
 
-    <div class="box sidebar ellipsis ellipsis-bottom">⋮</div>
+      <div class="calendar-week">
+        <div class="calendar-week-label mobile">Week N-2</div>
+        <div class="calendar-day week-3 sunday" data-week-label="Week N-2" data-label="SUN" data-week="3" data-day="sunday"></div>
+        <div class="calendar-day week-3 monday" data-label="MON" data-week="3" data-day="monday"></div>
+        <div class="calendar-day week-3 tuesday" data-label="TUE" data-week="3" data-day="tuesday"></div>
+        <div class="calendar-day week-3 wednesday" data-label="WED" data-week="3" data-day="wednesday"></div>
+        <div class="calendar-day week-3 thursday" data-label="THU" data-week="3" data-day="thursday"></div>
+        <div class="calendar-day week-3 friday" data-label="FRI" data-week="3" data-day="friday"></div>
+        <div class="calendar-day week-3 saturday" data-label="SAT" data-week="3" data-day="saturday"></div>
+      </div>
 
-    <div class="box ellipsis ellipsis-bottom">⋮</div>
-    <div class="box ellipsis ellipsis-bottom">⋮</div>
-    <div class="box ellipsis ellipsis-bottom">⋮</div>
-    <div class="box ellipsis ellipsis-bottom">⋮</div>
-    <div class="box ellipsis ellipsis-bottom">⋮</div>
-    <div class="box ellipsis ellipsis-bottom">⋮</div>
-    <div class="box ellipsis ellipsis-bottom">⋮</div>
+      <div class="calendar-week">
+        <div class="calendar-week-label mobile">Week N-1</div>
+        <div class="calendar-day week-4 sunday" data-week-label="Week N-1" data-label="SUN" data-week="4" data-day="sunday"></div>
+        <div class="calendar-day week-4 monday" data-label="MON" data-week="4" data-day="monday"></div>
+        <div class="calendar-day week-4 tuesday" data-label="TUE" data-week="4" data-day="tuesday"></div>
+        <div class="calendar-day week-4 wednesday" data-label="WED" data-week="4" data-day="wednesday"></div>
+        <div class="calendar-day week-4 thursday" data-label="THU" data-week="4" data-day="thursday"></div>
+        <div class="calendar-day week-4 friday" data-label="FRI" data-week="4" data-day="friday"></div>
+        <div class="calendar-day week-4 saturday" data-label="SAT" data-week="4" data-day="saturday"></div>
+      </div>
 
-    <div class="box content week-1 day-sunday" data-week="1" data-day="sunday"></div>
-    <div class="box content week-1 day-monday" data-week="1" data-day="monday"></div>
-    <div class="box content week-1 day-tuesday" data-week="1" data-day="tuesday"></div>
-    <div class="box content week-1 day-wednesday" data-week="1" data-day="wednesday"></div>
-    <div class="box content week-1 day-thursday" data-week="1" data-day="thursday"></div>
-    <div class="box content week-1 day-friday" data-week="1" data-day="friday"></div>
-    <div class="box content week-1 day-saturday" data-week="1" data-day="saturday"></div>
-
-    <div class="box content week-2 day-sunday" data-week="2" data-day="sunday"></div>
-    <div class="box content week-2 day-monday" data-week="2" data-day="monday"></div>
-    <div class="box content week-2 day-tuesday" data-week="2" data-day="tuesday"></div>
-    <div class="box content week-2 day-wednesday" data-week="2" data-day="wednesday"></div>
-    <div class="box content week-2 day-thursday" data-week="2" data-day="thursday"></div>
-    <div class="box content week-2 day-friday" data-week="2" data-day="friday"></div>
-    <div class="box content week-2 day-saturday" data-week="2" data-day="saturday"></div>
-
-    <div class="box content week-3 day-sunday" data-week="3" data-day="sunday"></div>
-    <div class="box content week-3 day-monday" data-week="3" data-day="monday"></div>
-    <div class="box content week-3 day-tuesday" data-week="3" data-day="tuesday"></div>
-    <div class="box content week-3 day-wednesday" data-week="3" data-day="wednesday"></div>
-    <div class="box content week-3 day-thursday" data-week="3" data-day="thursday"></div>
-    <div class="box content week-3 day-friday" data-week="3" data-day="friday"></div>
-    <div class="box content week-3 day-saturday" data-week="3" data-day="saturday"></div>
-
-    <div class="box content week-4 day-sunday" data-week="4" data-day="sunday"></div>
-    <div class="box content week-4 day-monday" data-week="4" data-day="monday"></div>
-    <div class="box content week-4 day-tuesday" data-week="4" data-day="tuesday"></div>
-    <div class="box content week-4 day-wednesday" data-week="4" data-day="wednesday"></div>
-    <div class="box content week-4 day-thursday" data-week="4" data-day="thursday"></div>
-    <div class="box content week-4 day-friday" data-week="4" data-day="friday"></div>
-    <div class="box content week-4 day-saturday" data-week="4" data-day="saturday"></div>
-
-    <div class="box content week-5 day-sunday" data-week="5" data-day="sunday"></div>
-    <div class="box content week-5 day-monday" data-week="5" data-day="monday"></div>
-    <div class="box content week-5 day-tuesday" data-week="5" data-day="tuesday"></div>
-    <div class="box content week-5 day-wednesday" data-week="5" data-day="wednesday"></div>
-    <div class="box content week-5 day-thursday" data-week="5" data-day="thursday"></div>
-    <div class="box content week-5 day-friday" data-week="5" data-day="friday"></div>
-    <div class="box content week-5 day-saturday" data-week="5" data-day="saturday"></div>
+      <div class="calendar-week">
+        <div class="calendar-week-label mobile">Week N</div>
+        <div class="calendar-day week-5 sunday" data-week-label="Week N" data-label="SUN" data-week="5" data-day="sunday"></div>
+        <div class="calendar-day week-5 monday" data-label="MON" data-week="5" data-day="monday"></div>
+        <div class="calendar-day week-5 tuesday" data-label="TUE" data-week="5" data-day="tuesday"></div>
+        <div class="calendar-day week-5 wednesday" data-label="WED" data-week="5" data-day="wednesday"></div>
+        <div class="calendar-day week-5 thursday" data-label="THU" data-week="5" data-day="thursday"></div>
+        <div class="calendar-day week-5 friday" data-label="FRI" data-week="5" data-day="friday"></div>
+        <div class="calendar-day week-5 saturday" data-label="SAT" data-week="5" data-day="saturday"></div>
+      </div>
+    </div>
   </div>
 </amp-script>
 
@@ -302,59 +274,170 @@ $title: Interactive Release Calendar
 
   const descriptions = {
     '1': {
-      'selected': 'Code merged on this day…',
-      'nightly': '…is available on the `nightly` on this day,',
-      'opt-in': '…for `opt-in` to the experimental and beta on this day,',
-      'beta': '…on 1% traffic `beta` and `experimental` on this day,',
-      'stable': '…on `stable` on this day,',
-      'lts': '…and as `lts` on this day.',
+      'merged': {
+        'label': 'MERGED',
+        'description': 'Code merged on this day…'
+      },
+      'nightly': {
+        'label': 'NIGHTLY',
+        'description': '…is available on the `nightly` on this day,'
+      },
+      'opt-in': {
+        'label': 'OPT-IN',
+        'description': '…for `opt-in` to the experimental and beta on this day,'
+      },
+      'beta': {
+        'label': 'BETA',
+        'description': '…on 1% traffic `beta` and `experimental` on this day,'
+      },
+      'stable': {
+        'label': 'STABLE',
+        'description': '…on `stable` on this day,'
+      },
+      'lts': {
+        'label': 'LTS',
+        'description': '…and as `lts` on this day.'
+      }
     },
     '5': {
-      'selected': '…on the selected day',
-      'lts': 'code merged on this day is available as `lts` …',
-      'stable': 'code merged on this day is available as `stable` …',
-      'beta': 'code merged on this day is available as `beta` and `experimental` …',
-      'opt-in-beta': 'code merged on this day is available for `opt-in`, 1% `beta`, and `experimental` …',
-      'opt-in': 'code merged on this day is available as `opt-in` …',
-      'nightly': 'code merged on this day is available as `nightly` …',
+      'merged': {
+        'label': 'AVAILABLE',
+        'description': '…on the selected day'
+      },
+      'lts': {
+        'label': 'LTS',
+        'description': 'code merged on this day is available as `lts` …'
+      },
+      'stable': {
+        'label': 'STABLE',
+        'description': 'code merged on this day is available as `stable` …'
+      },
+      'beta': {
+        'label': 'BETA',
+        'description': 'code merged on this day is available as `beta` and `experimental` …'
+      },
+      'opt-in-beta': {
+        'label': 'OPT-IN-BETA',
+        'description': 'code merged on this day is available for `opt-in`, 1% `beta`, and `experimental` …'
+      },
+      'opt-in': {
+        'label': 'OPT-IN',
+        'description': 'code merged on this day is available as `opt-in` …'
+      },
+      'nightly': {
+        'label': 'NIGHTLY',
+        'description': 'code merged on this day is available as `nightly` …'
+      }
     }
-  };
+  }
 
-  function createSpan(text) {
+  function createLabel(text) {
     const span = document.createElement('span');
+    span.classList.add('label');
+    span.appendChild(document.createTextNode(text));
+    return span;
+  }
+
+  function createToolTip(channel = '', description = '') {
+    const tooltip = document.createElement('div');
+    tooltip.classList.add('ap-m-tooltip');
+    const tooltipChannel = `tooltip-${channel}`;
+    tooltip.id = tooltipChannel;
+    
+    const buttonOpen = document.createElement('button');
+    buttonOpen.classList.add('ap-m-tooltip-toggle');
+    buttonOpen.id = `${tooltipChannel}-open`;
+    buttonOpen.setAttribute('on', `tap:${tooltipChannel}.toggleClass(class=active),AMP.setState({tooltipExpanded: tooltipExpanded == 'true' ? 'false' : 'true'})`);
+    buttonOpen.setAttribute('role', 'button');
+
+    const buttonClose = document.createElement('button');
+    buttonClose.classList.add('ap-m-tooltip-close');
+    buttonClose.id = `${tooltipChannel}-close`;
+    buttonClose.setAttribute('on', `tap:${tooltipChannel}.toggleClass(class=active),AMP.setState({tooltipExpanded: 'false'}),${tooltipChannel}-open.focus`);
+    buttonClose.setAttribute('role', 'button');
+
+    const tooltipContent = document.createElement('div');
+    tooltipContent.classList.add('ap-m-tooltip-description-wrapper');
+    const tooltipContentBody = document.createElement('div');
+    tooltipContentBody.classList.add('ap-m-tooltip-description');
+    tooltipContentBody.id = `${tooltipChannel}-description`;
+    tooltipContentBody.appendChild(createParagraph(description));
+    tooltipContent.appendChild(tooltipContentBody);
+
+    const tooltipTip = document.createElement('div');
+    tooltipTip.classList.add('ap-m-tooltip-tip');
+    tooltipTip.setAttribute('role', 'region');
+    tooltipTip.appendChild(buttonClose);
+    tooltipTip.appendChild(tooltipContent);
+
+    tooltip.appendChild(buttonOpen);
+    tooltip.appendChild(tooltipTip);
+
+    return tooltip;
+  }
+
+  function createToolTipBackground(channel = '') {
+    const tooltipBackground = document.createElement('div');
+    tooltipBackground.classList.add('ap-m-tooltip-background');
+    tooltipBackground.setAttribute('on', `tap:tooltip-${channel}.toggleClass(class=active),AMP.setState({tooltipExpanded: 'false'})`);
+    tooltipBackground.setAttribute('tabindex', -1);
+    tooltipBackground.setAttribute('role', 'presentation');
+
+    return tooltipBackground;
+  }
+
+  function createWrapper(nodes = []) {
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('calendar-day-header');
+    nodes.forEach(node => wrapper.appendChild(node));
+    return wrapper;
+  }
+
+  function createParagraph(text) {
+    const paragraph = document.createElement('p');
     text.split(/`(.+?)`/g).forEach((part, index) => {
       if (index % 2 === 0) {
-        span.appendChild(document.createTextNode(part));
+        paragraph.appendChild(document.createTextNode(part));
       } else {
         const code = document.createElement('code');
         code.textContent = part;
-        span.appendChild(code);
+        paragraph.appendChild(code);
       }
     });
-    return span;
+    return paragraph;
   };
 
-  document.querySelectorAll('.content')
-    .filter(elm => elm.classList.contains('week-1') || elm.classList.contains('week-5'))
+  document.querySelectorAll('.calendar-button')
     .forEach(elm => {
-      elm.addEventListener('mouseenter', event => {
-        document.querySelectorAll('.content').forEach(elm => {
-          while (elm.firstChild) {
-            elm.firstChild.remove();
-          }
-        });
+      elm.addEventListener('click', event => {
+        for (const channel of ['merge', 'nightly', 'opt-in', 'beta', 'opt-in-beta', 'stable', 'lts']) {
+          document.querySelectorAll(`.${channel}`).forEach(elm => {
+            elm.classList.remove(channel);
+            while (elm.firstChild) {
+              elm.firstChild.remove();
+            }
+          });
+        }
 
         const selectedWeek = elm.getAttribute('data-week');
         const selectedDay = elm.getAttribute('data-day');
-        document.querySelectorAll('.calendar').forEach(el => {
-          el.setAttribute(
-            'data-direction',
-            selectedWeek == '1' ? 'top' : 'bottom');
-        });
 
-        event.currentTarget.textContent = descriptions[selectedWeek].selected;
+        const selectedElm = document.querySelectorAll('.calendar-day')
+          .filter(
+            elm => elm.getAttribute('data-week') === selectedWeek
+            && elm.getAttribute('data-day') === selectedDay
+          )[0];
+
+        selectedElm.classList.add('merge');
+        const mergeId = `merge-week-${selectedWeek}`;
+        selectedElm.appendChild(createWrapper([
+          createLabel(descriptions[selectedWeek]['merged'].label), 
+          createToolTip(mergeId, descriptions[selectedWeek]['merged'].description),
+          createToolTipBackground(mergeId)
+        ]));
+
         for (let [channel, [channelWeek, channelDay]] of Object.entries(channels[selectedWeek][selectedDay])) {
-          const channelElm = document.querySelectorAll('.content')
+          const channelElm = document.querySelectorAll('.calendar-day')
             .filter(
                 elm => elm.getAttribute('data-week') === channelWeek
                 && elm.getAttribute('data-day') === channelDay
@@ -364,20 +447,13 @@ $title: Interactive Release Calendar
             channelElm.firstChild.remove();
           }
 
-          channelElm.appendChild(createSpan(descriptions[selectedWeek][channel]));
           channelElm.classList.add(channel);
-        }
-      });
-
-      elm.addEventListener('mouseleave', event => {
-        event.currentTarget.textContent = '';
-        for (const channel of ['nightly', 'opt-in', 'beta', 'opt-in-beta', 'stable', 'lts']) {
-          document.querySelectorAll(`.${channel}`).forEach(elm => {
-            elm.classList.remove(channel);
-            while (elm.firstChild) {
-              elm.firstChild.remove();
-            }
-          });
+          const channelId = `${channel}-week-${selectedWeek}`;
+          channelElm.appendChild(createWrapper([
+            createLabel(descriptions[selectedWeek][channel].label),
+            createToolTip(channelId, descriptions[selectedWeek][channel].description),
+            createToolTipBackground(channelId)
+          ]));
         }
       });
     });

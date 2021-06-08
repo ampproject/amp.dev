@@ -22,6 +22,6 @@ Terapkan CSP dengan menambahkan tag meta yang tepat ke tajuk halaman Anda. Di ba
 />
 ```
 
-[Anda dapat melihat seluruh contoh di sini](https://github.com/ampproject/amphtml/blob/master/examples/csp.amp.html).
+[Anda dapat melihat seluruh contoh di sini](https://github.com/ampproject/amphtml/blob/main/examples/csp.amp.html).
 
 [tip type="read-on"] Pelajari selengkapnya tentang [pelindungan menyangkut kerentanan keamanan dan CSP di sini](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP). [/tip]

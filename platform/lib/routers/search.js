@@ -24,6 +24,7 @@ const samples = require('@lib/common/samples.js');
 const {setMaxAge} = require('@lib/utils/cacheHelpers');
 const log = require('@lib/utils/log')('Search');
 const URL = require('url').URL;
+const componentVersions = require(project.paths.COMPONENT_VERSIONS);
 
 const {
   BUILT_IN_COMPONENTS,
@@ -44,7 +45,8 @@ const RESPONSE_MAX_AGE = {
   autosuggest: 86400, // 24 hours
 };
 
-const COMPONENT_REFERENCE_DOC_PATTERN = /^(?:https?:\/\/[^/]+)?(?:\/[^/]+)?\/documentation\/components\/(amp-[^/]+)/;
+const COMPONENT_REFERENCE_DOC_PATTERN =
+  /^(?:https?:\/\/[^/]+)?(?:\/[^/]+)?\/documentation\/components\/(amp-[^/]+)/;
 
 // use the twitter title if available since it does not contain the site name
 const TITLE_META_TAG = 'twitter:title';
@@ -52,29 +54,25 @@ const DESCRIPTION_META_TAG = 'twitter:description';
 
 const COMPONENT_EXAMPLES = samples.getComponentExampleMap();
 
-const COMPONENT_VERSIONS_PATH = path.join(
-  project.paths.DIST,
-  '/static/files/component-versions.json'
-);
-
 const HIGHLIGHTS_FOLDER_PATH = path.join(
   project.paths.DIST,
   '/static/files/search-promoted-pages/'
 );
 
-function buildAutosuggestComponentResult() {
-  const componentVersions = require(COMPONENT_VERSIONS_PATH);
-  const components = Object.keys(componentVersions).concat(
-    BUILT_IN_COMPONENTS,
-    IMPORTANT_INCLUDED_ELEMENTS
-  );
-  components.sort();
-  return {
-    items: components,
-  };
+let items = null;
+async function buildAutosuggestComponentResult() {
+  if (!items) {
+    const components = Object.keys(componentVersions).concat(
+      BUILT_IN_COMPONENTS,
+      IMPORTANT_INCLUDED_ELEMENTS
+    );
+    components.sort();
+    items = {
+      items: components,
+    };
+  }
+  return items;
 }
-
-const AUTOSUGGEST_COMPONENT_RESULT = buildAutosuggestComponentResult();
 
 // eslint-disable-next-line new-cap
 const search = express.Router();
@@ -85,9 +83,9 @@ search.get('/search/do', handleSearchRequest);
 search.get('/search/latest-query', handleNullResponse);
 search.get('/search/clear-latest-query', handleNullResponse);
 
-function handleAutosuggestRequest(request, response) {
+async function handleAutosuggestRequest(request, response) {
   setMaxAge(response, RESPONSE_MAX_AGE.autosuggest);
-  response.json(AUTOSUGGEST_COMPONENT_RESULT);
+  response.json(await buildAutosuggestComponentResult());
 }
 
 function handleHighlightsRequest(request, response) {

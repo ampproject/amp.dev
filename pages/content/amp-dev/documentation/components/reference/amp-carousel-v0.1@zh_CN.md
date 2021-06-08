@@ -237,4 +237,4 @@ limitations under the License.
 
 # 验证 <a name="validation"></a>
 
-请参阅 AMP 验证工具规范中的 [amp-carousel 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/validator-amp-carousel.protoascii)。
+请参阅 AMP 验证工具规范中的 [amp-carousel 规则](https://github.com/ampproject/amphtml/blob/main/extensions/amp-carousel/validator-amp-carousel.protoascii)。

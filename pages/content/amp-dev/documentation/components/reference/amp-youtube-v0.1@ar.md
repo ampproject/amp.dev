@@ -136,4 +136,4 @@ teaser:
 
 ## التحقق <a name="validation"></a>
 
-اطّلِع على [قواعد amp-youtube](https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube/validator-amp-youtube.protoascii) في مواصفات مدقق AMP.
+اطّلِع على [قواعد amp-youtube](https://github.com/ampproject/amphtml/blob/main/extensions/amp-youtube/validator-amp-youtube.protoascii) في مواصفات مدقق AMP.

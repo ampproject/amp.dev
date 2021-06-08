@@ -66,7 +66,7 @@ Ngoài các yêu cầu tối thiểu, đoạn code mẫu của chúng ta cũng b
 [tip type="read-on"] Truy cập các tài nguyên này để tìm hiểu thêm:
 
 - [Bắt đầu với AMP trên Google Tìm kiếm](https://developers.google.com/amp/docs) - tìm hiểu để chuẩn bị các trang AMP của bạn cho Google Tìm kiếm.
-- [Mẫu siêu dữ liệu](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - tìm hiểu thêm về tất cả các siêu dữ liệu mà bạn sẽ cần ở các nơi khác nhau (ví dụ: Twitter). [/tip]
+- [Mẫu siêu dữ liệu](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples) - tìm hiểu thêm về tất cả các siêu dữ liệu mà bạn sẽ cần ở các nơi khác nhau (ví dụ: Twitter). [/tip]
 
 <hr>
 

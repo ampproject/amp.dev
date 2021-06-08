@@ -66,7 +66,7 @@ Neben den reinen Anforderungen enthält unser Beispiel im Head auch eine Schema.
 [tip type="read-on"]Weitere Informationen findest du in diesen Ressourcen:
 
 - [Erste Schritte mit AMP in der Google Suche](https://developers.google.com/amp/docs): Erfahre, wie du deine AMP Seiten für die Google Suche vorbereitest.
-- [Beispiele für Metadaten](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples): Erfahre mehr über alle Metadaten, die du an verschiedenen anderen Orten benötigst (z. B. bei Twitter). [/tip]
+- [Beispiele für Metadaten](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples): Erfahre mehr über alle Metadaten, die du an verschiedenen anderen Orten benötigst (z. B. bei Twitter). [/tip]
 
 <hr>
 

@@ -28,7 +28,7 @@ Mamy nadzieję, że staniesz się stałym uczestnikiem naszej społeczności ope
 
 #### Pomoc z kodem
 
-Aby rozpocząć dodawanie kodu do AMP Project, przeczytaj [plik WNOSZENIE WKŁADU](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md), który zawiera szczegóły procesu, przez który funkcja lub poprawka usterki przechodzi od koncepcji do zgłoszenia i informuje jak możesz wziąć udział w projektach technicznych i dyskusjach. Jeśli open source to dla Ciebie nowość, mamy kilka [porad na początek](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-code).
+Aby rozpocząć dodawanie kodu do AMP Project, przeczytaj [plik WNOSZENIE WKŁADU](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md), który zawiera szczegóły procesu, przez który funkcja lub poprawka usterki przechodzi od koncepcji do zgłoszenia i informuje jak możesz wziąć udział w projektach technicznych i dyskusjach. Jeśli open source to dla Ciebie nowość, mamy kilka [porad na początek](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#contributing-code).
 
 ### Dostarczanie treści do AMP
 

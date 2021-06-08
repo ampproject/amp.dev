@@ -28,6 +28,7 @@ const del = require('del');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
 
 const ComponentReferenceDocument = require('./componentReferenceDocument.js');
+const ComponentVersionImporter = require('./ComponentVersionImporter');
 
 const log = require('@lib/utils/log')('Component Reference Importer');
 const config = require(__dirname +
@@ -61,25 +62,40 @@ class ComponentReferenceImporter {
     // Gives the contents of ampproject/amphtml/extensions
     this.extensions = await this._listExtensions();
 
+    log.info('Importing latest component versions');
+    const latestStableComponents = await new ComponentVersionImporter().run();
     log.start('Beginning to import extension docs ...');
-    const importedExtensions = (await this._importExtensions()).flat();
+    const importedExtensions = (await this._importExtensions())
+      .flat()
+      .filter((ext) => ext != null);
     const bentoComponents = new Map();
+
     for (const growDoc of importedExtensions) {
-      if (growDoc && growDoc.bento) {
+      if (growDoc.bento) {
         bentoComponents.set(growDoc.title, {
           name: growDoc.title,
+          experimental: growDoc.experimental,
           path:
             growDoc.servingPath ||
-            `/documentation/components/${growDoc.title}-v${growDoc.version}/`,
+            `/documentation/components/${growDoc.title}-v${growDoc.version}.html`,
           version: growDoc.version,
         });
       }
     }
+
     for (const growDoc of importedExtensions) {
       const bentoComponent = bentoComponents.get(growDoc.title);
       if (bentoComponent) {
         growDoc.bentoPath = bentoComponent.path;
       }
+
+      const latestStableComponent = latestStableComponents[growDoc.title];
+      growDoc.latestVersion = latestStableComponent;
+      if (latestStableComponent === growDoc.version) {
+        growDoc.isCurrent = true;
+        growDoc.servingPath = `/documentation/components/${growDoc.title}.html`;
+      }
+
       try {
         await growDoc.save(growDoc.path);
       } catch (e) {
@@ -88,7 +104,7 @@ class ComponentReferenceImporter {
     }
     fs.writeFile(
       BENTO_COMPONENTS_LIST,
-      JSON.stringify(Array.from(bentoComponents.values), null, 2),
+      JSON.stringify(Array.from(bentoComponents.values()), null, 2),
       'utf-8'
     );
 
@@ -152,7 +168,7 @@ class ComponentReferenceImporter {
       version: DEFAULT_VERSION,
       versions: [DEFAULT_VERSION],
       latestVersion: DEFAULT_VERSION,
-      githubPath: path.join(BUILT_IN_PATH, `${name}.md`),
+      githubPath: path.join(BUILT_IN_PATH, name, `${name}.md`),
     });
   }
 
@@ -197,11 +213,7 @@ class ComponentReferenceImporter {
       }
     }
 
-    return Promise.all(
-      documents.map((doc) => {
-        return this._createGrowDoc(doc);
-      })
-    );
+    return Promise.all(documents.map((doc) => this._createGrowDoc(doc)));
   }
 
   /**

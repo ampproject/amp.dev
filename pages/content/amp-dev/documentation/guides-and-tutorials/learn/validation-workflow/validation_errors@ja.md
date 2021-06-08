@@ -23,7 +23,7 @@ limitations under the License.
 [AMP ページを検証する](validate_amp.md)ときに見つかった検証エラーを
 正しく理解して修正できるようにすることです。
 検証エラーの概要については、
-[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)をご覧ください。
+[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)をご覧ください。
 
 ## AMP HTML タグと属性のエラー
 
@@ -56,7 +56,7 @@ limitations under the License.
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-<a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP 検証ツールの仕様</a>では、上記の必須タグには `mandatory: true` フィールドが含まれています。
+<a href="https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii">AMP 検証ツールの仕様</a>では、上記の必須タグには `mandatory: true` フィールドが含まれています。
 また、[AMP 仕様](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)にも必須タグについての説明があります。
 
 ### あるタグで必要な別のタグがない
@@ -132,7 +132,7 @@ AMP HTML ライブラリに対応する実装があります。AMP HTML ペー�
 
 ご自分の使用例が取り上げられていない場合は、AMP プロジェクトに
 新しいコンポーネントを提案することもできます。詳しくは、AMP プロジェクトの
-[貢献](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)
+[貢献](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md)
 に関するドキュメントをご覧ください。
 
 ### 必須属性がない
@@ -153,7 +153,7 @@ AMP HTML ライブラリに対応する実装があります。AMP HTML ペー�
 </table>
 
 AMP タグに必須の属性は、
-[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)に定義されています。
+[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)に定義されています。
 タグを検索し、
 列記されている属性を見て、
 `mandatory: true` の記述があるかどうか確認します。
@@ -207,7 +207,7 @@ AMP タグに必須の属性は、
 
 属性はホワイトリストに登録されているため、許可されていない属性を網羅したリストはありません。
 各タグでサポートされている属性を確認するには、
-[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)で HTML タグを検索してから、
+[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)で HTML タグを検索してから、
 `attrs` を検索します。
 
 どの AMP タグも、各タグごとのホワイトリストに登録された属性に加えて、
@@ -280,7 +280,7 @@ CDATA は、HTML の開始タグと終了タグの間に記述するコンテン
 特定の CSS データはブラックリストに登録されています。
 
 ブラックリストに登録されている CSS データは以下のとおりです
-（[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)内の `disallowed_cdata_regex` もご覧ください）。
+（[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)内の `disallowed_cdata_regex` もご覧ください）。
 
 * `"\\.i?-amp-"`（「CSS クラス名接頭辞 -amp-」）
 * `"!important"`
@@ -565,7 +565,7 @@ URL の指定が必要な属性で URL が指定されていない場合に発�
 </table>
 
 必須の子孫は、
-[AMP 検証ツール](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)の仕様で
+[AMP 検証ツール](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)の仕様で
 `mandatory_ancestor` として定義されています。
 
 このエラーは、以下のタグで
@@ -656,7 +656,7 @@ AMP 検証ツールでエラーになることはありません。
 
 各 AMP タグには `supported_layouts` の
 リストがあります
-（[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)で定義されています）。
+（[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)で定義されています）。
 検証ツールは、サポートされていないレイアウトに対してはエラーを返し、
 事前定義されたレイアウトについては検証ルールをチェックします。
 
@@ -749,7 +749,7 @@ AMP で使用できるアットルールはごくわずかです
 
 このエラーは、AMP タグのレイアウトが指定されておらず、
 （幅、高さ、サイズを基にした）暗黙的レイアウトがサポートされていない場合に発生します。
-[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)で
+[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)で
 タグの `supported_layout` の値を確認してください。
 
 実際のレイアウトの動作は `layout` 属性によって決まります。
@@ -807,7 +807,7 @@ AMP タグで CONTAINER がサポートされていないと、
 
 このエラーは、タグに指定されたレイアウトが
 サポートされていない場合に発生します。
-[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)で
+[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)で
 タグの `supported_layout` の値を確認してください。
 
 実際のレイアウトの動作は `layout` 属性によって決まります。
@@ -1011,5 +1011,5 @@ AMP ページにテンプレートの構文を含めることはできません�
 これは単なる警告であり、警告付きのままでも AMP ドキュメントは引き続き有効です。
 
 各 AMP タグについて、サポートが終了した属性を確認するには、
-[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)
+[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)
 で `deprecation` を検索してください。

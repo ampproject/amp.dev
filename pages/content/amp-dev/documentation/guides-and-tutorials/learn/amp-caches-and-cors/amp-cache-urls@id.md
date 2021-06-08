@@ -36,7 +36,7 @@ Semua dokumen menggunakan protokol https pada cache AMP.
 
 ## Akhiran Nama Domain
 
-Semua Cache AMP didaftarkan dalam berkas JSON, tersedia online di [Repositori HTML AMP](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). Sebuah catatan cache contoh di dalam berkas ini akan terlihat seperti:
+Semua Cache AMP didaftarkan dalam berkas JSON, tersedia online di [Repositori HTML AMP](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json). Sebuah catatan cache contoh di dalam berkas ini akan terlihat seperti:
 
 ```json
 {
@@ -179,7 +179,7 @@ Sebuah nilai tajuk Asli Cache AMP akan terlihat seperti salah satu dari contoh b
 - `https://www-example-com.cdn.ampproject.org`
 - `https://v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq.cdn.ampproject.org`
 
-Pertama-tama, hapus awalan protokol (`https://`) dan akhiran domain Cache AMP, seperti `.cdn.ampproject.org`. Akhiran mungkin dari salah satu cache yang tercantum pada [caches.json](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). Untai yang tersisa akan menjadi “awalan domain”. Di dalam kasus kedua contoh di atas, “awalan domain” adalah:
+Pertama-tama, hapus awalan protokol (`https://`) dan akhiran domain Cache AMP, seperti `.cdn.ampproject.org`. Akhiran mungkin dari salah satu cache yang tercantum pada [caches.json](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json). Untai yang tersisa akan menjadi “awalan domain”. Di dalam kasus kedua contoh di atas, “awalan domain” adalah:
 
 - `www-example-com`
 - `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq`

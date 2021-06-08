@@ -73,6 +73,6 @@ Les serveurs publicitaires qui prennent actuellement en charge les annonces Web 
 
 Si vous êtes un annonceur et souhaitez diffuser vos annonces dans les stories Web, veuillez nous [contacter](mailto:story-ads-wg@google.com) pour plus d'informations.
 
-Les éditeurs peuvent également placer des annonces personnalisées s'ils configurent leur propre serveur publicitaire. [Vous trouverez ici une procédure détaillée à cet effet](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
+Les éditeurs peuvent également placer des annonces personnalisées s'ils configurent leur propre serveur publicitaire. [Vous trouverez ici une procédure détaillée à cet effet](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
 
 [tip type="note"] Consultez la section [Trafic des créations personnalisées dans les stories Web](https://support.google.com/admanager/answer/9038178) pour plus d'informations sur l'importation d'annonces dans Google Ad Manager et consultez notre guide sur les [bonnes pratiques pour créer une story publicitaire AMP](story_ads_best_practices.md). [/tip]

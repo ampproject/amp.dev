@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-html.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -33,7 +33,7 @@ limitations under the License.
 
 注：此列表为非规范性列表，仅供参考。AMP 验证工具规则对于支持的 HTML 标记和属性具有权威性。
 
-除了[支持的 AMP 组件](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)以外，AMP 电子邮件还允许使用以下 HTML 标记。
+除了[支持的 AMP 组件](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md)以外，AMP 电子邮件还允许使用以下 HTML 标记。
 
 ## 支持的标记 <a name="supported-tags"></a>
 

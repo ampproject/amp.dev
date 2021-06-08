@@ -1,6 +1,6 @@
 ---
 $title: عنوان URL هذا ليس صفحة AMP.
-type: خطأ
+type: error
 hide_share: صواب
 ---
 

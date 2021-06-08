@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -33,7 +33,7 @@ limitations under the License.
 
 AMP 是一项用于开发可在移动客户端上快速加载的网页的知名技术。AMP 是一组由 JavaScript 支持的 HTML 标记，可轻松实现更加注重性能和安全性的功能。[AMP 组件](https://amp.dev/documentation/components/)种类繁多，覆盖了包括轮播、响应式表单元素以及从远程端点检索新内容在内的各种功能。
 
-AMP 电子邮件格式提供了可在电子邮件中使用的[一部分 AMP 组件](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)。AMP 电子邮件的收件人可以直接在电子邮件中查看 AMP 组件并与之交互。
+AMP 电子邮件格式提供了可在电子邮件中使用的[一部分 AMP 组件](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md)。AMP 电子邮件的收件人可以直接在电子邮件中查看 AMP 组件并与之交互。
 
 ## 所需标记
 
@@ -73,21 +73,21 @@ AMP 电子邮件必须
 
 AMP 电子邮件依赖于标准 `multipart/alternative` [MIME](https://en.wikipedia.org/wiki/MIME) 子类型，如 [RFC 1521 第 7.2.3 节](https://tools.ietf.org/html/rfc1521#section-7.2.3)所定义。
 
-_如需了解详细信息，请参阅 [AMP 电子邮件结构和渲染](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)。_
+_如需了解详细信息，请参阅 [AMP 电子邮件结构和渲染](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-structure.md)。_
 
 ## 支持的 AMP 组件 <a name="supported-amp-components"></a>
 
-_请参阅 [AMP 电子邮件支持的组件](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)。_
+_请参阅 [AMP 电子邮件支持的组件](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md)。_
 
 ## HTML 要求 <a name="html-requirements"></a>
 
-_请参阅 [AMP 电子邮件支持的 HTML](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)。_
+_请参阅 [AMP 电子邮件支持的 HTML](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-html.md)。_
 
 ## CSS 要求 <a name="css-requirements"></a>
 
 ### 支持的选择器和属性 <a name="supported-selectors-and-properties"></a>
 
-_请参阅 [AMP 电子邮件支持的 CSS](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)。_
+_请参阅 [AMP 电子邮件支持的 CSS](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-css.md)。_
 
 ### 在 AMP 文档中指定 CSS <a name="specifying-css-in-an-amp-document"></a>
 
@@ -151,4 +151,4 @@ AMPHTML 支持使用像素跟踪技术跟踪电子邮件打开状态，与常规
 
 ## 反馈与支持 <a name="feedback--support"></a>
 
-如需获得 AMP 电子邮件方面的支持以及提供相关反馈，请使用以下渠道：[持续参与](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#ongoing-participation)
+如需获得 AMP 电子邮件方面的支持以及提供相关反馈，请使用以下渠道：[持续参与](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#ongoing-participation)

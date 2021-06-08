@@ -156,7 +156,7 @@ O ambiente de tempo de execução de AMP oferece uma API de visualizador, que fo
 recebimento de mensagens entre o ambiente de tempo de execução de AMP e o visualizador. Isso torna possível
 controlar a pré-renderização dos documentos AMP, o deslizar entre artigos, e a instrumentação do ambiente
 de tempo de execução de AMP. Saiba mais sobre a API de visualizador de AMP no guia sobre
-[conectar visualizadores de AMP a páginas AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md)
+[conectar visualizadores de AMP a páginas AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md)
 . As implementações do visualizador [para a Web](https://github.com/ampproject/amp-viewer/blob/master/mobile-web/README.md)
 e [para iOS](https://github.com/ampproject/amp-viewer/tree/master/ios) estão
 disponíveis no [GitHub](https://github.com/ampproject/amp-viewer). Ainda não há

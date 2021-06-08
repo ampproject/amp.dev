@@ -83,7 +83,7 @@ $title: نظرة عميقة على AMP Analytics
 
 إذا كنت مورّد تحليلات،
 فتعرّف على المزيد بشأن
-[دمج تهيئة تحليلاتك في AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+[دمج تهيئة تحليلاتك في AMP HTML](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md).
 
 ## تحميل تهيئة بعيدة: السمة config
 

@@ -30,9 +30,9 @@ Hãy xem ví dụ này cho một quảng cáo **DoubleClick**:
 </amp-ad>
 ```
 
-Như bạn có thể thấy, đây là một cấu hình rất đơn giản. Lưu ý thuộc tính `type` (loại), thông báo về thành phần [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) của nền tảng quảng cáo mà chúng ta muốn sử dụng. Trong trường hợp này, chúng ta muốn sử dụng nền tảng [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md), vậy nên chúng ta đã đặt `doubleclick` làm giá trị.
+Như bạn có thể thấy, đây là một cấu hình rất đơn giản. Lưu ý thuộc tính `type` (loại), thông báo về thành phần [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) của nền tảng quảng cáo mà chúng ta muốn sử dụng. Trong trường hợp này, chúng ta muốn sử dụng nền tảng [DoubleClick](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md), vậy nên chúng ta đã đặt `doubleclick` làm giá trị.
 
-Thuộc tính `data-slot` độc đáo hơn. Trong [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), mọi thuộc tính bắt đầu với `data-` đều là các thuộc tính dành cho nhà cung cấp. Điều này có nghĩa không phải nhà cung cấp nào cũng cần thuộc tính cụ thể này, hay phản ứng nếu nó được cung cấp. Ví dụ, hãy so sánh ví dụ **DoubleClick** ở trên với quảng cáo thử nghiệm sau đây từ nền tảng [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md):
+Thuộc tính `data-slot` độc đáo hơn. Trong [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), mọi thuộc tính bắt đầu với `data-` đều là các thuộc tính dành cho nhà cung cấp. Điều này có nghĩa không phải nhà cung cấp nào cũng cần thuộc tính cụ thể này, hay phản ứng nếu nó được cung cấp. Ví dụ, hãy so sánh ví dụ **DoubleClick** ở trên với quảng cáo thử nghiệm sau đây từ nền tảng [A9](https://github.com/ampproject/amphtml/blob/main/ads/a9.md):
 
 ```html
 <amp-ad

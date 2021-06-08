@@ -151,4 +151,4 @@ Los eventos que aparecen a continuación se activarán en las `section` de `acco
 
 ## Validación <a name="validation"></a>
 
-Consulta las [reglas de amp-accordion](https://github.com/ampproject/amphtml/blob/master/extensions/amp-accordion/validator-amp-accordion.protoascii) en la especificación de la herramienta de validación de AMP.
+Consulta las [reglas de amp-accordion](https://github.com/ampproject/amphtml/blob/main/extensions/amp-accordion/validator-amp-accordion.protoascii) en la especificación de la herramienta de validación de AMP.

@@ -20,7 +20,7 @@ Bu belge, AMP üçüncü taraf beklentilerini özetler ve katkı seviyelerini ta
 
 # Katkıda bulunma kılavuzları
 
-Tüm genel katkılar [CONTRIBUTING.md içindeki AMPHTML kılavuzlarına](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md) dayalıdır. Üçüncü tarafların katkılarını çeşitli derecelerde test etmelerini, devam ettirmelerini ve güncellemelerini bekliyoruz.
+Tüm genel katkılar [CONTRIBUTING.md içindeki AMPHTML kılavuzlarına](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md) dayalıdır. Üçüncü tarafların katkılarını çeşitli derecelerde test etmelerini, devam ettirmelerini ve güncellemelerini bekliyoruz.
 
 Tüm katkı seviyelerinin dahil edilme hakkı kazanması için şunları karşılaması gerekir:
 
@@ -48,7 +48,7 @@ Seviye 1 katkıları mevcut bileşenlerin özellik mantığından yararlanır. �
 
 Üçüncü taraflar, işlevlerini uygulamak için sağlanan API'leri kullanarak mevcut uzantılara yapılandırmalar veya özellikler eklerler. Eğer böyle bir bileşen mevcut değilse, yeni bir bileşen önerebilirler.
 
-AMP bilgi havuzunda kontrol edilen tek üçüncü tarafa özgü mantık, bir üçüncü taraf yapılandırmasıdır. Var olan bir 1. seviye katkısına yeni bir üçüncü taraf eklemek genellikle bir tasarım incelemesine ihtiyaç duymaz. Üçüncü taraflar, [Reklam ağlarını AMP'ye entegre etme](https://github.com/ampproject/amphtml/blob/master/ads/README.md) gibi bileşen entegrasyon belgelerini izleyebilir.
+AMP bilgi havuzunda kontrol edilen tek üçüncü tarafa özgü mantık, bir üçüncü taraf yapılandırmasıdır. Var olan bir 1. seviye katkısına yeni bir üçüncü taraf eklemek genellikle bir tasarım incelemesine ihtiyaç duymaz. Üçüncü taraflar, [Reklam ağlarını AMP'ye entegre etme](https://github.com/ampproject/amphtml/blob/main/ads/README.md) gibi bileşen entegrasyon belgelerini izleyebilir.
 
 ### Üçüncü taraftan beklentiler
 
@@ -61,9 +61,9 @@ AMP bilgi havuzunda kontrol edilen tek üçüncü tarafa özgü mantık, bir ü�
 
 [**amp-ad**](../../../components/reference/amp-ad.md)
 
-Reklam sağlayıcıları, [<code>amp-ad</code>](https://github.com/ampproject/amphtml/tree/master/ads#overview) adına destek eklemek için [geliştirmeye genel bakış](../../../components/reference/amp-ad.md) ve <a>geliştirici talimatları</a> belgelerini okumalıdır. Şirketinizin sunduğu reklam teknolojisine bağlı olarak [bu entegrasyon talimatlarını ](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads) faydalı bulabilirsiniz.
+Reklam sağlayıcıları, [<code>amp-ad</code>](https://github.com/ampproject/amphtml/tree/main/ads#overview) adına destek eklemek için [geliştirmeye genel bakış](../../../components/reference/amp-ad.md) ve <a>geliştirici talimatları</a> belgelerini okumalıdır. Şirketinizin sunduğu reklam teknolojisine bağlı olarak [bu entegrasyon talimatlarını ](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads) faydalı bulabilirsiniz.
 
-Birçok reklam sağlayıcısı amp-ad gibi reklamla alakalı özellikler için destek eklemiştir. Burada reklam ağı [Criteo](https://github.com/ampproject/amphtml/pull/2299) tarafından gerçekleştirilen [örnek çekme isteğini](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md) görebilirsiniz.
+Birçok reklam sağlayıcısı amp-ad gibi reklamla alakalı özellikler için destek eklemiştir. Burada reklam ağı [Criteo](https://github.com/ampproject/amphtml/pull/2299) tarafından gerçekleştirilen [örnek çekme isteğini](https://github.com/ampproject/amphtml/blob/main/ads/criteo.md) görebilirsiniz.
 
 ## Seviye 2 katkısı
 

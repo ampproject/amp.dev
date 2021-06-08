@@ -2,26 +2,26 @@
 $title: 試験運用機能
 ---
 
-[AMP 試験運用コンポーネント](https://github.com/ampproject/amphtml/tree/master/tools/experiments)
+[AMP 試験運用コンポーネント](https://github.com/ampproject/amphtml/tree/main/tools/experiments)
 は、一般公開する前の機能としてリリースされており、**試験運用**というステータスの下で保護されています。
 
 デベロッパーやユーザーは、完全リリースされる前のこれらの機能を使用するかどうか、ご自身の意思で選択できます。
 ただし、これらの機能にはバグが含まれていたり予想外の副作用が生じたりする可能性があるため、ご利用の際は注意が必要です。
 
-## AMP Dev チャンネルを有効にする
+## AMP Beta チャンネルを有効にする
 
-AMP Dev チャンネルは、ブラウザで最新版の AMP JS ライブラリを有効にするための手段です。
+AMP Beta チャンネルは、ブラウザで最新版の AMP JS ライブラリを有効にするための手段です。
 
-AMP Dev チャンネルのリリースは**安定性が低い可能性があり**、まだすべてのユーザーに公開されていない機能が含まれている場合があります。新しいバージョンの AMP をテストする、バグを報告する、まだ全ユーザーに公開されていない新機能を使用してドキュメントを作成するなどの目的がある場合に、このオプションを選択してください。
+AMP Beta チャンネルのリリースは**安定性が低い可能性があり**、まだすべてのユーザーに公開されていない機能が含まれている場合があります。新しいバージョンの AMP をテストする、バグを報告する、まだ全ユーザーに公開されていない新機能を使用してドキュメントを作成するなどの目的がある場合に、このオプションを選択してください。
 
-Dev チャンネルは次のようなケースにおすすめです。
+Beta チャンネルは次のようなケースにおすすめです。
 
 - まだ全ユーザーに公開されていない新機能のテストや試運用。
 - サイトの品質保証（QA）に使用して AMP の次期バージョンとの互換性の確認。
 
-Dev チャンネル バージョンの AMP でのみ発生すると思われる問題が見つかった場合は、問題の詳細を添えて[問題を送信](https://github.com/ampproject/amphtml/issues/new)してください。必ず、問題が再現されるページの URL を記載してください。
+Beta チャンネル バージョンの AMP でのみ発生すると思われる問題が見つかった場合は、問題の詳細を添えて[問題を送信](https://github.com/ampproject/amphtml/issues/new)してください。必ず、問題が再現されるページの URL を記載してください。
 
-ブラウザで AMP Dev チャンネルを有効にするには、[AMP 試験運用機能のページ](https://cdn.ampproject.org/experiments.html)にアクセスして、「AMP Dev Channel」の試験運用機能を有効にします。AMP の重要な変更ついての通知を受けるには、[amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce) メーリング リストに登録してください。
+ブラウザで AMP Beta チャンネルを有効にするには、[AMP 試験運用機能のページ](https://cdn.ampproject.org/experiments.html)にアクセスして、「AMP Beta Channel」の試験運用機能を有効にします。AMP の重要な変更ついての通知を受けるには、[amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce) メーリング リストに登録してください。
 
 ## 試験運用コンポーネントを有効にする
 

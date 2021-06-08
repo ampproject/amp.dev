@@ -151,4 +151,4 @@ Les événements ci-dessous sont déclenchés sur les éléments `section` de `a
 
 ## Validation <a name="validation"></a>
 
-Consultez les [règles relatives à amp-accordion](https://github.com/ampproject/amphtml/blob/master/extensions/amp-accordion/validator-amp-accordion.protoascii) dans les spécifications du validateur AMP.
+Consultez les [règles relatives à amp-accordion](https://github.com/ampproject/amphtml/blob/main/extensions/amp-accordion/validator-amp-accordion.protoascii) dans les spécifications du validateur AMP.

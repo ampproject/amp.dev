@@ -1,20 +1,30 @@
 {% if preview.mode != 'none' %}
-<div class="ap-o-code-preview {{ preview.mode if preview.mode != 'none' }}">
+<div class="ap-code-preview {{ preview.mode if preview.mode != 'none' }}">
 {% endif %}
 
   {% if preview.mode == 'inline' %}
-  <div class="ap-o-code-preview-preview">
+  <div class="ap-code-preview-preview">
      {{preview.source|render|safe}}
   </div>
   {% endif %}
 
   {% if preview.mode == 'top-frame' %}
+  {% set default_width = '533' %}
+  {% set default_height = '300' %}
   {% set initial_orientation = preview.orientation if preview.orientation else 'landscape' %}
   {% set is_landscape = True if initial_orientation == 'landscape' else False %}
+  {% set initial_width = default_width if initial_orientation == 'landscape' else default_height %}
+  {% set initial_height = default_height if initial_orientation == 'landscape' else default_width %}
   <amp-state id="orientation{{ preview.index }}">
     <script type="application/json">
       {{ is_landscape|lower }}
     </script>
+  </amp-state>
+  <amp-state id="dimension{{ preview.index }}">
+    <script type="application/json">{
+      "width": {{initial_width}},
+      "height": {{initial_height}}
+    }</script>
   </amp-state>
   <amp-state id="example{{ preview.index }}">
     <script type="application/json">
@@ -22,51 +32,45 @@
     </script>
   </amp-state>
 
-  <div class="ap-o-code-preview-top-preview ap-o-code-preview-top-preview-{{ preview.index }}">
+  <div class="ap-code-preview-top-preview ap-code-preview-top-preview-{{ preview.index }}">
 
-    <div class="ap-o-code-preview-controls">
-      <button {{ 'hidden' if not is_landscape }} [hidden]="!orientation{{ preview.index }}"
-              class="ap-o-code-preview-controls-button"
+    <div class="ap-code-preview-controls">
+      <button [hidden]="!orientation{{ preview.index }}"
+              class="ap-code-preview-controls-button"
               on="tap:
-                  AMP.setState({orientation{{ preview.index }}: false}),
-                  iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-landscape'),
-                  iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-portrait'),
-                  bgContainer{{ preview.index }}.toggleClass(class='initial-{{ initial_orientation }}', force=false)">
-        <div class="ap-a-ico ap-o-code-preview-controls-icon">
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#orientation-toggle"></use></svg>
-        </div>
-      </button>
-      <button {{ 'hidden' if is_landscape }} [hidden]="orientation{{ preview.index }}"
-              class="ap-o-code-preview-controls-button"
-              on="tap:
-                  AMP.setState({orientation{{ preview.index }}: true}),
-                  iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-portrait'),
-                  iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-landscape'),
-                  bgContainer{{ preview.index }}.toggleClass(class='initial-{{ initial_orientation }}', force=false)">
-        <div class="ap-a-ico ap-o-code-preview-controls-icon">
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#orientation-toggle"></use></svg>
-        </div>
+                  AMP.setState({
+                    orientation{{ preview.index }}: true,
+                    dimension{{ preview.index }}: {
+                      width: dimension{{ preview.index }}.height,
+                      height: dimension{{ preview.index }}.width,
+                    }
+                  })">
+          <div class="ap-a-ico ap-code-preview-controls-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#orientation-toggle"></use></svg>
+          </div>
       </button>
 
-      <button class="ap-o-code-preview-controls-button"
+      <button class="ap-code-preview-controls-button"
               on="tap:AMP.setState({'example{{ preview.index }}': '{{ preview.url + '?' }}' + random()})">
-        <div class="ap-a-ico ap-o-code-preview-controls-icon">
+        <div class="ap-a-ico ap-code-preview-controls-icon">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use></svg>
         </div>
       </button>
     </div>
 
-    <div id="iframeContainer{{ preview.index }}" class="ap-o-code-preview-preview-iframe ap-o-code-preview-preview-iframe-{{ initial_orientation }}">
-      <amp-iframe class="ap-o-code-preview-iframe"
-                  src="{{ preview.url }}"
-                  [src]="example{{ preview.index }}"
-                  layout="flex-item"
-                  sandbox="allow-scripts allow-popups allow-same-origin"
-                  frameborder="0">
-        <div placeholder></div>
-      </amp-iframe>
-      <div id="bgContainer{{ preview.index }}" class="ap-o-code-preview-preview-iframe-background initial-{{ initial_orientation }}"></div>
-    </div>
+    <amp-iframe id="iframeContainer{{ preview.index }}"
+                class="ap-code-preview-iframe"
+                src="{{ preview.url }}"
+                layout="intrinsic"
+                width="{{ initial_width }}"
+                [width]="dimension{{ preview.index }}.width"
+                height="{{ initial_height }}"
+                [height]="dimension{{ preview.index }}.height"
+                [src]="example{{ preview.index }}"
+                sandbox="allow-scripts allow-popups allow-same-origin"
+                frameborder="0">
+      <div placeholder></div>
+    </amp-iframe>
   </div>
   {% endif %}
 
@@ -83,7 +87,7 @@
       "{{ preview.url }}"
     </script>
   </amp-state>
-  {% set base_class = 'ap-o-code-preview-side-preview' %}
+  {% set base_class = 'ap-code-preview-side-preview' %}
   <div class="{{base_class}}"
        [class]="hidePreview{{ preview.index }} != 1 ? '{{base_class}} {{base_class}}-active' : '{{base_class}}'">
 
@@ -111,16 +115,16 @@
       {% endfor %}
     </div>
 
-    <button class="ap-o-code-preview-reload" on="tap:AMP.setState({'example{{ preview.index }}': '{{ preview.url + '?' }}' + random()})">
+    <button class="ap-code-preview-reload" on="tap:AMP.setState({'example{{ preview.index }}': '{{ preview.url + '?' }}' + random()})">
       <div class="ap-a-ico">
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#reload"></use></svg>
       </div>
     </button>
 
     <div id="previewIframe{{ preview.index }}"
-         class="ap-o-code-preview-side-preview-frame ap-o-code-preview-side-preview-frame-portrait"
-         [class]="'ap-o-code-preview-side-preview-frame ap-o-code-preview-side-preview-frame-' + orientation{{ preview.index }}">
-      <div class="ap-o-code-preview-side-preview-sizer"></div>
+         class="ap-code-preview-side-preview-frame ap-code-preview-side-preview-frame-portrait"
+         [class]="'ap-code-preview-side-preview-frame ap-code-preview-side-preview-frame-' + orientation{{ preview.index }}">
+      <div class="ap-code-preview-side-preview-sizer"></div>
       <amp-iframe layout="fill"
                   sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation allow-top-navigation"
                   allowfullscreen allowpaymentrequest frameborder="0"

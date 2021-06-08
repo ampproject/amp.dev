@@ -20,7 +20,7 @@ Niniejszy dokument przedstawia w zarysie oczekiwania AMP wobec stron trzecich i 
 
 # Wytyczne dotyczące wnoszenia wkładu
 
-Wszystkie ogólne wkłady podlegają [uniwersalnym wytycznym AMPHTML ze strony CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Oczekujemy, że strona trzecia będzie w różnym stopniu testować, prowadzić i aktualizować swój wkład.
+Wszystkie ogólne wkłady podlegają [uniwersalnym wytycznym AMPHTML ze strony CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md). Oczekujemy, że strona trzecia będzie w różnym stopniu testować, prowadzić i aktualizować swój wkład.
 
 Aby kwalifikować się do włączenia, wszystkie poziomy wkładu muszą:
 
@@ -48,7 +48,7 @@ Wkład poziomu 1 wykorzystuje logikę funkcji istniejących składników. Ładuj
 
 Strony trzecie dodają konfiguracje lub funkcje do istniejących rozszerzeń, używając dostarczonych interfejsów API, aby zaimplementować ich funkcje. Jeśli taki składnik nie istnieje, mogą zaproponować nowy.
 
-Jedyną logiką specyficzną dla strony trzeciej badaną w repozytorium AMP jest konfiguracja strony trzeciej. Dodanie nowej strony trzeciej do istniejącego wkładu poziomu 1 zazwyczaj nie wymaga analizy projektu. Strony trzecie mogą postępować zgodnie z dokumentacją integracji składnika, taką jak [Integrowanie sieci reklamowych z AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+Jedyną logiką specyficzną dla strony trzeciej badaną w repozytorium AMP jest konfiguracja strony trzeciej. Dodanie nowej strony trzeciej do istniejącego wkładu poziomu 1 zazwyczaj nie wymaga analizy projektu. Strony trzecie mogą postępować zgodnie z dokumentacją integracji składnika, taką jak [Integrowanie sieci reklamowych z AMP](https://github.com/ampproject/amphtml/blob/main/ads/README.md).
 
 ### Oczekiwania wobec stron trzecich
 
@@ -61,9 +61,9 @@ Jedyną logiką specyficzną dla strony trzeciej badaną w repozytorium AMP jest
 
 [**amp-ad**](../../../components/reference/amp-ad.md)
 
-Dostawcy reklam powinni przeczytać [ogólne informacje programistyczne](https://github.com/ampproject/amphtml/tree/master/ads#overview) oraz [instrukcje dla programistów.](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request), aby móc dodać Twoją obsługę do składnika [`amp-ad`](../../../components/reference/amp-ad.md). W zależności od technologii reklamy, którą oferuje Twoja firma, przydatne mogą być [te instrukcje integracji](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads).
+Dostawcy reklam powinni przeczytać [ogólne informacje programistyczne](https://github.com/ampproject/amphtml/tree/main/ads#overview) oraz [instrukcje dla programistów.](https://github.com/ampproject/amphtml/tree/main/ads#developer-guidelines-for-a-pull-request), aby móc dodać Twoją obsługę do składnika [`amp-ad`](../../../components/reference/amp-ad.md). W zależności od technologii reklamy, którą oferuje Twoja firma, przydatne mogą być [te instrukcje integracji](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads).
 
-Wielu dostawców reklamy już dodało obsługę funkcji związanych z reklamą, takich jak amp-ad. Oto [przykład żądania ściągnięcia](https://github.com/ampproject/amphtml/pull/2299) od sieci reklamowej [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
+Wielu dostawców reklamy już dodało obsługę funkcji związanych z reklamą, takich jak amp-ad. Oto [przykład żądania ściągnięcia](https://github.com/ampproject/amphtml/pull/2299) od sieci reklamowej [Criteo](https://github.com/ampproject/amphtml/blob/main/ads/criteo.md).
 
 ## Wkład poziomu 2
 

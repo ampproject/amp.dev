@@ -271,7 +271,7 @@ Atribut [`auto-advance-after`](https://amp.dev/documentation/components/amp-stor
 
 ## Pengalaman desktop
 
-Format Cerita Web mendukung sebuah [pengalaman desktop opsional](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). Ini mengubah pengalaman desktop menjadi mode bleed penuh menghanyutkan, menggantikan pengalaman tiga panel potret default dan memungkinkan pengguna perangkat seluler untuk melihat saat perangkat mereka dipegang secara horizontal.
+Format Cerita Web mendukung sebuah [pengalaman desktop opsional](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). Ini mengubah pengalaman desktop menjadi mode bleed penuh menghanyutkan, menggantikan pengalaman tiga panel potret default dan memungkinkan pengguna perangkat seluler untuk melihat saat perangkat mereka dipegang secara horizontal.
 
 Pilih dukungan desktop dengan menambahkan atribut `supports-landscape` ke komponen `<amp-story>`.
 

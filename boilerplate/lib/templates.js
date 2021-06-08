@@ -20,7 +20,7 @@ const Handlebars = require('handlebars');
 const io = require('./io');
 const path = require('path');
 const hljs = require('highlight.js');
-const sass = require('node-sass');
+const sass = require('sass');
 
 const FRONTEND_DIR = '../../frontend/scss';
 const TEMPLATES_DIR = '../templates';
@@ -77,7 +77,7 @@ function readTemplate(name) {
   if (ext === 'js') {
     ext = 'javascript';
   }
-  string = hljs.highlight(ext, string).value;
+  string = hljs.highlight(string, {language: ext}).value;
   if (ext === 'html') {
     string = highlightSections(string);
   }

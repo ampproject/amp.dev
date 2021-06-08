@@ -16,8 +16,8 @@ author: CrystalOnScript
 
 amp.dev 콘텐츠는 [amp.dev](https://github.com/ampproject/amp.dev) 및 [AMPHTML](https://github.com/ampproject/amphtml)의 저장소 두 곳에서 가져옵니다. 컴포넌트의 모든 참조 문서는 AMPHTML의 'builtins' 또는 'extensions'에 포함되어 있습니다.
 
-- [기본 제공 컴포넌트 ](https://github.com/ampproject/amphtml/tree/master/builtins)
-- [컴포넌트](https://github.com/ampproject/amphtml/tree/master/extensions)
+- [기본 제공 컴포넌트 ](https://github.com/ampproject/amphtml/tree/main/builtins)
+- [컴포넌트](https://github.com/ampproject/amphtml/tree/main/extensions)
 - [코스](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/courses)
 - [예제](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/examples)
 - [가이드 & 튜토리얼](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/guides-and-tutorials)

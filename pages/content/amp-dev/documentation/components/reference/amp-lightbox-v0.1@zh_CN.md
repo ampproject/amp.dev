@@ -152,7 +152,7 @@ AMPHTML 广告不允许使用可滚动的灯箱。
 
 ##### 在友好型 iframe 中（例如来自 AMP 缓存） <a name="on-friendly-iframes-eg-coming-from-an-amp-cache"></a>
 
-<amp-img alt="友好型 iframe 中的灯箱广告" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-fie.gif" layout="fixed">
+<amp-img alt="友好型 iframe 中的灯箱广告" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/lightbox-ad-fie.gif" layout="fixed">
   <noscript>
     <img alt="友好型 iframe 中的灯箱广告" src="../../spec/img/lightbox-ad-fie.gif">
     </noscript>
@@ -160,7 +160,7 @@ AMPHTML 广告不允许使用可滚动的灯箱。
 
 ##### 在第三方 iframe 中（例如在 AMP 缓存之外） <a name="on-third-party-iframes-eg-outside-the-amp-cache"></a>
 
-<amp-img alt="第三方 iframe 中的灯箱广告" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-3p.gif" layout="fixed">
+<amp-img alt="第三方 iframe 中的灯箱广告" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/lightbox-ad-3p.gif" layout="fixed">
   <noscript>
     <img alt="第三方 iframe 中的灯箱广告" src="../../spec/img/lightbox-ad-3p.gif">
     </noscript>
@@ -168,4 +168,4 @@ AMPHTML 广告不允许使用可滚动的灯箱。
 
 ## 验证 <a name="validation"></a>
 
-请参阅 AMP 验证工具规范中的 [amp-lightbox 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-lightbox/validator-amp-lightbox.protoascii)。
+请参阅 AMP 验证工具规范中的 [amp-lightbox 规则](https://github.com/ampproject/amphtml/blob/main/extensions/amp-lightbox/validator-amp-lightbox.protoascii)。

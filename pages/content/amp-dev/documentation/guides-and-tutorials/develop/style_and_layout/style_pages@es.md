@@ -20,7 +20,7 @@ Al igual que el resto de las páginas web, las páginas AMP extraen su estilo de
 
 Los estilos pueden estar en el encabezado del documento o como atributos de <code>style</code> línea (consulte <a>Agregar estilos a una página</a>). Pero puede usar preprocesadores CSS y plantillas para crear páginas estáticas para administrar mejor su contenido.
 
-[tip type="note"] **&nbsp;NOTA –** Los componentes de AMP incluyen estilos predeterminados para facilitar en gran medida la creación de páginas adaptables. Estos estilos están definidos en el atributo [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css). [/tip]
+[tip type="note"] **&nbsp;NOTA –** Los componentes de AMP incluyen estilos predeterminados para facilitar en gran medida la creación de páginas adaptables. Estos estilos están definidos en el atributo [`amp.css`](https://github.com/ampproject/amphtml/blob/main/css/amp.css). [/tip]
 
 ## Disallowed styles
 

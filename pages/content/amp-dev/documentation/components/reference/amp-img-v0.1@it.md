@@ -200,4 +200,4 @@ Il sistema di layout AMP richiede le proporzioni di un'immagine prima di recuper
 
 # Convalida <a name="validation"></a>
 
-Consulta le [regole di amp-img](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) nelle specifiche di convalida AMP.
+Consulta le [regole di amp-img](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) nelle specifiche di convalida AMP.

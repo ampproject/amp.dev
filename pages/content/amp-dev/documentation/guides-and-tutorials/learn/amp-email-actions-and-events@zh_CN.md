@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-email-actions-and-events.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-email-actions-and-events.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -30,7 +30,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-[tip type="note"] 本文档介绍适用于 AMP 电子邮件格式的操作和事件。有关 AMP 网站、故事和广告，请参阅[操作和事件](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md)。[/tip]
+[tip type="note"] 本文档介绍适用于 AMP 电子邮件格式的操作和事件。有关 AMP 网站、故事和广告，请参阅[操作和事件](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-actions-and-events.md)。[/tip]
 
 `on` 属性用于在元素上安装事件处理脚本。受支持的事件取决于元素。
 
@@ -426,7 +426,7 @@ AMP 还定义了全局 `hide`、`show` 和 `toggleVisibility` 操作，您可以
   </tr>
   <tr>
     <td><code>changeToLayoutContainer</code></td>
-    <td>将 <code>amp-list</code> 布局更新为 <code>layout="CONTAINTER"</code>，以便<a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">重新动态调整大小</a>。</td>
+    <td>将 <code>amp-list</code> 布局更新为 <code>layout="CONTAINTER"</code>，以便<a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">重新动态调整大小</a>。</td>
   </tr>
   <tr>
     <td> <code>fetch-error</code>(low-trust)</td>

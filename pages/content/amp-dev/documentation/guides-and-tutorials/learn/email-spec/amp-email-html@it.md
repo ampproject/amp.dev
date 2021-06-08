@@ -7,7 +7,7 @@ toc: true
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-html.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -31,7 +31,7 @@ limitations under the License.
 
 Nota: questo elenco non è dettato da norme ed è riportato a solo scopo informativo. Le regole dello strumento di convalida AMP sono autorevoli in merito agli attributi e ai tag HTML supportati.
 
-Oltre ai [componenti AMP supportati](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md), i seguenti tag HTML sono consentiti nel formato AMP per e-mail.
+Oltre ai [componenti AMP supportati](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md), i seguenti tag HTML sono consentiti nel formato AMP per e-mail.
 
 ## Tag supportati <a name="supported-tags"></a>
 

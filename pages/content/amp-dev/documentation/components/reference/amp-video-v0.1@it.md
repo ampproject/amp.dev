@@ -77,7 +77,7 @@ Il componente `amp-video` accetta fino a quattro tipi unici di nodi HTML come se
 
 ## Analisi dei dati <a name="analytics"></a>
 
-`amp-video` supporta l'analisi dei dati per impostazione predefinita. Per ulteriori informazioni, consulta la sezione [Analisi dei dati video](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
+`amp-video` supporta l'analisi dei dati per impostazione predefinita. Per ulteriori informazioni, consulta la sezione [Analisi dei dati video](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-video-analytics.md).
 
 ## Attributi <a name="attributes"></a>
 
@@ -96,7 +96,7 @@ Il componente `amp-video` accetta fino a quattro tipi unici di nodi HTML come se
         <td width="40%"><strong>autoplay</strong></td>
         <td>Se questo attributo è presente e il browser supporta la riproduzione automatica, il video verrà riprodotto
             automaticamente non appena sarà visibile. Le condizioni che il componente deve soddisfare per
-            essere visualizzato <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-video-interface.md#autoplay">sono elencate nella specifica dei video in AMP</a>.</td>
+            essere visualizzato <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md#autoplay">sono elencate nella specifica dei video in AMP</a>.</td>
         </tr>
         <tr>
           <td width="40%"><strong>controls</strong></td>
@@ -134,7 +134,7 @@ Il componente `amp-video` accetta fino a quattro tipi unici di nodi HTML come se
             </tr>
             <tr>
               <td width="40%"><strong>rotate-to-fullscreen</strong></td>
-              <td>Se il video è visibile, viene visualizzato a schermo intero dopo che l'utente ha ruotato il dispositivo in modalità orizzontale. Per ulteriori informazioni, consulta la <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-video-interface.md#rotate-to-fullscreen">specifica dei video in AMP</a>.</td>
+              <td>Se il video è visibile, viene visualizzato a schermo intero dopo che l'utente ha ruotato il dispositivo in modalità orizzontale. Per ulteriori informazioni, consulta la <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md#rotate-to-fullscreen">specifica dei video in AMP</a>.</td>
             </tr>
             <tr>
               <td width="40%"><strong>common attributes</strong></td>
@@ -187,4 +187,4 @@ Per un esempio dettagliato, visita la sezione [Overlay click-to-play per amp-vid
 
 ## Convalida <a name="validation"></a>
 
-Consulta le [regole amp-video](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) nella specifica dello strumento di convalida AMP.
+Consulta le [regole amp-video](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) nella specifica dello strumento di convalida AMP.

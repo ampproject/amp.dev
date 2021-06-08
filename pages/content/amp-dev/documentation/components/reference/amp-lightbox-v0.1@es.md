@@ -151,7 +151,7 @@ En los ejemplos siguientes se muestra la transición de un anuncio AMP HTML que 
 
 ##### En friendly iframes (p. ej., procedente de una caché AMP) <a name="on-friendly-iframes-eg-coming-from-an-amp-cache"></a>
 
-<amp-img alt="lightbox ad in friendly iframe" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-fie.gif" layout="fixed">
+<amp-img alt="lightbox ad in friendly iframe" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/lightbox-ad-fie.gif" layout="fixed">
   <noscript>
     <img alt="lightbox ad in friendly iframe" src="../../spec/img/lightbox-ad-fie.gif">
     </noscript>
@@ -159,7 +159,7 @@ En los ejemplos siguientes se muestra la transición de un anuncio AMP HTML que 
 
 ##### En iframes de terceros (p. ej., no procedente de una caché AMP) <a name="on-third-party-iframes-eg-outside-the-amp-cache"></a>
 
-<amp-img alt="lightbox ad in 3p iframe" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-3p.gif" layout="fixed">
+<amp-img alt="lightbox ad in 3p iframe" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/lightbox-ad-3p.gif" layout="fixed">
   <noscript>
     <img alt="lightbox ad in 3p iframe" src="../../spec/img/lightbox-ad-3p.gif">
     </noscript>
@@ -167,4 +167,4 @@ En los ejemplos siguientes se muestra la transición de un anuncio AMP HTML que 
 
 ## Validación <a name="validation"></a>
 
-Consulta las [reglas de amp-lightbox](https://github.com/ampproject/amphtml/blob/master/extensions/amp-lightbox/validator-amp-lightbox.protoascii) en la especificación de la herramienta de validación de AMP.
+Consulta las [reglas de amp-lightbox](https://github.com/ampproject/amphtml/blob/main/extensions/amp-lightbox/validator-amp-lightbox.protoascii) en la especificación de la herramienta de validación de AMP.

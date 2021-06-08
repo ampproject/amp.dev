@@ -92,11 +92,11 @@ msgstr "动画和互动"
 
 #: /content/amp-dev/about/stories.html:255
 msgid "Check out Web Stories on the web"
-msgstr "查看网络上的网页故事"
+msgstr "查看网络上的 Web Stories"
 
 #: /content/amp-dev/about/stories.html:327
 msgid "Story Ads are full screen, single page ads that appear within Web Stories. Advertisers/ Publishers can invite users to a web page, an AMP page or an App with a single tap. A story ad has a rich, flexible canvas that allows images, videos, animations or a combination of all those elements.<br>  Story ads are supported by Google Ad Manager and Google DV360 (Beta) with additional ad server support coming soon!"
-msgstr "故事广告是显示在网页故事中的全屏单页广告。广告客户/发布商可以邀请用户通过一次点按访问网页、AMP 网页或应用。故事广告具有丰富灵活的画布，可以显示图片、视频、动画或所有这些元素的组合。<br>故事广告由 Google Ad Manager 和 Google DV360 (Beta) 支持，并且即将获得更多广告服务器支持！"
+msgstr "故事广告是显示在 Web Stories 中的全屏单页广告。广告客户/发布商可以邀请用户通过一次点按访问网页、AMP 网页或应用。故事广告具有丰富灵活的画布，可以显示图片、视频、动画或所有这些元素的组合。<br>故事广告由 Google Ad Manager 和 Google DV360 (Beta) 支持，并且即将获得更多广告服务器支持！"
 
 #: /content/amp-dev/about/stories.html:415
 msgid "Discover All Templates"
@@ -1080,8 +1080,8 @@ msgid "You've read this document a dozen times but it doesn't really cover all o
 msgstr "您已多次阅读本文档，但它仍未能涵盖您的所有问题？也许其他人也这么觉得：在 Stack Overflow 上与他们联系。"
 
 #: frontend/templates/views/partials/experiments/experiments.j2:4
-msgid "Enable the experiment via the button below. Some components require the AMP Dev Channel to be enabled as well."
-msgstr "通过下方按钮启用实验。某些组件需要同时启用 AMP Dev Channel。"
+msgid "Enable the experiment via the button below. Some components require the AMP Beta Channel to be enabled as well."
+msgstr "通过下方按钮启用实验。某些组件需要同时启用 AMP Beta Channel。"
 
 #: frontend/templates/views/partials/structured-data.j2:54
 msgid "Example  "
@@ -1161,7 +1161,7 @@ msgstr "AMP 使用入门"
 
 #: /content/amp-dev/index.html:414
 msgid "As a source for breaking news and information, Web Stories allow us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage."
-msgstr "作为突发新闻和信息的来源，网页故事可让我们汇聚多个元素展现我们的优质新闻。通过结合报道、摄影、视频和动态图形，为搜索我们报道的读者提供一个更直观的入口点。"
+msgstr "作为突发新闻和信息的来源，Web Stories 可让我们汇聚多个元素展现我们的优质新闻。通过结合报道、摄影、视频和动态图形，为搜索我们报道的读者提供一个更直观的入口点。"
 
 #: /content/amp-dev/index.html:416
 msgid "Greg Manifold, Design Director of The Washington Post"
@@ -1209,7 +1209,7 @@ msgstr "您无需下载 AMP，也无需安装。<br/>它是一个开放源代码
 
 #: /content/amp-dev/about/stories.html:90
 msgid "Web Stories"
-msgstr "网页故事"
+msgstr "Web Stories"
 
 #: /content/amp-dev/about/stories.html:94
 msgid "Start developing"
@@ -1221,7 +1221,7 @@ msgstr "讲述故事"
 
 #: /content/amp-dev/about/stories.html:106
 msgid "Web<br> Stories"
-msgstr "网页<br>故事"
+msgstr "Web<br> Stories"
 
 #: /content/amp-dev/about/stories.html:107
 msgid "visual storytelling for the open web"
@@ -1229,11 +1229,11 @@ msgstr "开放网络的视觉故事"
 
 #: /content/amp-dev/about/stories.html:108
 msgid "Web Stories immerse your readers in fast-loading full-screen experiences. Easily create visual narratives, with engaging animations and tappable interactions. The Web Story format (formerly known as AMP Stories) is free and part of the open web and are available for everyone to try on their websites. They can be shared and embedded across the web without being confined to a closed ecosystem or platform."
-msgstr "网页故事可使您的读者沉浸在快速加载的全屏体验中。轻松创作具有引人入胜的动画和可点按的交互内容的视觉叙事。网页故事格式（之前称为 AMP 故事）免费，是开放网络的一部分，并且每个人都能在自己的网站上尝试。网页故事可以在网络上共享和嵌入，不受封闭的生态系统或平台的局限。"
+msgstr "Web Stories 可使您的读者沉浸在快速加载的全屏体验中。轻松创作具有引人入胜的动画和可点按的交互内容的视觉叙事。Web Stories 格式（之前称为 AMP 故事）免费，是开放网络的一部分，并且每个人都能在自己的网站上尝试。Web Stories 可以在网络上共享和嵌入，不受封闭的生态系统或平台的局限。"
 
 #: /content/amp-dev/about/stories.html:109
 msgid "Web Stories provide content publishers with a mobile-focused format for delivering news and information as visually rich, tap-through stories. Web Stories offers a robust set of advertising opportunities for advertisers and publishers to reach a unique audience on the web with immersive experiences."
-msgstr "网页故事为内容发布商提供了一个聚焦移动设备的格式，用于将新闻和信息作为视觉丰富的点按式故事进行传播。网页故事以沉浸式体验吸引网络上的独特受众，为广告客户和发布商提供了强大的广告机会。"
+msgstr "Web Stories 为内容发布商提供了一个聚焦移动设备的格式，用于将新闻和信息作为视觉丰富的点按式故事进行传播。Web Stories 以沉浸式体验吸引网络上的独特受众，为广告客户和发布商提供了强大的广告机会。"
 
 #: /content/amp-dev/about/stories.html:119
 msgid "Build your first story"
@@ -1249,7 +1249,7 @@ msgstr "阅读成功案例"
 
 #: /content/amp-dev/about/stories.html:175
 msgid "The benefits of Web Stories"
-msgstr "网页故事的优点"
+msgstr "Web Stories 的优点"
 
 #: /content/amp-dev/about/stories.html:223
 msgid "Read on how AMP works"
@@ -1257,7 +1257,7 @@ msgstr "继续了解 AMP 的工作原理"
 
 #: /content/amp-dev/about/stories.html:235
 msgid "Web Stories are built with visually rich media, and whether you utilize pictures, videos or GIF assets is up to you. Images and videos expand to visually fill the readers’ screens, providing a smooth and fully engaging experience. AMP allows you to specify the file type to account for the user’s network connection and browser capabilities."
-msgstr "网页故事是通过视觉丰富的媒体构建的，是否使用图片、视频或 GIF 素材资源则由您决定。图片和视频将扩展，在视觉上充满读者的屏幕，从而提供流畅且完全引人入胜的体验。AMP 允许您指定文件类型，以考虑用户的网络连接和浏览器功能。"
+msgstr "Web Stories 是通过视觉丰富的媒体构建的，是否使用图片、视频或 GIF 素材资源则由您决定。图片和视频将扩展，在视觉上充满读者的屏幕，从而提供流畅且完全引人入胜的体验。AMP 允许您指定文件类型，以考虑用户的网络连接和浏览器功能。"
 
 #: /content/amp-dev/about/stories.html:234
 msgid "Images, videos and GIFs"
@@ -1277,7 +1277,7 @@ msgstr "轻松创建可使读者保持参与的视觉效果和可点按的交互
 
 #: /content/amp-dev/about/stories.html:325
 msgid "Web Stories <br />Monetization Options"
-msgstr "网页故事<br />获利选项"
+msgstr "Web Stories<br />获利选项"
 
 #: /content/amp-dev/about/stories.html:326
 msgid "Single Page Story Ad"
@@ -1586,8 +1586,8 @@ msgstr "一致性和可扩展性"
 msgid "AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms."
 msgstr "AMP 网页几乎可以瞬时加载，使您能够在所有设备和平台上提供一致的快速体验。"
 
-msgid "You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal."
-msgstr "您通常可以在几天内完成整个归档的转换，特别是在使用常见的 CMS（例如 Wordpress 或 Drupal）时。"
+msgid "You can often convert your entire archive in days especially if you use a popular CMS such as WordPress or Drupal."
+msgstr "您通常可以在几天内完成整个归档的转换，特别是在使用常见的 CMS（例如 WordPress 或 Drupal）时。"
 
 msgid "Used by popular and global platforms like Google, Bing and Twitter, AMP allows you to ensure users from all these surfaces get an unparalleled, often instantaneous and native-feeling experience by defaulting to AMP pages when available."
 msgstr "Google、Bing 和 Twitter 等热门全球平台均已使用 AMP。通过默认应用 AMP 网页，您可以确保所有平台的用户都能获得无与伦比的瞬时原生体验。"
@@ -1617,22 +1617,22 @@ msgid "Supports analytics and bookend capabilities for viral sharing and monetiz
 msgstr "支持病毒式分享和获利的分析与书挡功能。"
 
 msgid "Web Stories are lightening fast so that your audience stays engaged and entertained."
-msgstr "网页故事具有闪电般的速度，让您的受众乐于参与互动。"
+msgstr "Web Stories 具有闪电般的速度，让您的受众乐于参与互动。"
 
 msgid "Web Stories are a new and modern way to reach existing readers."
-msgstr "网页故事是接触现有读者的崭新现代方式。"
+msgstr "Web Stories 是接触现有读者的崭新现代方式。"
 
 msgid "Web Stories enable monetization capability for publishers using full-screen immersive story ads and using affiliate links. For advertisers, Stories is a way to reach a unique audience within a new storytelling experience."
-msgstr "网页故事让发布商可以使用全屏沉浸式故事广告和联属链接实现获利。对于广告客户而言，故事是一种在新的叙事体验中吸引独特受众的方式。"
+msgstr "Web Stories 让发布商可以使用全屏沉浸式故事广告和联属链接实现获利。对于广告客户而言，故事是一种在新的叙事体验中吸引独特受众的方式。"
 
 msgid "Web Stories make the production of stories as easy as possible from a technical perspective."
-msgstr "网页故事从技术角度出发，使故事的创作尽可能简单。"
+msgstr "Web Stories 从技术角度出发，使故事的创作尽可能简单。"
 
 msgid "The Web Stories format comes with preset but flexible layout templates, standardized UI controls, and components for sharing and adding follow-on content."
-msgstr "网页故事格式提供了预置但灵活的布局模板、标准化的界面控件，以及用于分享和添加后续内容的组件。"
+msgstr "Web Stories 格式提供了预置但灵活的布局模板、标准化的界面控件，以及用于分享和添加后续内容的组件。"
 
 msgid "Web Stories are part of the open web and can be shared and embedded across sites and apps without being confined to a single ecosystem."
-msgstr "网页故事是开放网络的一部分，可以在网站和应用之间共享和嵌入，而不局限于单一生态系统。"
+msgstr "Web Stories 是开放网络的一部分，可以在网站和应用之间共享和嵌入，而不局限于单一生态系统。"
 
 msgid "AMPHTML ads are 6x faster than regular ads on AMP pages, making them more viewable, more effective and more likely to perform well. You can monitor performance and adjust pricing accordingly, and offer the most engaging ad products to optimize your ad placements. In AMP, tweaking your pages to drive higher viewability rate or views is easy for publishers using the ‘data-loading-strategy’ attribute on the `amp-ad` component."
 msgstr "AMPHTML 广告在 AMP 网页上比常规广告快 6 倍，更具浏览性、更有效并且更有可能表现良好。您可以监控效果并相应地调整价格，提供最具吸引力的广告产品来优化您的广告投放。在 AMP 中，发布商可以使用 `amp-ad` 组件上的 'data-loading-strategy' 属性轻松调整网页，提升可见率或观看次数。"
@@ -2863,8 +2863,8 @@ msgstr "用户输入"
 msgid "Validator"
 msgstr "验证器"
 
-msgid "You can often convert your entire archive in days – especially when using common CMS like Wordpress or Drupal."
-msgstr "您通常可以在几天内完成整个归档的转换，特别是在使用常见的 CMS（例如 Wordpress 或 Drupal）时。"
+msgid "You can often convert your entire archive in days – especially when using common CMS like WordPress or Drupal."
+msgstr "您通常可以在几天内完成整个归档的转换，特别是在使用常见的 CMS（例如 WordPress 或 Drupal）时。"
 
 msgid "All"
 msgstr "全部"
@@ -2980,10 +2980,8 @@ msgstr "<p>负责用户对 AMP 内容（amp-subscriptions, amp-access 和相关�
 msgid "What is the Accelerated Mobile Pages project?"
 msgstr "什么是 Accelerated Mobile Pages 项目？"
 
-msgid "<p>The Accelerated Mobile Pages (AMP) Project is an open source initiative that came out of discussions between publishers and technology companies about the need to improve the entire mobile content ecosystem for everyone -- publishers, consumer platforms, advertisers, creators, and users.</p>\n"
-"<p>Today, the expectation is that content should load super fast and be easy to explore. The reality is that content can take several seconds to load, or, because the user abandons the slow page, never fully loads at all. Accelerated Mobile Pages are web pages designed to load near instantaneously -- they are a step towards a better mobile web for all.</p>"
-msgstr "<p>Accelerated Mobile Pages (AMP) 是一项开放源代码计划，诞生自发布商与技术公司之间的讨论，讨论的主题是为发布商、消费平台、广告客户、创作者和用户等所有相关方改善整个移动内容生态系统。</p>\n"
-"<p>今天，人们期望内容能够极快加载并且易于浏览。现实情况却是，内容可能需要几秒钟才能完成加载，或者由于用户关闭了慢速网页而根本无法完全加载。Accelerated Mobile Pages 能够瞬间完成加载，将为所有人提供更好的移动网络体验。</p>"
+msgid "<p>The Accelerated Mobile Pages (AMP) Project is an open source initiative that came out of discussions between publishers and technology companies about the need to improve the entire mobile content ecosystem for everyone -- publishers, consumer platforms, advertisers, creators, and users.</p>\n<p>Today, the expectation is that content should load super fast and be easy to explore. The reality is that content can take several seconds to load, or, because the user abandons the slow page, never fully loads at all. Accelerated Mobile Pages are web pages designed to load near instantaneously -- they are a step towards a better mobile web for all.</p>"
+msgstr "<p>Accelerated Mobile Pages (AMP) 是一项开放源代码计划，诞生自发布商与技术公司之间的讨论，讨论的主题是为发布商、消费平台、广告客户、创作者和用户等所有相关方改善整个移动内容生态系统。</p>\n<p>今天，人们期望内容能够极快加载并且易于浏览。现实情况却是，内容可能需要几秒钟才能完成加载，或者由于用户关闭了慢速网页而根本无法完全加载。Accelerated Mobile Pages 能够瞬间完成加载，将为所有人提供更好的移动网络体验。</p>"
 
 msgid "What are the benefits of Accelerated Mobile Pages?"
 msgstr "Accelerated Mobile Pages 有哪些优势？"
@@ -2994,14 +2992,8 @@ msgstr "<p>速度至关重要，瞬时是理想选择。研究表明，加载速
 msgid "How do Accelerated Mobile Pages work?"
 msgstr "Accelerated Mobile Pages 如何运作？"
 
-msgid "<p>Accelerated Mobile Pages are just like any other HTML page, but with a limited set of allowed technical functionality that is defined and governed by the open source AMP spec. Just like all web pages, Accelerated Mobile Pages will load in any modern browser or app webview.</p>\n"
-"<p>AMP files take advantage of various technical and architectural approaches that prioritize speed to provide a faster experience for users. AMP developers can use a rich and growing library of web components that offer the ability to embed rich media objects like video and social posts, display advertising, or collect analytics. The goal is not to homogenize how content looks and feels, but instead to build a more common technical core between pages that speeds up load times.</p>\n"
-"<p>In addition, AMP files can be cached in the cloud in order to reduce the time content takes to get to a user’s mobile device. By using the AMP format, content producers are making the content in AMP files available to be cached by third parties. Under this type of framework, publishers and advertisers continue to control their content, but platforms can easily cache or mirror the content for optimal delivery speed to users. Google has provided the <a href=\"https://developers.google.com/amp/cache/\">Google AMP Cache</a> that can be used by anyone at no cost, and all AMPs will be cached by the Google AMP Cache. Other companies may build their own AMP cache as well.</p>\n"
-"<p>In summary, the goal is that the combination of limited technical functionality with a distribution system built around caching will lead to better performing pages, and increased audience development.</p>"
-msgstr "<p>Accelerated Mobile Pages 类似于任何其他 HTML 网页，但具有一组有限的允许技术功能，这些功能由开放源代码 AMP 规范定义和管理。与所有网页相同，Accelerated Mobile Pages 将在任何现代浏览器或应用 WebView 中加载。</p>\n"
-"<p>AMP 文件利用各种技术和架构方法，优先考虑速度，为用户提供更快体验。AMP 开发者可以使用不断增长的丰富网络组件库，嵌入视频和社交帖子等富媒体对象、展示广告或收集分析数据。目标不是使内容的外观和风格同质化，而是在网页之间建立更通用的技术核心，以缩短加载时间。</p>\n"
-"<p>此外，AMP 文件可在云端缓存，缩短内容到达用户移动设备的时间。通过 AMP 格式，内容制作者将 AMP 文件中的内容提供给第三方缓存。在这种类型的框架下，发布商和广告客户仍然控制内容，但平台可以轻松缓存或镜像内容，实现向用户的最佳传输速度。Google 已经免费提供 <a href=\"https://developers.google.com/amp/cache/\">Google AMP Cache</a>，并且所有 AMP 都将被 Google AMP Cache 缓存。其他公司也可以建立自己的 AMP 缓存。</p>。\n"
-"<p>综上所述，目标在于将有限的技术功能与围绕缓存构建的分发系统相结合，从而提高网页性能并推动受众发展。</p>"
+msgid "<p>Accelerated Mobile Pages are just like any other HTML page, but with a limited set of allowed technical functionality that is defined and governed by the open source AMP spec. Just like all web pages, Accelerated Mobile Pages will load in any modern browser or app webview.</p>\n<p>AMP files take advantage of various technical and architectural approaches that prioritize speed to provide a faster experience for users. AMP developers can use a rich and growing library of web components that offer the ability to embed rich media objects like video and social posts, display advertising, or collect analytics. The goal is not to homogenize how content looks and feels, but instead to build a more common technical core between pages that speeds up load times.</p>\n<p>In addition, AMP files can be cached in the cloud in order to reduce the time content takes to get to a user’s mobile device. By using the AMP format, content producers are making the content in AMP files available to be cached by third parties. Under this type of framework, publishers and advertisers continue to control their content, but platforms can easily cache or mirror the content for optimal delivery speed to users. Google has provided the <a href=\"https://developers.google.com/amp/cache/\">Google AMP Cache</a> that can be used by anyone at no cost, and all AMPs will be cached by the Google AMP Cache. Other companies may build their own AMP cache as well.</p>\n<p>In summary, the goal is that the combination of limited technical functionality with a distribution system built around caching will lead to better performing pages, and increased audience development.</p>"
+msgstr "<p>Accelerated Mobile Pages 类似于任何其他 HTML 网页，但具有一组有限的允许技术功能，这些功能由开放源代码 AMP 规范定义和管理。与所有网页相同，Accelerated Mobile Pages 将在任何现代浏览器或应用 WebView 中加载。</p>\n<p>AMP 文件利用各种技术和架构方法，优先考虑速度，为用户提供更快体验。AMP 开发者可以使用不断增长的丰富网络组件库，嵌入视频和社交帖子等富媒体对象、展示广告或收集分析数据。目标不是使内容的外观和风格同质化，而是在网页之间建立更通用的技术核心，以缩短加载时间。</p>\n<p>此外，AMP 文件可在云端缓存，缩短内容到达用户移动设备的时间。通过 AMP 格式，内容制作者将 AMP 文件中的内容提供给第三方缓存。在这种类型的框架下，发布商和广告客户仍然控制内容，但平台可以轻松缓存或镜像内容，实现向用户的最佳传输速度。Google 已经免费提供 <a href=\"https://developers.google.com/amp/cache/\">Google AMP Cache</a>，并且所有 AMP 都将被 Google AMP Cache 缓存。其他公司也可以建立自己的 AMP 缓存。</p>。\n<p>综上所述，目标在于将有限的技术功能与围绕缓存构建的分发系统相结合，从而提高网页性能并推动受众发展。</p>"
 
 msgid "Why does the Accelerated Mobile Pages Project take an open source approach?"
 msgstr "Accelerated Mobile Pages 项目为什么开放源代码？"
@@ -3024,12 +3016,8 @@ msgstr "<p>通过 AMP 格式，内容制作者能够使 AMP 文件中的内容�
 msgid "What responsibilities do I have when using Accelerated Mobile Pages?"
 msgstr "使用 Accelerated Mobile Pages 时我需要承担什么责任？"
 
-msgid "<p>If a publisher or advertiser collects data from users who view its AMP pages, such data collection is governed by their privacy policy.  It is the publisher or advertiser’s responsibility to disclose its privacy policy, ideally by including a link to it within each of their AMP pages.</p>\n"
-"<p>Furthermore, the laws in many jurisdictions, such as in the European Union, require a website to give visitors information about cookies and other forms of local storage used on the site (including AMP pages). In many cases, these laws also require that the website obtain consent.  It is the website's responsibility to determine, based on its use of cookies, what type of notice would be appropriate.  Additional information and tools for generating cookie notices can be found at www.cookiechoices.org.  Note that the AMP component <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user-notification</a> provides a way to display a dismissable notification to the user.</p>\n"
-"<p>If an AMP page is shown within a viewer on a third party platform, such as a Google AMP Viewer on Google Search, the viewer may be a hybrid environment in which the AMP page and the third party platform may each collect data about the user.  In such a case, data collection by each party is governed by that party’s privacy policy (i.e., in a hybrid viewer environment, data collected by the AMP page is governed by its privacy policy and data collected by the third party platform is governed by the platform’s privacy policy).  It is each party’s responsibility to disclose its privacy policy and comply with relevant data regulations, including European laws relating to its use of cookies.</p>"
-msgstr "<p>如果发布商或广告客户从浏览其 AMP 网页的用户处收集数据，则此类数据收集受其隐私权政策约束。发布商或广告客户有责任披露其隐私权政策，应尽可能在其每个 AMP 网页中包含一个链接。</p>\n"
-"<p>此外，许多司法管辖区（如欧盟）的法律要求网站向访问者提供有关 Cookie 和网站（包括 AMP 网页）所用其他本地存储形式的信息。在许多情况下，这些法律还要求网站获得知情同意。网站有责任根据其对 Cookie 的使用情况确定适当的通知类型。有关生成 Cookie 通知的其他信息和工具，请访问 www.cookiechoices.org。注意，AMP 组件 <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user-notification</a> 提供了向用户显示可关闭通知的方法。</p>。\n"
-"<p>如果 AMP 网页显示在第三方平台的查看器（例如 Google 搜索的 Google AMP Viewer）中，查看器可能为混合环境，其中 AMP 网页和第三方平台可能各自收集用户相关数据。在这种情况下，各方收集的数据受该方的隐私权政策约束（即在混合查看器环境中，网页收集的数据受其隐私权政策约束，第三方平台收集的数据受该平台的隐私权政策约束）。各方均有责任披露其隐私权政策，并遵守相关数据法规，包括与其 Cookie 使用有关的欧洲法律。</p>"
+msgid "<p>If a publisher or advertiser collects data from users who view its AMP pages, such data collection is governed by their privacy policy.  It is the publisher or advertiser’s responsibility to disclose its privacy policy, ideally by including a link to it within each of their AMP pages.</p>\n<p>Furthermore, the laws in many jurisdictions, such as in the European Union, require a website to give visitors information about cookies and other forms of local storage used on the site (including AMP pages). In many cases, these laws also require that the website obtain consent.  It is the website's responsibility to determine, based on its use of cookies, what type of notice would be appropriate.  Additional information and tools for generating cookie notices can be found at www.cookiechoices.org.  Note that the AMP component <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user-notification</a> provides a way to display a dismissable notification to the user.</p>\n<p>If an AMP page is shown within a viewer on a third party platform, such as a Google AMP Viewer on Google Search, the viewer may be a hybrid environment in which the AMP page and the third party platform may each collect data about the user.  In such a case, data collection by each party is governed by that party’s privacy policy (i.e., in a hybrid viewer environment, data collected by the AMP page is governed by its privacy policy and data collected by the third party platform is governed by the platform’s privacy policy).  It is each party’s responsibility to disclose its privacy policy and comply with relevant data regulations, including European laws relating to its use of cookies.</p>"
+msgstr "<p>如果发布商或广告客户从浏览其 AMP 网页的用户处收集数据，则此类数据收集受其隐私权政策约束。发布商或广告客户有责任披露其隐私权政策，应尽可能在其每个 AMP 网页中包含一个链接。</p>\n<p>此外，许多司法管辖区（如欧盟）的法律要求网站向访问者提供有关 Cookie 和网站（包括 AMP 网页）所用其他本地存储形式的信息。在许多情况下，这些法律还要求网站获得知情同意。网站有责任根据其对 Cookie 的使用情况确定适当的通知类型。有关生成 Cookie 通知的其他信息和工具，请访问 www.cookiechoices.org。注意，AMP 组件 <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user-notification</a> 提供了向用户显示可关闭通知的方法。</p>。\n<p>如果 AMP 网页显示在第三方平台的查看器（例如 Google 搜索的 Google AMP Viewer）中，查看器可能为混合环境，其中 AMP 网页和第三方平台可能各自收集用户相关数据。在这种情况下，各方收集的数据受该方的隐私权政策约束（即在混合查看器环境中，网页收集的数据受其隐私权政策约束，第三方平台收集的数据受该平台的隐私权政策约束）。各方均有责任披露其隐私权政策，并遵守相关数据法规，包括与其 Cookie 使用有关的欧洲法律。</p>"
 
 msgid "What type of content works best using Accelerated Mobile Pages?"
 msgstr "什么类型的内容最适合 Accelerated Mobile Pages？"
@@ -3067,8 +3055,8 @@ msgstr "<p>该项目对所有人开放，现有成员非常热衷于主动与消
 msgid "How can an advertising or technology vendor get involved in Accelerated Mobile Pages?"
 msgstr "广告或技术供应商如何参与 Accelerated Mobile Pages？"
 
-msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
-msgstr "<p>请阅读<a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">贡献指南</a>，并通过 <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a> 与我们联系。</p>"
+msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
+msgstr "<p>请阅读<a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">贡献指南</a>，并通过 <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a> 与我们联系。</p>"
 
 msgid "How does advertising work on Accelerated Mobile Pages?"
 msgstr "Accelerated Mobile Pages 的广告如何运作？"
@@ -3120,3 +3108,60 @@ msgstr "支持的平台、供应商与合作伙伴"
 
 msgid "AMP Conf 2020: Save the date!"
 msgstr "AMP Conf 2020：按时出席！"
+
+msgid "AMP is a web component framework to easily create user-first experiences for the web."
+msgstr "AMP 是一个网络组件框架，可以轻松创建用户至上的网络体验。"
+
+msgid "Easily create websites with a great page experience out-of-the-box using AMP’s ready-to-go web components."
+msgstr "使用 AMP 现成的网络组件轻松创建网站，打造开箱即用的出色网页体验。"
+
+msgid "All about AMP Websites"
+msgstr "有关 AMP 网站的所有信息"
+
+msgid "Get started"
+msgstr "使用入门"
+
+msgid "Immerse readers in visual and tappable stories they can share anywhere on the open web."
+msgstr "令读者沉浸在可点按的视觉故事中，读者可以在开放网络中随时随地分享这些故事。"
+
+msgid "All about Web Stories"
+msgstr "有关 Web Stories 的所有信息"
+
+msgid "Serve lightning fast and secure eye-catching creatives."
+msgstr "提供快速、安全且引入注目的创意素材。"
+
+msgid "Send emails of the future with personalized dynamic content and interactive elements that engage readers."
+msgstr "发送包含个性化动态内容和可吸引读者的互动式元素的未来电子邮件。"
+
+msgid "The latest news"
+msgstr "最新消息"
+
+msgid "Don't want to miss any of the great stuff that happens around AMP? Then always be first in line and subscribe to our newsletter!"
+msgstr "不想错过任何关于 AMP 的好消息？那就订阅我们的简报，抢先收到消息吧！"
+
+msgid "Don’t take our word for it - read case studies from industry success stories and see how AMP has produced positive results."
+msgstr "不要相信我们的一面之词，阅读行业的成功案例，并了解 AMP 如何产生积极成果。"
+
+msgid "A framework that amplifies page experience."
+msgstr "提升网页体验的框架。"
+
+msgid "AMP is a simple and robust web components framework that makes it easy to build fast websites that are user-first and makes money. AMP provides long-term success for your web strategy with distribution across popular platforms and reduced operating costs."
+msgstr "AMP 是一个简单而强大的网络组件框架，让您能够轻松地构建以用户为中心的快速网站并创造收益。AMP 在热门平台上分发，能够降低运营成本，可以持续助力您的网络战略。"
+
+msgid "Guaranteed Page Experience"
+msgstr "有保障的网页体验"
+
+msgid "AMP provides you with the tools needed to build websites that meet Page Experience ranking signals while remaining flexible and customizable to your needs. Page experience is a set of signals from Google that measure how users perceive their experience interacting with a web page beyond its pure information value. AMP is a straightforward way to a high page experience score. Domains built with AMP are 5 times more likely to pass* Core Web Vitals metrics than non-AMP!"
+msgstr "AMP 提供所有工具，帮助您构建符合“网页体验”排名信号的网站，同时不失灵活，能够满足您的定制需求。“网页体验”是 Google 提供的一系列信号，除了纯信息价值外，还能衡量用户对网页互动体验的意见。使用 AMP，您可以轻松地提高网页体验得分。与不使用 AMP 相比，使用 AMP 构建的域通过*“核心网页指标”的可能性会高出 5 倍*！"
+
+msgid "Check your page’s performance"
+msgstr "检查您的网页性能"
+
+msgid "Frameworks and CMSs"
+msgstr "框架与 CMS"
+
+msgid "Select a ready-to-go framework or integration-enabled CMS to get an AMP valid site up and running, fast. These platforms give you all the benefits of AMP without all the built-from-scratch hassle."
+msgstr "选择现成的框架或支持集成的 CMS，使利用 AMP 的网站能够快速创建并运行。这些平台能够让您体验 AMP 的所有好处，免除从头构建的各种麻烦。"
+
+msgid "See supported platforms"
+msgstr "查看支持的平台"

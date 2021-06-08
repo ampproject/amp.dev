@@ -35,7 +35,7 @@ AMP プラットフォームを統合するにあたり、データの取得や�
 <amp-pixel src="https://foo.com/pixel?RANDOM"></amp-pixel>
 ```
 
-この例では、ページビューデータは乱数とともに指定の URL に送信されます。`RANDOM` 変数は、数ある [AMP プラットフォームの変数置換](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)の 1 つです。[変数置換](analytics_basics.md)に関する詳細は、こちらをご覧ください。
+この例では、ページビューデータは乱数とともに指定の URL に送信されます。`RANDOM` 変数は、数ある [AMP プラットフォームの変数置換](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)の 1 つです。[変数置換](analytics_basics.md)に関する詳細は、こちらをご覧ください。
 
 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) は組み込みのコンポーネントであるため、[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) などの AMP 拡張コンポーネントと違って、宣言を追加する必要はありません。ただし [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) タグは、極力 `<body>` の先頭付近に配置してください。トラッキングピクセルはタグが表示されてからのみ呼び出されるため、[`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) がページの下の方に配置されている場合、トラッキングピクセルが呼び出されない可能性があります。
 
@@ -147,7 +147,7 @@ AMP アナリティクスでは、アナリティクスベンダーを使って�
 
 ページまたはプラットフォーム定義の変数をリクエストする文字列には、`${varName}` 形式を使用します。<a><code>amp-analytics</code></a> タグは、アナリティクスリクエストの作成時に、テンプレートを実際の値に置換します（<a><code>amp-analytics</code> でサポートされている変数</a> も参照してください）。
 
-次の [<code>amp-analytics</code>](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) の例では、ページビューリクエストは、<a><code>amp-analytics</code></a> 構成内の、変数置換から抽出された追加データ、プラットフォームが提供するデータ、インラインで定義されるデータとともに URL に送信されます。
+次の [<code>amp-analytics</code>](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md) の例では、ページビューリクエストは、<a><code>amp-analytics</code></a> 構成内の、変数置換から抽出された追加データ、プラットフォームが提供するデータ、インラインで定義されるデータとともに URL に送信されます。
 
 ```html
 <amp-analytics>
@@ -179,7 +179,7 @@ AMP アナリティクスでは、アナリティクスベンダーを使って�
 
 ## ユーザーの識別 <a name="user-identification"></a>
 
-ウェブサイトは、ブラウザの cookie を使用してユーザー固有の情報を格納しています。cookie は、ユーザーが過去にサイトに訪問したことがあるかを知るために使用することができます。AMP では、ページはサイト運営者のウェブサイトかキャッシュ（Google AMP キャッシュなど）から配信されます。サイト運営者のウェブサイトとキャッシュのドメインは異なることがほとんどですが、セキュリティの理由により、ブラウザは別のドメインの cookie へのアクセスを制限することができます（ほとんどにおいて制限します）。[オリジン上でのユーザーのトラッキング](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)も参照してください。
+ウェブサイトは、ブラウザの cookie を使用してユーザー固有の情報を格納しています。cookie は、ユーザーが過去にサイトに訪問したことがあるかを知るために使用することができます。AMP では、ページはサイト運営者のウェブサイトかキャッシュ（Google AMP キャッシュなど）から配信されます。サイト運営者のウェブサイトとキャッシュのドメインは異なることがほとんどですが、セキュリティの理由により、ブラウザは別のドメインの cookie へのアクセスを制限することができます（ほとんどにおいて制限します）。[オリジン上でのユーザーのトラッキング](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md)も参照してください。
 
 デフォルトでは、AMP は、ページがサイト運営者の元のウェブサイトからアクセスされているか、キャッシュからアクセスされているのかを指定するクライアント ID を管理しています。AMP が生成するクライアント ID には、`"amp-"` とそれに続くランダムの `base64` でエンコードされた文字列の値が使用されており、同じユーザーがもう一度アクセスすると、同じ ID がそのまま使用されます。
 
@@ -197,6 +197,6 @@ AMP ページがサイト運営者のサイトから配信される場合、AMP 
 
 AMP が この cookie が設定されていることを認識すると、クライアント ID の置換によって、cookie の値が返されます。AMP がこの cookie の設定を認識しない場合、AMP は、`amp-` の後にランダムの base64 エンコード文字列が続く形式の値が生成されます。
 
-オプションのユーザー通知 ID の追加方法など、クライアント ID の置換に関する詳細は、[AMP アナリティクスでサポートされている変数](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)をご覧ください。
+オプションのユーザー通知 ID の追加方法など、クライアント ID の置換に関する詳細は、[AMP アナリティクスでサポートされている変数](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md)をご覧ください。
 
 今後の学習: 引き続き、[AMP アナリティクスについて詳しく知る](deep_dive_analytics.md)および[使用事例](use_cases.md)をお読みください。

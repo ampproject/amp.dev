@@ -79,8 +79,8 @@ devono essere specificati nel tag.
 
 ## Reti pubblicitarie supportate <a name="supported-ad-networks"></a>
 
-* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
-* [DoubleClick (sperimentale)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
+* [AdSense](https://github.com/ampproject/amphtml/blob/main/ads/google/adsense.md)
+* [DoubleClick (sperimentale)](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md)
 
 ## Attributi
 
@@ -422,4 +422,4 @@ che questi siano distanti da altri annunci almeno 1000 px.
 
 ## Convalida
 
-Consulta le [regole amp-auto-ads](https://github.com/ampproject/amphtml/blob/master/extensions/amp-auto-ads/validator-amp-auto-ads.protoascii) nella specifica dello strumento di convalida AMP.
+Consulta le [regole amp-auto-ads](https://github.com/ampproject/amphtml/blob/main/extensions/amp-auto-ads/validator-amp-auto-ads.protoascii) nella specifica dello strumento di convalida AMP.

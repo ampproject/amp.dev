@@ -22,6 +22,6 @@ author: CrystalOnScript
 />
 ```
 
-您可以在[此处](https://github.com/ampproject/amphtml/blob/master/examples/csp.amp.html)查看完整示例。
+您可以在[此处](https://github.com/ampproject/amphtml/blob/main/examples/csp.amp.html)查看完整示例。
 
 [tip type="read-on"] 在[此处](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)详细了解如何防范安全漏洞和采用 CSP。[/tip]

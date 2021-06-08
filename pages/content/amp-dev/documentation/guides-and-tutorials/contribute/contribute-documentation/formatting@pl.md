@@ -9,8 +9,8 @@ Przewodniki i samouczki należy przesyłać w formacie [Markdown](https://www.ma
 
 Treść na amp.dev jest pobierana z dwóch repozytoriów, [amp.dev](https://github.com/ampproject/amp.dev) i [AMPHTML](https://github.com/ampproject/amphtml). Cała dokumentacja referencyjna pod składnikami jest pobierana z AMPHTML, albo z obiektów wbudowanych, albo z rozszerzeń.
 
-- [Wbudowane składniki ](https://github.com/ampproject/amphtml/tree/master/builtins)
-- [Składniki](https://github.com/ampproject/amphtml/tree/master/extensions)
+- [Wbudowane składniki ](https://github.com/ampproject/amphtml/tree/main/builtins)
+- [Składniki](https://github.com/ampproject/amphtml/tree/main/extensions)
 - [Kursy](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/courses)
 - [Przykłady](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/examples)
 - [Przewodniki i samouczki](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/guides-and-tutorials)

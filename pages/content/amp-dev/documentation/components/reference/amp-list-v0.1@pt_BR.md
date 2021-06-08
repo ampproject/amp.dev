@@ -55,7 +55,7 @@ Você pode especificar um modelo de duas maneiras:
 * um atributo `template` que faça referência a um código de um elemento `template` ou `script` existente;
 * um elemento `template` ou `script` aninhado diretamente no elemento `amp-list`.
 
-Para ver mais detalhes sobre modelos, consulte [Modelos HTML para AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md) (link em inglês).
+Para ver mais detalhes sobre modelos, consulte [Modelos HTML para AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-templates.md) (link em inglês).
 
 *Exemplo: exibição de uma lista dinâmica*
 
@@ -311,7 +311,7 @@ Introduzimos o experimento `amp-list-load-more` como uma implementação de pagi
 
 ```
 
-Para ver exemplos de funcionamento, consulte [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) e [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) (links em inglês).
+Para ver exemplos de funcionamento, consulte [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/main/test/manual/amp-list/infinite-scroll-1.amp.html) e [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/main/test/manual/amp-list/infinite-scroll-1.amp.html) (links em inglês).
 
 ### Atributos <a name="sample-usage"></a>
 
@@ -425,7 +425,7 @@ Este elemento inclui [atributos comuns](../../../documentation/guides-and-tutori
 ## Substituições <a name="substitutions"></a>
 
 O `<amp-list>` permite todas as substituições de variáveis de URL padrão.
-Consulte o [Guia de substituições](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) (em inglês) para ver mais informações.
+Consulte o [Guia de substituições](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) (em inglês) para ver mais informações.
 
 Por exemplo:
 ```html
@@ -435,4 +435,4 @@ pode fazer uma solicitação para algo como `https://foo.com/list.json?0.8390278
 
 ## Validação <a name="validation"></a>
 
-Consulte as [regras do amp-list](https://github.com/ampproject/amphtml/blob/master/extensions/amp-list/validator-amp-list.protoascii) (em inglês) nas especificações do validador de AMP.
+Consulte as [regras do amp-list](https://github.com/ampproject/amphtml/blob/main/extensions/amp-list/validator-amp-list.protoascii) (em inglês) nas especificações do validador de AMP.

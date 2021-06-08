@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-email-actions-and-events.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-email-actions-and-events.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -30,7 +30,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-[tip type="note"] 이 문서는 AMP 이메일의 액션 및 이벤트를 설명합니다. AMP 웹사이트, 스토리 및 광고에 대한 자세한 내용은 다음 [액션 및 이벤트](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) 문서를 참조하세요. [/tip]
+[tip type="note"] 이 문서는 AMP 이메일의 액션 및 이벤트를 설명합니다. AMP 웹사이트, 스토리 및 광고에 대한 자세한 내용은 다음 [액션 및 이벤트](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-actions-and-events.md) 문서를 참조하세요. [/tip]
 
 요소의 이벤트 핸들러 설치 시 `on` 속성이 사용됩니다. 지원되는 이벤트는 요소에 따라 다릅니다.
 
@@ -431,7 +431,7 @@ AMP는 모든 HTML 요소(AMP 요소 포함)에서 리스닝할 수 있는 `tap`
   <tr>
     <td><code>changeToLayoutContainer</code></td>
     <td>
-<code>amp-list</code> 레이아웃을 <code>layout="CONTAINTER"</code>로 업데이트하여 <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">동적 크기 변경</a>을 허용합니다.</td>
+<code>amp-list</code> 레이아웃을 <code>layout="CONTAINTER"</code>로 업데이트하여 <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">동적 크기 변경</a>을 허용합니다.</td>
   </tr>
   <tr>
     <td> <code>fetch-error</code>(신뢰도 낮음)</td>

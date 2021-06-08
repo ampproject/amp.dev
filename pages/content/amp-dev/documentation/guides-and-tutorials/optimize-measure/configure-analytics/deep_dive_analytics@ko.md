@@ -68,7 +68,7 @@ AMP는 데이터 수집의 두 가지 일반적인 패턴을 지원하도록 만
 
 분석 공급업체 구성을 사용하면 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)를 빠르게 시작할 수 있습니다. 자세한 안내는 공급업체의 문서와 도움말 자료를 참조하세요. 앞서 언급했듯이 이미 AMP와 통합한 공급업체 목록 및 공급업체 관련 문서 링크는 [분석 공급업체](analytics-vendors.md) 목록에서 찾을 수 있습니다.
 
-분석 공급업체라면 [자체 분석 구성을 AMP HTML로 통합](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)하는 방법을 자세히 알아보세요.
+분석 공급업체라면 [자체 분석 구성을 AMP HTML로 통합](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md)하는 방법을 자세히 알아보세요.
 
 ## 원격 구성 로드: config 속성
 

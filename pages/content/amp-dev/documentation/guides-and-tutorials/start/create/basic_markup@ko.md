@@ -66,7 +66,7 @@ AMP HTML 문서는 다음 규칙을 준수해야 합니다.
 [tip type="read-on"] 자세히 알아보려면 아래 리소스를 참고하세요.
 
 - [Google 검색에서 AMP 시작하기](https://developers.google.com/amp/docs) - Google 검색용으로 AMP 페이지를 준비하는 방법을 알아보세요.
-- [메타데이터 예시](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - 여러 다른 장소(예: Twitter)에서 필요한 모든 메타데이터를 자세히 알아보세요. [/tip]
+- [메타데이터 예시](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples) - 여러 다른 장소(예: Twitter)에서 필요한 모든 메타데이터를 자세히 알아보세요. [/tip]
 
 <hr>
 

@@ -86,7 +86,7 @@ AMP では、`<head>` セクションに許可されるマークアップを制�
 
 [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
 
-1. [遅延レンダリング拡張機能](https://github.com/ampproject/amphtml/blob/master/src/render-delaying-services.js)（[`amp-experiment`](../../../documentation/components/reference/amp-experiment.md)、[`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md)、[`amp-story`](../../../documentation/components/reference/amp-story.md) など）用に `<script>` タグを指定します。
+1. [遅延レンダリング拡張機能](https://github.com/ampproject/amphtml/blob/main/src/render-delaying-services.js)（[`amp-experiment`](../../../documentation/components/reference/amp-experiment.md)、[`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md)、[`amp-story`](../../../documentation/components/reference/amp-story.md) など）用に `<script>` タグを指定します。
 2. 残りの拡張機能（[`amp-bind`](../../../documentation/components/reference/amp-bind.md) など）用に `<script>` タグを指定します。これらの拡張機能は遅延レンダリングではないため、プリロードしてはいけません。初期レンダリングに必要な重要な帯域幅が奪われてしまいます。
 3. `<style amp-custom>` タグを使用して、カスタムスタイルを指定します。
 4. `<head>` セクションに使用できる他のタグを追加します。特に、外部フォントについては、レンダリングを阻害しないように最後に追加するようにしてください。

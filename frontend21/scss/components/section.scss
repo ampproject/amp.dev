@@ -1,7 +1,15 @@
 .#{prefix(null, 'section')} {
-  grid-column: 2 / 12;
+  grid-column: 2 / 22;
   width: 100%;
-  margin-top: 100px;
+  margin-top: 120px;
+
+  @include respond-to('small') {
+    margin-top: 160px;
+  }
+
+  @include respond-to('medium') {
+    margin-top: 200px;
+  }
 
   &:first-child {
     margin-top: 80px;
@@ -21,30 +29,64 @@
 
   &.--col-4-15 {
     @include respond-to('small') {
-      grid-column: 2 / 10;
+      grid-column: 2 / 15;
     }
     @include respond-to('large') {
-      grid-column: 3 / 10;
+      grid-column: 4 / 15;
     }
   }
 
   &.--col-3-22 {
     @include respond-to('large') {
-      grid-column: 2 / 11;
+      grid-column: 2 / 22;
     }
   }
 
   &.--col-4-23 {
     @include respond-to('small') {
-      grid-column: 2 / 12;
+      grid-column: 2 / 23;
     }
     @include respond-to('large') {
-      grid-column: 3 / 12;
+      grid-column: 4 / 23;
+    }
+  }
+
+  &.--col-left, &.--col-right, &.--offset {
+    grid-column: 2/24;
+  }
+
+  &.--col-left {
+    @include respond-to('small') {
+      grid-column: 2/16;
+    }
+
+    @include respond-to('medium') {
+      grid-column: 4/16;
+    }
+  }
+
+  &.--col-right {
+    @include respond-to('small') {
+      grid-column: 9/23;
+    }
+
+    @include respond-to('medium') {
+      grid-column: 10/23;
     }
   }
 
   &.--fullscreen {
     margin: 0;
     grid-column: 1 / -1;
+  }
+
+  &.--offset {
+    max-width: $maxWidth;
+
+    @include respond-to('max') {
+      margin-left: auto;
+      margin-right: auto;
+      grid-column: 1/-1;
+    }
   }
 }

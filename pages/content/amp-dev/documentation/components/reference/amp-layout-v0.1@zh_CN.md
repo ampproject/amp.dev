@@ -61,4 +61,4 @@ $title: amp-layout
 
 ## 验证 <a name="validation"></a>
 
-请参阅 AMP 验证工具规范中的 [amp-layout 规则](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)。
+请参阅 AMP 验证工具规范中的 [amp-layout 规则](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)。

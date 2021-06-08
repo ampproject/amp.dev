@@ -5,7 +5,7 @@
 
 @import '../atoms/_text.scss';
 
-$height: 60px;
+$height: 42px;
 
 .#{molecule('format-filter-hint')} {
   $root: &;
@@ -22,6 +22,10 @@ $height: 60px;
     background-color: color('charade');
     @include txt-2;
     z-index: 100;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
 
     @media (min-width: 768px) {
       display: block;
@@ -35,19 +39,23 @@ $height: 60px;
         width: 100%;
         height: 100%;
         max-width: 1440px;
-        padding: 12px 15px;
+        padding: 0 30px;
         margin: 0 auto;
+
+        @media (min-width: 1024px) {
+          padding: 0 15px;
+        }
 
         &:after {
           position: absolute;
           content: "";
-          top: 60px;
+          top: 42px;
           left: 50px;
           width: 0;
           height: 0;
           border-style: solid;
-          border-width: 16px 12px 0;
-          border-color: #29323c transparent transparent;
+          border-width: 8px 10px 0;
+          border-color: color('charade') transparent transparent;
         }
       }
 
@@ -56,37 +64,18 @@ $height: 60px;
         padding-right: 10px;
       }
 
-      &-formats {
-        display: none;
-        flex: 1 0 auto;
-        @media (min-width: 768px) {
-          display: flex;
-        }
-      }
-
-      &-format {
-        cursor: pointer;
-        max-width: 150px;
-        margin-right: 10px;
-        margin-bottom: 0;
-
-        &:after {
-          display: none;
-        }
-      }
-
       &-dismiss {
-        border-radius: 50%;
         height: 20px;
         width: 20px;
-        background-color: color('white');
+        background-color: transparent;
         border: 0;
         cursor: pointer;
+        padding: 3px;
 
         svg {
-          fill: color('blue-ribbon');
-          width: 110%;
-          height: 110%;
+          fill: color('white');
+          width: 100%;
+          height: 100%;
         }
       }
     }

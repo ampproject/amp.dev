@@ -352,4 +352,4 @@ limitations under the License.
 
 ## التحقق <a name="validation"></a>
 
-اطِّلع على [قواعد amp-access-laterpay](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii) في مواصفات مدقق AMP.
+اطِّلع على [قواعد amp-access-laterpay](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii) في مواصفات مدقق AMP.

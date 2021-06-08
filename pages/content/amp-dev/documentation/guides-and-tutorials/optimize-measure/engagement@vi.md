@@ -42,6 +42,6 @@ formats:
 
 - **Xem lộ trình AMP** để biết những cập nhật và tính năng tại [lộ trình](../../../community/roadmap.html).
 
-- **Gia nhập.** Đóng góp mã nguồn, lỗi file hoặc đưa ra phản hồi trên [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Chia sẻ thông tin đầu vào về AMP tại [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
+- **Gia nhập.** Đóng góp mã nguồn, lỗi file hoặc đưa ra phản hồi trên [GitHub](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md). Chia sẻ thông tin đầu vào về AMP tại [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 
 - **Tìm hiểu** cách dùng các thành phần AMP bằng [Ví dụ](../../../documentation/examples/index.html).

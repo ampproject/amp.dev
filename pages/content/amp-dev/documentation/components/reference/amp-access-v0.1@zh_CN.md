@@ -226,7 +226,7 @@ Pingback 是可选组件。将 `noPingback` 配置属性设置为 `true` 即可�
 
 ### 访问网址变量 <a name="access-url-variables"></a>
 
-在为各种端点配置网址时，发布商可以使用替换变量。[AMP 变量规范](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)中定义了所有此类变量。此外，该规范还添加了一些特定于访问权限的变量，如 `READER_ID` 和 `AUTHDATA`。部分相关程度最高的变量如下表所示：
+在为各种端点配置网址时，发布商可以使用替换变量。[AMP 变量规范](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)中定义了所有此类变量。此外，该规范还添加了一些特定于访问权限的变量，如 `READER_ID` 和 `AUTHDATA`。部分相关程度最高的变量如下表所示：
 
 <table>
   <tr>
@@ -499,7 +499,7 @@ AMP 不区分登录和订阅。发布商可以使用多个登录网址/链接或
 
 ## 与 amp-analytics 集成** <a name="integration-with-amp-analytics"></a>
 
-[amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) 中介绍了与 amp-analytics 的集成。**
+[amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/amp-access-analytics.md) 中介绍了与 amp-analytics 的集成。**
 
 ## CORS 网域安全性 <a name="cors-origin-security"></a>
 
@@ -566,7 +566,7 @@ AMP 将登录对话框作为第一方窗口、弹出式窗口或标签页启动�
 
 ## 附录 A：“amp-access”表达式语法 <a name="appendix-a-amp-access-expression-grammar"></a>
 
-[access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison) 文件中提供了最新的 BNF 语法。
+[access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/0.1/access-expr-impl.jison) 文件中提供了最新的 BNF 语法。
 
 下面摘录了此语法的主要内容：
 ```javascript
@@ -605,4 +605,4 @@ literal: STRING | NUMERIC | TRUE | FALSE | NULL
 
 ## 验证 <a name="validation"></a>
 
-请参阅 AMP 验证工具规范中的 [amp-access 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/validator-amp-access.protoascii)。
+请参阅 AMP 验证工具规范中的 [amp-access 规则](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/validator-amp-access.protoascii)。

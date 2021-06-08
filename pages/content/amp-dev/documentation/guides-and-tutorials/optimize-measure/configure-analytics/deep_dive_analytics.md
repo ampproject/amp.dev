@@ -88,7 +88,7 @@ to their specific documentation can be found in the
 
 If you’re an analytics vendor,
 learn more about
-[integrating your own analytics configuration into AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+[integrating your own analytics configuration into AMP HTML](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md).
 
 ## Load remote configuration: config attribute
 

@@ -9,13 +9,13 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/ads/_integration-guide.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/ads/_integration-guide.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-如果您是一家想要与 AMP HTML 集成的广告技术提供商，请参阅以下准则。为了确保最大程度降低延迟并提高质量，请先按照[此处](https://github.com/ampproject/amphtml/blob/master/ads/../3p/README.md#ads)列出的说明操作，然后再将拉取请求提交到 AMP 开放源代码项目。有关如何开始为 AMP 做贡献的常规指导，请参阅 [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/ads/../CONTRIBUTING.md)。
+如果您是一家想要与 AMP HTML 集成的广告技术提供商，请参阅以下准则。为了确保最大程度降低延迟并提高质量，请先按照[此处](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads)列出的说明操作，然后再将拉取请求提交到 AMP 开放源代码项目。有关如何开始为 AMP 做贡献的常规指导，请参阅 [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../docs/contributing.md)。
 
 ## 广告服务器 <a name="ad-server"></a>
 
@@ -39,9 +39,9 @@ data-aax_src="302"
 > </amp-ad>
 > [/sourcecode]
 
-请注意，`type` 后面的任何属性都与 Amazon A9 服务器在投放广告时所需的参数相关。[a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) 文件显示了这些参数与发出 JavaScript 调用之间的映射关系，JavaScript 调用通过网址 `https://c.amazon-adsystem.com/aax2/assoc.js` 调用 A9 服务器。AMP 广告代码传递的相应参数将附加到该网址，以返回广告。
+请注意，`type` 后面的任何属性都与 Amazon A9 服务器在投放广告时所需的参数相关。[a9.js](https://github.com/ampproject/amphtml/blob/main/ads/./a9.js) 文件显示了这些参数与发出 JavaScript 调用之间的映射关系，JavaScript 调用通过网址 `https://c.amazon-adsystem.com/aax2/assoc.js` 调用 A9 服务器。AMP 广告代码传递的相应参数将附加到该网址，以返回广告。
 
-有关如何将您的广告联盟与 AMP 集成的详细信息，请参阅[将广告联盟集成到 AMP 中](https://github.com/ampproject/amphtml/blob/master/ads/README.md)。
+有关如何将您的广告联盟与 AMP 集成的详细信息，请参阅[将广告联盟集成到 AMP 中](https://github.com/ampproject/amphtml/blob/main/ads/README.md)。
 
 ## 供应方平台 (SSP) 或 Ad Exchange <a name="supply-side-platform-ssp-or-an-ad-exchange"></a>
 
@@ -63,7 +63,7 @@ _示例：Essence、Omnicom_
 
 _示例：Brightcove、Ooyala_
 
-常规 HTML 网页中的视频播放器无法在 AMP 中运行，因此，必须创建允许 AMP 运行时加载您的播放器的特定标记。Brightcove 创建了自定义标记 [amp-brightcove](https://github.com/ampproject/amphtml/blob/master/extensions/amp-brightcove/amp-brightcove.md)，用于在 AMP 网页中播放媒体和广告。
+常规 HTML 网页中的视频播放器无法在 AMP 中运行，因此，必须创建允许 AMP 运行时加载您的播放器的特定标记。Brightcove 创建了自定义标记 [amp-brightcove](https://github.com/ampproject/amphtml/blob/main/extensions/amp-brightcove/amp-brightcove.md)，用于在 AMP 网页中播放媒体和广告。
 
 Brightcove 播放器的调用方式如下：
 
@@ -106,10 +106,10 @@ _示例：MOAT、Integral Ad Science_
 
 例如，对于 MOAT 来说，请确保将 `http://js.moatads.com` 转换为 `https://z.moatads.com`
 
-另外，请参阅[交集观察者模式](https://github.com/ampproject/amphtml/blob/master/ads/README.md#ad-viewability)使用方式。
+另外，请参阅[交集观察者模式](https://github.com/ampproject/amphtml/blob/main/ads/README.md#ad-viewability)使用方式。
 
 ## 内容建议平台 <a name="content-recommendation-platform"></a>
 
 _示例：Taboola、Outbrain_
 
-适用于以下情况：您目前在发布商网站上嵌入了一些 JavaScript，但该方式在 AMP 网页上不起作用。如果您希望在 AMP 网页上向用户推荐内容，我们建议您使用 [`amp-embed` 扩展组件](https://amp.dev/documentation/components/amp-ad)请求内容详细信息。请参阅 [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md) 示例。
+适用于以下情况：您目前在发布商网站上嵌入了一些 JavaScript，但该方式在 AMP 网页上不起作用。如果您希望在 AMP 网页上向用户推荐内容，我们建议您使用 [`amp-embed` 扩展组件](https://amp.dev/documentation/components/amp-ad)请求内容详细信息。请参阅 [Taboola](https://github.com/ampproject/amphtml/blob/main/ads/taboola.md) 示例。

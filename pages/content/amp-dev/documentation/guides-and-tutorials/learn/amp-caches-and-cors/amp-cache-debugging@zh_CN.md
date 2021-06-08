@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-debugging.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-debugging.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -40,7 +40,7 @@ have a look and request a pull request there.
     <tr>
       <td>网页字体不显示（使用后备字体）</td>
       <td>字体提供商未将 AMP 缓加入白名单。</td>
-      <td>请与字体提供商联系，要求他们将<a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">所有缓存</a>加入白名单。</td>
+      <td>请与字体提供商联系，要求他们将<a href="amp-cors-requests.md#cors-security-in-amp">所有缓存</a>加入白名单。</td>
     </tr>
     <tr>
       <td>素材资源（例如字体和图片）不显示（<strong>仅显示 HTTP 来源</strong>）</td>
@@ -50,7 +50,7 @@ have a look and request a pull request there.
     <tr>
       <td rowspan="2">素材资源（例如字体和图片）不显示</td>
       <td>提供素材资源时使用了错误的 MIME 类型。</td>
-      <td>指定<a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">可接受的 MIME 类型</a>。</td>
+      <td>指定<a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">可接受的 MIME 类型</a>。</td>
     </tr>
     <tr>
       <td>AMP 缓存无法访问素材资源。</td>
@@ -59,7 +59,7 @@ have a look and request a pull request there.
     <tr>
       <td>诸如 <code><amp-form></amp-form></code>、<code><amp-list></amp-list></code> 等动态元素的行为不符合预期。</td>
       <td>CORS 标头损坏或丢失。</td>
-      <td>这些组件从 AMP 缓存向来源发出跨源请求。默认情况下，浏览器会阻塞这些请求。要允许这些请求，请发出将<a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">所有缓存</a>加入白名单的 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS 标头</a>。</td>
+      <td>这些组件从 AMP 缓存向来源发出跨源请求。默认情况下，浏览器会阻塞这些请求。要允许这些请求，请发出将<a href="amp-cors-requests.md">所有缓存</a>加入白名单的 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS 标头</a>。</td>
     </tr>
     <tr>
       <td>因法律下架通知而须移除的内容仍在提供。</td>

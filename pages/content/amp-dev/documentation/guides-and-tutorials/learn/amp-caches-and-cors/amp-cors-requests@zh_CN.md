@@ -240,7 +240,7 @@ function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
 [/sourcecode]
 
 [tip type="note"]
-需要示例代码可以查看[app.js](https://github.com/ampproject/amphtml/blob/master/build-system/app.js#L1199).
+需要示例代码可以查看[app.js](https://github.com/ampproject/amphtml/blob/main/build-system/app.js#L1199).
 [/tip]
 
 ### 场景1:  来自同源服务器上的AMP页面的请求 <a name="scenario-1--get-request-from-amp-page-on-same-origin"></a>

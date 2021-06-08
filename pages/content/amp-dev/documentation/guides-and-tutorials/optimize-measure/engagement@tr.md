@@ -42,6 +42,6 @@ AMP ile kullanıcı etkileşimini geliştirmek için bazı hızlı ipuçları.
 
 - [Yol haritasındaki](../../../community/roadmap.html) güncellemeler ve özellikler için **AMP yol haritasını izleyin.**
 
-- **Dahil olun.** Kaynak kodu, dosya hataları ile katkıda bulunun veya [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)'da geri bildirimde bulunun. AMP hakkındaki görüşlerinizi [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html)'da paylaşın.
+- **Dahil olun.** Kaynak kodu, dosya hataları ile katkıda bulunun veya [GitHub](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md)'da geri bildirimde bulunun. AMP hakkındaki görüşlerinizi [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html)'da paylaşın.
 
 - AMP bileşenlerini [örneklerle](../../../documentation/examples/index.html) nasıl kullanacağınızı **öğrenin.**

@@ -240,4 +240,4 @@ Aşağıdaki örnekte, bandın altında önizleme düğmeleri olan, üç resimde
 
 # Doğrulama <a name="validation"></a>
 
-AMP doğrulayıcı spesifikasyonunda [amp-carousel kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/validator-amp-carousel.protoascii) bakın.
+AMP doğrulayıcı spesifikasyonunda [amp-carousel kurallarına](https://github.com/ampproject/amphtml/blob/main/extensions/amp-carousel/validator-amp-carousel.protoascii) bakın.

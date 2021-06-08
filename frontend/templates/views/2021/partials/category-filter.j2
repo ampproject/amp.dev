@@ -1,0 +1,27 @@
+<div class="ap-filter-bubbles-list">
+  <a class="ap-pill [% if not {{ filter_categories }}.includes(category)%]--selected[% endif %]"
+      href="{{ doc.url.path }}#filter"
+      name="all">
+    {{ _('All') }}
+  </a>
+
+  {% for category, components in categories %}
+  {% set scope = namespace(categoryFormats = []) %}
+    {% for component in components %}
+      {% set formats = component.formats or ['websites'] %}
+      {% set scope.categoryFormats = scope.categoryFormats + formats %}
+    {% endfor %}
+
+  {% if category %}
+  [% if format in '{{ scope.categoryFormats|unique|list|tojson }}' %]
+  {% set category = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
+
+  <a class="ap-pill [% if {{ filter_categories }}.includes(category) and category == '{{ category|slug }}' %]--selected[% endif %]"
+      href="{{ doc.url.path }}?category={{category|slug}}#filter"
+      name="{{ _(category) }}">
+    {{ _(category) }}
+  </a>
+  [% endif %]
+  {% endif %}
+  {% endfor %}
+</div>

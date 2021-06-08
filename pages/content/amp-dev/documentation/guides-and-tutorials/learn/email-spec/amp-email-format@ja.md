@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -33,7 +33,7 @@ limitations under the License.
 
 AMP は、モバイルクライアント向けの超高速ウェブページを開発できることで知られているテクノロジーです。AMP は、パフォーマンスとセキュリティへの焦点を追加した機能を簡単に有効化できる、JavaScript 支援 HTML タグ一式を指します。カルーセル、レスポンシブフォーム要素、リモートエンドポイントからのフレッシュコンテンツの取得など、さまざまな機能を備えた [AMP コンポーネント](https://amp.dev/documentation/components/)が用意されています。
 
-AMP for Email 形式は、メールメッセージに使用できる [AMP コンポーネントのサブセット](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)です。AMP メールの受信者は、直接メール内で AMP コンポーネントを閲覧し、対話することができます。
+AMP for Email 形式は、メールメッセージに使用できる [AMP コンポーネントのサブセット](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md)です。AMP メールの受信者は、直接メール内で AMP コンポーネントを閲覧し、対話することができます。
 
 ## 必要なマークアップ
 
@@ -73,21 +73,21 @@ AMP メールメッセージには、以下の要件があります。
 
 AMP for Email は、[RFC 1521, section 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3) に定義される標準の `multipart/alternative` [MIME](https://en.wikipedia.org/wiki/MIME) サブタイプに依存しています。
 
-_詳細は、「[AMP メールの構造とレンダリング](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)」を参照してください。_
+_詳細は、「[AMP メールの構造とレンダリング](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-structure.md)」を参照してください。_
 
 ## サポートされている AMP コンポーネント <a name="supported-amp-components"></a>
 
-_「[AMP for Email 対応コンポーネント](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)」を参照してください。_
+_「[AMP for Email 対応コンポーネント](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md)」を参照してください。_
 
 ## HTML の要件 <a name="html-requirements"></a>
 
-_「[AMP for Email でサポートされている HTML](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)」を参照してください。_
+_「[AMP for Email でサポートされている HTML](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-html.md)」を参照してください。_
 
 ## CSS の要件 <a name="css-requirements"></a>
 
 ### サポートされているセレクタとプロパティ<a name="supported-selectors-and-properties"></a>
 
-_「[AMP for Email でサポートされている CSS](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)」を参照してください。_
+_「[AMP for Email でサポートされている CSS](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-css.md)」を参照してください。_
 
 ### AMP ドキュメントでの CSS の指定 <a name="specifying-css-in-an-amp-document"></a>
 
@@ -151,4 +151,4 @@ AMPHTML では、HTML メールと同様に、ピクセル追跡テクニック�
 
 ## フィードバックとサポート <a name="feedback--support"></a>
 
-AMP for Email のサポートとフィードバックについては、次のチャンネルをご利用ください: [ongoing-participation](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#ongoing-participation)
+AMP for Email のサポートとフィードバックについては、次のチャンネルをご利用ください: [ongoing-participation](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#ongoing-participation)

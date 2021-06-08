@@ -9,13 +9,13 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/ads/_integration-guide.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/ads/_integration-guide.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-Si vous êtes un fournisseur de technologie publicitaire et souhaitez une intégration du format HTML AMP, veuillez consulter les consignes ci-dessous. Pour optimiser la qualité et le temps de latence, veuillez suivre les instructions répertoriées [ici](https://github.com/ampproject/amphtml/blob/master/ads/../3p/README.md#ads) avant de soumettre une demande de tirage au projet open source AMP. Pour obtenir des conseils généraux sur les premiers pas en tant que contributeur AMP, veuillez consulter le fichier [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/ads/../CONTRIBUTING.md) .
+Si vous êtes un fournisseur de technologie publicitaire et souhaitez une intégration du format HTML AMP, veuillez consulter les consignes ci-dessous. Pour optimiser la qualité et le temps de latence, veuillez suivre les instructions répertoriées [ici](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads) avant de soumettre une demande de tirage au projet open source AMP. Pour obtenir des conseils généraux sur les premiers pas en tant que contributeur AMP, veuillez consulter le fichier [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../docs/contributing.md) .
 
 ## Serveur publicitaire <a name="ad-server"></a>
 
@@ -39,9 +39,9 @@ data-aax_src="302"
 > </amp-ad>
 > [/sourcecode]
 
-Notez que chacun des attributs qui suivent le `type` dépend des paramètres attendus par le serveur A9 d'Amazon pour diffuser une annonce. Le fichier [a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) vous montre comment les paramètres sont mappés pour effectuer un appel JavaScript qui ouvre le serveur A9 via l'URL `https://c.amazon-adsystem.com/aax2/assoc.js`. Les paramètres correspondants transmis par la balise publicitaire AMP sont ajoutés à l'URL pour renvoyer une annonce.
+Notez que chacun des attributs qui suivent le `type` dépend des paramètres attendus par le serveur A9 d'Amazon pour diffuser une annonce. Le fichier [a9.js](https://github.com/ampproject/amphtml/blob/main/ads/./a9.js) vous montre comment les paramètres sont mappés pour effectuer un appel JavaScript qui ouvre le serveur A9 via l'URL `https://c.amazon-adsystem.com/aax2/assoc.js`. Les paramètres correspondants transmis par la balise publicitaire AMP sont ajoutés à l'URL pour renvoyer une annonce.
 
-Pour plus d'informations sur l'intégration de votre réseau publicitaire dans AMP, consultez la section [Intégration de réseaux publicitaires dans AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+Pour plus d'informations sur l'intégration de votre réseau publicitaire dans AMP, consultez la section [Intégration de réseaux publicitaires dans AMP](https://github.com/ampproject/amphtml/blob/main/ads/README.md).
 
 ## Supply Side Platform (SSP) ou Ad Exchange <a name="supply-side-platform-ssp-or-an-ad-exchange"></a>
 
@@ -63,7 +63,7 @@ Assurez-vous que tous les éléments qui font partie de la création sont demand
 
 _Exemples : Brightcove, Ooyala_
 
-Un lecteur vidéo qui fonctionne sur des pages HTML normales ne fonctionnera pas sur AMP et il faut donc créer une balise spécifique qui permet au Runtime AMP de charger votre lecteur. Brightcove a créé une balise [amp-brightcove](https://github.com/ampproject/amphtml/blob/master/extensions/amp-brightcove/amp-brightcove.md) personnalisée qui permet le lire des fichiers multimédia et des annonces sur des pages AMP.
+Un lecteur vidéo qui fonctionne sur des pages HTML normales ne fonctionnera pas sur AMP et il faut donc créer une balise spécifique qui permet au Runtime AMP de charger votre lecteur. Brightcove a créé une balise [amp-brightcove](https://github.com/ampproject/amphtml/blob/main/extensions/amp-brightcove/amp-brightcove.md) personnalisée qui permet le lire des fichiers multimédia et des annonces sur des pages AMP.
 
 Le code suivant permet d'ouvrir un lecteur Brightcove:
 
@@ -106,10 +106,10 @@ Les fournisseurs de visibilité s'intègrent généralement aux éditeurs via le
 
 Par exemple, pour MOAT, assurez-vous que `http://js.moatads.com` devient `https://z.moatads.com`
 
-Voir également l'approche en utilisant le [modèle d'observateur d'intersection](https://github.com/ampproject/amphtml/blob/master/ads/README.md#ad-viewability).
+Voir également l'approche en utilisant le [modèle d'observateur d'intersection](https://github.com/ampproject/amphtml/blob/main/ads/README.md#ad-viewability).
 
 ## Plateforme de recommandation de contenu <a name="content-recommendation-platform"></a>
 
 _Exemples : Taboola, Outbrain_
 
-Utile si vous avez du JavaScript intégré sur le site Web de l'éditeur aujourd'hui, mais que l'approche ne fonctionne pas sur les pages AMP. Si vous souhaitez recommander du contenu sur une page AMP, nous vous suggérons d'utiliser [l'extension `amp-embed`](https://amp.dev/documentation/components/amp-ad) pour demander les détails du contenu. Veuillez consulter l'exemple [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md).
+Utile si vous avez du JavaScript intégré sur le site Web de l'éditeur aujourd'hui, mais que l'approche ne fonctionne pas sur les pages AMP. Si vous souhaitez recommander du contenu sur une page AMP, nous vous suggérons d'utiliser [l'extension `amp-embed`](https://amp.dev/documentation/components/amp-ad) pour demander les détails du contenu. Veuillez consulter l'exemple [Taboola](https://github.com/ampproject/amphtml/blob/main/ads/taboola.md).

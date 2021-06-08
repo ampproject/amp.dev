@@ -1,9 +1,7 @@
 const express = require('express');
 const request = require('supertest');
-const linter = require('@ampproject/toolbox-linter');
 const RateLimitedFetch = require('@lib/utils/rateLimitedFetch');
 
-jest.mock('@ampproject/toolbox-linter');
 jest.mock('@lib/utils/rateLimitedFetch');
 
 let mockResponse = null;
@@ -24,8 +22,6 @@ test('returns only the isAmp result with no linter data', (done) => {
     redirected: false,
     text: () => '<html><head></head><body></body></html>',
   };
-  // linter should not be called
-  linter.lint.mockRejectedValue(new Error('error'));
 
   request(app)
     .get('/lint?url=https://www.test')
@@ -37,23 +33,18 @@ test('returns only the isAmp result with no linter data', (done) => {
       expect(res.body.url).toBe('https://www.test');
       expect(res.body.isAmp).toBe(false);
       expect(res.body.isCacheUrl).toBe(false);
-      expect(res.body.components).toBeUndefined();
-      expect(res.body.data).toBeUndefined();
+      expect(res.body.components).toEqual({});
+      expect(res.body.data).toEqual({});
       done();
     });
 });
 
-test('returns linter result and page info with cache flag and no components', (done) => {
+test('returns no linter result and page info with cache flag and no components', (done) => {
   mockResponse = {
     url: 'https://www-test.cdn.ampproject.org/c/s/www.test/',
     redirected: false,
     text: () => '<html amp><head></head><body></body></html>',
   };
-  linter.lint.mockResolvedValue({
-    'isvalid': {
-      status: 'FAIL',
-    },
-  });
 
   request(app)
     .get('/lint?url=https://www-test.cdn.ampproject.org/c/s/www.test/')
@@ -68,11 +59,12 @@ test('returns linter result and page info with cache flag and no components', (d
       expect(res.body.isAmp).toBe(true);
       expect(res.body.isCacheUrl).toBe(true);
       expect(res.body.components).toEqual({});
-      expect(res.body.data.isvalid.status).toBe('FAIL');
       done();
     });
 });
 
+/*
+TODO: Mock pixi cloud function
 test('returns linter result and redirected page with 1 component info', (done) => {
   mockResponse = {
     url: 'http://www.test',
@@ -80,12 +72,6 @@ test('returns linter result and redirected page with 1 component info', (done) =
     text: () =>
       '<html ⚡><head><script src="https://server/v0/amp-script-0.1.js"></script></head><body></body></html>',
   };
-  linter.lint.mockResolvedValue({
-    'isvalid': {
-      status: 'PASS',
-    },
-  });
-
   request(app)
     .get('/lint?url=https://www.test/amp')
     .expect('Content-Type', /json/)
@@ -101,3 +87,4 @@ test('returns linter result and redirected page with 1 component info', (done) =
       done();
     });
 });
+*/

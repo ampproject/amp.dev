@@ -86,7 +86,7 @@ author: sebastianbenz
 
 [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
 
-1. حدد العلامات `<script>` لـ [امتدادات عرض التأخير](https://github.com/ampproject/amphtml/blob/master/src/render-delaying-services.js) (على سبيل المثال، [`amp-perience`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes` ](../../../documentation/components/reference/amp-dynamic-css-classes.md) و[`amp-story`](../../../documentation/components/reference/amp-story.md)
+1. حدد العلامات `<script>` لـ [امتدادات عرض التأخير](https://github.com/ampproject/amphtml/blob/main/src/render-delaying-services.js) (على سبيل المثال، [`amp-perience`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes` ](../../../documentation/components/reference/amp-dynamic-css-classes.md) و[`amp-story`](../../../documentation/components/reference/amp-story.md)
 2. حدد علامات `<script>` للإضافات المتبقية (على سبيل المثال، [`amp-bind`](../../../documentation/components/reference/amp-bind.md) ...). لا تؤدي هذه الإضافات إلى تأخير العرض، وبالتالي لا يجب تحميلها مسبقًا لأنها قد تزيل النطاق الترددي المهم لعملية العرض الأولية.
 3. حدد أي أنماط مخصصة باستخدام العلامة `<style amp-custom>`.
 4. أضف أي علامات أخرى مسموح بها في قسم `<head>`. على وجه الخصوص، يجب أن تكون أي خطوط خارجية في الخطوة الأخيرة لأنها تمنع العرض.

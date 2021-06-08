@@ -200,4 +200,4 @@ El sistema de diseño de AMP requiere conocer la relación de aspecto de una ima
 
 # Validación <a name="validation"></a>
 
-Consulta las [reglas de amp-img](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) en la especificación de la herramienta de validación de AMP.
+Consulta las [reglas de amp-img](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) en la especificación de la herramienta de validación de AMP.

@@ -36,7 +36,7 @@ contributors:
 
 ## لاحقة اسم النطاق
 
-يتم تسجيل جميع ذاكرات AMP للتخزين المؤقت في ملف JSON، ويمكن العثور عليه على الإنترنت في [مستودع AMPHTML](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). وسيبدو المثال على سجلّ المخزن المؤقت في هذا الملف على النحو التالي:
+يتم تسجيل جميع ذاكرات AMP للتخزين المؤقت في ملف JSON، ويمكن العثور عليه على الإنترنت في [مستودع AMPHTML](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json). وسيبدو المثال على سجلّ المخزن المؤقت في هذا الملف على النحو التالي:
 
 ```json
 {
@@ -179,7 +179,7 @@ contributors:
 - `https://www-example-com.cdn.ampproject.org`
 - `https://v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq.cdn.ampproject.org`
 
-أولاً، أزِل بادئة البروتوكول (`https://`) ولاحقة نطاق ذاكرة AMP للتخزين المؤقت، مثل `.cdn.ampproject.org`. قد تكون اللاحقة من أي واحد من ذاكرات التخزين المؤقت المدرجة في [caches.json](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). وستكون السلسلة المتبقية هي "بادئة النطاق". في حالة المقالين المذكورين أعلاه، ستكون "بادئة النطاق" كالتالي:
+أولاً، أزِل بادئة البروتوكول (`https://`) ولاحقة نطاق ذاكرة AMP للتخزين المؤقت، مثل `.cdn.ampproject.org`. قد تكون اللاحقة من أي واحد من ذاكرات التخزين المؤقت المدرجة في [caches.json](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json). وستكون السلسلة المتبقية هي "بادئة النطاق". في حالة المقالين المذكورين أعلاه، ستكون "بادئة النطاق" كالتالي:
 
 - `www-example-com`
 - `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq`

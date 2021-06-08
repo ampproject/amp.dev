@@ -73,7 +73,7 @@ formats:
 
 ## 嵌入 AMP 故事播放器
 
-要在非 AMP 网页上展示 AMP 故事，需要使用 [`amp-story-player`](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md) 元素。
+要在非 AMP 网页上展示 AMP 故事，需要使用 [`amp-story-player`](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-story-player.md) 元素。
 
 ### 导入脚本
 

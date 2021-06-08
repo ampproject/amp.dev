@@ -257,7 +257,7 @@ amp-social-share[type="twitter"] {
 
 ## Substitution de variables <a name="variable-substitution"></a>
 
-Vous pouvez utiliser la [substitution de variables AMP globale](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) dans l'élément `<amp-social-share>`. Dans l'exemple ci-dessous, `TITLE` est remplacé par le titre de la page et `CANONICAL_URL` est remplacé par l'URL canonique du document.
+Vous pouvez utiliser la [substitution de variables AMP globale](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) dans l'élément `<amp-social-share>`. Dans l'exemple ci-dessous, `TITLE` est remplacé par le titre de la page et `CANONICAL_URL` est remplacé par l'URL canonique du document.
 
 ```html
 <amp-social-share type="whatsapp"
@@ -267,4 +267,4 @@ Vous pouvez utiliser la [substitution de variables AMP globale](https://github.
 
 ## Validation <a name="validation"></a>
 
-Consultez les [règles relatives à amp-social-share](https://github.com/ampproject/amphtml/blob/master/extensions/amp-social-share/validator-amp-social-share.protoascii) dans les spécifications du validateur AMP.
+Consultez les [règles relatives à amp-social-share](https://github.com/ampproject/amphtml/blob/main/extensions/amp-social-share/validator-amp-social-share.protoascii) dans les spécifications du validateur AMP.

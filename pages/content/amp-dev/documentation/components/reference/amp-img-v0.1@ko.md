@@ -201,4 +201,4 @@ AMP 레이아웃 시스템에서 이미지를 가져오기 전에 이미지의 �
 
 # 유효성 검사 <a name="validation"></a>
 
-AMP 유효성 검사기 사양에서 [amp-img rules](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)를 참조하세요.
+AMP 유효성 검사기 사양에서 [amp-img rules](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)를 참조하세요.

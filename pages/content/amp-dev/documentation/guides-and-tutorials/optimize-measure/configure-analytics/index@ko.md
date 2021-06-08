@@ -30,7 +30,7 @@ AMP 애널리틱스는 한 번 측정하여 여러 곳에 보고하도록 특별
 또한 [AMP 프로젝트에서 문제를 제기](https://github.com/ampproject/amphtml/issues/new)하여
 공급업체를 추가하도록 요청하는 것이 좋습니다.
 또한
-[AMP HTML 분석 도구 통합](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)을 확인해 보세요.
+[AMP HTML 분석 도구 통합](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md)을 확인해 보세요.
 
 ### 필요한 데이터
 

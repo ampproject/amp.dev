@@ -42,6 +42,6 @@ Berikut ini adalah beberapa kiat singkat untuk meningkatkan keterlibatan penggun
 
 - **Tonton roadmap AMP** untuk mengetahui berbagai pembaruan dan fitur di [roadmap](../../../community/roadmap.html).
 
-- **Libatkan diri Anda.** Berikan kontribusi berupa kode sumber, bug berkas, atau tawarkan umpan balik di [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Berikan masukan Anda tentang AMP di [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
+- **Libatkan diri Anda.** Berikan kontribusi berupa kode sumber, bug berkas, atau tawarkan umpan balik di [GitHub](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md). Berikan masukan Anda tentang AMP di [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html).
 
 - **Pelajari** cara menggunakan komponen AMP dengan [Contoh](../../../documentation/examples/index.html).

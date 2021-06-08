@@ -1,0 +1,258 @@
+@use 'sass:math';
+$skew-angle: 4deg;
+$gap: 10px;
+
+.#{project('formats')} {
+  --width: 100vw;
+  --skew-angle: #{$skew-angle};
+  --skew-tan: #{math.div(math.tan($skew-angle), 2)};
+  --skew-padding: calc(var(--width) * var(--skew-tan));
+
+  grid-column: 1/-1;
+  margin: 0 auto;
+  max-width: $maxWidth;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @include respond-to('medium') {
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-gap: $gap;
+    padding: 0 $gap;
+    grid-column: 2/22;
+
+    & + .#{project('section')} {
+      margin-top: 200px;
+    }
+  }
+
+  @include respond-to('large') {
+    grid-column: 1/-1;
+  }
+
+  &-navigation {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 100%;
+    z-index: 1;
+    padding: 136px 0 137px;
+
+    @include respond-to('small') {
+      left: 84px;
+      padding: 168px 0 154px;
+    }
+
+    @include respond-to('medium') {
+      display: none;
+    }
+
+    &-wrapper {
+      position: sticky;
+      top: 25vh;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-icon {
+      fill: color('white');
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 68px;
+      height: 68px;
+
+      &-wrapper {
+        position: relative;
+      }
+
+      &.active {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 50%;
+        background-color: color('white');
+        opacity: 0;
+        visibility: hidden;
+
+        &.websites {
+          fill: url('#gradient-websites') color('black');
+        }
+
+        &.stories {
+          fill: url('#gradient-stories') color('black');
+        }
+
+        &.ads {
+          fill: url('#gradient-ads') color('black');
+        }
+
+        &.email {
+          fill: url('#gradient-email') color('black');
+        }
+      }
+
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  &-format {
+    position: relative;
+    flex: 1;
+    color: color('charade');
+    overflow: hidden;
+    transform: skewY(calc(var(--skew-angle) * -1));
+
+    &-content {
+      position: relative;
+      padding: 136px 20px 137px 109px;
+      transform: skewY(var(--skew-angle));
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      .#{project('h5')} {
+        flex-grow: 2;
+        margin: 15px 0 40px;
+      }
+
+      .#{project('link')} {
+        color: inherit;
+        padding-bottom: 0;
+        &-text {
+          color: inherit;
+        }
+      }
+    }
+
+    &.websites {
+      .cta {
+        display: none;
+      }
+    }
+
+    &.websites,
+    &.ads {
+      color: color('white');
+    }
+
+    @include respond-to('small') {
+      &-content {
+        padding: 168px 83px 154px 207px;
+      }
+    }
+
+    @include respond-to('medium') {
+      transform: skewY(0deg);
+      @include shadow-large;
+      transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+      flex: 1 0 calc(50% - (2 * #{$gap}));
+      border-radius: 4px;
+
+      &:hover,
+      &:focus,
+      &:focus-within {
+        transform: translateY(-0.125em);
+        @include shadow-small;
+      }
+
+      &-content {
+        padding: 50px 30px 30px;
+        transform: skewY(0deg);
+
+        h1 {
+          font-size: 28px;
+        }
+
+        .cta {
+          margin-bottom: 19px;
+        }
+      }
+
+      &:nth-child(even) {
+        top: -24px;
+      }
+
+      &:nth-child(odd) {
+        top: 24px;
+      }
+
+      &.websites {
+        .cta {
+          display: inline-block;
+        }
+      }
+    }
+
+    @include respond-to('large') {
+      flex: 1 0 calc(25% - (4 * #{$gap}));
+    }
+  }
+
+  &-logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    display: none;
+
+    @include respond-to('medium') {
+      display: initial;
+
+      .websites &,
+      .ads & {
+        fill: color('white');
+      }
+    }
+  }
+
+  &-background {
+    position: absolute;
+    top: calc(var(--skew-padding) * -1);
+    right: 0;
+    bottom: calc(var(--skew-padding) * -1);
+    left: 0;
+    transform: skewY(var(--skew-angle));
+
+    @include respond-to('medium') {
+      top: 0;
+      bottom: 0;
+      transform: skewY(0deg);
+      svg {
+        display: none;
+      }
+    }
+
+    .websites & {
+      @include ci-websites;
+    }
+
+    .stories & {
+      @include ci-stories;
+    }
+
+    .email & {
+      @include ci-e-mails;
+    }
+
+    .ads & {
+      @include ci-ads;
+    }
+
+    svg {
+      position: absolute;
+      height: 100%;
+      width: 80%;
+      bottom: calc(var(--skew-padding) * -1);
+      left: 50%;
+      opacity: 0.1;
+    }
+  }
+}

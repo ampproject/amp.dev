@@ -6,7 +6,7 @@ description: AMP Story Player umożliwia osadzanie w stronie internetowej relacj
 
 Relacje są pełnoekranowymi, wciągającymi materiałami. Są umieszczane na otwartej stronie internetowej z własnym adresem URL, dzięki czemu można je z łatwością udostępniać. Co jednak zrobić, jeśli chcesz zintegrować relacje z własną witryną, na przykład w blogu, opisie produktu lub artykule informacyjnym?
 
-[AMP Story Player](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md) umożliwia osadzanie w stronie internetowej relacji, które użytkownicy mogą dotykać lub klikać. Postępuj zgodnie z tym poradnikiem krok po kroku, aby dowiedzieć się jak to zrobić.
+[AMP Story Player](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-story-player.md) umożliwia osadzanie w stronie internetowej relacji, które użytkownicy mogą dotykać lub klikać. Postępuj zgodnie z tym poradnikiem krok po kroku, aby dowiedzieć się jak to zrobić.
 
 # Wyświetlanie relacji na stronie bez AMP
 
@@ -71,7 +71,7 @@ Możesz osadzać relacje AMP w stronie bez AMP, aby umożliwić użytkownikom ic
 
 ## Osadzanie odtwarzacza relacji AMP
 
-Wyświetlanie relacji AMP na stronie bez AMP wymaga użycia elementu [`{amp-story-player`](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md).
+Wyświetlanie relacji AMP na stronie bez AMP wymaga użycia elementu [`{amp-story-player`](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-story-player.md).
 
 ### Import skryptów
 

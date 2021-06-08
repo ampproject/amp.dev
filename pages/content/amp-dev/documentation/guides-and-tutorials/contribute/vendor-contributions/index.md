@@ -20,7 +20,7 @@ This document outlines AMP third party expectations and defines contribution lev
 
 # Contributing guidelines
 
-All general contributions are subject to the [AMPHTML universal guidelines in CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). We expect the third party to test, maintain, and update their contribution to various degrees.
+All general contributions are subject to the [AMPHTML universal guidelines in CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md). We expect the third party to test, maintain, and update their contribution to various degrees.
 
 To qualify for inclusion, all contribution levels must:
 
@@ -49,7 +49,7 @@ Level 1 contributions leverage the feature logic of existing components. They lo
 
 Third parties add configurations or features to existing extensions, using provided APIs, to implement their functionalities. If such a component does not exist they may propose a new one. 
 
-The only third party specific logic checked into the AMP repository is a third party configuration. Adding a new third party to an existing level 1 contribution typically does not need a design review. Third parties can follow the integration documentation of the component, such as [Integrating ad networks into AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+The only third party specific logic checked into the AMP repository is a third party configuration. Adding a new third party to an existing level 1 contribution typically does not need a design review. Third parties can follow the integration documentation of the component, such as [Integrating ad networks into AMP](https://github.com/ampproject/amphtml/blob/main/ads/README.md).
 
 ### Expectations for third parties
 
@@ -62,9 +62,9 @@ The only third party specific logic checked into the AMP repository is a third p
 
 [**amp-ad**](../../../components/reference/amp-ad.md)
 
-Ad providers should read the [development overview](https://github.com/ampproject/amphtml/tree/master/ads#overview) and the [developer instructions](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) for adding your support to [`amp-ad`](../../../components/reference/amp-ad.md). Depending on the ad technology your company provides, you might find [these integration instructions ](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads)useful.
+Ad providers should read the [development overview](https://github.com/ampproject/amphtml/tree/main/ads#overview) and the [developer instructions](https://github.com/ampproject/amphtml/tree/main/ads#developer-guidelines-for-a-pull-request) for adding your support to [`amp-ad`](../../../components/reference/amp-ad.md). Depending on the ad technology your company provides, you might find [these integration instructions ](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads)useful.
 
-There are many ad providers who have added support for advertising related features like amp-ad. Here is a [sample pull request](https://github.com/ampproject/amphtml/pull/2299) from the ad network [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
+There are many ad providers who have added support for advertising related features like amp-ad. Here is a [sample pull request](https://github.com/ampproject/amphtml/pull/2299) from the ad network [Criteo](https://github.com/ampproject/amphtml/blob/main/ads/criteo.md).
 
 ## Level 2 contribution 
 

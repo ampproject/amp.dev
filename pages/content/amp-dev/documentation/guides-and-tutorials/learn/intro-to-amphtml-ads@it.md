@@ -48,7 +48,7 @@ Gli annunci AMPHTML sono flessibili e dinamici e consentono l'utilizzo di molti 
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='Serving AMPHTML ads to AMP pages', caption='Serving AMPHTML ads to AMP pages', align='' ) }}
 
 1. Gli editori inseriscono uno spazio pubblicitario nella loro pagina AMP tramite il tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md), specificando la rete di annunci che desiderano utilizzare.
-2. Il sistema di runtime AMP invia una richiesta di annuncio alla rete specificata per recuperare l'annuncio. Le reti pubblicitarie in grado di offrire annunci AMPHTML forniscono un'[implementazione Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) che convalida e garantisce i contenuti creativi.
+2. Il sistema di runtime AMP invia una richiesta di annuncio alla rete specificata per recuperare l'annuncio. Le reti pubblicitarie in grado di offrire annunci AMPHTML forniscono un'[implementazione Fast Fetch](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md) che convalida e garantisce i contenuti creativi.
 3. La rete pubblicitaria risponde con l'annuncio AMPHTML e il sistema di runtime AMP esegue il rendering dell'annuncio sulla pagina AMP.
 
 [tip type="note"] Non è necessaria alcuna integrazione speciale per fornire annunci AMPHTML in pagine prive di elementi AMP. Verificare se la propria rete supporta gli annunci AMPHTML. [/tip]
@@ -77,7 +77,7 @@ I fornitori di contenuti creativi devono creare annunci che rispettino le [speci
 
 ### Reti/server di annunci
 
-To deliver AMPHTML ads to AMP pages, you need to create an [`amp-ad`](../../../documentation/components/reference/amp-ad.md) extension for your network (unless you already have one) which uses the [Fast Fetch ad request implementation](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md). Refer to [Integrating with AMP to serve display ads](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md) for details. Keep in mind that no special integration is needed to serve AMPHTML to non-AMP pages.
+To deliver AMPHTML ads to AMP pages, you need to create an [`amp-ad`](../../../documentation/components/reference/amp-ad.md) extension for your network (unless you already have one) which uses the [Fast Fetch ad request implementation](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md). Refer to [Integrating with AMP to serve display ads](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md) for details. Keep in mind that no special integration is needed to serve AMPHTML to non-AMP pages.
 
 ## Creazione di annunci AMPHTML
 
@@ -101,7 +101,7 @@ Dopo aver creato annunci AMPHTML, occorre verificare che utilizzino la sintassi 
 
 ## Supporto di annunci AMPHTML in RTB
 
-I fornitori di servizi condivisi e di annunci che desiderano supportare gli annunci AMPHTML in un ambiente di offerte in tempo reale (RTB), possono consultare la [Guida all'implementazione per gli scambi di annunci RTB](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/RTBExchangeGuide.md).
+I fornitori di servizi condivisi e di annunci che desiderano supportare gli annunci AMPHTML in un ambiente di offerte in tempo reale (RTB), possono consultare la [Guida all'implementazione per gli scambi di annunci RTB](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/RTBExchangeGuide.md).
 
 ## FAQ
 
@@ -125,4 +125,4 @@ Sì. Consultare [`amp-animation`](../../../documentation/components/reference/am
 
 - [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) is our recommended way to find answers to questions about AMP; since members of the AMP Project community regularly monitor Stack Overflow you will probably receive the fastest response to your questions there.
 - Join the [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) channel for solutions and answers.
-- If you encounter a bug in AMP or have a feature request for AMP, see [Reporting issues with AMP](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp) for information on filing an issue.
+- If you encounter a bug in AMP or have a feature request for AMP, see [Reporting issues with AMP](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#reporting-issues-with-amp) for information on filing an issue.

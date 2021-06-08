@@ -225,7 +225,7 @@ Tek bir nesne yerine bir dizi kullanan ve her giriş için bir `namespace` sağl
 
 ### Access URL'si Değişkenleri <a name="access-url-variables"></a>
 
-Çeşitli uç noktalar için URL'leri yapılandırırken, Yayıncı değişiklik değişkenlerini kullanabilir. Bu değişkenlerin tam listesi, [AMP Var Spesifikasyonu](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)'nda tanımlanmaktadır. Buna ek olarak, bu spesifikasyon `READER_ID` ve `AUTHDATA` gibi erişime özel birkaç değişken de ekler. En alakalı değişkenlerden bazıları aşağıdaki tabloda açıklanmıştır:
+Çeşitli uç noktalar için URL'leri yapılandırırken, Yayıncı değişiklik değişkenlerini kullanabilir. Bu değişkenlerin tam listesi, [AMP Var Spesifikasyonu](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)'nda tanımlanmaktadır. Buna ek olarak, bu spesifikasyon `READER_ID` ve `AUTHDATA` gibi erişime özel birkaç değişken de ekler. En alakalı değişkenlerden bazıları aşağıdaki tabloda açıklanmıştır:
 
 <table>
   <tr>
@@ -499,7 +499,7 @@ AMP, giriş yapma ve abone olma arasında bir ayrım yapmaz. Bu ayrım, birden �
 
 ## *amp-analytics* ile entegrasyon <a name="integration-with-amp-analytics"></a>
 
-*amp-analytics* ile entegrasyon, [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) dosyasında belgelenmiştir.
+*amp-analytics* ile entegrasyon, [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/amp-access-analytics.md) dosyasında belgelenmiştir.
 
 ## CORS Kaynak Güvenliği <a name="cors-origin-security"></a>
 
@@ -566,7 +566,7 @@ Her zamanki gibi Okuyucu Kimliği, Giriş Sayfasına yapılan çağrıya dahil e
 
 ## Ek A: “amp-access” ifadesi dil bilgisi <a name="appendix-a-amp-access-expression-grammar"></a>
 
-En yeni BNF dilbilgisi, [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison) dosyasında mevcuttur.
+En yeni BNF dilbilgisi, [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/0.1/access-expr-impl.jison) dosyasında mevcuttur.
 
 Bu dil bilgisinin en önemli kısmı şöyledir:
 
@@ -606,4 +606,4 @@ Bu bölümde, amp-access spesifikasyonunun altında yatan tasarımın ayrıntıl
 
 ## Doğrulama <a name="validation"></a>
 
-AMP doğrulayıcı spesifikasyonundaki [amp-access kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/validator-amp-access.protoascii) bakın.
+AMP doğrulayıcı spesifikasyonundaki [amp-access kurallarına](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access/validator-amp-access.protoascii) bakın.

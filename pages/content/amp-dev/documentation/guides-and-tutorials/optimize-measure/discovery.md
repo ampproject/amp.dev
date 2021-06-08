@@ -94,7 +94,7 @@ Example:
 
 [/sourcecode]
 
-More examples can be found in the [ampproject examples folder](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), including the alternative HTML attribute syntax).
+More examples can be found in the [ampproject examples folder](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples), including the alternative HTML attribute syntax).
 
 [tip type="read-on"]
 Visit these resources for more information on structured data:

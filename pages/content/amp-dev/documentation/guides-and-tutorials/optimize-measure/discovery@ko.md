@@ -91,7 +91,7 @@ teaser:
 
 [/sourcecode]
 
-대체 HTML 속성 구문을 포함한 더 많은 예시는 [AMP 프로젝트 예시 폴더](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples)에서 찾아볼 수 있습니다.
+대체 HTML 속성 구문을 포함한 더 많은 예시는 [AMP 프로젝트 예시 폴더](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples)에서 찾아볼 수 있습니다.
 
 [tip type="read-on"] 구조화된 데이터에 관한 자세한 내용은 다음 리소스에서 확인하세요.
 

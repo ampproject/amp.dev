@@ -83,14 +83,23 @@ async function getStatusId(checkPromises, recommendationsPromise) {
 
     if (!pagePassedAll) {
       if (recommendations.length > fixedRecommendations.length) {
-        return 'failed-with-info';
+        return pageExperience.fieldData
+          ? 'failed-with-info'
+          : 'failed-with-info-missing-field-data';
       }
       return 'failed-no-info';
     }
 
     if (recommendations.length > fixedRecommendations.length) {
-      return 'passed-with-info';
+      return pageExperience.fieldData
+        ? 'passed-with-info'
+        : 'failed-with-info-missing-field-data';
     }
+
+    if (!pageExperience.fieldData) {
+      return 'passed-missing-field-data';
+    }
+
     return 'all-passed';
   } catch (err) {
     console.error('Failed to determine final status', err);

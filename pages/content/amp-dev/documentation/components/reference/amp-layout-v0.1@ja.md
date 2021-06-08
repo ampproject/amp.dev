@@ -61,4 +61,4 @@ $title: amp-layout
 
 ## 検証 <a name="validation"></a>
 
-AMP 検証ツール仕様の [amp-layout ルール](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)をご覧ください。
+AMP 検証ツール仕様の [amp-layout ルール](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)をご覧ください。

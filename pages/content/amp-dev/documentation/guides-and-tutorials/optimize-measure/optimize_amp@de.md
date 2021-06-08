@@ -86,7 +86,7 @@ Das wollen wir uns Schritt für Schritt anschauen:
 
 [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
 
-1. Gib die `<script>` Tags für [Erweiterungen an, die das Rendern verzögern](https://github.com/ampproject/amphtml/blob/master/src/render-delaying-services.js) (z. B. [`amp-experiment`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md) und [`amp-story`](../../../documentation/components/reference/amp-story.md).
+1. Gib die `<script>` Tags für [Erweiterungen an, die das Rendern verzögern](https://github.com/ampproject/amphtml/blob/main/src/render-delaying-services.js) (z. B. [`amp-experiment`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md) und [`amp-story`](../../../documentation/components/reference/amp-story.md).
 2. Gib die `<script>` Tags für übrige Erweiterungen an (z. B. [`amp-bind`](../../../documentation/components/reference/amp-bind.md) ...). Solche Erweiterungen verzögern nicht das Rendern und sollten deshalb nicht vorab geladen werden, um nicht mit dem ersten Rendern um Bandbreite zu konkurrieren.
 3. Gib bei Bedarf eigene Stile mit dem Tag `<style amp-custom>` an.
 4. Füge sonstige zulässige Tags im Abschnitt `<head>` hinzu. Insbesondere sollten externe Schriftarten zuletzt angegeben werden, da sie das Rendern blockieren.

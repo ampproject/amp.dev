@@ -40,7 +40,7 @@ reach out to the vendor to ask for their support.
 We also encourage you to [create an issue in the AMP project](https://github.com/ampproject/amphtml/issues/new)
 requesting that the vendor be added.
 See also
-[Integrating your analytics tools in AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+[Integrating your analytics tools in AMP HTML](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md).
 
 ### What data do you need?
 

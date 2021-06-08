@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-debugging.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-debugging.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -40,7 +40,7 @@ Nếu bạn vẫn có vấn đề sau khi làm theo các bước này, hãy ki�
     <tr>
       <td>Phông chữ web không xuất hiện (các phông chữ phương án dự phòng được sử dụng)</td>
       <td>Bộ nhớ đệm AMP không có trong danh sách trắng của nhà cung cấp phông chữ.</td>
-      <td>Liên hệ với nhà cung cấp phông chữ và yêu cầu họ cho phép <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">tất cả các bộ nhớ đệm</a>.</td>
+      <td>Liên hệ với nhà cung cấp phông chữ và yêu cầu họ cho phép <a href="amp-cors-requests.md#cors-security-in-amp">tất cả các bộ nhớ đệm</a>.</td>
     </tr>
     <tr>
       <td>Các tài sản (ví dụ như phông chữ và ảnh) không xuất hiện (<strong>chỉ nguồn gốc HTTP</strong>)</td>
@@ -50,7 +50,7 @@ Nếu bạn vẫn có vấn đề sau khi làm theo các bước này, hãy ki�
     <tr>
       <td rowspan="2">Các tài sản (ví dụ như phông chữ và ảnh) không xuất hiện</td>
       <td>Các tài sản này được phục vụ với loại MIME không đúng.</td>
-      <td>Quy định <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">một loại MIME được chấp nhận</a>.</td>
+      <td>Quy định <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">một loại MIME được chấp nhận</a>.</td>
     </tr>
     <tr>
       <td>Bộ nhớ đệm AMP không thể truy cập tài sản này.</td>
@@ -59,7 +59,7 @@ Nếu bạn vẫn có vấn đề sau khi làm theo các bước này, hãy ki�
     <tr>
       <td>Các yếu tố động như <code><amp-form/></code>, <code><amp-list/></code>, không hành xử như kỳ vọng.</td>
       <td>Các đầu đề CORS bị vỡ hoặc thiếu.</td>
-      <td>Các thành phần này thực hiện các yêu cầu chéo nguồn gốc từ Bộ nhớ đệm AMP đến nguồn của bạn. Theo mặc định, trình duyệt sẽ chặn các yêu cầu này. Để cho phép các yêu cầu này, hãy phát ra các <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">đầu đề CORS</a> cho phép <a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">tất cả bộ nhớ đệm</a>.</td>
+      <td>Các thành phần này thực hiện các yêu cầu chéo nguồn gốc từ Bộ nhớ đệm AMP đến nguồn của bạn. Theo mặc định, trình duyệt sẽ chặn các yêu cầu này. Để cho phép các yêu cầu này, hãy phát ra các <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">đầu đề CORS</a> cho phép <a href="amp-cors-requests.md">tất cả bộ nhớ đệm</a>.</td>
     </tr>
     <tr>
       <td>Nội dung đang được phục vụ phải bị xóa do một thông báo chấm dứt theo pháp luật.</td>

@@ -36,7 +36,7 @@ Tất cả các tài liệu đều sử dụng giao thức https trên các bộ
 
 ## Hậu tố Tên miền
 
-Tất cả các Bộ nhớ đệm AMP đều được đăng ký trong một tập tin JSON, được đăng trực tuyến trên [Kho lưu trữ AMPHTML](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). Một hồ sơ bộ nhớ đệm mẫu trong tập tin này sẽ có dạng:
+Tất cả các Bộ nhớ đệm AMP đều được đăng ký trong một tập tin JSON, được đăng trực tuyến trên [Kho lưu trữ AMPHTML](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json). Một hồ sơ bộ nhớ đệm mẫu trong tập tin này sẽ có dạng:
 
 ```json
 {
@@ -179,7 +179,7 @@ Giá trị đầu đề Nguồn của Bộ nhớ đệm AMP sẽ trông như m�
 - `https://www-example-com.cdn.ampproject.org`
 - `https://v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq.cdn.ampproject.org`
 
-Trước tiên, hãy xóa tiền tố giao thức (`https://`) và hậu tố tên miền Bộ nhớ đệm AMP ví dụ như `.cdn.ampproject.org`. Hậu tố này có thể là từ một trong các bộ nhớ đệm được liệt kê trong [caches.json](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). Chuỗi còn lại sẽ là “tiền tố tên miền”. Trong trường hợp của 2 ví dụ ở trên, “tiền tố tên miền” là:
+Trước tiên, hãy xóa tiền tố giao thức (`https://`) và hậu tố tên miền Bộ nhớ đệm AMP ví dụ như `.cdn.ampproject.org`. Hậu tố này có thể là từ một trong các bộ nhớ đệm được liệt kê trong [caches.json](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json). Chuỗi còn lại sẽ là “tiền tố tên miền”. Trong trường hợp của 2 ví dụ ở trên, “tiền tố tên miền” là:
 
 - `www-example-com`
 - `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq`

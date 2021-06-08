@@ -121,4 +121,4 @@ GL 전송 양식(glTF) 3D 모델을 표시합니다.
 
 ## 유효성 검사 <a name="validation"></a>
 
-AMP 유효성 검사기 사양의 [amp-3d-gltf 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii)을 참조하세요.
+AMP 유효성 검사기 사양의 [amp-3d-gltf 규칙](https://github.com/ampproject/amphtml/blob/main/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii)을 참조하세요.

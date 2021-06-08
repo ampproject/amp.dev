@@ -1,0 +1,129 @@
+.#{project('cards')} {
+  $cards: &;
+  position: relative;
+  grid-column: 1 / -1;
+  @include grid;
+
+  .#{project('center-stage')} + & {
+    margin-top: -30px;
+  }
+
+  .#{project('section')} + & {
+    margin-top: 100px;
+  }
+
+  &.--no-background {
+    &:after {
+      display: none;
+    }
+  }
+
+  &:after {
+    content: '';
+    @include fill;
+    height: 75%;
+    background: #0080e3;
+  }
+
+  &-item {
+    min-height: 320px;
+    padding: 20px;
+    border-radius: 8px;
+    color: color('charade');
+    background: color('white');
+    @include shadow-large;
+    display: flex;
+    flex-direction: column;
+
+    &-icon {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 20px;
+
+      svg {
+        max-width: none;
+      }
+    }
+
+    p {
+      flex-grow: 2;
+    }
+  }
+
+  &-grid {
+    position: relative;
+    z-index: 1;
+    grid-column: 2 / span 22;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+    max-width: $maxWidth;
+
+    @include respond-to('-small') {
+      display: none;
+    }
+
+    @include respond-to('medium') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &-carousel {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    grid-column: 1 / -1;
+    border-radius: 8px;
+
+    @include respond-to('small') {
+      display: none;
+    }
+
+    &-pagination {
+      grid-column: 1/-1;
+      margin: 0 auto;
+
+      @include respond-to('small') {
+        display: none;
+      }
+
+      &-item {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: 0 5px;
+        background-color: color('iron');
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &[option][selected] {
+          outline: none;
+        }
+
+        &[selected] {
+          @include ci-websites;
+        }
+      }
+    }
+
+    .#{project('cards')}-item {
+      width: 90vw;
+      box-shadow: none;
+      @include shadow-large;
+
+      &-wrapper {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}

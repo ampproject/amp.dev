@@ -31,13 +31,13 @@ AMP 캐시는 유효한 AMP 문서들을 제공하기 위한 프록시 기반 CD
 - [Google AMP Cache](https://developers.google.com/amp/cache/)
 - [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
-AMP는 오픈 에코 시스템이며 AMP 프로젝트는 AMP 캐시의 개발을 활발히 촉진합니다. AMP 캐시 생성에 대한 자세한 설명은 [AMP 캐시 가이드라인](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)를 참고하십시오.
+AMP는 오픈 에코 시스템이며 AMP 프로젝트는 AMP 캐시의 개발을 활발히 촉진합니다. AMP 캐시 생성에 대한 자세한 설명은 [AMP 캐시 가이드라인](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md)를 참고하십시오.
 
 ## AMP 캐시를 선택하는 방법은 무엇입니까?
 
 게시자가 AMP 캐시를 선택하는 것이 아니라, 당신의 콘텐츠와 링크된 실제 플랫폼이 사용할 캐시(있다면)를 선택합니다.
 
-이는 콘텐츠 전송이 게시자의 책임인 일반적인 모델과 상반됩니다. 그러나 이 모델을 통해 플랫폼은 사용자에게 예측 가능한 로드 성능을 제공하고, 무엇보다도 AMP의 사전 렌더링 단계 중 요구되는 보안 및 개인 정보 침해를 보장할 수 있습니다. AMP 캐시 생성을 위한 엄격한 가이드라인에 대해서는 [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)를 참조하십시오.
+이는 콘텐츠 전송이 게시자의 책임인 일반적인 모델과 상반됩니다. 그러나 이 모델을 통해 플랫폼은 사용자에게 예측 가능한 로드 성능을 제공하고, 무엇보다도 AMP의 사전 렌더링 단계 중 요구되는 보안 및 개인 정보 침해를 보장할 수 있습니다. AMP 캐시 생성을 위한 엄격한 가이드라인에 대해서는 [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md)를 참조하십시오.
 
 ## 캐싱하지 않을 수 있습니까?
 
@@ -67,6 +67,6 @@ AMP 형식을 사용함으로써 콘텐츠가 AMP 캐시에 의해 캐시될 수
 
 ## 추가 리소스
 
-- [AMP Project's AMP Cache guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)
+- [AMP Project's AMP Cache guidelines](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md)
 - [Google AMP Cache overview](https://developers.google.com/amp/cache/overview)
 - [Bing AMP Cache Documentation](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)

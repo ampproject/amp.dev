@@ -20,7 +20,7 @@ limitations under the License.
 
 I documenti AMP validi non devono contenere errori di convalida.
 Questo documento ha lo scopo di aiutarti a comprendere meglio e a correggere gli eventuali errori riscontrati durante la [convalida delle tue pagine AMP](validate_amp.md).
-Per una panoramica completa degli errori di convalida, leggi la [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Per una panoramica completa degli errori di convalida, leggi la [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 ## Errori negli attributi e nei tag HTML AMP
 
@@ -53,7 +53,7 @@ I tag che seguono devono essere presenti in tutti i documenti AMP:
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-Questi tag obbligatori includono un campo `mandatory: true` nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii); vengono inoltre citati nella [specifica AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md).
+Questi tag obbligatori includono un campo `mandatory: true` nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii); vengono inoltre citati nella [specifica AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md).
 
 ### Tag richiesto da un altro tag mancante
 
@@ -113,7 +113,7 @@ Esiste una allowlist dei tag, ma non esiste un elenco definitivo di tutti i tag 
   </tr>
 </table>
 
-Gli attributi obbligatori dei tag AMP sono definiti all'interno della [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Gli attributi obbligatori dei tag AMP sono definiti all'interno della [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 Cerca il tag, visualizza gli attributi elencati e controlla se è presente `mandatory: true`.
 Gli attributi obbligatori di ogni tag AMP sono elencati anche nella specifica del tag.
 
@@ -157,7 +157,7 @@ Ad esempio, spesso questo errore viene generato se vengono rilevati valori non v
 </table>
 
 Esiste una allowlist degli attributi, ma non esiste un elenco definitivo di tutti gli attributi non consentiti.
-Per controllare gli attributi supportati per ogni tag specifico, cerca il tag HTML, quindi il valore `attrs` nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Per controllare gli attributi supportati per ogni tag specifico, cerca il tag HTML, quindi il valore `attrs` nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 Oltre agli attributi specifici di ogni tag presenti in una allowlist, tutti i tag AMP possono utilizzare qualsiasi attributo presente nella allowlist `$GLOBAL_ATTRS`; è possibile utilizzare anche tutti gli attributi con il prefisso `"data-"`.
 
@@ -224,7 +224,7 @@ I messaggi dettagliati relativi a questo errore possono essere i seguenti:
 
 Alcuni dati CSS specifici sono stati inseriti in una denylist per convalidare le regole AMP CSS essenziali.
 
-Di seguito è riportato l'elenco di dati CSS inseriti nella denylist (vedi anche <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">`disallowed_cdata_regex` nella specifica dello strumento di convalida AMP</a>):
+Di seguito è riportato l'elenco di dati CSS inseriti nella denylist (vedi anche <a href="https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii">`disallowed_cdata_regex` nella specifica dello strumento di convalida AMP</a>):
 
 * `"\\.i?-amp-"` ("prefisso nome classe CSS -amp-")
 * `"!important"`
@@ -502,7 +502,7 @@ Attualmente l'unico esempio è il tag `template`, che non può essere nidificato
   </tr>
 </table>
 
-I discendenti obbligatori sono definiti come `mandatory_ancestor` nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+I discendenti obbligatori sono definiti come `mandatory_ancestor` nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 Questo errore si verifica quando manca `mandatory_ancestor` (tag, predecessore) nei seguenti tag:
 
@@ -578,7 +578,7 @@ Ogni tag che viene visualizzato nella pagina richiede altezza e larghezza predef
 Questo non significa che tu debba includere manualmente questi attributi.
 Per alcuni tipi di layout, lo strumento di convalida AMP non genera errori perché i valori predefiniti vengono dedotti.
 
-Ogni tag AMP ha un elenco di attributi `supported_layouts`, come definito nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Ogni tag AMP ha un elenco di attributi `supported_layouts`, come definito nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 Lo strumento di convalida genera errori per i layout non supportati e cerca il layout predefinito nelle regole di convalida.
 
 ### Foglio di stile troppo lungo
@@ -659,7 +659,7 @@ L'errore di convalida ti indica la regola esatta non valida, facilitandoti così
 </table>
 
 Questo errore si verifica quando non specifichi un layout per il tag AMP e il layout implicito (basato su larghezza, altezza e dimensioni) non è supportato.
-Controlla i valori `supported_layout` del tag nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Controlla i valori `supported_layout` del tag nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 L'effettivo comportamento del layout viene stabilito dall'attributo `layout`.
 Per ulteriori informazioni sul funzionamento del layout, leggi la pagina relativa a [come controllare il layout](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) e la [specifica relativa al sistema di layout HTML AMP](../../../../documentation/components/reference/amp-layout.md).
@@ -705,7 +705,7 @@ Gli attributi non consentiti per i tipi di layout sono descritti nella [specific
 </table>
 
 Questo errore si verifica quando il layout specificato per il tag non è supportato.
-Controlla i valori `supported_layout` del tag nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Controlla i valori `supported_layout` del tag nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 
 L'effettivo comportamento del layout viene stabilito dall'attributo `layout`.
 Per ulteriori informazioni sul funzionamento del layout, leggi la pagina relativa a [come controllare il layout](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) e la [specifica relativa al sistema di layout HTML AMP](../../../../documentation/components/reference/amp-layout.md).
@@ -885,6 +885,6 @@ Attualmente non esistono tag obsoleti; l'avviso è destinato a futuri ritiri.
 Questo avviso viene visualizzato quando nel documento AMP viene trovato un attributo AMP che era valido in passato.
 Si tratta solo di un avviso; i documenti AMP con avvisi sono comunque validi.
 
-Identifica gli attributi obsoleti di ogni tag AMP cercando `deprecation` nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
+Identifica gli attributi obsoleti di ogni tag AMP cercando `deprecation` nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
 </body>
 </html>

@@ -28,7 +28,7 @@ Ci auguriamo che tu possa diventare un collaboratore regolare della nostra comun
 
 #### Contributi al codice
 
-Per iniziare a collaborare per i codici del Progetto AMP, puoi leggere [il file dei CONTRIBUTI](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md), che riporta i dettagli del processo attraverso il quale le funzionalità o le correzioni passano dalla progettazione alla realizzazione e indica come partecipare a progetti tecnici e discussioni. Se sei nuovo nei sistemi open source, abbiamo alcuni [suggerimenti per iniziare](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-code).
+Per iniziare a collaborare per i codici del Progetto AMP, puoi leggere [il file dei CONTRIBUTI](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md), che riporta i dettagli del processo attraverso il quale le funzionalità o le correzioni passano dalla progettazione alla realizzazione e indica come partecipare a progetti tecnici e discussioni. Se sei nuovo nei sistemi open source, abbiamo alcuni [suggerimenti per iniziare](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#contributing-code).
 
 ### Contributi per i contenuti AMP
 

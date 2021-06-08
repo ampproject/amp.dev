@@ -73,6 +73,6 @@ author: CrystalOnScript
 
 如果您是一家广告客户，想在网页故事中投放自有广告，请[联系我们](mailto:story-ads-wg@google.com)了解详情。
 
-如果发布商自行设置了广告服务器，他们也可以投放自定义广告。[此处详细介绍了过程](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads)。
+如果发布商自行设置了广告服务器，他们也可以投放自定义广告。[此处详细介绍了过程](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story-ads.md#publisher-placed-ads)。
 
 [tip type="note"] 请参阅[在 AMP 故事中投放自定义广告素材](https://support.google.com/admanager/answer/9038178)，了解将广告上传到 Google Ad Manager 的相关信息，并查阅我们的[制作 AMP 故事广告的最佳做法](story_ads_best_practices.md)指南。[/tip]

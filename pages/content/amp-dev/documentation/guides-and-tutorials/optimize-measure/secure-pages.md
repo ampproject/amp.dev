@@ -22,7 +22,7 @@ Implement a CSP by adding the appropriate meta tag to the head of your pages. Be
 />
 ```
 
-[You can view the full example here](https://github.com/ampproject/amphtml/blob/master/examples/csp.amp.html).
+[You can view the full example here](https://github.com/ampproject/amphtml/blob/main/examples/csp.amp.html).
 
 [tip type="read-on"]
 Learn more about [protecting about security vulnerabilities and CSPs here](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP).

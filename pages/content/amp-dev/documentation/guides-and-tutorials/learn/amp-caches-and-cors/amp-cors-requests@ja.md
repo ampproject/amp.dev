@@ -12,7 +12,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cors-requests.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -274,7 +274,7 @@ res.setHeader('Access-Control-Allow-Origin', origin);
 }
 [/sourcecode]
 
-**注意**: 実際に稼働するコードサンプルについては、[amp-cors.js](https://github.com/ampproject/amphtml/blob/master/build-system/server/amp-cors.js) を参照してください。
+**注意**: 実際に稼働するコードサンプルについては、[amp-cors.js](https://github.com/ampproject/amphtml/blob/main/build-system/server/amp-cors.js) を参照してください。
 
 ### シナリオ 1: 同一オリジンの AMP ページからリクエストを取得する <a name="scenario-1-get-request-from-amp-page-on-same-origin"></a>
 

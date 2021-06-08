@@ -129,4 +129,4 @@ Avec la mise en page responsive, les valeurs de largeur et de hauteur utilisées
 
 ## Validation <a name="validation"></a>
 
-Consultez les [règles relatives à amp-youtube](https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube/validator-amp-youtube.protoascii) dans les spécifications du validateur AMP.
+Consultez les [règles relatives à amp-youtube](https://github.com/ampproject/amphtml/blob/main/extensions/amp-youtube/validator-amp-youtube.protoascii) dans les spécifications du validateur AMP.

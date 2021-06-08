@@ -3,7 +3,7 @@ $title: AMP HTML 仕様
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -115,7 +115,7 @@ AMP HTML ドキュメントに必須ものは次の通りです。
 - <a name="chrs"></a>head タグの最初の子として `<meta charset="utf-8">` タグを含めます。[🔗](#chrs)
 - <a name="vprt"></a>head タグの中に `<meta name="viewport" content="width=device-width">` タグを含めます。`minimum-scale=1` と `initial-scale=1` を含めることもお勧めです。[🔗](#vprt)
 - <a name="scrpt"></a>head タグの中に `<script async src="https://cdn.ampproject.org/v0.js"></script>` タグを含めます。[🔗](#scrpt)
-- <a name="boilerplate"></a>head タグに [AMP ボイラープレートコード](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md) (`head > style[amp-boilerplate]` と `noscript > style[amp-boilerplate]`) を入れてください。[🔗](#boilerplate)
+- <a name="boilerplate"></a>head タグに [AMP ボイラープレートコード](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md) (`head > style[amp-boilerplate]` と `noscript > style[amp-boilerplate]`) を入れてください。[🔗](#boilerplate)
 
 ### メタデータ <a name="metadata"></a>
 
@@ -211,7 +211,7 @@ HTML タグは AMP HTML では変更なしに使用できます。特定のタ�
   </tr>
   <tr>
     <td width="30%">meta</td>
-    <td><code>http-equiv</code> 属性は特定の許容する値に使用できます。詳細は <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP バリデータの仕様</a>を参照してください。</td>
+    <td><code>http-equiv</code> 属性は特定の許容する値に使用できます。詳細は <a href="https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii">AMP バリデータの仕様</a>を参照してください。</td>
   </tr>
   <tr>
     <td width="30%"><code><a name="ancr"></a>a</code></td>
@@ -223,7 +223,7 @@ HTML タグは AMP HTML では変更なしに使用できます。特定のタ�
   </tr>
 </table>
 
-バリデーターの実装は上記のタグを取り除いた HTML5 仕様に基づくホワイトリストを使うべきです。[AMP タグ付属文書](https://github.com/ampproject/amphtml/blob/master/spec/amp-tag-addendum.md)を参照してください。
+バリデーターの実装は上記のタグを取り除いた HTML5 仕様に基づくホワイトリストを使うべきです。[AMP タグ付属文書](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-tag-addendum.md)を参照してください。
 
 ### コメント <a name="comments"></a>
 
@@ -241,7 +241,7 @@ xmlns、xml:lang、xml:base、xml:space などの XML 関連の属性は、AMP H
 
 AMP HTML では、内部で AMP クラス名の前に `-amp-` と `i-amp-` を付けることはできません。
 
-接頭辞 `amp-` のクラス名の意味については [AMP のドキュメント](https://github.com/ampproject/amphtml/blob/master/spec/amp-css-classes.md) を参照してください。 これらのクラスの使用は許可されており、AMP ランタイムおよび拡張機能の機能の一部をカスタマイズ可能にすることを意図しています。
+接頭辞 `amp-` のクラス名の意味については [AMP のドキュメント](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-css-classes.md) を参照してください。 これらのクラスの使用は許可されており、AMP ランタイムおよび拡張機能の機能の一部をカスタマイズ可能にすることを意図しています。
 
 他のすべての作成したクラス名は AMP HTML マークアップで許可されています。
 
@@ -372,7 +372,7 @@ AMP ランタイムは、現在ビューポートにないリソースをアン�
 
 AMP HTML は、「AMP コンポーネント」と呼ばれるカスタム要素を使用して、`<img>` や `<video>` などの組み込みリソースローディングタグを置き換えたり、画像ライトボックスやカルーセルなどの複雑なインタラクションを伴う機能を実装します。
 
-サポートされているコンポーネントの詳細については [AMP コンポーネント仕様](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-components.md) を参照してください。
+サポートされているコンポーネントの詳細については [AMP コンポーネント仕様](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-components.md) を参照してください。
 
 サポートされている AMP コンポーネントは 2 種類あります:
 
@@ -389,7 +389,7 @@ AMP HTML は、「AMP コンポーネント」と呼ばれるカスタム要素�
 ここでの主な目標は、JavaScript またはリモートリソースがダウンロードされる前に、
 要素を表示し、そのスペースを適切に予約できるようにすることです。
 
-レイアウトシステムについての詳細は [AMP レイアウトシステム](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-layout.md) を参照してください。
+レイアウトシステムについての詳細は [AMP レイアウトシステム](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-layout.md) を参照してください。
 
 #### `on` <a name="on"></a>
 
@@ -417,7 +417,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 
 例: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
-[AMP アクションとイベント](https://github.com/ampproject/amphtml/blob/master/spec/./amp-actions-and-events.md)についての詳細を参照してください。
+[AMP アクションとイベント](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-actions-and-events.md)についての詳細を参照してください。
 
 ### 拡張コンポーネント <a name="extended-components"></a>
 
@@ -447,13 +447,13 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 
 ##### バージョン管理 <a name="versioning"></a>
 
-[AMP バージョン管理ポリシー](https://github.com/ampproject/amphtml/blob/master/spec/amp-versioning-policy.md)を参照してください。
+[AMP バージョン管理ポリシー](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-versioning-policy.md)を参照してください。
 
 ### 拡張テンプレート <a name="templates"></a>
 
 テンプレートは、言語固有のテンプレートと提供された JSON データに基づいて HTML コンテンツをレンダリングします。
 
-サポートされているテンプレートの詳細については、[AMP テンプレートの仕様](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md) を参照してください。
+サポートされているテンプレートの詳細については、[AMP テンプレートの仕様](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-templates.md) を参照してください。
 
 拡張テンプレートは AMP ランタイムに同梱されていないため、拡張要素と同様にダウンロードする必要があります。
 拡張コンポーネントはこのようにドキュメントの先頭に `<script>` タグを含めることでロードされます:
@@ -482,7 +482,7 @@ T`id` 属性はオプションです。個々の AMP 要素はそれら自身の
 
 テンプレート要素内の構文は、特定のテンプレート言語によって異なります。ただし、テンプレート言語は AMP 内で制限される可能性があります。例えば、"template" 要素に従って、すべてのプロダクションは有効な整形式の DOM 上になければなりません。すべてのテンプレート出力は、AMP に準拠した出力を保証するためにサニタイズすることもあります。
 
-拡張テンプレートの構文と制限事項については、[拡張テンプレートのドキュメント](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md#templates) を参照してください。
+拡張テンプレートの構文と制限事項については、[拡張テンプレートのドキュメント](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-templates.md#templates) を参照してください。
 
 ##### URL <a name="url-1"></a>
 

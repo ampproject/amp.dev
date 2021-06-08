@@ -75,12 +75,19 @@ const packager = (request, response, next) => {
     return;
   }
   // Hard-code amp.dev as it has to match the cert
+  const urlToSign = `https://amp.dev${request.url}`;
   const searchParams = new URLSearchParams({
-    sign: 'https://amp.dev' + request.url,
+    sign: urlToSign,
   }).toString();
   const url = `/priv/doc?${searchParams}`;
-  // Serve webpackage via packager
-  sxgProxy(request, response, url, next);
+  try {
+    // Serve webpackage via packager
+    sxgProxy(request, response, url, next);
+  } catch (error) {
+    log.error('[SXG] could not proxy request to amppackager', error);
+    // Serve normal version of the page
+    next();
+  }
 };
 
 function sxgProxy(request, response, url) {

@@ -200,4 +200,4 @@ Sistem tata letak AMP memerlukan rasio tinggi lebar gambar sebelum mengambil gam
 
 # Validasi <a name="validation"></a>
 
-Lihat [aturan amp-img](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) dalam spesifikasi validator AMP.
+Lihat [aturan amp-img](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) dalam spesifikasi validator AMP.

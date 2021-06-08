@@ -218,7 +218,7 @@ Ekspresi mirip dengan JavaScript dengan beberapa perbedaan penting.
 * Indeks array melebihi batas dan variabel yang tidak ditentukan akan menampilkan `null`, bukan `undefined` atau memunculkan error.
 * Ekspresi tunggal saat ini dibatasi 50 operand untuk menjaga performa. Harap [hubungi kami](https://github.com/ampproject/amphtml/issues/new) jika alokasi ini tidak memadai untuk kasus penggunaan Anda.
 
-Implementasi dan tata bahasa lengkap ekspresi dapat dilihat di [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) dan [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js).
+Implementasi dan tata bahasa lengkap ekspresi dapat dilihat di [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/main/extensions/amp-bind/0.1/bind-expr-impl.jison) dan [bind-expression.js](https://github.com/ampproject/amphtml/blob/main/extensions/amp-bind/0.1/bind-expression.js).
 
 # Contoh <a name="examples"></a>
 
@@ -652,7 +652,7 @@ AMP mengelompokkan XMLHttpRequest (XHR) ke endpoint JSON, artinya, Anda dapat me
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>URL endpoint jarak jauh yang akan menampilkan JSON yang akan mengubah <code>amp-state</code>. Harus berupa layanan HTTP CORS.
-        Atribut <code>src</code> memungkinkan semua substitusi variabel URL standar. Lihat <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">Panduan Substitusi</a> untuk informasi selengkapnya.
+        Atribut <code>src</code> memungkinkan semua substitusi variabel URL standar. Lihat <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">Panduan Substitusi</a> untuk informasi selengkapnya.
         [tip type="caution"] Endpoint harus mengimplementasikan persyaratan yang ditentukan dalam spesifikasi <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">permintaan CORS di AMP</a>.
         [/tip]</td>
     </tr>

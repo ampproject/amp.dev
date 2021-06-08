@@ -56,7 +56,7 @@ Los documentos de AMP HTML DEBEN:
 | Incluir una etiqueta `<meta charset="utf-8">` como la primera etiqueta secundaria de su etiqueta `<head>`.                                         | Identifica la codificación de la página.                                                                                                                                                                                                                                  |
 | Incluir una etiqueta `<script async src="https://cdn.ampproject.org/v0.js"></script>` como la segunda etiqueta secundaria de la etiqueta `<head>`. | Incluye y carga la biblioteca JS de AMP.                                                                                                                                                                                                                                  |
 | Incluir una etiqueta `<link rel="canonical" href="$SOME_URL">` dentro de `<head>`.                                                                 | Dirige a la versión HTML normal del documento AMP HTML o a sí misma si no existe dicha versión HTML. Consulta más información en el artículo sobre cómo [hacer que una página sea visible](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md). |
-| Contain a `<meta name="viewport" content="width=device-width"> It's also recommended to include `initial-scale=1`.                                 | Especifique una ventana de visualización adaptable. Consulte más información en el artículo sobre cómo [crear páginas AMP adaptables](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).                                      |
+| Contain a `<meta name="viewport" content="width=device-width">` It's also recommended to include `initial-scale=1`.                                 | Especifique una ventana de visualización adaptable. Consulte más información en el artículo sobre cómo [crear páginas AMP adaptables](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).                                      |
 | Incluir el [código de plantilla de AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) en la etiqueta `<head>`.     | La plantilla CSS para ocultar inicialmente el contenido hasta que se cargue AMP JS.                                                                                                                                                                                       |
 
 ## Metadatos opcionales
@@ -66,7 +66,7 @@ Además de los requisitos básicos, nuestra muestra también incluye una definic
 [tip type="read-on"] Visite estos recursos para obtener más información:
 
 - [Empezar a utilizar AMP en Google Search](https://developers.google.com/amp/docs): descubra cómo preparar sus páginas AMP para que se muestren en Google Search.
-- [Muestras de metadatos](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples): consulte más información sobre los metadatos que necesitará en otros lugares (por ejemplo, Twitter). [/tip]
+- [Muestras de metadatos](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples): consulte más información sobre los metadatos que necesitará en otros lugares (por ejemplo, Twitter). [/tip]
 
 <hr>
 

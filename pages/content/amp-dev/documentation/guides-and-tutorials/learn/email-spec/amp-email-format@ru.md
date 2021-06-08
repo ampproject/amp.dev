@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -33,7 +33,7 @@ limitations under the License.
 
 AMP — это технология, используемая для разработки сверхбыстрых веб-страниц для мобильных клиентов. AMP представляет собой набор специальных HTML-тегов с реализацией на JavaScript, которые позволяют с легкостью реализовывать нужную функциональность и специально спроектированы с упором на высокую производительность и безопасность. Существуют [компоненты AMP](https://amp.dev/documentation/components/) для самых разных задач: от создания кольцевых галерей и адаптивных элементов форм до получения актуального контента с удаленных конечных точек.
 
-Формат «AMP для писем» содержит [специальный набор компонентов AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md), предназначенный для сообщений электронной почты. Получатели AMP-писем могут просматривать контент AMP-компонентов и взаимодействовать с ним прямо в письме.
+Формат «AMP для писем» содержит [специальный набор компонентов AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md), предназначенный для сообщений электронной почты. Получатели AMP-писем могут просматривать контент AMP-компонентов и взаимодействовать с ним прямо в письме.
 
 ## Обязательная разметка <a name="required-markup"></a>
 
@@ -73,21 +73,21 @@ AMP — это технология, используемая для разра�
 
 Формат «AMP для писем» использует стандартный подтип <a>MIME</a> <code>multipart/alternative</code>, определенный в [RFC 1521, раздел 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-_Для получения дополнительной информации см. [Структура и рендеринг AMP-писем](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)._
+_Для получения дополнительной информации см. [Структура и рендеринг AMP-писем](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-structure.md)._
 
 ## Совместимые компоненты AMP <a name="supported-amp-components"></a>
 
-_См. [AMP для писем: совместимые компоненты](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)._
+_См. [AMP для писем: совместимые компоненты](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md)._
 
 ## Требования к HTML <a name="html-requirements"></a>
 
-_См. статью [Поддержка HTML в AMP для писем](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)._
+_См. статью [Поддержка HTML в AMP для писем](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-html.md)._
 
 ## Требования к CSS <a name="css-requirements"></a>
 
 ### Поддерживаемые CSS-свойства <a name="supported-selectors-and-properties"></a>
 
-_См. статью [Поддержка CSS в AMP для писем](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)._
+_См. статью [Поддержка CSS в AMP для писем](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-css.md)._
 
 ### Использование CSS в документе AMP <a name="specifying-css-in-an-amp-document"></a>
 
@@ -151,4 +151,4 @@ AMPHTML позволяет отслеживать открытие писем с
 
 ## Обратная связь и поддержка <a name="feedback--support"></a>
 
-Обратиться за помощью по теме AMP для писем или поделиться своим мнением можно по каналам [общения постоянных участников](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#ongoing-participation)
+Обратиться за помощью по теме AMP для писем или поделиться своим мнением можно по каналам [общения постоянных участников](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#ongoing-participation)

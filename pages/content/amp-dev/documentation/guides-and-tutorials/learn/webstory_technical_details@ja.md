@@ -271,7 +271,7 @@ amp-story-page が公開する [`auto-advance-after`](https://amp.dev/documentat
 
 ## デスクトップエクスペリエンス
 
-ウェブストーリー形式は、[オプションのデスクトップエクスペリエンス](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in)をサポートしています。これにより、デスクトップエクスペリエンスは、デフォルトの 3 ポートレートパネルエクスペリエンスから没入型のフルブリードモードに変わり、モバイルユーザーがデバイスを横向きにしたときに表示できるようになります。
+ウェブストーリー形式は、[オプションのデスクトップエクスペリエンス](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in)をサポートしています。これにより、デスクトップエクスペリエンスは、デフォルトの 3 ポートレートパネルエクスペリエンスから没入型のフルブリードモードに変わり、モバイルユーザーがデバイスを横向きにしたときに表示できるようになります。
 
 `supports-landscape` 属性を `<amp-story>` コンポーネントに追加すると、デスクトップサポートにオプトインします。
 

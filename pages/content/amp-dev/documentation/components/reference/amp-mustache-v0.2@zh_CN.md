@@ -61,7 +61,7 @@ Mustache 是一种无逻辑模板语法。如需了解详情，请参阅 [Mustac
 
 ## 用法 <a name="usage"></a>
 
-`amp-mustache` 模板的定义和使用必须符合 [AMP 模板规范](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md)。
+`amp-mustache` 模板的定义和使用必须符合 [AMP 模板规范](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-templates.md)。
 
 首先，必须按如下所示声明/加载 `amp-mustache`：
 
@@ -200,4 +200,4 @@ HTML 实体不会保留在 `<template>` 元素中。
 
 ## 验证 <a name="validation-1"></a>
 
-请参阅 AMP 验证工具规范中的 [amp-mustache 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-mustache/validator-amp-mustache.protoascii)。
+请参阅 AMP 验证工具规范中的 [amp-mustache 规则](https://github.com/ampproject/amphtml/blob/main/extensions/amp-mustache/validator-amp-mustache.protoascii)。

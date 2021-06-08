@@ -8,7 +8,7 @@ formats:
   - ads
 ---
 
-[AMP experimental components](https://github.com/ampproject/amphtml/tree/master/tools/experiments)
+[AMP experimental components](https://github.com/ampproject/amphtml/tree/main/tools/experiments)
 are released features not yet ready for wide use, so they are protected by an **experimental** status.
 
 Developers and users can opt-in to using these features before they are fully released.
@@ -24,25 +24,25 @@ The following is a list of components that are currently in experimental status 
 
 <ul>
 {% for component in experimental_components %}
-  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li>
+  <li><a href="{{ component.url.path }}">{{ component.title }}-v{{ component.version }}</a></li>
 {% endfor %}
 </ul>
 {% endif %}
 
-## Opt into the AMP Dev Channel
+## Opt into the AMP Beta Channel
 
-The AMP Dev Channel is a way to opt a browser into using a newer version of the AMP JS libraries.
+The AMP Beta Channel is a way to opt a browser into using a newer version of the AMP JS libraries.
 
-The AMP Dev Channel release **may be less stable** and it may contain features not available to all users. Opt into this option if you'd like to help test new versions of AMP, report bugs or build documents that require a new feature that is not yet available to everyone.
+The AMP Beta Channel release **may be less stable** and it may contain features not available to all users. Opt into this option if you'd like to help test new versions of AMP, report bugs or build documents that require a new feature that is not yet available to everyone.
 
-Opting into Dev Channel is great to:
+Opting into Beta Channel is great to:
 
 - test and play with new features not yet available to all users.
 - use in quality assurance (QA) to ensure that your site is compatible with the next version of AMP.
 
-If you find an issue that appears to only occur in the Dev Channel version of AMP, [file an issue](https://github.com/ampproject/amphtml/issues/new) with a description of the problem. Always include a URL to a page that reproduces the issue.
+If you find an issue that appears to only occur in the Beta Channel version of AMP, [file an issue](https://github.com/ampproject/amphtml/issues/new) with a description of the problem. Always include a URL to a page that reproduces the issue.
 
-To opt your browser into the AMP Dev Channel, go to [the AMP experiments page](https://cdn.ampproject.org/experiments.html) and activate the "AMP Dev Channel" experiment. To get notified about important/breaking changes about AMP, subscribe to the [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce) mailing list.
+To opt your browser into the AMP Beta Channel, go to [the AMP experiments page](https://cdn.ampproject.org/experiments.html) and activate the "AMP Beta Channel" experiment. To get notified about important/breaking changes about AMP, subscribe to the [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce) mailing list.
 
 ## Enable an experimental component
 
@@ -81,7 +81,7 @@ Document can choose to opt in a certain experiments. To do that, place a meta ta
 </head>
 ```
 
-By doing so, the specified experiments will be enabled for all visitors of the document. However, not all experiments allow document-level opt-in. For a full list of allowlisted experiments, see the `allow-doc-opt-in` attribute in the project's [`prod-config.json`](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/prod-config.json) file. Note that document opt-in can be overridden by user opt-out.
+By doing so, the specified experiments will be enabled for all visitors of the document. However, not all experiments allow document-level opt-in. For a full list of allowlisted experiments, see the `allow-doc-opt-in` attribute in the project's [`prod-config.json`](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/prod-config.json) file. Note that document opt-in can be overridden by user opt-out.
 
 ## Origin trials
 

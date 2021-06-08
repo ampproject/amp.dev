@@ -23,7 +23,7 @@ Si vous disposez de votre propre solution interne pour mesurer l'engagement des 
 
 L'analyse AMP est spécialement conçue pour mesurer une fois et émettre plusieurs rapports. Si vous travaillez déjà avec un ou plusieurs fournisseurs d'analyse, consultez la liste des [fournisseurs d'analyse](analytics-vendors.md) pour voir s'ils ont intégré leur solution à AMP. Si tel est le cas, examinez les détails de leur configuration et suivez les instructions.
 
-Si le fournisseur d'analyse n'a pas intégré sa solution à AMP, contactez le fournisseur pour lui demander son assistance. Nous vous encourageons également à [soulever un problème dans le projet AMP](https://github.com/ampproject/amphtml/issues/new) afin de demander l'ajout du fournisseur. Voir également [Intégration de vos outils d'analyse dans HTML AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+Si le fournisseur d'analyse n'a pas intégré sa solution à AMP, contactez le fournisseur pour lui demander son assistance. Nous vous encourageons également à [soulever un problème dans le projet AMP](https://github.com/ampproject/amphtml/issues/new) afin de demander l'ajout du fournisseur. Voir également [Intégration de vos outils d'analyse dans HTML AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md).
 
 ### De quelles données avez-vous besoin?
 

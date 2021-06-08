@@ -73,6 +73,6 @@ Các nền tảng quảng cáo hiện hỗ trợ quảng cáo Câu chuyện Web:
 
 Nếu bạn là một nhà quảng cáo và muốn chạy quảng cáo của mình trong Câu chuyện Web, hãy [liên hệ](mailto:story-ads-wg@google.com) để biết thêm thông tin.
 
-Các nhà phát hành cũng có thể đặt quảng cáo tùy chỉnh nếu họ đã thiết lập máy chủ quảng cáo của riêng mình. [Quy trình được mô tả chi tiết ở đây](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
+Các nhà phát hành cũng có thể đặt quảng cáo tùy chỉnh nếu họ đã thiết lập máy chủ quảng cáo của riêng mình. [Quy trình được mô tả chi tiết ở đây](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
 
 [tip type="note"] Đọc [Lưu thông quảng cáo tùy chỉnh trong Câu chuyện Web](https://support.google.com/admanager/answer/9038178) để biết thêm thông tin về việc tải quảng cáo lên Google Ad Manager và tham khảo hướng dẫn của chúng tôi về [Biện pháp thực hành tiên tiến nhất để tạo một AMP Story Ad](story_ads_best_practices.md). [/tip]

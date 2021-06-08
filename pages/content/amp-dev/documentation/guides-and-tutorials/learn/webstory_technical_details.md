@@ -211,7 +211,7 @@ The [`auto-advance-after`](https://amp.dev/documentation/components/amp-story-pa
 
 ## Landscape orientation and full bleed desktop experience
 
-The Web Story format supports an optional [landscape orientation and full bleed desktop experience](https://amp.dev/documentation/components/amp-story/?format=stories#landscape-orientation-and-full-bleed-desktop-experience-opt-in). This changes the desktop experience to an immersive full bleed mode, replacing the default three portrait panels experience. On mobile, it allows users to view stories when their device is held horizontally / in landscape mode.
+The Web Story format supports an optional [landscape orienntation and full bleed desktop experience](https://amp.dev/documentation/components/amp-story/?format=stories#landscape-orientation-and-full-bleed-desktop-experience-opt-in). This changes the desktop experience to an immersive full bleed mode, replacing the default three portrait panels experience. On mobile, it allows users to view stories when their device is held horizontally in landscape mode. 
 
 While this is currently opt-in and optional, we strongly recommend making sure that users on mobile devices are able to view stories in whatever orientation best suits their needs - otherwise, they will simply be presented with a "The page is best viewed in portrait mode" message.
 

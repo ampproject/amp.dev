@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/master/docs/spec/amp-actions-and-events.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -37,7 +37,7 @@ limitations under the License.
 
 
 [tip type="note"]
-This documentation covers actions and events for AMP websites, stories and ads. Read [Actions and events in AMP email](https://github.com/ampproject/amphtml/blob/master/spec/amp-email-actions-and-events.md) for the AMP email format.
+This documentation covers actions and events for AMP websites, stories and ads. Read [Actions and events in AMP email](https://github.com/ampproject/amphtml/blob/master/docs/spec/amp-email-actions-and-events.md) for the AMP email format.
 [/tip]
 
 The `on` attribute is used to install event handlers on elements. The events that are supported depend on the element.
@@ -255,10 +255,6 @@ event.index</pre></td>
     <th width="40%">Data</th>
   </tr>
   <tr>
-    <td><code>changeToLayoutContainer</code></td>
-    <td>Update's <code>amp-list</code>'s layout to <code>layout="CONTAINTER"</code> to allow <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">dynamic resizing</a>.</td>
-  </tr>
-  <tr>
     <td><code>fetch-error</code>(low-trust)</td>
     <td>Fired when fetching data fails.</td>
     <td>None</td>
@@ -320,7 +316,13 @@ event.selectedOptions</pre></td>
   </tr>
 </table>
 
-### amp-video, amp-youtube <a name="amp-video-amp-youtube"></a>
+<!-- Previous anchor to the next heading, keeping to preserve old fragment links: -->
+
+<a name="amp-video-amp-youtube"></a>
+
+### <a name="amp-video-events"></a> amp-video and other Video Elements
+
+The events below are dispatched by `amp-video`, `amp-video-iframe` and [3rd party video players](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md) like `amp-youtube`.
 
 <table>
   <tr>
@@ -561,6 +563,10 @@ event.response</pre></td>
     <th>Description</th>
   </tr>
   <tr>
+    <td><code>changeToLayoutContainer</code></td>
+    <td>Update's <code>amp-list</code>'s layout to <code>layout="CONTAINTER"</code> to allow <a href="https://github.com/ampproject/amphtml/blob/master/docs/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">dynamic resizing</a>.</td>
+  </tr>
+  <tr>
     <td><code>refresh</code></td>
     <td>Refreshes data from the <code>src</code> and re-renders the list.</td>
   </tr>
@@ -655,9 +661,13 @@ event.response</pre></td>
   </tr>
 </table>
 
-### Video elements <a name="video-elements"></a>
+<!-- Previous anchor to the next heading, keeping to preserve old fragment links: -->
 
-The actions below are supported in the following AMP video elements: `amp-video`, `amp-youtube`, `amp-3q-player`, `amp-brid-player`, `amp-dailymotion`, `amp-delight-player`, `amp-ima-video`.
+<a name="video-elements"></a>
+
+### <a name="amp-video-actions"></a> amp-video and other Video Elements
+
+The actions below are supported in `amp-video`, `amp-video-iframe` and [3rd party video players](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md) like `amp-youtube`.
 
 <table>
   <tr>
@@ -681,7 +691,7 @@ The actions below are supported in the following AMP video elements: `amp-video`
     <td>Unmutes the video.</td>
   </tr>
   <tr>
-    <td><code>fullscreencenter</code></td>
+    <td><code>fullscreenenter</code></td>
     <td>Takes the video to fullscreen.</td>
   </tr>
 </table>
@@ -720,7 +730,7 @@ actions that apply to the whole document.
   <tr>
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
-      <p>Navigates current window to given URL, to the optional specified target if given (currenly only supporting <code>_top</code> and <code>_blank </code>). The optional <code>opener</code> parameter can be specified when using a target of <code>_blank</code> to allow the newly opened page to access <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener</code></a>. Supports <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">standard URL substitutions</a>.</p>
+      <p>Navigates current window to given URL, to the optional specified target if given (currenly only supporting <code>_top</code> and <code>_blank </code>). The optional <code>opener</code> parameter can be specified when using a target of <code>_blank</code> to allow the newly opened page to access <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener</code></a>. Supports <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">standard URL substitutions</a>.</p>
       <p><strong>Caveat:</strong> Using normal <code>&lt;a&gt;</code> links is recommended wherever possible since <code>AMP.navigateTo</code> is not recognized by web crawlers.</p>
     </td>
   </tr>

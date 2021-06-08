@@ -92,7 +92,7 @@ AMP Optimizer provides a reasonable default configuration that should work well 
 
 A few notable options are:
 
-- `lts: true` for enabling [long-term stable URLs](https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md) for AMP runtime and components.
+- `lts: true` for enabling [long-term stable URLs](https://github.com/ampproject/amphtml/blob/main/docs/lts-release.md) for AMP runtime and components.
 - `verbose: true` for detailed debugging outputs. Especially good for identifying reasons why the AMP boilerplate could not be removed.
 - `imageOptimizer`: enable automated image srcset generation by providing a function for calculating srcset URLs for a given image src. The function should return a URL pointing to a version of the `src` image with the given width. If no image is available, it should return a falsy value. More about this in the next section.
 

@@ -343,4 +343,4 @@ LaterPay と既存のペイウォールを統合して使用する場合、次�
 
 ## 検証 <a name="validation"></a>
 
-AMP 検証ツールの仕様で [amp-access-laterpay のルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii)をご確認ください。
+AMP 検証ツールの仕様で [amp-access-laterpay のルール](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii)をご確認ください。

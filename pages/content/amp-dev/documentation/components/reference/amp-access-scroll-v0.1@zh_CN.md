@@ -60,4 +60,4 @@ limitations under the License.
 
 ## Validation
 
-请参阅 AMP 验证工具规范中的 [`amp-access-scroll` rules](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-scroll/validator-amp-access-scroll.protoascii)。
+请参阅 AMP 验证工具规范中的 [`amp-access-scroll` rules](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access-scroll/validator-amp-access-scroll.protoascii)。

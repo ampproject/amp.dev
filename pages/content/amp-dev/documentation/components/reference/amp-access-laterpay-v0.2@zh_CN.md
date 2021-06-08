@@ -345,4 +345,4 @@ Access Content Markup 的使用方式应与 AMP Access 的使用方式相同。
 
 ## 验证 <a name="validation"></a>
 
-请参阅 AMP 验证工具规范中的 [amp-access-laterpay 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii)。
+请参阅 AMP 验证工具规范中的 [amp-access-laterpay 规则](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii)。

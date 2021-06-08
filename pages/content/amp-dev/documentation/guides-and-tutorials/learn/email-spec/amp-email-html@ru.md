@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-html.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -33,7 +33,7 @@ limitations under the License.
 
 Примечание. Этот список не является нормативным и предлагается исключительно в справочных целях. Окончательное решение относительно совместимых тегов и атрибутов HTML определяется правилами AMP-валидатора.
 
-Помимо [поддерживаемых компонентов AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md), в AMP для писем разрешены следующие теги HTML.
+Помимо [поддерживаемых компонентов AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md), в AMP для писем разрешены следующие теги HTML.
 
 ## Поддерживаемые теги <a name="supported-tags"></a>
 

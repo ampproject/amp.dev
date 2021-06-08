@@ -346,4 +346,4 @@ Encontrarás un ejemplo más completo en [https://ampexample.laterpay.net/dual-a
 
 ## Validación <a name="validation"></a>
 
-Consulta las [reglas de amp-access-laterpay](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii) en la especificación de la herramienta de validación de AMP.
+Consulta las [reglas de amp-access-laterpay](https://github.com/ampproject/amphtml/blob/main/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii) en la especificación de la herramienta de validación de AMP.

@@ -16,9 +16,11 @@ Often used with: images, animations, audio, and videos
 Example:
 
 ```html
-<amp-anim src="animated.gif" width="466" height="355" layout="responsive" alt="...">
-  <div fallback>Fallback content that should convey the same purpose/information as the animation.</div>
-</amp-anim>
+<amp-img src="invalid.jpg" height="400" width="300" layout="responsive" alt="...">
+  <div fallback style="background-color: #ccc; display: flex; justify-content: center; align-items: center;">
+    Could not load image
+  </div>
+</amp-img>
 ```
 
 For more information, see [Placeholders & fallbacks](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).

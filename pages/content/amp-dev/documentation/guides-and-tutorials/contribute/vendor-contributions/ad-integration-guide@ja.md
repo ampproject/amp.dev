@@ -9,13 +9,13 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/ads/_integration-guide.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/ads/_integration-guide.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-AMP HTML の統合を検討中の広告テクノロジープロバイダーは、以下のガイドラインをお読みください。最小限のレイテンシーと高い品質を確保するには、AMP オープンソースプロジェクトにプルリクエストを提出する前に、[こちら](https://github.com/ampproject/amphtml/blob/master/ads/../3p/README.md#ads)に記載されている手順に従ってください。AMP へのコントリビューションを始める方法に関する一般的なガイダンスについては、「[CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/ads/../CONTRIBUTING.md)」を参照してください。
+AMP HTML の統合を検討中の広告テクノロジープロバイダーは、以下のガイドラインをお読みください。最小限のレイテンシーと高い品質を確保するには、AMP オープンソースプロジェクトにプルリクエストを提出する前に、[こちら](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads)に記載されている手順に従ってください。AMP へのコントリビューションを始める方法に関する一般的なガイダンスについては、「[CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../docs/contributing.md)」を参照してください。
 
 ## アドサーバー <a name="ad-server"></a>
 
@@ -39,9 +39,9 @@ data-aax_src="302"
 > </amp-ad>
 > [/sourcecode]
 
-`type` の後に続く各属性は、広告を配信するために Amazon の A9 サーバーが期待するパラメーターに依存しています。[a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) ファイルには、`https://c.amazon-adsystem.com/aax2/assoc.js` URL を介して A9 サーバーを呼び出す JavaScript 呼び出しにパラメーターがどのようにマッピングされているかが示されています。AMP 広告タグによって渡される対応するパラメーターは、広告を返すための URL にアペンドされます。
+`type` の後に続く各属性は、広告を配信するために Amazon の A9 サーバーが期待するパラメーターに依存しています。[a9.js](https://github.com/ampproject/amphtml/blob/main/ads/./a9.js) ファイルには、`https://c.amazon-adsystem.com/aax2/assoc.js` URL を介して A9 サーバーを呼び出す JavaScript 呼び出しにパラメーターがどのようにマッピングされているかが示されています。AMP 広告タグによって渡される対応するパラメーターは、広告を返すための URL にアペンドされます。
 
-広告ネットワークを AMP に統合する方法に関する詳細については、「[AMP への広告ネットワークの統合](https://github.com/ampproject/amphtml/blob/master/ads/README.md)」を参照してください。
+広告ネットワークを AMP に統合する方法に関する詳細については、「[AMP への広告ネットワークの統合](https://github.com/ampproject/amphtml/blob/main/ads/README.md)」を参照してください。
 
 ## サプライサイドプラットフォーム（SSP）または Ad Exchange <a name="supply-side-platform-ssp-or-an-ad-exchange"></a>
 
@@ -63,7 +63,7 @@ _例 : Essence、Omnicom_
 
 _例 : Brightcove、Ooyala_
 
-通常の HTML ページで動作する動画プレーヤーは AMP では動作しないため、AMP ランタイムがプレーヤーを読み込めるようにする特殊タグを作成する必要があります。Brightcove は、メディアと広告を AMP ページで再生できるようにするカスタム [amp-brightcove](https://github.com/ampproject/amphtml/blob/master/extensions/amp-brightcove/amp-brightcove.md) タグを作成しました。
+通常の HTML ページで動作する動画プレーヤーは AMP では動作しないため、AMP ランタイムがプレーヤーを読み込めるようにする特殊タグを作成する必要があります。Brightcove は、メディアと広告を AMP ページで再生できるようにするカスタム [amp-brightcove](https://github.com/ampproject/amphtml/blob/main/extensions/amp-brightcove/amp-brightcove.md) タグを作成しました。
 
 Brightcove プレーヤーは、以下のようにして呼び出すことができます。
 
@@ -106,10 +106,10 @@ _例 : MOAT、Integral Ad Science_
 
 MOAT の例の場合は、`http://js.moatads.com` が `https://z.moatads.com` に切り替えられることを確認してください。
 
-また、[Intersection Observer パターン](https://github.com/ampproject/amphtml/blob/master/ads/README.md#ad-viewability)の使用方法も参照してください。
+また、[Intersection Observer パターン](https://github.com/ampproject/amphtml/blob/main/ads/README.md#ad-viewability)の使用方法も参照してください。
 
 ## コンテンツ推奨プラットフォーム <a name="content-recommendation-platform"></a>
 
 _例 : Taboola、Outbrain_
 
-現時点でサイト運営者のウェブサイトに JavaScript が埋め込まれているが、AMP ページで動作しない場合に役立ちます。AMP ページでコンテンツを推奨する場合は、コンテンツの詳細をリクエストする [`amp-embed` 拡張機能](https://amp.dev/documentation/components/amp-ad)を使用しすることをお勧めします。[Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md) の例を参照してください。
+現時点でサイト運営者のウェブサイトに JavaScript が埋め込まれているが、AMP ページで動作しない場合に役立ちます。AMP ページでコンテンツを推奨する場合は、コンテンツの詳細をリクエストする [`amp-embed` 拡張機能](https://amp.dev/documentation/components/amp-ad)を使用しすることをお勧めします。[Taboola](https://github.com/ampproject/amphtml/blob/main/ads/taboola.md) の例を参照してください。

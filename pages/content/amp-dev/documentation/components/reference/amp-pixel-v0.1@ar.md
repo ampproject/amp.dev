@@ -89,7 +89,7 @@ teaser:
 ## الاستبدالات <a name="substitutions"></a>
 
 يسمح `amp-pixel` بجميع استبدالات متغيرات عناوين URL القياسية.
-اطّلِع على [دليل الاستبدالات](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md) للحصول على المزيد من المعلومات.
+اطّلِع على [دليل الاستبدالات](https://github.com/ampproject/amphtml/blob/main/extensions/spec/amp-var-substitutions.md) للحصول على المزيد من المعلومات.
 
 في المثال التالي، قد يتم إرسال طلب لصفحة مثل `https://foo.com/pixel?0.8390278471201` حيث يتم إنشاء قيمة RANDOM بشكل عشوائي عند كل ظهور.
 
@@ -104,4 +104,4 @@ teaser:
 
 ## التحقق <a name="validation"></a>
 
-اطِّلع على [قواعد amp-pixel](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) في مواصفات مدقق AMP.
+اطِّلع على [قواعد amp-pixel](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) في مواصفات مدقق AMP.

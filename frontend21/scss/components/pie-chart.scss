@@ -8,10 +8,13 @@
     margin-left: auto;
     border-radius: 50%;
     background: color('iron');
+    font-family: $fontFamilyHeadline;
 
     &:nth-child(odd) {
       --size: 180px;
-      @include respond-to('medium') { --size: 340px; }
+      @include respond-to('medium') {
+        --size: 340px;
+      }
     }
 
     &:nth-child(even) {
@@ -31,16 +34,22 @@
       left: 0;
       width: var(--size);
       height: var(--size);
-      clip: rect(0, var(--size), var(--size), calc(var(--size)/2));
+      clip: rect(0, var(--size), var(--size), calc(var(--size) / 2));
+      transform: rotate(var(--rotation));
+
+      &:first-child {
+        transform: rotate(0);
+      }
     }
 
     &-part {
       position: absolute;
       width: var(--size);
       height: var(--size);
-      clip: rect(0, calc(var(--size)/2), var(--size), 0);
+      clip: rect(0, calc(var(--size) / 2), var(--size), 0);
       border-radius: 50%;
       background: color('blue-ribbon');
+      transform: rotate(var(--rotation));
     }
 
     &-overlay {
@@ -67,6 +76,16 @@
           font-size: 65px;
         }
       }
+    }
+  }
+
+  &-caption {
+    margin-top: 50px;
+    margin-left: auto;
+    line-height: 1.71;
+
+    @include respond-to('medium') {
+      max-width: 80%;
     }
   }
 }

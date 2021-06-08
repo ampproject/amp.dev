@@ -36,7 +36,7 @@ Alle Dokumente verwenden das https Protokoll in AMP Caches.
 
 ## Suffix des Domänennamens
 
-Alle AMP Caches sind in einer JSON Datei registriert, die online im [AMPHTML Repository](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json) verfügbar ist. Ein Cachedatensatz in dieser Datei kann z. B. folgendermaßen aussehen:
+Alle AMP Caches sind in einer JSON Datei registriert, die online im [AMPHTML Repository](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json) verfügbar ist. Ein Cachedatensatz in dieser Datei kann z. B. folgendermaßen aussehen:
 
 ```json
 {
@@ -179,7 +179,7 @@ Der Wert des Headers einer AMP Cache Quelle sieht aus wie eines der folgenden Be
 - `https://www-example-com.cdn.ampproject.org`
 - `https://v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq.cdn.ampproject.org`
 
-Entferne zunächst das Protokollpräfix (`https://`) und das Suffix der AMP Cache Domäne, z. B. `.cdn.ampproject.org`. Das Suffix kann zu einem beliebigen der unter [caches.json](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json) aufgeführten Caches gehören. Die verbleibende Zeichenfolge ist das "Domänenpräfix". Im Fall der beiden obigen Beispiele lautet das "Domänenpräfix" wie folgt:
+Entferne zunächst das Protokollpräfix (`https://`) und das Suffix der AMP Cache Domäne, z. B. `.cdn.ampproject.org`. Das Suffix kann zu einem beliebigen der unter [caches.json](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json) aufgeführten Caches gehören. Die verbleibende Zeichenfolge ist das "Domänenpräfix". Im Fall der beiden obigen Beispiele lautet das "Domänenpräfix" wie folgt:
 
 - `www-example-com`
 - `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq`

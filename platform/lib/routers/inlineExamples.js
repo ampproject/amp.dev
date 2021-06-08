@@ -22,12 +22,18 @@ const {
   getFormatFromRequest,
   DEFAULT_FORMAT,
 } = require('../amp/formatHelper.js');
+const {promisify} = require('util');
+const fs = require('fs');
+const readFileAsync = promisify(fs.readFile);
+const LRU = require('lru-cache');
+const {optimize} = require('@lib/utils/ampOptimizer.js');
+const path = require('path');
 
 // eslint-disable-next-line new-cap
 const inlineExamples = express.Router();
 
-const staticMiddleware = express.static(project.paths.INLINE_EXAMPLES_DEST, {
-  'extensions': ['html'],
+const exampleCache = new LRU({
+  max: 200,
 });
 
 inlineExamples.get('/*', async (request, response, next) => {
@@ -35,7 +41,23 @@ inlineExamples.get('/*', async (request, response, next) => {
   if (format && format !== DEFAULT_FORMAT) {
     request.url = request.path.replace('.html', `.${format}.html`);
   }
-  return staticMiddleware(request, response, next);
+
+  try {
+    const examplePath = new URL(request.url, 'https://example.com').pathname;
+    let example = exampleCache.get(examplePath);
+    if (!example) {
+      example = await readFileAsync(
+        path.join(project.paths.INLINE_EXAMPLES_DEST, examplePath),
+        'utf-8'
+      );
+      example = await optimize(request, example);
+      // we can ignore optimizer query params here
+      exampleCache.set(examplePath, example);
+    }
+    response.send(example);
+  } catch (e) {
+    next(e);
+  }
 });
 
 module.exports = inlineExamples;

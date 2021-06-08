@@ -42,6 +42,6 @@ Hier sind ein paar Tipps zur Verbesserung von User Engagement mit AMP.
 
 - **Sieh dir die AMP Roadmap unter [Roadmap](../../../community/roadmap.html) an**, um über Updates und Features auf dem Laufenden zu bleiben.
 
-- **Mach mit.** Trage Quellcode bei, reiche Fehlerberichte ein und gib Feedback auf [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). Tausche dich auf <a>Stack Overflow</a> über AMP aus.
+- **Mach mit.** Trage Quellcode bei, reiche Fehlerberichte ein und gib Feedback auf [GitHub](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md). Tausche dich auf <a>Stack Overflow</a> über AMP aus.
 
 - **Lerne anhand von [Beispielen](../../../documentation/examples/index.html)**, wie du AMP Komponenten verwendest.

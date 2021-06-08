@@ -1,6 +1,6 @@
 ---
 $title: 此网址未指向 AMP 网页。
-type: 错误
+type: error
 hide_share: true
 ---
 

@@ -6,7 +6,7 @@ formats:
   - email
 ---
 
-يجب على عملاء البريد الإلكتروني الذين يتطلعون إلى دعم AMP للبريد الإلكتروني استخدام [عارض AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) لاستضافة رسائل AMP الإلكترونية للمرسل. إذ يقوم العارض الذي تم إنشاؤه باستخدام [مكتبة عارض AMP](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) بتغليف مستند AMP وتمكين [الإمكانات](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md) التي تسمح بالاتصال ثنائي الاتجاه مع مستند AMP عبر postMessage. وتتضمن هذه الإمكانات منح التحكم في رؤية البريد الإلكتروني، وترحيل مقاييس المستخدم، وتوفير وسائل لضمان سلامة طلبات XHR المقدمة من البريد الإلكتروني.
+يجب على عملاء البريد الإلكتروني الذين يتطلعون إلى دعم AMP للبريد الإلكتروني استخدام [عارض AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) لاستضافة رسائل AMP الإلكترونية للمرسل. إذ يقوم العارض الذي تم إنشاؤه باستخدام [مكتبة عارض AMP](https://github.com/ampproject/amphtml/tree/main/extensions/amp-viewer-integration) بتغليف مستند AMP وتمكين [الإمكانات](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/CAPABILITIES.md) التي تسمح بالاتصال ثنائي الاتجاه مع مستند AMP عبر postMessage. وتتضمن هذه الإمكانات منح التحكم في رؤية البريد الإلكتروني، وترحيل مقاييس المستخدم، وتوفير وسائل لضمان سلامة طلبات XHR المقدمة من البريد الإلكتروني.
 
 ## اعتراض عارض XHR
 
@@ -47,7 +47,7 @@ viewerIframe.contentWindow.onMessage = (xhrRequestIntercepted) => {
 
 تسمح الإمكانية `viewerRenderTemplate` للعارض بإدارة عرض النموذجين [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email) و[`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=email). وعند تمكينها، يُنشئ وقت تشغيل AMP وكيلًا لطلب يحتوي على استدعاء XHR أصلي وبيانات النموذج وأي تفاصيل أخرى مطلوبة لعرض محتويات المكون إلى العارض. ويسمح هذا للعارض بفحص محتوى بيانات نقطة النهاية وإدارة عرض [mustache](https://mustache.github.io/) للنماذج من أجل التحقق من البيانات واستصحاحها. لاحظ أنه إذا تم تمكين هذه الإمكانية مع xhrInterceptor، في مكون amp-form وamp-list، فإن إمكانية `viewerRenderTemplate` التي تُنشئ الطلبات الوكيلة إلى العارض ستتفوق على قدرة xhrInterceptor.
 
-يوضح المثال [viewer.html](https://github.com/ampproject/amphtml/blob/master/examples/viewer.html) طريقة التعامل مع رسالة `viewerRenderTemplate` المرسلة من مستند AMP. في هذا المثال، يلتقط Viewer.prototype.processRequest\_ رسالة `viewerRenderTemplate` واستنادًا إلى نوع مكون amp المتوفر في الطلب، يرسل html مرة أخرى ليتم عرضه بتنسيق JSON التالي.
+يوضح المثال [viewer.html](https://github.com/ampproject/amphtml/blob/main/examples/viewer.html) طريقة التعامل مع رسالة `viewerRenderTemplate` المرسلة من مستند AMP. في هذا المثال، يلتقط Viewer.prototype.processRequest\_ رسالة `viewerRenderTemplate` واستنادًا إلى نوع مكون amp المتوفر في الطلب، يرسل html مرة أخرى ليتم عرضه بتنسيق JSON التالي.
 
 ```js
 Viewer.prototype.ssrRenderAmpListTemplate_ = (data) =>

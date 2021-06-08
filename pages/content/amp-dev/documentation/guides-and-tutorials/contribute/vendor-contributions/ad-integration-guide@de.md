@@ -9,13 +9,13 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/ads/_integration-guide.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/ads/_integration-guide.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-Bist du Anbieter von Ad Technologien und möchtest AMP HTML integrieren? Dann beachte bitte die folgenden Richtlinien. Um eine minimale Latenz und eine angemessene Qualität zu gewährleisten, befolge bitte die [hier](https://github.com/ampproject/amphtml/blob/master/ads/../3p/README.md#ads) beschriebene Anleitung, bevor du einen Pull Request im AMP Open Source Projekt erstellst. Allgemeine Hinweise für Interessenten, die zu AMP beitragen möchten, findest du in [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/ads/../CONTRIBUTING.md).
+Bist du Anbieter von Ad Technologien und möchtest AMP HTML integrieren? Dann beachte bitte die folgenden Richtlinien. Um eine minimale Latenz und eine angemessene Qualität zu gewährleisten, befolge bitte die [hier](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads) beschriebene Anleitung, bevor du einen Pull Request im AMP Open Source Projekt erstellst. Allgemeine Hinweise für Interessenten, die zu AMP beitragen möchten, findest du in [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../docs/contributing.md).
 
 ## Ad Server <a name="ad-server"></a>
 
@@ -39,9 +39,9 @@ data-aax_src="302"
 > </amp-ad>
 > [/sourcecode]
 
-Beachte, dass jedes der Attribute nach `type` von den Parametern abhängig ist, die der Amazon A9 Server erwartet, um eine Ad zu übermitteln. Die Datei [a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) zeigt, wie die Parameter dem JavaScript Aufruf zugeordnet sind, der den A9 Server über die URL `https://c.amazon-adsystem.com/aax2/assoc.js` aufruft. Die entsprechenden Parameter, die vom AMP Ad Tag übergeben werden, werden an die URL angehängt, um eine Ad zurückzugeben.
+Beachte, dass jedes der Attribute nach `type` von den Parametern abhängig ist, die der Amazon A9 Server erwartet, um eine Ad zu übermitteln. Die Datei [a9.js](https://github.com/ampproject/amphtml/blob/main/ads/./a9.js) zeigt, wie die Parameter dem JavaScript Aufruf zugeordnet sind, der den A9 Server über die URL `https://c.amazon-adsystem.com/aax2/assoc.js` aufruft. Die entsprechenden Parameter, die vom AMP Ad Tag übergeben werden, werden an die URL angehängt, um eine Ad zurückzugeben.
 
-Ausführliche Informationen zur Integration deines Ad Netzwerks in AMP findest du unter [Integration von Ad Netzwerken in AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+Ausführliche Informationen zur Integration deines Ad Netzwerks in AMP findest du unter [Integration von Ad Netzwerken in AMP](https://github.com/ampproject/amphtml/blob/main/ads/README.md).
 
 ## Supply Side Platform (SSP) oder Ad Exchange <a name="supply-side-platform-ssp-or-an-ad-exchange"></a>
 
@@ -63,7 +63,7 @@ Stelle sicher, dass alle Assets, die Teil des Creatives sind, über HTTPS angefo
 
 _Beispiele: Brightcove, Ooyala_
 
-Ein Videoplayer, der auf gewöhnlichen HTML Seiten funktioniert, funktioniert in AMP nicht. Deshalb muss ein bestimmtes Tag erstellt werden, mit dem die AMP Runtime deinen Player laden kann. Brightcove hat das benutzerdefinierte Tag [amp-brightcove](https://github.com/ampproject/amphtml/blob/master/extensions/amp-brightcove/amp-brightcove.md) erstellt, mit dem Medien und Ads auf AMP Seiten abgespielt werden können.
+Ein Videoplayer, der auf gewöhnlichen HTML Seiten funktioniert, funktioniert in AMP nicht. Deshalb muss ein bestimmtes Tag erstellt werden, mit dem die AMP Runtime deinen Player laden kann. Brightcove hat das benutzerdefinierte Tag [amp-brightcove](https://github.com/ampproject/amphtml/blob/main/extensions/amp-brightcove/amp-brightcove.md) erstellt, mit dem Medien und Ads auf AMP Seiten abgespielt werden können.
 
 Ein Brightcove Player kann wie folgt aufgerufen werden:
 
@@ -106,10 +106,10 @@ Die Integration von Anbietern für die Sichtbarkeitsmessung mit Publishern erfol
 
 So musst du z. B. für MOAT sicherstellen, dass `http://js.moatads.com` in `https://z.moatads.com` umgewandelt wird.
 
-Sieh dir auch den Ansatz an, bei dem das [Intersection Observer Muster](https://github.com/ampproject/amphtml/blob/master/ads/README.md#ad-viewability) verwendet wird.
+Sieh dir auch den Ansatz an, bei dem das [Intersection Observer Muster](https://github.com/ampproject/amphtml/blob/main/ads/README.md#ad-viewability) verwendet wird.
 
 ## Plattform für Empfehlung von Content <a name="content-recommendation-platform"></a>
 
 _Beispiele: Taboola, Outbrain_
 
-Nützlich, wenn du bereits JavaScript Code auf der Website des Publishers eingebettet hast, aber auf AMP Seiten funktioniert dieser Ansatz nicht. Wenn du Inhalte auf einer AMP Seite empfehlen möchtest, solltest du die [Erweiterung `amp-embed`](https://amp.dev/documentation/components/amp-ad) verwenden, um die Details des Contents anzufordern. Bitte sieh dir das [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md) Beispiel an.
+Nützlich, wenn du bereits JavaScript Code auf der Website des Publishers eingebettet hast, aber auf AMP Seiten funktioniert dieser Ansatz nicht. Wenn du Inhalte auf einer AMP Seite empfehlen möchtest, solltest du die [Erweiterung `amp-embed`](https://amp.dev/documentation/components/amp-ad) verwenden, um die Details des Contents anzufordern. Bitte sieh dir das [Taboola](https://github.com/ampproject/amphtml/blob/main/ads/taboola.md) Beispiel an.

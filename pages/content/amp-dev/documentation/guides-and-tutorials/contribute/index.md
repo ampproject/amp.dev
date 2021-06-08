@@ -30,7 +30,7 @@ We hope you'll become an ongoing participant in our open source community, but w
 
 #### Helping with code
 
-To get started with contributing code to the AMP Project read through [the CONTRIBUTING file](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md), which includes details of the process by which a feature or bug fix goes from concept to submission and how you can participate in technical designs and discussions.  If you're new to open source we have some [tips for getting started](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-code).
+To get started with contributing code to the AMP Project read through [the CONTRIBUTING file](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md), which includes details of the process by which a feature or bug fix goes from concept to submission and how you can participate in technical designs and discussions.  If you're new to open source we have some [tips for getting started](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#contributing-code).
 
 ### Providing content contributions to AMP 
 Content on [amp.dev](https://amp.dev) is how developers learn to build successful web experiences with AMP. We appreciate your interest in updating, creating, and requesting useful documentation! 

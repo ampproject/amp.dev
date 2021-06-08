@@ -11,7 +11,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/contributing/release-schedule.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/master/docs/release-schedule.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -19,17 +19,26 @@ have a look and request a pull request there.
 
 
 
+<!--
+  (Do not remove or edit this comment.)
+
+  This table-of-contents is automatically generated. To generate it, run:
+    amp markdown-toc --fix
+-->
+
 -   [Release Channels](#release-channels)
     -   [Nightly](#nightly)
     -   [Weekly](#weekly)
-        -   [Experimental and Beta channels](#experimental-and-beta-channels)
+        -   [Beta and Experimental channels](#beta-and-experimental-channels)
     -   [Long-Term Stable (lts)](#long-term-stable-lts)
 -   [Determining if your change is in a release](#determining-if-your-change-is-in-a-release)
 -   [Release Cadence](#release-cadence)
     -   [Detailed schedule](#detailed-schedule)
     -   [Release Freezes](#release-freezes)
 
-A new release of AMP is pushed to all AMP pages every week on Tuesday. **Once a change in AMP is merged into the master branch of the amphtml repository, it will typically take 1-2 weeks for the change to be live for all users.**
+A new release of AMP is pushed to all AMP pages every week on Tuesday. **Once a change in AMP is merged into the main branch of the amphtml repository, it will typically take 1-2 weeks for the change to be live for all users.**
+
+The [AMPHTML Validator](https://github.com/ampproject/amphtml/tree/main/validator#amp-html--validator) has it's own [Release Schedule](https://github.com/ampproject/amphtml/blob/master/docs/validator-release-schedule.md)
 
 ## Release Channels <a name="release-channels"></a>
 
@@ -43,7 +52,7 @@ The **nightly** release channel is updated (as its name indicates) every weeknig
 
 The nightly release provides a mechanism to detect and resolve issues quickly and before they reach the more traffic-heavy _weekly_ release channels. It also serves to reduce the number of users affected by newly introduced issues.
 
-It is possible to opt into the **nightly** channel, to test pull requests that were merged in the past few days. See the [opt-in section](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md#opting-in-to-pre-release-channels) in [DEVELOPING.md] for details.
+It is possible to opt into the **nightly** channel, to test pull requests that were merged in the past few days. See the [opt-in section](https://github.com/ampproject/amphtml/blob/master/docs/developing.md#opting-in-to-pre-release-channels) in [developing.md] for details.
 
 ### Weekly <a name="weekly"></a>
 
@@ -51,13 +60,13 @@ The _weekly_ release channels are considered to be the primary "evergreen" relea
 
 There are two sets of build configurations used in creating release builds: the _canary_ configuration and the _production_ configuration. The **experimental** and **beta** release channels are built off of the same commit. However, the **experimental** channel uses the _canary_ configuration while the **beta** channel uses the _production_ configuration. The _canary_ configuration enables experimental components and features that may be turned off in _production_. It is possible to opt into the **experimental** or **beta** channels via the [experiments page](https://cdn.ampproject.org/experiments.html).
 
-The **stable** release channel is built with the _production_ configuration and served to most AMP traffic. Since the **beta** release channel is also built from the _production_ configuration, it represents the exact build which will become **stable** the following week (with the possibility of cherry-picks to fix last-minute issues; see [Contributing Code](https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md#Cherry-picks)).
+The **stable** release channel is built with the _production_ configuration and served to most AMP traffic. Since the **beta** release channel is also built from the _production_ configuration, it represents the exact build which will become **stable** the following week (with the possibility of cherry-picks to fix last-minute issues; see [Contributing Code](https://github.com/ampproject/amphtml/blob/main/docs/contributing-code.md#Cherry-picks)).
 
 #### Beta and Experimental channels <a name="beta-and-experimental-channels"></a>
 
 The _Beta_ and _Experimental Channels_ are pre-release candidates for the next Stable release of AMP. Every Tuesday (except for weeks where there is a [release freeze](#release-freezes)), last week's **nightly** is promoted to the developer opt-in channels for **beta** and **experimental**. Following a 1-day period where we verify that no feature or performance regressions were introduced in these channels, we promote this release on Wednesday to a small portion of traffic. This same release is then promoted to the **stable** channel on Tuesday the following week.
 
-It is possible to opt into these channels. See the [opt-in section](https://github.com/ampproject/amphtml/blob/master/contributing/DEVELOPING.md#opting-in-to-pre-release-channels) in [DEVELOPING.md] for details.
+It is possible to opt into these channels. See the [opt-in section](https://github.com/ampproject/amphtml/blob/master/docs/developing.md#opting-in-to-pre-release-channels) in [developing.md] for details.
 
 Opting into the _Beta Channel_ is intended for:
 
@@ -73,7 +82,7 @@ The _Experimental Channel_ **may be less stable** and it may contain features no
 
 ### Long-Term Stable (lts) <a name="long-term-stable-lts"></a>
 
-The **lts** release channel provides a previous **stable** build for one-month intervals. On the second Monday of each month, the current **stable** release is promoted to **lts**. This channel is not recommended for all AMP publishers. It is provided so that publishers who wish to perform a QA cycle on their website less frequently may do so by opting specific web pages into the **lts** channel (see the [**lts** readme](https://github.com/ampproject/amphtml/blob/master/contributing/lts-release.md)).
+The **lts** release channel provides a previous **stable** build for one-month intervals. On the second Monday of each month, the current **stable** release is promoted to **lts**. This channel is not recommended for all AMP publishers. It is provided so that publishers who wish to perform a QA cycle on their website less frequently may do so by opting specific web pages into the **lts** channel (see the [**lts** readme](https://github.com/ampproject/amphtml/blob/main/docs/lts-release.md)).
 
 If the second Monday of the month falls on a holiday, the promotion will be performed after the end of the [release freeze](#release-freezes).
 
@@ -104,7 +113,8 @@ After considering all of these factors, we have arrived at the 1-2 week push cyc
 
 We try to stick to this schedule as closely as possible, though complications may cause delays. You can track the latest status about any release in the [_Type: Release_ GitHub issues](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) and the [AMP Slack #release channel](https://amphtml.slack.com/messages/C4NVAR0H3/) ([sign up for Slack](https://bit.ly/amp-slack-signup)).
 
--   Tuesday @ [11am Pacific](https://www.google.com/search?q=11am+pacific+in+current+time+zone): new **experimental** and **beta** release builds are created from the [latest master build that passes all of our tests](https://travis-ci.com/ampproject/amphtml/branches) and are pushed to users who opted into the [AMP Experimental Channel](#amp-experimental-and-beta-channels) or [AMP Beta Channel](#amp-experimental-and-beta-channels), respectively.
+-   Every weeknight: a new **nightly** build is automatically cut and released to the [AMP Nightly Channel](#nightly).
+-   Tuesday @ [11am Pacific](https://www.google.com/search?q=11am+pacific+in+current+time+zone): new **experimental** and **beta** release builds are created from a recent known-good nightly channel release and are pushed to users who opted into the [AMP Experimental Channel](#amp-experimental-and-beta-channels) or [AMP Beta Channel](#amp-experimental-and-beta-channels), respectively.
 -   Wednesday: we check bug reports for _Experimental Channel_ and _Beta Channel_ users and if everything looks fine, we push the **beta** to 1% of AMP pages
 -   Thursday-Monday: we continue to monitor error rates and bug reports for _Experimental Channel_ and _Beta Channel_ users and the 1% of pages with the **experimental**/**beta** builds
 -   Tuesday the following week: the **beta** build is fully promoted to **stable** (i.e. all AMP pages will now use this build)

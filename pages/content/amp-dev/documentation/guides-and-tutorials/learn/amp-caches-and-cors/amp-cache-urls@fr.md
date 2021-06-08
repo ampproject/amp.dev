@@ -36,7 +36,7 @@ Tous les documents utilisent le protocole https sur les caches AMP.
 
 ## Suffixe de nom de domaine
 
-Tous les caches AMP sont enregistrés dans un fichier JSON, disponible en ligne dans le [référentiel AMPHTML](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). Un exemple d'enregistrement de cache dans ce fichier ressemblerait à ceci:
+Tous les caches AMP sont enregistrés dans un fichier JSON, disponible en ligne dans le [référentiel AMPHTML](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json). Un exemple d'enregistrement de cache dans ce fichier ressemblerait à ceci:
 
 ```json
 {
@@ -179,7 +179,7 @@ Une valeur d'en-tête de l'origine du cache AMP ressemblera à l'un des exemples
 - `https://www-example-com.cdn.ampproject.org`
 - `https://v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq.cdn.ampproject.org`
 
-Commencez par supprimer le préfixe de protocole (`https://`) et le suffixe de domaine du cache AMP, tel que `.cdn.ampproject.org`. Le suffixe peut provenir de l'un des caches répertoriés dans [caches.json](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json). La chaîne restante sera le « préfixe de domaine ». Dans le cas des deux exemples ci-dessus, le « préfixe de domaine » est :
+Commencez par supprimer le préfixe de protocole (`https://`) et le suffixe de domaine du cache AMP, tel que `.cdn.ampproject.org`. Le suffixe peut provenir de l'un des caches répertoriés dans [caches.json](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json). La chaîne restante sera le « préfixe de domaine ». Dans le cas des deux exemples ci-dessus, le « préfixe de domaine » est :
 
 - `www-example-com`
 - `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq`

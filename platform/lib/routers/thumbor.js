@@ -19,17 +19,11 @@
 const express = require('express');
 const {join} = require('path');
 const config = require('@lib/config');
-const HttpProxy = require('http-proxy');
 const log = require('@lib/utils/log')('Thumbor');
+const fetch = require('node-fetch');
 
 const SECURITY_KEY = 'unsafe';
 const REMOTE_STATIC_MOUNT = '/static/remote/';
-
-const proxyOptions = {
-  target: config.hosts.thumbor.base,
-  changeOrigin: true,
-};
-const proxy = HttpProxy.createProxyServer(proxyOptions);
 
 // eslint-disable-next-line new-cap
 const thumborRouter = express.Router();
@@ -43,8 +37,8 @@ const imagePaths = [
 
 const DISABLE_THUMBOR = false;
 
-thumborRouter.get(imagePaths, (request, response, next) => {
-  if (DISABLE_THUMBOR || config.isDevMode()) {
+thumborRouter.get(imagePaths, async (request, response, next) => {
+  if (DISABLE_THUMBOR || !(config.isProdMode() || config.isStageMode())) {
     next();
     return;
   }
@@ -56,32 +50,48 @@ thumborRouter.get(imagePaths, (request, response, next) => {
   // Thumbor requests the image itself - to prevent loops it does
   // so by setting ?original=true
   if (imageUrl.searchParams.get('original')) {
+    imageUrl.searchParams.delete('original');
+    request.url = imageUrl.pathname;
     next();
     return;
   }
 
   // We allow certain remote images to be optimized;
   // they mount on the virtual /static/remote
-  if (request.url.includes(REMOTE_STATIC_MOUNT)) {
+  const isRemoteImage = request.url.includes(REMOTE_STATIC_MOUNT);
+  if (isRemoteImage) {
     imageUrl = new URL(request.query.url);
   } else {
     imageUrl.searchParams.set('original', 'true');
   }
 
-  const thumborUrl = new URL(request.url, config.hosts.platform.base);
+  const thumborUrl = new URL(request.url, config.hosts.thumbor.base);
   thumborUrl.pathname =
     SECURITY_KEY + (imageWidth ? `/${imageWidth}x0/` : '/') + imageUrl.href;
-  request.url = thumborUrl.href;
 
-  proxy.web(request, response, proxyOptions, (error) => {
-    log.error(error);
+  let optimizedImage;
+  try {
+    optimizedImage = await fetch(thumborUrl.toString(), {
+      headers: request.headers,
+    });
+  } catch (e) {
+    log.error('Failed connecting to thumbor', e);
+    optimizedImage = {ok: false};
+  }
+  if (!optimizedImage.ok) {
+    log.error('Thumbor did not respond to', thumborUrl.toString());
+    if (isRemoteImage) {
+      // Redirect to remote image
+      response.redirect(imageUrl);
+    } else {
+      // If Thumbor did not respond, fail over to default static middleware
+      return next();
+    }
+  }
 
-    // Fail over to default static middleware if there was an
-    // error with thumbor
-    request.url = imageUrl.href;
-    next();
-    return;
-  });
+  const contentType = optimizedImage.headers.get('content-type');
+  response.setHeader('Content-Type', contentType);
+  optimizedImage.body.pipe(response);
 });
 
 module.exports = {

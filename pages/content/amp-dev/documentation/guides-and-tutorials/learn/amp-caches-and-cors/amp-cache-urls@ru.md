@@ -36,7 +36,7 @@ contributors:
 
 ## Суффикс доменного имени
 
-Список существующих AMP-кешей доступен онлайн в [репозитории AMPHTML](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json) в виде файла JSON. Вот пример записи в этом файле:
+Список существующих AMP-кешей доступен онлайн в [репозитории AMPHTML](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json) в виде файла JSON. Вот пример записи в этом файле:
 
 ```json
 {
@@ -179,7 +179,7 @@ The length of any one label is limited to between 1 and 63 octets.  A full domai
 - `https://www-example-com.cdn.ampproject.org`
 - `https://v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq.cdn.ampproject.org`
 
-Сначала следует отбросить префикс протокола (`https://`), а также доменный суффикс AMP-кеша (это может быть суффикс любого из кешей, указанных в файле [caches.json](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/caches.json), например `.cdn.ampproject.org`). Оставшаяся часть строки — это доменный префикс. В случае с двумя примерами, приведенными выше, доменные префиксы будут следующими:
+Сначала следует отбросить префикс протокола (`https://`), а также доменный суффикс AMP-кеша (это может быть суффикс любого из кешей, указанных в файле [caches.json](https://github.com/ampproject/amphtml/blob/main/build-system/global-configs/caches.json), например `.cdn.ampproject.org`). Оставшаяся часть строки — это доменный префикс. В случае с двумя примерами, приведенными выше, доменные префиксы будут следующими:
 
 - `www-example-com`
 - `v2c4ucasgcskftbjt4c7phpkbqedcdcqo23tkamleapoa5o6fygq`

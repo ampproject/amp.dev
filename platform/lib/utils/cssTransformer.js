@@ -13,11 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const {
-  nextNode,
-  hasAttribute,
-  firstChildByTag,
-} = require('@ampproject/toolbox-optimizer').NodeUtils;
+const {nextNode, hasAttribute, firstChildByTag} =
+  require('@ampproject/toolbox-optimizer').NodeUtils;
 const rcs = require('rcs-core');
 
 /* Class names which are safe to rewrite in the context of amp.dev */
@@ -93,6 +90,11 @@ const SAFE_CLASS_NAMES = [
   'ap-t-template',
   'ap-t-use-cases',
   'ap-t-what-is-amp',
+  'ap-header',
+  'ap-home-stage',
+  'ap-stage',
+  'ap-intro',
+  'ap-teaser',
 ];
 
 rcs.selectorsLibrary.setExclude(

@@ -1,28 +1,10 @@
 ---
 $title: Preview and validate
-$order: 5
-description: 'Preview the AMP page just as you would preview any other static HTML site. There’s no build step or preprocessing required. You can choose to: ...'
-author: pbakaus
-contributors:
-  - bpaduch
+$order: 6
+description: 'Making your AMP pages valid is a worthy goal, as a valid AMP page means it’s following strict guidelines that ensure Page Experience and make it eligible for caching!'
+author: crystalonscript
 ---
 
-## Preview
+We’re using the power of the AMP Playground to preview our page and ensure it’s valid AMP during our development process. Making your AMP pages valid is a worthy goal, as a valid AMP page means it’s following strict guidelines that ensure [Page Experience](../../../../about/page-experience.html) and make it eligible for [caching](../../learn/amp-caches-and-cors/how_amp_pages_are_cached.md)! Documents served from an AMP Cache are preloaded efficiently and safely, and perform user-beneficial performance optimizations to page content.
 
-Preview the AMP page just as you would preview any other static HTML site. There’s no build step or preprocessing required. You can choose to:
-
-  - **Open the page directly in the browser from the file system** (certain elements might not work due to XMLHttpRequests failing).
-  - **Use a local web server like Apache 2 or Nginx**.
-    *(Tip: For a quick web server, run `python -m SimpleHTTPServer`.)*
-
-## Validate
-
-Next, make sure that your AMP page **is actually valid AMP**, or it won’t get discovered and distributed by third-party platforms like Google Search. To validate:
-
-  1. Open your page in your browser.
-  1. Add "`#development=1`" to the URL, for example, `http://localhost:8000/released.amp.html#development=1`.
-  1. Open the [Chrome DevTools console](https://developers.google.com/web/tools/chrome-devtools/debug/console/) and check for validation errors.
-
-[tip type="read-on"]
-**READ ON –** [Learn more about validation](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md), and what to do when you get errors.
-[/tip]
+Unfortunately, using the AMP Playground to check all your pages wouldn’t be practical for a multi-page site. Find what works for you by reading more about how to automate AMP’s [Validation workflow](../../learn/validation-workflow/validate_amp.md) and what to do if you [encounter errors](../../learn/amp-actions-and-events.md).

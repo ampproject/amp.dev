@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-debugging.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-debugging.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -40,7 +40,7 @@ Jika Anda masih mengalami masalah setelah mengikuti langkah-langkah ini, periksa
     <tr>
       <td>Font web tidak muncul (font fallback digunakan)</td>
       <td>Cache AMP tidak diberikan izin oleh penyedia font.</td>
-      <td>Hubungi penyedia font dan minta mereka untuk mengizinkan <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">semua cache</a>.</td>
+      <td>Hubungi penyedia font dan minta mereka untuk mengizinkan <a href="amp-cors-requests.md#cors-security-in-amp">semua cache</a>.</td>
     </tr>
     <tr>
       <td>Aset (cth., font dan gambar) tidak muncul (<strong>hanya asal HTTP</strong>)</td>
@@ -50,7 +50,7 @@ Jika Anda masih mengalami masalah setelah mengikuti langkah-langkah ini, periksa
     <tr>
       <td rowspan="2">Aset (cth., font dan gambar) tidak muncul</td>
       <td>Aset disajikan dengan jenis MIME yang tidak benar.</td>
-      <td>Tentukan sebuah <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">jenis MIME yang dapat diterima</a>.</td>
+      <td>Tentukan sebuah <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">jenis MIME yang dapat diterima</a>.</td>
     </tr>
     <tr>
       <td>Cache AMP tidak dapat mengakses aset.</td>
@@ -59,7 +59,7 @@ Jika Anda masih mengalami masalah setelah mengikuti langkah-langkah ini, periksa
     <tr>
       <td>Elemen dinamis, seperti <code><amp-form></amp-form></code>, <code><amp-list></amp-list></code>, tidak berperilaku sebagaimana diharapkan.</td>
       <td>Tajuk CORS tidak ada atau rusak</td>
-      <td>Komponen-komponen ini membuat permintaan lintas asal dari Cache AMP ke asal Anda. Sebagai default, browser akan memblokir permintaan ini. Untuk mengizinkan permintaan ini, masukkan <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">tajuk CORS</a> yang mencantumkan daftar <a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">semua cache</a> yang diizinkan.</td>
+      <td>Komponen-komponen ini membuat permintaan lintas asal dari Cache AMP ke asal Anda. Sebagai default, browser akan memblokir permintaan ini. Untuk mengizinkan permintaan ini, masukkan <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">tajuk CORS</a> yang mencantumkan daftar <a href="amp-cors-requests.md">semua cache</a> yang diizinkan.</td>
     </tr>
     <tr>
       <td>Konten yang sedang disajikan, namun harus dihapus karena adanya pemberitahuan penghapusan berdasarkan hukum.</td>

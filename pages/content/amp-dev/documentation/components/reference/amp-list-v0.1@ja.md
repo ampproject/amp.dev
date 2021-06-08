@@ -54,7 +54,7 @@ CORS JSON エンドポイントからコンテンツを動的に取得し、指�
 * 既存の `template` または `script` 要素の ID を参照する `template` 属性。
 * `amp-list` 要素内で直接ネストされた `template` または `script` 要素。
 
-テンプレートについて詳しくは、[AMP HTML テンプレート](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md)をご覧ください。
+テンプレートについて詳しくは、[AMP HTML テンプレート](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-templates.md)をご覧ください。
 
 *例: 動的リストの表示*
 
@@ -306,7 +306,7 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 
 ```
 
-実際の例については、[test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) と [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) をご覧ください。
+実際の例については、[test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/main/test/manual/amp-list/infinite-scroll-1.amp.html) と [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/main/test/manual/amp-list/infinite-scroll-1.amp.html) をご覧ください。
 
 ### 属性 <a name="sample-usage"></a>
 
@@ -417,7 +417,7 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 
 ## 置換 <a name="substitutions"></a>
 
-`<amp-list>` では、標準的な URL 変数の置換をすべて使用できます。詳しくは、[置換ガイド](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)をご覧ください。
+`<amp-list>` では、標準的な URL 変数の置換をすべて使用できます。詳しくは、[置換ガイド](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)をご覧ください。
 
 例:
 ```html
@@ -427,4 +427,4 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 
 ## 検証 <a name="validation"></a>
 
-AMP 検証ツールの仕様で [amp-list のルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-list/validator-amp-list.protoascii)をご確認ください。
+AMP 検証ツールの仕様で [amp-list のルール](https://github.com/ampproject/amphtml/blob/main/extensions/amp-list/validator-amp-list.protoascii)をご確認ください。

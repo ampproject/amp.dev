@@ -6,7 +6,7 @@ formats:
   - email
 ---
 
-希望支持 AMP 电子邮件的电子邮件客户端应使用 [AMP 查看工具](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md)托管他们发件人的 AMP 电子邮件。使用 [AMP Viewer 库](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration)构建的查看工具包含一个 AMP 文档，并启用了相应的[功能](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md)，允许通过 postMessage 与 AMP 文档进行双向通信。这些功能包括授予电子邮件可见性控制权限、中继用户指标，以及提供方法来确保从电子邮件发出的 XHR 请求的安全性。
+希望支持 AMP 电子邮件的电子邮件客户端应使用 [AMP 查看工具](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md)托管他们发件人的 AMP 电子邮件。使用 [AMP Viewer 库](https://github.com/ampproject/amphtml/tree/main/extensions/amp-viewer-integration)构建的查看工具包含一个 AMP 文档，并启用了相应的[功能](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/CAPABILITIES.md)，允许通过 postMessage 与 AMP 文档进行双向通信。这些功能包括授予电子邮件可见性控制权限、中继用户指标，以及提供方法来确保从电子邮件发出的 XHR 请求的安全性。
 
 ## 查看工具 XHR 拦截
 
@@ -47,7 +47,7 @@ viewerIframe.contentWindow.onMessage = (xhrRequestIntercepted) => {
 
 `viewerRenderTemplate` 功能允许查看工具管理 [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email) 和 [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=email) 模板呈现。启用此功能后，AMP 运行时将代理一个请求，请求中包含原始 XHR 调用、模板数据和将组件内容呈现到查看工具所需的任何其他详细信息。这允许查看工具对端点数据内容进行内省，并管理模板的 [mustache](https://mustache.github.io/) 呈现，以验证和清理数据。请注意，如果此功能与 xhrInterceptor 一同启用，那么在 amp-form 和 amp-list 组件中，`viewerRenderTemplate` 功能将胜过 xhrInterceptor 的功能，前者也会将请求代理到查看工具。
 
-[viewer.html](https://github.com/ampproject/amphtml/blob/master/examples/viewer.html) 示例显示了如何处理发送自 AMP 文档的 `viewerRenderTemplate` 消息。在该示例中，Viewer.prototype.processRequest\_ 捕获 `viewerRenderTemplate` 消息，并根据请求中可用的 amp 组件类型，发回使用以下 JSON 格式呈现的 html。
+[viewer.html](https://github.com/ampproject/amphtml/blob/main/examples/viewer.html) 示例显示了如何处理发送自 AMP 文档的 `viewerRenderTemplate` 消息。在该示例中，Viewer.prototype.processRequest\_ 捕获 `viewerRenderTemplate` 消息，并根据请求中可用的 amp 组件类型，发回使用以下 JSON 格式呈现的 html。
 
 ```js
 Viewer.prototype.ssrRenderAmpListTemplate_ = (data) =>

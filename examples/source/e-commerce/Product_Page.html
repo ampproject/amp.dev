@@ -110,7 +110,7 @@ This sample showcases how to build a product page in AMP HTML.
       background-color:var(--color-primary);
       background-position:center;
       background-repeat:no-repeat;
-      background-image:-webkit-image-set(url(<% hosts.platform %>/static/samples/img/ic_search_white_1x_web_24dp.png) 1x,url(<% hosts.platform %>/static/samples/img/ic_search_white_2x_web_24dp.png) 2x);
+      background-image:-webkit-image-set(url(/static/samples/img/ic_search_white_1x_web_24dp.png) 1x,url(/static/samples/img/ic_search_white_2x_web_24dp.png) 2x);
       border:0;
       height:var(--space-4);
       width:36px;
@@ -574,7 +574,7 @@ This sample showcases how to build a product page in AMP HTML.
                   width="24" height="24"
                   alt="navigation"></amp-img>
         </a>
-        <form method="GET" action="<% hosts.platform %>/documentation/examples/api/search" target="_top">
+        <form method="GET" action="/documentation/examples/api/search" target="_top">
           <input name="search" type="search" placeholder="Search">
           <a id="sample-logo" href="/">Product</a>
           <input type="submit" value="">
@@ -720,7 +720,7 @@ This sample showcases how to build a product page in AMP HTML.
             hidden
             class="fadeIn"
             [hidden]="product.selectedColor != 'golden'">
-        <amp-img src=" <% hosts.platform %>/static/samples/img/golden_apple1_1024x682.jpg"
+        <amp-img src="/static/samples/img/golden_apple1_1024x682.jpg"
                 width="1024" height="682"
                 layout="responsive" on="tap:gallery-lightbox"
                 role="button" tabindex="0">
@@ -830,13 +830,13 @@ This sample showcases how to build a product page in AMP HTML.
     <!-- The add-to-cart action action is implemented using  [amp-form](/documentation/components/reference/amp-form/). In our sample we use the [amp-selector](/components/amp-selector.html) for selecting different product properties.
     Pressing the `ADD TO CART` button adds the product to a shopping cart page using the properties you have selected. Notice that the button URL contains the query `clientId={{ClientId}}`.
     If an item is successfully added to the shopping cart, we redirect the user to the shopping cart page.
-    The redirect target is configured via a header in the server's form response ([redirecting after submission](https://github.com/ampproject/amphtml/blob/master/extensions/amp-form/amp-form.md#redirecting-after-a-submission)):
+    The redirect target is configured via a header in the server's form response ([redirecting after submission](https://github.com/ampproject/amphtml/blob/main/extensions/amp-form/amp-form.md#redirecting-after-a-submission)):
 
       <p>access-control-expose-headers:AMP-Access-Control-Allow-Source-Origin,AMP-Redirect-To
       amp-redirect-to:<a href="http://ampbyexample.com/shopping_cart/?clientid=amp-123456789">http://ampbyexample.com/shopping_cart/?clientid=amp-123456789</a></p>
      -->
 
-    <!-- We use the `CLIENT_ID` variable to identify the user, this enables storing a shopping cart between repeated visits of an AMP page (either via the AMP Cache or the original host). This variable can be used inside an amp-form by declaring an hidden input value with `default-value="CLIENT_ID(cart)`. Read more about variable substitution [here](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). -->
+    <!-- We use the `CLIENT_ID` variable to identify the user, this enables storing a shopping cart between repeated visits of an AMP page (either via the AMP Cache or the original host). This variable can be used inside an amp-form by declaring an hidden input value with `default-value="CLIENT_ID(cart)`. Read more about variable substitution [here](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md). -->
 
       <form id="order" method="POST"
             action-xhr="/documentation/examples/e-commerce/shopping_cart/add-to-cart"

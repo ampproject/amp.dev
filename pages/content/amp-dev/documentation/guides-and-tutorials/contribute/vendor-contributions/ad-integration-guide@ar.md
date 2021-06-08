@@ -9,13 +9,13 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/ads/_integration-guide.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/ads/_integration-guide.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-إذا كنت موفر تقنية إعلانات تبحث عن التكامل مع AMP HTML، فيرجى مراجعة الإرشادات أدناه. لضمان أدنى زمن انتقال وأفضل جودة، يرجى اتباع الإرشادات المسردة [هنا](https://github.com/ampproject/amphtml/blob/master/ads/../3p/README.md#ads) قبل إرسال طلب سحب إلى مشروع AMP مفتوح المصدر. للحصول على توجيه عام بشأن كيفية البدء بالمساهمة في AMP، يرجى مراجعة [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/ads/../CONTRIBUTING.md).
+إذا كنت موفر تقنية إعلانات تبحث عن التكامل مع AMP HTML، فيرجى مراجعة الإرشادات أدناه. لضمان أدنى زمن انتقال وأفضل جودة، يرجى اتباع الإرشادات المسردة [هنا](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads) قبل إرسال طلب سحب إلى مشروع AMP مفتوح المصدر. للحصول على توجيه عام بشأن كيفية البدء بالمساهمة في AMP، يرجى مراجعة [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../docs/contributing.md).
 
 ## خادم الإعلانات <a name="ad-server"></a>
 
@@ -39,9 +39,9 @@ data-aax_src="302"
 > </amp-ad>
 > [/sourcecode]
 
-لاحظ أن كل واحدة من السمات التي تتبع `type` تعتمد على المعلمات التي يتوقعها خادم Amazon’s A9 من أجل تسليم الإعلان. يعرض لك ملف [a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) كيف يتم تعيين المعلمات لعمل استدعاء JavaScript الذي يستدعي خادم A9 عن طريق `https://c.amazon-adsystem.com/aax2/assoc.js` URL. ويتم إلحاق المعلمات المقابلة التي تمررها علامة إعلانات AMP إلى URL لإرجاع الإعلان.
+لاحظ أن كل واحدة من السمات التي تتبع `type` تعتمد على المعلمات التي يتوقعها خادم Amazon’s A9 من أجل تسليم الإعلان. يعرض لك ملف [a9.js](https://github.com/ampproject/amphtml/blob/main/ads/./a9.js) كيف يتم تعيين المعلمات لعمل استدعاء JavaScript الذي يستدعي خادم A9 عن طريق `https://c.amazon-adsystem.com/aax2/assoc.js` URL. ويتم إلحاق المعلمات المقابلة التي تمررها علامة إعلانات AMP إلى URL لإرجاع الإعلان.
 
-لمعرفة التفاصيل حول كيفية تكامل شبكة الإعلانات الخاصة بك مع AMP، راجع [تكامل شبكات الإعلانات في AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+لمعرفة التفاصيل حول كيفية تكامل شبكة الإعلانات الخاصة بك مع AMP، راجع [تكامل شبكات الإعلانات في AMP](https://github.com/ampproject/amphtml/blob/main/ads/README.md).
 
 ## المنصة من طرف المورد (SSP) أو Ad Exchange <a name="supply-side-platform-ssp-or-an-ad-exchange"></a>
 
@@ -63,7 +63,7 @@ _الأمثلة : Essence أو Omnicom_
 
 _الأمثلة : Brightcove أو Ooyala_
 
-مشغل الفيديو الذي يعمل مع صفحات HTML العادية لن يعمل في AMP وبالتالي يجب إنشاء علامة خاصة تسمح لـ AMP Runtime بتحميل المشغل الخاص بك. أنشأت Brightcove علامة [amp-brightcove](https://github.com/ampproject/amphtml/blob/master/extensions/amp-brightcove/amp-brightcove.md) مخصصة تسمح بتشغيل الوسائط والإعلانات في صفحات AMP.
+مشغل الفيديو الذي يعمل مع صفحات HTML العادية لن يعمل في AMP وبالتالي يجب إنشاء علامة خاصة تسمح لـ AMP Runtime بتحميل المشغل الخاص بك. أنشأت Brightcove علامة [amp-brightcove](https://github.com/ampproject/amphtml/blob/main/extensions/amp-brightcove/amp-brightcove.md) مخصصة تسمح بتشغيل الوسائط والإعلانات في صفحات AMP.
 
 ويمكن استدعاء مشغل Brightcove بواسطة ما يلي:
 
@@ -106,10 +106,10 @@ _الأمثلة : MOAT أو Integral Ad Science_
 
 على سبيل المثال مع MOAT، تأكد من أنه تم تحويل `http://js.moatads.com` إلى `https://z.moatads.com`
 
-راجع أيضًا نهج استخدام [نمط مراقب نقاط التقاطع](https://github.com/ampproject/amphtml/blob/master/ads/README.md#ad-viewability).
+راجع أيضًا نهج استخدام [نمط مراقب نقاط التقاطع](https://github.com/ampproject/amphtml/blob/main/ads/README.md#ad-viewability).
 
 ## منصة التوصية بالمحتوى <a name="content-recommendation-platform"></a>
 
 _الأمثلة : Taboola أو Outbrain_
 
-تكون مفيدة إذا كانت بعض أجزاء JavaScript مدمجة في موقع ويب الناشر اليوم ولكن النهج لن يعمل في صفحات AMP. إذا كنت ترغب في التوصية بمحتوى على إحدى صفحات AMP، فعندئذ نوصيك بأن تستخدم ملحق [`amp-embed`](https://amp.dev/documentation/components/amp-ad) لطلب تفاصيل المحتوى. راجع مثال [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md).
+تكون مفيدة إذا كانت بعض أجزاء JavaScript مدمجة في موقع ويب الناشر اليوم ولكن النهج لن يعمل في صفحات AMP. إذا كنت ترغب في التوصية بمحتوى على إحدى صفحات AMP، فعندئذ نوصيك بأن تستخدم ملحق [`amp-embed`](https://amp.dev/documentation/components/amp-ad) لطلب تفاصيل المحتوى. راجع مثال [Taboola](https://github.com/ampproject/amphtml/blob/main/ads/taboola.md).

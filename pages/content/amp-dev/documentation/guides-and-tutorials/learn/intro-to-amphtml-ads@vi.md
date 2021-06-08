@@ -48,7 +48,7 @@ Quảng cáo AMPHTML rất linh hoạt và năng động, cho phép nhiều đ�
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='Serving AMPHTML ads to AMP pages', caption='Serving AMPHTML ads to AMP pages', align='' ) }}
 
 1. Các nhà phát hành chèn một ô quảng cáo trên trang AMP của họ thông qua thẻ [`amp-ad`](../../../documentation/components/reference/amp-ad.md), quy định mạng lưới quảng cáo mà họ muốn sử dụng.
-2. Thời gian chạy AMP gửi một yêu cầu quảng cáo đến mạng lưới quảng cáo được quy định để truy xuất quảng cáo. Các mạng lưới quảng cáo có khả năng phục vụ quảng cáo AMPHTML sẽ [triển khai Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) để xác thực và phê duyệt quảng cáo.
+2. Thời gian chạy AMP gửi một yêu cầu quảng cáo đến mạng lưới quảng cáo được quy định để truy xuất quảng cáo. Các mạng lưới quảng cáo có khả năng phục vụ quảng cáo AMPHTML sẽ [triển khai Fast Fetch](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md) để xác thực và phê duyệt quảng cáo.
 3. Mạng lưới quảng cáo hồi đáp với quảng cáo AMPHTML và Thời gian chạy AMP sẽ render quảng cáo trên trang AMP.
 
 [tip type="note"] Không cần tích hợp đặc biệt để phục vụ các quảng cáo AMPHTML trên các trang không phải AMP. Hãy kiểm tra với mạng lưới quảng cáo của bạn để xem họ có hỗ trợ quảng cáo AMPHTML hay không. [/tip]
@@ -77,7 +77,7 @@ Nếu bạn là một đơn vị thiết kế quảng cáo, bạn phải tạo q
 
 ### Mạng lưới/máy chủ quảng cáo
 
-Để cung cấp quảng cáo AMPHTML cho các trang AMP, bạn cần tạo một phần mở rộng [`amp-ad`](../../../documentation/components/reference/amp-ad.md) cho mạng lưới của mình (trừ khi bạn đã có rồi), sử dụng [triển khai yêu cầu quảng cáo Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md). Tham khảo [Tích hợp với AMP để hiển thị quảng cáo](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md) để biết thêm chi tiết. Hãy nhớ rằng bạn không cần tích hợp đặc biệt để phục vụ các quảng cáo AMPHTML trên các trang không phải AMP.
+Để cung cấp quảng cáo AMPHTML cho các trang AMP, bạn cần tạo một phần mở rộng [`amp-ad`](../../../documentation/components/reference/amp-ad.md) cho mạng lưới của mình (trừ khi bạn đã có rồi), sử dụng [triển khai yêu cầu quảng cáo Fast Fetch](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/Network-Impl-Guide.md). Tham khảo [Tích hợp với AMP để hiển thị quảng cáo](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md) để biết thêm chi tiết. Hãy nhớ rằng bạn không cần tích hợp đặc biệt để phục vụ các quảng cáo AMPHTML trên các trang không phải AMP.
 
 ## Tạo quảng cáo AMPHTML
 
@@ -101,7 +101,7 @@ Sau khi tạo quảng cáo AMPHTML của bạn, bạn cần đảm bảo rằng 
 
 ## Hỗ trợ quảng cáo AMPHTML trong RTB
 
-Đối với các SSP và sàn giao dịch quảng cáo muốn hỗ trợ quảng cáo AMPHTML trong một môi trường Đấu giá trong Thời gian thực (RTB), hãy tham khảo [Hướng dẫn Triển khai cho Sàn giao dịch Quảng cáo RTB](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/RTBExchangeGuide.md) để biết thêm chi tiết.
+Đối với các SSP và sàn giao dịch quảng cáo muốn hỗ trợ quảng cáo AMPHTML trong một môi trường Đấu giá trong Thời gian thực (RTB), hãy tham khảo [Hướng dẫn Triển khai cho Sàn giao dịch Quảng cáo RTB](https://github.com/ampproject/amphtml/blob/main/ads/google/a4a/docs/RTBExchangeGuide.md) để biết thêm chi tiết.
 
 ## Câu hỏi thường gặp
 
@@ -125,4 +125,4 @@ Có. Xem [`amp-ad-exit`](../../../documentation/components/reference/amp-ad-exit
 
 - Chúng tôi khuyến nghị [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) để tìm câu trả lời cho các thắc mắc về AMP; bởi các thành viên của cộng đồng Dự án AMP thường xuyên theo dõi Stack Overflow, bạn sẽ có nhiều khả năng nhận được câu trả lời nhanh chóng cho các câu hỏi của mình trên đó.
 - Tham gia kênh [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) để xem các giải pháp và câu trả lời.
-- Nếu bạn gặp một lỗi trong AMP hoặc có một yêu cầu tính năng đối với AMP, hãy xem phần [Báo cáo các vấn đề với AMP](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp) để biết thêm thông tin về việc gửi đi một vấn đề.
+- Nếu bạn gặp một lỗi trong AMP hoặc có một yêu cầu tính năng đối với AMP, hãy xem phần [Báo cáo các vấn đề với AMP](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#reporting-issues-with-amp) để biết thêm thông tin về việc gửi đi một vấn đề.

@@ -1,11 +1,18 @@
 {% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
 {% do doc.icons.useIcon('icons/sidebar-toggle.svg') %}
 
-<label class="ap-a-sidebar-toggle-label ap-a-sidebar-mobile-toggle-label ap-a-sidebar-mobile-toggle-label-sidebar" for="sidebar" on="tap:sidebar-left.toggle" role="categoriemenutrigger" tabindex="0">
+<label class="ap-a-sidebar-toggle-label ap-a-sidebar-mobile-toggle-label ap-a-sidebar-mobile-toggle-label-sidebar"
+    for="sidebar"
+    on="tap:sidebar-left.toggle"
+    role="categoriemenutrigger"
+    tabindex="0">
   <span class="label-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sidebar-toggle"></use></svg></span>
   <span class="label-title">{{_('Toggle Sidebar')}}</span>
 </label>
-<label class="ap-a-sidebar-toggle-label ap-a-sidebar-desktop-toggle-label ap-a-sidebar-desktop-toggle-label-sidebar" for="sidebar-desktop" role="categoriemenutrigger-desktop" tabindex="0">
+<label class="ap-a-sidebar-toggle-label ap-a-sidebar-desktop-toggle-label ap-a-sidebar-desktop-toggle-label-sidebar"
+    for="sidebar-desktop"
+    role="categoriemenutrigger-desktop"
+    tabindex="0">
   <span class="label-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sidebar-toggle"></use></svg></span>
   <span class="label-title">{{_('Toggle Sidebar')}}</span>
 </label>

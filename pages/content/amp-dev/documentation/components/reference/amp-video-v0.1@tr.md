@@ -77,7 +77,7 @@ HTML5 `video` etiketinin yerine gelen bir etiket; yalnızca doğrudan HTML5 vide
 
 ## Analiz <a name="analytics"></a>
 
-`amp-video`, ek ayar gerektirmeden analizleri destekler. Daha fazla bilgi için [video analizi](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md) bölümüne bakın.
+`amp-video`, ek ayar gerektirmeden analizleri destekler. Daha fazla bilgi için [video analizi](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/amp-video-analytics.md) bölümüne bakın.
 
 ## Özellikler <a name="attributes"></a>
 
@@ -94,7 +94,7 @@ HTML5 `video` etiketinin yerine gelen bir etiket; yalnızca doğrudan HTML5 vide
       </tr>
       <tr>
         <td width="40%"><strong>autoplay</strong></td>
-        <td>Bu özellik mevcutsa ve tarayıcı otomatik oynatmayı destekliyorsa video görünür hale gelir gelmez otomatik olarak oynatılır. Bileşenin oynatılması için <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-video-interface.md#autoplay">AMP'de Video spesifikasyonunda ana hatlarıyla açıklandığı</a> gibi karşılaması gereken bazı koşullar vardır.</td>
+        <td>Bu özellik mevcutsa ve tarayıcı otomatik oynatmayı destekliyorsa video görünür hale gelir gelmez otomatik olarak oynatılır. Bileşenin oynatılması için <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md#autoplay">AMP'de Video spesifikasyonunda ana hatlarıyla açıklandığı</a> gibi karşılaması gereken bazı koşullar vardır.</td>
       </tr>
       <tr>
         <td width="40%"><strong>controls</strong></td>
@@ -131,7 +131,7 @@ HTML5 `video` etiketinin yerine gelen bir etiket; yalnızca doğrudan HTML5 vide
         </tr>
         <tr>
           <td width="40%"><strong>rotate-to-fullscreen</strong></td>
-          <td>Video görünür durumdaysa kullanıcının cihazını yatay moda döndürmesinden sonra tam ekranda görüntülenir. Daha fazla bilgi için <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-video-interface.md#rotate-to-fullscreen">AMP'de Video spesifikasyonuna</a> bakın.</td>
+          <td>Video görünür durumdaysa kullanıcının cihazını yatay moda döndürmesinden sonra tam ekranda görüntülenir. Daha fazla bilgi için <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-video-interface.md#rotate-to-fullscreen">AMP'de Video spesifikasyonuna</a> bakın.</td>
         </tr>
         <tr>
           <td width="40%"><strong>common attributes</strong></td>
@@ -184,4 +184,4 @@ Ayrıntılı bir örnek için Örneklerle AMP [amp-video ile ilgili oynatmak iç
 
 ## Doğrulama <a name="validation"></a>
 
-AMP doğrulayıcı spesifikasyonundaki [amp-video kurallarına](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) bakın.
+AMP doğrulayıcı spesifikasyonundaki [amp-video kurallarına](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) bakın.

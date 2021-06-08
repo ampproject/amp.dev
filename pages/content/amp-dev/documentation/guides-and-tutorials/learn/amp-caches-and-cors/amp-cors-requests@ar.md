@@ -12,7 +12,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cors-requests.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cors-requests.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -274,7 +274,7 @@ res.setHeader('Access-Control-Allow-Origin', origin);
 }
 [/sourcecode]
 
-**ملحوظة**: للحصول على نموذج رمز يعمل، راجع [amp-cors.js](https://github.com/ampproject/amphtml/blob/master/build-system/server/amp-cors.js).
+**ملحوظة**: للحصول على نموذج رمز يعمل، راجع [amp-cors.js](https://github.com/ampproject/amphtml/blob/main/build-system/server/amp-cors.js).
 
 ### السيناريو 1: الحصول على طلب من صفحة AMP في الأصل نفسه<a name="scenario-1-get-request-from-amp-page-on-same-origin"></a>
 

@@ -6,7 +6,7 @@ Assim como todas as páginas da Web, as páginas AMP são estilizadas com CSS. C
 
 Todos os estilos precisam estar no cabeçalho do documento (veja [Adicionar estilos a uma página](index.md#add-styles-to-a-page)). É possível usar pré-processadores e modelos CSS para criar páginas estáticas e gerenciar melhor seu conteúdo.
 
-Observação: Os componentes das AMP possuem estilos padrão para facilitar a criação de páginas responsivas. Esses estilos estão definidos em [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
+Observação: Os componentes das AMP possuem estilos padrão para facilitar a criação de páginas responsivas. Esses estilos estão definidos em [`amp.css`](https://github.com/ampproject/amphtml/blob/main/css/amp.css).
 
 ## Estilos não permitidos
 

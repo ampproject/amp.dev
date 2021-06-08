@@ -61,4 +61,4 @@ Elemen ini mencakup [atribut umum](../../../documentation/guides-and-tutorials/l
 
 ## Validasi <a name="validation"></a>
 
-Lihat [aturan amp-layout](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) dalam spesifikasi validator AMP.
+Lihat [aturan amp-layout](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) dalam spesifikasi validator AMP.

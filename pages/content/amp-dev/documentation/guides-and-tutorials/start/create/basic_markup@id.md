@@ -66,7 +66,7 @@ Selain persyaratan dasar, contoh kita juga mencakup definisi Schema.org di bagia
 [tip type="read-on"] Kunjungi referensi berikut ini untuk mempelajari lebih lanjut:
 
 - [Memulai AMP di Google Penelusuran](https://developers.google.com/amp/docs) - pelajari cara menyiapkan halaman AMP untuk Google Penelusuran.
-- [Contoh metadata](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - pelajari lebih lanjut semua metadata yang diperlukan di berbagai tempat lain (misalnya Twitter). [/tip]
+- [Contoh metadata](https://github.com/ampproject/amphtml/tree/main/examples/metadata-examples) - pelajari lebih lanjut semua metadata yang diperlukan di berbagai tempat lain (misalnya Twitter). [/tip]
 
 <hr>
 

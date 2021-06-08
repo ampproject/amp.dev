@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-debugging.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-debugging.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -40,7 +40,7 @@ have a look and request a pull request there.
     <tr>
       <td>ウェブフォントが表示されない（フォールバックフォントが使用される）</td>
       <td>フォントプロバイダのホワイトリストに AMP キャッシュが含まれていない。</td>
-      <td>フォントプロバイダに連絡し、<a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">すべてのキャッシュ</a>を allowlist に含めるように依頼してください。</td>
+      <td>フォントプロバイダに連絡し、<a href="amp-cors-requests.md#cors-security-in-amp">すべてのキャッシュ</a>を allowlist に含めるように依頼してください。</td>
     </tr>
     <tr>
       <td>アセット（フォントや画像など）が表示されない（ (<strong>HTTP オリジン</strong>のみ）</td>
@@ -50,7 +50,7 @@ have a look and request a pull request there.
     <tr>
       <td rowspan="2">アセット（フォントや画像など）が表示されない</td>
       <td>アセットの MIME タイプが誤って配信されている。</td>
-      <td> <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">許可される MIME タイプ</a>を指定してください。</td>
+      <td> <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">許可される MIME タイプ</a>を指定してください。</td>
     </tr>
     <tr>
       <td>AMP キャッシュからアセットにアクセスできない。</td>
@@ -59,7 +59,7 @@ have a look and request a pull request there.
     <tr>
       <td> <code><amp-form></amp-form></code>、<code><amp-list></amp-list></code> などの動的要素が期待通りに動作しない。</td>
       <td>CORS ヘッダーが破損または欠落している。</td>
-      <td>これらのコンポーネントは、AMP キャッシュからオリジンにクロスオリジンリクエストを発行します。デフォルトでは、これらのリクエストはブラウザによってブロックされています。これらのリクエストを許可するには、<a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">すべてのキャッシュ</a>を allowlist に追加する <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS ヘッダー</a>を発行してください。</td>
+      <td>これらのコンポーネントは、AMP キャッシュからオリジンにクロスオリジンリクエストを発行します。デフォルトでは、これらのリクエストはブラウザによってブロックされています。これらのリクエストを許可するには、<a href="amp-cors-requests.md">すべてのキャッシュ</a>を allowlist に追加する <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS ヘッダー</a>を発行してください。</td>
     </tr>
     <tr>
       <td>法的削除通知により削除されるべきコンテンツが配信される。</td>

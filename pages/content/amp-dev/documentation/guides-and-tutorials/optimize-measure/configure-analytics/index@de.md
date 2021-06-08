@@ -23,7 +23,7 @@ Wenn du über eine eigene interne Lösung zur Messung von User Engagement verfü
 
 AMP Analytics wurde bewusst so konzipiert, dass nur eine einzige Messung stattfindet und die Daten dann an mehrere Empfänger weitergegeben werden. Wenn du bereits einen oder mehrere Analytics Anbieter verwendest, sieh in der Liste der [Analytics Anbieter](analytics-vendors.md) nach, ob diese eine Integration von AMP unterstützen. Falls ja, lies dir deren Daten zur Konfiguration durch und befolge die Anleitung.
 
-Wenn der Analytics Anbieter keine AMP Integration unterstützt, wende dich an den Anbieter und bitte um entsprechende Unterstützung. Erstelle gerne auch ein [Issue im AMP Projekt](https://github.com/ampproject/amphtml/issues/new) und fordere an, dass der Anbieter hinzugefügt wird. Siehe auch den Abschnitt [Integriere deine Analytics Tools in AMP HTML](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md).
+Wenn der Analytics Anbieter keine AMP Integration unterstützt, wende dich an den Anbieter und bitte um entsprechende Unterstützung. Erstelle gerne auch ein [Issue im AMP Projekt](https://github.com/ampproject/amphtml/issues/new) und fordere an, dass der Anbieter hinzugefügt wird. Siehe auch den Abschnitt [Integriere deine Analytics Tools in AMP HTML](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md).
 
 ### Welche Daten benötigst du?
 

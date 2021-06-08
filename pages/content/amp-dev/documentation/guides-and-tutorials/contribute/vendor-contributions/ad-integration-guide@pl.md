@@ -9,13 +9,13 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/ads/_integration-guide.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/ads/_integration-guide.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-Jeśli jesteś dostawcą technologii reklamowych i chcesz zintegrować je z AMP HTML, zapoznaj się z poniższymi wytycznymi. Aby zapewnić minimalne opóźnienia i wysoką jakość, przed przesłaniem żądania ściągnięcia do projektu open-source AMP wykonaj instrukcje podane [tutaj](https://github.com/ampproject/amphtml/blob/master/ads/../3p/README.md#ads). Ogólne wskazówki na temat wnoszenia wkładu do AMP zawiera strona [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/ads/../CONTRIBUTING.md).
+Jeśli jesteś dostawcą technologii reklamowych i chcesz zintegrować je z AMP HTML, zapoznaj się z poniższymi wytycznymi. Aby zapewnić minimalne opóźnienia i wysoką jakość, przed przesłaniem żądania ściągnięcia do projektu open-source AMP wykonaj instrukcje podane [tutaj](https://github.com/ampproject/amphtml/blob/main/ads/../3p/README.md#ads). Ogólne wskazówki na temat wnoszenia wkładu do AMP zawiera strona [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/main/ads/../docs/contributing.md).
 
 ## Serwer reklam <a name="ad-server"></a>
 
@@ -39,9 +39,9 @@ data-aax_src="302"
 > </amp-ad>
 > [/sourcecode]
 
-Zauważ, że każdy z atrybutów następujących po właściwości `type` jest zależny od parametrów, których oczekuje serwer Amazon A9 w celu dostarczenia reklamy. Plik [a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) pokazuje jak są mapowane parametry w celu wykonania wywołania skryptu JavaScript, który wywołuje serwer A9 poprzez adres URL `https://c.amazon-adsystem.com/aax2/assoc.js`. W celu zwrócenia reklamy do adresu URL są dołączane odpowiednie parametry przekazywane przez znacznik reklamy AMP.
+Zauważ, że każdy z atrybutów następujących po właściwości `type` jest zależny od parametrów, których oczekuje serwer Amazon A9 w celu dostarczenia reklamy. Plik [a9.js](https://github.com/ampproject/amphtml/blob/main/ads/./a9.js) pokazuje jak są mapowane parametry w celu wykonania wywołania skryptu JavaScript, który wywołuje serwer A9 poprzez adres URL `https://c.amazon-adsystem.com/aax2/assoc.js`. W celu zwrócenia reklamy do adresu URL są dołączane odpowiednie parametry przekazywane przez znacznik reklamy AMP.
 
-Szczegółowe informacje na temat integrowania sieci reklamowej z AMP znajdziesz w artykule [Integrowanie sieci reklamowych z AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+Szczegółowe informacje na temat integrowania sieci reklamowej z AMP znajdziesz w artykule [Integrowanie sieci reklamowych z AMP](https://github.com/ampproject/amphtml/blob/main/ads/README.md).
 
 ## System Supply Side Platform (SSP) lub Ad Exchange <a name="supply-side-platform-ssp-or-an-ad-exchange"></a>
 
@@ -63,7 +63,7 @@ Upewnij się, że wszystkie zasoby będące częścią kreacji są żądane za p
 
 _Przykłady: Brightcove, Ooyala_
 
-Odtwarzacz wideo, który działa na zwykłych stronach HTML, nie będzie działać w AMP, dlatego też należy utworzyć specjalny znacznik, który pozwoli środowisku uruchomieniowemu AMP na załadowanie odtwarzacza. Firma Brightcove stworzyła niestandardowy znacznik [amp-brightcove](https://github.com/ampproject/amphtml/blob/master/extensions/amp-brightcove/amp-brightcove.md), umożliwiający odtwarzanie multimediów i reklam na stronach AMP.
+Odtwarzacz wideo, który działa na zwykłych stronach HTML, nie będzie działać w AMP, dlatego też należy utworzyć specjalny znacznik, który pozwoli środowisku uruchomieniowemu AMP na załadowanie odtwarzacza. Firma Brightcove stworzyła niestandardowy znacznik [amp-brightcove](https://github.com/ampproject/amphtml/blob/main/extensions/amp-brightcove/amp-brightcove.md), umożliwiający odtwarzanie multimediów i reklam na stronach AMP.
 
 Odtwarzacz Brightcove można wywołać w następujący sposób:
 
@@ -106,10 +106,10 @@ Dostawcy widoczności integrują się zazwyczaj z wydawcami za pomocą otok krea
 
 W przypadku np. MOAT adres `http://js.moatads.com` musi być zmieniany na `https://z.moatads.com`
 
-Sprawdź też podejście polegające na stosowaniu [wzorca IntersectionObserver](https://github.com/ampproject/amphtml/blob/master/ads/README.md#ad-viewability).
+Sprawdź też podejście polegające na stosowaniu [wzorca IntersectionObserver](https://github.com/ampproject/amphtml/blob/main/ads/README.md#ad-viewability).
 
 ## Platforma rekomendacji treści <a name="content-recommendation-platform"></a>
 
 _Przykłady: Taboola, Outbrain_
 
-Przydatne, jeśli musisz dzisiaj osadzić jakiś kod JavaScript w witrynie internetowej wydawcy, ale podejście to nie będzie działać na stronach AMP. Aby polecać treść na stronie AMP, sugerujemy użycie rozszerzenia [`amp-embed`](https://amp.dev/documentation/components/amp-ad) do żądania szczegółów treści. Sprawdź przykład [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md).
+Przydatne, jeśli musisz dzisiaj osadzić jakiś kod JavaScript w witrynie internetowej wydawcy, ale podejście to nie będzie działać na stronach AMP. Aby polecać treść na stronie AMP, sugerujemy użycie rozszerzenia [`amp-embed`](https://amp.dev/documentation/components/amp-ad) do żądania szczegółów treści. Sprawdź przykład [Taboola](https://github.com/ampproject/amphtml/blob/main/ads/taboola.md).

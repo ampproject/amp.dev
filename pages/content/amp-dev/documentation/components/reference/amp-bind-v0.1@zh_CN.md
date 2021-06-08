@@ -217,7 +217,7 @@ limitations under the License.
 * 未定义的变量和 array-index-out-of-bound 会返回 `null`，而不是 `undefined`，也不会引发错误。
 * 为了确保性能，单个表达式中目前最多可以使用 50 个操作数。如果这无法满足您的使用需求，请[与我们联系](https://github.com/ampproject/amphtml/issues/new)。
 
-如需查看完整的表达式语法和实现，请参阅 [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) 和 [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js)。
+如需查看完整的表达式语法和实现，请参阅 [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/main/extensions/amp-bind/0.1/bind-expr-impl.jison) 和 [bind-expression.js](https://github.com/ampproject/amphtml/blob/main/extensions/amp-bind/0.1/bind-expression.js)。
 
 # 示例 <a name="examples"></a>
 
@@ -648,7 +648,7 @@ AMP 会对向 JSON 端点发出的 XMLHttpRequest (XHR) 进行批处理，也就
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>远程端点的网址，该端点将返回 JSON，以便更新此 <code>amp-state</code>。这必须是 CORS HTTP 服务。
-      <code>src</code> 属性支持所有标准网址变量替换。如需了解详情，请参阅<a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">替换指南</a>。
+      <code>src</code> 属性支持所有标准网址变量替换。如需了解详情，请参阅<a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">替换指南</a>。
           [tip type="important"]
         该端点必须符合 <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">AMP 中的 CORS 请求</a>规范中规定的要求。
         [/tip]</td>

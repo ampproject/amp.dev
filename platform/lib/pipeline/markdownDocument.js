@@ -24,10 +24,12 @@ const SlugGenerator = require('@lib/utils/slugGenerator');
 const TOC_MARKER = '[TOC]';
 
 // This expression matches a {% raw %}...{% endraw %} block
-const JINJA2_RAW_BLOCK = /\{%\s*raw\s*%\}(?:(?!\{%\s*endraw\s*%\})[\s\S])*\{%\s*endraw\s*%\}/;
+const JINJA2_RAW_BLOCK =
+  /\{%\s*raw\s*%\}(?:(?!\{%\s*endraw\s*%\})[\s\S])*\{%\s*endraw\s*%\}/;
 
 // This expression matches source code blocks. fenced blocks are converted to this syntax
-const SOURCECODE_BLOCK = /\[\s*sourcecode[^\]]*\][\s\S]*?\[\s*\/\s*sourcecode\s*\]/;
+const SOURCECODE_BLOCK =
+  /\[\s*sourcecode[^\]]*\][\s\S]*?\[\s*\/\s*sourcecode\s*\]/;
 
 // we search for ALL code blocks, and at the same time for raw blocks
 // to ensure we do not match something that belongs to different code blocks
@@ -74,7 +76,8 @@ const RELATIVE_LINK_PATTERN = new RegExp(
 );
 
 // This pattern will find the text for markdown titles skipping explicit anchors.
-const TITLE_ANCHOR_PATTERN = /^(#+)[ \t]+(.*?)(<a[ \t]+name=[^>]*><\/a>)?((?:.(?!<a[ \t]+name))*?)$/gm;
+const TITLE_ANCHOR_PATTERN =
+  /^(#+)[ \t]+(.*?)(<a[ \t]+name=[^>]*><\/a>)?((?:.(?!<a[ \t]+name))*?)$/gm;
 
 // Matches a block of frontmatter delimited by ---
 const FRONTMATTER_PATTERN = /^---\r?\n.*\r?\n---\r?\n/ms;
@@ -178,6 +181,10 @@ class MarkdownDocument {
     this._frontmatter['$localization'] = {path: '/{locale}' + path};
   }
 
+  get servingPath() {
+    return this._frontmatter['$path'];
+  }
+
   get contents() {
     return this._contents;
   }
@@ -234,6 +241,20 @@ class MarkdownDocument {
   }
 
   /**
+   * Normalizes pluralized form of email in formats in
+   * frontmatter to its singular version
+   * @param  {Object}
+   * @return {Object}
+   */
+  static normalizeFrontmatterFormats(frontmatter) {
+    frontmatter.formats = frontmatter.formats.map((f) =>
+      f.replace(/emails/, 'email')
+    );
+
+    return frontmatter;
+  }
+
+  /**
    * Checks for a frontmatter block in a string of content and tries to
    * parse it to its JavaScript equivalent
    * @param  {String} contents
@@ -253,7 +274,9 @@ class MarkdownDocument {
         // Strip out limiters from frontmatter string to be able to parse it
         // and then use it as initial fill for the actual properties
         frontmatter = frontmatter.replace(/---/g, '');
-        return yaml.load(frontmatter);
+        frontmatter = yaml.load(frontmatter);
+
+        return MarkdownDocument.normalizeFrontmatterFormats(frontmatter);
       }
     } else {
       throw Error('contents does not contain a frontmatter block.');
@@ -311,7 +334,8 @@ class MarkdownDocument {
    * @return {String}          The rewritten input
    */
   static rewriteCalloutToTip(contents) {
-    const CALLOUT_PATTERN = /{% call callout\('.*?', type='(.*?)'\) %}(.*?){% endcall %}/gs;
+    const CALLOUT_PATTERN =
+      /{% call callout\('.*?', type='(.*?)'\) %}(.*?){% endcall %}/gs;
     const AVAILABLE_CALLOUT_TYPES = {
       'note': 'note',
       'read': 'read-on',

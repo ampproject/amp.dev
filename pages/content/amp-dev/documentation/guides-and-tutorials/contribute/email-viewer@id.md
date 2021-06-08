@@ -6,7 +6,7 @@ formats:
   - email
 ---
 
-Klien email yang ingin mendukung AMP untuk Email harus menggunakan [Penampil AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) untuk mengelola email AMP pengirim mereka. Penampil yang dibuat dengan [perpustakaan Penampil AMP](https://github.com/ampproject/amphtml/tree/master/extensions/amp-viewer-integration) menyelubungi dokumen AMP dan memungkinkan [kemampuan](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/CAPABILITIES.md) yang mengizinkan komunikasi dua arah dengan dokumen AMP melalui postMessage. Kemampuan ini meliputi pemberian kontrol atas visibilitas email, penyampaian metrik pengguna, dan menyediakan alat untuk memastikan keamanan permintaan XHR yang dibuat dari email.
+Klien email yang ingin mendukung AMP untuk Email harus menggunakan [Penampil AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md) untuk mengelola email AMP pengirim mereka. Penampil yang dibuat dengan [perpustakaan Penampil AMP](https://github.com/ampproject/amphtml/tree/main/extensions/amp-viewer-integration) menyelubungi dokumen AMP dan memungkinkan [kemampuan](https://github.com/ampproject/amphtml/blob/main/extensions/amp-viewer-integration/CAPABILITIES.md) yang mengizinkan komunikasi dua arah dengan dokumen AMP melalui postMessage. Kemampuan ini meliputi pemberian kontrol atas visibilitas email, penyampaian metrik pengguna, dan menyediakan alat untuk memastikan keamanan permintaan XHR yang dibuat dari email.
 
 ## Pencegatan XHR Penampil
 
@@ -47,7 +47,7 @@ Aktifkan pencegatan XHR dengan memilih penampil ke dalam kemampuan xhrIntercepto
 
 Kemampuan `viewerRenderTemplate` memungkinkan penampil untuk mengelola perenderan templat [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=email) dan [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=email). Setelah aktif, runtime AMP mewakili permintaan yang berisi panggilan XHR asli, data templat, dan detail lain apa pun yang diperlukan untuk perenderan konten komponen ke penampil. Ini memungkinkan penampil untuk menginstropeksi konten data endpoint dan mengelola perenderan [misai (mustache)](https://mustache.github.io/) atas templat untuk memverifikasi dan mengamankan data. Harap ketahui bahwa jika kemampuan ini diaktifkan bersama xhrInterceptor, di dalam komponen amp-form dan amp-list, kemampuan `viewerRenderTemplate` yang juga mewakili permintaan ke penampil akan mengungguli xhrInterceptor.
 
-Contoh [viewer.html](https://github.com/ampproject/amphtml/blob/master/examples/viewer.html) memperlihatkan bagaimana cara menangani pesan `viewerRenderTemplate` yang dikirimkan dari dokumen AMP. Di dalam contoh tersebut, Viewer.prototype.processRequest\_ menangkap pesan `viewerRenderTemplate` dan berdasarkan jenis komponen AMP yang tersedia di dalam permintaan, mengirimkan kembali HTML untuk dirender di dalam format JSON berikut ini.
+Contoh [viewer.html](https://github.com/ampproject/amphtml/blob/main/examples/viewer.html) memperlihatkan bagaimana cara menangani pesan `viewerRenderTemplate` yang dikirimkan dari dokumen AMP. Di dalam contoh tersebut, Viewer.prototype.processRequest\_ menangkap pesan `viewerRenderTemplate` dan berdasarkan jenis komponen AMP yang tersedia di dalam permintaan, mengirimkan kembali HTML untuk dirender di dalam format JSON berikut ini.
 
 ```js
 Viewer.prototype.ssrRenderAmpListTemplate_ = (data) =>

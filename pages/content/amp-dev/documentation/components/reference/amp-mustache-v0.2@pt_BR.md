@@ -62,7 +62,7 @@ Mustache é uma sintaxe de modelo sem lógica. Consulte os [documentos sobre Mus
 
 ## Uso <a name="usage"></a>
 
-O modelo `amp-mustache` precisa ser definido e usado de acordo com a [especificação de modelo de AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md) (link em inglês).
+O modelo `amp-mustache` precisa ser definido e usado de acordo com a [especificação de modelo de AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-templates.md) (link em inglês).
 
 Primeiro, o `amp-mustache` precisa ser declarado/carregado desta forma:
 
@@ -200,4 +200,4 @@ As soluções incluem substituir strings como {% raw %} `{{` {% endraw %} por ca
 
 ## Validação <a name="validation-1"></a>
 
-Consulte as [regras do amp-mustache](https://github.com/ampproject/amphtml/blob/master/extensions/amp-mustache/validator-amp-mustache.protoascii) (link em inglês) na especificação do validador de AMP.
+Consulte as [regras do amp-mustache](https://github.com/ampproject/amphtml/blob/main/extensions/amp-mustache/validator-amp-mustache.protoascii) (link em inglês) na especificação do validador de AMP.

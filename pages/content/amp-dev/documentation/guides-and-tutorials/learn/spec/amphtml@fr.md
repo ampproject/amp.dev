@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-html-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -186,7 +186,7 @@ Les documents AMP HTML DOIVENT
 - <a name="chrs"></a>contenir une balise `<meta charset="utf-8">` comme premier enfant de la balise head. [🔗](#chrs)
 - <a name="vprt"></a>contenir une balise `<meta name="viewport" content="width=device-width">` dans leur en-tête. Il est également recommandé d'ajouter `minimum-scale=1` and `initial-scale=1`. [🔗](#vprt)
 - <a name="scrpt"></a>contenir une balise `<script async src="https://cdn.ampproject.org/v0.js"></script>` dans la balise head. [🔗](#scrpt)
-- <a name="boilerplate"></a>contenir le [code du modèle AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md) (`head > style[amp-boilerplate]` et `noscript > style[amp-boilerplate]`) dan sleur balise head. [🔗](#boilerplate)
+- <a name="boilerplate"></a>contenir le [code du modèle AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md) (`head > style[amp-boilerplate]` et `noscript > style[amp-boilerplate]`) dan sleur balise head. [🔗](#boilerplate)
 
 ### Métadonnées <a name="metadata"></a>
 
@@ -284,7 +284,7 @@ Les balises HTML peuvent être utilisées telles quelles dans AMP HTML. Certaine
   </tr>
   <tr>
     <td width="30%">meta</td>
-    <td>L'attribut <code>http-equiv</code> peut être utilisé pour des valeurs autorisées spécifiques; voir la section <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">Spécification du validateur AMP</a> pour plus de détails.</td>
+    <td>L'attribut <code>http-equiv</code> peut être utilisé pour des valeurs autorisées spécifiques; voir la section <a href="https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii">Spécification du validateur AMP</a> pour plus de détails.</td>
   </tr>
   <tr>
     <td width="30%"><code><a name="ancr"></a>a</code></td>
@@ -297,7 +297,7 @@ Les balises HTML peuvent être utilisées telles quelles dans AMP HTML. Certaine
   </tr>
 </table>
 
-Les implémentations du validateur doivent utiliser une liste blanche basée sur la spécification HTML5 et où les balises ci-dessus sont supprimées. Voir la section [Addendum aux balises AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-tag-addendum.md).
+Les implémentations du validateur doivent utiliser une liste blanche basée sur la spécification HTML5 et où les balises ci-dessus sont supprimées. Voir la section [Addendum aux balises AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-tag-addendum.md).
 
 ### Commentaires <a name="comments"></a>
 
@@ -315,7 +315,7 @@ Les attributs AMP internes préfixés par `i-amp-` ne sont pas autorisés dans A
 
 Les noms de classe AMP internes préfixés par `-amp-` et `i-amp-` ne sont pas autorisés dans AMP HTML.
 
-Consultez la [documentation AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-css-classes.md)pour la signification des noms de classes préfixés par `amp-`. L'utilisation de ces classes est autorisée et vise à permettre la personnalisation de certaines fonctionnalités du runtime AMP et de ses extensions.
+Consultez la [documentation AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-css-classes.md)pour la signification des noms de classes préfixés par `amp-`. L'utilisation de ces classes est autorisée et vise à permettre la personnalisation de certaines fonctionnalités du runtime AMP et de ses extensions.
 
 Tous les autres noms de classe créés sont autorisés dans le balisage HTML AMP.
 
@@ -325,7 +325,7 @@ Certains noms d'ID ne sont pas autorisés dans AMP HTML, tels que les ID précé
 
 Consultez la documentation AMP pour les extensions spécifiques avant d'utiliser les ID `amp-` et `AMP` pour éviter tout conflit avec les fonctionnalités fournies par ces extensions, telles que `amp-access`.
 
-Voir la liste complète des noms d'ID non autorisés en recherchant `mandatory-id-attr` [ici](https://github.com/ampproject/amphtml/blob/master/spec/../validator/validator-main.protoascii).
+Voir la liste complète des noms d'ID non autorisés en recherchant `mandatory-id-attr` [ici](https://github.com/ampproject/amphtml/blob/main/docs/spec/../validator/validator-main.protoascii).
 
 ### Liens <a name="links"></a>
 
@@ -447,7 +447,7 @@ Le runtime AMP peut à tout moment décider de décharger des ressources qui ne 
 
 AMP HTML utilise des éléments personnalisés appelés « composants AMP » pour remplacer les balises de chargement de ressources intégrées telles que `<img>` et `<video>` et pour implémenter des fonctionnalités avec des interactions complexes telles que des lightbox d'images ou des carrousels.
 
-Consultez la section [Spécifications des composants AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-components.md) pour plus de détails sur les composants pris en charge.
+Consultez la section [Spécifications des composants AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-components.md) pour plus de détails sur les composants pris en charge.
 
 Il existe 2 types de composants AMP pris en charge:
 
@@ -462,7 +462,7 @@ Les composants intégrés sont toujours disponibles dans un document AMP et ont 
 
 Ces attributs définissent la mise en page d'un élément. L'objectif principal ici est de s'assurer que l'élément peut être affiché et que son espace peut être correctement réservé avant que l'une des ressources JavaScript ou distantes n'ait été téléchargée.
 
-Voir la section [Système de mise en page AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-layout.md) pour plus de détails sur le système de mise en page.
+Voir la section [Système de mise en page AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-layout.md) pour plus de détails sur le système de mise en page.
 
 #### `on` <a name="on"></a>
 
@@ -489,7 +489,7 @@ Vous pouvez écouter plusieurs événements sur un élément en séparant les de
 
 Exemple: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
-Plus de détails sur les [Actions et événements AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-actions-and-events.md).
+Plus de détails sur les [Actions et événements AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-actions-and-events.md).
 
 ### Composants étendus <a name="extended-components"></a>
 
@@ -523,13 +523,13 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 
 ##### Contrôle des versions <a name="versioning"></a>
 
-Consultez la [politique de contrôle de version AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-versioning-policy.md).
+Consultez la [politique de contrôle de version AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-versioning-policy.md).
 
 ### Modèles <a name="templates"></a>
 
 Les modèles affichent HTML sur la base du contenu du modèle spécifique à la langue et des données JSON fournies.
 
-Consultez les [spécifications du modèle AMP](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md) pour plus de détails sur les modèles pris en charge.
+Consultez les [spécifications du modèle AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-templates.md) pour plus de détails sur les modèles pris en charge.
 
 Les modèles ne sont pas fournis avec le runtime AMP et doivent être téléchargés comme avec les éléments étendus. Les composants étendus sont chargés en incluant une balise `<script>` dans l'en-tête du document comme suit:
 
@@ -559,7 +559,7 @@ L'attribut `id` est facultatif. Les éléments AMP individuels découvrent leurs
 
 La syntaxe dans l'élément de modèle dépend du langage de modèle spécifique. Cependant, le langage du modèle peut être restreint dans AMP. Par exemple, conformément à l'élément "template", toutes les productions doivent être sur un DOM valide bien formé. Tous les produits du modèle sont également soumises à un nettoyage pour garantir un produit conforme AMP.
 
-Pour en savoir plus sur la syntaxe et les restrictions d'un modèle, consultez la [documentation du modèle](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md#templates).
+Pour en savoir plus sur la syntaxe et les restrictions d'un modèle, consultez la [documentation du modèle](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-html-templates.md#templates).
 
 ##### URL <a name="url-1"></a>
 

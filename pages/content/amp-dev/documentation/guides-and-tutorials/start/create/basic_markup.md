@@ -1,76 +1,92 @@
 ---
-$title: Create your AMP HTML page
+$title: Starter code
 $order: 1
-description: 'Use HTTPS: When creating AMP pages and content, you should strongly consider using the HTTPS protocol (vs. HTTP). Although, HTTPS is not required for the AMP document itself or ...'
-author: pbakaus
-contributors:
-  - bpaduch
+description: 'The following markup is a basic AMP page.'
+author: crystalonscript
 ---
 
-The following markup is a decent starting point or boilerplate.
-Copy this and save it to a file with a .html extension.
+The following markup is a basic AMP page.
 
-[sourcecode:html]
+[example playground="true"]
+```html
 <!doctype html>
 <html amp lang="en">
   <head>
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>Hello, AMPs</title>
-    <link rel="canonical" href="{{doc.url}}">
-    <meta name="viewport" content="width=device-width">
-    <script type="application/ld+json">
-      {
-        "@context": "http://schema.org",
-        "@type": "NewsArticle",
-        "headline": "Open-source framework for publishing content",
-        "datePublished": "2015-10-07T12:02:41Z",
-        "image": [
-          "logo.jpg"
-        ]
-      }
-    </script>
+    <link rel="canonical" href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   </head>
   <body>
-    <h1>Welcome to the mobile web</h1>
+    <h1 id="hello">Hello AMPHTML World!</h1>
   </body>
 </html>
-[/sourcecode]
+```
+[/example]
 
-The content in the body, so far, is pretty straightforward. But there’s a lot of additional code in the head of the page that might not be immediately obvious. Let’s deconstruct the required mark-up.
+The body content is pretty straightforward, but there’s some additional code in the head. The required markdown is broken down in the table below. Each AMP HTML document must:
 
-Use HTTPS: When creating AMP pages and content, you should strongly consider using the HTTPS protocol (vs. HTTP). Although, HTTPS is not required for the AMP document itself or for images and fonts, there are many AMP features that require HTTPS (e.g., video, iframes, and more). To ensure your AMP pages take full advantage of all AMP features, use the HTTPS protocol.  You can learn more about HTTPS in ["Why HTTPS Matters"](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
+<table>
+  <tr>
+   <td>Rule
+   </td>
+   <td>Description
+   </td>
+  </tr>
+  <tr>
+   <td>Start with the <code>&lt;!doctype html></code> doctype.
+   </td>
+   <td>Standard for HTML.
+   </td>
+  </tr>
+  <tr>
+   <td>Contain a top-level <code>&lt;html ⚡></code> or <code>&lt;html amp> tag.
+   </td>
+   <td>Identifies the page as AMP content.
+   </td>
+  </tr>
+  <tr>
+   <td>Contain <code>&lt;head></code> and <code>&lt;body></code> tags.
+   </td>
+   <td>While optional in HTML, this is required in AMP.
+   </td>
+  </tr>
+  <tr>
+   <td>Contain a <code>&lt;meta charset="utf-8"></code> tag right after the <code>&lt;head></code> tag.
+   </td>
+   <td>Identifies the encoding for the page.
+   </td>
+  </tr>
+  <tr>
+   <td>Contain a <code>&lt;script async src="https://cdn.ampproject.org/v0.js">&lt;/script></code<>> tag inside the <code>&lt;head></code> tag. As a best practice, you should include the script as early as possible.
+   </td>
+   <td>Includes and loads the AMP JS library.
+   </td>
+  </tr>
+  <tr>
+   <td>Contain a <code>&lt;link rel="canonical" href="$SOME_URL"></code> tag inside their <code>&lt;head></code>.
+   </td>
+   <td>the <code>href</code> attribute should point to the page itself. This section exists for legacy reasons. 
+   </td>
+  </tr>
+  <tr>
+   <td>Contain a <code>&lt;meta name="viewport" content="width=device-width" /></code> tag inside their <code>&lt;head></code> tag.
+   </td>
+   <td>Specifies a responsive viewport. Learn more in <a href="../../develop/style_and_layout/responsive_design.md">Create Responsive AMP Pages</a>.
+   </td>
+  </tr>
+  <tr>
+   <td>Contain the <a href="../../learn/spec/amp-boilerplate.md">AMP boilerplate code</a> in their <code>&lt;head></code> tag.
+   </td>
+   <td>CSS boilerplate to initially hide the content until AMP JS is loaded.
+   </td>
+  </tr>
+</table>
 
-[tip type="tip"]
-Use the [AMP Boilerplate Generator](/boilerplate) to quickly get started with creating new AMP pages.
+Click "Open this snippet in playground" under the example above to get started building our page! 
+
+[tip type="note"]
+  If you want to skip ahead, you can view the [finished tutorial code here](publish.md)!
 [/tip]
-
-## Required mark-up
-
-AMP HTML documents MUST:
-
-| Rule      | Description |
-| --------- | ----------- |
-| Start with the `<!doctype html>` doctype. | Standard for HTML. |
-| Contain a top-level `<html ⚡>` tag <br>(`<html amp>` is accepted as well). | Identifies the page as AMP content. |
-| Contain `<head>` and `<body>` tags. | Optional in HTML but not in AMP.
-| Contain a `<meta charset="utf-8">` tag as the first child of their `<head>` tag. | Identifies the encoding for the page. |
-| Contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their `<head>` tag. As a best practice, you should include the script as early as possible in the `<head>`.| Includes and loads the AMP JS library. |
-| Contain a `<link rel="canonical" href="$SOME_URL">` tag inside their `<head>`. | Points to the regular HTML version of the AMP HTML document or to itself if no such HTML version exists. Learn more in [Make Your Page Discoverable](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md).
-| Contain a `<meta name="viewport" content="width=device-width"> It's also recommended to include `initial-scale=1`. | Specifies a responsive viewport. Learn more in [Create Responsive AMP Pages](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md). |
-| Contain the [AMP boilerplate code](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) in their `<head>` tag.  | CSS boilerplate to initially hide the content until AMP JS is loaded. |
-
-## Optional metadata
-
-In addition to the bare requirements, our sample also includes a Schema.org definition in the head, which isn’t a strict requirement for AMP, but it is a requirement to get your content distributed in certain places (for example, in the Google Search top stories carousel).
-
-[tip type="read-on"]Visit these resources to learn more:
-
- * [Getting Started with AMP on Google Search](https://developers.google.com/amp/docs) - learn to prepare your AMP pages for Google Search.
-  * [Metadata samples](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - learn more about all the metadata you’ll need in various other places (e.g., Twitter).
-[/tip]
-
-<hr>
-
-Good news! That’s all we need to create our first AMP page, but of course, there’s not a lot going on in the body yet. In the next section, we’ll cover how to add basics like images, custom AMP elements, how to style your page and work out a responsive layout.

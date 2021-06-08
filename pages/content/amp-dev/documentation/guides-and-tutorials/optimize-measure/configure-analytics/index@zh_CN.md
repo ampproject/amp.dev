@@ -30,7 +30,7 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。
 我们也建议您[在 AMP 项目中创建一个问题](https://github.com/ampproject/amphtml/issues/new)，
 以请求添加该供应商。
 另请参阅
-[在 AMP HTML 中集成您的分析工具](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/integrating-analytics.md)。
+[在 AMP HTML 中集成您的分析工具](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/integrating-analytics.md)。
 
 ### 您需要哪些数据？
 

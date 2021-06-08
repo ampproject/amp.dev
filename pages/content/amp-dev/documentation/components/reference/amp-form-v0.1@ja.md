@@ -148,9 +148,9 @@ $title: amp-form
 * `<input type=button>`、`<input type=image>`
 * 入力のフォーム関連の属性の大部分: `form`、`formaction`、`formtarget`、`formmethod` など
 
-（今後、これらのルールの緩和が再検討される可能性があります。これらの属性が必要な場合は[お知らせください](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#suggestions-and-feature-requests)。また、ユースケースをご提示ください）
+（今後、これらのルールの緩和が再検討される可能性があります。これらの属性が必要な場合は[お知らせください](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#suggestions-and-feature-requests)。また、ユースケースをご提示ください）
 
-有効な入力とフィールドについて詳しくは、AMP 検証ツールの仕様で [amp-form のルール](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)をご覧ください。
+有効な入力とフィールドについて詳しくは、AMP 検証ツールの仕様で [amp-form のルール](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)をご覧ください。
 
 # アクション <a name="actions"></a>
 
@@ -189,7 +189,7 @@ $title: amp-form
 
 ```
 
-[この例のコード全体](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)をご覧ください。
+[この例のコード全体](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html)をご覧ください。
 
 
 # 入力イベント <a name="input-events"></a>
@@ -222,7 +222,7 @@ AMP では、子の `<input>` 要素で `change` イベントと `input-debounce
 ```
 [/example]
 
-[この例のコード全体](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)をご覧ください。
+[この例のコード全体](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html)をご覧ください。
 
 # アナリティクス トリガー <a name="analytics-triggers"></a>
 
@@ -381,7 +381,7 @@ to confirm! After that we'll start sending you weekly articles on {{#interests}}
 {% endraw %}
 ```
 
-[この例のコード全体](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)をご覧ください。
+[この例のコード全体](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html)をご覧ください。
 
 # データ バインディングを使用して成功レスポンスをレンダリングするには <a name="to-render-a-successful-response-with-data-binding"></a>
 
@@ -494,7 +494,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 ```
 [/example]
 
-その他の例については、[examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) をご覧ください。
+その他の例については、[examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html) をご覧ください。
 
 検証メッセージに関しては、要素にテキスト コンテンツが含まれていない場合、ブラウザのデフォルトの検証メッセージが AMP によって入力されます。上の例では、`name5` の入力が空の状態で検証が開始されたとき（ユーザーがフォームを送信しようとしたとき）に、AMP によってブラウザの検証メッセージが `<span visible-when-invalid="valueMissing" validation-for="name5"></span>` に指定され、この `span` がユーザーに表示されます。
 
@@ -582,11 +582,11 @@ HTML5 の検証で提供されるフィードバックは、ページで利用�
 
 `verify-xhr` リクエストからフィールドを削除するには、`no-verify` 属性を入力要素に追加します。
 
-その他の例については、[examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) をご覧ください。
+その他の例については、[examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html) をご覧ください。
 
 # 変数の置換 <a name="variable-substitutions"></a>
 
-`amp-form` 拡張機能では、非表示の入力と `data-amp-replace` 属性が指定されている入力に対して、[プラットフォーム変数の置換](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)を行うことができます。各フォームの送信時に、`amp-form` がフォーム内の `input[type=hidden][data-amp-replace]` をすべて検出し、その `value` 属性に対して変数置換を適用して、置換の結果で値を置き換えます。
+`amp-form` 拡張機能では、非表示の入力と `data-amp-replace` 属性が指定されている入力に対して、[プラットフォーム変数の置換](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)を行うことができます。各フォームの送信時に、`amp-form` がフォーム内の `input[type=hidden][data-amp-replace]` をすべて検出し、その `value` 属性に対して変数置換を適用して、置換の結果で値を置き換えます。
 
 使用する変数のスペース区切りの文字列を `data-amp-replace` で指定することにより、各入力の置換に使用する変数を指定する必要があります（以下の例を参照）。AMP は、明示的に指定されていない変数の置換を行いません。
 
@@ -621,7 +621,7 @@ HTML5 の検証で提供されるフィードバックは、ページで利用�
 
 上の `CANONICAL_HOSTNAME` は、最初のフィールドの `data-amp-replace` 属性でホワイトリストに登録されていないため、置換されていません。
 
-その後は送信のたびに置換が行われます。詳しくは、[AMP での変数の置換](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)をご覧ください。
+その後は送信のたびに置換が行われます。詳しくは、[AMP での変数の置換](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)をご覧ください。
 
 # ポリフィル <a name="polyfills"></a>
 
@@ -671,7 +671,7 @@ amp-form では、`<textarea>` 要素に `autoexpand` 属性を指定できま�
 
 サイト運営者はこれらのクラスを使用して入力とフィールドセットのスタイルを設定し、ユーザー アクションに対応することができます（ユーザーが無効な入力をぼかした後に赤枠で強調するなど）。
 
-これらのクラスの[使用例](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)をご覧ください。
+これらのクラスの[使用例](https://github.com/ampproject/amphtml/blob/main/examples/forms.amp.html)をご覧ください。
 
 [tip type="success"] あらかじめスタイルが設定された、レスポンシブな AMP フォームの要素については、[AMP Start](https://ampstart.com/components#form-elements) をご覧ください。これらの要素は AMP ページで使用することができます。
 [/tip]

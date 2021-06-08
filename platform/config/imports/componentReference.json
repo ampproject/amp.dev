@@ -21,6 +21,8 @@
 		"amp-selector",
 		"amp-social-share",
 		"amp-story",
+		"amp-story-page",
+    "amp-story-player",
 		"amp-stream-gallery",
 		"amp-subscriptions",
 		"amp-timeago",

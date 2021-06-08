@@ -8,7 +8,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -110,7 +110,7 @@ Cũng như trường hợp bộ nhớ đệm AMP, tên miền cho một trình x
 
 ### Nhiều ngữ cảnh đồng nghĩa với nhiều cách quản lý trạng thái <a name="multiple-contexts-means-multiple-state-management"></a>
 
-Các nhà phát hành phải chuẩn bị để quản lý trạng thái người dùng cho từng ngữ cảnh hiển thị. Tính năng [ID Máy khách](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id) của AMP tận dụng cookie hoặc ổ lưu trữ cục bộ để duy trì trạng thái và cung cấp hỗ trợ cần thiết cho các trang AMP để có một mã định danh ổn định cho người dùng. Từ quan điểm triển khai, có thể sử dụng cookie hoặc ổ lưu trữ cục bộ, và AMP sẽ đưa ra quyết định sử dụng cách nào tùy thuộc vào ngữ cảnh hiển thị. Lựa chọn này chịu ảnh hưởng bởi tính khả thi kỹ thuật đối với việc quản lý trạng thái này, phóng lên hàng trăm hoặc hàng nghìn nhà phát hành.
+Các nhà phát hành phải chuẩn bị để quản lý trạng thái người dùng cho từng ngữ cảnh hiển thị. Tính năng [ID Máy khách](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md#client-id) của AMP tận dụng cookie hoặc ổ lưu trữ cục bộ để duy trì trạng thái và cung cấp hỗ trợ cần thiết cho các trang AMP để có một mã định danh ổn định cho người dùng. Từ quan điểm triển khai, có thể sử dụng cookie hoặc ổ lưu trữ cục bộ, và AMP sẽ đưa ra quyết định sử dụng cách nào tùy thuộc vào ngữ cảnh hiển thị. Lựa chọn này chịu ảnh hưởng bởi tính khả thi kỹ thuật đối với việc quản lý trạng thái này, phóng lên hàng trăm hoặc hàng nghìn nhà phát hành.
 
 Tuy nhiên, các nhà phát hành trang AMP có thể vô ý thiết kế các hành trình người dùng liên quan đến nhiều ngữ cảnh khác nhau. Hãy nhìn lại trường hợp sử dụng giỏ hàng trước đây của chúng ta và bổ sung một số chi tiết để biến nó thành một **câu chuyện người dùng** đầy đủ:
 
@@ -120,8 +120,8 @@ Trong tình huống này, người dùng nhận được một trải nghiệm g
 
 **Để cho phép trải nghiệm này và mọi trải nghiệm liên quan đến trạng thái người dùng, mọi ngữ cảnh sử dụng của người dùng đều phải có chung trạng thái (được duy trì riêng biệt với nhau).** “Thật hoàn hảo!”, bạn thốt lên, với ý tưởng là chia sẻ giá trị cookie với các mã định danh người dùng trên các ranh giới ngữ cảnh này. Một vấn đề: tuy mỗi ngữ cảnh này đều hiển thị nội dung được kiểm soát bởi cùng một nhà phát hành, chúng sẽ đều coi nhau như bên thứ ba bởi mỗi ngữ cảnh đều sống trên các tên miền khác nhau.
 
-<amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png" width="1030" height="868">
-  <noscript><img alt="Khả năng hiển thị của AMP trong nhiều ngữ cảnh có nghĩa là mỗi ngữ cảnh đó đều có bộ nhớ riêng cho số nhận dạng" src="https://github.com/ampproject/amphtml/raw/master/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
+<amp-img alt="AMP's ability to be displayed in many contexts means that each of those contexts has its own storage for identifiers" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/contexts-with-different-storage.png" width="1030" height="868">
+  <noscript><img alt="Khả năng hiển thị của AMP trong nhiều ngữ cảnh có nghĩa là mỗi ngữ cảnh đó đều có bộ nhớ riêng cho số nhận dạng" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/contexts-with-different-storage.png"></noscript></amp-img>
 
 Như bạn có thể thấy trong cuộc thảo luận sau, việc ở vị thế của một bên thứ ba khi tương tác với cookie có thể mang đến nhiều thách thức tùy thuộc vào cách cấu hình cài đặt trình duyệt của người dùng. Cụ thể, nếu các cookie của bên thứ ba bị chặn trong một tình huống cụ thể, nó sẽ ngăn thông tin được chia sẻ trên nhiều ngữ cảnh. Mặt khác, nếu cookie của bên thứ ba được phép hoạt động, thông tin sẽ có thể được chia sẻ.
 
@@ -142,8 +142,8 @@ Sau khi thiết lập nền tảng, chúng ta sẽ xem xét một chủ đề v�
 
 Khi thực hiện các hướng dẫn kỹ thuật dưới đây, hãy giả sử rằng bạn sẽ ràng buộc **trạng thái người dùng** với một **mã định danh** ổn định đại diện cho người dùng. Ví dụ, mã định danh có thể có dạng `n34ic982n2386n30`. Ở phía máy chủ, bạn sẽ liên kết `n34ic982n2386n30` với mọi nhóm thông tin trạng thái người dùng, ví dụ như nội dung giỏ hàng, một danh sách các bài viết đã đọc trước đó, hoặc các dữ liệu khác tùy thuộc vào trường hợp sử dụng.
 
-<amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
-  <noscript><img alt="Một số nhận dạng duy nhất có thể được sử dụng để quản lý trạng thái người dùng cho nhiều trường hợp sử dụng" src="https://github.com/ampproject/amphtml/raw/master/spec/img/identifiers-for-use-cases.png"></noscript></amp-img>
+<amp-img alt="A single identifier could be used to manage user state for many use cases" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/identifiers-for-use-cases.png" width="1276" height="376">
+  <noscript><img alt="Một số nhận dạng duy nhất có thể được sử dụng để quản lý trạng thái người dùng cho nhiều trường hợp sử dụng" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/identifiers-for-use-cases.png"></noscript></amp-img>
 
 Để đảm bảo sự rõ ràng ở phần còn lại của tài liệu này, chúng ta sẽ gọi những chuỗi ký tự khác nhau, là các mã định danh, bằng các tên dễ đọc, đứng trước bởi một ký tự đô-la (`$`):
 
@@ -242,7 +242,7 @@ Trên các trang AMP, xây dựng một mã ping amp-analytics chứa ID Máy kh
 
 Lưu ý rằng tham số được truyền vào ID Máy khách thay thế, `${clientId(uid)` là `uid`. Đây là một lựa chọn có ý định phù hợp với tên cookie đã được sử dụng trên nguồn gốc của nhà phát hành như được mô tả trong [Tác vụ 1](#task1). Để tích hợp một cách liền mạch nhất có thể, bạn cũng nên áp dụng kỹ thuật này.
 
-Liên quan đến phần còn lại của việc triển khai amp-analytics, hãy xem tài liệu [cấu hình amp-analytics](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) để biết thông tin chi tiết về cách thiết lập các yêu cầu amp-analytics hoặc sửa đổi chúng cho nhà cung cấp phân tích của bạn. Lệnh ping có thể được sửa đổi thêm nữa để truyền tải dữ liệu bổ sung mà bạn định nghĩa trực tiếp, hoặc tận dụng các mã [AMP thay thế](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) khác.
+Liên quan đến phần còn lại của việc triển khai amp-analytics, hãy xem tài liệu [cấu hình amp-analytics](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/) để biết thông tin chi tiết về cách thiết lập các yêu cầu amp-analytics hoặc sửa đổi chúng cho nhà cung cấp phân tích của bạn. Lệnh ping có thể được sửa đổi thêm nữa để truyền tải dữ liệu bổ sung mà bạn định nghĩa trực tiếp, hoặc tận dụng các mã [AMP thay thế](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md) khác.
 
 > **Nên biết:**
 > Vì sao chúng ta sử dụng tên `uid` cho tham số được truyền đến tính năng ID Máy khách? Tham số mà `clientId(...)` thay thế sử dụng sẽ được dùng để định nghĩa phạm vi. Bạn có thể sử dụng tính năng ID Máy khách cho nhiều trường hợp sử dụng và, do đó, tạo ra nhiều ID máy khách khác nhau. Tham số này phân biệt giữa những trường hợp sử dụng này và do đó bạn sử dụng nó để quy định trường hợp sử dụng mà bạn muốn dùng ID Máy khách đó. Ví dụ, bạn có thể muốn gửi nhiều mã định danh khác nhau đến các bên thư ba như một nhà quảng cáo và bạn có thể sử dụng tham số “scope” (phạm vi) để thực hiện điều này.
@@ -379,12 +379,12 @@ Nhìn chung, khi việc đọc và ghi các cookie của bên thứ ba bị cấ
 
 Trong tác vụ này, chúng ta sẽ bao gồm một biện pháp tối ưu bổ sung cho trường hợp người dùng điều hướng trên nhiều ngữ cảnh khác nhau, từ trang này đến trang kia **thông qua liên kết hoặc gửi đi biểu mẫu**. Trong các tình huống này, và với việc triển khai như được mô tả dưới đấy, bạn có thể thiết lập một kế hoạch hoàn toàn hiệu quả để quản lý trạng thái người dùng trên nhiều ngữ cảnh.
 
-<amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
-  <noscript><img alt="Các liên kết có thể được sử dụng để chuyển thông tin nhận dạng của một ngữ cảnh này sang một ngữ cảnh (được liên kết) khác" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-form-identifier-forwarding.png"></noscript></amp-img>
+<amp-img alt="Links can be used to pass the identifier information of one context into another (linked) context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-form-identifier-forwarding.png" width="866" height="784">
+  <noscript><img alt="Các liên kết có thể được sử dụng để chuyển thông tin nhận dạng của một ngữ cảnh này sang một ngữ cảnh (được liên kết) khác" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-form-identifier-forwarding.png"></noscript></amp-img>
 
 ##### Sử dụng các tính năng thay thế <a name="using-substitution-features"></a>
 
-Lối tiếp cận của chúng ta sẽ tận dụng 2 loại [biến số AMP thay thế](https://github.com/ampproject/amphtml/blob/master/spec/./amp-var-substitutions.md).
+Lối tiếp cận của chúng ta sẽ tận dụng 2 loại [biến số AMP thay thế](https://github.com/ampproject/amphtml/blob/main/docs/spec/./amp-var-substitutions.md).
 
 **Để cập nhật liên kết đầu ra cho việc sử dụng một ID Máy khách thay thế:** Định nghĩa một tham số truy vấn mới, `ref_id` (“ID giới thiệu”), sẽ xuất hiện trong URL và chỉ báo **mã định danh của ngữ cảnh gốc** cho người dùng. Thiết lập tham số truy vấn này cho bằng giá trị của ID Máy khách AMP thay thế:
 
@@ -435,8 +435,8 @@ Thông qua việc thực hiện các bước này, ID Máy khách có thể đư
 https://example.com/step2.html?ref_id=$amp_client_id
 [/sourcecode]
 
-<amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
-  <noscript><img alt="Ví dụ về cách một số nhận dạng trong ngữ cảnh của trình xem AMP có thể được chuyển qua liên kết vào ngữ cảnh nguồn gốc của nhà xuất bản" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-1.png"></noscript></amp-img>
+<amp-img alt="Example of how an identifier in an AMP viewer context can be passed via link into a publisher origin context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-identifier-forwarding-example-1.png" width="1038" height="890">
+  <noscript><img alt="Ví dụ về cách một số nhận dạng trong ngữ cảnh của trình xem AMP có thể được chuyển qua liên kết vào ngữ cảnh nguồn gốc của nhà xuất bản" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-identifier-forwarding-example-1.png"></noscript></amp-img>
 
 Khi người dùng đến một trang chứa giá trị `ref_id` dưới dạng tham số URL hoặc trong đầu đề của nó, chúng ta sẽ có cơ hội xử lý đồng thời mã định danh `ref_id` và mã định danh được hiển thị thông qua chính trang đó (nghĩa là một giá trị cookie). Thông qua việc bao gồm một ping phân tích, máy chủ phân tích của bạn có thể làm việc với cả 2 giá trị cùng lúc, và, bởi chúng liên quan đến nhau, phản ánh mối quan hệ này trong backend của bạn. Bước tiếp theo cung cấp thông tin về cách để làm điều này.
 
@@ -459,8 +459,8 @@ Nếu thông tin này có sẵn trong URL và bạn muốn xử lý nó, có m�
 
 Để xử lý trên trang đích đến, lối tiếp cận này sẽ thay đổi tùy vào việc đó là một trang AMP hay không phải AMP.
 
-<amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
-  <noscript><img alt="Ví dụ về cách tạo một ping phân tích có chứa một số nhận dạng từ ngữ cảnh trước đó được cung cấp qua URL và một số nhận dạng từ ngữ cảnh hiện tại" src="https://github.com/ampproject/amphtml/raw/master/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
+<amp-img alt="Example of how to construct an analytics ping that contains an identifier from the previous context provided via URL and an identifier from the current context" layout="responsive" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-identifier-forwarding-example-2.png" width="1326" height="828">
+  <noscript><img alt="Ví dụ về cách tạo một ping phân tích có chứa một số nhận dạng từ ngữ cảnh trước đó được cung cấp qua URL và một số nhận dạng từ ngữ cảnh hiện tại" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/link-identifier-forwarding-example-2.png"></noscript></amp-img>
 
 _Cập nhật cho trang AMP:_ Sử dụng tính năng thay thế Tham số Truy vấn trong cấu hình amp-analytics của bạn để thu giá trị mã định danh `ref_id` trong URL. Tính năng Tham số Truy vấn nhận một tham số chỉ báo “khóa” của cặp giá trị khóa mong muốn trong URL và trả về giá trị tương ứng. Sử dụng tính năng ID Máy khách như bình thường để nhận mã định danh cho ngữ cảnh trang AMP.
 
@@ -595,7 +595,7 @@ Bạn muốn đảm bảo rằng bạn chỉ xử lý các trường hợp `$amp
 
 Trên một trang không phải AMP, hãy kiểm tra `document.referrer` trực tiếp trên phía máy khách hoặc chuyển tiếp giá trị này như một phần của ping phân tích để có thể xác thực trên phía máy chủ. Nếu bạn có thể tin tưởng giá trị giới thiệu, thì bạn có thể chấp nhận và xử lý các giá trị xuất phát từ URL của trang đích đến, ví dụ như `orig_user_id` trong ví dụ ở trên.
 
-Trên một trang AMP, sử dụng biến số thay thế cho [Trình Giới thiệu Tài liệu](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#document-referrer) để chuyển tiếp giá trị giới thiệu như một phần của ping phân tích. Việc xử lý ở phía máy chủ là lựa chọn duy nhất. Để minh họa, đây là một ping phân tích mà trang đích đến có thể gửi chứa (1) giá trị ID Máy khách của trang hiện tại, (2) một giá trị được chuyển tiếp qua URL mà chúng ta đã thiết lập làm giá trị ID Máy khách trong trang giới thiệu, và (3) thông tin của trình giới thiệu để xác thực giá trị của (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
+Trên một trang AMP, sử dụng biến số thay thế cho [Trình Giới thiệu Tài liệu](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md#document-referrer) để chuyển tiếp giá trị giới thiệu như một phần của ping phân tích. Việc xử lý ở phía máy chủ là lựa chọn duy nhất. Để minh họa, đây là một ping phân tích mà trang đích đến có thể gửi chứa (1) giá trị ID Máy khách của trang hiện tại, (2) một giá trị được chuyển tiếp qua URL mà chúng ta đã thiết lập làm giá trị ID Máy khách trong trang giới thiệu, và (3) thông tin của trình giới thiệu để xác thực giá trị của (2): `https://analytics.example.com/ping?type=pageview&orig_user_id=${queryParam(ref_id)}&user_id=${clientId(uid)}&referrer=${documentReferrer}`
 
 Nếu bạn không thể tin tưởng trình giới thiệu, hãy từ chối mọi giá trị được cung cấp thông qua các tham số URL và không sử dụng chúng.
 

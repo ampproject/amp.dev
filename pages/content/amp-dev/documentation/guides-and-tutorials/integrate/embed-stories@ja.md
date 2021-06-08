@@ -5,7 +5,7 @@ description: "AMP ストーリープレーヤーを使うと、ウェブウェ�
 
 ストーリーは、全画面の没入型エクスペリエンスです。独自の URL を持つオープンウェブにホストされているため、簡単に共有することができます。しかし、ブログ、製品説明、またはニュース記事などのストーリーを独自のサイトに統合する場合はどうすればよいのでしょうか。
 
-ウェブページ内でユーザーがタップやクリックできるストーリーを埋め込むには [AMP ストーリープレーヤー](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md)を使用できます。このステップバイステップガイドでは、その方法を学習します。
+ウェブページ内でユーザーがタップやクリックできるストーリーを埋め込むには [AMP ストーリープレーヤー](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-story-player.md)を使用できます。このステップバイステップガイドでは、その方法を学習します。
 
 # AMP 非対応ページでのストーリーの表示
 
@@ -70,7 +70,7 @@ AMP 非対応ページに AMP ストーリーを埋め込むと、ユーザー�
 
 ## AMP ストーリープレーヤーの埋め込み
 
-AMP 非対応ページで AMP ストーリーを表示するには、[`amp-story-player`](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md) 要素を使用する必要があります。
+AMP 非対応ページで AMP ストーリーを表示するには、[`amp-story-player`](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-story-player.md) 要素を使用する必要があります。
 
 ### スクリプトをインポートする
 

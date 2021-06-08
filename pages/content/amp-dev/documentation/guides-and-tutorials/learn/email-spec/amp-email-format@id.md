@@ -9,7 +9,7 @@ toc: 'true'
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-format.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-format.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -33,7 +33,7 @@ limitations under the License.
 
 AMP adalah teknologi yang dikenal mengembangkan halaman web super cepat pada klien seluler. AMP adalah seperangkat tag HTML yang didukung oleh JavaScript yang dengan mudah memungkinkan fungsionalitas dengan fokus tambahan pada kinerja dan keamanan. Ada [komponen AMP](https://amp.dev/documentation/components/) untuk segalanya, mulai dari korsel hingga elemen formulir responsif, sampai pengambilan konten baru dari endpoint jarak jauh.
 
-Format AMP untuk Email menyediakan [bagian komponen AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md) yang dapat Anda gunakan di dalam pesan email. Penerima email AMP dapat melihat dan berinteraksi dengan komponen AMP secara langsung di dalam email.
+Format AMP untuk Email menyediakan [bagian komponen AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md) yang dapat Anda gunakan di dalam pesan email. Penerima email AMP dapat melihat dan berinteraksi dengan komponen AMP secara langsung di dalam email.
 
 ## Penambahan yang diperlukan
 
@@ -73,21 +73,21 @@ Seluruh markup AMPHTML tidak boleh melebihi 200.000 byte.
 
 AMP untuk Email mengandalkan subjenis [MIME](https://en.wikipedia.org/wiki/MIME) `multipart/alternative`, sebagaimana ditentukan di dalam [RFC 1521, bagian 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-_Untuk mendapatkan informasi selengkapnya, kunjungi [Struktur dan perenderan email AMP](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md)._
+_Untuk mendapatkan informasi selengkapnya, kunjungi [Struktur dan perenderan email AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-structure.md)._
 
 ## Komponen AMP yang didukung <a name="supported-amp-components"></a>
 
-_Kunjungi [Komponen yang Didukung AMP untuk Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md)._
+_Kunjungi [Komponen yang Didukung AMP untuk Email](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-components.md)._
 
 ## Persyaratan HTML <a name="html-requirements"></a>
 
-_Kunjungi [HTML yang Didukung dalam AMP untuk Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md)._
+_Kunjungi [HTML yang Didukung dalam AMP untuk Email](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-html.md)._
 
 ## Persyaratan CSS <a name="css-requirements"></a>
 
 ### Properti dan pemilih yang didukung <a name="supported-selectors-and-properties"></a>
 
-_Kunjungi [HTML yang Didukung dalam AMP untuk Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md)._
+_Kunjungi [HTML yang Didukung dalam AMP untuk Email](https://github.com/ampproject/amphtml/blob/main/docs/spec/email/amp-email-css.md)._
 
 ### Menentukan CSS di dalam sebuah dokumen AMP <a name="specifying-css-in-an-amp-document"></a>
 
@@ -151,4 +151,4 @@ Pengalihan dalam [`<amp-form>`](https://amp.dev/documentation/components/amp-for
 
 ## Umpan Balik & Dukungan <a name="feedback--support"></a>
 
-Untuk mendapatkan dukungan dan umpan balik tentang AMP untuk Email, silakan gunakan saluran berikut ini: [ partisipasi yang sedang aktif](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#ongoing-participation)
+Untuk mendapatkan dukungan dan umpan balik tentang AMP untuk Email, silakan gunakan saluran berikut ini: [ partisipasi yang sedang aktif](https://github.com/ampproject/amphtml/blob/main/docs/contributing.md#ongoing-participation)

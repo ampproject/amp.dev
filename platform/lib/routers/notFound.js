@@ -18,12 +18,10 @@
 
 const {pagePath} = require('@lib/utils/project');
 const {setMaxAge} = require('@lib/utils/cacheHelpers.js');
-const AmpOptimizer = require('@ampproject/toolbox-optimizer');
-const AMP_OPTIMIZER_CONFIG = require('@lib/utils/ampOptimizerConfig.js');
+const {optimizer} = require('@lib/utils/ampOptimizer.js');
 const {readFileSync} = require('fs');
 const {join} = require('path');
 
-const optimizer = AmpOptimizer.create(AMP_OPTIMIZER_CONFIG);
 let optimized;
 
 module.exports = async (req, res) => {

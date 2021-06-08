@@ -92,7 +92,7 @@ module.exports = router;
 
 بعض الخيارات الملحوظة هي:
 
-- `lts: true` لتمكين [عناوين URL الثابتة طويلة المدى](https://github.com/ampproject/amphtml/blob/main/contributing/lts-release.md) for لوقت تشغيل AMP ومكوناته.
+- `lts: true` لتمكين [عناوين URL الثابتة طويلة المدى](https://github.com/ampproject/amphtml/blob/main/docs/lts-release.md) for لوقت تشغيل AMP ومكوناته.
 - `verbose: true` لمخرجات تصحيح الأخطاء التفصيلي. جيد بشكل خاص لتحديد أسباب عدم إمكانية إزالة نموذج AMP المعياري.
 - `iأداة تحسين الصور`: تمكين إنشاء srcset للصور تلقائيًا من خلال توفير وظيفة لحساب عناوين URL لدى srcset لصورة معينة src. يجب أن تعرض الوظيفة عنوان URL يشير إلى نسخة من صورة `src` بالعرض المحدد. في حالة عدم توفّر أي صورة، فيجب أن تعرض قيمة خاطئة. يتوفر المزيد حول هذا في القسم التالي.
 

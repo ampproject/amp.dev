@@ -240,4 +240,4 @@ Nel seguente esempio, viene mostrato un carosello di tre immagini con in basso d
 
 # Convalida <a name="validation"></a>
 
-Consulta le [regole amp-carousel](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/validator-amp-carousel.protoascii) nella specifica dello strumento di convalida AMP.
+Consulta le [regole amp-carousel](https://github.com/ampproject/amphtml/blob/main/extensions/amp-carousel/validator-amp-carousel.protoascii) nella specifica dello strumento di convalida AMP.

@@ -37,7 +37,8 @@ renderer.paragraph = function (text) {
   return '<p class="mb2 px1">' + text + '</p>';
 };
 
-const encodedTemplateRegexp = /\[\[\s*<.*?>([A-Za-z]*?)\s*(<.*?>)?(\.[A-Za-z]*)?\s*<\/span>\s*\]\]/g;
+const encodedTemplateRegexp =
+  /\[\[\s*<.*?>([A-Za-z]*?)\s*(<.*?>)?(\.[A-Za-z]*)?\s*<\/span>\s*\]\]/g;
 
 const hintStartPlaceholder = 'START_HINT';
 const hintStartRegexp = new RegExp(
@@ -59,7 +60,7 @@ const hintEndHtml = '</label>';
 marked.setOptions({
   highlight: function (code, lang) {
     if (lang) {
-      return hljs.highlight(lang, code).value;
+      return hljs.highlight(code, {language: lang}).value;
     } else {
       return hljs.highlightAuto(code).value;
     }
@@ -287,7 +288,7 @@ module.exports = class CodeSection {
   }
 
   highlight(name, value) {
-    let result = hljs.highlight(name, value).value;
+    let result = hljs.highlight(value, {language: name}).value;
     result = this.replaceHints(result);
     return result;
   }

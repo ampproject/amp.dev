@@ -35,7 +35,7 @@ Aby utworzyć prostą konfigurację składnika [`amp-pixel`](../../../../documen
 <amp-pixel src="https://foo.com/pixel?RANDOM"></amp-pixel>
 ```
 
-W tym przykładzie dane odsłony strony są wysyłane do zdefiniowanego adresu URL wraz z przypadkową liczbą. Zmienna `RANDOM` jest jedną z wielu [zmiennych podstawianych na platformie AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Dowiedz się więcej o [podstawianiu zmiennych](analytics_basics.md#variable-substitution) tutaj.
+W tym przykładzie dane odsłony strony są wysyłane do zdefiniowanego adresu URL wraz z przypadkową liczbą. Zmienna `RANDOM` jest jedną z wielu [zmiennych podstawianych na platformie AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md). Dowiedz się więcej o [podstawianiu zmiennych](analytics_basics.md#variable-substitution) tutaj.
 
 Składnik [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) jest wbudowany, więc nie będzie potrzebna deklaracja włączenia, jak w przypadku rozszerzonych składników AMP, takich jak [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Znacznik [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) należy jednak umieścić jak najbliżej początku sekcji `<body>`. Piksel śledzący będzie uruchamiany tylko wtedy, gdy w widoku znajdzie się sam znacznik. Jeśli składnik [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) znajduje się w pobliżu dolnej części strony, może nie zostać uruchomiony.
 
@@ -135,7 +135,7 @@ Jeśli interesuje Cię wyjście poza to, co może dać Ci konfiguracja domyślna
 
 ## Podstawianie zmiennych <a name="variable-substitution"></a>
 
-Zarówno składnik [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md), jak i [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) zezwalają na wszystkie standardowe podstawienia zmiennych w adresach URL (patrz [Podstawianie zmiennych AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)). W poniższym przykładzie żądanie odsłony strony jest wysyłane na adres URL wraz z kanonicznym adresem URL bieżącego dokumentu AMP, jego tytułem i [identyfikatorem klienta](analytics_basics.md#user-identification):
+Zarówno składnik [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md), jak i [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) zezwalają na wszystkie standardowe podstawienia zmiennych w adresach URL (patrz [Podstawianie zmiennych AMP HTML](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md)). W poniższym przykładzie żądanie odsłony strony jest wysyłane na adres URL wraz z kanonicznym adresem URL bieżącego dokumentu AMP, jego tytułem i [identyfikatorem klienta](analytics_basics.md#user-identification):
 
 ```html
 <amp-pixel
@@ -179,7 +179,7 @@ W powyższym przykładzie zmienne, `account` oraz `title` są zdefiniowane w kon
 
 ## Identyfikacja użytkownika <a name="user-identification"></a>
 
-Witryny internetowe używają plików cookie do przechowywania w przeglądarce informacji specyficznych dla danego użytkownika. Pliki cookie mogą być używane do stwierdzenia, czy użytkownik odwiedził już daną witrynę. W AMP strony mogą być serwowane albo z witryny wydawcy, albo z serwera buforującego (np. serwera Google AMP Cache). Witryna internetowa wydawcy i serwer buforujący zazwyczaj będą mieć różne domeny. Ze względów bezpieczeństwa przeglądarki mogą (i często będą) ograniczać dostęp do plików cookie innej domeny (patrz również [Śledzenie użytkowników w różnych źródłach](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)).
+Witryny internetowe używają plików cookie do przechowywania w przeglądarce informacji specyficznych dla danego użytkownika. Pliki cookie mogą być używane do stwierdzenia, czy użytkownik odwiedził już daną witrynę. W AMP strony mogą być serwowane albo z witryny wydawcy, albo z serwera buforującego (np. serwera Google AMP Cache). Witryna internetowa wydawcy i serwer buforujący zazwyczaj będą mieć różne domeny. Ze względów bezpieczeństwa przeglądarki mogą (i często będą) ograniczać dostęp do plików cookie innej domeny (patrz również [Śledzenie użytkowników w różnych źródłach](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-managing-user-state.md)).
 
 Domyślnie AMP zarządza dostarczaniem identyfikatora klienta niezależnie od tego, czy strona jest pobierana ze źródła wydawcy, czy z serwera buforującego. Identyfikator klienta generowany przez AMP ma wartość `"amp-"`, po której następuje losowy szyfrowany ciąg znaków `base64`. Pozostaje on taki sam dla użytkownika, jeśli ten sam użytkownik ponownie odwiedzi stronę.
 
@@ -197,6 +197,6 @@ Na przykład:
 
 Jeśli AMP stwierdzi, że ten plik cookie został ustawiony, podstawienie identyfikatora klienta zwróci wartość pliku cookie. Jeśli AMP stwierdzi, że ten plik cookie nie jest ustawiony, wygeneruje wartość o postaci `amp-`, po której następować będzie losowy łańcuch znaków szyfrowany za pomocą kodowania base64.
 
-Dowiedz się więcej na temat podstawiania identyfikatora klienta, w tym jak dodać opcjonalny identyfikator powiadomienia użytkownika, z artykułu [Zmienne obsługiwane w analityce AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
+Dowiedz się więcej na temat podstawiania identyfikatora klienta, w tym jak dodać opcjonalny identyfikator powiadomienia użytkownika, z artykułu [Zmienne obsługiwane w analityce AMP](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vars.md).
 
 Dowiedz się więcej: kontynuuj naukę o analityce w artykułach [Głębokie zanurzenie w analitykę AMP](deep_dive_analytics.md) i [Przypadki użycia](use_cases.md).

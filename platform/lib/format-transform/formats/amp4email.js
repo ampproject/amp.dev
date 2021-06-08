@@ -16,6 +16,7 @@
 
 const config = require('@lib/config.js');
 const host = config.hosts.platform;
+const postcss = require('postcss');
 const postcssCssVariables = require('postcss-css-variables');
 
 module.exports = {
@@ -45,7 +46,9 @@ module.exports = {
     'style[amp-custom]': (el) => {
       const node = el[0].children[0];
 
-      node.data = postcssCssVariables.process(node.data).css;
+      if (node) {
+        node.data = postcss([postcssCssVariables()]).process(node.data).css;
+      }
     },
     'head > style[amp-boilerplate]':
       '<style amp4email-boilerplate>body{visibility:hidden}</style>',

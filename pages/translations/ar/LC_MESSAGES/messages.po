@@ -91,11 +91,11 @@ msgid "Animations and interactions"
 msgstr "الرسوم المتحركة والتفاعلات"
 
 #: /content/amp-dev/about/stories.html:255
-msgid "Check out AMP stories on the web"
-msgstr "مراجعة Web Stories على الويب"
+msgid "Check out Web Stories on the web"
+msgstr "راجع Web Stories على الإنترنت"
 
 #: /content/amp-dev/about/stories.html:327
-msgid "Story Ads are full screen, single page ads that appear within AMP Stories. Advertisers/ Publishers can invite users to a web page, an AMP page or an App with a single tap. A story ad has a rich, flexible canvas that allows images, videos, animations or a combination of all those elements.<br>  Story ads are supported by Google Ad Manager and Google DV360 (Beta) with additional ad server support coming soon!"
+msgid "Story Ads are full screen, single page ads that appear within Web Stories. Advertisers/ Publishers can invite users to a web page, an AMP page or an App with a single tap. A story ad has a rich, flexible canvas that allows images, videos, animations or a combination of all those elements.<br>  Story ads are supported by Google Ad Manager and Google DV360 (Beta) with additional ad server support coming soon!"
 msgstr "الإعلانات القصصية هي إعلانات من صفحة واحدة بملء الشاشة تظهر داخل Web Stories. ويمكن للمعلنين/الناشرين دعوة المستخدمين لزيارة صفحة ويب أو صفحة AMP أو تطبيق بنقرة واحدة. يتميز الإعلان القصصي بلوحة منسقة ومرنة تتيح نشر صور أو فيديوهات أو رسوم متحركة أو مزيج من جميع هذه العناصر.<br> تأتي الإعلانات القصصية مدعومة من \"مدير إعلانات Google\" وGoogle DV360 (مساحة العرض والفيديو 360 من Google) (الإصدار التجريبي) مع دعم من خادم إعلانات إضافي في القريب العاجل!"
 
 #: /content/amp-dev/about/stories.html:415
@@ -1064,8 +1064,8 @@ msgid "…while trying to load the search results."
 msgstr "…أثناء محاولة تحميل نتائج البحث."
 
 #: frontend/templates/layouts/default.j2:129
-msgid "Sadly this page isn\'t translated yet, but will be shortly - check back soon!"
-msgstr "لم تتم ترجمة هذه الصفحة حتى الآن، ولكن سيتم ذلك بعد قليل. يُرجى إعادة التحقّق قريبًا."
+msgid "Sadly this page isn't translated yet, but we could use some help doing so. See the <a href=\"/documentation/guides-and-tutorials/contribute/translations\">translation guide</a> on how you can contribute."
+msgstr "للأسف لم تُترجَم هذه الصفحة بعد، لكن يمكننا الاستعانة ببعض المساعدة في ترجمتها. راجع <a href=\"/documentation/guides-and-tutorials/contribute/translations\">دليل الترجمة</a> لمعرفة كيف يمكنك المساهمة."
 
 #: frontend/templates/views/examples/documentation.j2:206
 msgid "If the explanations on this page don't cover all of your questions feel free to reach out to other AMP users to discuss your exact use case."
@@ -1080,7 +1080,7 @@ msgid "You've read this document a dozen times but it doesn't really cover all o
 msgstr "لقد قرأت هذا المستند عشرات المرات ولكن ألم يُجِب عن جميع أسئلتك؟ ربما حصل ذات الأمر مع أشخاص آخرين: تواصل معهم على Stack Overflow."
 
 #: frontend/templates/views/partials/experiments/experiments.j2:4
-msgid "Enable the experiment via the button below. Some components require the AMP Dev Channel to be enabled as well."
+msgid "Enable the experiment via the button below. Some components require the AMP Beta Channel to be enabled as well."
 msgstr "فعِّل التجربة من خلال الزر أدناه. تتطلب بعض المكونات تفعيل \"قناة مطوِّري AMP\" كذلك."
 
 #: frontend/templates/views/partials/structured-data.j2:54
@@ -1159,7 +1159,7 @@ msgstr "مزايا الأعمال"
 msgid "Get started with AMP"
 msgstr "بدء استخدام AMP"
 
-#: pages/content/amp-dev/index.html:414
+#: /content/amp-dev/index.html:414
 msgid "As a source for breaking news and information, Web Stories allow us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage."
 msgstr "تسمح لنا Web Stories، بصفتها مصدرًا للأخبار والمعلومات العاجلة، بإبراز صحافتنا الجيدة عندما نريد الجمع بين عناصر متعددة. فالجمع بين إعداد التقارير والتصوير الفوتوغرافي والفيديوهات والرسوم المتحركة يمنح القراء نقطة دخول مرئية بدرجة أكبر عندما يبحثون عن التغطية التي نقدمها."
 
@@ -1207,10 +1207,6 @@ msgstr "إنشاء أول صفحة لك على AMP الآن"
 msgid "You don’t need to download AMP and no installation is required.<br/> Because it is an open-source project, it is free!"
 msgstr "لا يلزم تنزيل AMP والتثبيت ليس مطلوبًا،<br/> وذلك لأنه مشروع مفتوح المصدر، فهو مجاني!"
 
-#: pages/content/amp-dev/about/stories.html:91
-msgid "Use AMP to create visual stories on the web."
-msgstr ""
-
 #: /content/amp-dev/about/stories.html:90
 msgid "Web Stories"
 msgstr "Web Stories"
@@ -1223,7 +1219,7 @@ msgstr "ابدأ التطوير"
 msgid "Tell a story"
 msgstr "اسرد قصة"
 
-#: pages/content/amp-dev/about/stories.html:106
+#: /content/amp-dev/about/stories.html:106
 msgid "Web<br> Stories"
 msgstr "Web<br> Stories"
 
@@ -1231,7 +1227,7 @@ msgstr "Web<br> Stories"
 msgid "visual storytelling for the open web"
 msgstr "سرد قصة مرئي للويب المفتوح"
 
-#: pages/content/amp-dev/about/stories.html:108
+#: /content/amp-dev/about/stories.html:108
 msgid "Web Stories immerse your readers in fast-loading full-screen experiences. Easily create visual narratives, with engaging animations and tappable interactions. The Web Story format (formerly known as AMP Stories) is free and part of the open web and are available for everyone to try on their websites. They can be shared and embedded across the web without being confined to a closed ecosystem or platform."
 msgstr "توفر Web Stories للقراء تجارب شاملة مرئية بملء الشاشة تتميز بسرعة التحميل. ويمكنك بسهولة إنشاء روايات مرئية، باستخدام رسوم متحركة جذّابة وتفاعلات قابلة للنقر عليها. ويتميز تنسيق Web Stories بأنه مجاني وهو جزء من الويب المفتوح ويمكن للجميع تجربته كل على موقعه الإلكتروني. كما يمكن مشاركته وتضمينه على مستوى الويب دون اقتصاره على منظومة متكاملة أو منصّة مغلقة."
 
@@ -1253,13 +1249,13 @@ msgstr "الاطّلاع على قصة النجاح"
 
 #: /content/amp-dev/about/stories.html:175
 msgid "The benefits of Web Stories"
-msgstr "مزاي Web Stories"
+msgstr "فوائد Web Stories"
 
 #: /content/amp-dev/about/stories.html:223
 msgid "Read on how AMP works"
 msgstr "الاطّلاع على آلية عمل AMP"
 
-#: pages/content/amp-dev/about/stories.html:235
+#: /content/amp-dev/about/stories.html:235
 msgid "Web Stories are built with visually rich media, and whether you utilize pictures, videos or GIF assets is up to you. Images and videos expand to visually fill the readers’ screens, providing a smooth and fully engaging experience. AMP allows you to specify the file type to account for the user’s network connection and browser capabilities."
 msgstr "يتم إنشاء Web Stories باستخدام وسائط غنية بالمؤثرات البصرية، والأمر راجع إليك إذا أردت استخدام مواد عرض عبارة عن صور أو فيديوهات أو ملفات GIF من عدمه. وتتوسع الصور والفيديوهات لتملأ شاشات القراء مرئيًا، ما يوفّر تجربة سلسة وجذّابة بالكامل. ويتيح لك AMP تحديد نوع الملف ليتناسب مع اتصال المستخدم بالويب ومع إمكانيات المتصفح."
 
@@ -1279,7 +1275,7 @@ msgstr "يمكنك التعبير عن الحقائق والأرقام عبر م
 msgid "It’s easy to create visual effects and tappable interactions that keep readers engaged. Titles can fly  drop, fade in, or animate onto the page. Configure your story to automatically progress to the next page when a video snippet is finished. Provide social sharing and related links at the end of your story, so users can share it or dive further into other content on your site."
 msgstr "من السهل إنشاء تأثيرات بصرية وتفاعلات يمكن النقر عليها لجذب انتباه القراء. ويمكن استخدام مؤثرات بصرية على العناوين كالتحليق أو الإسقاط أو التلاشي أو تحريك الرسوم على الصفحة. كما يمكن تكوين قصتك لتتقدم بصورة تلقائية إلى الصفحة التالية عند اكتمال قصاصة فيديو. ويمكنك تقديم روابط المشاركة عبر مواقع التواصل الاجتماعي والروابط ذات الصلة في نهاية قصتك، حتى يتمكن المستخدمون من مشاركتها أو التعمق أكثر في محتوى آخر على موقعك."
 
-#: pages/content/amp-dev/about/stories.html:325
+#: /content/amp-dev/about/stories.html:325
 msgid "Web Stories <br />Monetization Options"
 msgstr "Web Stories <br />خيارات تحقيق الربح المادي"
 
@@ -1623,20 +1619,20 @@ msgstr "يدعم التحليلات وإمكانيات صفحة الملخص ا�
 msgid "Web Stories are lightening fast so that your audience stays engaged and entertained."
 msgstr "تتميز Web Stories بالسرعة الفائقة حتى يظل جمهورك متفاعلًا معها ومستمتعًا بها."
 
-msgid "AMP stories is a new and modern way to reach existing readers."
-msgstr "Web Stories هي طريقة جديدة وعصرية للوصول إلى القراء الحاليين."
+msgid "Web Stories are a new and modern way to reach existing readers."
+msgstr "Web Stories هي طريقة جديدة وحديثة للوصول إلى القراء الحاليين."
 
 msgid "Web Stories enable monetization capability for publishers using full-screen immersive story ads and using affiliate links. For advertisers, Stories is a way to reach a unique audience within a new storytelling experience."
 msgstr "تتيح Web Stories إمكانية تحقيق الربح المادي من قِبل الناشرين باستخدام إعلانات قصصية غامرة بملء الشاشة وباستخدام الروابط الفرعية. فالقصص بالنسبة للمعلنين هي وسيلة للوصول إلى جمهور فريد من خلال تجربة جديدة لسرد القصص."
 
-msgid "AMP stories make the production of stories as easy as possible from a technical perspective."
-msgstr "تسهّل Web Stories من عملية إنتاج القصص قدر الإمكان من منظور تقني."
+msgid "Web Stories make the production of stories as easy as possible from a technical perspective."
+msgstr "تجعل Web Stories من السهل قدر الإمكان إنتاج القصص من المنظور التقني."
 
-msgid "The AMP stories format comes with preset but flexible layout templates, standardized UI controls, and components for sharing and adding follow-on content."
-msgstr "يتوفر تنسيق Web Stories مصحوبًا بنماذج تخطيطية مرنة معدّة مسبقًا، وعناصر تحكم قياسية لواجهة المستخدم، ومكونات لمشاركة محتوى المتابعة وإضافته."
+msgid "The Web Stories format comes with preset but flexible layout templates, standardized UI controls, and components for sharing and adding follow-on content."
+msgstr "ويكون تنسيق Web Stories مصحوبًا بقوالب تخطيطية مرنة معدّة مسبقًا، وعناصر تحكم قياسية لواجهة المستخدم ومكونات لمشاركة وإضافة محتوى المتابعة."
 
-msgid "AMP stories are part of the open web and can be shared and embedded across sites and apps without being confined to a single ecosystem."
-msgstr "Web Stories هي جزء من الويب المفتوح ويمكن مشاركتها وتضمينها في المواقع والتطبيقات بدون حصرها في منظومة متكاملة واحدة."
+msgid "Web Stories are part of the open web and can be shared and embedded across sites and apps without being confined to a single ecosystem."
+msgstr "Web Stories هي جزء من الويب المفتوح ويمكن مشاركتها وتضمينها في المواقع والتطبيقات دون حصرها في نظام إيكولوجي واحد."
 
 msgid "AMPHTML ads are 6x faster than regular ads on AMP pages, making them more viewable, more effective and more likely to perform well. You can monitor performance and adjust pricing accordingly, and offer the most engaging ad products to optimize your ad placements. In AMP, tweaking your pages to drive higher viewability rate or views is easy for publishers using the ‘data-loading-strategy’ attribute on the `amp-ad` component."
 msgstr "تعدّ إعلانات AMPHTML أسرع من الإعلانات العادية على صفحات AMP بستة أضعاف، مما يزيد من عدد المشاهدات ويجعلها أكثر فعالية ويزيد من احتمالية أدائها بشكل جيد. ويمكنك مراقبة الأداء وتعديل الأسعار بناءً على ذلك، ويمكنك عرض أكثر المنتجات الإعلانية جاذبية لتحسين مواضع الإعلانات. وفي AMP، يسهل على الناشرين إجراء التعديل الطفيف في الصفحات لزيادة إمكانية العرض أو عدد المشاهدات باستخدام سمة \"data-loading-strategy\" على مكون \"amp-ad\"."
@@ -1676,417 +1672,6 @@ msgstr "يعتبر تضمين AMP في رسالة إلكترونية أمرًا 
 
 msgid "Start sending AMP Emails"
 msgstr "البدء في إرسال رسائل AMP الإلكترونية"
-
-#: pages/content/amp-dev/index.html:431
-msgid "Build anything with AMP."
-msgstr ""
-
-#: pages/content/amp-dev/index.html:463
-msgid "Explore AMP<br/> success stories"
-msgstr ""
-
-#: pages/content/amp-dev/about/stories.html:234
-msgid "Images, videos and GIFs"
-msgstr ""
-
-#: pages/content/amp-dev/about/stories.html:239
-msgid "Text and audio"
-msgstr ""
-
-#: pages/content/amp-dev/about/stories.html:244
-msgid "Animations and interactions"
-msgstr ""
-
-#: pages/content/amp-dev/about/stories.html:255
-msgid "Check out Web Stories on the web"
-msgstr ""
-
-#: pages/content/amp-dev/about/stories.html:415
-msgid "Discover All Templates"
-msgstr ""
-
-#: pages/content/amp-dev/about/ads.html:206
-msgid "AMP for advertisers"
-msgstr ""
-
-#: pages/content/amp-dev/about/ads.html:207
-msgid "Grow engagement and increase conversions with faster experiences"
-msgstr ""
-
-#: pages/content/amp-dev/about/ads.html:250
-msgid "Regular Ad"
-msgstr ""
-
-#: pages/content/amp-dev/about/websites.html:204
-msgid "What AMP HTML is made of"
-msgstr ""
-
-#: pages/content/amp-dev/about/websites.html:237
-msgid "Learn more in Make Your Page Discoverable."
-msgstr ""
-
-#: pages/content/amp-dev/about/websites.html:247
-msgid "The Google AMP Cache is a proxy-based content delivery network for delivering all valid AMP documents. It fetches AMP HTML pages, caches them, and improves page performance automatically. When using the Google AMP Cache, the document, all JS files and all images load from the same origin that is using HTTP 2.0 for maximum efficiency. <br> The cache also comes with a built-in validation system which confirms that the page is guaranteed to work, and that it doesn't depend on external resources. The validation system runs a series of  assertions confirming the page’s markup meets the AMP HTML specification."
-msgstr ""
-
-#: frontend/templates/views/detail/working-group-detail.j2:20
-msgid "Encouraging More Voices in AMP"
-msgstr ""
-
-#: frontend/templates/views/detail/working-group-detail.j2:44
-msgid "An AMP Working Group is a segment of the community with knowledge/interest in specific area of AMP. Working Groups are created by AMP’s Technical Steering Committee."
-msgstr ""
-
-#: frontend/templates/views/detail/working-group-detail.j2:45
-msgid "Most Working Groups provide bi-weekly status updates and present quarterly high-level updates in round-robin fashion at Design Reviews."
-msgstr ""
-
-#: frontend/templates/views/detail/working-group-detail.j2:76
-msgid "Current Issues"
-msgstr ""
-
-#: frontend/templates/views/detail/working-group-detail.j2:105
-msgid "View all"
-msgstr ""
-
-#: frontend/templates/views/detail/working-group-detail.j2:112
-msgid "Members"
-msgstr ""
-
-#: frontend/templates/views/detail/working-group-detail.j2:149
-msgid "Communication Channels"
-msgstr ""
-
-#: frontend/templates/views/detail/working-group-detail.j2:184
-msgid "Other ways to get involved with AMP"
-msgstr ""
-
-#: frontend/templates/views/detail/working-group-detail.j2:186
-msgid "Contribute to AMP"
-msgstr ""
-
-#: frontend/templates/views/detail/working-group-detail.j2:187
-msgid "The AMP Project would not be possible without help from all members of the community whether you are a developer, content creator or provider of services relevant to AMP There are many ways for you to contribute."
-msgstr ""
-
-#: frontend/templates/views/detail/working-group-detail.j2:199
-msgid "Governance Body"
-msgstr ""
-
-#: frontend/templates/views/detail/working-group-detail.j2:200
-msgid "Learn more about the Advisory Committee and Technical Steering Committee."
-msgstr ""
-
-#: frontend/templates/views/partials/teaser.j2:209
-msgid "Discover more..."
-msgstr ""
-
-#: frontend/templates/views/partials/fragment-slider-texts.j2:5
-msgid "E-Commerce"
-msgstr ""
-
-#: frontend/templates/views/partials/fragment-slider-texts.j2:9
-msgid "AMP shines for content pages. But it can also power e-commerce experiences."
-msgstr ""
-
-#: frontend/templates/views/partials/fragment-slider-texts.j2:10
-msgid "To learn more, we built a simple yet fully functional e-commerce site of our very own! Check out the site, and look at the code to learn about the best practices we discovered to build a great interactive experience on your domain and on AMP caches alike."
-msgstr ""
-
-#: frontend/templates/views/partials/fragment-slider-texts.j2:24
-msgid "Experience Demo"
-msgstr ""
-
-#: frontend/templates/views/partials/fragment-slider-texts.j2:32
-msgid "See on GitHub"
-msgstr ""
-
-#: frontend/templates/views/partials/fragment-slider-texts.j2:38
-msgid "Magazine article"
-msgstr ""
-
-#: frontend/templates/views/partials/fragment-slider-texts.j2:39
-msgid "Breaking the status quo"
-msgstr ""
-
-#: frontend/templates/views/partials/fragment-slider-texts.j2:42
-msgid "This example of magazine article demonstrates how to build an immersive reading experience by adding animations that enhance the written content on the page."
-msgstr ""
-
-#: frontend/templates/views/partials/fragment-slider-texts.j2:44
-msgid "<code>amp-position-observer</code> in combination with <code>amp-animation</code> allows a smooth \"scrolly-telling\" experience with minimal effort and without any custom JavaScript."
-msgstr ""
-
-#: frontend/templates/views/partials/fragment-slider-texts.j2:73
-msgid "Band page"
-msgstr ""
-
-#: frontend/templates/views/partials/fragment-slider-texts.j2:74
-msgid "Olga and the kings"
-msgstr ""
-
-#: frontend/templates/views/partials/fragment-slider-texts.j2:77
-msgid "Always thought that all AMP pages look the same? Checkout this incredible band website featuring various AMP components to create a vivid and enjoyable experience."
-msgstr ""
-
-#: frontend/templates/views/partials/fragment-slider-texts.j2:79
-msgid "The use of <code>amp-sidebar</code> gives you the same feeling as if you are in a single page app."
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:17
-msgid "Vision & Mission"
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:18
-msgid "Our vision is our north star we use to orient ourselves, and our mission describes the way we move into the direction of it."
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:28
-msgid "A strong, user-first open web forever."
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:38
-msgid "Provide a user-first format for web content, supporting the long-term success of every web publisher, merchant, and advertiser."
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:51
-msgid "Design Principles"
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:52
-msgid "These design principles are meant to guide the ongoing design and development of AMP. They should help us make internally consistent decisions."
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:70
-msgid "User Experience > Developer Experience > Ease of Implementation."
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:71
-msgid "When in doubt, do what’s best for the end user experience, even if it means that it’s harder for the page creator to build or for the library developer to implement."
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:81
-msgid "Don’t design for a hypothetical faster future browser."
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:82
-msgid "We’ve chosen to build AMP as a library in the spirit of the <a href=\"https://github.com/extensibleweb/manifesto/blob/master/README.md\">EXTENSIBLE WEB MANIFESTO</a> to be able to fix the web of today, not the web of tomorrow. AMP should be fast in today’s browsers. When certain optimizations aren’t possible with today’s platform, AMP developers should participate in standards development to get these added to the web platform.</span>"
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:92
-msgid "Don’t break the web."
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:93
-msgid "Ensure that if AMP has outages or problems it doesn’t hurt the rest of the web. That means if the Google AMP Cache, the URL API or the library fails it should be possible for websites to gracefully degrade. If something works with an AMP cache it should also work without a cache."
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:106
-msgid "Solve problems on the right layer."
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:107
-msgid "E.g. don’t integrate things on the client side, just because that is easier, when the user experience would be better with a server side integration."
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:116
-msgid "Only do things if they can be made fast."
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:117
-msgid "Don’t introduce components or features to AMP that can’t reliably run at 60fps or hinder the instant load experience on today’s most common mobile devices."
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:126
-msgid "Prioritise things that improve the user experience – but compromise when needed."
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:127
-msgid "Some things can be made fast and are still a terrible user experience. AMPs should deliver a fantastic user experience and speed is just one part of that. Only compromise when lack of support for something would stop AMP from being widely used and deployed."
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:137
-msgid "No allowlists."
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:138
-msgid "We won’t give any special treatment to specific sites, domains or origins except where needed for security or performance reasons."
-msgstr ""
-
-#: pages/content/amp-dev/about/mission-and-vision.html:151
-msgid "Get Started with Tutorials"
-msgstr ""
-
-#: pages/content/amp-dev/about/success-stories/index.html:95
-msgid "Here we feature interesting and outstanding pages that have been published using AMP. We kindly invite you to look through them to see what AMP is capable of."
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:26
-msgid "AMP Roadshow"
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:27
-msgid "Come join us in your city for a free, inclusive dev workshop with the AMP team."
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:29
-msgid "Sign Up"
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:53
-msgid "Cities"
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:133
-msgid "Where we’re going next"
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:173
-msgid "Your city isn’t on the list? Check back soon for additional dates and cities. Or..."
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:174
-msgid "Want the AMP Roadshow to visit your area?"
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:175
-msgid "That’s very kind. Fill out <a href=\"https://docs.google.com/forms/d/14B75eV89S1KaceNTG46ranAOPCj3wCLzgD3mxuGeUtU/viewform\" target=\"_blank\">this form</a> and we’ll see what we can do!"
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:176
-msgid "Want to host your own AMP Roadshow?"
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:177
-msgid "Why not? Fill out <a href=\"https://docs.google.com/forms/d/1PMWCq1MTqg-AslvBMvMlU_ozjyZK7WZ-4fUVs0UlheE/viewform\" target=\"_blank\">this form</a>, and we’ll share with you our talks and all the materials you need to do it yourself!"
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:181
-msgid "Where we’ve been"
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:205
-msgid "Agenda"
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:206
-msgid "The agenda is designed to enable you to build even more beautiful, interactive and canonical AMP pages. We welcome both newcomers to AMP and those who already ship AMP pages. <span>This is a sample agenda – schedule varies based on the city.</span>"
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:246
-msgid "Content"
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:272
-msgid "Amplify Live!"
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:273
-msgid "During \"Amplify live!\", we’ll be on stage exploring the most interesting AMP challenges, allowing you to either follow along or do your own thing, like one of the many AMP codelabs. Bring your laptop!"
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:282
-msgid "Frequently Asked Questions"
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:284
-msgid "Does it cost anything?"
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:285
-msgid "No - tickets are free of charge."
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:286
-msgid "Who is the event for?"
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:287
-msgid "Web developers and designers with an interest in AMP--whether you’ve had experience using AMP and want to create better experiences, you’re curious about how you can use AMP to improve your site, or you want to contribute to AMP to make it better for everyone."
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:288
-msgid "Am I all set after registering?"
-msgstr ""
-
-#: pages/content/amp-dev/events/amp-roadshow.html:289
-msgid "We expect that in some cities more people will be interested in attending than we can accommodate, so we will be confirming attendees on a case-by-case basis."
-msgstr ""
-
-msgid "Help"
-msgstr ""
-
-#: /views/partials/rolling-formats.j2:3
-msgid "websites"
-msgstr ""
-
-#: /views/partials/rolling-formats.j2:3
-msgid "stories"
-msgstr ""
-
-#: /views/partials/rolling-formats.j2:3
-msgid "ads"
-msgstr ""
-
-#: /views/partials/rolling-formats.j2:3
-msgid "emails"
-msgstr ""
-
-#: /views/partials/rolling-formats.j2:3
-msgid "email"
-msgstr ""
-
-#: /content/amp-dev/index.html:31
-msgid "Whether you are a publisher, e-commerce company, storyteller, advertiser or email sender, AMP makes it easy to create great experiences on the web. Use AMP to build:"
-msgstr ""
-
-#: /content/amp-dev/index.html:14
-msgid "Use AMP to build great experiences across the web"
-msgstr ""
-
-#: pages/shared/data/benefits.yaml:3
-msgid "Web page speed improves the user experience and core business metrics"
-msgstr ""
-
-#: pages/shared/data/benefits.yaml:6
-msgid "Building AMP pages is easy and reduces developer overhead"
-msgstr ""
-
-msgid "AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms."
-msgstr ""
-
-msgid "You can often convert your entire archive in days especially if you use a popular CMS such as WordPress or Drupal."
-msgstr ""
-
-msgid "Used by popular and global platforms like Google, Bing and Twitter, AMP allows you to ensure users from all these surfaces get an unparalleled, often instantaneous and native-feeling experience by defaulting to AMP pages when available."
-msgstr ""
-
-msgid "You can use CSS to customize your styling, dynamic data to fetch the freshest data where needed, to build the best possible user experience for your customers."
-msgstr ""
-
-msgid "It takes a lot of time and effort to build a great website. AMP components are already optimized for the best performance."
-msgstr ""
-
-msgid "The AMP Project is an open source initiative to protect the future of the web helping everyone deliver a better, faster more user-friendly experience."
-msgstr ""
-
-#: pages/shared/data/benefits.yaml:34
-msgid "Maintain flexibility and control and reduce complexity in your code"
-msgstr ""
-
-#: pages/shared/data/benefits.yaml:37
-msgid "Building blocks that ensure performance"
-msgstr ""
-
-#: pages/shared/data/benefits.yaml:40
-msgid "Build for a sustainable future in the open web for everyone"
-msgstr ""
-
-msgid "Create flawless web experiences"
-msgstr ""
-
-msgid "Snackable Stories for everyone"
-msgstr ""
 
 msgid "Start creating ads"
 msgstr "البدء في إنشاء الإعلانات"
@@ -2178,14 +1763,11 @@ msgstr "يقدم لك AMP طريقة لمنح المستخدمين تجربة أ
 msgid "Allows the creation of rich, eye-catching marketing content with Adobe Animate."
 msgstr "يسمح بإنشاء محتوى تسويقي منسّق ولافت للنظر باستخدام Adobe Animate."
 
-msgid "Web Stories make the production of stories as easy as possible from a technical perspective."
-msgstr ""
+msgid "Create AMPHTML-valid and ready to be published individual designs or full sets of static or animated marketing visuals, within minutes."
+msgstr "أنشئ تصميمات فردية جاهزة للنشر وبصلاحية AMPHTML أو مجموعات كاملة من المرئيات التسويقية الثابتة أو المتحركة، وذلك خلال دقائق."
 
-msgid "The Web Stories format comes with preset but flexible layout templates, standardized UI controls, and components for sharing and adding follow-on content."
-msgstr ""
-
-msgid "Web Stories are part of the open web and can be shared and embedded across sites and apps without being confined to a single ecosystem."
-msgstr ""
+msgid "Online AMPHTML banner maker which allows you to easily create AMP ads without prior coding knowledge."
+msgstr "أداة إعداد بانر AMPHTML على الإنترنت التي تسمح لك بإنشاء إعلانات AMP بسهولة بدون معرفة مسبقة عن الترميز."
 
 msgid "Google Web Designer"
 msgstr "Google Web Designer"
@@ -2204,9 +1786,6 @@ msgstr "زيادة في متوسط نسبة النقر إلى الظهور"
 
 msgid "Teads brings AMP'd mobile video inventory to nearly 100 publishers"
 msgstr "نجاح Teads في الوصول بمخزون AMP من الفيديوهات المتوافقة مع الأجهزة المحمولة إلى حوالي 100 ناشر"
-
-msgid "Web Stories are a new and modern way to reach existing readers."
-msgstr ""
 
 msgid "Increase in ad load speed"
 msgstr "زيادة سرعة تحميل الإعلانات"
@@ -2517,7 +2096,7 @@ msgid "Musement’s mobile-first design helps users navigate 70% faster"
 msgstr "يساعد تصميم الجوّال الأول لشركة Musement المستخدمين على التنقل بسرعة أكبر بنسبة 70%"
 
 msgid "To provide their blog content in a more attractive format, Ameba launched their article landing pages as AMP Stories"
-msgstr "أطلق موقع Ameba صفحات المقالات المقصودة على هيئة Web Stories، وذلك لتقديم محتوى مدونات الموقع بتنسيق أكثر جاذبية"
+msgstr "أطلق موقع Ameba صفحات المقالات المقصودة على هيئة قصص AMP، وذلك لتقديم محتوى مدونات الموقع بتنسيق أكثر جاذبية"
 
 msgid "Complex Networks drives a 3x revenue increase with AMP"
 msgstr "عززت Complex Networks إيراداتها بزيادة بلغت ثلاثة أضعاف باستخدام AMP"
@@ -2633,8 +2212,8 @@ msgstr "زادت عائدات الناشرين وتفاعلات المستخدم
 msgid "Create flawless web experiences"
 msgstr "إنشاء تجارب ويب خالية من الأخطاء"
 
-msgid "Snackable formats for everyone"
-msgstr "تنسيقات سريعة وسهلة للجميع"
+msgid "Snackable Stories for everyone"
+msgstr "قصص سهلة للجميع"
 
 msgid "Super fast ads on the web"
 msgstr "إعلانات بسرعة فائقة على الويب"
@@ -3150,7 +2729,7 @@ msgid "Platform to share and discover how-to stories that includes a creation to
 msgstr "منصّة لمشاركة واكتشاف القصص الإرشادية تتضمن أداة إنشاء على هاتفك لمساعدتك في إنشاء قصص إرشادية."
 
 msgid "Build AMP sites, posts, and stories. Win search, social, and email. Fast. Flexible. Secure. Modern."
-msgstr "أنشئ مواقع ومشاركات وWeb Stories. اكتسب مزيدًا من المستخدمين عبر البحث ومواقع التواصل الاجتماعي والبريد الإلكتروني. سريع. مرن. آمن. عصري."
+msgstr "أنشئ مواقع ومشاركات وقصص AMP. اكتسب مزيدًا من المستخدمين عبر البحث ومواقع التواصل الاجتماعي والبريد الإلكتروني. سريع. مرن. آمن. عصري."
 
 msgid "Platform to share and discover how-to stories that includes a creation tool on your phone to help you create how-to stories."
 msgstr "منصّة لمشاركة واكتشاف القصص الإرشادية تتضمن أداة إنشاء على هاتفك لمساعدتك في إنشاء قصص إرشادية."
@@ -3195,7 +2774,7 @@ msgid "React framework that generates AMP and PWA pages from a single codebase."
 msgstr "إطار عمل تفاعلي يعمل على إنشاء صفحات AMP وصفحات تطبيق الويب التقدمي (PWA) من قاعدة ترميز واحدة."
 
 msgid "A tool to help for prototyping ads to be served in AMP Stories. Choose from pre-existing templates to get started."
-msgstr "أداة للمساعدة في تشغيل النماذج الأولية للإعلانات ليتم عرضها في Web Stories. اختر من النماذج الموجودة مسبقًا لتبدأ الاستخدام."
+msgstr "أداة للمساعدة في تشغيل النماذج الأولية للإعلانات ليتم عرضها في قصص AMP. اختر من النماذج الموجودة مسبقًا لتبدأ الاستخدام."
 
 msgid "NodemailerApp is an email debugging app that includes a local SMTP server and renders AMP for Email emails."
 msgstr "NodemailerApp هو تطبيق لتصحيح أخطاء البريد الإلكتروني يتضمن خادم SMTP محليًا ويعرض رسائل AMP للبريد الإلكتروني."
@@ -3401,10 +2980,8 @@ msgstr "<p>مسؤول عن الوصول الخاضع للتحكم المخصص �
 msgid "What is the Accelerated Mobile Pages project?"
 msgstr "ما هو مشروع \"صفحات الجوّال المسرَّعة\"؟"
 
-msgid "<p>The Accelerated Mobile Pages (AMP) Project is an open source initiative that came out of discussions between publishers and technology companies about the need to improve the entire mobile content ecosystem for everyone -- publishers, consumer platforms, advertisers, creators, and users.</p>\n"
-"<p>Today, the expectation is that content should load super fast and be easy to explore. The reality is that content can take several seconds to load, or, because the user abandons the slow page, never fully loads at all. Accelerated Mobile Pages are web pages designed to load near instantaneously -- they are a step towards a better mobile web for all.</p>"
-msgstr "<p>يمثل مشروع \"صفحات الجوّال المسرَّعة (AMP)\" مبادرة مفتوحة المصدر نشأت من مناقشات بين الناشرين وشركات التكنولوجيا حول الحاجة إلى تحسين المنظومة المتكاملة لمحتوى الجوّال بالكامل للجميع - الناشرين ومنصّات المستهلكين والمعلنين والمنشئين والمستخدمين.</p>\n"
-"<p>واليوم، قالمتوقَّع هو ضرورة أن يتم تحميل المحتوى بسرعة فائقة وأن يسهل استكشافه. في الحقيقة يمكن أن يستغرق تحميل المحتوى عدة ثوانٍ، أو قد لا يتم تحميله كاملاً على الإطلاق، لأن المستخدم يتجاهل الصفحة البطيئة. بالتالي فمشروع \"صفحات الجوّال المسرَّعة\" عبارة عن صفحات ويب مصممة للتحميل بشكل شبه فوري -- وهي تمثل خطوة نحو شبكة ويب أفضل للأجهزة الجوّالة للجميع.</p>"
+msgid "<p>The Accelerated Mobile Pages (AMP) Project is an open source initiative that came out of discussions between publishers and technology companies about the need to improve the entire mobile content ecosystem for everyone -- publishers, consumer platforms, advertisers, creators, and users.</p>\n<p>Today, the expectation is that content should load super fast and be easy to explore. The reality is that content can take several seconds to load, or, because the user abandons the slow page, never fully loads at all. Accelerated Mobile Pages are web pages designed to load near instantaneously -- they are a step towards a better mobile web for all.</p>"
+msgstr "<p>يمثل مشروع \"صفحات الجوّال المسرَّعة (AMP)\" مبادرة مفتوحة المصدر نشأت من مناقشات بين الناشرين وشركات التكنولوجيا حول الحاجة إلى تحسين المنظومة المتكاملة لمحتوى الجوّال بالكامل للجميع - الناشرين ومنصّات المستهلكين والمعلنين والمنشئين والمستخدمين.</p>\n<p>واليوم، قالمتوقَّع هو ضرورة أن يتم تحميل المحتوى بسرعة فائقة وأن يسهل استكشافه. في الحقيقة يمكن أن يستغرق تحميل المحتوى عدة ثوانٍ، أو قد لا يتم تحميله كاملاً على الإطلاق، لأن المستخدم يتجاهل الصفحة البطيئة. بالتالي فمشروع \"صفحات الجوّال المسرَّعة\" عبارة عن صفحات ويب مصممة للتحميل بشكل شبه فوري -- وهي تمثل خطوة نحو شبكة ويب أفضل للأجهزة الجوّالة للجميع.</p>"
 
 msgid "What are the benefits of Accelerated Mobile Pages?"
 msgstr "ما هي مزايا مشروع \"صفحات الجوّال المسرَّعة\"؟"
@@ -3415,14 +2992,8 @@ msgstr "<p>السرعة في غاية الأهمية والتحميل الفور
 msgid "How do Accelerated Mobile Pages work?"
 msgstr "كيف يعمل تنسيق \"صفحات الجوّال المسرَّعة\"؟"
 
-msgid "<p>Accelerated Mobile Pages are just like any other HTML page, but with a limited set of allowed technical functionality that is defined and governed by the open source AMP spec. Just like all web pages, Accelerated Mobile Pages will load in any modern browser or app webview.</p>\n"
-"<p>AMP files take advantage of various technical and architectural approaches that prioritize speed to provide a faster experience for users. AMP developers can use a rich and growing library of web components that offer the ability to embed rich media objects like video and social posts, display advertising, or collect analytics. The goal is not to homogenize how content looks and feels, but instead to build a more common technical core between pages that speeds up load times.</p>\n"
-"<p>In addition, AMP files can be cached in the cloud in order to reduce the time content takes to get to a user’s mobile device. By using the AMP format, content producers are making the content in AMP files available to be cached by third parties. Under this type of framework, publishers and advertisers continue to control their content, but platforms can easily cache or mirror the content for optimal delivery speed to users. Google has provided the <a href=\"https://developers.google.com/amp/cache/\">Google AMP Cache</a> that can be used by anyone at no cost, and all AMPs will be cached by the Google AMP Cache. Other companies may build their own AMP cache as well.</p>\n"
-"<p>In summary, the goal is that the combination of limited technical functionality with a distribution system built around caching will lead to better performing pages, and increased audience development.</p>"
-msgstr "<p>تعمل \"صفحات الجوّال المسرَّعة\" كأي صفحة HTML أخرى، ولكن مع السماح بمجموعة محدودة من الوظائف التقنية التي تحددها وتتحكم فيها مواصفات AMP مفتوح المصدر. ومثل جميع صفحات الويب، سيتم تحميل \"صفحات الجوّال المسرَّعة\" على أي مكوّن حديث للعرض على الويب في المتصفحات أو التطبيقات.</p>\n"
-"<p>تستغلّ ملفات AMP العديد من الأساليب التقنية والبنيوية التي تعطي الأولوية للسرعة لتوفير تجربة أسرع للمستخدمين. ويمكن لمطوّري AMP استخدام مكتبة منسقة ومتنامية من مكونات الويب التي توفر القدرة على تضمين كائنات وسائط منسقة مثل الفيديو والمشاركات على وسائل التواصل الاجتماعي أو عرض الإعلانات أو تجميع التحليلات. وليس الهدف من ذلك هو تجانس الشكل والمظهر الذي سيبدو عليه المحتوى، ولكن بدلاً من ذلك، بناء أساس تقني مشترك بدرجة أكبر بين الصفحات لتسريع أزمنة التحميل.</p>\n"
-"<p>بالإضافة إلى ذلك، يمكن تخزين ملفات AMP مؤقتًا على السحابة من أجل تقليل الزمن الذي يستغرقه المحتوى للوصول إلى الجهاز الجوّال لدى المستخدم. وباستخدام تنسيق AMP، يعمل منتِجو المحتوى على إتاحة المحتوى في ملفات AMP لتخزينه في الذاكرة المؤقتة من قِبل جهات خارجية. وفي إطار هذا النوع من أُطُر العمل، يواصل الناشرون والمعلنون التحكم في المحتوى الذي يقدّمونه، ولكن المنصّات يمكنها إجراء عملية التخزين في الذاكرة المؤقتة أو النسخ المطابق للمحتوى لتحقيق سرعة تسليم مثالية للمستخدمين. وقد قدمت Google <a href=\"https://developers.google.com/amp/cache/\">ذاكرة التخزين المؤقت Google AMP</a> والتي يمكن استخدامها من جانب أي شخص بدون تكلفة، وسيتم تخزين جميع صفحات AMP في الذاكرة المؤقتة بواسطة \"ذاكرة التخزين المؤقت Google AMP\". ويمكن كذلك للشركات الأخرى إنشاء ذاكرة تخزين AMP مؤقتة تخصّها.</p>\n"
-"<p>باختصار، يتمثل الهدف في الجمع بين أداء وظيفي تقني محدود ونظام توزيع يعتمد على التخزين المؤقت والذي سيؤدي إلى تحسين أداء الصفحات وزيادة تنمية الجمهور.</p>"
+msgid "<p>Accelerated Mobile Pages are just like any other HTML page, but with a limited set of allowed technical functionality that is defined and governed by the open source AMP spec. Just like all web pages, Accelerated Mobile Pages will load in any modern browser or app webview.</p>\n<p>AMP files take advantage of various technical and architectural approaches that prioritize speed to provide a faster experience for users. AMP developers can use a rich and growing library of web components that offer the ability to embed rich media objects like video and social posts, display advertising, or collect analytics. The goal is not to homogenize how content looks and feels, but instead to build a more common technical core between pages that speeds up load times.</p>\n<p>In addition, AMP files can be cached in the cloud in order to reduce the time content takes to get to a user’s mobile device. By using the AMP format, content producers are making the content in AMP files available to be cached by third parties. Under this type of framework, publishers and advertisers continue to control their content, but platforms can easily cache or mirror the content for optimal delivery speed to users. Google has provided the <a href=\"https://developers.google.com/amp/cache/\">Google AMP Cache</a> that can be used by anyone at no cost, and all AMPs will be cached by the Google AMP Cache. Other companies may build their own AMP cache as well.</p>\n<p>In summary, the goal is that the combination of limited technical functionality with a distribution system built around caching will lead to better performing pages, and increased audience development.</p>"
+msgstr "<p>تعمل \"صفحات الجوّال المسرَّعة\" كأي صفحة HTML أخرى، ولكن مع السماح بمجموعة محدودة من الوظائف التقنية التي تحددها وتتحكم فيها مواصفات AMP مفتوح المصدر. ومثل جميع صفحات الويب، سيتم تحميل \"صفحات الجوّال المسرَّعة\" على أي مكوّن حديث للعرض على الويب في المتصفحات أو التطبيقات.</p>\n<p>تستغلّ ملفات AMP العديد من الأساليب التقنية والبنيوية التي تعطي الأولوية للسرعة لتوفير تجربة أسرع للمستخدمين. ويمكن لمطوّري AMP استخدام مكتبة منسقة ومتنامية من مكونات الويب التي توفر القدرة على تضمين كائنات وسائط منسقة مثل الفيديو والمشاركات على وسائل التواصل الاجتماعي أو عرض الإعلانات أو تجميع التحليلات. وليس الهدف من ذلك هو تجانس الشكل والمظهر الذي سيبدو عليه المحتوى، ولكن بدلاً من ذلك، بناء أساس تقني مشترك بدرجة أكبر بين الصفحات لتسريع أزمنة التحميل.</p>\n<p>بالإضافة إلى ذلك، يمكن تخزين ملفات AMP مؤقتًا على السحابة من أجل تقليل الزمن الذي يستغرقه المحتوى للوصول إلى الجهاز الجوّال لدى المستخدم. وباستخدام تنسيق AMP، يعمل منتِجو المحتوى على إتاحة المحتوى في ملفات AMP لتخزينه في الذاكرة المؤقتة من قِبل جهات خارجية. وفي إطار هذا النوع من أُطُر العمل، يواصل الناشرون والمعلنون التحكم في المحتوى الذي يقدّمونه، ولكن المنصّات يمكنها إجراء عملية التخزين في الذاكرة المؤقتة أو النسخ المطابق للمحتوى لتحقيق سرعة تسليم مثالية للمستخدمين. وقد قدمت Google <a href=\"https://developers.google.com/amp/cache/\">ذاكرة التخزين المؤقت Google AMP</a> والتي يمكن استخدامها من جانب أي شخص بدون تكلفة، وسيتم تخزين جميع صفحات AMP في الذاكرة المؤقتة بواسطة \"ذاكرة التخزين المؤقت Google AMP\". ويمكن كذلك للشركات الأخرى إنشاء ذاكرة تخزين AMP مؤقتة تخصّها.</p>\n<p>باختصار، يتمثل الهدف في الجمع بين أداء وظيفي تقني محدود ونظام توزيع يعتمد على التخزين المؤقت والذي سيؤدي إلى تحسين أداء الصفحات وزيادة تنمية الجمهور.</p>"
 
 msgid "Why does the Accelerated Mobile Pages Project take an open source approach?"
 msgstr "لماذا يستخدم مشروع \"صفحات الجوّال المسرَّعة\" نهج المصدر المفتوح؟"
@@ -3445,12 +3016,8 @@ msgstr "<p>باستخدام تنسيق AMP، يعمل المنتِجون على 
 msgid "What responsibilities do I have when using Accelerated Mobile Pages?"
 msgstr "ما هي المسؤوليات الواقعة عليّ عند استخدام \"صفحات الجوّال المسرَّعة\"؟"
 
-msgid "<p>If a publisher or advertiser collects data from users who view its AMP pages, such data collection is governed by their privacy policy.  It is the publisher or advertiser’s responsibility to disclose its privacy policy, ideally by including a link to it within each of their AMP pages.</p>\n"
-"<p>Furthermore, the laws in many jurisdictions, such as in the European Union, require a website to give visitors information about cookies and other forms of local storage used on the site (including AMP pages). In many cases, these laws also require that the website obtain consent.  It is the website's responsibility to determine, based on its use of cookies, what type of notice would be appropriate.  Additional information and tools for generating cookie notices can be found at www.cookiechoices.org.  Note that the AMP component <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user-notification</a> provides a way to display a dismissable notification to the user.</p>\n"
-"<p>If an AMP page is shown within a viewer on a third party platform, such as a Google AMP Viewer on Google Search, the viewer may be a hybrid environment in which the AMP page and the third party platform may each collect data about the user.  In such a case, data collection by each party is governed by that party’s privacy policy (i.e., in a hybrid viewer environment, data collected by the AMP page is governed by its privacy policy and data collected by the third party platform is governed by the platform’s privacy policy).  It is each party’s responsibility to disclose its privacy policy and comply with relevant data regulations, including European laws relating to its use of cookies.</p>"
-msgstr "<p>إذا كان الناشر أو المعلن يعمل على تجميع بيانات من المستخدمين الذين يعرضون صفحات AMP، فإن عملية جمع البيانات هذه ستخضع لسياسة الخصوصية لديهم. وتقع على عاتق الناشر أو المعلن مسؤولية الإفصاح عن سياسة الخصوصية لديه، وبشكل مثالي، من خلال تضمين رابط إليه داخل كل صفحة من صفحات AMP التابعة لهم.</p>\n"
-"<p>علاوةً على ذلك، تقتضي القوانين في العديد من الولايات القضائية، مثل الاتحاد الأوروبي، أن يوفر الموقع الإلكتروني للزوار معلومات عن ملفات تعريف الارتباط والأشكال الأخرى من التخزين المحلي المستخدمة على الموقع (بما في ذلك صفحات AMP). وفي الكثير من الحالات، تتطلب هذه القوانين أيضًا أن يحصل الموقع الإلكتروني على الموافقة. وتقع على عاتق الموقع الإلكتروني مسؤولية تحديد نوع الإشعار المناسب لذلك، تبعًا لاستخدامه لملفات تعريف الارتباط.  يمكن العثور على معلومات وأدوات إضافية لإنشاء إشعارات ملفات تعريف الارتباط على www.cookiechoices.org.  تجدر الإشارة إلى أنّ مكوّن AMP <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user-notification</a> يوفّر طريقة لعرض إشعار للمستخدم قابل للرفض.</p>\n"
-"<p>في حال عرض صفحة AMP ضمن عارض على منصّة تابعة لطرف ثالث، مثل العارض Google AMP Viewer على \"بحث Google\"، فقد يكون العارض عبارة عن بيئة مختلطة يمكن فيها لكل من صفحة AMP ومنصّة الطرف الثالث تجميع بيانات حول المستخدم. وفي تلك الحالة، يكون تجميع البيانات من جانب كل طرف محكومًا بسياسة الخصوصية لذلك الطرف (أي، في بيئة العارض المختلطة، تكون البيانات التي تجمعها صفحة AMP محكومة بسياسة الخصوصية فيها والبيانات التي تجمعها منصّة الطرف الثالث تكون محكومة بسياسة الخصوصية للمنصّة). وتقع على عاتق كل جهة مسؤولية الإفصاح عن سياسة الخصوصية لديها والامتثال للوائح البيانات ذات الصلة، بما يشمل القوانين الأوروبية المتعلقة باستخدامها لملفات تعريف الارتباط.</p>"
+msgid "<p>If a publisher or advertiser collects data from users who view its AMP pages, such data collection is governed by their privacy policy.  It is the publisher or advertiser’s responsibility to disclose its privacy policy, ideally by including a link to it within each of their AMP pages.</p>\n<p>Furthermore, the laws in many jurisdictions, such as in the European Union, require a website to give visitors information about cookies and other forms of local storage used on the site (including AMP pages). In many cases, these laws also require that the website obtain consent.  It is the website's responsibility to determine, based on its use of cookies, what type of notice would be appropriate.  Additional information and tools for generating cookie notices can be found at www.cookiechoices.org.  Note that the AMP component <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user-notification</a> provides a way to display a dismissable notification to the user.</p>\n<p>If an AMP page is shown within a viewer on a third party platform, such as a Google AMP Viewer on Google Search, the viewer may be a hybrid environment in which the AMP page and the third party platform may each collect data about the user.  In such a case, data collection by each party is governed by that party’s privacy policy (i.e., in a hybrid viewer environment, data collected by the AMP page is governed by its privacy policy and data collected by the third party platform is governed by the platform’s privacy policy).  It is each party’s responsibility to disclose its privacy policy and comply with relevant data regulations, including European laws relating to its use of cookies.</p>"
+msgstr "<p>إذا كان الناشر أو المعلن يعمل على تجميع بيانات من المستخدمين الذين يعرضون صفحات AMP، فإن عملية جمع البيانات هذه ستخضع لسياسة الخصوصية لديهم. وتقع على عاتق الناشر أو المعلن مسؤولية الإفصاح عن سياسة الخصوصية لديه، وبشكل مثالي، من خلال تضمين رابط إليه داخل كل صفحة من صفحات AMP التابعة لهم.</p>\n<p>علاوةً على ذلك، تقتضي القوانين في العديد من الولايات القضائية، مثل الاتحاد الأوروبي، أن يوفر الموقع الإلكتروني للزوار معلومات عن ملفات تعريف الارتباط والأشكال الأخرى من التخزين المحلي المستخدمة على الموقع (بما في ذلك صفحات AMP). وفي الكثير من الحالات، تتطلب هذه القوانين أيضًا أن يحصل الموقع الإلكتروني على الموافقة. وتقع على عاتق الموقع الإلكتروني مسؤولية تحديد نوع الإشعار المناسب لذلك، تبعًا لاستخدامه لملفات تعريف الارتباط.  يمكن العثور على معلومات وأدوات إضافية لإنشاء إشعارات ملفات تعريف الارتباط على www.cookiechoices.org.  تجدر الإشارة إلى أنّ مكوّن AMP <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user-notification</a> يوفّر طريقة لعرض إشعار للمستخدم قابل للرفض.</p>\n<p>في حال عرض صفحة AMP ضمن عارض على منصّة تابعة لطرف ثالث، مثل العارض Google AMP Viewer على \"بحث Google\"، فقد يكون العارض عبارة عن بيئة مختلطة يمكن فيها لكل من صفحة AMP ومنصّة الطرف الثالث تجميع بيانات حول المستخدم. وفي تلك الحالة، يكون تجميع البيانات من جانب كل طرف محكومًا بسياسة الخصوصية لذلك الطرف (أي، في بيئة العارض المختلطة، تكون البيانات التي تجمعها صفحة AMP محكومة بسياسة الخصوصية فيها والبيانات التي تجمعها منصّة الطرف الثالث تكون محكومة بسياسة الخصوصية للمنصّة). وتقع على عاتق كل جهة مسؤولية الإفصاح عن سياسة الخصوصية لديها والامتثال للوائح البيانات ذات الصلة، بما يشمل القوانين الأوروبية المتعلقة باستخدامها لملفات تعريف الارتباط.</p>"
 
 msgid "What type of content works best using Accelerated Mobile Pages?"
 msgstr "ما نوع المحتوى الأنسب عند استخدام \"صفحات الجوّال المسرَّعة\"؟"
@@ -3488,8 +3055,8 @@ msgstr "<p>المشروع مفتوح للجميع، كما أن أعضاء ال�
 msgid "How can an advertising or technology vendor get involved in Accelerated Mobile Pages?"
 msgstr "كيف يمكن لمورّد إعلانات أو تكنولوجيا المشاركة في \"صفحات الجوّال المسرعة\"؟"
 
-msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
-msgstr "<p>يرجى مراجعة <a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">إرشادات المساهمة</a> والتواصل عبر <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
+msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
+msgstr "<p>يرجى مراجعة <a href=\"https://github.com/ampproject/amphtml/tree/main/3p#ads\">إرشادات المساهمة</a> والتواصل عبر <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
 
 msgid "How does advertising work on Accelerated Mobile Pages?"
 msgstr "كيف تعمل الإعلانات على \"صفحات الجوّال المسرَّعة\"؟"
@@ -3541,3 +3108,60 @@ msgstr "المنصات المعتمَدة والمورّدون والشركاء 
 
 msgid "AMP Conf 2020: Save the date!"
 msgstr "مؤتمر AMP لعام 2020: احفظ التاريخ!"
+
+msgid "AMP is a web component framework to easily create user-first experiences for the web."
+msgstr "AMP هو إطار عمل لمكونات الويب يسهّل إنشاء تجارب للويب مع وضع المستخدم على رأس الأولويات."
+
+msgid "Easily create websites with a great page experience out-of-the-box using AMP’s ready-to-go web components."
+msgstr "يمكنك إنشاء مواقع الويب بسهولة بتجربة صفحة رائعة وحديثة باستخدام مكونات الويب الجاهزة للاستخدام من AMP."
+
+msgid "All about AMP Websites"
+msgstr "كل ما يتعلق بمواقع AMP على الويب"
+
+msgid "Get started"
+msgstr "بدء الاستخدام"
+
+msgid "Immerse readers in visual and tappable stories they can share anywhere on the open web."
+msgstr "اغمر القراء بالقصص المرئية والقابلة للنقر التي يمكنهم مشاركتها في أي مكان على الويب المفتوح."
+
+msgid "All about Web Stories"
+msgstr "كل ما يتعلق بـ Web Stories"
+
+msgid "Serve lightning fast and secure eye-catching creatives."
+msgstr "تقديم تصاميم إبداعية بسرعة البرق وآمنة وملفتة للنظر."
+
+msgid "Send emails of the future with personalized dynamic content and interactive elements that engage readers."
+msgstr "إرسال رسائل بريد إلكتروني مستقبلية تحتوي على محتوى ديناميكي مخصص وعناصر تفاعلية تجذب القراء."
+
+msgid "The latest news"
+msgstr "آخر الأخبار"
+
+msgid "Don't want to miss any of the great stuff that happens around AMP? Then always be first in line and subscribe to our newsletter!"
+msgstr "ألا ترغب في عدم تفويت أي من الأمور الرائعة التي تحدث في إطار استخدام AMP؟ فكن الأول دائمًا واشترك في نشرتنا الإخبارية!"
+
+msgid "Don’t take our word for it - read case studies from industry success stories and see how AMP has produced positive results."
+msgstr "لا تأخذ كلامنا على محمل الجد - اقرأ دراسات الحالة من قصص النجاح في المجال وشاهد كيف حقق AMP نتائج إيجابية."
+
+msgid "A framework that amplifies page experience."
+msgstr "إطار عمل يعزز تجربة الصفحة."
+
+msgid "AMP is a simple and robust web components framework that makes it easy to build fast websites that are user-first and makes money. AMP provides long-term success for your web strategy with distribution across popular platforms and reduced operating costs."
+msgstr "يعدّ AMP إطار عمل بسيطًا وقويًا لمكونات الويب يسهل بناء مواقع الويب الخاصة بك التي تضع المستخدم على رأس الأولويات وتحقق الأرباح. يوفر AMP نجاحًا طويل الأمد لاستراتيجية الويب التي تستخدمها بفضل التوزيع على مستوى المنصات الرائجة وبتكاليف تشغيل وتطوير منخفضة."
+
+msgid "Guaranteed Page Experience"
+msgstr "تجربة صفحة مضمونة"
+
+msgid "AMP provides you with the tools needed to build websites that meet Page Experience ranking signals while remaining flexible and customizable to your needs. Page experience is a set of signals from Google that measure how users perceive their experience interacting with a web page beyond its pure information value. AMP is a straightforward way to a high page experience score. Domains built with AMP are 5 times more likely to pass* Core Web Vitals metrics than non-AMP!"
+msgstr "توفر لك AMP الأدوات اللازمة لإنشاء مواقع الويب التي تلبي مؤشرات تصنيف تجربة الصفحة مع الحفاظ على المرونة وقابلية التخصيص وفقًا لاحتياجاتك. وتجربة الصفحة هي مجموعة من المؤشرات من Google والتي تقيس كيفية تصور المستخدمين لتجربتهم من خلال التفاعل مع صفحة ويب بعيدًا عن قيمتها المعلوماتية البحتة. يعد AMP طريقة مباشرة للحصول على نقاط عالية من حيث تجربة الصفحة. وتزداد احتمالية اجتياز النطاقات التي تم إنشاؤها باستخدام AMP لمقاييس* العوامل الحيوية للويب الأساسية بمقدار 5 مرات مقارنةً بالصفحات بدون AMP!"
+
+msgid "Check your page’s performance"
+msgstr "تحقق من أداء صفحتك"
+
+msgid "Frameworks and CMSs"
+msgstr "أطر العمل ونظم إدارة المحتوى"
+
+msgid "Select a ready-to-go framework or integration-enabled CMS to get an AMP valid site up and running, fast. These platforms give you all the benefits of AMP without all the built-from-scratch hassle."
+msgstr "حدد إطار عمل جاهزًا للعمل أو CMS تم تمكينه للتكامل للحصول على موقع AMP صالح وتشغيله بسرعة. تمنحك هذه المنصات جميع مزايا AMP دون أي مشكلات البدء من الصفر."
+
+msgid "See supported platforms"
+msgstr "انظر المنصات المدعومة"

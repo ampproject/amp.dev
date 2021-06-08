@@ -200,4 +200,4 @@ AMP 布局系统需要提前知道图片的宽高比，然后才能抓取图片�
 
 # 验证 <a name="validation"></a>
 
-请参阅 AMP 验证工具规范中的 [amp-img 规则](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)。
+请参阅 AMP 验证工具规范中的 [amp-img 规则](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii)。

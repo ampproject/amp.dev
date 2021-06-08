@@ -16,11 +16,12 @@ Wird häufig verwendet mit: Bildern, Animationen, Audio und Videos
 Beispiel:
 
 ```html
-<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
-  <div fallback>Cannot play animated images on this device.</div>
-</amp-anim>
+<amp-img src="invalid.jpg" height="400" width="300" layout="responsive">
+  <div fallback style="background-color: #ccc; display: flex; justify-content: center; align-items: center;">
+    Could not load image
+  </div>
+</amp-img>
 ```
-
 Weitere Informationen dazu findest du unter [Platzhalter und Fallbacks](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ## heights

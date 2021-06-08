@@ -177,4 +177,4 @@ teaser:
 
 ## التحقق <a name="validation"></a>
 
-اطّلع على [قواعد amp-selector](https://github.com/ampproject/amphtml/blob/master/extensions/amp-selector/validator-amp-selector.protoascii) في مواصفات مدقق AMP.
+اطّلع على [قواعد amp-selector](https://github.com/ampproject/amphtml/blob/main/extensions/amp-selector/validator-amp-selector.protoascii) في مواصفات مدقق AMP.

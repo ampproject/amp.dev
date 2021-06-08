@@ -2,7 +2,7 @@ import json
 import os
 
 COMPONENT_VERSIONS_FILE = os.path.normpath(os.path.join(os.path.dirname(
-    os.path.abspath(__file__)), '../../../../dist/static/files/component-versions.json'))
+    os.path.abspath(__file__)), '../../../static/files/component-versions.json'))
 COMPONENT_VERSIONS = {}
 
 with open(COMPONENT_VERSIONS_FILE) as f:

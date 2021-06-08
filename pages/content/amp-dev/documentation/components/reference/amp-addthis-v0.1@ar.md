@@ -139,7 +139,7 @@ limitations under the License.
 
 ## التحقق <a name="validation"></a>
 
-اطّلِع على [قواعد amp-addthis](https://github.com/ampproject/amphtml/blob/master/extensions/amp-addthis/validator-amp-addthis.protoascii) في مواصفات مدقق AMP.
+اطّلِع على [قواعد amp-addthis](https://github.com/ampproject/amphtml/blob/main/extensions/amp-addthis/validator-amp-addthis.protoascii) في مواصفات مدقق AMP.
 
 ## الخصوصية <a name="privacy"></a>
 

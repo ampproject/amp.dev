@@ -1,6 +1,6 @@
 ---
 $title: 此网址是 AMP 网页的缓存版本。
-type: 错误
+type: error
 hide_share: true
 ---
 

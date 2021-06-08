@@ -73,8 +73,8 @@ limitations under the License.
 
 ## 지원되는 광고 네트워크 <a name="supported-ad-networks"></a>
 
-* [애드센스](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
-* [DoubleClick (experimental)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
+* [애드센스](https://github.com/ampproject/amphtml/blob/main/ads/google/adsense.md)
+* [DoubleClick (experimental)](https://github.com/ampproject/amphtml/blob/main/ads/google/doubleclick.md)
 
 ## 속성
 
@@ -408,4 +408,4 @@ limitations under the License.
 
 ## 유효성 검사
 
-AMP 유효성 검사 도구 사양의 [amp-auto-ads 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-auto-ads/validator-amp-auto-ads.protoascii)을 참조하세요.
+AMP 유효성 검사 도구 사양의 [amp-auto-ads 규칙](https://github.com/ampproject/amphtml/blob/main/extensions/amp-auto-ads/validator-amp-auto-ads.protoascii)을 참조하세요.

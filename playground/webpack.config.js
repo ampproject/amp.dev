@@ -1,12 +1,13 @@
-const path = require('path');
 const webpack = require('webpack');
-const ClosurePlugin = require('closure-webpack-plugin');
+const path = require('path');
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const config = require('../platform/config/shared.json');
 
@@ -16,18 +17,37 @@ module.exports = (env, argv) => {
   return {
     entry: path.join(__dirname, 'src/app.js'),
     output: {
-      filename: '[name].[hash].js',
+      filename: '[name].[contenthash].js',
       chunkFilename: '[name].[chunkhash].bundle.js',
       sourceMapFilename: '[name].map',
       publicPath: '',
+      path: path.join(__dirname, 'dist'),
     },
     node: {
       global: false,
     },
+    devtool: devMode ? 'inline-source-map' : false,
+    resolve: {
+      alias: {
+        crypto: 'crypto-browserify',
+      },
+      fallback: {
+        util: require.resolve('util/util.js'),
+        stream: require.resolve('stream-browserify'),
+      },
+    },
     optimization: {
       minimizer: [
-        new ClosurePlugin({mode: 'STANDARD'}, {}),
-        new OptimizeCSSAssetsPlugin({}),
+        new TerserPlugin({
+          terserOptions: {
+            ecma: '2015',
+            compress: {
+              defaults: true,
+              unsafe: true,
+            },
+          },
+        }),
+        new OptimizeCSSAssetsPlugin(),
       ],
       splitChunks: {
         cacheGroups: {
@@ -48,7 +68,15 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        'process.env.NODE_DEBUG': JSON.stringify(process.env.NODE_DEBUG),
+        'process.type': JSON.stringify(process.type),
+        'process.version': JSON.stringify(process.version),
         global: '(typeof globalThis ? globalThis : self)',
+      }),
+      new webpack.ProvidePlugin({
+        Buffer: ['buffer', 'Buffer'],
+        process: ['process'],
       }),
       new CopyWebpackPlugin({
         patterns: [{from: path.join(__dirname, 'static/')}],
@@ -86,13 +114,6 @@ module.exports = (env, argv) => {
     ],
     module: {
       rules: [
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
-          },
-        },
         {
           test: /\.hbs$/,
           loader: 'handlebars-loader',

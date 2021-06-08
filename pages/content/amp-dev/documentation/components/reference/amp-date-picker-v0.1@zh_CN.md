@@ -36,9 +36,9 @@ limitations under the License.
 <amp-date-picker layout="fixed-height" height="360"> </amp-date-picker>
 [/sourcecode]
 
-<amp-img alt="static single date picker" layout="fixed" src="https://github.com/ampproject/amphtml/raw/master/extensions/amp-date-picker/img/amp-date-picker-basic.png" width="329" height="365">
+<amp-img alt="static single date picker" layout="fixed" src="https://github.com/ampproject/amphtml/raw/main/extensions/amp-date-picker/img/amp-date-picker-basic.png" width="329" height="365">
   <noscript>
-    <img alt="static single date picker" src="https://github.com/ampproject/amphtml/raw/master/extensions/amp-date-picker/img/amp-date-picker-basic.png" width="329" height="365">
+    <img alt="static single date picker" src="https://github.com/ampproject/amphtml/raw/main/extensions/amp-date-picker/img/amp-date-picker-basic.png" width="329" height="365">
   </noscript>
 </amp-img>
 
@@ -151,9 +151,9 @@ limitations under the License.
 </amp-date-picker>
 [/sourcecode]
 
-<amp-img alt="static single date picker" layout="fixed" src="https://github.com/ampproject/amphtml/raw/master/extensions/amp-date-picker/img/amp-date-picker-single-static.png" width="336" height="370">
+<amp-img alt="static single date picker" layout="fixed" src="https://github.com/ampproject/amphtml/raw/main/extensions/amp-date-picker/img/amp-date-picker-single-static.png" width="336" height="370">
   <noscript>
-    <img alt="static single date picker" src="https://github.com/ampproject/amphtml/raw/master/extensions/amp-date-picker/img/amp-date-picker-single-static.png" width="336" height="370">
+    <img alt="static single date picker" src="https://github.com/ampproject/amphtml/raw/main/extensions/amp-date-picker/img/amp-date-picker-single-static.png" width="336" height="370">
   </noscript>
 </amp-img>
 
@@ -166,9 +166,9 @@ limitations under the License.
 </amp-date-picker>
 [/sourcecode]
 
-<amp-img alt="static single date picker" layout="fixed" src="https://github.com/ampproject/amphtml/raw/master/extensions/amp-date-picker/img/amp-date-picker-range-static.png" width="332" height="373">
+<amp-img alt="static single date picker" layout="fixed" src="https://github.com/ampproject/amphtml/raw/main/extensions/amp-date-picker/img/amp-date-picker-range-static.png" width="332" height="373">
   <noscript>
-    <img alt="static single date picker" src="https://github.com/ampproject/amphtml/raw/master/extensions/amp-date-picker/img/amp-date-picker-range-static.png"  width="332" height="373">
+    <img alt="static single date picker" src="https://github.com/ampproject/amphtml/raw/main/extensions/amp-date-picker/img/amp-date-picker-range-static.png"  width="332" height="373">
   </noscript>
 </amp-img>
 
@@ -390,7 +390,7 @@ limitations under the License.
 </tbody>
 </table>
 
-`src` 可以在用户使用手势后更新该属性 [`amp-bind`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-date-picker/../amp-bind/amp-bind.md)。
+`src` 可以在用户使用手势后更新该属性 [`amp-bind`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-date-picker/../amp-bind/amp-bind.md)。
 
 #### 模板定义对象
 
@@ -482,9 +482,9 @@ _示例：使用 `src` 属性进行标记_
 </amp-lightbox>
 [/sourcecode]
 
-<amp-img alt="static single date picker" layout="fixed" src="https://github.com/ampproject/amphtml/raw/master/extensions/amp-date-picker/img/amp-date-picker-lightbox-fullscreen.png" width="320" height="571">
+<amp-img alt="static single date picker" layout="fixed" src="https://github.com/ampproject/amphtml/raw/main/extensions/amp-date-picker/img/amp-date-picker-lightbox-fullscreen.png" width="320" height="571">
   <noscript>
-    <img alt="static single date picker" src="https://github.com/ampproject/amphtml/raw/master/extensions/amp-date-picker/img/amp-date-picker-lightbox-fullscreen.png" width="320" height="571">
+    <img alt="static single date picker" src="https://github.com/ampproject/amphtml/raw/main/extensions/amp-date-picker/img/amp-date-picker-lightbox-fullscreen.png" width="320" height="571">
   </noscript>
 </amp-img>
 
@@ -723,4 +723,4 @@ For a date range picker:
 
 ## Validation
 
-请参阅 AMP 验证工具规范中的 [amp-date-picker rules](https://github.com/ampproject/amphtml/blob/master/extensions/amp-date-picker/validator-amp-date-picker.protoascii)。
+请参阅 AMP 验证工具规范中的 [amp-date-picker rules](https://github.com/ampproject/amphtml/blob/main/extensions/amp-date-picker/validator-amp-date-picker.protoascii)。

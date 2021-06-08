@@ -68,7 +68,9 @@ const paths = {
   RECENT_GUIDES_DEST: 'pages/shared/data/recent-guides.yaml',
   BUILD_INFO_PATH: absolute('platform/config/build-info.yaml'),
   THUMBOR_ROOT: absolute('thumbor'),
+  PIXI_CLOUD_ROOT: absolute('pixi/cloud-function'),
   THUMBOR_IMAGE_INDEX: absolute(`${DIST_DIR}/static/imageIndex.json`),
+  COMPONENT_VERSIONS: absolute(`pages/static/files/component-versions.json`),
 };
 
 module.exports = {

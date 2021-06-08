@@ -157,7 +157,7 @@ AMPHTML 광고가 제3자 환경에서 실행 중인 경우(예: 비AMP 문서) 
 
 ##### 호환 iframe(예: AMP 캐시에서 가져옴) <a name="on-friendly-iframes-eg-coming-from-an-amp-cache"></a>
 
-<amp-img alt="호환 iframe의 라이트박스 광고" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-fie.gif" layout="fixed">
+<amp-img alt="호환 iframe의 라이트박스 광고" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/lightbox-ad-fie.gif" layout="fixed">
   <noscript>
     <img alt="호환 iframe의 라이트박스 광고" src="../../spec/img/lightbox-ad-fie.gif">
     </noscript>
@@ -165,7 +165,7 @@ AMPHTML 광고가 제3자 환경에서 실행 중인 경우(예: 비AMP 문서) 
 
 ##### 제3자 iframe(예: AMP 캐시 외부에서 가져옴) <a name="on-third-party-iframes-eg-outside-the-amp-cache"></a>
 
-<amp-img alt="제3자 iframe의 라이트박스 광고" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-3p.gif" layout="fixed">
+<amp-img alt="제3자 iframe의 라이트박스 광고" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/main/docs/spec/img/lightbox-ad-3p.gif" layout="fixed">
   <noscript>
     <img alt="제3자 iframe의 라이트박스 광고" src="../../spec/img/lightbox-ad-3p.gif">
     </noscript>
@@ -173,4 +173,4 @@ AMPHTML 광고가 제3자 환경에서 실행 중인 경우(예: 비AMP 문서) 
 
 ## 유효성 검사 <a name="validation"></a>
 
-AMP 유효성 검사기 사양에서 [amp-lightbox 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-lightbox/validator-amp-lightbox.protoascii)을 참조하세요.
+AMP 유효성 검사기 사양에서 [amp-lightbox 규칙](https://github.com/ampproject/amphtml/blob/main/extensions/amp-lightbox/validator-amp-lightbox.protoascii)을 참조하세요.

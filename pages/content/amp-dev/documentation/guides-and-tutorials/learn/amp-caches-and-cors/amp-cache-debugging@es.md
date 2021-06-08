@@ -10,7 +10,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-debugging.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-debugging.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -40,7 +40,7 @@ Si continúa teniendo problemas después de seguir estos pasos, consulte la sigu
     <tr>
       <td>Las fuentes web no aparecen (se utilizan fuentes de reserva).</td>
       <td>El caché de AMP no se encuentra en la lista blanca elaborada por el proveedor de las fuentes.</td>
-      <td>Póngase en contacto con el proveedor de las fuentes y pídale que agregue <a href="https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests#cors-security-in-amp">todos los cachés</a> en la lista de fuentes permitidas.</td>
+      <td>Póngase en contacto con el proveedor de las fuentes y pídale que agregue <a href="amp-cors-requests.md#cors-security-in-amp">todos los cachés</a> en la lista de fuentes permitidas.</td>
     </tr>
     <tr>
       <td>Los recursos (por ejemplo, las fuentes e imágenes) no aparecen (<strong>solo aquellos cuyo origen es HTTP</strong>).</td>
@@ -50,7 +50,7 @@ Si continúa teniendo problemas después de seguir estos pasos, consulte la sigu
     <tr>
       <td rowspan="2">No aparecen los recursos (por ejemplo, las fuentes e imágenes).</td>
       <td>Los recursos se proporcionan con el tipo de MIME incorrecto.</td>
-      <td>Defina un <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">tipo de MIME que sea adecuado</a>.</td>
+      <td>Defina un <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-cache-guidelines.md#guidelines-accepted-mime-types">tipo de MIME que sea adecuado</a>.</td>
     </tr>
     <tr>
       <td>El caché de AMP no puede acceder a los recursos.</td>
@@ -59,7 +59,7 @@ Si continúa teniendo problemas después de seguir estos pasos, consulte la sigu
     <tr>
       <td>Los elementos dinámicos como  <code><amp-form></amp-form></code>, <code><amp-list></amp-list></code>, no se comportan como estaba previsto.</td>
       <td>Faltan encabezados CORS o están rotos.</td>
-      <td>Estos componentes realizan solicitudes de origen cruzado desde el caché de AMP hacia su origen. De forma predeterminada, los navegadores bloquean estas solicitudes. Para permitir estas solicitudes, emita <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">encabezados CORS</a> que agreguen <a href="https://amp.dev/documentation/guides-and-tutorials/amp-cors-requests.html">todos los cachés</a> en la lista permitida.</td>
+      <td>Estos componentes realizan solicitudes de origen cruzado desde el caché de AMP hacia su origen. De forma predeterminada, los navegadores bloquean estas solicitudes. Para permitir estas solicitudes, emita <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">encabezados CORS</a> que agreguen <a href="amp-cors-requests.md">todos los cachés</a> en la lista permitida.</td>
     </tr>
     <tr>
       <td>El contenido que se proporciona debe retirarse debido a una notificación de eliminación por incumplimiento legal.</td>
