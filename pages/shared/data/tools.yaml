@@ -136,6 +136,16 @@ creation:
       height: 3
     formats:
       - stories
+  - name: Webstoryz
+    description: Increase engagement on your website using Webstoryz widget
+    url:
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/webstoryz-builder.jpg
+      width: 5120
+      height: 2880
+    formats:
+      - stories
   - name: Zmooz
     description: Turn automatically articles into templated web stories. WYSIVYG Studio and Apps to edit and share
     url:
