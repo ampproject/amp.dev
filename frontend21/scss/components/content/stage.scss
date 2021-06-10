@@ -34,20 +34,38 @@
     margin-bottom: var(--spacing);
 
     @include respond-to('small') {
+      grid-row: 1;
       grid-column: 2 / span 11;
+    }
+
+    p {
+      color: inherit;
     }
   }
 
   &-media {
     grid-row: 1;
-    grid-column: 2 / span 24;
+    grid-column: 1 / -1;
     align-self: flex-end;
     margin-bottom: var(--spacing);
+    overflow: hidden;
+    padding-bottom: 105%;
+
+    amp-img img {
+      object-fit: cover;
+    }
 
     @include respond-to('small') {
-      grid-column: 14 / span 11;
+      grid-column: 8 / -1;
       padding-top: var(--spacing);
+      padding-bottom: unset;
       margin-bottom: calc(-1 * var(--spacing));
+      width: 927px;
+      height: 669px;
+    }
+
+    @include respond-to('large') {
+      grid-column: 12 / -1;
     }
   }
 
@@ -57,12 +75,8 @@
     @include respond-to('small') {
       display: block;
       grid-row: 1;
-      grid-column: 14 / span 8;
+      grid-column: 14 / -1;
       align-self: center;
-    }
-
-    @include respond-to('medium') {
-      align-self: flex-start;
     }
 
     svg,
@@ -72,6 +86,19 @@
 
     svg {
       height: 100%;
+    }
+
+    @include respond-to('medium') {
+      margin-top: -25%;
+
+      svg {
+        width: auto;
+        height: auto;
+      }
+    }
+
+    @include respond-to('large') {
+      grid-column: 14 / span 8;
     }
   }
 

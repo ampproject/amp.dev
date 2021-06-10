@@ -1,32 +1,30 @@
-<section class="ap-section --fullscreen">
-  <div class="ap-teaser-carousel --success-stories">
-    <div class="ap-teaser-carousel-container">
-      <amp-base-carousel id="{{ slider_id }}" height="573" layout="fixed-height" role="region"
-        visible-count="(min-width: 1024px) 3, (min-width: 768px) 2, 1" aria-label="{{ _('Success stories') }}"
-        on="slideChange:teaser-carousel-pagination-success-stories.toggle(index=event.index, value=true)">
-        {% for teaser_doc in teaser_docs %}
-        {% with %}
-        {% include '/views/2021/partials/teaser.j2' %}
-        {% endwith %}
-        {% endfor %}
-        <button slot="next-arrow"></button>
-        <button slot="prev-arrow"></button>
-      </amp-base-carousel>
-    </div>
-    <div class="ap-teaser-carousel-controls --prev">
-      <button on="tap: {{ slider_id }}.prev()" class="amp-carousel-button amp-carousel-button-prev"
-        aria-label="Previous"></button>
-    </div>
-    <div class="ap-teaser-carousel-controls --next">
-      <button on="tap: {{ slider_id }}.next()" class="amp-carousel-button amp-carousel-button-next"
-        aria-label="Next"></button>
-    </div>
-    <amp-selector class="ap-teaser-carousel-pagination" id="teaser-carousel-pagination-success-stories"
-      layout="container" on="select: {{ slider_id }}.goToSlide(index=event.targetOption)">
-      {% for success_story in doc.success_stories %}
-      <div class="ap-teaser-carousel-pagination-item" option="{{ loop.index0 }}" {% if loop.index0==0 %}selected{% endif
-        %}></div>
+<section class="ap-teaser-carousel --success-stories">
+  <div class="ap-teaser-carousel-container">
+    <amp-base-carousel id="{{ slider_id }}" height="573" layout="fixed-height" role="region" snap-align="(min-width: 768px) start, center"
+      visible-count="(min-width: 1024px) 3, (min-width: 768px) 2, 1.05" aria-label="{{ _('Success stories') }}"
+      on="slideChange:teaser-carousel-pagination-success-stories.toggle(index=event.index, value=true)">
+      {% for teaser_doc in teaser_docs %}
+      {% with %}
+      {% include '/views/2021/partials/teaser.j2' %}
+      {% endwith %}
       {% endfor %}
-    </amp-selector>
+      <button slot="next-arrow"></button>
+      <button slot="prev-arrow"></button>
+    </amp-base-carousel>
   </div>
+  <div class="ap-teaser-carousel-controls --prev">
+    <button on="tap: {{ slider_id }}.prev()" class="amp-carousel-button amp-carousel-button-prev"
+      aria-label="Previous"></button>
+  </div>
+  <div class="ap-teaser-carousel-controls --next">
+    <button on="tap: {{ slider_id }}.next()" class="amp-carousel-button amp-carousel-button-next"
+      aria-label="Next"></button>
+  </div>
+  <amp-selector class="ap-teaser-carousel-pagination" id="teaser-carousel-pagination-success-stories"
+    layout="container" on="select: {{ slider_id }}.goToSlide(index=event.targetOption)">
+    {% for success_story in doc.success_stories %}
+    <div class="ap-teaser-carousel-pagination-item" option="{{ loop.index0 }}" {% if loop.index0==0 %}selected{% endif
+      %}></div>
+    {% endfor %}
+  </amp-selector>
 </section>

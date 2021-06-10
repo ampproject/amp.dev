@@ -15,7 +15,6 @@
  */
 'use strict';
 
-const validatorRules = require('@ampproject/toolbox-validator-rules');
 const express = require('express');
 const path = require('path');
 const config = require('@lib/config.js');
@@ -25,6 +24,7 @@ const samples = require('@lib/common/samples.js');
 const {setMaxAge} = require('@lib/utils/cacheHelpers');
 const log = require('@lib/utils/log')('Search');
 const URL = require('url').URL;
+const componentVersions = require(project.paths.COMPONENT_VERSIONS);
 
 const {
   BUILT_IN_COMPONENTS,
@@ -62,10 +62,10 @@ const HIGHLIGHTS_FOLDER_PATH = path.join(
 let items = null;
 async function buildAutosuggestComponentResult() {
   if (!items) {
-    const rules = await validatorRules.fetch();
-    const components = rules.extensions
-      .map((e) => e.name)
-      .concat(BUILT_IN_COMPONENTS, IMPORTANT_INCLUDED_ELEMENTS);
+    const components = Object.keys(componentVersions).concat(
+      BUILT_IN_COMPONENTS,
+      IMPORTANT_INCLUDED_ELEMENTS
+    );
     components.sort();
     items = {
       items: components,

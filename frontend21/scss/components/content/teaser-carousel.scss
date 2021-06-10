@@ -2,11 +2,48 @@
   --spacing: 43px;
 
   position: relative;
-  display: grid;
-  grid-gap: 15px;
-  grid-template-columns: var(--spacing) 1fr var(--spacing);
+  @include grid;
+  grid-row-gap: unset;
   max-width: $maxWidth;
-  margin: 100px auto 100px auto;
+  grid-column: 1/-1;
+
+  &:last-child {
+    margin-bottom: 100px;
+  }
+
+  @include respond-to('-small') {
+    .#{project('teaser')} {
+      &:first-child {
+        padding-left: 15px;
+      }
+
+      &:last-child {
+        padding-right: 15px;
+      }
+    }
+  }
+
+  @include respond-to('small') {
+    grid-gap: 22px;
+    padding: 0 15px;
+    margin: 0 auto;
+
+    &:last-child {
+      margin-bottom: 200px;
+    }
+  }
+
+  &.--news {
+    .#{project('teaser')}-card {
+      min-height: 438px;
+    }
+  }
+
+  &.--success-stories {
+    .#{project('teaser')}-card {
+      min-height: 493px;
+    }
+  }
 
   &-container {
     grid-column: 1/-1;
@@ -15,21 +52,23 @@
 
   &-controls {
     display: none;
+    left: 0;
 
     &.--prev {
-      left: 0;
       grid-column: 1;
     }
 
     &.--next {
-      right: 0;
-      grid-column: 3;
+      grid-column-end: -1;
     }
 
     .amp-carousel-button {
       width: var(--spacing);
       height: var(--spacing);
       background-size: 19px 19px;
+      left: 0;
+      margin: 0;
+      @include shadow-large;
 
       @include respond-to('medium') {
         background-size: 18px 18px;
@@ -38,14 +77,26 @@
       @include respond-to('large') {
         background-size: 28px 28px;
       }
+
+      &:hover {
+        @include shadow-small;
+      }
+
+      &-prev {
+        transform: scaleX(-1);
+        background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2064%2064%27%20fill%3D%27%23005af0%27%3E%3Cpath%20d%3D%22M43.16%2010.18c-0.881-0.881-2.322-0.881-3.203%200s-0.881%202.322%200%203.203l16.335%2016.335h-54.051c-1.281%200-2.242%201.041-2.242%202.242%200%201.281%200.961%202.322%202.242%202.322h54.051l-16.415%2016.335c-0.881%200.881-0.881%202.322%200%203.203s2.322%200.881%203.203%200l20.259-20.259c0.881-0.881%200.881-2.322%200-3.203l-20.179-20.179z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+      }
+
+      &-next {
+        background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2064%2064%27%20fill%3D%27%23005af0%27%3E%3Cpath%20d%3D%22M43.16%2010.18c-0.881-0.881-2.322-0.881-3.203%200s-0.881%202.322%200%203.203l16.335%2016.335h-54.051c-1.281%200-2.242%201.041-2.242%202.242%200%201.281%200.961%202.322%202.242%202.322h54.051l-16.415%2016.335c-0.881%200.881-0.881%202.322%200%203.203s2.322%200.881%203.203%200l20.259-20.259c0.881-0.881%200.881-2.322%200-3.203l-20.179-20.179z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+      }
     }
 
     @include respond-to('small') {
       display: initial;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      position: relative;
       grid-row: 1;
+      align-self: center;
     }
   }
 
@@ -90,7 +141,7 @@
     }
 
     .#{project('teaser')} {
-      padding-bottom: 15px;
+      padding-bottom: 25px;
 
       &:nth-child(3n + 1) {
         align-items: center;

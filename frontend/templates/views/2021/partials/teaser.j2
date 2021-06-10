@@ -31,9 +31,7 @@
       {% if teaser_doc.image and teaser_doc.image != '' or type == "success-story" %}
         <amp-img class=""
             src="{{ image }}"
-            layout="responsive"
-            width="160"
-            height="90"
+            layout="fill"
             alt="{{ alt }}">
         </amp-img>
       {% else %}

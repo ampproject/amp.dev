@@ -38,7 +38,7 @@ success_stories:
       <div class="ap-text-block">
         <h2>{{ _('AMP Websites') }}</h2>
         <h1>{{ _('A framework that amplifies page experience.') }}</h1>
-        <p>
+        <p class="ap-p-large">
           {{ _('AMP is a simple and robust web components framework that makes
           it easy to build fast websites that are user-first and make money. AMP
           provides long-term success for your web strategy with distribution
@@ -66,20 +66,18 @@ success_stories:
     <div class="ap-stage-media">
       <amp-img
         src="/static/img/about/websites-amp-sidebar.png"
-        layout="responsive"
-        width="778"
-        height="669"
+        layout="fill"
         alt="{{ _('A screenshot showing amp-sidebar.') }}"
       ></amp-img>
     </div>
   </section>
 
-  <section class="ap-section --col-4-23">
+  <section class="ap-section --offset">
     <div class="ap-text-block">
       <h2 class="ap-h1">{{ _('Grab-and-go components') }}</h2>
     </div>
 
-    <div class="ap-text-media --thirds --center">
+    <div class="ap-text-media --thirds">
       <div class="ap-text-media-col">
         <div class="ap-text-block">
           <p>
@@ -91,23 +89,12 @@ success_stories:
             performance.') }}
           </p>
         </div>
-        <a
-          href="{{ g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path }}"
-          class="ap-m-lnk ap-m-lnk-square"
-        >
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg>
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="#internal"
-              ></use>
-            </svg>
-          </div>
-          <span class="ap-m-lnk-text"
-            >{{ _('See the full component library') }}</span
-          >
-        </a>
+        {% with %}
+          {% set square = true %}
+          {% set href = g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path %}
+          {% set text = _("See the full component library") %}
+          {% include '/views/2021/partials/content/link.j2' %}
+        {% endwith %}
 
         <p>
           {{ _('Want just the components without the AMP ecosystem? ')}}
@@ -123,7 +110,7 @@ success_stories:
     </div>
   </section>
 
-  <section class="ap-section --col-3-22">
+  <section class="ap-section --offset">
     <div class="ap-text-media">
       <div class="ap-text-media-col">
         <amp-img
@@ -157,21 +144,11 @@ success_stories:
           {{ _('Check your page’s performance') }}
         </a>
 
-        <a
-          href="{{g.doc('/content/amp-dev/about/page-experience.html', locale=doc.locale).url.path}}"
-          class="ap-m-lnk ap-m-lnk-square"
-        >
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg>
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="#internal"
-              ></use>
-            </svg>
-          </div>
-          <span class="ap-m-lnk-text">{{ _('Learn more') }}</span>
-        </a>
+        {% with %}
+          {% set href = g.doc('/content/amp-dev/about/page-experience.html', locale=doc.locale).url.path %}
+          {% set text = _("Learn more") %}
+          {% include '/views/2021/partials/content/link.j2' %}
+        {% endwith %}
       </div>
     </div>
   </section>
@@ -179,7 +156,7 @@ success_stories:
   <section class="ap-center-stage">
     <div class="ap-center-stage-content">
       <h2 class="ap-h2">{{ _('How AMP works for you') }}</h2>
-      <p class="ap-center-stage-copy">
+      <p class="ap-center-stage-copy ap-p-large">
         {{ _("AMP meets you exactly where you are. Whether you're building a
         site from scratch, using a CMS or optimizing an in-house solution, AMP
         can help! AMP’s built-in validation system guides your development
@@ -211,30 +188,40 @@ success_stories:
       {% endfor %}
     </div>
 
-    <amp-carousel
+    <amp-base-carousel
+      id="cards-carousel"
       class="ap-cards-carousel"
       role="list"
       layout="fixed-height"
-      height="300"
-      type="slides"
+      height="350"
+      controls="never"
+      on="slideChange:cards-carousel-pagination.toggle(index=event.index, value=true)"
     >
       {% for card in doc.cards %}
-      <div class="ap-cards-item" role="listitem">
-        <svg class="ap-cards-item-icon" width="30" height="30">
-          <use
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xlink:href="/static/frontend/sprite.svg#{{ card.icon }}"
-          ></use>
-        </svg>
+      <div class="ap-cards-item-wrapper">
+        <div class="ap-cards-item" role="listitem">
+          <svg class="ap-cards-item-icon" width="30" height="30">
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="/static/frontend/sprite.svg#{{ card.icon }}"
+            ></use>
+          </svg>
 
-        <h3>{{ card.headline }}</h3>
-        <p>{{ card.text }}</p>
+          <h3>{{ card.headline }}</h3>
+          <p>{{ card.text }}</p>
+        </div>
       </div>
       {% endfor %}
-    </amp-carousel>
+    </amp-base-carousel>
+    <amp-selector class="ap-cards-carousel-pagination" id="cards-carousel-pagination" layout="container" on="select: cards-carousel.goToSlide(index=event.targetOption)">
+      {% for card in doc.cards %}
+        <div class="ap-cards-carousel-pagination-item" option="{{ loop.index0 }}" {% if loop.index0==0 %}selected{% endif
+          %}></div>
+      {% endfor %}
+    </amp-selector>
   </section>
 
-  <section class="ap-section --col-4-23">
+  <section class="ap-section --offset">
     <div class="ap-text-block">
       <h2 class="ap-h1">{{ _('Frameworks and CMSs') }}</h2>
     </div>
@@ -249,21 +236,12 @@ success_stories:
             }}
           </p>
         </div>
-        <a
-          href="{{ g.doc('/content/amp-dev/support/faq/platform-and-vendor-partners.md', locale=doc.locale).url.path }}"
-          class="ap-m-lnk ap-m-lnk-square"
-        >
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg>
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="#internal"
-              ></use>
-            </svg>
-          </div>
-          <span class="ap-m-lnk-text">{{ _('See supported platforms') }}</span>
-        </a>
+        {% with %}
+          {% set square = true %}
+          {% set href = g.doc('/content/amp-dev/support/faq/platform-and-vendor-partners.md', locale=doc.locale).url.path %}
+          {% set text = _("See supported platforms") %}
+          {% include '/views/2021/partials/content/link.j2' %}
+        {% endwith %}
       </div>
       <div class="ap-text-media-col">
         <figure>
@@ -281,13 +259,10 @@ success_stories:
   </section>
 
   <section class="ap-section --col-4-23">
-    <div class="ap-text-block">
-      <h2 class="ap-h1">{{ _('Check out AMP in action') }}</h2>
-    </div>
-
     <div class="ap-text-media --thirds --center --mobile-reverse">
       <div class="ap-text-media-col">
         <div class="ap-text-block">
+          <h2 class="ap-h1">{{ _('Check out AMP in action') }}</h2>
           <p>{{ _('Exemplary websites built with AMP out in the wild.') }}</p>
         </div>
       </div>
@@ -297,7 +272,7 @@ success_stories:
   {% set slider_id = 'success-stories' %} {% set teaser_docs =
   doc.success_stories %} {% include '/views/2021/partials/teaser-slider.j2' %}
 
-  <section class="ap-section --col-3-22">
+  <section class="ap-section --offset">
     <div class="ap-text-media">
       <div class="ap-text-media-col">
         <amp-img
@@ -320,21 +295,12 @@ success_stories:
           </p>
         </div>
 
-        <a
-          href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path }}"
-          class="ap-m-lnk ap-m-lnk-square"
-        >
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg>
-              <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="#internal"
-              ></use>
-            </svg>
-          </div>
-          <span class="ap-m-lnk-text">{{ _('Start contributing') }}</span>
-        </a>
+        {% with %}
+          {% set square = true %}
+          {% set href = g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path %}
+          {% set text = _("Start contributing") %}
+          {% include '/views/2021/partials/content/link.j2' %}
+        {% endwith %}
       </div>
     </div>
   </section>
@@ -342,7 +308,7 @@ success_stories:
   <section class="ap-center-stage">
     <div class="ap-center-stage-content">
       <h2 class="ap-h2 ap-center-stage-headline">{{ _('Get started') }}</h2>
-      <p class="ap-center-stage-copy">
+      <p class="ap-center-stage-copy ap-p-large">
         {{ _("Ready to start building websites with AMP? Click the button below
         to find step one of your AMP journey!") }}
       </p>

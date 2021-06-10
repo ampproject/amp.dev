@@ -77,7 +77,7 @@ function readTemplate(name) {
   if (ext === 'js') {
     ext = 'javascript';
   }
-  string = hljs.highlight(ext, string).value;
+  string = hljs.highlight(string, {language: ext}).value;
   if (ext === 'html') {
     string = highlightSections(string);
   }
