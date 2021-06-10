@@ -47,7 +47,7 @@ async function importBlog(value, callback) {
     if (mediaDetails && !mediaDetails.file.endsWith(DEFAULT_IMG)) {
       // Mount image URLs to the virtual static directory
       imageUrl = `${REMOTE_STATIC_MOUNT}?url=${encodeURIComponent(
-        mediaDetails.sizes.medium.source_url
+        mediaDetails.sizes.medium_large.source_url
       )}`;
     }
 
