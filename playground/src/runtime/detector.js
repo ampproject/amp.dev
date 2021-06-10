@@ -14,7 +14,7 @@
 
 import runtimes from './runtimes.js';
 
-const STORY_REGEX = /<amp-story\s+standalone\s*>/i;
+const STORY_REGEX = /<amp-story\s+standalone(\s.*[^>])*>/i;
 const AMPHTML_AD_REGEX = /amp4ads-boilerplate/i;
 const EMAIL_REGEX = /amp4email-boilerplate/i;
 
