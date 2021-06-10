@@ -56,23 +56,32 @@
     }
 
     @include respond-to('small') {
-      grid-column: 8 / -1;
+      top: 20%;
       padding-top: var(--spacing);
       padding-bottom: unset;
       margin-bottom: calc(-1 * var(--spacing));
-      width: 927px;
+      width: 1100px;
       height: 669px;
     }
 
+    @include respond-to('medium') {
+      top: 0;
+      grid-column: 6 / -1;
+    }
+
     @include respond-to('large') {
-      grid-column: 12 / -1;
+      grid-column: 9 / -1;
+    }
+
+    @include respond-to('max') {
+      grid-column: 11 / -1;
     }
   }
 
   &-backdrop {
     display: none;
 
-    @include respond-to('small') {
+    @include respond-to('medium') {
       display: block;
       grid-row: 1;
       grid-column: 14 / -1;
