@@ -73,7 +73,7 @@ Das Element `<amp-story-grid-layer>` ordnet seine untergeordneten Elemente in ei
 <tr>
     <td width="65%">Das Template <strong>fill</strong> füllt den Bildschirm mit dem ersten untergeordneten Element der Ebene aus. Alle anderen Elemente dieser Ebene werden nicht angezeigt.     Das Template "fill" eignet sich gut für Hintergründe, einschließlich Bildern und Videos.    <code class="nopad"><pre><amp-story-grid-layer template="fill"> <amp-img src="dog.png" width="720" height="1280" layout="responsive"> </amp-img> </amp-story-grid-layer></pre></code>
 </td>
-    <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341, alt="Illustration: das dog.png Bild füllt den Bildschirm') }}</td>
+    <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341, alt='Illustration: das dog.png Bild füllt den Bildschirm') }}</td>
 </tr>
 <tr>
     <td colspan="2"><h5 id="vertical">Template: Vertical</h5></td>
@@ -81,7 +81,7 @@ Das Element `<amp-story-grid-layer>` ordnet seine untergeordneten Elemente in ei
 <tr>
     <td width="65%">Das Template <strong>vertical</strong> ordnet die untergeordneten Elemente entlang der y-Achse an. Die Elemente werden am oberen Rand des Bildschirms ausgerichtet und nehmen den gesamten Bildschirm entlang der x-Achse ein.     Das Template "vertical" ist sinnvoll, wenn du Elemente vertikal direkt untereinander stapeln möchtest.    <code class="nopad"><pre><amp-story-grid-layer template="vertical"> <p>element 1</p> <p>element 2</p> <p>element 3</p> </amp-story-grid-layer></pre></code>
 </td>
-    <td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341, alt="Illustration: element1, element2 und element3, vertical gestapelt') }}</td>
+    <td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341, alt='Illustration: element1, element2 und element3, vertical gestapelt') }}</td>
 </tr>
 <tr>
     <td colspan="2"><h5 id="horizontal">Template: Horizontal</h5></td>
@@ -89,7 +89,7 @@ Das Element `<amp-story-grid-layer>` ordnet seine untergeordneten Elemente in ei
 <tr>
     <td width="65%">Das Template <strong>horizontal</strong> ordnet die untergeordneten Elemente entlang der x-Achse an. Die Elemente werden am Bildschirmstart ausgerichtet und nehmen den gesamten Bildschirm entlang der y-Achse ein.     Das Template "horizontal" ist sinnvoll, wenn du Elemente horizontal direkt nebeneinander stapeln möchtest.     <code class="nopad"><pre><amp-story-grid-layer template="horizontal"> <p>element 1</p> <p>element 2</p> <p>element 3</p> </amp-story-grid-layer></pre></code>
 </td>
-    <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341, alt="Illustration: element1, element2 und element3, horizontal in spalten gestapelt') }}</td>
+    <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341, alt='Illustration: element1, element2 und element3, horizontal in spalten gestapelt') }}</td>
 </tr>
 <tr>
     <td colspan="2"><h5 id="thirds">Template: Thirds</h5></td>
