@@ -98,7 +98,7 @@ The `<amp-story-grid-layer>` element lays out its children elements in a grid (b
   &lt;p>element 3&lt;/p>
 &lt;/amp-story-grid-layer></pre></code>
     </td>
-    <td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341, alt="Illustration: element1, element2 and element3, stacked vertically') }}
+    <td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341, alt='Illustration: element1, element2 and element3, stacked vertically') }}
     </td>
 </tr>
 <tr>
@@ -116,7 +116,7 @@ The `<amp-story-grid-layer>` element lays out its children elements in a grid (b
 &lt;/amp-story-grid-layer></pre></code>
     </td>
     <td>
-    {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341, alt="Illustration: element1, element2 and element3, stacked horizontally in columns') }}
+    {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341, alt='Illustration: element1, element2 and element3, stacked horizontally in columns') }}
     </td>
 </tr>
 <tr>
