@@ -1,11 +1,10 @@
 ---
-formats:
-  - stories
 $title: Make your Web Stories discoverable
-$titles:
-  teaser: Make your Web Stories discoverable
 $order: 5
 description: 'Ensure your Web Stories are reaching your intended audience by including necessary metadata and markup.'
+
+formats:
+  - stories
 author: CrystalOnScript
 ---
 

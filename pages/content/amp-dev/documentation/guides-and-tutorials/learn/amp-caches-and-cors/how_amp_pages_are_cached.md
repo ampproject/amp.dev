@@ -51,7 +51,7 @@ Cached AMP pages are accessed by platforms (like Google Search, Google News, and
 
 <amp-img src="/static/img/docs/platforms_accessing_cache.png"
          width="1054" height="356" layout="responsive"
-         alt="platforms and mobile apps access cached AMP pages">
+         alt="Illustration: Google products (search, news), Mobile apps (via linking to AMP content, and via Progressive Web Apps), and other platforms - all accessing AMP Cache"">
 </amp-img>
 
 ## How does my AMP page get cached?

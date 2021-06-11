@@ -35,7 +35,7 @@ Người dùng có thể đi qua quảng cáo như các câu chuyện thông th�
 
 Người dùng có thể tương tác trực tiếp với quảng cáo bằng cách chạm vào nút [kêu gọi hành động](story_ads_best_practices.md#call-to-action-button-text-enum) được render bởi hệ thống, xuất hiện ở 1/3 dưới cùng của các quảng cáo Câu chuyện Web. Nút này có thể được cấu hình để gửi người dùng đến một URL tùy ý (hoặc đến cửa hàng ứng dụng liên quan).
 
-{{ image('/static/img/docs/stampads/sponsored_story.png', 1600, 597, layout='intrinsic', alt='Image showing that usersare redirected to an ad landing destination, but can return to the story.', caption='Users are redirected to an ad landing destination, but can return to the story.', align='' ) }}
+{{ image('/static/img/docs/stampads/sponsored_story.png', 1600, 597, layout='intrinsic', alt='Image showing that users are redirected to an ad landing destination, but can return to the story.', caption='Users are redirected to an ad landing destination, but can return to the story.', align='' ) }}
 
 ## Cấu hình một Câu chuyện Web cho quảng cáo
 

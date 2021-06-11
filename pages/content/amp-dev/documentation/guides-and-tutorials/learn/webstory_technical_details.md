@@ -54,7 +54,8 @@ The difference between an AMP webpage and a Web Story built with AMP is the [`am
         <amp-story-grid-layer template="fill">
           <amp-img src="assets/cover.jpg"
               width="720" height="1280"
-              layout="responsive">
+              layout="responsive"
+              alt="...">
           </amp-img>
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical">
@@ -69,7 +70,8 @@ The difference between an AMP webpage and a Web Story built with AMP is the [`am
           <h1>Cats</h1>
           <amp-img src="assets/cat.jpg"
               width="720" height="1280"
-              layout="responsive">
+              layout="responsive"
+              alt="...">
           </amp-img>
           <q>Dogs come when they're called. Cats take a message and get back to you. --Mary Bly</q>
         </amp-story-grid-layer>
@@ -89,7 +91,7 @@ Users may be viewing Web Stories in areas with low network connection or older d
 
 ### Background color
 
-Specify a background color for each Web Story page. Having a background color provides a good fallback if the user’s conditions prevent them from downloading images or video assets. Choose a color that is representative of the dominant color of the page’s intended background asset, or use a consistent color theme for all story pages. Ensure the background color is different from the text for readability. 
+Specify a background color for each Web Story page. Having a background color provides a good fallback if the user’s conditions prevent them from downloading images or video assets. Choose a color that is representative of the dominant color of the page’s intended background asset, or use a consistent color theme for all story pages. For readability, ensure the background color has sufficient color contrast with the foreground text. Ideally, aim for a color contrast ratio of 4.5:1. If this is not possible, consider adding an additional background behind the text itself instead that does result in a sufficient contrast.
 
 Define the background color for pages within the `<style amp-custom>` tags in the head of the Web Story document or inline on the [`<amp-story-page>`](https://amp.dev/documentation/components/amp-story-page/?format=stories) component. 
 
@@ -207,11 +209,13 @@ The [`auto-advance-after`](https://amp.dev/documentation/components/amp-story-pa
 ```
 
 
-## Desktop experience
+## Landscape orientation and full bleed desktop experience
 
-The Web Story format supports an [optional desktop experience](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). This changes the desktop experience to an immersive full bleed mode, replacing the default three portrait panels experience and allows mobile users to view when their device is held horizontally. 
+The Web Story format supports an optional [landscape orienntation and full bleed desktop experience](https://amp.dev/documentation/components/amp-story/?format=stories#landscape-orientation-and-full-bleed-desktop-experience-opt-in). This changes the desktop experience to an immersive full bleed mode, replacing the default three portrait panels experience. On mobile, it allows users to view stories when their device is held horizontally in landscape mode. 
 
-Opt-in to desktop support by adding the `supports-landscape` attribute to the `<amp-story>` component. 
+While this is currently opt-in and optional, we strongly recommend making sure that users on mobile devices are able to view stories in whatever orientation best suits their needs - otherwise, they will simply be presented with a "The page is best viewed in portrait mode" message.
+
+Opt-in to landscape orientation and full bleed desktop support by adding the `supports-landscape` attribute to the `<amp-story>` component.
 
 ```html
 <amp-story standalone
