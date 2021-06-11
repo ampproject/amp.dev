@@ -33,7 +33,7 @@ Web Story ads are AMPHTML ads, but have required meta tag data, meet defined lay
 To keep the user experience consistent, the Web Story runtime is responsible for rendering the ad label and the CTA button.
 
 [tip type="important"]
-**IMPORTANT –** Only the CTA button is clickable in an Web Story ad, so keep this in mind when developing your creative.
+**IMPORTANT –** Only the CTA button is clickable in a Web Story ad, so keep this in mind when developing your creative.
 [/tip]
 
 ## Templates
@@ -112,7 +112,7 @@ If support is needed for a new CTA button text enum, please open a [GitHub issue
 
 ## Ad landing page
 
-You can specify one of three options for an Web Story ad landing page.
+You can specify one of three options for a Web Story ad landing page.
 
 - `STORY`: Landing page is a [sponsored story](story_ads_best_practices.md#sponsored-story).
 - `AMP`: Landing page is a valid AMP Page.

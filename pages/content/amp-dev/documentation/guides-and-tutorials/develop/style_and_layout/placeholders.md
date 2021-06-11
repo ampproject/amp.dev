@@ -30,10 +30,12 @@ An element marked as a `placeholder` will always `fill` the parent AMP element.
 <amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
   layout="responsive"
   width="400"
-  height="300">
+  height="300"
+  alt="...">
   <amp-img placeholder
     src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
-    layout="fill">
+    layout="fill"
+    alt="...">
   </amp-img>
 </amp-anim>
 ```

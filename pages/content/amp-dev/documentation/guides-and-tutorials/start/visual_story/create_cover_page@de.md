@@ -73,7 +73,7 @@ Das Element `<amp-story-grid-layer>` ordnet seine untergeordneten Elemente in ei
 <tr>
     <td width="65%">Das Template <strong>fill</strong> füllt den Bildschirm mit dem ersten untergeordneten Element der Ebene aus. Alle anderen Elemente dieser Ebene werden nicht angezeigt.     Das Template "fill" eignet sich gut für Hintergründe, einschließlich Bildern und Videos.    <code class="nopad"><pre><amp-story-grid-layer template="fill"> <amp-img src="dog.png" width="720" height="1280" layout="responsive"> </amp-img> </amp-story-grid-layer></pre></code>
 </td>
-    <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341) }}</td>
+    <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341, alt='Illustration: das dog.png Bild füllt den Bildschirm') }}</td>
 </tr>
 <tr>
     <td colspan="2"><h5 id="vertical">Template: Vertical</h5></td>
@@ -81,7 +81,7 @@ Das Element `<amp-story-grid-layer>` ordnet seine untergeordneten Elemente in ei
 <tr>
     <td width="65%">Das Template <strong>vertical</strong> ordnet die untergeordneten Elemente entlang der y-Achse an. Die Elemente werden am oberen Rand des Bildschirms ausgerichtet und nehmen den gesamten Bildschirm entlang der x-Achse ein.     Das Template "vertical" ist sinnvoll, wenn du Elemente vertikal direkt untereinander stapeln möchtest.    <code class="nopad"><pre><amp-story-grid-layer template="vertical"> <p>element 1</p> <p>element 2</p> <p>element 3</p> </amp-story-grid-layer></pre></code>
 </td>
-    <td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341) }}</td>
+    <td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341, alt='Illustration: element1, element2 und element3, vertical gestapelt') }}</td>
 </tr>
 <tr>
     <td colspan="2"><h5 id="horizontal">Template: Horizontal</h5></td>
@@ -89,7 +89,7 @@ Das Element `<amp-story-grid-layer>` ordnet seine untergeordneten Elemente in ei
 <tr>
     <td width="65%">Das Template <strong>horizontal</strong> ordnet die untergeordneten Elemente entlang der x-Achse an. Die Elemente werden am Bildschirmstart ausgerichtet und nehmen den gesamten Bildschirm entlang der y-Achse ein.     Das Template "horizontal" ist sinnvoll, wenn du Elemente horizontal direkt nebeneinander stapeln möchtest.     <code class="nopad"><pre><amp-story-grid-layer template="horizontal"> <p>element 1</p> <p>element 2</p> <p>element 3</p> </amp-story-grid-layer></pre></code>
 </td>
-    <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341) }}</td>
+    <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341, alt='Illustration: element1, element2 und element3, horizontal in spalten gestapelt') }}</td>
 </tr>
 <tr>
     <td colspan="2"><h5 id="thirds">Template: Thirds</h5></td>
@@ -97,7 +97,7 @@ Das Element `<amp-story-grid-layer>` ordnet seine untergeordneten Elemente in ei
 <tr>
 <td width="65%"> Das Template <strong>thirds</strong> unterteilt den Bildschirm in drei gleich große Zeilen und ermöglicht dir, Inhalte in jedem Bereich einzufügen. Du kannst außerdem einen benannten Bereich <code>grid-area</code> angeben, um zu bestimmen, in welchem Drittel sich dein Inhalt befinden soll: <code>upper-third</code>, <code>middle-third</code> oder <code>lower-third</code>. Mithilfe benannter Rasterbereiche kannst du anpassen, wo Elemente erscheinen sollen, und damit das Standardverhalten ändern. Wenn deine Ebene z. B. zwei Elemente enthält, kannst du angeben, dass sich das erste Element in <code>grid-area="upper-third"</code> und das zweite Element in <code>grid-area="lower-third"</code> befinden soll. <code class="nopad"><pre><amp-story-grid-layer template="thirds">   <h1 grid-area="upper-third">element 1</h1>   <p grid-area="lower-third">element 2</p> </amp-story-grid-layer> </pre></code>
 </td>
-<td>{{ image('/static/img/docs/tutorials/amp_story/layer-thirds.png', 216, 341) }}</td>
+<td>{{ image('/static/img/docs/tutorials/amp_story/layer-thirds.png', 216, 341, alt='Illustration: der Bildschirm ist in drei Ebenen unterteilt - upper-third, middle-third, lower-third; element1 ist im upper-third; element 2 ist im lower-third') }}</td>
 </tr>
 </table>
 

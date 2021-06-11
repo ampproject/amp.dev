@@ -63,7 +63,7 @@ module.exports = (env, argv) => {
           svgo: {
             plugins: [
               {
-                removeAttrs: {},
+                name: 'removeAttrs',
               },
             ],
           },

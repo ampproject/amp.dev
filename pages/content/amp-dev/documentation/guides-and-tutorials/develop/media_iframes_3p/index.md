@@ -57,9 +57,10 @@ As [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) reli
 ```html
 <amp-img src="{{server_for_email}}/static/inline-examples/images/sunset.jpg"
   width="264"
-  height="195">
+  height="195"
+  alt="...">
   <noscript>
-    <img src="{{server_for_email}}/static/inline-examples/images/sunset.jpg" width="264" height="195" />
+    <img src="{{server_for_email}}/static/inline-examples/images/sunset.jpg" width="264" height="195" alt="...">
   </noscript>
 </amp-img>
 ```
@@ -104,11 +105,13 @@ and provides additional functionality to manage loading and playing of animated 
 ```html
 <amp-anim width="400"
   height="300"
-  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif">
+  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+  alt="...">
   <amp-img placeholder
     width="400"
     height="300"
-    src="{{server_for_email}}/static/inline-examples/images/wavepool.png">
+    src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
+    alt="...">
   </amp-img>
 </amp-anim>
 ```

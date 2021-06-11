@@ -57,11 +57,6 @@ class ComponentReferenceDocument extends MarkdownDocument {
       resolve(RELATIVE_PATH_BASE, dirname(extension.githubPath))
     );
 
-    if (this.version == this.latestVersion) {
-      this.isCurrent = true;
-      this.servingPath = `/documentation/components/${extension.name}.html`;
-    }
-
     if (extension.tag && extension.tag.ampLayout) {
       this.layouts = extension.tag.ampLayout.supportedLayouts;
     }

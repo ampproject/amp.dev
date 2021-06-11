@@ -21,6 +21,7 @@ import createLoader from '../loader/base.js';
 import modes from '../modes/';
 import * as StateView from '../state-view/state-view.js';
 import * as Experiment from '../experiments/experiments.js';
+import detectRuntime from '../runtime/detector.js';
 
 const PARAM_MODE = 'mode';
 const PARAM_WIDTH = 'width';
@@ -273,7 +274,10 @@ class Preview {
     childDoc.write(this.documentString);
     childDoc.close();
     // Enable development mode for preview iframe
-    childWindow.location.hash = '#development=1';
+    childWindow.location.hash =
+      detectRuntime(this.documentString).id === 'amp4stories'
+        ? ''
+        : '#development=1';
     childWindow.console.error = () => {};
 
     (childWindow.AMP = childWindow.AMP || []).push(() => {

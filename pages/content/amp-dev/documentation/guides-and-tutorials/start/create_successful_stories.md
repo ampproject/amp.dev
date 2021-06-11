@@ -8,7 +8,7 @@ formats:
 author: CrystalOnScript
 ---
 
-Web Stories are an immersive, tappable and easily shareable storytelling format. Web Stories are built using a subsect of the AMP framework. Web Stories are an opportunity for creators and publishers to structure content in a full-screen, visually rich, and engaging mobile-first experience for users.
+Web Stories are an immersive, tappable and easily shareable storytelling format. Web Stories are built using a subset of the AMP framework. Web Stories are an opportunity for creators and publishers to structure content in a full-screen, visually rich, and engaging mobile-first experience for users.
 
 Web Stories are snackable, and readers like quick bites in their micro moments. Waiting for the subway or grabbing coffee opens up opportunities for condensed content consumption. Ensure each bite engages and delights by following these best practices for creating a satisfying snackable Web Story.
 
@@ -23,10 +23,11 @@ The main takeaways to creating a satisfying, snackable Web Story:
 *   Maximize the impact of your cover page with high quality imagery and a catchy title.
 *   Make it visual with videos and images that fit and fill the user's screen.
 *   You can say a lot, with less, especially when using visual imagery. Aim to keep text below 10 words per page.
-*   When using videos, shorter ones are best so try to stick to less than 15 seconds. 
-*   Some people and some situations require viewing without sound. Keep content inclusive by adding captions to videos. 
+*   Make sure your visual content is accessible - provide appropriate alternative text for images.
+*   When using videos, shorter ones are best so try to stick to less than 15 seconds.
+*   Some people and some situations require viewing without sound. Keep content inclusive by adding captions to videos.
 *   Give readers something to tap through. An average length of 10 to 20 pages enables most authors to tell a good narrative.
-*   Don’t overuse animations or embed, and pay attention to transition timing. 
+*   Don’t overuse animations or embed, and pay attention to transition timing.
 
 ## Know your narrative
 
@@ -55,7 +56,7 @@ Keep the title clear and clean, ideally under 10 words in less than 40 character
 
 ### Brand and date
 
-Reader's need to know who published the Web Story and when. Include a brand attribution and a publication date on the cover page. This foster's trust and, if a user likes your content, loyalty. This [Web Story](https://edition-cnn-com.cdn.ampproject.org/c/s/edition.cnn.com/ampstories/travel/12-beautiful-reasons-to-visit-italy) from CNN about traveling in Italy makes it easy to see at-a-glance who published the story and how recent it is.
+Readers need to know who published the Web Story and when. Include a brand attribution and a publication date on the cover page. This fosters trust and, if a user likes your content, loyalty. This [Web Story](https://edition-cnn-com.cdn.ampproject.org/c/s/edition.cnn.com/ampstories/travel/12-beautiful-reasons-to-visit-italy) from CNN about traveling in Italy makes it easy to see at-a-glance who published the story and how recent it is.
 
 ## Visual treat
 
@@ -70,9 +71,9 @@ Videos are highly engaging to readers, definitely include as many as possible in
 
 Web Stories are consumed in portrait mode, so keep in mind the following:
 
-*   Shot video in high-end mobile devices when possible.
-*   Shot at 720p rotated (1280h x 720w).
-*   Shot in at least 24 frames per second.
+*   Shoot video in high-end mobile devices when possible.
+*   Shoot at 720p rotated (1280h x 720w).
+*   Shoot in at least 24 frames per second.
 
 <table>
   <tr>
@@ -373,7 +374,7 @@ Embeds provide an added dimension where relevant and presented pleasantly. Inclu
 
 ### Attach additional content
 
-Keep your Web Story streamlined by putting related content in attachments. This way, readers cay dig deeper if they want to learn more about your story. Readers navigate a story easier when additional content is attached to relevant pages.
+Keep your Web Story streamlined by putting related content in attachments. This way, readers can dig deeper if they want to learn more about your story. Readers navigate a story easier when additional content is attached to relevant pages.
 
 <table>
   <tr>

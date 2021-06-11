@@ -11,7 +11,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-html-layout.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/master/docs/spec/amp-html-layout.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -97,7 +97,7 @@ AMP provides a set of layouts that specify how an AMP component behaves in the d
   width="1080"
   height="610"
   layout="responsive"
-  alt="an image"
+  alt="..."
 ></amp-img>
 [/sourcecode]
 
@@ -174,6 +174,7 @@ In the following example, if the viewport is wider than `320px`, the image will 
   width="400"
   height="300"
   layout="responsive"
+  alt="..."
   sizes="(min-width: 320px) 320px, 100vw"
 >
 </amp-img>
@@ -193,6 +194,7 @@ In the following example, the width of the `<amp-img>` element is unaffected, an
   width="400"
   height="300"
   layout="responsive"
+  alt="..."
   sizes="(min-width: 320px) 320px, 100vw"
   disable-inline-width
 >
@@ -219,6 +221,7 @@ In the following example, the height of the image will default to 80% of the wid
   src="https://acme.org/image1.png"
   width="320"
   height="256"
+  alt="..."
   heights="(min-width:500px) 200px, 80%"
 >
 </amp-img>
@@ -239,6 +242,7 @@ In the following example, we have 2 images with mutually exclusive media queries
   width="466"
   height="355"
   layout="responsive"
+  alt="..."
 ></amp-img>
 <amp-img
   media="(max-width: 649px)"
@@ -246,6 +250,7 @@ In the following example, we have 2 images with mutually exclusive media queries
   width="527"
   height="193"
   layout="responsive"
+  alt="..."
 ></amp-img>
 [/sourcecode]
 
@@ -254,8 +259,8 @@ In the following example, we have 2 images with mutually exclusive media queries
 The `placeholder` attribute can be set on any HTML element, not just AMP elements. The `placeholder` attribute indicates that the element marked with this attribute acts as a placeholder for the parent AMP element. If specified, a placeholder element must be a direct child of the AMP element. By default, the placeholder is immediately shown for the AMP element, even if the AMP element's resources have not been downloaded or initialized. Once ready, the AMP element typically hides its placeholder and shows the content. The exact behavior with respect to the placeholder is up to the element's implementation.
 
 [sourcecode:html]
-<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
-  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-anim src="animated.gif" width="466" height="355" layout="responsive" alt="...">
+  <amp-img placeholder src="preview.png" layout="fill" alt="..."></amp-img>
 </amp-anim>
 [/sourcecode]
 

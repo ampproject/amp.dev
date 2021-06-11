@@ -8,12 +8,12 @@
     <button [class]="[componentsShowcase] == 'autocomplete' ? 'ap-button' : 'ap-button --inactive'" on="tap:AMP.setState({componentsShowcase: 'autocomplete' })" class="ap-button --inactive">{{ _('Autocomplete') }}</button>
   </div>
 
-  <div class="ap-components-showcase-demos">  
+  <div class="ap-components-showcase-demos">
     {% for component in components %}
     {% set showcase_code_path = "/shared/components-showcase/amp-" ~ component ~ ".html" %}
     {% set component_doc = g.doc('/content/amp-dev/documentation/components/amp-'~component, locale=doc.locale).url.path %}
 
-    <div [class]="componentsShowcase == '{{component}}' ? 'ap-components-showcase-demo --{{component}} show' : 'hide' " class="{% if loop.first %}show{% else %}hide{% endif %}">
+    <div [class]="componentsShowcase == '{{component}}' ? 'ap-components-showcase-demo --{{component}} show' : 'ap-components-showcase-demo hide' " class="{% if loop.first %}ap-components-showcase-demo show{% else %}ap-components-showcase-demo hide{% endif %}">
       <div class="ap-components-showcase-demo-code" title={{"amp-"~component}}>
         <div class="ap-code-snippet">
           {% set code_snippet = g.doc(showcase_code_path).content %}

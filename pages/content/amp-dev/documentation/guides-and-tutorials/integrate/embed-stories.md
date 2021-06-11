@@ -30,7 +30,7 @@ Then placing the `amp-story-player` element HTML in the desired location within 
 <body>
   <amp-story-player layout="fixed" width="360" height="600">
     <a href="https://preview.amp.dev/documentation/examples/introduction/stories_in_amp/">
-      <img src="https://amp.dev/static/samples/img/story_dog2_portrait.jpg" width="360" height="600" loading="lazy" data-amp-story-player-poster-img>
+      <img src="https://amp.dev/static/samples/img/story_dog2_portrait.jpg" width="360" height="600" loading="lazy" data-amp-story-player-poster-img alt="...">
       Stories in AMP - Hello World
     </a>
   </amp-story-player>
