@@ -118,7 +118,7 @@
 		"@babel/plugin-transform-modules-commonjs": "7.14.0",
 		"@babel/plugin-transform-runtime": "7.14.3",
 		"@babel/preset-env": "7.14.4",
-		"@babel/runtime": "7.14.0",
+		"@babel/runtime": "7.14.6",
 		"@mr-hope/gulp-sass": "2.0.0",
 		"@rollup/plugin-commonjs": "19.0.0",
 		"@rollup/plugin-node-resolve": "13.0.0",
