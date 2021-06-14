@@ -1,23 +1,30 @@
-FROM node:lts-alpine
+FROM python:3.7.9-slim-buster
+ENV PYTHONUNBUFFERED 1
 
-# Create app directory
-WORKDIR /usr/src/app
+RUN \
+  apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
+  build-essential \
+  git \  
+  curl && \
+  pip install -U pip && pip install grow && \
+  rm -rf /var/lib/apt/lists/*
 
-# Install dependencies
-RUN apk --no-cache add g++ gcc libgcc libstdc++ linux-headers make python tini
-RUN npm install --quiet node-gyp -g
-# Add Tini
-ENTRYPOINT ["/sbin/tini", "--"]
+RUN \
+  curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
+  apt-get install -y nodejs && \
+  npm i -g npm && \
+  npm install -g gulp
 
-# Install app dependencies
-COPY package.json .
-COPY package-lock.json .
-RUN npm ci --only=production
+RUN mkdir /amp-dev
+WORKDIR /amp-dev/
 
-# Bundle app source
-COPY . .
+COPY package.json package-lock.json ./
+RUN npm i
+
+COPY . /amp-dev/
+
+RUN ls
 
 EXPOSE 80 8080
-WORKDIR "platform"
-ENV NODE_ENV=production
-CMD ["node", "serve.js"]
+ENV NODE_ENV=local
+ENTRYPOINT ["npx", "gulp", "run"]

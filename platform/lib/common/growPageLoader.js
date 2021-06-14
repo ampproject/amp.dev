@@ -22,7 +22,9 @@ const {join} = require('path');
 const {readFile} = require('fs');
 const readFileAsync = promisify(readFile);
 const fetch = require('node-fetch');
-const {pagePath, paths} = require('../utils/project');
+const {paths} = require('../utils/project');
+
+const GROW_HOST = 'http://localhost:8081';
 
 /**
  * Will return the content of the grow generated page.
@@ -33,17 +35,13 @@ async function fetchPage(pageUrlPath) {
   if (config.isTestMode()) {
     // fetch original doc page from filesystem for testing
     return readFileAsync(join(paths.PAGES_SRC, pageUrlPath), 'utf-8');
-  } else if (config.isDevMode()) {
-    // fetch doc from proxy
-    return fetchPageFromGrowServer(pageUrlPath);
-  } else {
-    // fetch generated doc page from filesystem
-    return readFileAsync(pagePath(pageUrlPath), 'utf-8');
   }
+  // fetch doc from proxy
+  return fetchPageFromGrowServer(pageUrlPath);
 }
 
 async function fetchPageFromGrowServer(path) {
-  const pageUrl = new URL(path, config.hosts.pages.base);
+  const pageUrl = new URL(path, GROW_HOST);
   const fetchResponse = await fetch(pageUrl);
 
   // Not checking for Response.ok here as Grow might return an error

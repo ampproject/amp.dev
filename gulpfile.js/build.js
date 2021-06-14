@@ -34,14 +34,12 @@ const git = require('@lib/utils/git');
 const ComponentReferenceImporter = require('@lib/pipeline/componentReferenceImporter');
 const SpecImporter = require('@lib/pipeline/specImporter');
 const RecentGuides = require('@lib/pipeline/recentGuides');
-const gulpSass = require('@mr-hope/gulp-sass');
+const gulpSass = require('gulp-sass');
 const importRoadmap = require('./import/importRoadmap.js');
 const importWorkingGroups = require('./import/importWorkingGroups.js');
 const importAdVendorList = require('./import/importAdVendorList.js');
 const {thumborImageIndex} = require('./thumbor.js');
-const CleanCSS = require('clean-css');
 const {PIXI_CLOUD_ROOT} = require('@lib/utils/project').paths;
-const {copyFile} = require('fs/promises');
 
 // Path of the grow test pages for filtering in the grow podspec.yaml
 const TEST_CONTENT_PATH_REGEX = '^/tests/';
@@ -102,7 +100,7 @@ function sass() {
 
   return gulp
     .src(`${project.paths.SCSS}/**/[^_]*.scss`)
-    .pipe(gulpSass.sassSync(options))
+    .pipe(gulpSass.sync(options))
     .on('error', function (e) {
       console.error(e);
       // eslint-disable-next-line no-invalid-this
@@ -255,41 +253,19 @@ function importComponents() {
  *
  * @return {undefined}
  */
-function buildPrepare(done) {
+function build(done) {
   return gulp.series(
-    // Build playground and boilerplate that early in the flow as they are
-    // fairly quick to build and would be annoying to eventually fail downstream
+    clean,
     gulp.parallel(
       buildPlayground,
       buildBoilerplate,
       buildPixi,
       buildSamples,
-      buildFrontend21,
+      buildFrontend,
       importAll,
       zipTemplates
     ),
-    // eslint-disable-next-line prefer-arrow-callback
-    async function packArtifacts() {
-      // Store everything built so far for later stages to pick up
-      // Local path to the archive containing artifacts of the first stage
-      const SETUP_ARCHIVE = 'artifacts/setup.tar.gz';
-      // All paths that contain altered files at build setup time
-      const SETUP_STORED_PATHS = [
-        './pages/content/',
-        './pages/shared/',
-        './dist/',
-        './boilerplate/lib/',
-        './boilerplate/dist/',
-        './playground/dist/',
-        './frontend21/dist/',
-        './frontend/templates/views/partials/pixi/webpack.j2',
-        './.cache/',
-        './examples/static/samples/samples.json',
-      ];
-
-      await sh('mkdir -p artifacts');
-      await sh(`tar cfj ${SETUP_ARCHIVE} ${SETUP_STORED_PATHS.join(' ')}`);
-    },
+    collectStatics,
     // eslint-disable-next-line prefer-arrow-callback
     function exit(_done) {
       done();
@@ -297,144 +273,6 @@ function buildPrepare(done) {
       process.exit(0);
     }
   )(done);
-}
-
-/**
- * Fetches remote artifacts that have been built in earlier stages
- *
- * @return {Promise}
- */
-function unpackArtifacts() {
-  let stream = gulp.src(['artifacts/**/*.tar.gz', 'artifacts/**/*.zip'], {
-    'read': false,
-  });
-
-  stream = stream.pipe(
-    through.obj(async (artifact, encoding, callback) => {
-      console.log('Unpacking', artifact.path, '...');
-      await sh(`tar xf ${artifact.path}`);
-      await sh(`rm ${artifact.path}`);
-      stream.push(artifact);
-      callback();
-    })
-  );
-
-  return stream;
-}
-
-/**
- * Starts Grow to build the pages
- *
- * @return {Promise}
- */
-function buildPages(done) {
-  return gulp.series(
-    unpackArtifacts,
-    buildFrontend,
-    // eslint-disable-next-line prefer-arrow-callback
-    async function buildGrow() {
-      const options = {};
-      if (config.isTestMode()) {
-        options.include_paths = TEST_CONTENT_PATH_REGEX;
-        options.locales = 'en';
-        options.noSitemap = true;
-      } else if (config.isProdMode()) {
-        options.ignore_paths = TEST_CONTENT_PATH_REGEX;
-      }
-      config.configureGrow(options);
-
-      await grow('deploy --noconfirm --threaded');
-    },
-    minifyPages,
-    // eslint-disable-next-line prefer-arrow-callback
-    function sharedPages() {
-      // Copy shared pages separated from PageTransformer as they should
-      // not be transformed
-      return gulp
-        .src(`${project.paths.GROW_BUILD_DEST}/shared/*.html`)
-        .pipe(gulp.dest(`${project.paths.PAGES_DEST}/shared`));
-    },
-    // eslint-disable-next-line prefer-arrow-callback
-    async function publishPages() {
-      if (!config.options.locales.includes(config.getDefaultLocale())) {
-        console.log(
-          'Skipping page publishing. Default language is not build, only:',
-          config.options.locales
-        );
-        return;
-      }
-
-      await copyFile(
-        `${project.paths.GROW_BUILD_DEST}/index-2021.html`,
-        `${project.paths.PAGES_DEST}/index.html`
-      );
-      await copyFile(
-        `${project.paths.GROW_BUILD_DEST}/about/websites-2021.html`,
-        `${project.paths.PAGES_DEST}/about/websites.html`
-      );
-    },
-    // eslint-disable-next-line prefer-arrow-callback
-    function sitemap() {
-      // Copy XML files written by Grow
-      return gulp
-        .src(`${project.paths.GROW_BUILD_DEST}/**/*.xml`)
-        .pipe(gulp.dest(`${project.paths.PAGES_DEST}`));
-    },
-    // eslint-disable-next-line prefer-arrow-callback
-    async function packArtifacts() {
-      if (!process.env.CI) {
-        return;
-      }
-
-      const archive = `artifacts/pages-${process.env.GITHUB_RUN_ID}.tar.gz`;
-      // we need to add all folders that contain files generated by the grow process...
-      await sh(
-        `tar cfj ${archive} ./dist/pages ./dist/inline-examples ` +
-          './dist/static/files/search-promoted-pages'
-      );
-    }
-  )(done);
-}
-
-/**
- * Removes unnecessary whitespace from rendered pages and minifies their CSS
- *
- * @return {Promise}
- */
-function minifyPages() {
-  // Configure CleanCSS to use a more aggressive set of rules to achieve better
-  // results
-  const cleanCss = new CleanCSS({
-    2: {
-      all: true,
-      mergeSemantically: true,
-      restructureRules: true,
-    },
-  });
-
-  return gulp
-    .src(`${project.paths.GROW_BUILD_DEST}/**/*.html`)
-    .pipe(
-      through.obj(function (page, encoding, callback) {
-        let html = page.contents.toString();
-
-        // Minify the CSS
-        const css = html.match(/(?<=<style amp-custom>).*?(?=<\/style>)/ms);
-        if (css) {
-          const minifiedCss = cleanCss.minify(css[0]).styles;
-          html =
-            html.slice(0, css.index) +
-            minifiedCss +
-            html.slice(css.index + css[0].length);
-        }
-
-        page.contents = Buffer.from(html);
-        // eslint-disable-next-line no-invalid-this
-        this.push(page);
-        callback();
-      })
-    )
-    .pipe(gulp.dest(`${project.paths.PAGES_DEST}`));
 }
 
 /**
@@ -531,8 +369,8 @@ function persistBuildInfo(done) {
     'by': process.env.GITHUB_ACTOR || git.user(),
     'environment': config.environment,
     'commit': {
-      'sha': process.env.GITHUB_SHA || git.version,
-      'message': git.message,
+      'sha': process.env.GITHUB_SHA || git.version(),
+      'message': git.message(),
     },
   };
 
@@ -551,10 +389,7 @@ exports.buildBoilerplate = buildBoilerplate;
 exports.buildFrontend = buildFrontend;
 exports.buildSamples = buildSamples;
 exports.zipTemplates = zipTemplates;
-exports.buildPages = buildPages;
-exports.buildPrepare = buildPrepare;
-exports.minifyPages = minifyPages;
-exports.unpackArtifacts = unpackArtifacts;
+exports.build = build;
 exports.collectStatics = collectStatics;
 exports.buildPixiFunctions = buildPixiFunctions;
 exports.buildFinalize = gulp.series(
@@ -562,11 +397,4 @@ exports.buildFinalize = gulp.series(
   thumborImageIndex
 );
 
-exports.build = gulp.series(
-  clean,
-  buildPrepare,
-  buildPages,
-  gulp.parallel(collectStatics, persistBuildInfo)
-);
-
-exports.buildForGrowTests = gulp.series(buildBoilerplate, buildPages);
+exports.buildForGrowTests = gulp.series(buildBoilerplate);

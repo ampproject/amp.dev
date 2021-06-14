@@ -1,5 +1,5 @@
 /**
- * Copyright 2018 The AMP HTML Authors. All Rights Reserved.
+ * Copyright 2021 The AMP HTML Authors. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,17 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const {execSync} = require('child_process');
 
-module.exports.version = () => {
-  return execSync('git log -1 --pretty=format:%h ').toString().trim();
-};
-module.exports.message = () => {
-  return execSync('git log -1 --pretty=%B --no-merges').toString().trim();
-};
-module.exports.user = () => {
-  return execSync('git config user.name').toString().trim();
-};
-module.exports.committerDate = (path) => {
-  return execSync(`git log --format=%ai ${path} | tail -1`).toString().trim();
-};
+'use strict';
+
+const grow = require('@lib/utils/grow');
+const config = require('@lib/config');
+const signale = require('signale');
+
+async function run() {
+  signale.info('Starting Grow ...');
+
+  config.configureGrow();
+  await grow(`run --port 8081`).catch(() => {
+    signale.fatal('Grow had an error starting up. See log above for details.');
+    process.exit(1);
+  });
+
+  const Platform = require('@lib/platform');
+  new Platform().start();
+}
+
+exports.run = run;

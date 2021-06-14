@@ -5,27 +5,30 @@
 .gitignore
 .github
 .cache
+.husky
 
-node_modules/
+node_modules
 yarn.lock
 LICENSE
 MAINTENANCE.md
 README.md
 CONTRIBUTING.md
+CODE_OF_CONDUCT.md
 packager/
 thumbor/
+frontend/
+frontend21/
+tests/
+artifacts/
 
-# The complete frontend and pages folders aren't needed on App Engine
-/frontend/
-/pages
-# The transformed pages from dist/pages are used instead
-platform/pages*
+pages/static/
+pixi/dist/
+templates/
 
 # Infrastructure
 contributing
 jest.config.js
 smoke-tests
 renovate.json
-gulpfile.js
 scripts
 tests

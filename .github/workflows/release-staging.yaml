@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - future
+      - staging-amp-dev
 
 jobs:
   queue:
@@ -50,7 +50,7 @@ jobs:
           npm run test:platform
           npm run test:playground
           npm run test:pixi
-  prepare:
+  run:
     needs: verify
     runs-on: ubuntu-latest
     steps:
@@ -70,133 +70,13 @@ jobs:
       - name: Installing Node.js packages
         run: npm install
 
-      - name: Preparing build
+      - name: Building
         env:
           APP_ENV: staging
           AMP_DOC_TOKEN: ${{ secrets.AMP_DOC_TOKEN }}
           AMP_DEV_PIXI_APIS_KEY: ${{ secrets.AMP_DEV_PIXI_APIS_KEY }}
         run: |
-          gulp buildPrepare
-
-      - name: Storing build artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: build-setup
-          path: artifacts/setup.tar.gz
-
-  build:
-    env:
-      APP_ENV: staging
-    needs: prepare
-    strategy:
-      matrix:
-        language:
-          [
-            'en',
-            'de',
-            'fr',
-            'ar',
-            'es',
-            'it',
-            'id',
-            'ja',
-            'ko',
-            'pt_BR',
-            'ru',
-            'tr',
-            'zh_CN',
-            'pl',
-            'vi',
-          ]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Cloning repository
-        uses: actions/checkout@v2
-
-      - name: Setting up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14
-
-      - uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: node_modules-v2-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
-
-      - name: Installing Node.js packages
-        run: npm install
-
-      - name: Setting up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-
-#      - uses: actions/cache@v2
-#        with:
-#          path: ${{ env.pythonLocation }}
-#          key: ${{ env.pythonLocation }}
-
-      - name: Installing Grow
-        run: |
-          sudo apt-get install libyaml-dev
-          pip install grow --upgrade-strategy eager
-
-      - name: Fetching build artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: build-setup
-          path: artifacts
-
-      - name: Unpacking artifacts
-        run: |
-          gulp unpackArtifacts
-
-      - name: Building pages
-        run: |
-          gulp buildPages --locales ${{ matrix.language }}
-
-      - name: Storing build artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: pages-${{ github.run_id }}-${{ matrix.language }}
-          path: artifacts
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment: Staging
-    steps:
-      - name: Cloning repository
-        uses: actions/checkout@v2
-
-      - name: Setting up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14
-
-      - uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: node_modules-v2-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
-
-      - name: Installing Node.js packages
-        run: npm install
-
-      - name: Setting up Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@master
-        with:
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
-          service_account_key: ${{ secrets.GCP_SA_KEY }}
-          export_default_credentials: true
-
-      - name: Fetching build artifacts
-        uses: actions/download-artifact@v2
-        with:
-          path: artifacts
-
-      - name: Unpacking artifacts
-        run: |
-          gulp unpackArtifacts
+          gulp build
 
       - name: Finalizing build
         run: |

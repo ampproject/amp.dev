@@ -131,10 +131,11 @@ class CssTransformer {
     if (!body) return;
 
     // Rewrite the selectors inside the CSS
-    const css = style.children[0].data;
+    let css = style.children[0].data;
     rcs.fillLibraries(css, {prefix: '-', ignoreCssVariables: true});
-    const styles = rcs.replace.css(css);
-    style.children[0].data = styles;
+    css = rcs.replace.css(css);
+
+    style.children[0].data = css;
 
     // Rewrite the selectors on the actual elements
     for (let node = body; node !== null; node = nextNode(node)) {
