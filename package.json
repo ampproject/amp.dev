@@ -161,7 +161,7 @@
 		"jest": "27.0.3",
 		"jest-puppeteer": "5.0.4",
 		"js-base64": "3.6.1",
-		"js-beautify": "1.13.13",
+		"js-beautify": "1.14.0",
 		"keymaster": "1.6.2",
 		"marked": "2.0.6",
 		"mini-css-extract-plugin": "1.6.0",
