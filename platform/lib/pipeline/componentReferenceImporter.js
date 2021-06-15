@@ -90,8 +90,10 @@ class ComponentReferenceImporter {
       }
 
       const latestStableComponent = latestStableComponents[growDoc.title];
-      growDoc.latestVersion = latestStableComponent;
-      if (latestStableComponent === growDoc.version) {
+      if (latestStableComponent) {
+        growDoc.latestVersion = latestStableComponent;
+      }
+      if (growDoc.latestVersion === growDoc.version) {
         growDoc.isCurrent = true;
         growDoc.servingPath = `/documentation/components/${growDoc.title}.html`;
       }
