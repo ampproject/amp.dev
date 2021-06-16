@@ -125,6 +125,10 @@ To apply an animation entrance to an element, you must specify the <code>animate
 Explore the different animation effects by adding the `animate-in="<animation preset>"` attribute to elements on your story pages.
 [/tip]
 
+[tip type="note"]
+Animations can help make your Web Story more visually exciting and engaging, but use them sparingly. Some users may find long, continuous animations distracting. Other users may have motion sensitivity and be adversely affected by excessive use of motion and parallax effects. This [tracking issue](https://github.com/ampproject/amphtml/issues/24821) follows the effort to respect the `prefers-reduced-motion` directive.
+[/tip]
+
 ## Animation timing
 
 Each animation preset has a built-in default time value for:
@@ -156,19 +160,23 @@ Our last Web Story page is comprised of two layers: the first layer is a collage
     <div class="wrapper">
       <amp-img src="assets/cat.jpg"
           width="720" height="1280"
-          layout="responsive">
+          layout="responsive"
+          alt="...">
       </amp-img>
       <amp-img src="assets/dog.jpg"
           width="720" height="1280"
-          layout="responsive">
+          layout="responsive"
+          alt="...">
       </amp-img>
       <amp-img src="assets/bird.jpg"
           width="720" height="1280"
-          layout="responsive">
+          layout="responsive"
+          alt="...">
       </amp-img>
       <amp-img src="assets/rabbit.jpg"
           width="720" height="1280"
-          layout="responsive">
+          layout="responsive"
+          alt="...">
       </amp-img>
     </div>
   </amp-story-grid-layer>
@@ -199,21 +207,25 @@ Next, let's make all the images fade in. Add `animate-in="fade-in"` to each of t
 <amp-img src="assets/cat.jpg"
   width="720" height="1280"
   layout="responsive"
+  alt="..."
   animate-in="fade-in">
 </amp-img>
 <amp-img src="assets/dog.jpg"
   width="720" height="1280"
   layout="responsive"
+  alt="..."
   animate-in="fade-in">
 </amp-img>
 <amp-img src="assets/bird.jpg"
   width="720" height="1280"
   layout="responsive"
+  alt="..."
   animate-in="fade-in">
 </amp-img>
 <amp-img src="assets/rabbit.jpg"
   width="720" height="1280"
   layout="responsive"
+  alt="..."
   animate-in="fade-in">
 </amp-img>
 ```
@@ -226,24 +238,28 @@ Let's delay the entrance of the first image so that it comes in close to when th
 <amp-img src="assets/cat.jpg"
     width="720" height="1280"
     layout="responsive"
+    alt="..."
     animate-in="fade-in"
     animate-in-delay="0.4s">
 </amp-img>
 <amp-img src="assets/dog.jpg"
     width="720" height="1280"
     layout="responsive"
+    alt="..."
     animate-in="fade-in"
     animate-in-delay="0.6s">
 </amp-img>
 <amp-img src="assets/bird.jpg"
     width="720" height="1280"
     layout="responsive"
+    alt="..."
     animate-in="fade-in"
     animate-in-delay=".8s">
 </amp-img>
 <amp-img src="assets/rabbit.jpg"
     width="720" height="1280"
     layout="responsive"
+    alt="..."
     animate-in="fade-in"
     animate-in-delay="1s">
 </amp-img>

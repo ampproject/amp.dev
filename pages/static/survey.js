@@ -122,7 +122,7 @@ Fez.prototype.nextSlide = async function () {
 
   const {height} = await cards[nextIndex].getBoundingClientRectAsync();
 
-  form.style.height = `${height}px`;
+  form.style.height = `${height + 30}px`;
 };
 
 Fez.prototype.submit = async function (dismissed) {
@@ -183,7 +183,7 @@ Fez.prototype.build = function () {
 
 function FezSlide(data, index) {
   const wrap = c('div');
-  const question = c('p');
+  const question = c('h4');
 
   wrap.classList.add('slide');
   question.classList.add('surveyQuestion');

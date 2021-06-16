@@ -59,6 +59,7 @@ describe('Routes', () => {
       '/',
       '/documentation/components/',
       '/documentation/examples/',
+      '/documentation/components/amp-img',
       '/documentation/components/amp-story-page/?format=stories',
       '/documentation/components/amp-story-cta-layer/?format=stories',
       '/boilerplate',

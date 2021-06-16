@@ -39,6 +39,7 @@
     &-image {
       position: relative;
       height: 220px;
+      filter: brightness(97%);
 
       amp-img img {
         object-fit: cover;

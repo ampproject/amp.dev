@@ -36,7 +36,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: '**/node_modules'
-          key: node_modules-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
+          key: node_modules-v2-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
 
       - name: Installing Node.js packages
         run: npm ci
@@ -65,7 +65,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: '**/node_modules'
-          key: node_modules-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
+          key: node_modules-v2-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
 
       - name: Installing Node.js packages
         run: npm install
@@ -121,7 +121,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: '**/node_modules'
-          key: node_modules-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
+          key: node_modules-v2-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
 
       - name: Installing Node.js packages
         run: npm install
@@ -177,7 +177,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: '**/node_modules'
-          key: node_modules-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
+          key: node_modules-v2-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
 
       - name: Installing Node.js packages
         run: npm install

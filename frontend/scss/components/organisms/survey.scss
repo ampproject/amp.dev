@@ -9,6 +9,9 @@
 @import '_variables.scss';
 @import '_functions.scss';
 
+@import 'components/atoms/_button.scss';
+@import 'components/atoms/_text.scss';
+
 $delay: 0.25s;
 
 
@@ -42,7 +45,7 @@ $delay: 0.25s;
     ul {
       list-style: none;
       padding: 0;
-      margin-top: 0;
+      margin: 0;
     }
 
     button,
@@ -53,11 +56,10 @@ $delay: 0.25s;
 
     label {
       display: block;
-      &:hover,
-      &:focus,
-      &:active {
-        color: color('blue-ribbon');
-      }
+      color: color('blue-ribbon');
+      @include txt-2;
+      @include txt-strong;
+      font-family: 'Noto Sans', system;
     }
 
 
@@ -72,17 +74,17 @@ $delay: 0.25s;
     }
 
     textarea {
-      width: calc(100% - 2rem);
+      width: 100%;
       min-height: 150px;
-      margin: 1rem 1rem 3rem;;
       padding: 0.25rem;
+      margin-bottom: var(--padding);
     }
 
     .ap-a-ico {
       position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-      fill: currentColor;
+      top: 1.25rem;
+      right: 1.25rem;
+      fill: color('charade');
       cursor: pointer;
       z-index: 2;
       &.hide {
@@ -93,7 +95,7 @@ $delay: 0.25s;
   }
 
   #fez {
-    --padding: 30px;
+    --padding: 20px;
     transition: all $delay ease 0s;
     background: white;
     font-family: Noto Sans, sans-serif;
@@ -110,11 +112,12 @@ $delay: 0.25s;
     right: 1rem;
     pointer-events: all;
     overflow: hidden;
+    padding: var(--padding);
 
     .slide {
       visibility: hidden;
       position: absolute;
-      top: 0;
+      width: calc(100% - (var(--padding) * 3));
 
       &.active {
         visibility: visible;
@@ -134,8 +137,8 @@ $delay: 0.25s;
     }
 
     li {
-      line-height: 1rem;
-      padding: 1rem;
+      padding: 10px 0 1em;
+      line-height: 1;
     }
   }
 
@@ -145,41 +148,37 @@ $delay: 0.25s;
     }
   }
 
-
   .buttons {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-  }
+    margin-bottom: 10px;
 
-  .buttons button {
-    border: none;
-    padding: 0.5rem;
-    border-radius: 2px;
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 80%;
-    cursor: pointer;
-    color: color('blue-ribbon');
-    opacity: 1;
-    user-select: none;
-    margin-right: 0.5rem;
+    button {
+      @include btn;
+      opacity: 1;
+      user-select: none;
+      margin-right: 10px;
 
-    &:last-child {
-      margin-right: 0;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .button-negative {
+      background: color('white');
+      color: color('blue-ribbon');
     }
   }
 
-  .buttons .button-affirm {
-    background: color('blue-ribbon');
-    color: white;
-  }
-
   .surveyQuestion {
-    font-family: Poppins, sans-serif;
-    margin: 1.25rem 1rem 0;
+    @include txt-hl;
+    @include txt-lrg;
+    @include txt-font-accent;
+    margin-top: -5px;
+    margin-bottom: var(--padding);
+    max-width: 90%;
+
     &.thanks {
-      margin: 1rem;
+      margin-top: 0;
+      margin-bottom: 0;
     }
   }
 }
@@ -189,4 +188,3 @@ $delay: 0.25s;
   top: 250vh;
   height: 100%;
 }
-
