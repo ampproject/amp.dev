@@ -16,6 +16,8 @@
 
 'use strict';
 
+require('module-alias/register');
+
 const grow = require('@lib/utils/grow');
 const config = require('@lib/config');
 const signale = require('signale');

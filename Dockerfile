@@ -4,7 +4,8 @@ ENV PYTHONUNBUFFERED 1
 RUN \
   apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
   build-essential \
-  git \  
+  git \
+  libyaml-dev \  
   curl && \
   pip install -U pip && pip install grow && \
   rm -rf /var/lib/apt/lists/*
@@ -19,12 +20,12 @@ RUN mkdir /amp-dev
 WORKDIR /amp-dev/
 
 COPY package.json package-lock.json ./
-RUN npm i
+RUN npm install --only=production
 
 COPY . /amp-dev/
 
 RUN ls
 
 EXPOSE 80 8080
-ENV NODE_ENV=local
-ENTRYPOINT ["npx", "gulp", "run"]
+ENV NODE_ENV=staging
+ENTRYPOINT ["npx", "gulp", "--gulpfile", "gulpfile.js/run.js", "--cwd", ".", "run"]
