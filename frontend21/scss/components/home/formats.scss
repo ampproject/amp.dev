@@ -5,7 +5,7 @@ $gap: 10px;
 .#{project('formats')} {
   --width: 100vw;
   --skew-angle: #{$skew-angle};
-  --skew-tan: #{math.div(math.tan($skew-angle), 2)};
+  --skew-tan: #{tan($skew-angle) / 2};
   --skew-padding: calc(var(--width) * var(--skew-tan));
 
   grid-column: 1/-1;

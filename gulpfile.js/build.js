@@ -18,7 +18,6 @@
 
 const gulp = require('gulp');
 const {sh} = require('@lib/utils/sh');
-const grow = require('@lib/utils/grow');
 const mkdirp = require('mkdirp').sync;
 const config = require('@lib/config');
 const signale = require('signale');
@@ -35,14 +34,12 @@ const ComponentReferenceImporter = require('@lib/pipeline/componentReferenceImpo
 const SpecImporter = require('@lib/pipeline/specImporter');
 const RecentGuides = require('@lib/pipeline/recentGuides');
 const gulpSass = require('gulp-sass');
+gulpSass.compiler = require('sass');
 const importRoadmap = require('./import/importRoadmap.js');
 const importWorkingGroups = require('./import/importWorkingGroups.js');
 const importAdVendorList = require('./import/importAdVendorList.js');
 const {thumborImageIndex} = require('./thumbor.js');
 const {PIXI_CLOUD_ROOT} = require('@lib/utils/project').paths;
-
-// Path of the grow test pages for filtering in the grow podspec.yaml
-const TEST_CONTENT_PATH_REGEX = '^/tests/';
 
 /**
  * Cleans all directories/files that get created by any of the following

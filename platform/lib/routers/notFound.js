@@ -16,10 +16,7 @@
 
 'use strict';
 
-const {pagePath} = require('@lib/utils/project');
 const {setMaxAge} = require('@lib/utils/cacheHelpers.js');
-const {readFileSync} = require('fs');
-const {join} = require('path');
 
 module.exports = async (req, res) => {
   setMaxAge(res, 60 * 10); // ten minutes
