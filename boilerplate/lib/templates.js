@@ -54,7 +54,7 @@ const REGEX_SECTION_START = /(\s*)\{\{#([^\}]+)\}\}(\s*)/gm;
 const REGEX_SECTION_END = /(\s*)\{\{\/([^\}]+)\}\}(\s*)/gm;
 
 function renderTemplate(template, context = {}) {
-  return Handlebars.compile(template, { compat: true })(context);
+  return Handlebars.compile(template, {compat: true})(context);
 }
 
 function findTemplates(dir) {
@@ -77,7 +77,7 @@ function readTemplate(name) {
   if (ext === 'js') {
     ext = 'javascript';
   }
-  string = hljs.highlight(string, { language: ext }).value;
+  string = hljs.highlight(string, {language: ext}).value;
   if (ext === 'html') {
     string = highlightSections(string);
   }
