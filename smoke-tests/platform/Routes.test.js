@@ -25,10 +25,12 @@ const {HEALTH_CHECK_PATH} = require('@lib/routers/healthCheck.js');
 const platform = new Platform();
 let validator;
 
+jest.setTimeout(30000);
+
 describe('Routes', () => {
   beforeAll(async () => {
-    jest.setTimeout(10000);
     validator = await amphtmlValidator.getInstance();
+
     await platform.start();
   });
   afterAll(async () => {
@@ -39,7 +41,9 @@ describe('Routes', () => {
     expect(response.status).toBe(200);
   });
   it('serves playground', async () => {
+    console.log(config.hosts.playground.base);
     const response = await fetch(config.hosts.playground.base);
+
     expect(response.status).toBe(200);
   });
   // it('serves logs', async () => {
