@@ -25,6 +25,7 @@ const {pagePath} = require('@lib/utils/project');
 const log = require('@lib/utils/log')('Platform');
 const subdomain = require('./middleware/subdomain.js');
 const webSocketServer = require('@examples/socket-server/socket-server');
+const grow = require('@lib/utils/grow');
 
 const routers = {
   boilerplate: require('../../boilerplate/backend/'),
@@ -63,6 +64,16 @@ class Platform {
     log.info('Starting platform');
     return new Promise(async (resolve, reject) => {
       try {
+        config.configureGrow();
+
+        this.grow = {};
+        await grow(`run --port 8081`, this.grow).catch(() => {
+          log.fatal(
+            'Grow had an error starting up. See log above for details.'
+          );
+          process.exit(1);
+        });
+
         await this._createServer();
         this.httpServer = this.server.listen(PORT, () => {
           log.success(`server listening on ${PORT}!`);
@@ -83,6 +94,7 @@ class Platform {
   stop() {
     log.info('Stopping platform');
     return new Promise(async (resolve, reject) => {
+      this.grow.exit();
       this.httpServer.close(() => resolve());
     });
   }

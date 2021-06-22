@@ -72,7 +72,7 @@ function handler(data, resolve, reject) {
  * Will execute grow in the configured pod path "project.paths.GROW_POD"
  * @param growCommand the arguments for grow in a string
  */
-function exec(growCommand) {
+function exec(growCommand, token = {}) {
   const fragments = extractCommandFragments([
     'sh',
     '-c',
@@ -99,6 +99,10 @@ function exec(growCommand) {
       }
       resolve();
     });
+
+    token.exit = () => {
+      process.kill();
+    };
   });
 }
 

@@ -18,19 +18,7 @@
 
 require('module-alias/register');
 
-const grow = require('@lib/utils/grow');
-const config = require('@lib/config');
-const signale = require('signale');
-
 async function run() {
-  signale.info('Starting Grow ...');
-
-  config.configureGrow();
-  await grow(`run --port 8081`).catch(() => {
-    signale.fatal('Grow had an error starting up. See log above for details.');
-    process.exit(1);
-  });
-
   const Platform = require('@lib/platform');
   new Platform().start();
 }
