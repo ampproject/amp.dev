@@ -78,7 +78,22 @@ jobs:
         run: |
           gulp build
 
-      - name: Finalizing build
+      - name: Setting up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - uses: actions/cache@v2
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}
+
+      - name: Installing Grow
+        run: |
+          sudo apt-get install libyaml-dev
+          pip install grow --upgrade-strategy eager
+
+      - name: Finalizing & testing build
         run: |
           gulp buildFinalize
           npm run smoke-test -- --colors
