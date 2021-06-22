@@ -80,13 +80,13 @@
 
     &:hover {
       &:before {
-        animation: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) duepduep;
+        animation: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) duepduep2021;
       }
     }
   }
 }
 
-@keyframes duepduep {
+@keyframes duepduep2021 {
   0% { background-position-x: center; }
   49% { background-position-x: 40px; }
   50% { background-position-x: -40px; }
