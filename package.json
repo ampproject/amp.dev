@@ -63,7 +63,7 @@
 		"@ampproject/toolbox-linter": "2.8.1-canary.1",
 		"@ampproject/toolbox-optimizer": "2.8.1-canary.1",
 		"@google-cloud/datastore": "6.4.0",
-		"acorn": "8.3.0",
+		"acorn": "8.4.1",
 		"buffer": "6.0.3",
 		"casual": "1.6.2",
 		"cheerio": "1.0.0-rc.3",
