@@ -1,0 +1,291 @@
+<!---
+- author: davestys
+- formats:
+  - email
+  --->
+
+  <!doctype html>
+    <html ⚡4email data-css-strict>
+    <head>
+      <meta charset="utf-8">
+      <script async src="https://cdn.ampproject.org/v0.js"></script>
+      <style amp4email-boilerplate>body{visibility:hidden}</style>
+      <style amp-custom>
+      body {
+        font-family: poppins, sans-serif;
+        padding: 30px;
+      }
+
+      .object{
+        display: inline-block;
+        border-radius: 20%;
+        height: 100px;
+        width: 100px;
+        margin: 10px;
+      }
+      
+      .skew {
+        background-color: #f53b57;
+        transition: transform .4s ease-in-out;
+        transform: skew(0deg, 0deg);
+      }
+
+      .skew:hover{
+        transition: transform .4s ease-in-out;
+        transform: skew(-20deg, -20deg);
+      }
+
+      .rotate {
+        background-color: #3c40c6;
+        transition: transform .6s ease-in-out;
+      }
+
+      .rotate:hover{
+        transition: transform .9s ease-in-out;
+        transform: rotate(280deg);
+      }
+
+      .rotate.origin {
+        background-color: #3c40c6;
+        transition: transform .6s ease-in-out;
+        transform: rotate(0deg);
+        transform-origin: top left;
+      }
+
+      .rotate.origin:hover{
+        transition: transform .9s ease-in-out;
+        transform: rotate(-280deg);
+        transform-origin: top left;
+      }
+
+      .rotate.three-dimension:hover{
+        transition: transform .9s ease-in-out;
+        transform: rotate3d(1, 2, -1, 280deg)
+      }
+
+      .movexy {
+        background-color: #05c46b;
+        transition: transform .4s ease-in-out;
+        transform: translate(0px, 0px);
+      }
+
+      .movexy.one:hover{
+        transition: transform .4s ease-in-out;
+        transform: translate(0px, -50px);
+
+      }
+
+      .movexy.two:hover{
+        transition: transform .4s ease-in-out;
+        transform: translate(0px, 50px);
+      }
+
+      .movexy.three:hover{
+        transition: transform .4s ease-in-out;
+        transform: translate(400px, -150px);
+      }
+
+      .scale {
+        background-color: #ffb8b8;
+        transition: transform .4s ease-in-out;
+      }
+
+      .scale:hover{
+        transition: transform .4s ease-in-out;
+        transform: scale(2);
+      }
+
+      .drain {
+        background-color: #ffd32a;
+        transition: transform 1.4s ease-in-out;
+      }
+
+      .drain:hover{
+        transition: transform 1.4s ease-in-out;
+        transform: scale(0) skew(-20deg) rotate(-90deg) translate(430px, 220px);
+        transition-delay: .2s;
+      }
+
+      .roll {
+        background-color: #00d8d6;
+        transition: transform 1.2s ease-in-out;
+      }
+
+      .roll:hover{
+        transition: transform 1.4s ease;
+        transform: translate(530px, 0px) rotate(360deg);
+        transition-timing-function: cubic-bezier(.55,.07,.42,.54);
+      }
+
+    </style>
+  </head>
+  <body>
+<!-- # Introduction
+This example demonstrates how to perform several CSS transition animations in AMP for email.
+-->
+<!-- # Setup an Object to Animate -->
+<!-- Set up some CSS for a square with rounded corners. This is the object we will be animating.
+```css
+  .object{
+    display: inline-block;
+    border-radius: 20%;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+  }
+```
+-->
+
+<!-- # Skew Animation -->
+<!-- Hover on the square to see the object animate into a skewed position. -->
+<div class="object skew"></div>
+<!-- 
+  The following CSS defines an animation which skews the object -20 degrees (x,y). The transformation duration is set to 0.4 seconds and the animation effect is set to `ease-in-out`. 
+  ```css
+  .skew {
+    background-color: #f53b57;
+    transition: transform .4s ease-in-out;
+    transform: skew(0deg, 0deg);
+  }
+
+  .skew:hover{
+    transition: transform .4s ease-in-out;
+    transform: skew(-20deg, -20deg);
+  }
+  ```
+-->
+
+<!-- # Rotation Animation -->
+<!-- Hover on the square to see the object rotate. -->
+<span>
+  <div class="object rotate"></div>
+  <div class="object rotate origin"></div>
+  <div class="object rotate three-dimension"></div>
+</span>
+<!-- 
+  The following CSS defines a hover animation which rotates the object around differnt origin points, including a three dimensional rotation.
+  ```css
+  .rotate {
+    background-color: #3c40c6;
+    transition: transform .6s ease-in-out;
+  }
+
+  .rotate:hover{
+    transition: transform .9s ease-in-out;
+    transform: rotate(280deg);
+  }
+
+  .rotate.origin {
+    background-color: #3c40c6;
+    transition: transform .6s ease-in-out;
+    transform: rotate(0deg);
+    transform-origin: top left;
+  }
+
+  .rotate.origin:hover{
+    transition: transform .9s ease-in-out;
+    transform: rotate(-280deg);
+    transform-origin: top left;
+  }
+
+  .rotate.three-dimension:hover{
+    transition: transform .9s ease-in-out;
+    transform: rotate3d(1, 2, -1, 280deg)
+  }
+  ```
+-->
+
+<!-- # Translation Animation -->
+<!-- Hover on the squares to see the objects animate to new positions. -->
+<span>
+  <div class="object movexy one"></div>
+  <div class="object movexy two"></div>
+  <div class="object movexy three"></div>
+</span>
+<!-- 
+  The following CSS defines a translation animation which moves the object to a new position (x,y).
+  ```css
+  .movexy {
+    background-color: #05c46b;
+    transition: transform .4s ease-in-out;
+    transform: translate(0px, 0px);
+  }
+
+  .movexy.one:hover{
+    transition: transform .4s ease-in-out;
+    transform: translate(0px, -50px);
+  }
+
+  .movexy.two:hover{
+    transition: transform .4s ease-in-out;
+    transform: translate(0px, 50px);
+  }
+
+  .movexy.three:hover{
+    transition: transform .4s ease-in-out;
+    transform: translate(400px, -150px);
+  }
+  ```
+-->
+
+<!-- # Rolling an object -->
+<!-- Hover on the square to see the object roll across the view.. -->
+<span>
+  <div class="object roll"></div>
+</span>
+<!-- 
+  The following CSS defines combines a transformation (rotation) with a translation animation to create a rolling effect.
+  ```css
+  .roll {
+    background-color: #00d8d6;
+    transition: transform 1.2s ease-in-out;
+  }
+
+  .roll:hover{
+    transition: transform 1.4s ease;
+    transform: translate(530px, 0px) rotate(360deg);
+    transition-timing-function: cubic-bezier(.55,.07,.42,.54);
+  }
+  ```
+-->
+
+<!-- # Scale Animation -->
+<!-- Hover on the square to see the object animate into a new, larger size. -->
+<div class="object scale"></div>
+<!-- 
+  The following CSS defines an animation which scales the object's size. 
+  ```css
+  .scale {
+    background-color: #ffb8b8;
+    transition: transform .4s ease-in-out;
+  }
+
+  .scale:hover{
+    transition: transform .4s ease-in-out;
+    transform: scale(2);
+  }
+  ```
+-->
+
+<!-- # Down the drain -->
+<!-- Hover on the squares to see the objects animate to new positions. -->
+<span>
+    <div class="object drain"></div>
+</span>
+<!-- 
+  The following CSS combines a few different transformations and translations to create the effect of an object going down a drain.
+  ```css
+  .drain {
+    background-color: #ffd32a;
+    transition: transform 1.4s ease-in-out;
+  }
+
+  .drain:hover{
+    transition: transform 1.4s ease-in-out;
+    transform: scale(0) skew(-20deg) rotate(-90deg) translate(430px, 220px);
+    transition-delay: .2s;
+  }
+  ```
+-->
+</body>
+</html>
