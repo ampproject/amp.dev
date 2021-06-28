@@ -1,0 +1,150 @@
+<!---
+standaloneSnippets: true
+preview: true
+author:
+- morss
+--->
+
+<!--
+  ## Introduction
+
+  The [`amp-render`](/content/amp-dev/documentation/components/reference/amp-render-v0.1.md) component provides a simple way to load JSON from a server and render it using a [mustache template](https://mustache.github.io/).
+-->
+<!-- -->
+<!DOCTYPE html>
+<html ⚡ lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>amp-render</title>
+    <link rel="canonical" href="<% canonical %>">
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
+    <style amp-boilerplate="">body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate="">body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+      .sample {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+      }
+
+      .line {
+        padding: 4px 12px;
+      }
+    </style>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+<!-- ## Setup -->
+<!-- First, you need to import the script for the `amp-render` extension. -->
+    <script
+      async
+      custom-element="amp-render"
+      src="https://cdn.ampproject.org/v0/amp-render-1.0.js"
+    ></script>
+<!-- When you use `amp-render`, you'll almost certainly also want to use `amp-mustache`. -->
+   <script
+    async
+    custom-template="amp-mustache"
+    src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+  ></script>
+<!-- In the final example on this page, we'll also be using `amp-script`, so we'll import that extension's script as well. -->
+  <script
+    async
+    custom-element="amp-script"
+    src="https://cdn.ampproject.org/v0/amp-script-0.1.js"
+  ></script>  
+  </head>
+  <body>
+<!-- ## Basic example -->
+<!--
+  Here's a basic example, applying a simple template to a simple JSON object.
+  The JSON looks like this:
+  ```json
+  {
+    "country": "Nigeria",
+    "city": "Lagos"
+  }
+  ```
+
+  Here's the `<amp-render>` and the `<template>`:
+-->
+    <amp-render class="sample" src="/static/samples/json/cities-lagos.json" layout="fixed-height" height="60">
+      <template type="amp-mustache">
+        <div class="line">{{city}} is a city in {{country}}.</div>
+      </template>
+    </amp-render>
+<!-- ## Iterating through a list -->
+<!--
+  In this example, we drill down to access a sub-object of some more elaborate JSON.
+  Our template then iterates through elements of the array that sub-object contains.
+ -->
+    <amp-render class="sample" src="/static/samples/json/cities.json" layout="fixed-height" height="105">
+      <template type="amp-mustache">
+        {{#planets}}
+          {{#earth}}
+            {{#continents}}
+              {{#africa}}
+                <div class="line">{{city}} is a city in {{country}}.</div>
+              {{/africa}}
+            {{/continents}}
+          {{/earth}}
+        {{/planets}}
+      </template>
+    </amp-render>
+<!-- ## Using more attributes -->
+<!-- 
+  Now, let's try some more attributes.
+    - [**binding**](/content/amp-dev/documentation/components/reference/amp-render-v1.0.md#binding): `binding="never"` tells AMP there's no need to evaluate `amp-bind` bindings in this template. This is more efficient, especially as our template contains no bindings.
+    - [**key**](/content/amp-dev/documentation/components/reference/amp-render-v1.0.md#key): this allows us to choose a child of the JSON object, and apply that to the template instead of the entire object.
+    - [**template**](/content/amp-dev/documentation/components/reference/amp-render-v1.0.md#template): this lets us specify a template that's not a child of the `amp-render`.
+
+-->
+    <div>
+      <amp-render
+        class="sample"
+        src="/static/samples/json/cities.json"
+        layout="fixed-height"
+        height="105"
+        binding="never"
+        key="planets.earth.continents"
+        template="cities-countries"
+      >
+      </amp-render>
+      <template id="cities-countries" type="amp-mustache">
+        {{#africa}}
+          <div class="line">{{city}} is a city in {{country}}.</div>
+        {{/africa}}
+      </template> 
+    </div>
+<!-- ## Using amp-script -->
+<!-- `amp-render` can also use `amp-script` as a data source. In this example, instead of using the `key` attribute, we fetch the city data with our own JavaScript, then extract the desired sub-object.
+To learn more about fetching data with `amp-script`, see [this `amp-script` example](/documentation/examples/components/amp-script.md#data-source-for-amp-list). -->
+    <div>
+      <amp-render
+        class="sample"
+        src="amp-script:dataFunctions.fetchData"
+        layout="fixed-height"
+        height="52"
+      >
+        <template type="amp-mustache">
+          {{#southAmerica}}
+            <div class="line">{{city}} is a city in {{country}}.</div>
+          {{/southAmerica}}
+        </template>    
+      </amp-render>
+      <amp-script id="dataFunctions" script="fetch-data-script" nodom></amp-script>
+      <script id="fetch-data-script" type="text/plain" target="amp-script">
+        function fetchData(index) {
+          return fetch('<% hosts.platform %>/static/samples/json/cities.json')
+            .then(resp => resp.json())
+            .then(findContinentsData)
+        }
+      
+        function findContinentsData(json) {
+          return json.planets.earth.continents;
+        }
+      
+        exportFunction('fetchData', fetchData);
+      </script>
+    </div>
+  </body>
+</html>
