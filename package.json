@@ -105,7 +105,7 @@
 		"stream-browserify": "3.0.0",
 		"util": "0.12.4",
 		"uuid": "8.3.2",
-		"web-push": "3.4.4",
+		"web-push": "3.4.5",
 		"ws": "7.4.6"
 	},
 	"devDependencies": {
