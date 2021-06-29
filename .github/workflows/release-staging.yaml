@@ -53,6 +53,7 @@ jobs:
   run:
     needs: verify
     runs-on: ubuntu-latest
+    environment: Staging
     steps:
       - name: Cloning repository
         uses: actions/checkout@v2
