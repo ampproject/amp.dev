@@ -99,6 +99,13 @@ jobs:
           npm run smoke-test -- --colors
         # npm run test:pixi:e2e
 
+      - name: Setting up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@master
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+
       - name: Deploying
         run: |
           gcloud config set app/cloud_build_timeout 1800
