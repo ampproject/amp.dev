@@ -281,7 +281,7 @@ function build(done) {
 function collectStatics(done) {
   // Used to keep track of unfinished archives
   const archives = {};
-
+  console.log('Collecting files ...');
   gulp
     .src([
       project.absolute('pages/static/**/*'),
@@ -291,6 +291,7 @@ function collectStatics(done) {
     .pipe(
       through.obj(async function (file, encoding, callback) {
         // Skip potential archive parent directories to have the path writable later
+        console.log(`- ${file.path}`);
         if (file.stat.isDirectory() && file.path.endsWith('.zip')) {
           callback();
           return;
