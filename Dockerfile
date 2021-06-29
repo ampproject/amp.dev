@@ -14,6 +14,9 @@ COPY package.json .
 COPY package-lock.json .
 RUN npm ci --only=production
 
+# Make sure to get latest
+ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
+
 # Bundle app source
 COPY . .
 
