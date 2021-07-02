@@ -47,7 +47,7 @@ macro into it's own seperate trigger to prevent underreporting.
         {
           "requests": {
             "event": "<% base_path %>/ping?user=[= user =]&account=ampdev&event=${eventId}",
-            'CWV_EVENT': '${event}?type=CWV'
+            'CWV_EVENT': '${event}&type=CWV'
           },
           "triggers": {
               'cls': {
@@ -104,7 +104,7 @@ $CALC(${cumulativeLayoutShift}, 1000, multiply)
         },
         "requests": {
           "event": "<% base_path %>/ping?user=[= user =]&account=ampdev&event=${eventId}",
-          'CWV_EVENT': '${event}?type=CWV'
+          'CWV_EVENT': '${event}&type=CWV'
         },
         "triggers": {
           'defaultPageview': {
@@ -164,18 +164,40 @@ Once you have created the Custom Dimension to track the AMP Host, make sure you 
              }
            }
         },
+        "requests": {
+          "event": "<% base_path %>/ping?user=[= user =]&account=ampdev&event=${eventId}",
+          'CWV_EVENT': '${event}&type=CWV'
+        },
         "triggers": {
-          "default pageview": {
+          "defaultPageview": {
             "on": "visible",
             "request": "pageview",
             "vars": {
               "title": "{{title}}"
             },
             "extraUrlParams": {
-              "lcp": "${largestContentfulPaint}",
-              "cls": "${cumulativeLayoutShift}",
-              "fid": "${firstInputDelay}",
               "cd1": "${ampdocHost}"
+            }
+          },
+          'cls': {
+            'on': 'visible',
+            'request': 'CWV_EVENT',
+            'extraUrlParams': {
+              'cls': '$CALC(${cumulativeLayoutShift}, 1000, multiply)'
+            }
+          },
+          'lcp': {
+            'on': 'visible',
+            'request': 'CWV_EVENT',
+            'extraUrlParams': {
+              'lcp': '${largestContentfulPaint}'
+            }
+          },
+          'fid': {
+            'on': 'visible',
+            'request': 'CWV_EVENT',
+            'extraUrlParams': {
+              'fid': '${firstInputDelay}'
             }
           }
         }
