@@ -61,7 +61,7 @@
 		"@ampproject/toolbox-cache-list": "2.8.0",
 		"@ampproject/toolbox-cors": "2.8.0",
 		"@ampproject/toolbox-linter": "2.8.1",
-		"@ampproject/toolbox-optimizer": "2.8.1",
+		"@ampproject/toolbox-optimizer": "2.8.2",
 		"@google-cloud/datastore": "6.4.0",
 		"acorn": "8.3.0",
 		"buffer": "6.0.3",
