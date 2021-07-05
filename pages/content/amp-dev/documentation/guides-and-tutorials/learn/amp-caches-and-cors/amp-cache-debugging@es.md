@@ -57,7 +57,7 @@ Si continúa teniendo problemas después de seguir estos pasos, consulte la sigu
       <td>Asegúrese de que el caché de AMP tiene acceso a sus recursos y que no esté bloqueado por una dirección IP, un agente de usuario, etc. (<a href="https://support.google.com/webmasters/answer/1061943?hl=en">Consulte la Lista de agentes de usuario que utiliza el rastreador de Google</a>).</td>
     </tr>
     <tr>
-      <td>Los elementos dinámicos como  <code><amp-form></amp-form></code>, <code><amp-list></amp-list></code>, no se comportan como estaba previsto.</td>
+      <td>Los elementos dinámicos como  <code>&lt;amp-form&gt;</code>, <code>&lt;amp-list&gt;</code>, no se comportan como estaba previsto.</td>
       <td>Faltan encabezados CORS o están rotos.</td>
       <td>Estos componentes realizan solicitudes de origen cruzado desde el caché de AMP hacia su origen. De forma predeterminada, los navegadores bloquean estas solicitudes. Para permitir estas solicitudes, emita <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">encabezados CORS</a> que agreguen <a href="amp-cors-requests.md">todos los cachés</a> en la lista permitida.</td>
     </tr>

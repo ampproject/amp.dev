@@ -53,7 +53,7 @@ Molti componenti ed estensioni AMP sfruttano gli endpoint remoti utilizzando le 
 <li data-md-type="list_item" data-md-list-type="unordered">
 <p data-md-type="paragraph"><a href="#send-cors-response-headers" data-md-type="link">Invio intestazioni di risposta CORS</a></p>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true"><li data-md-type="list_item" data-md-list-type="unordered">
-<a href="#access-control-allow-origin-origin" data-md-type="link">Access-Control-Allow-Origin: </a><origin data-md-type="raw_html"></origin>
+<a href="#access-control-allow-origin-origin" data-md-type="link">Access-Control-Allow-Origin: </a>
 </li></ul>
 </li>
 <li data-md-type="list_item" data-md-list-type="unordered"><a href="#processing-state-changing-requests" data-md-type="link">Elaborazione delle richieste di modifica dello stato</a></li>
@@ -159,9 +159,9 @@ Questa intestazione personalizzata viene inviata dal sistema runtime AMP quando 
 
 Dopo aver verificato la richiesta CORS, la risposta HTTP risultante deve contenere le seguenti intestazioni:
 
-##### Access-Control-Allow-Origin: <origin> </origin><a name="access-control-allow-origin-origin"></a>
+##### Access-Control-Allow-Origin: &lt;origin&gt; <a name="access-control-allow-origin-origin"></a>
 
-Tale intestazione è un requisito delle <a href="https://www.w3.org/TR/cors/">Specifiche W3 CORS</a>, in cui <code>origin</code> indica l'origine della richiesta consentita tramite l'intestazione della richiesta <code>Origin</code> CORS (ad esempio, <code>"https://<publisher's subdomain>.cdn.ampproject.org"</code>).
+Tale intestazione è un requisito delle <a href="https://www.w3.org/TR/cors/">Specifiche W3 CORS</a>, in cui <code>origin</code> indica l'origine della richiesta consentita tramite l'intestazione della richiesta <code>Origin</code> CORS (ad esempio, <code>"https://&lt;publisher's subdomain>.cdn.ampproject.org"</code>).
 
 Anche se la specifica W3 CORS consente di restituire il valore <code>\*</code> nella risposta, per una maggiore sicurezza:
 

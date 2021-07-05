@@ -157,9 +157,9 @@ Cet en-tête personnalisé est envoyé par le runtime AMP lorsqu'une requête XH
 
 Après avoir vérifié la requête CORS, la réponse HTTP résultante doit contenir les en-têtes suivants :
 
-##### Access-Control-Allow-Origin: <origin> </origin><a name="access-control-allow-origin-origin"></a>
+##### Access-Control-Allow-Origin: &lt;origin&gt; <a name="access-control-allow-origin-origin"></a>
 
-Cet en-tête est une exigence <a href="https://www.w3.org/TR/cors/">W3 CORS Spec</a>, où <code>origin</code> fait référence à l’origine de la requête autorisée via l’en-tête de requête CORS <code>Origin</code> (par exemple, <code>"https://<publisher’s subdomain>.cdn.ampproject.org"</code>).
+Cet en-tête est une exigence <a href="https://www.w3.org/TR/cors/">W3 CORS Spec</a>, où <code>origin</code> fait référence à l’origine de la requête autorisée via l’en-tête de requête CORS <code>Origin</code> (par exemple, <code>"https://&lt;publisher’s subdomain>.cdn.ampproject.org"</code>).
 
 Bien que la spécification W3 CORS permette de renvoyer la valeur de <code>\*</code> dans la réponse, pour une sécurité améliorée, vous devez :
 

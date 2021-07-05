@@ -93,7 +93,7 @@ Podemos incluir uma imagem em nosso primeiro e-mail adicionando o código abaixo
 
 ## Deixe-o responsivo
 
-E-mails são visualizados em uma variedade de dispositivos e tamanhos de tela, e o AMP vem com um sistema de layout integrado! Com o sistema [`amp-layout`](/content/amp-dev/documentation/components/reference/amp-layout.md) e media queries, implementar e-mails responsivos é fácil. Para dimensionar nossa imagem de gatinho colocada nas telas apropriadas, adicione o atributo <code>layout="responsive"</code> à sua tag <code><amp-image></code>.
+E-mails são visualizados em uma variedade de dispositivos e tamanhos de tela, e o AMP vem com um sistema de layout integrado! Com o sistema [`amp-layout`](/content/amp-dev/documentation/components/reference/amp-layout.md) e media queries, implementar e-mails responsivos é fácil. Para dimensionar nossa imagem de gatinho colocada nas telas apropriadas, adicione o atributo <code>layout="responsive"</code> à sua tag `<amp-image>`.
 
 [tip type="read-on"] [Leia mais sobre como o AMP funciona com layout e media queries](/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md). [/tip]
 

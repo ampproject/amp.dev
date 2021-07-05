@@ -160,7 +160,7 @@ Pingback はオプションです。無効にするには、`noPingback` 設定�
   </tr>
   <tr>
     <td class="col-fourty"><code>login</code></td>
-    <td class="col-twenty"><code>&lt;URL&gt;</code> または<br><Map[文字列, URL]></td>
+    <td class="col-twenty"><code>&lt;URL&gt;</code> または<br>&lt;Map[文字列, URL]&gt;</td>
     <td>ログインページの HTTPS URL、またはさまざまなタイプのログインページの一連の URL。</td>
   </tr>
   <tr>
@@ -185,7 +185,7 @@ Pingback はオプションです。無効にするには、`noPingback` 設定�
   </tr>
 </table>
 
-<URL>** の値には、代入変数を含む HTTPS URL を指定します。代入変数について詳しくは、以下の[アクセス URL 変数](#access-url-variables)をご覧ください。
+*`<URL>`* の値には、代入変数を含む HTTPS URL を指定します。代入変数について詳しくは、以下の[アクセス URL 変数](#access-url-variables)をご覧ください。
 
     以下に、amp-access の設定の例を示します。
 

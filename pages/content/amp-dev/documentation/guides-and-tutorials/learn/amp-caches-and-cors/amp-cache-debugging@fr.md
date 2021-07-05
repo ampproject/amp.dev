@@ -57,7 +57,7 @@ Si vous rencontrez toujours un problème après avoir suivi ces étapes, consult
       <td>Assurez-vous que le cache AMP peut accéder à vos éléments et qu'il n'est pas bloqué par une adresse IP, ou un agent utilisateur, etc. (<a href="https://support.google.com/webmasters/answer/1061943?hl=en">Liste des agents utilisateurs utilisés par le robot d'exploration de Google</a>).</td>
     </tr>
     <tr>
-      <td>Les éléments dynamiques tels que <code><amp-form></amp-form></code>, <code><amp-list></amp-list></code>, ne se comportent pas comme prévu.</td>
+      <td>Les éléments dynamiques tels que <code>&lt;amp-form&gt;</code>, <code>&lt;amp-list&gt;</code>, ne se comportent pas comme prévu.</td>
       <td>En-têtes CORS cassés ou manquants.</td>
       <td>Ces composants effectuent des requêtes vers l'origine depuis le cache AMP. Par défaut, les navigateurs bloquent ces requêtes. Pour les autoriser, émettez des <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">en-têtes CORS</a> qui permettent le listing de <a href="amp-cors-requests.md">tous les caches</a>.</td>
     </tr>

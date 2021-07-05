@@ -57,7 +57,7 @@ Nếu bạn vẫn có vấn đề sau khi làm theo các bước này, hãy ki�
       <td>Đảm bảo Bộ nhớ đệm AMP có thể truy cập các tài sản của bạn và không bị chặn bởi một địa chỉ IP, hoặc một user agent, v.v. (<a href="https://support.google.com/webmasters/answer/1061943?hl=en">Danh sách các user agent được sử dụng bởi Google crawler</a>).</td>
     </tr>
     <tr>
-      <td>Các yếu tố động như <code><amp-form/></code>, <code><amp-list/></code>, không hành xử như kỳ vọng.</td>
+      <td>Các yếu tố động như <code>&lt;amp-form&gt;</code>, <code>&lt;amp-list&gt;</code>, không hành xử như kỳ vọng.</td>
       <td>Các đầu đề CORS bị vỡ hoặc thiếu.</td>
       <td>Các thành phần này thực hiện các yêu cầu chéo nguồn gốc từ Bộ nhớ đệm AMP đến nguồn của bạn. Theo mặc định, trình duyệt sẽ chặn các yêu cầu này. Để cho phép các yêu cầu này, hãy phát ra các <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">đầu đề CORS</a> cho phép <a href="amp-cors-requests.md">tất cả bộ nhớ đệm</a>.</td>
     </tr>
