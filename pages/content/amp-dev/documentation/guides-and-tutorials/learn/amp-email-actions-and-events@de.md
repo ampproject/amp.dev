@@ -55,7 +55,7 @@ Die folgende Tabelle beschreibt die einzelnen Elemente der Syntax.
   <tr>
     <td><code>targetId</code></td>
     <td>ja</td>
-    <td>Das ist die DOM ID für das Element oder ein vordefiniertes <a href="#special-targets">besonderes Ziel</a>, für das eine Aktion als Reaktion auf das Event ausgeführt werden soll. Im folgenden Beispiel ist die <code>targetId</code> die DOM ID des Ziels <code>amp-lightbox</code>, <code>photo-slides</code>. <pre><amp-lightbox id="photo-slides"></amp-lightbox> <button on="tap:photo-slides">Bilder anzeigen</button></pre>
+    <td>Das ist die DOM ID für das Element oder ein vordefiniertes <a href="#special-targets">besonderes Ziel</a>, für das eine Aktion als Reaktion auf das Event ausgeführt werden soll. Im folgenden Beispiel ist die <code>targetId</code> die DOM ID des Ziels <code>amp-lightbox</code>, <code>photo-slides</code>. <pre>&lt;amp-lightbox id="photo-slides">&lt;/amp-lightbox> &lt;button on="tap:photo-slides">Bilder anzeigen&lt;/button></pre>
 </td>
   </tr>
   <tr>

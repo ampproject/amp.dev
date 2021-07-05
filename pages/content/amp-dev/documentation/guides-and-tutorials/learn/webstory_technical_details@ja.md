@@ -241,7 +241,7 @@ HLS セグメントを 10 秒未満の長さに維持するようにしてくだ
   </tr>
 </table>
 
-### <source> または src の指定</source>
+### &lt;source&gt; または src の指定
 
 `<amp-video>` コンポーネント内に `<source>` 子要素を使用し、`src` 属性の代わりに動画のソースを指定します。`<source>` 要素を使用すると、動画の種類とバックアップ動画のソースを指定できます。MIME タイプの指定には、`type` 属性を使用します。HLS 動画には、`application/x-mpegurl` または `application/vnd.apple.mpegurl` を使用します。その他の動画には、`”video/mp4”` のように、`video/` MIME プレフィクスを使用してその動画形式を続けます。
 

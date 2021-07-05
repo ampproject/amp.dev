@@ -57,8 +57,8 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
   <tr>
     <td><code>targetId</code></td>
     <td>是</td>
-    <td>元素的 DOM ID，或者是为了对事件做出响应而要执行操作的预定义<a href="#special-targets">特殊目标</a>的 DOM ID。在以下示例中，<code>targetId</code> 为 <code>amp-lightbox</code> 目标 <code>photo-slides</code> 的 DOM ID。<pre><amp-lightbox id="photo-slides"></amp-lightbox>
-<button on="tap:photo-slides">Show Images</button></pre>
+    <td>元素的 DOM ID，或者是为了对事件做出响应而要执行操作的预定义<a href="#special-targets">特殊目标</a>的 DOM ID。在以下示例中，<code>targetId</code> 为 <code>amp-lightbox</code> 目标 <code>photo-slides</code> 的 DOM ID。<pre>&lt;amp-lightbox id="photo-slides">&lt;/amp-lightbox>
+&lt;button on="tap:photo-slides">Show Images&lt;/button></pre>
 </td>
   </tr>
   <tr>
@@ -675,14 +675,14 @@ AMP 还定义了全局 `hide`、`show` 和 `toggleVisibility` 操作，您可以
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
       <p>从当前窗口转到给定网址的可选指定目标（如果已给定）（目前仅支持 <code>_top</code> 和 <code>_blank </code>）。<code>opener</code> 参数为可选参数，可以在以下情况下指定：使用 <code>_blank</code> 目标让新打开的页面访问 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener</code></a>。支持<a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">标准网址替换</a>。</p>
-      <p><strong>注意事项</strong>：建议尽可能使用正常的 <code><a></code> 链接，因为 <code>AMP.navigateTo</code> 无法被网页抓取工具识别。</p>
+      <p><strong>注意事项</strong>：建议尽可能使用正常的 <code>&lt;a&gt;</code> 链接，因为 <code>AMP.navigateTo</code> 无法被网页抓取工具识别。</p>
     </td>
   </tr>
   <tr>
     <td><code>closeOrNavigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
       <p>尝试关闭窗口（如果允许），否则进行浏览，这与 <code>navigateTo</code> 操作类似。适用于以下用例：如果通过前一个页面在新窗口中打开一个窗口，可能需要使用“Back”按钮关闭该窗口；如果未打开窗口，可能需要使用“Back”按钮进行浏览。</p>
-      <p><strong>注意事项</strong>：建议尽可能使用正常的 <code><a></code> 链接，因为 <code>AMP.closeOrNavigateTo</code> 无法被网页抓取工具识别。</p>
+      <p><strong>注意事项</strong>：建议尽可能使用正常的 <code>&lt;a&gt;</code> 链接，因为 <code>AMP.closeOrNavigateTo</code> 无法被网页抓取工具识别。</p>
     </td>
   </tr>
   <tr>

@@ -14,7 +14,7 @@ teaser:
 
 Di dalam beberapa kasus, Anda mungkin ingin memiliki versi non-AMP dan AMP dari halaman yang sama, contoh: artikel berita. Pertimbangkan ini: Jika Google Search menemukan versi non-AMP halaman tersebut, bagaimana Google Search tahu bahwa ada versi AMP-nya?
 
-### Menautkan halaman dengan <link>
+### Menautkan halaman dengan &lt;link&gt;
 
 Untuk memecahkan masalah ini, kami menambahkan informasi tentang halaman AMP ke halaman non-AMP dan sebaliknya, dalam bentuk tag `<link>` di `<head>`.
 

@@ -55,7 +55,7 @@ Veja a tabela abaixo para descrições de cada parte da sintaxe.
   <tr>
     <td><code>targetId</code></td>
     <td>sim</td>
-    <td>Este é a id do DOM para o elemento, ou um <a href="#special-targets">alvo especial</a> predefinido sobre o qual você gostaria de executar uma ação em resposta ao evento. No exemplo a seguir, o <code>targetId</code> é o id do DOM para o alvo <code>amp-lightbox</code>, <code>photo-slides</code>. <pre><amp-lightbox id="photo-slides"></amp-lightbox> <button on="tap:photo-slides">Mostrar Imagens</button></pre>
+    <td>Este é a id do DOM para o elemento, ou um <a href="#special-targets">alvo especial</a> predefinido sobre o qual você gostaria de executar uma ação em resposta ao evento. No exemplo a seguir, o <code>targetId</code> é o id do DOM para o alvo <code>amp-lightbox</code>, <code>photo-slides</code>. <pre>&lt;amp-lightbox id="photo-slides">&lt;/amp-lightbox> &lt;button on="tap:photo-slides">Mostrar Imagens&lt;/button></pre>
 </td>
   </tr>
   <tr>

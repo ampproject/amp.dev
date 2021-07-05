@@ -241,7 +241,7 @@ Nếu bạn chỉ có thể cung cấp một định dạng video duy nhất, h�
   </tr>
 </table>
 
-### <source> so với src</source>
+### &lt;source&gt; so với src
 
 Sử dụng yếu tố con `<source>` (nguồn) trong thành phần `<amp-video>` để quy định nguồn video thay cho thuộc tính `src`. Việc sử dụng yếu tố `<source>` cho phép bạn quy định loại video và bổ sung các nguồn video dự phòng. Bạn phải sử dụng thuộc tính `type` (loại) để quy định loại MIME. Sử dụng `application/x-mpegurl` hoặc `application/vnd.apple.mpegurl` cho các video HLS. Đối với tất cả các loại video khác, sử dụng tiền tố MIME `video/` và theo sau là định dạng video, ví dụ như `”video/mp4”`.
 

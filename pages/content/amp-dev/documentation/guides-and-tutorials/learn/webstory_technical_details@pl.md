@@ -241,7 +241,7 @@ Jeśli możesz zapewniać tylko jeden format wideo, użyj MP4. Jeśli to możliw
   </tr>
 </table>
 
-### Określaj elementy <code><source></code>, a nie atrybut src
+### Określaj elementy &lt;source&gt;, a nie atrybut src
 
 Aby określić źródło wideo, stosuj elementy podrzędne `<source>` w składniku `<amp-video>`, zamiast atrybutu `src`. Użycie elementu `<source>` pozwala określić typ wideo i dodać zapasowe źródła wideo. Aby określić typ MIME, musisz użyć atrybutu ` type`. W przypadku filmów HLS użyj atrybutu ` application/x-mpegurl` lub `application/vnd.apple.mpegurl`. W przypadku wszystkich innych typów wideo należy użyć prefiksu MIME `video/`, a następnie formatu wideo, na przykład `"video/mp4"`.
 

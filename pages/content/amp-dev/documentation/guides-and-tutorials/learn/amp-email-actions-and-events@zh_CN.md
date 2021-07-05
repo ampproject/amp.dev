@@ -55,8 +55,8 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
   <tr>
     <td><code>targetId</code></td>
     <td>是</td>
-    <td>元素的 DOM ID，或者是为了对事件做出响应而要执行操作的预定义<a href="#special-targets">特殊目标</a>的 DOM ID。在以下示例中，<code>targetId</code> 为 <code>amp-lightbox</code> 目标 <code>photo-slides</code> 的 DOM ID。    <pre><amp-lightbox id="photo-slides"></amp-lightbox>
-<button on="tap:photo-slides">Show Images</button></pre>
+    <td>元素的 DOM ID，或者是为了对事件做出响应而要执行操作的预定义<a href="#special-targets">特殊目标</a>的 DOM ID。在以下示例中，<code>targetId</code> 为 <code>amp-lightbox</code> 目标 <code>photo-slides</code> 的 DOM ID。    <pre>&lt;amp-lightbox id="photo-slides">&lt;/amp-lightbox>
+&lt;button on="tap:photo-slides">Show Images&lt;/button></pre>
 </td>
   </tr>
   <tr>

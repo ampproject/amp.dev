@@ -241,7 +241,7 @@ Yalnızca tek bir video biçimi sağlayabiliyorsanız, MP4 sağlayın. Mümkün 
   </tr>
 </table>
 
-### <source> ve src belirtme</source>
+### &lt;source&gt; ve src belirtme
 
 `src` özelliği üzerinden video kaynağını belirtmek için `<amp-video>` bileşeni içindeki `<source>` alt öğelerini kullanın. `<source>` öğesini kullanmak, video türünü belirtmenize ve yedek video kaynakları eklemenize olanak tanır. MIME türünü belirtmek için `type` özniteliğini kullanmalısınız. HLS videoları için `application/x-mpegurl` veya `application/vnd.apple.mpegurl` kullanın. Diğer tüm video türleri için, `video/` MIME önekini kullanın ve `”video/mp4”` gibi bir video biçimini izleyin.
 

@@ -17,7 +17,7 @@ contributors:
 
 Mit AMP kannst du wie auf einer normalen HTML Seite **Bild-**, **Video-** und **Audioinhalte** einbetten. Erfahre, wie sich die entsprechenden AMP Elemente unterscheiden und wie du sie in deine Seiten aufnehmen kannst.
 
-## Warum nicht <code><img></code>, <code><video></code> und <code><audio></code>?
+## Warum nicht <code>&lt;img></code>, <code>&lt;video></code> und <code>&lt;audio></code>?
 
 AMP unterstützt nicht die standardmäßigen HTML Entsprechungen zum Anzeigen von Medien wie beispielsweise `<img>`. Wir bieten aus folgenden Gründen äquivalente Komponenten an:
 

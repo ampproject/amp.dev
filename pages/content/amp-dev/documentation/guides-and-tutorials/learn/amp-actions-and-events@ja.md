@@ -57,8 +57,8 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
   <tr>
     <td><code>targetId</code></td>
     <td>はい</td>
-    <td>これは要素の DOM id またはイベントのレスポンスとしてアクションを実行する事前定義済みの<a href="#special-targets">特殊ターゲット</a>です。次の例では、<code>targetId</code> は <code>amp-lightbox</code> ターゲットの DOM id である <code>photo-slides</code> です。     <pre><amp-lightbox id="photo-slides"></amp-lightbox>
-<button on="tap:photo-slides">Show Images</button></pre>
+    <td>これは要素の DOM id またはイベントのレスポンスとしてアクションを実行する事前定義済みの<a href="#special-targets">特殊ターゲット</a>です。次の例では、<code>targetId</code> は <code>amp-lightbox</code> ターゲットの DOM id である <code>photo-slides</code> です。     <pre>&lt;amp-lightbox id="photo-slides">&lt;/amp-lightbox>
+&lt;button on="tap:photo-slides">Show Images&lt;/button></pre>
 </td>
   </tr>
   <tr>
@@ -685,14 +685,14 @@ AMP は、HTML 要素（AMP 要素を含む）でリスンできる `tap` イベ
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
       <p>現在のウィンドウを指定された URL に移動し、指定されている場合はオプションのターゲットで開きます（現在、<code>_top</code> と <code>_blank </code> のみがサポートされています）。オプションの <code>opener</code> パラメータは  <code>_blank</code> のターゲットが使用されている場合に指定し、新たに開いたページが <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener</code></a> にアクセスできるようにします。<a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">標準的な URL 置換</a> をサポートしています。</p>
-      <p><strong>警告:</strong> できる限り通常の <code><a></code> リンクを使用することが推奨されます。これは、<code>AMP.navigateTo</code> がウェブクローラに認識されないためです。</p>
+      <p><strong>警告:</strong> できる限り通常の <code>&lt;a&gt;</code> リンクを使用することが推奨されます。これは、<code>AMP.navigateTo</code> がウェブクローラに認識されないためです。</p>
     </td>
   </tr>
   <tr>
     <td><code>closeOrNavigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
       <p>許可された場合はウィンドウを閉じます。そうでない場合は <code>navigateTo</code> アクションと同様に移動させます。前のページから開かれた新規ウィンドウを「戻る」ボタンで閉じる必要がある場合や、開かれていなければ移動する場合の使用事例で役立ちます。</p>
-      <p><strong>警告:</strong> できる限り通常の <code><a></code> リンクを使用することが推奨されます。これは、<code>AMP.navigateTo</code> がウェブクローラに認識されないためです。</p>
+      <p><strong>警告:</strong> できる限り通常の <code>&lt;a&gt;</code> リンクを使用することが推奨されます。これは、<code>AMP.navigateTo</code> がウェブクローラに認識されないためです。</p>
     </td>
   </tr>
   <tr>
