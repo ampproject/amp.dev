@@ -219,7 +219,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="30%">img</td>
-    <td>استبدلت بـ <code>amp-img</code>.<br> يرجى ملاحظة: أن <code><img></code> عبارة عن <a href="https://www.w3.org/TR/html5/syntax.html#void-elements">عنصر خالٍ وفقًا لـ HTML5</a>، لذا لا يحتوي على علامة النهاية. ومع ذلك، فإن <code><amp-img></code> بها علامة نهاية <code></amp-img></code>.</td>
+    <td>استبدلت بـ <code>amp-img</code>.<br> يرجى ملاحظة: أن <code>&lt;img></code> عبارة عن <a href="https://www.w3.org/TR/html5/syntax.html#void-elements">عنصر خالٍ وفقًا لـ HTML5</a>، لذا لا يحتوي على علامة النهاية. ومع ذلك، فإن <code>&lt;amp-img></code> بها علامة نهاية <code>&lt;/amp-img></code>.</td>
   </tr>
     <tr>
     <td width="30%">picture</td>

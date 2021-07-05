@@ -14,7 +14,7 @@ teaser:
 
 Trong một số trường hợp, bạn có thể muốn có cả hai phiên bản AMP và không phải AMP của cùng một trang, ví dụ như cho một bài viết tin tức. Hãy cân nhắc: Nếu Google Tìm kiếm tìm thấy phiên bản không phải AMP của trang đó, liệu họ có biết rằng có một phiên bản AMP "cặp đôi" của nó hay không?
 
-### Liên kết các trang với <link>
+### Liên kết các trang với &lt;link&gt;
 
 Để giải quyết vấn đề này, chúng tôi thêm thông tin về trang AMP vào trang không phải AMP và ngược lại, dưới dạng thẻ `<link>` trong `<head>`.
 

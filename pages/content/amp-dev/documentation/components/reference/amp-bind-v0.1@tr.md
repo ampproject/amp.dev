@@ -474,9 +474,9 @@ Yalnızca aşağıdaki bileşenlere ve özelliklere bağlamaya izin verilir:
     <td>Geçerli olarak seçilmiş,<br><code>option</code> özelliği değerlerine göre tanımlanan alt öğeleri değiştirir. Çoklu seçim için virgülle ayrılmış değer listesini destekler. <a href="https://ampbyexample.com/advanced/image_galleries_with_amp-carousel/#linking-carousels-with-amp-bind">Örneğe göz atın</a></td>
   </tr>
   <tr>
-    <td><code>&lt;amp-state&gt;/code></td>
+    <td><code>&lt;amp-state&gt;</code></td>
     <td><code>[src]</code></td>
-    <td>JSON değerini yeni URL'den alır ve mevcut durumla birleştirir. <em>Aşağıdaki güncellemenin döngüleri önlemek için <code><amp-state></code> öğelerini yoksayacağını unutmayın.</em></td>
+    <td>JSON değerini yeni URL'den alır ve mevcut durumla birleştirir. <em>Aşağıdaki güncellemenin döngüleri önlemek için <code>&lt;amp-state></code> öğelerini yoksayacağını unutmayın.</em></td>
   </tr>
   <tr>
     <td><code>&lt;amp-video&gt;</code></td>

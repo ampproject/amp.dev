@@ -57,7 +57,7 @@ Xem bảng dưới đây để biết mô tả về từng phần của cú phá
   <tr>
     <td><code>targetId</code></td>
     <td>có</td>
-    <td>Đây là DOM ID cho yếu tố, hoặc một <a href="#special-targets">mục tiêu đặc biệt</a> được định nghĩa sẵn mà bạn muốn thực thi một hành động hoặc để đáp lại sự kiện. Trong ví dụ sau,  <code>targetId</code> là DOM ID của mục tiêu <code>amp-lightbox</code>, <code>photo-slides</code>. <pre><amp-lightbox id="photo-slides"></amp-lightbox> <button on="tap:photo-slides">Show Images</button></pre>
+    <td>Đây là DOM ID cho yếu tố, hoặc một <a href="#special-targets">mục tiêu đặc biệt</a> được định nghĩa sẵn mà bạn muốn thực thi một hành động hoặc để đáp lại sự kiện. Trong ví dụ sau,  <code>targetId</code> là DOM ID của mục tiêu <code>amp-lightbox</code>, <code>photo-slides</code>. <pre>&lt;amp-lightbox id="photo-slides">&lt;/amp-lightbox> &lt;button on="tap:photo-slides">Show Images&lt;/button></pre>
 </td>
   </tr>
   <tr>
@@ -675,14 +675,14 @@ Mục tiêu `AMP` được cung cấp bởi thời gian chạy AMP và triển k
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
       <p>Điều hướng cửa sổ hiện tại đến URL được cho, đến mục tiêu được quy định (không bắt buộc) nếu được cho (hiện tại chỉ hỗ trợ <code>_top</code> (trên cùng) và <code>_blank </code> (trống)). Tham số <code>opener</code> (mở) có thể được quy định khi sử dụng mục tiêu là <code>_blank</code> (trống) để cho phép các trang mới được mở truy cập <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener</code></a>. Hỗ trợ <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">thay thế URL tiêu chuẩn</a>.</p>
-      <p><strong>Lưu ý</strong>: Nên sử dụng các liên kết <code><a></code> bất cứ khi nào có thể bởi  <code>AMP.navigateTo</code> không được các web crawler công nhận.</p>
+      <p><strong>Lưu ý</strong>: Nên sử dụng các liên kết <code>&lt;a&gt;</code> bất cứ khi nào có thể bởi  <code>AMP.navigateTo</code> không được các web crawler công nhận.</p>
     </td>
   </tr>
   <tr>
     <td><code>closeOrNavigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
       <p>Cố đóng cửa sổ nếu được cho phép, nếu không, nó sẽ điều hướng tương tự như Hành động <code>navigateTo</code>. Hữu ích cho các trường hợp sử dụng ở đó một nút "Quay lại" có thể là cần thiết để đóng cửa sổ nếu nó được mở trong một cửa sổ mới từ trang trước đó hoặc điều hướng nếu nó không được mở.</p>
-      <p><strong>Lưu ý:</strong> Sử dụng bình thường<code><a></a></code> liên kết được khuyến nghị nếu có thể vì <code>AMP.closeOrNavigateTo</code> không được trình thu thập dữ liệu web nhận dạng.</p>
+      <p><strong>Lưu ý:</strong> Sử dụng bình thường<code>&lt;a&gt;</a></code> liên kết được khuyến nghị nếu có thể vì <code>AMP.closeOrNavigateTo</code> không được trình thu thập dữ liệu web nhận dạng.</p>
     </td>
   </tr>
   <tr>

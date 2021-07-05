@@ -14,7 +14,7 @@ teaser:
 
 In manchen Fällen ist es sinnvoll, sowohl eine AMP Version als auch eine Version ohne AMP derselben Seite zu haben, z. B. für einen Nachrichtenartikel. Aber woher weiß die Google Suche nach dem Fund deiner traditionellen Seite eigentlich, dass eine AMP Version davon existiert?
 
-### Seiten verlinken mit <link>
+### Seiten verlinken mit &lt;link&gt;
 
 Um dieses Problem zu lösen, fügen wir der traditionellen Seite Informationen über die AMP Seite hinzu und umgekehrt. Dazu verwenden wir die Tags `<link>` im Abschnitt `<head>`.
 
