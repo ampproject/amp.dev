@@ -27,5 +27,6 @@ COPY . /amp-dev/
 RUN ls
 
 EXPOSE 80 8080
+WORKDIR /amp-dev/
 ENV NODE_ENV=staging
-ENTRYPOINT ["npx", "gulp", "--gulpfile", "gulpfile.js/run.js", "--cwd", ".", "run"]
+CMD ["npx", "gulp", "--gulpfile", "gulpfile.js/run.js", "--cwd", ".", "run"]
