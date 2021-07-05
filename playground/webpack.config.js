@@ -8,7 +8,7 @@ const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const config = require('../platform/config/shared.json');
 
 module.exports = (env, argv) => {
@@ -79,7 +79,7 @@ module.exports = (env, argv) => {
         process: ['process'],
       }),
       new CopyWebpackPlugin({
-        patterns: [{ from: path.join(__dirname, 'static/') }],
+        patterns: [{from: path.join(__dirname, 'static/')}],
       }),
       new MiniCssExtractPlugin({
         filename: devMode ? '[name].css' : '[name].[contenthash].css',
@@ -126,7 +126,7 @@ module.exports = (env, argv) => {
           test: /\.s?css$/,
           use: [
             MiniCssExtractPlugin.loader,
-            { loader: 'css-loader', options: { sourceMap: true } },
+            {loader: 'css-loader', options: {sourceMap: true}},
             {
               loader: 'sass-loader',
               options: {
@@ -143,7 +143,7 @@ module.exports = (env, argv) => {
           use: [
             {
               loader: 'html-loader',
-              options: { minimize: false },
+              options: {minimize: false},
             },
           ],
         },
