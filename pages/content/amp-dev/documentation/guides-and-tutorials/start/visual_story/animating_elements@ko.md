@@ -109,7 +109,7 @@ author: bpaduch
 </tbody>
 </table>
 
-페이지 요소에 애니메이션 효과를 적용하려면 애니메이션 사전 설정 값 중 하나를 사용하여 <code>animate-in="<em><animation preset></animation></em>"</code> 을 지정해야 합니다. 예를 들어 텍스트를 페이지에 떨어뜨리려면 `animate-in="drop"`을 텍스트 요소에 추가합니다.
+페이지 요소에 애니메이션 효과를 적용하려면 애니메이션 사전 설정 값 중 하나를 사용하여 <code>animate-in="<em>&lt;animation preset></em>"</code> 을 지정해야 합니다. 예를 들어 텍스트를 페이지에 떨어뜨리려면 `animate-in="drop"`을 텍스트 요소에 추가합니다.
 
 ```html
 <amp-story-page id="page3">

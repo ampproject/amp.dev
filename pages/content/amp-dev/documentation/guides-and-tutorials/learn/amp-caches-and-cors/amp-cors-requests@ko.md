@@ -157,9 +157,9 @@ AMP-Same-Origin: true
 
 CORS 요청 검증 후 발생한 HTTP 응답에는 다음 헤더가 포함되어야 합니다.
 
-##### Access-Control-Allow-Origin: <origin> </origin><a name="access-control-allow-origin-origin"></a>
+##### Access-Control-Allow-Origin: &lt;origin&gt; <a name="access-control-allow-origin-origin"></a>
 
-이 헤더는 <a href="https://www.w3.org/TR/cors/">W3 CORS 사양</a>의 요구 사항이며 <code>origin</code>은 CORS <code>Origin</code> 요청 헤더를 통해 허용된 요청 출처를 의미합니다(예: <code>"https://<publisher's subdomain>.cdn.ampproject.org"</code>).
+이 헤더는 <a href="https://www.w3.org/TR/cors/">W3 CORS 사양</a>의 요구 사항이며 <code>origin</code>은 CORS <code>Origin</code> 요청 헤더를 통해 허용된 요청 출처를 의미합니다(예: <code>"https://&lt;publisher's subdomain>.cdn.ampproject.org"</code>).
 
 W3 CORS 사양은 응답에서 <code>\*</code> 값이 반환되는 것을 허용하지만 보안 강화를 위해 다음을 수행합니다.
 

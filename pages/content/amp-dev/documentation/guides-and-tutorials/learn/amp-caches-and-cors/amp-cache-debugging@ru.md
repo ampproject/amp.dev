@@ -58,7 +58,7 @@ have a look and request a pull request there.
       <td>Убедитесь, что AMP-кеш может получить доступ к вашим ресурсам и что он не заблокирован по IP-адресу, пользовательскому агенту и т. п. (см. <a href="https://support.google.com/webmasters/answer/1061943?hl=en">Список пользовательских агентов, используемых поисковым роботом Google</a>).</td>
     </tr>
     <tr>
-      <td>Динамические элементы, такие как <code><amp-form></amp-form></code>, <code><amp-list></amp-list></code>, демонстрируют некорректное поведение.</td>
+      <td>Динамические элементы, такие как <code>&lt;amp-form&gt;</code>, <code>&lt;amp-list&gt;</code>, демонстрируют некорректное поведение.</td>
       <td>Заголовки CORS повреждены или отсутствуют.</td>
       <td>Эти компоненты отправляют кроссдоменные запросы из AMP-кеша в ваш источник. По умолчанию браузеры блокируют такие запросы. Чтобы разрешить их, передавайте <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">заголовки CORS</a>, которые вносят <a href="amp-cors-requests.md">все кеши</a> в список разрешенных.</td>
     </tr>

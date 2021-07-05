@@ -161,7 +161,7 @@ In questa configurazione vengono definite le seguenti proprietà:
   </tr>
   <tr>
     <td class="col-fourty"><code>login</code></td>
-    <td class="col-twenty"><code>&lt;URL&gt;</code> o<br><Map [string, URL]></td>
+    <td class="col-twenty"><code>&lt;URL&gt;</code> o<br>&lt;Map [string, URL]&gt;</td>
     <td>L'URL HTTPS della pagina di accesso o un insieme di URL per i diversi tipi di pagine di accesso.</td>
   </tr>
   <tr>

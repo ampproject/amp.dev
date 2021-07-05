@@ -157,9 +157,9 @@ AMP-Same-Origin: true
 
 بعد التحقق من طلب اشتراك المصادر في الموارد، يجب أن تحتوي استجابة HTTP الناتجة على الترويسات التالية:
 
-##### Access-Control-Allow-Origin: <origin> </origin><a name="access-control-allow-origin-origin"></a>
+##### Access-Control-Allow-Origin: &lt;origin&gt; <a name="access-control-allow-origin-origin"></a>
 
-تعد هذه الترويسة أحد مطالب <a href="https://www.w3.org/TR/cors/">مواصفات اشتراك المصادر في الموارد لـ W3</a>، حيث يشير <code>origin</code> إلى الأصل الطالب الذي تم السماح به عبر ترويسة طلب <code>Origin</code> لاشتراك المصادر في الموارد (على سبيل المثال، <code>"https://<publisher's subdomain>.cdn.ampproject.org"</code>).
+تعد هذه الترويسة أحد مطالب <a href="https://www.w3.org/TR/cors/">مواصفات اشتراك المصادر في الموارد لـ W3</a>، حيث يشير <code>origin</code> إلى الأصل الطالب الذي تم السماح به عبر ترويسة طلب <code>Origin</code> لاشتراك المصادر في الموارد (على سبيل المثال، <code>"https://&lt;publisher's subdomain>.cdn.ampproject.org"</code>).
 
 على الرغم من أن مواصفات اشتراك المصادر في الموارد لـ W3 تسمح بإرجاع قيمة <code>\*</code> في الاستجابة، يجب عليك من أجل تحسين الأمان:
 

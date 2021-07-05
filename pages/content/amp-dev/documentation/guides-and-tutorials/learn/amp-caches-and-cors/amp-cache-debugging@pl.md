@@ -57,7 +57,7 @@ Jeśli po wykonaniu tych czynności problem nie ustąpi, sprawdź poniższą tab
       <td>Upewnij się, że serwer buforujący AMP ma dostęp do Twoich zasobów i nie jest blokowany przez adres IP, program użytkownika itd. (<a href="https://support.google.com/webmasters/answer/1061943?hl=en">Lista programów użytkownika używanych przez robota indeksującego Google</a>).</td>
     </tr>
     <tr>
-      <td>Elementy dynamiczne, takie jak <code><amp-form></amp-form></code>, <kod><amp-list></amp-list> nie działają zgodnie z oczekiwaniami.</kod>
+      <td>Elementy dynamiczne, takie jak <code>&lt;amp-form&gt;</code>, <code>&lt;amp-list&gt;</code> nie działają zgodnie z oczekiwaniami.
 </td>
       <td>Uszkodzone lub brakujące nagłówki CORS.</td>
       <td>Składniki te generują żądania danych z różnych źródeł, wysyłane z serwera buforującego AMP do Twojego źródła. Przeglądarki domyślnie blokują te żądania. Aby zezwolić na te żądania, należy emitować nagłówki <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS</a>, zezwalające na umieszczenie na liście dozwolonych <a href="amp-cors-requests.md">wszystkich serwerów buforujących</a>.</td>

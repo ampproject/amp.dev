@@ -157,9 +157,9 @@ Tajuk kustom ini dikirimkan oleh Runtime AMP saat permintaan XHR dilakukan untuk
 
 Setelah memverifikasi permintaan CORS, hasil tanggapan HTTP harus mengandung tajuk berikut ini:
 
-##### Akses-Kontrol-Izinkan-Asal: <origin> </origin><a name="access-control-allow-origin-origin"></a>
+##### Akses-Kontrol-Izinkan-Asal: &lt;origin&gt; <a name="access-control-allow-origin-origin"></a>
 
-Tajuk ini adalah persyaratan <a href="https://www.w3.org/TR/cors/">Spek W3 CORS Spec</a>, di mana <code>origin</code> merujuk asal peminta yang diizinkan melalui tajuk permintaan CORS <code>Origin</code> (contohnya, <code>"https://<publisher's subdomain>.cdn.ampproject.org"</code>).
+Tajuk ini adalah persyaratan <a href="https://www.w3.org/TR/cors/">Spek W3 CORS Spec</a>, di mana <code>origin</code> merujuk asal peminta yang diizinkan melalui tajuk permintaan CORS <code>Origin</code> (contohnya, <code>"https://&lt;publisher's subdomain>.cdn.ampproject.org"</code>).
 
 Walaupun spek W3 CORS mengizinkan nilai <code>\*</code> dihasilkan di dalam tanggapan, untuk keamanan yang lebih baik, Anda sebaiknya:
 

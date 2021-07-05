@@ -116,7 +116,7 @@ Składniki AMP oferują dodatkową funkcjonalność i składniki interfejsu uży
 
 - [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md): karuzela obrazów, która wyświetla wiele widoków produktu.
 - [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md): system generowania szablonów do renderowania odpowiedzi serwera ze składnika amp-form.
-- [`amp-form`](../../../../documentation/components/reference/amp-form.md): dodaje specjalne funkcje elementów <kod><form>, które są niezbędne dla stron AMP.</kod>
+- [`amp-form`](../../../../documentation/components/reference/amp-form.md): dodaje specjalne funkcje elementów `<form>`, które są niezbędne dla stron AMP.
 - [`amp-selector`](../../../../documentation/components/reference/amp-selector.md): oferuje semantyczny sposób wyboru jednego lub wielu elementów z grupy elementów. Można go użyty jako źródła danych wejściowych składnika amp-form.
 
 ## Podstawowa interaktywność

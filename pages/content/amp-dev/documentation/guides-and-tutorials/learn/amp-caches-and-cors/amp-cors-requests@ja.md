@@ -157,7 +157,7 @@ AMP-Same-Origin: true
 
 CORS リクエストを検証した後に生成される HTTP レスポンスには、以下のヘッダーが含まれている必要があります。
 
-##### Access-Control-Allow-Origin: <origin> </origin><a name="access-control-allow-origin-origin"></a>
+##### Access-Control-Allow-Origin: &lt;origin&gt; <a name="access-control-allow-origin-origin"></a>
 
 このヘッダーは、<code>origin</code> は CORS <code>Origin</code> リクエストヘッダーで許可されたリクエスト元のオリジン（<code>"https://<サイト運営者のサブドメイン>.cdn.ampproject.org"</code> など）を参照するという <a href="https://www.w3.org/TR/cors/">W3 CORS Spec</a> の要件です。
 

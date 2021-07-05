@@ -168,7 +168,7 @@ W poniższym przykładzie mamy 3 różne przycięte zdjęcia kota, które chcemy
 - 470–669 px, wyświetlany ma być plik `cat-medium.jpg` (450 x 340 px)
 - 469 px lub mniej, wyświetlany ma być plik `cat-small.jpg` (226 x 340 px)
 
-[tip type="note"] **UWAGA —** Jako że chcieliśmy, aby obrazy miały stałe rozmiary (tzn. nie były przekoszone), nie określiliśmy wartości układu, która domyślnie będzie ustawiona na <kod>layout=fixed, ponieważ ustawiliśmy szerokość i wysokość. Więcej informacji znajdziesz w artykule <a href="control_layout.md#what-if-the-layout-attribute-isnt-specified" data-md-type="link">„Co jeśli atrybut layout nie jest określony”?</a> [/tip]</kod>
+[tip type="note"] **UWAGA —** Jako że chcieliśmy, aby obrazy miały stałe rozmiary (tzn. nie były przekoszone), nie określiliśmy wartości układu, która domyślnie będzie ustawiona na `layout=fixed`, ponieważ ustawiliśmy szerokość i wysokość. Więcej informacji znajdziesz w artykule <a href="control_layout.md#what-if-the-layout-attribute-isnt-specified" data-md-type="link">„Co jeśli atrybut layout nie jest określony”?</a> [/tip]
 
 [example preview="top-frame" playground="true"]
 
