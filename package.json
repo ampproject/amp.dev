@@ -190,7 +190,7 @@
 		"write": "2.0.0"
 	},
 	"optionalDependencies": {
-		"fsevents": "2.3.2"
+		"fsevents": "*"
 	},
 	"sideEffects": [
 		"./playground/src/request-idle-callback/base.js",
