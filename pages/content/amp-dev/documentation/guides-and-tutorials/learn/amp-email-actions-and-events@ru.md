@@ -55,8 +55,8 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
   <tr>
     <td><code>targetId</code></td>
     <td>да</td>
-    <td>Это DOM-идентификатор элемента или предустановленная <a href="#special-targets">специальная цель</a> , над которой вы бы хотели осуществить действие в ответ на событие. В следующем примере <code>targetId</code> является DOM-идентификатором цели <code>amp-lightbox</code>, <code>photo-slides</code>.     <pre><amp-lightbox id="photo-slides"></amp-lightbox>
-<button on="tap:photo-slides">Показать изображения</button></pre>
+    <td>Это DOM-идентификатор элемента или предустановленная <a href="#special-targets">специальная цель</a> , над которой вы бы хотели осуществить действие в ответ на событие. В следующем примере <code>targetId</code> является DOM-идентификатором цели <code>amp-lightbox</code>, <code>photo-slides</code>.     <pre>&lt;amp-lightbox id="photo-slides">&lt;/amp-lightbox>
+&lt;button on="tap:photo-slides">Показать изображения&lt;/button></pre>
 </td>
   </tr>
   <tr>

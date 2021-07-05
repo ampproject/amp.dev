@@ -55,8 +55,8 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
   <tr>
     <td><code>targetId</code></td>
     <td>はい</td>
-    <td>これは要素の DOM id またはイベントのレスポンスとしてアクションを実行する事前定義済みの<a href="#special-targets">特殊ターゲット</a>です。次の例では、<code>targetId</code> は <code>amp-lightbox</code> ターゲットの DOM id である <code>photo-slides</code> です。     <pre><amp-lightbox id="photo-slides"></amp-lightbox>
-<button on="tap:photo-slides">Show Images</button></pre>
+    <td>これは要素の DOM id またはイベントのレスポンスとしてアクションを実行する事前定義済みの<a href="#special-targets">特殊ターゲット</a>です。次の例では、<code>targetId</code> は <code>amp-lightbox</code> ターゲットの DOM id である <code>photo-slides</code> です。     <pre>&lt;amp-lightbox id="photo-slides">&lt;/amp-lightbox>
+&lt;button on="tap:photo-slides">Show Images&lt;/button></pre>
 </td>
   </tr>
   <tr>

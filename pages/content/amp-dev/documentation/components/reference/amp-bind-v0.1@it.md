@@ -528,7 +528,7 @@ Note sulle associazioni:
       <td>Vedi gli <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option#Attributes">attributi options</a> corrispondenti.</td>
     </tr>
     <tr>
-      <td><code><&lt;optgroup&gt;</code></td>
+      <td><code>&lt;optgroup&gt;</code></td>
       <td><code>[disabled]</code><br><code>[label]</code></td>
       <td>Vedi gli <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup#Attributes">attributi optgroup</a> corrispondenti.</td>
     </tr>

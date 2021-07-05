@@ -55,8 +55,8 @@ Opisy poszczególnych części składni znajdują się w poniższej tabeli.
   <tr>
     <td><code>targetId</code></td>
     <td>tak</td>
-    <td>Jest to identyfikator modelu DOM elementu lub predefiniowany <a href="#special-targets">cel specjalny</a>, ktorego ma dotyczyc dzialanie wykonywane w odpowiedzi na zdarzenie. W nastepujacym przykladzie, <code>targetId</code> to identyfikator modelu DOM docelowego elementu skladnika <code>amp-lightbox</code>, <code>photo-slides</code>.<pre><amp-lightbox id="photo-slides"></amp-lightbox>
-<button on="tap:photo-slides">Show Images</button></pre>
+    <td>Jest to identyfikator modelu DOM elementu lub predefiniowany <a href="#special-targets">cel specjalny</a>, ktorego ma dotyczyc dzialanie wykonywane w odpowiedzi na zdarzenie. W nastepujacym przykladzie, <code>targetId</code> to identyfikator modelu DOM docelowego elementu skladnika <code>amp-lightbox</code>, <code>photo-slides</code>.<pre>&lt;amp-lightbox id="photo-slides">&lt;/amp-lightbox>
+&lt;button on="tap:photo-slides">Show Images&lt;/button></pre>
 </td>
   </tr>
   <tr>

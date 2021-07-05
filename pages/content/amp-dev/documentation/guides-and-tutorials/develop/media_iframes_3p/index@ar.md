@@ -17,7 +17,7 @@ contributors:
 
 كما هو الحال في صفحة HTML عادية، يسمح لك AMP بتضمين محتوى **الصور**، و**مقاطع الفيديو** و**الصوت** . تعرَّف على الأشياء المختلفة حول مكافئات AMP وتعرَّف على طريقة تضمينها في صفحاتك.
 
-## لمَ لا <code><img></code>، <code><video></code> و<code><audio></code><audio>؟
+## لمَ لا `<img>`، `<video>` و`<audio>`؟
 
 لا تدعم AMP مثيلات HTML لعرض الوسائط مثل `<img>`. فيما نقدم نحن مكونات مكافئة للأسباب التالية:
 
@@ -121,7 +121,7 @@ contributors:
 
 [/example]
 
-[tip type="note"] <strong>ملحوظة–</strong> قم بتضمين <code><script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script></code> في رأس صفحتك لاستخدام هذا المكون. [/tip]
+[tip type="note"] <strong>ملحوظة–</strong> قم بتضمين <code>&lt;script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js">&lt;/script></code> في رأس صفحتك لاستخدام هذا المكون. [/tip]
 
 ## فيديو
 
@@ -175,4 +175,4 @@ contributors:
 
 [/example]
 
-[tip type="note"] <strong>ملحوظة–</strong> قم بتضمين <code><script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script></code> في رأس صفحتك لاستخدام هذا المكون. [/tip]
+[tip type="note"] <strong>ملحوظة–</strong> قم بتضمين `<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` في رأس صفحتك لاستخدام هذا المكون. [/tip]

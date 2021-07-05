@@ -55,7 +55,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
   <tr>
     <td><code>targetId</code></td>
     <td>필수</td>
-    <td>요소의 DOM ID 또는 이벤트에 대응하여 액션을 실행하고자 하는 사전 정의된 <a href="#special-targets">특정 대상</a>입니다. 다음 예시에서 <code>targetId</code>는 <code>amp-lightbox</code> 대상, <code>photo-slides</code>의 DOM ID입니다.<pre><amp-lightbox id="photo-slides"></amp-lightbox> <button on="tap:photo-slides">이미지 표시</button></pre>
+    <td>요소의 DOM ID 또는 이벤트에 대응하여 액션을 실행하고자 하는 사전 정의된 <a href="#special-targets">특정 대상</a>입니다. 다음 예시에서 <code>targetId</code>는 <code>amp-lightbox</code> 대상, <code>photo-slides</code>의 DOM ID입니다.<pre>&lt;amp-lightbox id="photo-slides">&lt;/amp-lightbox> &lt;button on="tap:photo-slides">이미지 표시&lt;/button></pre>
 </td>
   </tr>
   <tr>

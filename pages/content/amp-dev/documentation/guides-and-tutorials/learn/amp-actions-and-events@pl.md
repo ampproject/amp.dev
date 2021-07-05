@@ -676,14 +676,14 @@ Cel `AMP` jest dostarczany przez środowisko uruchomieniowe AMP i implementuje d
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
       <p>Kieruje bieżące okno do podanego adresu URL, do opcjonalnie podanego celu (aktualnie obsługiwane są tylko <code>_top</code> oraz <code>_blank </code>). Opcjonalny parametr <code>opener</code> można określić podczas używania celu <code>_blank</code>, aby umożliwić nowo otwartej stronie dostęp do <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener</code></a>. Obsługuje <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md"> standardowe podstawienia adresów URL</a>.</p>
-      <p><strong>Zastrzeżenie:</strong> w miarę możliwości zalecane jest używanie zwykłych linków <code>&lt;a></code>, ponieważ element <code>AMP.navigateTo</code> nie jest rozpoznawany przez internetowe roboty indeksujące.</p>
+      <p><strong>Zastrzeżenie:</strong> w miarę możliwości zalecane jest używanie zwykłych linków <code>&lt;a&gt;</code>, ponieważ element <code>AMP.navigateTo</code> nie jest rozpoznawany przez internetowe roboty indeksujące.</p>
     </td>
   </tr>
   <tr>
     <td><code>closeOrNavigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
       <p>Próbuje zamknąć okno, jeśli jest to dozwolone, w przeciwnym razie nawiguje podobnie jak działanie <code>navigateTo</code>. Przydatne w przypadkach, gdy przycisk Wstecz może wymagać zamknięcia okna, jeśli zostało ono otwarte w nowym oknie z poprzedniej strony lub nawigacji, jeśli nie zostało ono otwarte.</p>
-      <p><strong>Zastrzeżenie:</strong> w miarę możliwości zalecane jest używanie zwykłych linków <code>&lt;a></code>, ponieważ element <code>AMP.navigateTo</code> nie jest rozpoznawany przez internetowe roboty indeksujące.</p>
+      <p><strong>Zastrzeżenie:</strong> w miarę możliwości zalecane jest używanie zwykłych linków <code>&lt;a&gt;</code>, ponieważ element <code>AMP.navigateTo</code> nie jest rozpoznawany przez internetowe roboty indeksujące.</p>
     </td>
   </tr>
   <tr>

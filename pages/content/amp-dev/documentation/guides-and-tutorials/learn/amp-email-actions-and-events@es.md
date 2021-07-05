@@ -55,7 +55,7 @@ Consulte en la siguiente tabla la descripción sobre cada parte de la sintaxis.
   <tr>
     <td><code>targetId</code></td>
     <td>Sí</td>
-    <td>Es el ID del DOM para el elemento, o un  <a href="#special-targets">objetivo especial </a> que se definió previamente, en el cual le gustaría ejecutar una acción como respuesta a un evento. En el siguiente ejemplo, el <code>targetId</code> es el ID del DOM para los objetivos <code>amp-lightbox</code> y <code>photo-slides</code>.     <pre><amp-lightbox id="photo-slides"></amp-lightbox> <button on="tap:photo-slides">Show Images</button></pre>
+    <td>Es el ID del DOM para el elemento, o un  <a href="#special-targets">objetivo especial </a> que se definió previamente, en el cual le gustaría ejecutar una acción como respuesta a un evento. En el siguiente ejemplo, el <code>targetId</code> es el ID del DOM para los objetivos <code>amp-lightbox</code> y <code>photo-slides</code>.     <pre>&lt;amp-lightbox id="photo-slides">&lt;/amp-lightbox> &lt;button on="tap:photo-slides">Show Images&lt;/button></pre>
 </td>
   </tr>
   <tr>

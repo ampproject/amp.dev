@@ -241,7 +241,7 @@ HLS 세그먼트의 경우 지속 시간을 10초 이하로 유지하는 것이 
   </tr>
 </table>
 
-### <source> vs src 지정</source>
+### &lt;source&gt; vs src 지정
 
 `<amp-video>` 컴포넌트에서 `<source>` 하위 요소를 사용하여 `src` 속성에 동영상 소스를 지정합니다. `<source>` 요소를 사용하면 동영상 유형을 지정하고 백업 동영상 소스를 추가할 수 있습니다. MIME 유형을 지정하려면 `type` 속성을 사용해야 합니다. HLS 동영상의 경우 `application/x-mpegurl` 또는 `application/vnd.apple.mpegurl`을 사용합니다. 모든 기타 동영상 유형에는 `video/` MIME 접두어를 사용하고 `”video/mp4”` 등의 동영상 형식을 따릅니다.
 

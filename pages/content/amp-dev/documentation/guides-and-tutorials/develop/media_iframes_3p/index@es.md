@@ -17,7 +17,7 @@ contributors:
 
 Al igual que las páginas HTML normales, las páginas AMP le permiten insertar contenidos de **imágenes**, **videos** y **audios**. Descubra cómo incluir las versiones AMP equivalentes en sus páginas y qué diferencias existen entre ellas.
 
-## ¿Por qué no puedo utilizar <code><img></code>, <code><video></code> y <code><audio></code>?
+## ¿Por qué no puedo utilizar <code>&lt;img></code>, <code>&lt;video></code> y <code>&lt;audio></code>?
 
 AMP no admite los equivalentes predeterminados de HTML para mostrar contenido multimedia, como `<img>`. Proporcionamos componentes equivalentes por los siguientes motivos:
 

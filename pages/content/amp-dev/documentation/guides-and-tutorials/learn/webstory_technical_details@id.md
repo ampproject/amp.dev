@@ -241,7 +241,7 @@ Jika Anda hanya dapat menyediakan format video tunggal, sediakan MP4. Jika mungk
   </tr>
 </table>
 
-### Tentukan <source> vs src</source>
+### Tentukan &lt;source&gt; vs src
 
 Gunakan elemen anak `<source>` dalam komponen `<amp-video>` untuk menentukan sumber video daripada atribut `src`. Menggunakan elemen `<source>` memungkinkan Anda untuk menentukan jenis video dan menambahkan sumber video cadangan. Anda harus menggunakan atribut `type` untuk menentukan jenis MIME. Gunakan `application/x-mpegurl` atau `application/vnd.apple.mpegurl` untuk video HLS. Untuk semua jenis video lain, gunakan awalan MIME `video/` dan ikuti dengan format video, seperti `”video/mp4”`.
 

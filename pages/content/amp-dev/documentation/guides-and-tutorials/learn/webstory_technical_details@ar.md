@@ -242,7 +242,7 @@ author: CrystalOnScript
   </tr>
 </table>
 
-### تحديد <source> vs src</source>
+### تحديد &lt;source&gt; vs src
 
 استخدم العناصر الفرعية `<source>` داخل المكون `<amp-video>` لتحديد مصدر الفيديو عبر السمة `src`. ويتيح لك استخدام عنصر `<source>` تحديد نوع الفيديو وإضافة مصادر احتياطية للفيديو. ويجب استخدام السمة `type` لتحديد نوع MIME. واستخدم `application/x-mpegurl` أو `application/vnd.apple.mpegurl` لمقاطع فيديو HLS. وبالنسبة إلى كل أنواع الفيديو الأخرى، استخدم بادئة MIME `video/` واتبعها بتنسيق الفيديو، مثل `”video/mp4”`.
 
