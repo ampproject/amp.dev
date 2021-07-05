@@ -159,9 +159,9 @@ AMP-Same-Origin: true
 
 Отправляемый после проверки CORS-запроса HTTP-ответ должен содержать следующие заголовки:
 
-##### Access-Control-Allow-Origin: <origin> </origin><a name="access-control-allow-origin-origin"></a>
+##### Access-Control-Allow-Origin: &lt;origin&gt; <a name="access-control-allow-origin-origin"></a>
 
-Этот заголовок является требованием <a href="https://www.w3.org/TR/cors/">спецификации CORS от W3</a>, где <code>origin</code> обозначает источник запроса, который был разрешен через заголовок CORS-запроса <code>Origin</code> (например, <code>"https://<publisher's subdomain>.cdn.ampproject.org"</code>).
+Этот заголовок является требованием <a href="https://www.w3.org/TR/cors/">спецификации CORS от W3</a>, где <code>origin</code> обозначает источник запроса, который был разрешен через заголовок CORS-запроса <code>Origin</code> (например, <code>"https://&lt;publisher's subdomain&gt;.cdn.ampproject.org"</code>).
 
 Хотя спецификация CORS от W3 позволяет возвращать в ответе значение <code>\*</code>, для повышения безопасности следует выполнять следующее:
 

@@ -57,7 +57,7 @@ Se você ainda tiver problemas após seguir estas etapas, verifique a tabela aba
       <td>Verifique se o AMP Cache pode acessar seus ativos e se não está bloqueado por um endereço IP ou cliente, etc.(<a href="https://support.google.com/webmasters/answer/1061943?hl=en">Lista de clientes usados pelo crawler do Google</a>).</td>
     </tr>
     <tr>
-      <td>Elementos dinâmicos tais como <code><amp-form></amp-form></code>, <code><amp-list></amp-list></code>, não se comportam como esperado.</td>
+      <td>Elementos dinâmicos tais como <code>&lt;amp-form&gt;</code>, <code>&lt;amp-list&gt;</code>, não se comportam como esperado.</td>
       <td>Cabeçalhos CORS com erro ou ausentes.</td>
       <td>Esses componentes fazem solicitações cross-origin do AMP Cache até sua origem. Por default, os navegadores bloqueiam essas solicitações. Para permitir essas requisições, emita <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">cabeçalhos CORS</a> que liberem <a href="amp-cors-requests.md">todos os caches</a>.</td>
     </tr>

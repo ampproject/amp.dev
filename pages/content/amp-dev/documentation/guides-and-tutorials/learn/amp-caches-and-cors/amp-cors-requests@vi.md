@@ -53,7 +53,7 @@ Rất nhiều thành phần và phần mở rộng AMP tận dụng các điểm
 <li data-md-type="list_item" data-md-list-type="unordered">
 <p data-md-type="paragraph"><a href="#send-cors-response-headers" data-md-type="link">Gửi đầu đề hồi đáp CORS</a></p>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true"><li data-md-type="list_item" data-md-list-type="unordered">
-<a href="#access-control-allow-origin-origin" data-md-type="link">Access-Control-Allow-Origin</a> (Kiểm soát-Truy cập-Cho phép-Nguồn gốc):<origin data-md-type="raw_html"></origin>
+<a href="#access-control-allow-origin-origin" data-md-type="link">Access-Control-Allow-Origin (Kiểm soát-Truy cập-Cho phép-Nguồn gốc): </a>
 </li></ul>
 </li>
 <li data-md-type="list_item" data-md-list-type="unordered"><a href="#processing-state-changing-requests" data-md-type="link">Xử lý các yêu cầu thay đổi trạng thái</a></li>
@@ -159,9 +159,9 @@ AMP-Same-Origin: true
 
 Sau khi xác minh yêu cầu CORS, kết quả hồi đáp HTTP phải chứa các đầu đề sau:
 
-##### Access-Control-Allow-Origin (Kiểm soát-Truy cập-Cho phép-Nguồn gốc): <origin> </origin><a name="access-control-allow-origin-origin"></a>
+##### Access-Control-Allow-Origin (Kiểm soát-Truy cập-Cho phép-Nguồn gốc): &lt;origin&gt; <a name="access-control-allow-origin-origin"></a>
 
-Đầu đề này là một yêu cầu <a href="https://www.w3.org/TR/cors/">Thông số W3 CORS</a>, ở đó <code>origin</code> (nguồn gốc) là nguồn gốc yêu cầu đã được cho phép thông qua đầu đề yêu cầu <code>Origin</code> CORS (ví dụ, <code>"https://<tên miền con của nhà phát hành>.cdn.ampproject.org"</code>).
+Đầu đề này là một yêu cầu <a href="https://www.w3.org/TR/cors/">Thông số W3 CORS</a>, ở đó <code>origin</code> (nguồn gốc) là nguồn gốc yêu cầu đã được cho phép thông qua đầu đề yêu cầu <code>Origin</code> CORS (ví dụ, <code>"https://&lt;tên miền con của nhà phát hành>.cdn.ampproject.org"</code>).
 
 Tuy thông số W3 CORS cho phép giá trị <code>\*</code> được trả về trong hồi đáp, để đảm bảo bảo mật, bạn nên:
 

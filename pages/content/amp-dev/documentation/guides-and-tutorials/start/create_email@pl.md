@@ -111,7 +111,7 @@ Jeden obraz to nie problem, ale co jeśli chcemy wyświetlić ich więcej? AMP d
 
 <!-- [Read here for full list of supported layout elements](). -->
 
-W tym samouczku użyjemy elementu [<kod><amp-carousel></kod>](/content/amp-dev/documentation/components/reference/amp-carousel.md), aby wyświetlić zdjęcia kotów do adopcji.
+W tym samouczku użyjemy elementu [`<amp-carousel>`](/content/amp-dev/documentation/components/reference/amp-carousel.md), aby wyświetlić zdjęcia kotów do adopcji.
 
 Dodaj skrypt `amp-carousel` do sekcji head wiadomości e-mail.
 

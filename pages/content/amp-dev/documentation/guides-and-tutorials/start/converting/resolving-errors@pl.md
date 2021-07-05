@@ -274,7 +274,7 @@ Dlaczego wyprowadzony został typ `container`? Dlatego, że nie określiliśmy a
 
 Odśwież stronę i sprawdź walidator; nie powinien już wyświetlać żadnych błędów!
 
-Masz teraz prawidłowy dokument AMP, ale obraz nie wygląda zbyt dobrze, ponieważ jest dziwnie umieszczony na stronie. Domyślnie po określeniu wysokości i szerokości elementu [<kod>amp-img</kod>](../../../../documentation/components/reference/amp-img.md) AMP ustali podane wymiary, ale czy nie byłoby wspaniale, gdyby AMP przeskalował obraz tak, aby _responsywnie_ się rozciągał odpowiednio do rozmiaru strony bez względu na rozmiar ekranu?
+Masz teraz prawidłowy dokument AMP, ale obraz nie wygląda zbyt dobrze, ponieważ jest dziwnie umieszczony na stronie. Domyślnie po określeniu wysokości i szerokości elementu [`amp-img`](../../../../documentation/components/reference/amp-img.md) AMP ustali podane wymiary, ale czy nie byłoby wspaniale, gdyby AMP przeskalował obraz tak, aby _responsywnie_ się rozciągał odpowiednio do rozmiaru strony bez względu na rozmiar ekranu?
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption="Our image isn't responsive.") }}
 

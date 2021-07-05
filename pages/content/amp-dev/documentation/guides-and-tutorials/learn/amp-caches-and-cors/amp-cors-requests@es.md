@@ -53,7 +53,7 @@ Muchos de los componentes y extensiones de AMP aprovechan los endpoints remotos 
 <li data-md-type="list_item" data-md-list-type="unordered">
 <p data-md-type="paragraph"><a href="#send-cors-response-headers" data-md-type="link">Cómo enviar la respuesta a los encabezados CORS</a></p>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true"><li data-md-type="list_item" data-md-list-type="unordered">
-<a href="#access-control-allow-origin-origin" data-md-type="link">El encabezado de respuesta Access-Control-Allow-Origin: </a><origin data-md-type="raw_html"></origin>
+<a href="#access-control-allow-origin-origin" data-md-type="link">El encabezado de respuesta Access-Control-Allow-Origin: </a>
 </li></ul>
 </li>
 <li data-md-type="list_item" data-md-list-type="unordered"><a href="#processing-state-changing-requests" data-md-type="link">Cómo procesar las solicitudes de cambio de estado</a></li>
@@ -159,9 +159,9 @@ El tiempo de ejecución de AMP envía este encabezado personalizado cuando se re
 
 Después de verificar la solicitud CORS, la respuesta que se origine de HTTP debe contener los siguientes encabezados:
 
-##### El encabezado de respuesta Access-Control-Allow-Origin: <origin> </origin><a name="access-control-allow-origin-origin"></a>
+##### El encabezado de respuesta Access-Control-Allow-Origin: &lt;origin&gt; <a name="access-control-allow-origin-origin"></a>
 
-Este encabezado es un requisito de la <a href="https://www.w3.org/TR/cors/">especificación W3 de CORS</a> donde <code>origin</code> se refiere al origen de la solicitud que se autorizó mediante el encabezado de la solicitud CORS <code>Origin</code> (por ejemplo, <code>"https://<publisher's subdomain>.cdn.ampproject.org"</code>).
+Este encabezado es un requisito de la <a href="https://www.w3.org/TR/cors/">especificación W3 de CORS</a> donde <code>origin</code> se refiere al origen de la solicitud que se autorizó mediante el encabezado de la solicitud CORS <code>Origin</code> (por ejemplo, <code>"https://&lt;publisher's subdomain&gt;.cdn.ampproject.org"</code>).
 
 A pesar de que la especificación W3 de CORS permite devolver el valor de <code>\*</code> en la respuesta, para mejorar la seguridad, debe hacer lo siguiente:
 

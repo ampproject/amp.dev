@@ -109,7 +109,7 @@ author: bpaduch
 </tbody>
 </table>
 
-要素に表示処理のアニメーション化を適用するには、<code>animate-in="<em><animation preset></animation></em>"</code> でアニメーション プリセットの値を指定する必要があります。たとえば、ページにテキストをドロップインには、以下のようにテキスト要素に `animate-in="drop"` を追加します。
+要素に表示処理のアニメーション化を適用するには、<code>animate-in="<em>&lt;animation preset></em>"</code> でアニメーション プリセットの値を指定する必要があります。たとえば、ページにテキストをドロップインには、以下のようにテキスト要素に `animate-in="drop"` を追加します。
 
 ```html
 <amp-story-page id="page3">
