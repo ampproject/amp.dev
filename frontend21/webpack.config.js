@@ -2,7 +2,7 @@ const path = require('path');
 
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
@@ -22,7 +22,7 @@ module.exports = (env, argv) => {
       path: path.join(process.cwd(), 'dist'),
     },
     optimization: {
-      minimizer: isDevelopment ? [] : [new OptimizeCSSAssetsPlugin({})],
+      minimizer: isDevelopment ? [] : [new CssMinimizerWebpackPlugin({})],
       splitChunks: {
         cacheGroups: {
           main: {
@@ -101,10 +101,10 @@ module.exports = (env, argv) => {
       new webpack.HotModuleReplacementPlugin({}),
       isDevelopment
         ? new WebpackBuildNotifierPlugin({
-            title: 'amp.dev: Frontend',
-            logo: path.join(process.cwd(), '../pages/static/img/favicon.png'),
-          })
-        : () => {},
+          title: 'amp.dev: Frontend',
+          logo: path.join(process.cwd(), '../pages/static/img/favicon.png'),
+        })
+        : () => { },
     ],
     module: {
       rules: [
