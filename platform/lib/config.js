@@ -185,8 +185,13 @@ class Config {
       fs.writeFileSync(GROW_CONFIG_DEST, yaml.dump(podSpec, {'noRefs': true}));
       signale.success('Configured Grow!');
     } catch (err) {
-      signale.fatal('Could not configure Grow', err);
-      process.exit(1);
+      signale.error('Could not write Grow config', err);
+
+      signale.info('Checking for existing Grow config ...');
+      if (!fs.existsSync(GROW_CONFIG_DEST)) {
+        signale.fata('No Grow config. Will not be able to start Grow.');
+        process.exit(1);
+      }
     }
   }
 
