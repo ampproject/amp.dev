@@ -14,16 +14,16 @@ MAINTENANCE.md
 README.md
 CONTRIBUTING.md
 CODE_OF_CONDUCT.md
-packager/
-thumbor/
-frontend/
-frontend21/
-tests/
-artifacts/
+/packager
+/thumbor
+/frontend
+/frontend21
+/tests
+/artifacts
 
-pages/static/
-pixi/dist/
-templates/
+/pages/static/
+/pixi/dist/
+/templates
 
 # Infrastructure
 contributing
