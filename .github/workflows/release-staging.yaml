@@ -110,4 +110,4 @@ jobs:
       - name: Deploying
         run: |
           gcloud config set app/cloud_build_timeout 1800
-          gcloud app deploy --quiet --version=2
+          gcloud app deploy --quiet --version=3
