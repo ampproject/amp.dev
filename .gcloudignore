@@ -1,14 +1,3 @@
-# This file specifies files that are *not* uploaded to Google Cloud Platform
-# using gcloud. It follows the same syntax as .gitignore, with the addition of
-# "#!include" directives (which insert the entries of the given .gitignore-style
-# file at that point).
-#
-# For more information, run:
-#   $ gcloud topic gcloudignore
-#
-
-.gcloudignore
-
 # If you would like to upload your .git directory, .gitignore file or files
 # from your .gitignore file, remove the corresponding line
 # below:
@@ -16,40 +5,30 @@
 .gitignore
 .github
 .cache
+.husky
 
-node_modules/
+node_modules
 yarn.lock
 LICENSE
 MAINTENANCE.md
 README.md
 CONTRIBUTING.md
+CODE_OF_CONDUCT.md
 packager/
 thumbor/
-pixi/cloud-function/
-pixi/mocks/
+frontend/
+frontend21/
+tests/
+artifacts/
 
-# The complete frontend and pages folders aren't needed on App Engine
-/frontend/
-/pages
-# The transformed pages from dist/pages are used instead
-platform/pages*
-
-# playground: ignore everything except the dist folder
-/playground/*
-!/playground/backend
-!/playground/dist
-
-# boilerplate: ignore everything except the dist folder
-/boilerplate/*
-!/boilerplate/backend
-!/boilerplate/dist
-!/boilerplate/lib
+pages/static/
+pixi/dist/
+templates/
 
 # Infrastructure
 contributing
 jest.config.js
 smoke-tests
 renovate.json
-gulpfile.js
 scripts
 tests

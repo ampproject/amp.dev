@@ -189,7 +189,7 @@ class Config {
 
       signale.info('Checking for existing Grow config ...');
       if (!fs.existsSync(GROW_CONFIG_DEST)) {
-        signale.fata('No Grow config. Will not be able to start Grow.');
+        signale.fatal('No Grow config. Will not be able to start Grow.');
         process.exit(1);
       }
     }
