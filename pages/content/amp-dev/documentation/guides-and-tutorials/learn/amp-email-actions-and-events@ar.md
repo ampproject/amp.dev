@@ -55,8 +55,8 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
   <tr>
     <td><code>targetId</code></td>
     <td>نعم</td>
-    <td>هذا هو معرّف نموذج كائن المستند للعنصر، أو <a href="#special-targets">هدف خاص</a> محدد مسبقًا تريد تنفيذ إجراء عليه ردًا على الحدث. في المثال التالي، <code>targetId </code> هو معرف نموذج كائن المستند للهدف <code>amp-lightbox</code>،<code>photo-slides</code>. <pre><amp-lightbox id = "photo-slides"> </amp-lightbox>
-<button on = "tap: photo-slides">Show Images</button></pre>
+    <td>هذا هو معرّف نموذج كائن المستند للعنصر، أو <a href="#special-targets">هدف خاص</a> محدد مسبقًا تريد تنفيذ إجراء عليه ردًا على الحدث. في المثال التالي، <code>targetId </code> هو معرف نموذج كائن المستند للهدف <code>amp-lightbox</code>،<code>photo-slides</code>. <pre>&lt;amp-lightbox id = "photo-slides"> &lt;/amp-lightbox>
+&lt;button on = "tap: photo-slides">Show Images&lt;/button></pre>
 </td>
   </tr>
   <tr>

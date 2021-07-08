@@ -24,7 +24,7 @@ AMP 는 `<img>` 와 같이 미디어를 표시하는 기본 HTML 요소를 지�
 - 애셋이 로드되기 전에 페이지의 레이아웃을 파악해야 하며, 이는 [첫 표시 영역을 미리 로드하는 데 필수적입니다.](../../../../about/how-amp-works.html#size-all-resources-statically)
 - 네트워크의 레이지 로드 요청을 제어하고 [리소스의 우선순위를 효과적으로 지정해야 합니다.](../../../../about/how-amp-works.html#prioritize-resource-loading)
 
-주의: 지원되지 않는 <img>, <video>, <audio> 도 렌더링이 됩니다. 하지만 AMP 에서 <a href="../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md">페이지를 확인하지</a> 못하여 AMP 의 다양한 이점을 누릴 수 없게 됩니다.</audio></video>
+주의: 지원되지 않는 <code>&lt;img></code>, <code>&lt;video></code>, <code>&lt;audio></code> 도 렌더링이 됩니다. 하지만 AMP 에서 <a href="../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md">페이지를 확인하지</a> 못하여 AMP 의 다양한 이점을 누릴 수 없게 됩니다.
 
 ## 이미지
 
@@ -121,7 +121,7 @@ The [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) 요
 
 [/example]
 
-참고: 이 구성요소를 사용하려면<code> <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script></code> 를 페이지 헤드에 삽입하세요.
+참고: 이 구성요소를 사용하려면<code> &lt;script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js">&lt;/script></code> 를 페이지 헤드에 삽입하세요.
 
 ## 동영상
 
@@ -175,4 +175,4 @@ The [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) 요
 
 [/example]
 
-참고: 이 구성요소를 사용하려면 <code><script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script></code> 를 페이지 헤드에 삽입하세요.
+참고: 이 구성요소를 사용하려면 <code>&lt;script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js">&lt;/script></code> 를 페이지 헤드에 삽입하세요.

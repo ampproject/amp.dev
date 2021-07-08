@@ -57,8 +57,8 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
   <tr>
     <td><code>targetId</code></td>
     <td>نعم</td>
-    <td>هذا هو معرّف نموذج كائن المستند للعنصر، أو <a href="#special-targets">هدف خاص</a> محدد مسبقًا تريد تنفيذ إجراء عليه ردًا على الحدث. في المثال التالي، <code>targetId </code> هو معرف نموذج كائن المستند للهدف <code>amp-lightbox</code>،<code>photo-slides</code>. <pre><amp-lightbox id = "photo-slides"> </amp-lightbox>
-<button on = "tap: photo-slides">Show Images</button></pre>
+    <td>هذا هو معرّف نموذج كائن المستند للعنصر، أو <a href="#special-targets">هدف خاص</a> محدد مسبقًا تريد تنفيذ إجراء عليه ردًا على الحدث. في المثال التالي، <code>targetId </code> هو معرف نموذج كائن المستند للهدف <code>amp-lightbox</code>،<code>photo-slides</code>. <pre>&lt;amp-lightbox id = "photo-slides"> &lt;/amp-lightbox>
+&lt;button on = "tap: photo-slides">Show Images&lt;/button></pre>
 </td>
   </tr>
   <tr>
@@ -675,14 +675,14 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
       <p>نقل النافذة الحالية إلى عنوان URL محدد، وذلك إلى الهدف المحدد الاختياري إذا تم توفيره (حاليًا يدعم <code>_top</code> و<code>_blank </code> فقط). ويمكن تحديد معلمة <code>opener</code> الاختيارية باستخدام هدف <code>_blank</code> للسماح للصفحات المفتوحة حديثًا بالوصول إلى <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener<code></code></code></a>. يدعم <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">استبدالات URL القياسية</a>.</p>
-      <p><strong>تحذير:</strong> يوصى باستخدام روابط <code><a></code> العادية حيثما كان ذلك ممكنًا نظرًا لأن <code>AMP.navigateTo{/ code2} لا تتعرف عليها برامج زحف الويب.</code></p>
+      <p><strong>تحذير:</strong> يوصى باستخدام روابط <code>&lt;a&gt;</code> العادية حيثما كان ذلك ممكنًا نظرًا لأن <code>AMP.navigateTo{/ code2} لا تتعرف عليها برامج زحف الويب.</code></p>
     </td>
   </tr>
   <tr>
     <td><code>closeOrNavigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
       <p>محاولة إغلاق النافذة إذا كان مسموحًا، وخلاف ذلك يقوم بنقل المماثل إلى الإجراء <code>navigateTo</code>. مفيد لحالات الاستخدام حيث قد يحتاج زر "رجوع" إلى إغلاق النافذة إذا تم فتحه في نافذة جديدة من الصفحة السابقة أو التنقل إذا لم يتم فتحه.</p>
-      <p><strong>تحذير:</strong> يوصى باستخدام روابط <code><a></code> العادية حيثما كان ذلك ممكنًا نظرًا لأن <code>AMP.closeOrNavigateTo</code> لم تتعرف عليها برامج زحف الويب.</p>
+      <p><strong>تحذير:</strong> يوصى باستخدام روابط <code>&lt;a&gt;</code> العادية حيثما كان ذلك ممكنًا نظرًا لأن <code>AMP.closeOrNavigateTo</code> لم تتعرف عليها برامج زحف الويب.</p>
     </td>
   </tr>
   <tr>

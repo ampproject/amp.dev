@@ -57,7 +57,7 @@ Se il problema persiste dopo aver seguito tale procedura, controllare la tabella
       <td>Verificare che la cache AMP possa accedere alle risorse e che non sia bloccata da un indirizzo IP o da un agente utente e simili (<a href="https://support.google.com/webmasters/answer/1061943?hl=en">Elenco degli agenti utente utilizzati dal crawler di Google</a>).</td>
     </tr>
     <tr>
-      <td>Gli elementi dinamici quali <code><amp-form></amp-form></code> e <code><amp-list></amp-list></code>, non si comportano come previsto.</td>
+      <td>Gli elementi dinamici quali <code>&lt;amp-form&gt;</code> e <code>&lt;amp-list&gt;</code>, non si comportano come previsto.</td>
       <td>Intestazioni CORS danneggiate o mancanti.</td>
       <td>Questi componenti effettuano richieste multi-origine dalla cache AMP all'origine del documento. Per impostazione predefinita, i browser bloccano queste richieste. Per consentire queste richieste, realizzare <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">intestazioni CORS</a> che inseriscono negli elenchi dei consentiti <a href="amp-cors-requests.md">tutte le cache</a>.</td>
     </tr>

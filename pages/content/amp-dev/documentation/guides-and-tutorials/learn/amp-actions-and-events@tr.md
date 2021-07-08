@@ -684,14 +684,14 @@ Aşağıdakiler, AMP sistemi tarafından sağlanan ve özel gereksinimleri olan 
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
       <p>Navigates current window to given URL, to the optional specified target if given (currenly only supporting <code>_top</code> and <code>_blank </code>). The optional <code>opener</code> parameter can be specified when using a target of <code>_blank</code> to allow the newly opened page to access <a><code>window.opener</code></a>. Supports <a href="https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-var-substitutions.md">standard URL substitutions</a>.</p>
-      <p><strong>Caveat:</strong> Using normal <code>&lt;a></code> links is recommended wherever possible since <code>AMP.navigateTo</code> is not recognized by web crawlers.</p>
+      <p><strong>Caveat:</strong> Using normal <code>&lt;a&gt;</code> links is recommended wherever possible since <code>AMP.navigateTo</code> is not recognized by web crawlers.</p>
     </td>
   </tr>
   <tr>
     <td><code>closeOrNavigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>
       <p>İzin veriliyorsa pencereyi kapatmaya çalışır, aksi takdirde <code> navigateTo</code> eylemine benzer şekilde hareket eder. Bir "Geri" düğmesinin, önceki sayfadan yeni bir pencerede açıldıysa pencereyi kapatmasını veya açılmamışsa hareket etmesini gerekebilecek durumlarda kullanışlıdır.</p>
-      <p><strong>Caveat:</strong> Using normal <code>&lt;a></code> links is recommended wherever possible since <code>AMP.closeOrNavigateTo</code> is not recognized by web crawlers.</p>
+      <p><strong>Caveat:</strong> Using normal <code>&lt;a&gt;</code> links is recommended wherever possible since <code>AMP.closeOrNavigateTo</code> is not recognized by web crawlers.</p>
     </td>
   </tr>
   <tr>

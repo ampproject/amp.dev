@@ -123,7 +123,7 @@ Obsługiwane wartości atrybutu `layout`:
     </tr>
     <tr>
       <td><code>responsive</code></td>
-      <td>Element zajmuje dostępne dla niego miejsce i automatycznie zmienia wysokość wg współczynnika proporcji obrazu podanego przez atrybuty <code>width</code> i <code>height</code>. Układ ten działa bardzo dobrze w przypadku większości elementów AMP, w tym <code>amp-img</code>, <code>amp-carousel</code>, itd. Dostępne miejsce zależy od elementu nadrzędnego i można je również dostosować za pomocą właściwości CSS <cod>max-width<p>. Muszą być obecne atrybuty <code>width</code> i <code>height</code>.</p>
+      <td>Element zajmuje dostępne dla niego miejsce i automatycznie zmienia wysokość wg współczynnika proporcji obrazu podanego przez atrybuty <code>width</code> i <code>height</code>. Układ ten działa bardzo dobrze w przypadku większości elementów AMP, w tym <code>amp-img</code>, <code>amp-carousel</code>, itd. Dostępne miejsce zależy od elementu nadrzędnego i można je również dostosować za pomocą właściwości CSS <code>max-width</code><p>. Muszą być obecne atrybuty <code>width</code> i <code>height</code>.</p>
 <p> <strong>Uwaga</strong>: elementy z atrybutem <code>"layout=responsive"</code> nie mają własnego rozmiaru. Rozmiar elementu jest określany na podstawie elementu jego kontenera. Aby zapewnić wyświetlanie elementu AMP, należy określić szerokość i wysokość elementu zawierającego. Nie należy określać właściwości <code>"display:table"</code> w elemencie zawierającym, ponieważ unieważnia to wyświetlanie elementu AMP, czyniąc element AMP niewidocznym.</p></cod>
 </td>
     </tr>

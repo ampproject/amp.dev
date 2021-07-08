@@ -121,7 +121,7 @@ The [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) 要
 
 [/example]
 
-注: このコンポーネントを使用するには、<code><script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script></code> をページの先頭に追加します。
+注: このコンポーネントを使用するには、<code>&lt;script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js">&lt;/script></code> をページの先頭に追加します。
 
 ## 動画
 
@@ -175,4 +175,4 @@ The [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) 要
 
 [/example]
 
-注: このコンポーネントを使用するには、<code><script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script></code> をページの先頭に追加します。
+注: このコンポーネントを使用するには、<code>&lt;script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js">&lt;/script></code> をページの先頭に追加します。

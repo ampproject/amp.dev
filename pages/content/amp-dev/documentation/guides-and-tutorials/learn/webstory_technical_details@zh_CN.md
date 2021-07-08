@@ -241,7 +241,7 @@ author: CrystalOnScript
   </tr>
 </table>
 
-### 指定<source>与 src</source>
+### 指定&lt;source&gt;与 src
 
 在 `<amp-video>` 组件内使用 `<source>` 子元素，以通过 `src` 特性指定视频源。使用 `<source>` 元素可指定视频类型并添加备用视频源。您必须使用 `type` 特性指定 MIME 类型。对 HLS 视频使用 `application/x-mpegurl` 或 `application/vnd.apple.mpegurl`。对于所有其他视频类型，请使用 `video/` MIME 前缀并后接视频格式，例如 `”video/mp4”`。
 

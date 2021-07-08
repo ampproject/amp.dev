@@ -17,7 +17,7 @@ contributors:
 
 Come in una normale pagina HTML, AMP ti consente di incorporare immagini, video e contenuti audio. Scopri le differenze negli equivalenti elementi AMP e scopri come includerli nelle tue pagine.
 
-## Perché non usare <code><img></code>, <code><video></code> e <code><audio></code>?
+## Perché non usare <code>&lt;img></code>, <code>&lt;video></code> e <code>&lt;audio></code>?
 
 AMP non supporta i componenti HTML predefiniti per la visualizzazione di contenuti multimediali, come `<img>`. Forniamo componenti equivalenti per i seguenti motivi:
 
@@ -121,7 +121,7 @@ L'elemento [`amp-anim`](../../../../documentation/components/reference/amp-anim.
 
 [/example]
 
-[tip type="note"] <strong>NOTA:</strong> Includere l'elemento <code><script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script></code> nell'intestazione della pagina per utilizzare questo componente. [/tip]
+[tip type="note"] <strong>NOTA:</strong> Includere l'elemento <code>&lt;script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js">&lt;/script></code> nell'intestazione della pagina per utilizzare questo componente. [/tip]
 
 ## Video
 
@@ -175,4 +175,4 @@ Includi un fallback, se il browser non supporta l'audio HTML5, ad esempio:
 
 [/example]
 
-[tip type="note"] <strong>NOTA:</strong> Includere l'elemento <code><script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script></code> nell'intestazione della pagina per utilizzare questo componente. [/tip]
+[tip type="note"] <strong>NOTA:</strong> Includere l'elemento <code>&lt;script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js">&lt;/script></code> nell'intestazione della pagina per utilizzare questo componente. [/tip]

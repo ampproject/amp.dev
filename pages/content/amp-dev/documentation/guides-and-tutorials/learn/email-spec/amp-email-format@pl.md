@@ -114,7 +114,7 @@ Cały kod CSS w dowolnym dokumencie AMP musi być zawarty w znaczniku `<style am
 </head>
 [/sourcecode]
 
-Uwaga: rozmiar całego znacznika <kod><style> nie może przekraczać 50 000 bajtów. Sprawdzi to walidator.</kod>
+Uwaga: rozmiar całego znacznika `<style>` nie może przekraczać 50 000 bajtów. Sprawdzi to walidator.
 
 ## Wymiary dokumentu <a name="document-dimensions"></a>
 
@@ -145,7 +145,7 @@ Nie są obsługiwane następujące techniki analityczne specyficzne dla AMP:
 
 ### Kwestie zależne od składników <a name="component-specific-considerations"></a>
 
-Żądania obrazów ze znaczników [<kod><amp-carousel></kod>](https://amp.dev/documentation/components/amp-carousel) lub [`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion) mogą wskazać nadawcy, że użytkownik wchodzi w interakcję z wiadomością.
+Żądania obrazów ze znaczników [`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel) lub [`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion) mogą wskazać nadawcy, że użytkownik wchodzi w interakcję z wiadomością.
 
 Przekierowania w znaczniku [`<amp-form>`](https://amp.dev/documentation/components/amp-form) są niedozwolone w środowisku uruchomieniowym.
 

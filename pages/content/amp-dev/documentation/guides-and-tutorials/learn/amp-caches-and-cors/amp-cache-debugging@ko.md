@@ -57,7 +57,7 @@ have a look and request a pull request there.
       <td>AMP 캐시가 애셋에 액세스할 수 있으며 IP 주소 또는 사용자 에이전트가 캐시를 차단한 것은 아닌지 확인(<a href="https://support.google.com/webmasters/answer/1061943?hl=en">Google 크롤러에서 사용하는 사용자 에이전트 목록</a>).</td>
     </tr>
     <tr>
-      <td> <code><amp-form></amp-form></code>, <code><amp-list></amp-list></code> 등의 동적 요소가 예상대로 작동하지 않음.</td>
+      <td> <code>&lt;amp-form&gt;</code>, <code>&lt;amp-list&gt;</code> 등의 동적 요소가 예상대로 작동하지 않음.</td>
       <td>잘못되거나 누락된 CORS 헤더.</td>
       <td>이러한 컴포넌트는 AMP 캐시에서 원본으로 원본 간 요청을 전송. 기본적으로 브라우저는 이 요청을 차단하므로 요청을 허용하려면 <a href="amp-cors-requests.md">모든 캐시</a>를 허용 목록에 추가하는 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS 헤더</a>를 내보냄.</td>
     </tr>

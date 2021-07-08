@@ -55,8 +55,8 @@ Lihat tabel di bawah ini untuk mengetahui deskripsi setiap bagian sintaks.
   <tr>
     <td><code>targetId</code></td>
     <td>ya</td>
-    <td>Ini adalah ID DOM untuk elemen tersebut, atau <a href="#special-targets">target khusus</a> yang telah ditentukan sebelumnya yang ingin Anda tindak lanjuti sebagai tanggapan atas peristiwa tersebut. Di dalam contoh berikut ini, <code>targetId</code> adalah ID DOM dari target <code>amp-lightbox</code>, <code>photo-slides</code>. <pre><amp-lightbox id = "photo-slides"> </amp-lightbox>
-<button on = "tap: photo-slides"> Tampilkan Gambar</button></pre>
+    <td>Ini adalah ID DOM untuk elemen tersebut, atau <a href="#special-targets">target khusus</a> yang telah ditentukan sebelumnya yang ingin Anda tindak lanjuti sebagai tanggapan atas peristiwa tersebut. Di dalam contoh berikut ini, <code>targetId</code> adalah ID DOM dari target <code>amp-lightbox</code>, <code>photo-slides</code>. <pre>&lt;amp-lightbox id = "photo-slides"> &lt;/amp-lightbox>
+&lt;button on = "tap: photo-slides"> Tampilkan Gambar&lt;/button></pre>
 </td>
   </tr>
   <tr>

@@ -159,17 +159,17 @@ En esta configuración se definen las siguientes propiedades:
   </tr>
   <tr>
     <td class="col-fourty"><code>login</code></td>
-    <td class="col-twenty"><code>&lt;URL&gt;</code> o<br><Map[cadena, URL]></td>
+    <td class="col-twenty"><code>&lt;URL&gt;</code> o<br>&lt;Map[cadena, URL]&gt;</td>
     <td>URL HTTPS de la página de inicio de sesión o conjunto de URL de distintos tipos de páginas de inicio de sesión.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>authorizationFallbackResponse</code></td>
-    <td><objeto></td>
+    <td>&lt;objeto&gt;</td>
     <td>Objeto JSON que se utilizará en lugar de la respuesta de autorización si esta falla.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>authorizationTimeout</code></td>
-    <td><número></td>
+    <td>&lt;número&gt;</td>
     <td>Tiempo de espera (en milisegundos) tras el cual se considera que la solicitud de autorización no se ha procesado correctamente. El valor predeterminado es 3000, y los valores superiores a este solo se permiten en entornos de desarrollo. </td>
   </tr>
   <tr>

@@ -53,7 +53,7 @@ Wiele składników i rozszerzeń AMP wykorzystuje zdalne punkty końcowe, stosuj
 <li data-md-type="list_item" data-md-list-type="unordered">
 <p data-md-type="paragraph"><a href="#send-cors-response-headers" data-md-type="link">Wysyłanie nagłówków odpowiedzi CORS</a></p>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true"><li data-md-type="list_item" data-md-list-type="unordered">
-<a href="#access-control-allow-origin-origin" data-md-type="link">Nagłówek Access-Control-Allow-Origin: </a><origin data-md-type="raw_html"></origin>
+<a href="#access-control-allow-origin-origin" data-md-type="link">Nagłówek Access-Control-Allow-Origin: </a>
 </li></ul>
 </li>
 <li data-md-type="list_item" data-md-list-type="unordered"><a href="#processing-state-changing-requests" data-md-type="link">Przetwarzanie żądań zmiany stanu</a></li>
@@ -159,9 +159,9 @@ Ten nagłówek niestandardowy jest wysyłany przez środowisko uruchomieniowe AM
 
 Po zweryfikowaniu żądania CORS wynikowa odpowiedź HTTP musi zawierać następujące nagłówki:
 
-##### Access-Control-Allow-Origin: <origin> </origin><a name="access-control-allow-origin-origin"></a>
+##### Access-Control-Allow-Origin: &lt;origin&gt; <a name="access-control-allow-origin-origin"></a>
 
-Nagłówek ten jest wymogiem <a href="https://www.w3.org/TR/cors/">specyfikacji CORS W3</a>, w których <code>origin</code> odnosi się do źródła generującego żądanie, które zostało dozwolone za pomocą nagłówka żądania CORS <code>Origin</code> (na przykład <code>"https://<domena wydawcy>.cdn.ampproject.org"</code>).
+Nagłówek ten jest wymogiem <a href="https://www.w3.org/TR/cors/">specyfikacji CORS W3</a>, w których <code>origin</code> odnosi się do źródła generującego żądanie, które zostało dozwolone za pomocą nagłówka żądania CORS <code>Origin</code> (na przykład <code>"https://&lt;domena wydawcy>.cdn.ampproject.org"</code>).
 
 Chociaż specyfikacja CORS W3 zezwala na zwrócenie w odpowiedzi wartości <code>\*</code>, dla większego bezpieczeństwa należy:
 

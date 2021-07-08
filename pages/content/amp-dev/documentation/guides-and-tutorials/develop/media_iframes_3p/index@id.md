@@ -17,7 +17,7 @@ contributors:
 
 Seperti pada halaman HTML biasa, AMP memungkinkan Anda menyematkan konten **gambar**, **video**, dan **audio**. Pelajari apa yang berbeda tentang padanan AMP dan pelajari cara menyertakannya di halaman Anda.
 
-## Mengapa bukan <code><img></code>, <code><video></code>, dan <code><audio></code>?
+## Mengapa bukan <code>&lt;img></code>, <code>&lt;video></code>, dan <code>&lt;audio></code>?
 
 AMP tidak mendukung pasangan HTML standar untuk menampilkan media, seperti `<img>`. Kita memberikan komponen dengan nilai yang setara karena alasan berikut ini:
 
@@ -175,4 +175,4 @@ Sertakan fallback, jika browser tidak mendukung audio HTML5, misalnya:
 
 [/example]
 
-[tip type="note"] <strong>CATATAN –</strong> Sertakan <code><script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script></code> di tajuk halaman Anda untuk menggunakan komponen ini. [/tip]
+[tip type="note"] <strong>CATATAN –</strong> Sertakan <code>&lt;script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js">&lt;/script></code> di tajuk halaman Anda untuk menggunakan komponen ini. [/tip]
