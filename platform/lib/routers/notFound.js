@@ -16,11 +16,11 @@
 
 'use strict';
 
-const { pagePath } = require('@lib/utils/project');
-const { setMaxAge } = require('@lib/utils/cacheHelpers.js');
-const { optimizer } = require('@lib/utils/ampOptimizer.js');
-const { readFileSync } = require('fs');
-const { join } = require('path');
+const {pagePath} = require('@lib/utils/project');
+const {setMaxAge} = require('@lib/utils/cacheHelpers.js');
+const {optimizer} = require('@lib/utils/ampOptimizer.js');
+const {readFileSync} = require('fs');
+const {join} = require('path');
 
 let optimizedPage;
 
@@ -30,7 +30,7 @@ async function getNotFoundPage() {
       const page = readFileSync(join(pagePath(), '404.html'), 'utf-8');
       optimizedPage = await optimizer.transformHtml(page);
     } catch (e) {
-      optimizedPage = 'The page you\'ve requested can\'t be found.';
+      optimizedPage = "The page you've requested can't be found.";
     }
   }
   return optimizedPage;
