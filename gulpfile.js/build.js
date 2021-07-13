@@ -34,7 +34,7 @@ const git = require('@lib/utils/git');
 const ComponentReferenceImporter = require('@lib/pipeline/componentReferenceImporter');
 const SpecImporter = require('@lib/pipeline/specImporter');
 const RecentGuides = require('@lib/pipeline/recentGuides');
-const gulpSass = require('@mr-hope/gulp-sass');
+const gulpSass = require('gulp-sass')(require('sass'));
 const importRoadmap = require('./import/importRoadmap.js');
 const importWorkingGroups = require('./import/importWorkingGroups.js');
 const importAdVendorList = require('./import/importAdVendorList.js');
@@ -102,7 +102,7 @@ function sass() {
 
   return gulp
     .src(`${project.paths.SCSS}/**/[^_]*.scss`)
-    .pipe(gulpSass.sassSync(options))
+    .pipe(gulpSass.sync(options))
     .on('error', function (e) {
       console.error(e);
       // eslint-disable-next-line no-invalid-this
@@ -531,8 +531,8 @@ function persistBuildInfo(done) {
     'by': process.env.GITHUB_ACTOR || git.user(),
     'environment': config.environment,
     'commit': {
-      'sha': process.env.GITHUB_SHA || git.version,
-      'message': git.message,
+      'sha': process.env.GITHUB_SHA || git.version(),
+      'message': git.message(),
     },
   };
 

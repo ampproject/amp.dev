@@ -23,6 +23,8 @@ const config = require('@lib/config');
 const signale = require('signale');
 const build = require('./build.js');
 const {samplesBuilder} = require('@lib/build/samplesBuilder');
+const {sh} = require('@lib/utils/sh.js');
+const {PAGES_SRC} = require('@lib/utils/project').paths;
 
 function bootstrap(done) {
   gulp.parallel(
@@ -69,6 +71,18 @@ async function run() {
   new Platform().start();
 }
 
+function developImageBuild() {
+  return sh(`docker build . -t amp.dev -f Dockerfile.development`);
+}
+
+function developContainer() {
+  return sh(
+    `docker run -v ${PAGES_SRC}:/amp-dev/pages/content/amp-dev --publish 8080:8080 -t amp.dev`
+  );
+}
+
 exports.bootstrap = bootstrap;
+exports.developImageBuild = developImageBuild;
 exports.develop = develop;
+exports.developContainer = developContainer;
 exports.extract = extract;
