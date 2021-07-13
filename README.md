@@ -19,6 +19,8 @@ We welcome contributions to amp.dev.
 
 ## Setup
 
+**Note:** Setting up amp.dev requires a working Python 3 environment on your machine which might not be easy to get going. You can skip this by using the [Docker-based setup](#setup-with-docker).
+
 ### Requirements
 
 **Note:** For those intending to conduct development on this repository beyond fixing typos, Linux and macOS are the only currently supported operating systems. Windows is not supported at this time.
@@ -72,18 +74,18 @@ We welcome contributions to amp.dev.
 
    **Note**: Be sure to use the `pip` command associated with Python 3 as Grow 1 depends on Python 3.
 
+   **Mac**
 
-  **Mac**
-  ```sh
-    LDFLAGS="-L$(brew --prefix)/lib" CFLAGS="-I$(brew --prefix)/include" pip3 install --global-option="--with-libyaml" --force pyyaml
-    pip3 install --user grow
-    ```
+````sh
+  LDFLAGS="-L$(brew --prefix)/lib" CFLAGS="-I$(brew --prefix)/include" pip3 install --global-option="--with-libyaml" --force pyyaml
+  pip3 install --user grow
+  ```
 
-  **Linux**
-   ```sh
-   $ pip3 install --global-option="--with-libyaml" --force pyyaml
-   $ pip3 install --user grow
-   ```
+**Linux**
+ ```sh
+ $ pip3 install --global-option="--with-libyaml" --force pyyaml
+ $ pip3 install --user grow
+````
 
 ### Fork & clone the repository
 
@@ -100,7 +102,7 @@ $ cd amp.dev
 $ npm install
 ```
 
-### Develop
+## Develop
 
 If it's your first time working on amp.dev, it is recommended to bootstrap your local environment. To do so, make sure you have set up a valid [GitHub access token](https://github.com/settings/tokens) in an environment variable named `AMP_DOC_TOKEN` like so:
 
@@ -126,9 +128,25 @@ This command prints a lot to the shell and will most likely end on `Server ready
 
 You can contribute your changes back to the main repository by [creating a pull request](https://help.github.com/en/articles/about-pull-requests).
 
-### Maintenance
+## Setup with Docker
 
-#### Documents
+We provide a Dockerfile for development based on one of the official Python-images. When using this you can skip setting up Python and a local installation of Grow on your machine. Though make sure you completed all other installation steps, like cloning the repository, installing all Node.js dependencies and exporting a valid GitHub token as outlined in [Fork & clone the repository](#fork--clone-the-repository) and [Develop](#develop). When those steps are completed instead of running the project with `npm run develop` you can build a development Docker image with the followiung command, ran from the project root directory:
+
+```sh
+$ docker build . -t amp.dev -f Dockerfile.development
+```
+
+After the image has been successfully built start a container with the following command:
+
+```sh
+docker run -v "$(pwd)"/pages/content:/amp-dev/pages/content --publish 8080:8080 -t amp.dev
+```
+
+This command also mounts the pages directory, meaning all changes you are doing to any of the markdown files in `pages/content` are reflected to the container and can be reviewed without rebuilding the image.
+
+## Maintenance
+
+### Documents
 
 Made changes to a lot of Grow documents at once and not quite sure if all references are still valid? You can run `npm run lint:grow` to pick up broken ones.
 
