@@ -531,8 +531,8 @@ function persistBuildInfo(done) {
     'by': process.env.GITHUB_ACTOR || git.user(),
     'environment': config.environment,
     'commit': {
-      'sha': process.env.GITHUB_SHA || git.version,
-      'message': git.message,
+      'sha': process.env.GITHUB_SHA || git.version(),
+      'message': git.message(),
     },
   };
 
