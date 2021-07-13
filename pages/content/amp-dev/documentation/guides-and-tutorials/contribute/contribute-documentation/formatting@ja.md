@@ -16,7 +16,7 @@ author: CrystalOnScript
 
 amp.dev のコンテンツは 、[amp.dev](https://github.com/ampproject/amp.dev) と [AMPHTML](https://github.com/ampproject/amphtml) の 2 つのレポジトリから pull されます。components の下のすべてのリファレンスドキュメントは、AMPHTML の builtins または extensions から pull されます。
 
-- [ビルトインコンポーネント ](https://github.com/ampproject/amphtml/tree/main/builtins)
+- [ビルトインコンポーネント ](https://github.com/ampproject/amphtml/tree/main/src/builtins)
 - [コンポーネント](https://github.com/ampproject/amphtml/tree/main/extensions)
 - [コース](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/courses)
 - [例](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/examples)

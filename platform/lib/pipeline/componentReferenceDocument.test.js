@@ -14,7 +14,7 @@ test('Test first headline removal', (done) => {
       name: 'amp-test',
       version: '0.1',
       versions: ['0.1'],
-      githubPath: 'builtins/amp-test.md',
+      githubPath: 'src/builtins/amp-test.md',
     }
   );
 
