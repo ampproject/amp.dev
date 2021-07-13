@@ -134,13 +134,13 @@ You can contribute your changes back to the main repository by [creating a pull 
 We provide a Dockerfile for development based on one of the official Python-images. When using this you can skip setting up Python and a local installation of Grow on your machine. Though make sure you completed all other installation steps, like cloning the repository, installing all Node.js dependencies and exporting a valid GitHub token as outlined in [Fork & clone the repository](#fork--clone-the-repository) and [Develop](#develop). When those steps are completed instead of running the project with `npm run develop` you can build a development Docker image with the followiung command, run from the project root directory:
 
 ```sh
-$ docker build . -t amp.dev -f Dockerfile.development
+$ npx gulp developImageBuild
 ```
 
 After the image has been successfully built start a container with the following command:
 
 ```sh
-docker run -v "$(pwd)"/pages/content:/amp-dev/pages/content --publish 8080:8080 -t amp.dev
+$ npx gulp developContainer
 ```
 
 This command also mounts the pages directory, meaning all changes you are doing to any of the markdown files in `pages/content` are reflected to the container and can be reviewed without rebuilding the image.
