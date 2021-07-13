@@ -72,20 +72,21 @@ We welcome contributions to amp.dev.
 
 1. Install [Grow](http://grow.io), the static site generator used to build amp.dev. Do so by using `pip` instead of its installer. Using `pip` will enable importing from the `grow` package in Python later on.
 
-   **Note**: Be sure to use the `pip` command associated with Python 3 as Grow 1 depends on Python 3.
+**Note**: Be sure to use the `pip` command associated with Python 3 as Grow 1 depends on Python 3.
 
-   **Mac**
+**Mac**
 
-````sh
+```sh
   LDFLAGS="-L$(brew --prefix)/lib" CFLAGS="-I$(brew --prefix)/include" pip3 install --global-option="--with-libyaml" --force pyyaml
   pip3 install --user grow
-  ```
+```
 
 **Linux**
- ```sh
+
+```sh
  $ pip3 install --global-option="--with-libyaml" --force pyyaml
  $ pip3 install --user grow
-````
+```
 
 ### Fork & clone the repository
 
