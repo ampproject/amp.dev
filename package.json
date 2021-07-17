@@ -99,7 +99,7 @@
 		"process": "0.11.10",
 		"randomstring": "1.2.1",
 		"rcs-core": "3.6.4",
-		"rss-to-json": "1.1.3",
+		"rss-to-json": "2.0.1",
 		"shrink-ray-current": "4.1.3",
 		"signale": "1.4.0",
 		"stream-browserify": "3.0.0",
