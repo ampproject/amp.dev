@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
@@ -47,7 +47,7 @@ module.exports = (env, argv) => {
             },
           },
         }),
-        new OptimizeCSSAssetsPlugin(),
+        new CssMinimizerWebpackPlugin(),
       ],
       splitChunks: {
         cacheGroups: {
