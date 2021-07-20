@@ -248,6 +248,16 @@ creation:
       bgcolor: "#004e73"
     formats:
       - websites
+  - name: Unfold
+    description: Unfold helps brands and individuals easily create beautiful stories with templates.
+    url: https://unfold.com/
+    type: Content Platform
+    image:
+      src: /static/img/tools/unfold-d5403963b64e.jpg
+      width: 1600
+      height: 776
+    formats:
+      - stories
 platforms:
   - name: AMP for WordPress
     official: true
