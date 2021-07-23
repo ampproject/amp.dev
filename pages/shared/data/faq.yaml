@@ -260,6 +260,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/freewheel.md
       - label: Fusion
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/fusion.md
+      - label: Gecko
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/gecko.md
       - label: Geniee SSP
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/genieessp.md
       - label: Giraff
@@ -512,6 +514,10 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/swoop.md
       - label: Taboola
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/taboola.md
+      - label: Tagon
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/tagon.md
+      - label: Tail
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/tail.md
       - label: TcsEmotion
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/tcsemotion.md
       - label: Teads
