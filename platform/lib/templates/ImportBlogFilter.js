@@ -40,8 +40,8 @@ async function importBlog(value, callback) {
   }
 
   const posts = [];
-  for (const post of await response.json()) {
-    const featuredMedia = post._embedded['wp:featuredmedia'];
+  for (const wpPost of await response.json()) {
+    const featuredMedia = wpPost._embedded['wp:featuredmedia'];
     const mediaDetails = featuredMedia && featuredMedia[0].media_details;
     let imageUrl = '';
     if (mediaDetails && !mediaDetails.file.endsWith(DEFAULT_IMG)) {
@@ -51,18 +51,23 @@ async function importBlog(value, callback) {
       )}`;
     }
 
-    posts.push({
-      title: post._embedded['wp:term'][0][0].name,
-      image: imageUrl,
-      headline: post.title.rendered,
-      date: new Date(post.date).toLocaleString('en-us', {
+    const post = {
+      title: wpPost._embedded['wp:term'][0][0].name,
+      headline: wpPost.title.rendered,
+      date: new Date(wpPost.date).toLocaleString('en-us', {
         month: 'long',
         year: 'numeric',
         day: 'numeric',
       }),
-      url: post.link,
-    });
+      url: wpPost.link,
+    }
+    if (imageUrl) {
+      post.image = imageUrl;
+    }
+    posts.push(post);
   }
+
+  console.log(posts);
 
   callback(null, posts);
 }
