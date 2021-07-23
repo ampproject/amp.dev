@@ -4,14 +4,6 @@
   <aside class="ap-a-pixi-stripes"></aside>
   <div class="ap-o-pixi-basic-checks">
       {% with basic_metric = {
-        'id': 'safe-browsing',
-        'title': pixi.staticText.additionalChecks.safeBrowsing,
-        'invert_tooltip': true
-      }%}
-      {% include 'views/partials/pixi/basic-metric.j2' %}
-      {% endwith %}
-
-      {% with basic_metric = {
         'id': 'https',
         'title': pixi.staticText.additionalChecks.https,
         'invert_tooltip': true

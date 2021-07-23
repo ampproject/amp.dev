@@ -40,7 +40,7 @@ staticText:
       action: Harekete geç
   additionalChecks:
     headline: Ek kontroller
-    safeBrowsing: Güvenli Tarama
+    
     https: HTTPS
     mobileFriendliness: Mobil Uyumluluk
     intrusiveInterstitials: Araya Giren Geçiş Reklamları
@@ -80,7 +80,7 @@ scriptText:
     cls: CLS
     https: HTTPS
     mobileFriendliness: Mobil Uyumluluk
-    safeBrowsing: Güvenli Tarama
+    
     intrusiveInterstitials: Araya Giren Geçiş Reklamları
 ---
 

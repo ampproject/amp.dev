@@ -40,7 +40,7 @@ staticText:
       action: 조치 취하기
   additionalChecks:
     headline: 추가 검사
-    safeBrowsing: Safe Browsing
+    
     https: HTTPS
     mobileFriendliness: 모바일 친화성
     intrusiveInterstitials: 틈입형 광고
@@ -80,8 +80,8 @@ scriptText:
     cls: CLS
     https: HTTPS
     mobileFriendliness: 모바일 친화성
-    safeBrowsing: Safe Browsing
+    
     intrusiveInterstitials: 틈입형 광고
 ---
 
-AMP 환경 가이드는 Google 검색 페이지 환경의 순위 결정 시그널에 있어 AMP 페이지가 작동하는 방식을 AMP 개발자에게 알려주며 개선 방식에 대한 실행 가능한 피드백을 제공하는 도구입니다. 실행 가능한 인사이트를 제공할 수 없는 경우 기타 프롬프트를 활용하여 [GitHub 이슈로 보고](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue)해 주세요. 저희 팀에서 확인 후 AMP 페이지 개선 방식을 이해하는 데 도움을 드립니다. 공개적으로 제공되는 [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=ko), [Safe Browsing](https://search.google.com/test/mobile-friendly?hl=ko) 및 [모바일 친화성 테스트](https://search.google.com/test/mobile-friendly?hl=ko) 등의 API가 사용됩니다.
+AMP 환경 가이드는 Google 검색 페이지 환경의 순위 결정 시그널에 있어 AMP 페이지가 작동하는 방식을 AMP 개발자에게 알려주며 개선 방식에 대한 실행 가능한 피드백을 제공하는 도구입니다. 실행 가능한 인사이트를 제공할 수 없는 경우 기타 프롬프트를 활용하여 [GitHub 이슈로 보고](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue)해 주세요. 저희 팀에서 확인 후 AMP 페이지 개선 방식을 이해하는 데 도움을 드립니다. 공개적으로 제공되는 [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=ko), 및 [모바일 친화성 테스트](https://search.google.com/test/mobile-friendly?hl=ko) 등의 API가 사용됩니다.

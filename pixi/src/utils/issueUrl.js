@@ -36,16 +36,13 @@ export default async function getIssueUrl(
   pageUrl,
   pageExperiencePromise,
   linterPromise,
-  mobileFriendlinessPromise,
-  safeBrowsingPromise
+  mobileFriendlinessPromise
 ) {
-  const [{pageExperience}, linter, mobileFriendliness, safeBrowsing] =
-    await Promise.all([
-      pageExperiencePromise,
-      linterPromise,
-      mobileFriendlinessPromise,
-      safeBrowsingPromise,
-    ]);
+  const [{pageExperience}, linter, mobileFriendliness] = await Promise.all([
+    pageExperiencePromise,
+    linterPromise,
+    mobileFriendlinessPromise,
+  ]);
   const hasPageExperience = pageExperience !== undefined;
   const hasFieldData =
     hasPageExperience && pageExperience.source === 'fieldData';
@@ -62,7 +59,6 @@ export default async function getIssueUrl(
     labCls: hasPageExperience
       ? parseScore(pageExperience.labData.cls)
       : Result.none,
-    safeBrowsing: getTextFromBoolean(safeBrowsing.safeBrowsing),
     mobileFriendly: getTextFromBoolean(mobileFriendliness.mobileFriendly),
     url: pageUrl,
     usedComponents: linter.components || Result.none,
@@ -82,7 +78,6 @@ Details
 | FID  | ${issueData.fid} | ${issueData.tbt} |
 | CLS  | ${issueData.cls} | ${issueData.labCls} |
 | HTTPS  | ${issueData.usesHttps} | --- |
-| Safe browsing  | ${issueData.safeBrowsing} | --- |
 | Mobile-friendliness  | ${issueData.mobileFriendly} | --- |
 | Intrusive Interstitials | <pass/fail> | --- |
 

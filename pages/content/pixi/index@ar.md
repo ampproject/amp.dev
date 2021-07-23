@@ -40,7 +40,7 @@ staticText:
       action: اتخاذ إجراء
   additionalChecks:
     headline: عمليات فحص إضافية
-    safeBrowsing: تصفح آمن
+    
     https: HTTPS
     mobileFriendliness: التوافق مع الهاتف المحمول
     intrusiveInterstitials: صفحات بينية متدخلة
@@ -80,7 +80,7 @@ scriptText:
     cls: تحول التخطيط التراكمي
     https: HTTPS
     mobileFriendliness: التوافق مع الهاتف المحمول
-    safeBrowsing: تصفح آمن
+    
     intrusiveInterstitials: صفحات بينية متدخلة
 ---
 

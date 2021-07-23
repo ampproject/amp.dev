@@ -40,7 +40,7 @@ staticText:
       action: Tomar medidas
   additionalChecks:
     headline: Controles adicionales
-    safeBrowsing: Navegación segura
+    
     https: HTTPS
     mobileFriendliness: Optimización para el uso con los dispositivos móviles
     intrusiveInterstitials: Intersticiales intrusivos
@@ -80,7 +80,7 @@ scriptText:
     cls: CLS
     https: HTTPS
     mobileFriendliness: Optimización para el uso con dispositivos móviles
-    safeBrowsing: Navegación segura
+    
     intrusiveInterstitials: Intersticiales intrusivos
 ---
 
