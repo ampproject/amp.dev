@@ -60,7 +60,7 @@ async function importBlog(value, callback) {
         day: 'numeric',
       }),
       url: wpPost.link,
-    }
+    };
     if (imageUrl) {
       post.image = imageUrl;
     }
