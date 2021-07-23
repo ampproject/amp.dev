@@ -89,9 +89,9 @@ cached AMP page sends a request to your origin domain to get the prices, which
 is a mismatch between origins (cache -> origin domain). To allow for such
 cross-origin requests, you need to handle CORS, otherwise, the request fails.
 
-<amp-img alt="Illustration: A user discovers your AMP page through Google Search. The user views your AMP page - a cached page from Google AMP Cache - and clicks the button to update the prices. This results in a cross-origin request, as your domain is different from the cdn.ampproject.org domain where the request originates" layout="responsive" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" width="809" height="391">
+<amp-img alt="CORS and Cache" layout="responsive" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" width="809" height="391">
   <noscript>
-    <img alt="Illustration: A user discovers your AMP page through Google Search. The user views your AMP page - a cached page from Google AMP Cache - and clicks the button to update the prices. This results in a cross-origin request, as your domain is different from the cdn.ampproject.org domain where the request originates" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" />
+    <img alt="CORS and Cache" src="https://www.ampproject.org/static/img/docs/CORS_with_Cache.png" />
   </noscript>
 </amp-img>
 
@@ -236,9 +236,9 @@ There are two scenarios to account for in CORS requests to your endpoint:
 
 Let's walk though these scenarios with an example. In our example, we manage the `example.com` site that hosts an AMP page named `article-amp.html.`The AMP page contains an `amp-list` to retrieve dynamic data from a `data.json` file that is also hosted on `example.com`. We want to process requests to our `data.json` file that come from our AMP page. These requests could be from the AMP page on the same origin (non-cached) or from the AMP page on a different origin (cached).
 
-<amp-img alt="Illustration: both the article-amp.html page on your server and on the cache domain send a GET data.json request and receive a CORS response from your server" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png" width="629" height="433">
+<amp-img alt="CORS example" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png" width="629" height="433">
   <noscript>
-    <img alt="Illustration: both the article-amp.html page on your server and on the cache domain send a GET data.json request and receive a CORS response from your server" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png" />
+    <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough.png" />
   </noscript>
 </amp-img>
 
@@ -323,9 +323,9 @@ function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
 
 In the following scenario, the `article-amp.html` page requests the `data.json` file; the origins are the same.
 
-<amp-img alt="Illustration: example.com/article-amp.html and example.com/data.json exchange a request and a response" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png" width="657" height="155">
+<amp-img alt="CORS example - scenario 1" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png" width="657" height="155">
   <noscript>
-    <img alt="Illustration: example.com/article-amp.html and example.com/data.json exchange a request and a response" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png" />
+    <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex1.png" />
   </noscript>
 </amp-img>
 
@@ -350,7 +350,7 @@ Access-Control-Allow-Origin: https://example.com
 
 In the following scenario, the `article-amp.html` page cached on the Google AMP Cache requests the `data.json` file; the origins differ.
 
-<amp-img alt="Illustration: example-com.cdn.ampproject.org/article-amp.html and example.com/data.json exchange a request and a response" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png" width="657" height="155">
+<amp-img alt="CORS example - scenario 2" layout="fixed" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png" width="657" height="155">
   <noscript>
     <img alt="CORS example" src="https://www.ampproject.org/static/img/docs/cors_example_walkthrough_ex2.png" />
   </noscript>
@@ -413,9 +413,9 @@ function assertFontCors(req, res, opt_validMethods, opt_exposeHeaders) {
 
 As an example, if you wanted to load /some/font.ttf in `https://example.com/amp.html`, the origin server should respond with the Access-Control-Allow-Origin header as below.
 
-<amp-img alt="Illustration showing the different headers that should be used: for communication between the Cached AMP page and the Google AMP Cache, Access-Control-Allow-Origin: https://example-com.cdn.ampproject.org; for communication between the Origin AMP page and the Origin Web Server, Access-Control-Allow-Origin: https://example.com; for communication between the Google AMP Cache and the Origin Web Server, Access-Control-Allow-Origin: https://example-com.cdn.ampproject.org" layout="responsive" src="https://amp.dev/static/img/docs/cors-font.jpg" width="2268" height="1594">
+<amp-img alt="CORS font example" layout="responsive" src="https://amp.dev/static/img/docs/cors-font.jpg" width="2268" height="1594">
   <noscript>
-    <img alt="Illustration showing the different headers that should be used: for communication between the Cached AMP page and the Google AMP Cache, Access-Control-Allow-Origin: https://example-com.cdn.ampproject.org; for communication between the Origin AMP page and the Origin Web Server, Access-Control-Allow-Origin: https://example.com; for communication between the Google AMP Cache and the Origin Web Server, Access-Control-Allow-Origin: https://example-com.cdn.ampproject.org" src="https://amp.dev/static/img/docs/cors-font.jpg" />
+    <img alt="CORS font example" src="https://amp.dev/static/img/docs/cors-font.jpg" />
   </noscript>
 </amp-img>
 
