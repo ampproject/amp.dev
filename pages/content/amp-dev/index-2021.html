@@ -168,15 +168,48 @@ success_stories:
         aria-label="{{ _('News') }}"
         on="slideChange:teaser-carousel-pagination-news.toggle(index=event.index, value=true)">
         [% for post in posts %]
-        {% set teaser_doc = {
-          'type': 'news',
-          'title': '[= post.title =]',
-          'image': '[= post.image =]',
-          'url': '[= post.url =]',
-          'headline': '[= post.headline =]',
-          'date': '[= post.date =]'
-        } %}
-        {% include '/views/2021/partials/teaser.j2' %}
+        [% set type = post.type   %]
+        [% set url = post.url     %]
+        [% set image = post.image %]
+        [% set alt = post.title   %]
+        [% set meta = post.date   %]
+        [% set headline = post.headline %]
+        <a href="{{ url }}" class="ap-teaser --{{ type }}">
+          <div class="ap-teaser-card">
+            <div class="ap-teaser-card-header">
+              [% if post.formats %]
+                [% set format = post.formats[0] %]
+                  <div class="ap-teaser-card-header-logo">
+                    <svg fill="url(#gradient-[= format =])"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-[= format =]"></use></svg>
+                  </div>
+                  <h6>[= format =]</h6>
+              [% else %]
+              <h6>[= post.title =]</h6>
+              [% endif %]
+            </div>
+            <div class="ap-teaser-card-image">
+              [% if image and image != '' %]
+                <amp-img class=""
+                    src="[= image =]"
+                    layout="fill"
+                    alt="[= alt =]">
+                </amp-img>
+              [% else %]
+                <div class="ap-teaser-card-news-icon">
+                  <div class="ap-a-ico">
+                    {% do doc.icons.useIcon('icons/news.svg') %}
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#news"></use></svg>
+                  </div>
+                </div>
+              [% endif %]
+            </div>
+            <div class="ap-teaser-card-body">
+              <h4 class="ap-teaser-card-headline">[= headline =]</h4>
+              <div class="ap-teaser-card-meta">[= meta =]</div>
+            </div>
+          </div>
+        </a>
+
         [% endfor %]
         <button slot="next-arrow"></button>
         <button slot="prev-arrow"></button>
