@@ -74,5 +74,24 @@
       color: color('river-bed');
       text-transform: capitalize;
     }
+
+    &-news-icon {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      padding: calc(28.125% - 2em) 0;
+    }
+
+    .ap-a-ico {
+      display: flex;
+      font-size: medium;
+      box-sizing: initial;
+      justify-content: center;
+      width: 4em;
+      height: 4em;
+    }
+    
   }
 }
