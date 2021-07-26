@@ -168,13 +168,12 @@ success_stories:
         aria-label="{{ _('News') }}"
         on="slideChange:teaser-carousel-pagination-news.toggle(index=event.index, value=true)">
         [% for post in posts %]
-        [% set type = post.type   %]
         [% set url = post.url     %]
         [% set image = post.image %]
         [% set alt = post.title   %]
         [% set meta = post.date   %]
         [% set headline = post.headline %]
-        <a href="{{ url }}" class="ap-teaser --{{ type }}">
+        <a href="[= url =]" class="ap-teaser-news">
           <div class="ap-teaser-card">
             <div class="ap-teaser-card-header">
               [% if post.formats %]
