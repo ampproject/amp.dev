@@ -66,9 +66,6 @@ async function importBlog(value, callback) {
     }
     posts.push(post);
   }
-
-  console.log(posts);
-
   callback(null, posts);
 }
 
