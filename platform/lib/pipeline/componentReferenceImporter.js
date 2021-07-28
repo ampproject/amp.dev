@@ -43,7 +43,7 @@ const DESTINATION_BASE_PATH =
 const FORMATS = ['AMP', 'AMP4ADS', 'AMP4EMAIL'];
 
 // ... this path
-const BUILT_IN_PATH = 'builtins';
+const BUILT_IN_PATH = 'src/builtins';
 const AMP_STORY_TAG = 'amp-story';
 const MARKDOWN_EXTENSION = '.md';
 

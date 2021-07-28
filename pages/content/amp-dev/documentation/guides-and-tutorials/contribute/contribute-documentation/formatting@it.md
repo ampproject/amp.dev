@@ -16,7 +16,7 @@ Guide ed esercitazioni possono essere inviate sul sito [Markdown](https://www.ma
 
 I contenuti su amp.dev provengono da due archivi, [amp.dev](https://github.com/ampproject/amp.dev) e [AMPHTML](https://github.com/ampproject/amphtml). Tutta la documentazione di riferimento per i componenti proviene dagli elementi integrati o dalle estensioni di AMPHTML.
 
-- [Componenti integrati](https://github.com/ampproject/amphtml/tree/main/builtins)
+- [Componenti integrati](https://github.com/ampproject/amphtml/tree/main/src/builtins)
 - [Componenti](https://github.com/ampproject/amphtml/tree/main/extensions)
 - [Corsi](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/courses)
 - [Esempi](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/examples)
