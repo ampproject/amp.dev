@@ -16,7 +16,11 @@
 const {execSync} = require('child_process');
 
 module.exports.version = () => {
-  return execSync('git log -1 --pretty=format:%h ').toString().trim();
+  try {
+    return execSync('git log -1 --pretty=format:%h ').toString().trim();
+  } catch (e) {
+    return 'detached';
+  }
 };
 
 module.exports.message = () => {
