@@ -26,11 +26,11 @@
     {% if doc.bento %}
     <div class="ap-o-component-intro-filter">
       <label>
-        <input type="radio" name="format-switch"
+        <input type="radio" role="radio" tabindex="0" name="format-switch"
           on="tap:bento-script.hide,amp-script.show" checked>AMP
       </label>
       <label>
-        <input type="radio" name="format-switch"
+        <input type="radio" role="radio" tabindex="0" name="format-switch"
           on="tap:amp-script.hide,bento-script.show">Bento (Standalone)
       </label>
     </div>
