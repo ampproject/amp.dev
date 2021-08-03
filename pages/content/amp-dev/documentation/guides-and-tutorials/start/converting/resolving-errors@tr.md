@@ -32,7 +32,7 @@ Her AMP belgesinin, o belgenin "standart" sürümüne referans veren bir bağlan
 
 Bu öğretici için, standart sayfa olarak dönüştürdüğümüz orijinal HTML makalesini ele alacağız.
 
-Devam edin ve aşağıdaki kodu <code><meta charset="utf-8" /></code> etiketinin altına <strong>ekleyin</strong>:
+Devam edin ve aşağıdaki kodu `<meta charset="utf-8" />` etiketinin altına <strong>ekleyin</strong>:
 
 ```html
 <link rel="canonical" href="/article.html" />

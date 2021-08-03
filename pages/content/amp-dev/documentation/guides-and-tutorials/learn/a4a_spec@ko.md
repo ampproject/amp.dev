@@ -53,7 +53,7 @@ AMPHTML 광고는 AMP 페이지에서 빠르고 효과적인 광고를 렌더링
 <td>검사기가 광고 문서를 일반 AMP 문서 또는 제한된 AMPHTML 문서로 식별하여 적절히 배정할 수 있습니다.</td>
 </tr>
 <tr>
-<td>런타임 스크립트로 <code>https://cdn.ampproject.org/v0.js</code> 대신 <code><script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script></code> 포함.</td>
+<td>런타임 스크립트로 <code>https://cdn.ampproject.org/v0.js</code> 대신 <code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script></code> 포함.</td>
 <td>교차 출처 iframes에서 지원되는 AMPHTML 광고에 적합한 맞춤형 런타임 동작을 사용할 수 있습니다.</td>
 </tr>
 <tr>
