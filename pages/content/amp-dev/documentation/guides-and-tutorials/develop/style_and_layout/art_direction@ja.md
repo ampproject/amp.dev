@@ -16,7 +16,7 @@ contributors:
 
 ## srcset
 
-`srcset` 属性を使用すると、さまざまなメディア式に基づいて要素のアセットを制御できます。特に、すべての [`amp-img`](../../../../documentation/components/reference/amp-img.md) タグで使用して、さまざまな画面サイズに基づいて画像アセットを指定できます。AMP は、<code><amp-img></code> に <code>srcset</code> 属性が指定されていても <code>sizes</code> が存在しない場合、基礎となるすべての <code><amp-img></code> の <code><img></code> タグに対し、<a><code>sizes</code> の HTML5 定義を満たす</a><code>sizes</code> 属性を自動生成します。
+`srcset` 属性を使用すると、さまざまなメディア式に基づいて要素のアセットを制御できます。特に、すべての [`amp-img`](../../../../documentation/components/reference/amp-img.md) タグで使用して、さまざまな画面サイズに基づいて画像アセットを指定できます。AMP は、`<amp-img>` に <code>srcset</code> 属性が指定されていても <code>sizes</code> が存在しない場合、基礎となるすべての `<amp-img>` の `<img>` タグに対し、<a><code>sizes</code> の HTML5 定義を満たす</a><code>sizes</code> 属性を自動生成します。
 
 次の例では、`srcset` が画面の幅に基づいて使用される画像を指定しています。`w` 記述子は、リスト内の各画像の幅をブラウザに伝えます。
 

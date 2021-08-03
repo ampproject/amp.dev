@@ -40,7 +40,7 @@ Następujące style są niedozwolone na stronach AMP:
       <td data-th="Description">Użycie kwalifikatora <code>!important</code> i odwołanie do niego jest niedozwolone. Jest to niezbędne, aby umożliwić AMP wymuszanie zasad określania rozmiarów jego elementów.</td>
     </tr>
     <tr>
-      <td data-th="Banned style"><code><link rel=”stylesheet”></code></td>
+      <td data-th="Banned style"><code>&lt;link rel=”stylesheet”></code></td>
       <td data-th="Description">Niedozwolone, z wyjątkiem <a href="#the-custom-fonts-exception">czcionek niestandardowych</a>.</td>
     </tr>
     <tr>

@@ -16,7 +16,7 @@ contributors:
 
 ## srcset
 
-여러 미디어 표현식을 기준으로 요소의 애셋을 제어하기 위해 `srcset` 속성을 사용합니다. 특히 모든 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 태그에서 해당 속성을 사용하여 다양한 화면 크기에 맞는 이미지 애셋을 지정할 수 있습니다. <code><amp-img></code> 태그에 <code>srcset</code> 속성은 있지만 <code>sizes</code> 속성이 없을 경우, AMP는 <a class="" href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/img"> <code>sizes</code>의 HTML5 정의</a>를 충족하는 <code>sizes</code> 속성을 <code><amp-img></code> 태그의 모든 기본 <code><img></code> 태그에 자동으로 생성합니다.
+여러 미디어 표현식을 기준으로 요소의 애셋을 제어하기 위해 `srcset` 속성을 사용합니다. 특히 모든 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 태그에서 해당 속성을 사용하여 다양한 화면 크기에 맞는 이미지 애셋을 지정할 수 있습니다. `<amp-img>` 태그에 <code>srcset</code> 속성은 있지만 <code>sizes</code> 속성이 없을 경우, AMP는 <a class="" href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/img"> <code>sizes</code>의 HTML5 정의</a>를 충족하는 <code>sizes</code> 속성을 `<amp-img>` 태그의 모든 기본 `<img>` 태그에 자동으로 생성합니다.
 
 다음의 간단한 예제에서 `srcset` 속성은 화면 너비를 기준으로 사용할 이미지를 지정합니다. `w` 디스크립터가 목록의 각 이미지 너비를 브라우저에 알려줍니다.
 
