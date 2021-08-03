@@ -40,7 +40,7 @@ staticText:
       action: Tomar atitude
   additionalChecks:
     headline: Verificações adicionais
-    safeBrowsing: Navegação segura
+    
     https: HTTPS
     mobileFriendliness: Usabilidade em dispositivos móveis
     intrusiveInterstitials: Intersticiais intrusivos
@@ -80,8 +80,8 @@ scriptText:
     cls: CLS
     https: HTTPS
     mobileFriendliness: Usabilidade em dispositivos móveis
-    safeBrowsing: Navegação segura
+    
     intrusiveInterstitials: Intersticiais intrusivos
 ---
 
-O guia de experiência da página AMP é uma ferramenta que mostra aos desenvolvedores AMP o desempenho de suas páginas AMP em relação ao sinal de classificação de experiência na página da Busca do Google, fornecendo um feedback prático sobre como elas podem ser melhoradas. Se não for possível fornecer insights prátiocos, use os prompts disponíveis para [registrar um issue no GitHub](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue) para que nossa equipe possa ajudá-lo a entender como suas páginas AMP podem ser melhoradas. Usamos APIs disponíveis publicamente, tais como [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=pt_BR), [Safe Browsing](https://developers.google.com/safe-browsing/v4/lookup-api?hl=pt_BR), and [Mobile-friendliness Test](https://search.google.com/test/mobile-friendly?hl=pt_BR).
+O guia de experiência da página AMP é uma ferramenta que mostra aos desenvolvedores AMP o desempenho de suas páginas AMP em relação ao sinal de classificação de experiência na página da Busca do Google, fornecendo um feedback prático sobre como elas podem ser melhoradas. Se não for possível fornecer insights prátiocos, use os prompts disponíveis para [registrar um issue no GitHub](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue) para que nossa equipe possa ajudá-lo a entender como suas páginas AMP podem ser melhoradas. Usamos APIs disponíveis publicamente, tais como [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=pt_BR), and [Mobile-friendliness Test](https://search.google.com/test/mobile-friendly?hl=pt_BR).

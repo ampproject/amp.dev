@@ -40,7 +40,7 @@ staticText:
       action: 采取操作
   additionalChecks:
     headline: 其他检查
-    safeBrowsing: 安全浏览
+    
     https: HTTPS
     mobileFriendliness: 移动设备适合性
     intrusiveInterstitials: 侵扰性插页式广告
@@ -80,7 +80,7 @@ scriptText:
     cls: CLS
     https: HTTPS
     mobileFriendliness: 移动设备适合性
-    safeBrowsing: 安全浏览
+    
     intrusiveInterstitials: 侵扰性插页式广告
 ---
 

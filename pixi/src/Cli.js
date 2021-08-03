@@ -14,7 +14,6 @@
 
 import PageExperienceCheck from './checks/PageExperienceCheck.js';
 import PageExperienceCacheCheck from './checks/PageExperienceCacheCheck.js';
-import SafeBrowsingCheck from './checks/SafeBrowsingCheck.js';
 import AmpLinterCheck from './checks/AmpLinterCheck.js';
 import MobileFriendlinessCheck from './checks/MobileFriendlinessCheck.js';
 
@@ -50,7 +49,6 @@ export default class PageExperienceCli {
     };
     this.pageExperienceCheck = new PageExperienceCheck(fetch);
     this.pageExperienceCacheCheck = new PageExperienceCacheCheck(fetch);
-    this.safeBrowsingCheck = new SafeBrowsingCheck(cache, fetch);
     this.linterCheck = new AmpLinterCheck(amp, fetch);
     this.mobileFriendlinessCheck = new MobileFriendlinessCheck(cache, fetch);
   }
@@ -62,25 +60,21 @@ export default class PageExperienceCli {
       pageUrl,
       linterPromise
     );
-    const safeBrowsingPromise = this.runSafeBrowsingCheck(pageUrl);
     const mobileFriendlinessPromise = this.runMobileFriendlinessCheck(pageUrl);
 
     const recommendationsPromise = getRecommendations(
       pageExperiencePromise,
-      safeBrowsingPromise,
       linterPromise,
       mobileFriendlinessPromise
     );
 
     const recommendations = await recommendationsPromise;
 
-    const [{pageExperience}, linter, mobileFriendliness, safeBrowsing] =
-      await Promise.all([
-        pageExperiencePromise,
-        linterPromise,
-        mobileFriendlinessPromise,
-        safeBrowsingPromise,
-      ]);
+    const [{pageExperience}, linter, mobileFriendliness] = await Promise.all([
+      pageExperiencePromise,
+      linterPromise,
+      mobileFriendlinessPromise,
+    ]);
 
     const hasPageExperience = pageExperience !== undefined;
     const hasFieldData =
@@ -104,7 +98,6 @@ export default class PageExperienceCli {
       labCls: hasPageExperience
         ? parseScore(pageExperience.labData.cls)
         : Result.none,
-      safeBrowsing: getTextFromBoolean(safeBrowsing.safeBrowsing),
       mobileFriendly: getTextFromBoolean(mobileFriendliness.mobileFriendly),
       url: pageUrl,
       usedComponents: linter.components || Result.none,
@@ -139,20 +132,6 @@ export default class PageExperienceCli {
       pageExperienceCached: (cacheReport.data || {}).pageExperience,
       ...report.data,
     };
-  }
-
-  async runSafeBrowsingCheck(pageUrl) {
-    const {error, data} = await this.safeBrowsingCheck.run(pageUrl);
-
-    // Do not surface the actual error to the user. Simply log it
-    // The BooleanCheckReportView will show "Analysis failed"
-    // for undefined data
-    if (error) {
-      console.error('Could not perform safe browsing check', error);
-      return {error};
-    }
-
-    return data;
   }
 
   async runLintCheck(pageUrl) {

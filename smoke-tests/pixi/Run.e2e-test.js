@@ -76,16 +76,6 @@ describe('Pixi', () => {
     ]);
   });
 
-  it('performs Safe Browsing check', async () => {
-    await expect(page).toMatchElement(
-      '#safe-browsing .ap-m-pixi-basic-metric-status',
-      {
-        text: new RegExp('Passed|Failed', 'gm'),
-        timeout: CHECK_TIMEOUT,
-      }
-    );
-  });
-
   it('performs HTTPS check', async () => {
     await expect(page).toMatchElement('#https .ap-m-pixi-basic-metric-status', {
       text: new RegExp('Passed|Failed', 'gm'),

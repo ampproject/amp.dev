@@ -16,7 +16,6 @@ import i18n from './I18n.js';
 
 import PageExperienceCheck from '../checks/PageExperienceCheck.js';
 import PageExperienceCacheCheck from '../checks/PageExperienceCacheCheck.js';
-import SafeBrowsingCheck from '../checks/SafeBrowsingCheck.js';
 import AmpLinterCheck from '../checks/AmpLinterCheck.js';
 import MobileFriendlinessCheck from '../checks/MobileFriendlinessCheck.js';
 
@@ -36,8 +35,7 @@ import CheckCache from '../utils/checkCache';
 const totalNumberOfChecks =
   AmpLinterCheck.getCheckCount() +
   PageExperienceCheck.getCheckCount() +
-  MobileFriendlinessCheck.getCheckCount() +
-  SafeBrowsingCheck.getCheckCount();
+  MobileFriendlinessCheck.getCheckCount();
 
 export default class PageExperience {
   constructor() {
@@ -49,7 +47,6 @@ export default class PageExperience {
     const cache = new CheckCache(window);
     this.pageExperienceCheck = new PageExperienceCheck(fetch);
     this.pageExperienceCacheCheck = new PageExperienceCacheCheck(fetch);
-    this.safeBrowsingCheck = new SafeBrowsingCheck(cache, fetch);
     this.linterCheck = new AmpLinterCheck(AMP, fetch);
     this.mobileFriendlinessCheck = new MobileFriendlinessCheck(cache, fetch);
 
@@ -82,12 +79,10 @@ export default class PageExperience {
       pageUrl,
       linterPromise
     );
-    const safeBrowsingPromise = this.runSafeBrowsingCheck(pageUrl);
     const mobileFriendlinessPromise = this.runMobileFriendlinessCheck(pageUrl);
 
     const recommendationsPromise = getRecommendations(
       pageExperiencePromise,
-      safeBrowsingPromise,
       linterPromise,
       mobileFriendlinessPromise
     );
@@ -97,7 +92,6 @@ export default class PageExperience {
       {
         linter: linterPromise,
         pageExperience: pageExperiencePromise,
-        safeBrowsing: safeBrowsingPromise,
         mobileFriendliness: mobileFriendlinessPromise,
       },
       recommendationsPromise
@@ -109,8 +103,7 @@ export default class PageExperience {
         pageUrl,
         pageExperiencePromise,
         linterPromise,
-        mobileFriendlinessPromise,
-        safeBrowsingPromise
+        mobileFriendlinessPromise
       );
       this.recommendationsView.setIssueUrl(issueUrl);
       this.recommendationsView.render(
@@ -130,7 +123,6 @@ export default class PageExperience {
         pageExperience: Promise.resolve({}),
         linter: Promise.resolve({}),
         mobileFriendliness: Promise.resolve({}),
-        safeBrowsing: Promise.resolve({}),
       },
       checkPromises
     );
@@ -154,9 +146,6 @@ export default class PageExperience {
         statusView.increaseFinishedChecks(
           MobileFriendlinessCheck.getCheckCount()
         );
-      });
-      checkPromises.safeBrowsing.then(() => {
-        statusView.increaseFinishedChecks(SafeBrowsingCheck.getCheckCount());
       });
 
       statusView.render(statusBannerIdPromise, recommendationsPromise, pageUrl);
@@ -202,27 +191,6 @@ export default class PageExperience {
       pageExperienceCached: (cacheReport.data || {}).pageExperience,
       ...report.data,
     };
-  }
-
-  async runSafeBrowsingCheck(pageUrl) {
-    this.reportViews.safeBrowsing = new BooleanCheckReportView(
-      document,
-      'safe-browsing'
-    );
-    this.reportViews.safeBrowsing.toggleLoading(true);
-
-    const {error, data} = await this.safeBrowsingCheck.run(pageUrl);
-    this.reportViews.safeBrowsing.render(data.safeBrowsing);
-
-    // Do not surface the actual error to the user. Simply log it
-    // The BooleanCheckReportView will show "Analysis failed"
-    // for undefined data
-    if (error) {
-      console.error('Could not perform safe browsing check', error);
-      return {error};
-    }
-
-    return data;
   }
 
   async runLintCheck(pageUrl) {
