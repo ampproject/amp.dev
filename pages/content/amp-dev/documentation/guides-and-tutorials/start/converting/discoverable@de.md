@@ -42,7 +42,7 @@ Diese bidirektionale Verknüpfung ist erforderlich, damit Suchmaschinen die Bezi
 
 ## Füge strukturierte Daten hinzu
 
-Für gültige AMP Seiten sind keine strukturierten Daten von [schema.org](http://schema.org/) erforderlich. Einige Plattformen wie die Google-Suche benötigen diese Daten jedoch für bestimmte Darstellungen wie das Schlagzeilenkarussell. Generell ist es ratsam, strukturierte Daten einzubeziehen. Strukturierte Daten helfen Suchmaschinen, deine Webseite besser zu verstehen und deine Inhalte auf den Ergebnisseiten der Suchmaschinen besser anzuzeigen (z. B. in Rich Snippets). Die strukturierten Daten werden über ein Skripttag vom Typ `application/ld+json` im Tag <code><head></code> deiner AMP Seite eingebunden.
+Für gültige AMP Seiten sind keine strukturierten Daten von [schema.org](http://schema.org/) erforderlich. Einige Plattformen wie die Google-Suche benötigen diese Daten jedoch für bestimmte Darstellungen wie das Schlagzeilenkarussell. Generell ist es ratsam, strukturierte Daten einzubeziehen. Strukturierte Daten helfen Suchmaschinen, deine Webseite besser zu verstehen und deine Inhalte auf den Ergebnisseiten der Suchmaschinen besser anzuzeigen (z. B. in Rich Snippets). Die strukturierten Daten werden über ein Skripttag vom Typ `application/ld+json` im Tag `<head>` deiner AMP Seite eingebunden.
 
 **Füge** für unseren Nachrichtenartikel die folgenden strukturierten Daten am Ende des Abschnitts `<head>` in dein AMP Dokument ein:
 

@@ -14,7 +14,7 @@ Aşağıdaki hatayı düzelterek başlayacağız:
 
 Metni doğru şekilde görüntülemek için AMP, sayfanın karakter kümesini belirtmenizi gerekli kılar. Meta karakter kümesi bilgisi ayrıca `<head>` etiketinin ilk alt öğesi olmalıdır. Bu etiketin ilk olmasının nedeni, meta karakter kümesi etiketinden önce eklenen içeriği yeniden yorumlamaktan kaçınmaktır.
 
-Aşağıdaki kodu <code><head></code> etiketinin ilk satırı olarak <strong>ekleyin</strong>:
+Aşağıdaki kodu `<head>` etiketinin ilk satırı olarak <strong>ekleyin</strong>:
 
 ```html
 <meta charset="utf-8" />
@@ -110,7 +110,7 @@ Sorun, bunun harici bir stil sayfası referansı olmasıdır. AMP'de, belgelerin
 
 Öyleyse, hatayı çözelim:
 
-1. <code><head></code> içindeki stil sayfasına referans veren `<link>` etiketini <strong>kaldırın</strong> ve bunu satır içi bir `<style amp-custom></style>` etiketiyle değiştirin. Stil etiketindeki `amp-custom` özelliği zorunludur.
+1. `<head>` içindeki stil sayfasına referans veren `<link>` etiketini <strong>kaldırın</strong> ve bunu satır içi bir `<style amp-custom></style>` etiketiyle değiştirin. Stil etiketindeki `amp-custom` özelliği zorunludur.
 2. <a><code>base.css</code></a> dosyasındaki tüm stilleri `<style amp-custom></style>` etiketlerine <strong>kopyalayın</strong>.
 
 Bir kez daha, sayfayı **yeniden yükleyin** ve stil sayfaları hatasının kaybolup kaybolmadığını doğrulayın.

@@ -70,7 +70,7 @@ Selain itu, kreatif harus mematuhi aturan-aturan berikut ini:
 </td>
 </tr>
 <tr>
-<td> Pelacakan keterlihatan <code><amp-analytics></code> hanya boleh menyasar pemilih iklan penuh, melalui <code>"visibilitySpec": { "selector": "amp-ad" }</code> sebagaimana ditentukan di dalam <a href="https://github.com/ampproject/amphtml/issues/4018">Masalah #4018</a> dan <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. Secara khusus, ini mungkin tidak akan menyasar pemilih mana pun untuk elemen di dalam produk kreatif iklan.</td>
+<td> Pelacakan keterlihatan <code>&lt;amp-analytics></code> hanya boleh menyasar pemilih iklan penuh, melalui <code>"visibilitySpec": { "selector": "amp-ad" }</code> sebagaimana ditentukan di dalam <a href="https://github.com/ampproject/amphtml/issues/4018">Masalah #4018</a> dan <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. Secara khusus, ini mungkin tidak akan menyasar pemilih mana pun untuk elemen di dalam produk kreatif iklan.</td>
 <td>Dalam beberapa kasus, iklan AMPHTML mungkin memilih untuk merender produk kreatif iklan di dalam sebuah iframe. Dalam hal ini, analitik halaman pengelola (host) memang hanya dapat menyasar seluruh iframe, dan tidak akan mempunyai akses ke pemilih yang sangat mendetail.<br><br> <p>Contoh:</p> <pre>
 <amp-analytics id="nestedAnalytics">
   <script type="application/json">

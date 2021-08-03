@@ -53,7 +53,7 @@ AMPHTML 광고에는 AMP 페이지와는 다르고 훨씬 단순한 [상용구](
 </style>
 ```
 
-AMPHTML 광고 스타일링을 위해 <code><head></code> 섹션의 <code><style amp-custom></style> </code> 태그를 사용하여 AMPHTML 문서에 CSS를 인라인으로 삽입해야 합니다. 현재 예시에서는 기본 이미지 광고를 렌더링하는 것이므로 CSS는 필요하지 않습니다. 따라서 해당 태그도 추가하지 않습니다.
+AMPHTML 광고 스타일링을 위해 `<head>` 섹션의 `<style amp-custom>` 태그를 사용하여 AMPHTML 문서에 CSS를 인라인으로 삽입해야 합니다. 현재 예시에서는 기본 이미지 광고를 렌더링하는 것이므로 CSS는 필요하지 않습니다. 따라서 해당 태그도 추가하지 않습니다.
 
 [tip type="note"] **참조 –** AMPHTML 광고의 경우 인라인 스타일 시트의 최대 크기는 *20 킬로바이트*입니다. [AMPHTML 광고 사양의 CSS 요구 사항](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#css)을 자세히 알아보세요. [/tip]
 

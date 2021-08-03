@@ -100,7 +100,7 @@ In particolare, questo errore è relativo al seguente tag di collegamento del fo
 <link href="base.css" rel="stylesheet" />
 ```
 
-Il problema è che questo link è un riferimento a un foglio di stile esterno. Per velocizzare i tempi di caricamento dei documenti AMP, non è possibile includervi fogli di stile esterni. Tutte le regole di stile devono essere incorporate nel documento AMP utilizzando i tag <code><style amp-custom></style></code> o definendo stili inline.
+Il problema è che questo link è un riferimento a un foglio di stile esterno. Per velocizzare i tempi di caricamento dei documenti AMP, non è possibile includervi fogli di stile esterni. Tutte le regole di stile devono essere incorporate nel documento AMP utilizzando i tag `<style amp-custom></style>` o definendo stili inline.
 
 ```html
 <style amp-custom>

@@ -53,7 +53,7 @@ AMPHTML Ad Creatives erfordern eine andere, wesentlich einfachere [Zeile für Bo
 </style>
 ```
 
-Um den Stil deiner AMPHTML Ad festzulegen, muss dein CSS mithilfe der Tags <code><style amp-custom></style></code> im Abschnitt <code><head></code> inline in das AMPHTML Dokument eingebettet werden. Da wir eine einfache Ad rendern, die aus einem Bild besteht, benötigen wir kein CSS und werden diese Tags daher nicht hinzufügen.
+Um den Stil deiner AMPHTML Ad festzulegen, muss dein CSS mithilfe der Tags `<style amp-custom>` im Abschnitt `<head>` inline in das AMPHTML Dokument eingebettet werden. Da wir eine einfache Ad rendern, die aus einem Bild besteht, benötigen wir kein CSS und werden diese Tags daher nicht hinzufügen.
 
 [tip type="note"] **HINWEIS:** Bei AMPHTML Ads beträgt die maximale Größe für ein Inline Stylesheet _20 Kilobyte_. Weitere Informationen zu [den Anforderungen an CSS findest du in der Spezifikation für AMPHTML Ads](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#css). [/tip]
 
