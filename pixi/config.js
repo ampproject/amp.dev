@@ -20,8 +20,6 @@ const config = {
       'http://localhost:8080/page-experience/api/lint-canary',
     API_ENDPOINT_TOOLBOX_PAGE_EXPERIENCE:
       'https://us-central1-amp-dev-230314.cloudfunctions.net/checkPageExperience',
-    API_ENDPOINT_SAFE_BROWSING:
-      'http://localhost:8080/page-experience/mock-api/safe-browsing',
     API_ENDPOINT_PAGE_SPEED_INSIGHTS:
       'http://localhost:8080/page-experience/mock-api/page-experience',
     API_ENDPOINT_MOBILE_FRIENDLINESS:
@@ -33,8 +31,6 @@ const config = {
       'https://amp.dev/page-experience/api/lint-canary',
     API_ENDPOINT_TOOLBOX_PAGE_EXPERIENCE:
       'https://us-central1-amp-dev-230314.cloudfunctions.net/checkPageExperience',
-    API_ENDPOINT_SAFE_BROWSING:
-      'https://safebrowsing.googleapis.com/v4/threatMatches:find',
     API_ENDPOINT_PAGE_SPEED_INSIGHTS:
       'https://www.googleapis.com/pagespeedonline/v5/runPagespeed',
     API_ENDPOINT_MOBILE_FRIENDLINESS:
@@ -46,9 +42,6 @@ const config = {
       API_ENDPOINT_LINTER: JSON.stringify(config[mode].API_ENDPOINT_LINTER),
       API_ENDPOINT_LINTER_CANARY: JSON.stringify(
         config[mode].API_ENDPOINT_LINTER_CANARY
-      ),
-      API_ENDPOINT_SAFE_BROWSING: JSON.stringify(
-        config[mode].API_ENDPOINT_SAFE_BROWSING
       ),
       API_ENDPOINT_PAGE_SPEED_INSIGHTS: JSON.stringify(
         config[mode].API_ENDPOINT_PAGE_SPEED_INSIGHTS

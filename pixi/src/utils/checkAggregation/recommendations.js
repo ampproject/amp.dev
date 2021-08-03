@@ -44,10 +44,6 @@ const directPageExperienceRecommendations = {
   minifiedCss: 'minify-css',
 };
 
-const directSafeBrowsingRecommendations = {
-  safeBrowsing: 'safe-browsing',
-};
-
 const directMobileFriendlinessRecommendations = {
   mobileFriendly: 'mobile-friendly',
   resourcesLoadable: 'resource-issues',
@@ -91,12 +87,10 @@ const getFieldOrLabDataCategory = (pageExperienceChecks, metricName) => {
 
 export default async function getRecommendations(
   pageExperiencePromise,
-  safeBrowsingPromise,
   linterPromise,
   mobileFriendlinessPromise
 ) {
   const pageExperience = await pageExperiencePromise;
-  const safeBrowsing = await safeBrowsingPromise;
   const linter = await linterPromise;
   const mobileFriendliness = await mobileFriendlinessPromise;
 
@@ -107,11 +101,6 @@ export default async function getRecommendations(
     result,
     pageExperience,
     directPageExperienceRecommendations
-  );
-  addDirectRecommendations(
-    result,
-    safeBrowsing,
-    directSafeBrowsingRecommendations
   );
   addDirectRecommendations(
     result,

@@ -37,7 +37,6 @@ async function getStatusId(checkPromises, recommendationsPromise) {
     // (promise can be rejected or error is set in result)
     const recommendations = await recommendationsPromise;
     const pageExperienceChecks = await checkPromises.pageExperience;
-    const safeBrowsing = await checkPromises.safeBrowsing;
     const mobileFriendliness = await checkPromises.mobileFriendliness;
 
     if (!linter.isValid) {
@@ -46,7 +45,7 @@ async function getStatusId(checkPromises, recommendationsPromise) {
     if (pageExperienceChecks.error) {
       return 'cwv-error';
     }
-    if (safeBrowsing.error || mobileFriendliness.error) {
+    if (mobileFriendliness.error) {
       return 'api-error';
     }
 
@@ -55,9 +54,7 @@ async function getStatusId(checkPromises, recommendationsPromise) {
 
     // These are the other main checks apart from the core web vitals:
     const passedOtherCriteria =
-      mobileFriendliness.mobileFriendly &&
-      safeBrowsing.safeBrowsing &&
-      linter.usesHttps;
+      mobileFriendliness.mobileFriendly && linter.usesHttps;
 
     const dataType = pageExperience.source;
     const pagePassedAll =

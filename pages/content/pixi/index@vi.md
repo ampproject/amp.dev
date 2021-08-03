@@ -40,7 +40,7 @@ staticText:
       action: Hành động
   additionalChecks:
     headline: Kiểm tra bổ sung
-    safeBrowsing: Safe Browsing
+    
     https: HTTPS
     mobileFriendliness: Mobile-friendliness
     intrusiveInterstitials: Quảng cáo xen kẽ gây khó chịu
@@ -80,8 +80,8 @@ scriptText:
     cls: CLS
     https: HTTPS
     mobileFriendliness: Mobile-friendliness
-    safeBrowsing: Safe Browsing
+    
     intrusiveInterstitials: Quảng cáo xen kẽ gây khó chịu
 ---
 
-Hướng dẫn trải nghiệm cho trang AMP là một công cụ cho phép các nhà phát triển AMP có thể thấy trang AMP của họ có kết quả thế nào trong xếp hạng trải nghiệm trang của Google Tìm kiếm, và cung cấp các phản hồi mà bạn có thể hành động để cải thiện xếp hạng này. Nếu chúng tôi không thể cung cấp cho bạn kiến thức để hành động, hãy sử dụng các lời nhắc có sẵn để [báo cáo vấn đề trên GitHub](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue), để nhóm của chúng tôi có thể giúp bạn hiểu cách các trang AMP của bạn có thể được cải thiện. Chúng tôi sử dụng các API có sẵn công khai như [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=vi), [Safe Browsing](https://developers.google.com/safe-browsing/v4/lookup-api?hl=vi), và [Mobile-friendliness Test](https://search.google.com/test/mobile-friendly?hl=vi).
+Hướng dẫn trải nghiệm cho trang AMP là một công cụ cho phép các nhà phát triển AMP có thể thấy trang AMP của họ có kết quả thế nào trong xếp hạng trải nghiệm trang của Google Tìm kiếm, và cung cấp các phản hồi mà bạn có thể hành động để cải thiện xếp hạng này. Nếu chúng tôi không thể cung cấp cho bạn kiến thức để hành động, hãy sử dụng các lời nhắc có sẵn để [báo cáo vấn đề trên GitHub](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue), để nhóm của chúng tôi có thể giúp bạn hiểu cách các trang AMP của bạn có thể được cải thiện. Chúng tôi sử dụng các API có sẵn công khai như [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=vi), và [Mobile-friendliness Test](https://search.google.com/test/mobile-friendly?hl=vi).
