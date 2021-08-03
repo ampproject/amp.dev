@@ -16,7 +16,13 @@
 const {execSync} = require('child_process');
 
 module.exports.version = () => {
-  return execSync('git log -1 --pretty=format:%h ').toString().trim();
+  try {
+    return execSync('git log -1 --pretty=format:%h ').toString().trim();
+  } catch (e) {
+    // This method is called from gulpfile.js/deploy.js even if in a
+    // non-git context, like the development Docker image
+    return 'detached';
+  }
 };
 
 module.exports.message = () => {
