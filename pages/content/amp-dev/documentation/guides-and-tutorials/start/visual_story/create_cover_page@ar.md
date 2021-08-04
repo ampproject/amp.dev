@@ -79,7 +79,7 @@ author: bpaduch
     <td colspan="2"><h5 id="vertical">النموذج: Vertical</h5></td>
 </tr>
 <tr>
-    <td width="65%">يضع النموذج <strong>vertical</strong> العناصر التابعة على طول المحور ص. وتتم محاذاة العناصر مع الجزء العلوي من الشاشة، وتحتل الشاشة بأكملها على طول المحور س. فيما يعمل النموذج Vertical جيدًا عندما تريد تكديس العناصر رأسياً واحدة تلو الأخرى.    <code class="nopad"><pre><amp-story-grid-layer template="vertical">   <p>element 1</p>   <p>element 2</p>   <p>element 3</p> </amp-story-grid-layer></pre></code>
+    <td width="65%">يضع النموذج <strong>vertical</strong> العناصر التابعة على طول المحور ص. وتتم محاذاة العناصر مع الجزء العلوي من الشاشة، وتحتل الشاشة بأكملها على طول المحور س. فيما يعمل النموذج Vertical جيدًا عندما تريد تكديس العناصر رأسياً واحدة تلو الأخرى.    <code class="nopad"><pre>&lt;amp-story-grid-layer template="vertical">   &lt;p>element 1&lt;/p>   &lt;p>element 2&lt;/p>   &lt;p>element 3&lt;/p> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341) }}</td>
 </tr>
@@ -87,7 +87,7 @@ author: bpaduch
     <td colspan="2"><h5 id="horizontal">النموذج: Horizontal</h5></td>
 </tr>
 <tr>
-    <td width="65%">يضع النموذج <strong>horizontal</strong> العناصر التابعة على طول المحور س. وتتم محاذاة العناصر مع بداية الشاشة، وتحتل الشاشة بأكملها على طول المحور ص. ويعمل النموذج Horizontal جيدًا عندما تريد تكديس العناصر أفقيًا واحدًا تلو الآخر.     <code class="nopad"><pre><amp-story-grid-layer template="horizontal">   <p>element 1</p>   <p>element 2</p>   <p>element 3</p> </amp-story-grid-layer></pre></code>
+    <td width="65%">يضع النموذج <strong>horizontal</strong> العناصر التابعة على طول المحور س. وتتم محاذاة العناصر مع بداية الشاشة، وتحتل الشاشة بأكملها على طول المحور ص. ويعمل النموذج Horizontal جيدًا عندما تريد تكديس العناصر أفقيًا واحدًا تلو الآخر.     <code class="nopad"><pre>&lt;amp-story-grid-layer template="horizontal">   &lt;p>element 1&lt;/p>   &lt;p>element 2&lt;/p>   &lt;p>element 3&lt;/p> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341) }}</td>
 </tr>
@@ -95,7 +95,7 @@ author: bpaduch
     <td colspan="2"><h5 id="thirds">النموذج: Thirds</h5></td>
 </tr>
 <tr>
-<td width="65%"> يقسم النموذج <strong>thirds</strong> الشاشة إلى ثلاثة صفوف متساوية الحجم، ويسمح لك بفتح المحتوى في كل منطقة. ويمكنك أيضًا تحديد <code>grid-area</code> للإشارة إلى الثلث الذي تريد أن يكون المحتوى الخاص بك فيه — <code>upper-third</code>، <code>middle-third</code>، أو <code>lower-third</code>. وتكون خطوط الشبكة المسماة مفيدة لتغيير السلوك الافتراضي لمكان ظهور العناصر. على سبيل المثال، إذا كان لديك عنصران في الطبقة، فيمكنك تحديد العنصر الأول ليكون في <code>grid-area="upper-third"</code> <code>grid-area="lower-third"</code>. <code class="nopad"><pre><amp-story-grid-layer template="thirds">   <h1 grid-area="upper-third">element 1</h1>   <p grid-area="lower-third">element 2</p> </amp-story-grid-layer> </pre></code>
+<td width="65%"> يقسم النموذج <strong>thirds</strong> الشاشة إلى ثلاثة صفوف متساوية الحجم، ويسمح لك بفتح المحتوى في كل منطقة. ويمكنك أيضًا تحديد <code>grid-area</code> للإشارة إلى الثلث الذي تريد أن يكون المحتوى الخاص بك فيه — <code>upper-third</code>، <code>middle-third</code>، أو <code>lower-third</code>. وتكون خطوط الشبكة المسماة مفيدة لتغيير السلوك الافتراضي لمكان ظهور العناصر. على سبيل المثال، إذا كان لديك عنصران في الطبقة، فيمكنك تحديد العنصر الأول ليكون في <code>grid-area="upper-third"</code> <code>grid-area="lower-third"</code>. <code class="nopad"><pre>&lt;amp-story-grid-layer template="thirds">   &lt;h1 grid-area="upper-third">element 1&lt;/h1>   &lt;p grid-area="lower-third">element 2&lt;/p> &lt;/amp-story-grid-layer> </pre></code>
 </td>
 <td>{{ image('/static/img/docs/tutorials/amp_story/layer-thirds.png', 216, 341) }}</td>
 </tr>

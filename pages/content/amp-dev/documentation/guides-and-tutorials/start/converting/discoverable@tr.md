@@ -28,7 +28,7 @@ AMP belgemizde bunu başarmak için ilk adımı, standart sayfaya geri dönmek i
 
 Sonraki adım, standart makaleyi AMP sayfasına bağlamaktır. Bu, standart makalenin `<head>` bölümüne bir `<link rel="amphtml">` etiketi eklenerek yapılır.
 
-`article.html` dosyasında, aşağıdaki kodu <code><head></code> bölümüne <strong>ekleyin</strong> :
+`article.html` dosyasında, aşağıdaki kodu `<head>` bölümüne <strong>ekleyin</strong> :
 
 ```html
 <link rel="amphtml" href="/article.amp.html" />

@@ -987,5 +987,3 @@ limitations under the License.
 حدّد السمات الموقوفة لكل علامة من علامات AMP
 من  خلال البحث عن `deprecation` في
 [مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
-</body>
-</html>

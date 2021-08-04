@@ -109,7 +109,7 @@ author: bpaduch
 </tbody>
 </table>
 
-若想将入场动画效果应用于某个元素，您必须使用某一动画预设值指定 <code>animate-in="<em><animation preset></animation></em>"</code>。例如，倘若要让一段文本落入网页中，则需向相应的文本元素添加 `animate-in="drop"`：
+若想将入场动画效果应用于某个元素，您必须使用某一动画预设值指定 <code>animate-in="<em>&lt;animation preset></em>"</code>。例如，倘若要让一段文本落入网页中，则需向相应的文本元素添加 `animate-in="drop"`：
 
 ```html
 <amp-story-page id="page3">

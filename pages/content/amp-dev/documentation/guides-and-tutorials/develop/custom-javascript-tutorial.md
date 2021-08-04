@@ -37,7 +37,7 @@ Alternately, you can set up a quick local server using something like [serve](ht
 
 `http://localhost:5000/`
 
-You're also free to use an online playground like [Glitch](https://glitch.com/) or [CodePen](https://codepen.io/). <a href="itch](https://glitch.com/~grove-thankful-ragdoll" target="_blank">This </a> contains the same code as the github repository, and you can start there instead if you like!
+You're also free to use an online playground like [Glitch](https://glitch.com/) or [CodePen](https://codepen.io/). [This](https://glitch.com/~grove-thankful-ragdoll/) contains the same code as the github repository, and you can start there instead if you like!
 
 Once you've done this, you'll see our starter webpage:
 
@@ -75,7 +75,7 @@ To use `<amp-script>`, we need to import its own JavaScript. Open `index.html` a
 
 ```html
 <head>
- ... 
+ ...
   <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
   ...
 </head>
@@ -113,7 +113,7 @@ Next, we can remove the`pattern` attribute and its regular expression from our f
 We're also going to remove the `on` attribute that's currently used to tell AMP to show our password rules. As foreshadowed above, we're going to instead use `<amp-script>` to capture the browser's `focus` event.
 
 ```html
-pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-z\d]).{8,}$" 
+pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-z\d]).{8,}$"
 on="tap:rules.show; input-debounced:rules.show"
 ```
 
@@ -131,7 +131,7 @@ Go to your browser, open the console, and reload the page. Make sure you see you
 
 `<amp-script>` runs your JavaScript in a Web Worker. Web Workers can't access the DOM directly, so `<amp-script>` gives the worker access to a virtual copy of the DOM, which it keeps in sync with the real DOM. `<amp-script>` provides emulations of many common DOM APIs, almost all of which you can use in your JavaScript in the usual way.
 
-If at any point you need to debug your script, you can set breakpoints in JavaScript in a Web Worker in the same way you do with any JavaScript. You just need to know where to find it. 
+If at any point you need to debug your script, you can set breakpoints in JavaScript in a Web Worker in the same way you do with any JavaScript. You just need to know where to find it.
 
 In Chrome DevTools, open the "Sources" tab. At the bottom you will see a long hexadecimal string like the one shown below. Expand that, then expand the "no domain" area, and you'll see your script:
 
@@ -154,12 +154,12 @@ Notice that we're able to use regular DOM API methods like `getElementById()`. A
 We need to add these id's to two of the elements. Open up `index.html`, locate the password `<input>` and the submit `<button>`, and add the id's. Add a `disabled` attribute to the submit `<button>` as well, to keep the user from clicking it until we want them to.
 
 ```html
-<input type=password 
+<input type=password
        id="passwordBox"
 
 ...
 
-<button type="submit" id="submitButton" tabindex="3" disabled>Submit</button> 
+<button type="submit" id="submitButton" tabindex="3" disabled>Submit</button>
 ```
 
 Reload the page. You can verify that these globals were set correctly by checking in the Console, just as you could with non-worker JavaScript:
@@ -175,7 +175,7 @@ We'll also add id's to each `<li>` in `<div id="rules">`. Each of these contains
   <li id="digit">Digit</li>
   <li id="special">Special character (@$!%*?&)</li>
   <li id="eight">At least 8 characters long</li>
-</ul> 
+</ul>
 ```
 
 ## Implementing our password checks in JavaScript
@@ -221,7 +221,7 @@ Let's make those `valid` and `invalid` classes actually turn text green or red. 
 ```css
 li.valid {
   color: #2d7b1f;
-} 
+}
 
 li.invalid {
   color:#c11136;
@@ -286,6 +286,6 @@ Our logic is now complete! When the password matches all our criteria, all of th
 </figure>
 If you get stuck, you can always refer to the working code in the `finished_code` directory.
 
-# Congratulations! 
+# Congratulations!
 
 You've learned how to use `<amp-script>` to write your own JavaScript in AMP. You've succeeded in enhancing the `<amp-form>` component with your own custom logic and UI features! Feel free to add more functionality to your new page! And, to learn more about `<amp-script>`, check out [the reference documentation](../../../documentation/components/reference/amp-script.md).

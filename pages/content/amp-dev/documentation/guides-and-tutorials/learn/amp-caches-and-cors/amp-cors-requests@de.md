@@ -161,7 +161,7 @@ Nach der Verifizierung der CORS Anfrage muss die resultierende HTTP Antwort die 
 
 ##### Access-Control-Allow-Origin: &lt;origin&gt; <a name="access-control-allow-origin-origin"></a>
 
-Dieser Header wird von der <a href="https://www.w3.org/TR/cors/">W3 CORS Spezifikation</a> gefordert, wobei sich <code>origin</code> auf die anfragende Quelle bezieht, die über den CORS <code>Origin</code> Anfrageheader zugelassen wurde (z. B. <code>"https://<Subdomäne des Publishers>.cdn.ampproject.org"</code>).
+Dieser Header wird von der <a href="https://www.w3.org/TR/cors/">W3 CORS Spezifikation</a> gefordert, wobei sich <code>origin</code> auf die anfragende Quelle bezieht, die über den CORS <code>Origin</code> Anfrageheader zugelassen wurde (z. B. <code>"https://&lt;Subdomäne des Publishers>.cdn.ampproject.org"</code>).
 
 Obwohl die W3 CORS Spezifikation die Rückgabe des Wertes <code>\*</code> in der Antwort erlaubt, solltest du aus Sicherheitsgründen Folgendes tun:
 

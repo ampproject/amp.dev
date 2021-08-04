@@ -109,7 +109,7 @@ Możesz dodatkowo wzbogacić relację internetową poprzez zastosowanie animowan
 </tbody>
 </table>
 
-Aby zastosować wejście do animacji do elementu, należy określić atrybut <code>animate-in=""</code> za pomocą jednej z wstępnie ustawionych wartości animacji. Aby na przykład upuścić tekst na stronę, dodaj atrybut `animate-in="drop"` do elementu tekstowego:
+Aby zastosować wejście do animacji do elementu, należy określić atrybut <code>animate-in="<em>&lt;animation preset></em>"</code> za pomocą jednej z wstępnie ustawionych wartości animacji. Aby na przykład upuścić tekst na stronę, dodaj atrybut `animate-in="drop"` do elementu tekstowego:
 
 ```html
 <amp-story-page id="page3">

@@ -71,7 +71,7 @@ AMP ストーリーページのレイヤーも、グラフィックスのレイ�
     <td colspan="2"><h5 id="fill">テンプレート: Fill</h5></td>
 </tr>
 <tr>
-    <td width="65%"> <strong>fill</strong> テンプレートは、レイヤー内の 1 番目の子要素を画面全体に表示します。レイヤー内のそれ以外の子要素は表示されません。     <p>fill テンプレートは、画像や動画を背景として表示したい場合に適しています。</p>    <code class="nopad"><pre><amp-story-grid-layer template="fill">   <amp-img src="dog.png" width="720" height="1280" layout="responsive">   </amp-img> </amp-story-grid-layer></pre></code>
+    <td width="65%"> <strong>fill</strong> テンプレートは、レイヤー内の 1 番目の子要素を画面全体に表示します。レイヤー内のそれ以外の子要素は表示されません。     <p>fill テンプレートは、画像や動画を背景として表示したい場合に適しています。</p>    <code class="nopad"><pre>&lt;amp-story-grid-layer template="fill">   &lt;amp-img src="dog.png" width="720" height="1280" layout="responsive">   &lt;/amp-img> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341) }}     </td>
 </tr>
@@ -80,7 +80,7 @@ AMP ストーリーページのレイヤーも、グラフィックスのレイ�
 </tr>
 <tr>
     <td width="65%">
-<strong>Vertical</strong> テンプレートは、子要素を Y 軸に沿って配置します。要素は画面の上部に整列され、X 軸に沿って画面全体を占有します。このテンプレートは、縦方向に要素を重ね合わせる際にうまく機能します。<code class="nopad"><pre><amp-story-grid-layer template="vertical">   <p>element 1</p>   <p>element 2</p>   <p>element 3</p> </amp-story-grid-layer></pre></code>
+<strong>Vertical</strong> テンプレートは、子要素を Y 軸に沿って配置します。要素は画面の上部に整列され、X 軸に沿って画面全体を占有します。このテンプレートは、縦方向に要素を重ね合わせる際にうまく機能します。<code class="nopad"><pre>&lt;amp-story-grid-layer template="vertical">   &lt;p>element 1&lt;/p>   &lt;p>element 2&lt;/p>   &lt;p>element 3&lt;/p> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341) }}     </td>
 </tr>
@@ -88,7 +88,7 @@ AMP ストーリーページのレイヤーも、グラフィックスのレイ�
     <td colspan="2"><h5 id="horizontal">テンプレート: Horizontal</h5></td>
 </tr>
 <tr>
-    <td width="65%"> <strong>horizontal</strong> テンプレートは、子要素を x 軸に沿って配置します。つまり、要素は画面の左端から順番に並べられ、y 軸方向に画面の右端まで表示されます。     <p>horizontal テンプレートは、要素を水平に隣接するように、順番に並べて表示したい場合に適しています。</p>     <code class="nopad"><pre><amp-story-grid-layer template="horizontal">   <p>要素 1</p>   <p>要素 2</p>   <p>要素 3</p> </amp-story-grid-layer></pre></code>
+    <td width="65%"> <strong>horizontal</strong> テンプレートは、子要素を x 軸に沿って配置します。つまり、要素は画面の左端から順番に並べられ、y 軸方向に画面の右端まで表示されます。     <p>horizontal テンプレートは、要素を水平に隣接するように、順番に並べて表示したい場合に適しています。</p>     <code class="nopad"><pre>&lt;amp-story-grid-layer template="horizontal">   &lt;p>要素 1&lt;/p>   &lt;p>要素 2&lt;/p>   &lt;p>要素 3&lt;/p> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341) }}     </td>
 </tr>
@@ -97,7 +97,7 @@ AMP ストーリーページのレイヤーも、グラフィックスのレイ�
 </tr>
 <tr>
 <td width="65%">
-<strong>Thirds</strong> テンプレートは、画面を均等に 3 つの行区画に分割し、各区画にコンテンツを挿入できるようにします。また、名前付きの <code>grid-area</code> を指定することで、コンテンツを示す区画を示すことができます。区画は、<code>upper-third</code>、<code>middle-third</code>、または <code>lower-third</code> として指定します。名前付きグリッド領域は要素が表示する場所の動作を変更する際に役立ちます。たとえば、レイヤーに 2 つの要素がある場合、最初の要素を <code>grid-area="upper-third"</code> 、2 番目の要素を <code>grid-area="lower-third"</code> に表示するように指定します。<code class="nopad"><pre><amp-story-grid-layer template="thirds">   <h1 grid-area="upper-third">要素 1</h1>   <p grid-area="lower-third">要素 2</p> </amp-story-grid-layer> </pre></code>
+<strong>Thirds</strong> テンプレートは、画面を均等に 3 つの行区画に分割し、各区画にコンテンツを挿入できるようにします。また、名前付きの <code>grid-area</code> を指定することで、コンテンツを示す区画を示すことができます。区画は、<code>upper-third</code>、<code>middle-third</code>、または <code>lower-third</code> として指定します。名前付きグリッド領域は要素が表示する場所の動作を変更する際に役立ちます。たとえば、レイヤーに 2 つの要素がある場合、最初の要素を <code>grid-area="upper-third"</code> 、2 番目の要素を <code>grid-area="lower-third"</code> に表示するように指定します。<code class="nopad"><pre>&lt;amp-story-grid-layer template="thirds">   &lt;h1 grid-area="upper-third">要素 1&lt;/h1>   &lt;p grid-area="lower-third">要素 2&lt;/p> &lt;/amp-story-grid-layer> </pre></code>
 </td>
 <td>{{ image('/static/img/docs/tutorials/amp_story/layer-thirds.png', 216, 341) }}</td>
 </tr>

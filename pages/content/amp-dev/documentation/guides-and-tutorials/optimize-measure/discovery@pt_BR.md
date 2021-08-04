@@ -14,7 +14,7 @@ teaser:
 
 Em alguns casos, você pode ter uma versão AMP e uma não AMP da mesma página (um artigo de notícias, por exemplo). Se a Pesquisa Google encontrar a versão não AMP dessa página, como ela saberá que há uma versão AMP do conteúdo?
 
-### Páginas vinculadas com <code><link></code>
+### Páginas vinculadas com &lt;link&gt;
 
 Para resolver esse problema, adicionamos informações sobre a página AMP à versão não AMP e vice-versa usando tags `<link>` no `<head>`.
 

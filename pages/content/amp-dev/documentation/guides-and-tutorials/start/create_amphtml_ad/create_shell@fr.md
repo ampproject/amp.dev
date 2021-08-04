@@ -53,7 +53,7 @@ Les créations publicitaires AMPHTML nécessitent un [modèle](../../../../docum
 </style>
 ```
 
-Pour ajouter des styles à votre annonce AMPHTML, votre CSS doit être intégré dans le document AMPHTML à l'aide des balises <code><style amp-custom></style></code> dans la section <code><head></code>. Comme nous affichons une annonce illustrée de base, nous n'avons pas besoin de CSS, et n'ajouterons donc pas ces balises.
+Pour ajouter des styles à votre annonce AMPHTML, votre CSS doit être intégré dans le document AMPHTML à l'aide des balises `<style amp-custom>` dans la section `<head>`. Comme nous affichons une annonce illustrée de base, nous n'avons pas besoin de CSS, et n'ajouterons donc pas ces balises.
 
 [tip type="note"] **REMARQUE –** Pour les annonces AMPHTML, la taille maximale pour une feuille de style intégrée est de _20 ko_. Plus de détails sur les [exigences CSS dans les spécifications d'annonce AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#css). [/tip]
 

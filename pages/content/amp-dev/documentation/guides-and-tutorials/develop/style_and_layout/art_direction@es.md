@@ -16,7 +16,7 @@ contributors:
 
 ## srcset
 
-Utilice el atributo `srcset` para controlar los elementos basados en expresiones de medios variables En particular, utilícelo con todas las etiquetas [`amp-img`](../../../../documentation/components/reference/amp-img.md) para especificar cuál imagen se usará con base en la variedad de tamaños de pantalla. AMP generará automáticamente un atributo <code>sizes</code> <a>que cumpla con la definición HTML5 de <code>sizes</code></a>, para todas las etiquetas subyacentes <code><img></code> de <code><amp-img></code> si <code><amp-img></code> tiene un atributo <code>srcset</code> pero sin <code>sizes</code>.
+Utilice el atributo `srcset` para controlar los elementos basados en expresiones de medios variables En particular, utilícelo con todas las etiquetas [`amp-img`](../../../../documentation/components/reference/amp-img.md) para especificar cuál imagen se usará con base en la variedad de tamaños de pantalla. AMP generará automáticamente un atributo <code>sizes</code> <a>que cumpla con la definición HTML5 de <code>sizes</code></a>, para todas las etiquetas subyacentes `<img>` de `<amp-img>` si `<amp-img>` tiene un atributo <code>srcset</code> pero sin <code>sizes</code>.
 
 En este ejemplo simple, `srcset` especifica cuál imagen se usará para el ancho de la pantalla. El descriptor `w` le dice al navegador el ancho que tendrá cada imagen en la lista:
 
