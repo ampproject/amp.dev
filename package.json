@@ -170,7 +170,7 @@
 		"css-minimizer-webpack-plugin": "3.0.2",
 		"preload-webpack-plugin": "3.0.0-beta.4",
 		"prettier": "2.3.2",
-		"puppeteer": "9.1.1",
+		"puppeteer": "10.2.0",
 		"quoted-printable": "1.0.1",
 		"recursive-search": "1.0.1",
 		"sass": "1.36.0",
