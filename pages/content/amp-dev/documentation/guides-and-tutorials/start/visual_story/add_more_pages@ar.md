@@ -51,7 +51,7 @@ Now that you are familiar with adding a page to a Web Story, adding the next pag
       <ul>
       <li>تحتوي على 3 طبقات:       <ul>         <li> <b>الطبقة 1</b>: تطبِّق قالب <a href="create_cover_page.md#fill"><code>fill</code></a> وتتضمن <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> (<code class="filename">bird.jpg</code>, 720 x 1280 بكسل).</li>         <li> <b>الطبقة 2</b>  تطبِّق القالب <a href="create_cover_page.md#vertical"><code>vertical</code></a> وتتضمن:           <ul>             <li>عنصر <code><h1></code> بالاسم: <em>طيور</em> </li>           </ul>         </li>         <li> <b>الطبقة 3</b>:  تطبِّق القالب <a href="create_cover_page.md#vertical"><code>vertical</code></a> وتحتوي على عنصر واحد:           <ul>             <li>عنصر <code><q></code> للاقتباس التالي: <em>يتكون الطائر عبارة عن ثلاثة أشياء: الريش، والطيران، والغناء؛ أقلها الريش.--Marjorie Allen Seiffert</em> </li>             <li>تحدد الطبقة الثالثة هذه <code>class="bottom"</code> لمحاذاة العناصر التابعة في الجزء السفلي من الشاشة.</li>           </ul>         </li>       </ul>
 </li>
-      <li>تشغِّل ملفًا صوتيًا في الخلفية أثناء عرض الصفحة. ويمكنك تشغيل الصوت في الخلفية للقصة بأكملها أو لصفحة واحدة. لتشغيل ملف صوتي لصفحة، أضف السمة <code>background-audio="assets/bird-singing.mp3"</code> إلى العنصر <code><amp-story-page></code>.</li>
+      <li>تشغِّل ملفًا صوتيًا في الخلفية أثناء عرض الصفحة. ويمكنك تشغيل الصوت في الخلفية للقصة بأكملها أو لصفحة واحدة. لتشغيل ملف صوتي لصفحة، أضف السمة <code>background-audio="assets/bird-singing.mp3"</code> إلى العنصر <code>&lt;amp-story-page></code>.</li>
       </ul>
     </td>
     <td>{{ image('/static/img/docs/tutorials/amp_story/pg3-birds.png', 720, 1280, alt='Page 3 - Birds' ) }}</td>

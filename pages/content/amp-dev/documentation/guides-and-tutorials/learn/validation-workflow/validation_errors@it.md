@@ -886,5 +886,3 @@ Questo avviso viene visualizzato quando nel documento AMP viene trovato un attri
 Si tratta solo di un avviso; i documenti AMP con avvisi sono comunque validi.
 
 Identifica gli attributi obsoleti di ogni tag AMP cercando `deprecation` nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
-</body>
-</html>

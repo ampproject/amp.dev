@@ -9,7 +9,7 @@ contributors:
 
 Bazı durumlarda, aynı sayfanın hem AMP olmayan hem de AMP sürümüne sahip olmak isteyebilirsiniz; örneğin, bir haber makalesi. Bunu düşünün: Google Arama bu sayfanın AMP olmayan bir sürümünü bulursa, _bir AMP versiyonu olduğunu nasıl anlar_?
 
-## <code><link></code> ile sayfaları bağlama
+## `<link>` ile sayfaları bağlama
 
 Bu sorunu çözmek için, AMP olmayan sayfaya AMP sayfası ile bilgileri, AMP sayfasına ise AMP olmayan sayfa bilgilerini `<head>` içindeki `<link>` etiketi şeklinde ekleriz.
 

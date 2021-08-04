@@ -886,5 +886,3 @@ Cet avertissement s'affiche lorsqu'un attribut AMP valide par le passé se trouv
 Il s'agit seulement d'un avertissement ; les documents AMP présentant des avertissements restent valides.
 
 Identifiez les attributs obsolètes pour chaque balise AMP en recherchant `deprecation` dans la [spécification du validateur AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii).
-</body>
-</html>

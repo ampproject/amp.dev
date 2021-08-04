@@ -7,7 +7,7 @@ author: bpaduch
 
 Strona w relacji internetowej jest reprezentowana przez składnik `<amp-story-page>`. W składniku [` stamp-story`](../../../../documentation/components/reference/amp-story.md) można mieć jeden lub wiele składników `<amp-story-page>`, zawierających poszczególne ekrany relacji. Pierwszą stroną wyświetlaną w relacji internetowej będzie pierwsza strona, którą określisz w kolejności dokumentów.
 
-Aby utworzyć stronę, **dodaj element** <code><amp-story-page></code> jako element podrzędny składnika <a><code>amp-story</code></a>. <strong>Przypisz</strong> stronie unikalny identyfikator. Do naszej pierwszej strony, która jest stroną tytułową, przypiszmy unikalny identyfikator <code>cover</code>:
+Aby utworzyć stronę, **dodaj element** <code>&lt;amp-story-page></code> jako element podrzędny składnika <a><code>amp-story</code></a>. <strong>Przypisz</strong> stronie unikalny identyfikator. Do naszej pierwszej strony, która jest stroną tytułową, przypiszmy unikalny identyfikator <code>cover</code>:
 
 ```html
 <amp-story
