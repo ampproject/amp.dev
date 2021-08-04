@@ -71,7 +71,7 @@ O elemento `<amp-story-grid-layer>` insere os respectivos elementos filhos em um
     <td colspan="2"><h5 id="fill">Modelo: fill</h5></td>
 </tr>
 <tr>
-    <td width="65%">O modelo de <strong>preenchimento</strong> preenche a tela com o primeiro elemento filho na camada. Nenhum outro filho é mostrado nessa camada. <p>O modelo de preenchimento é bom para planos de fundo, incluindo imagens e vídeos.</p>    <code class="nopad"><pre><amp-story-grid-layer template="fill">   <amp-img src="dog.png" width="720" height="1280" layout="responsive">   </amp-img> </amp-story-grid-layer></pre></code>
+    <td width="65%">O modelo de <strong>preenchimento</strong> preenche a tela com o primeiro elemento filho na camada. Nenhum outro filho é mostrado nessa camada. <p>O modelo de preenchimento é bom para planos de fundo, incluindo imagens e vídeos.</p>    <code class="nopad"><pre>&lt;amp-story-grid-layer template="fill">   &lt;amp-img src="dog.png" width="720" height="1280" layout="responsive">   &lt;/amp-img> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341) }}     </td>
 </tr>
@@ -79,7 +79,7 @@ O elemento `<amp-story-grid-layer>` insere os respectivos elementos filhos em um
     <td colspan="2"><h5 id="vertical">Modelo: vertical</h5></td>
 </tr>
 <tr>
-    <td width="65%">O modelo <strong>vertical</strong> insere os elementos-filho ao longo do eixo y. Os elementos são alinhados na parte superior da tela e ocupam a tela inteira ao longo do eixo x. O modelo vertical funciona bem quando você deseja empilhar elementos um sobre o outro.  <code class="nopad"><pre><amp-story-grid-layer template="vertical">   <p>element 1</p>   <p>element 2</p>   <p>element 3</p> </amp-story-grid-layer></pre></code>
+    <td width="65%">O modelo <strong>vertical</strong> insere os elementos-filho ao longo do eixo y. Os elementos são alinhados na parte superior da tela e ocupam a tela inteira ao longo do eixo x. O modelo vertical funciona bem quando você deseja empilhar elementos um sobre o outro.  <code class="nopad"><pre>&lt;amp-story-grid-layer template="vertical">   &lt;p>element 1&lt;/p>   &lt;p>element 2&lt;/p>   &lt;p>element 3&lt;/p> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341) }}     </td>
 </tr>
@@ -87,14 +87,14 @@ O elemento `<amp-story-grid-layer>` insere os respectivos elementos filhos em um
     <td colspan="2"><h5 id="horizontal">Modelo: horizontal</h5></td>
 </tr>
 <tr>
-    <td width="65%">O modelo <strong>horizontal</strong> posiciona os elementos filhos no eixo x.  Eles são alinhados no início da tela e a ocupam completamente ao longo do eixo y.     <p>O modelo horizontal funciona bem quando o objetivo é empilhar elementos horizontalmente, um após o outro.</p>     <code class="nopad"><pre><amp-story-grid-layer template="horizontal">   <p>element 1</p>   <p>element 2</p>   <p>element 3</p> </amp-story-grid-layer></pre></code>     </td>
+    <td width="65%">O modelo <strong>horizontal</strong> posiciona os elementos filhos no eixo x.  Eles são alinhados no início da tela e a ocupam completamente ao longo do eixo y.     <p>O modelo horizontal funciona bem quando o objetivo é empilhar elementos horizontalmente, um após o outro.</p>     <code class="nopad"><pre>&lt;amp-story-grid-layer template="horizontal">   &lt;p>element 1&lt;/p>   &lt;p>element 2&lt;/p>   &lt;p>element 3&lt;/p> &lt;/amp-story-grid-layer></pre></code>     </td>
     <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341) }}     </td>
 </tr>
 <tr>
     <td colspan="2"><h5 id="thirds">Modelo: terços</h5></td>
 </tr>
 <tr>
-<td width="65%">O modelo <strong>thirds</strong> divide a tela em três linhas de tamanho igual e permite inserir conteúdo dentro de cada área. Você também pode especificar um  <code>grid-area</code> para indicar qual terça parte da tela você deseja usar para seu conteúdo. Pode ser : <code>upper-third</code>, <code>middle-third</code> ou <code>lower-third</code>. As áreas de grade identificadas são úteis para alterar o comportamento padrão de onde os elementos aparecem. Por exemplo, se você tiver dois elementos na camada, você pode especificar o primeiro elemento para estar em <code>grid-area="upper-third"</code> e o segundo para estar em <code>grid-area="lower-third"</code>. <code class="nopad"><pre><amp-story-grid-layer template="thirds">   <h1 grid-area="upper-third">element 1</h1>   <p grid-area="lower-third">element 2</p> </amp-story-grid-layer> </pre></code>
+<td width="65%">O modelo <strong>thirds</strong> divide a tela em três linhas de tamanho igual e permite inserir conteúdo dentro de cada área. Você também pode especificar um  <code>grid-area</code> para indicar qual terça parte da tela você deseja usar para seu conteúdo. Pode ser : <code>upper-third</code>, <code>middle-third</code> ou <code>lower-third</code>. As áreas de grade identificadas são úteis para alterar o comportamento padrão de onde os elementos aparecem. Por exemplo, se você tiver dois elementos na camada, você pode especificar o primeiro elemento para estar em <code>grid-area="upper-third"</code> e o segundo para estar em <code>grid-area="lower-third"</code>. <code class="nopad"><pre>&lt;amp-story-grid-layer template="thirds">   &lt;h1 grid-area="upper-third">element 1&lt;/h1>   &lt;p grid-area="lower-third">element 2&lt;/p> &lt;/amp-story-grid-layer> </pre></code>
 </td>
 <td>{{ image('/static/img/docs/tutorials/amp_story/layer-thirds.png', 216, 341) }}</td>
 </tr>

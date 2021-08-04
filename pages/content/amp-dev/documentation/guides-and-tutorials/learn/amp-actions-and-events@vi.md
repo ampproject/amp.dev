@@ -393,11 +393,11 @@ Ví dụ, những việc sau có thể được thực hiện trong AMP:
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Phát âm thanh. Không hoạt động nếu yếu tố <code><amp-audio></code> là con của <code><amp-story></code>.</td>
+    <td>Phát âm thanh. Không hoạt động nếu yếu tố <code><amp-audio></code> là con của <code>&lt;amp-story></code>.</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Tạm dừng âm thanh. Không hoạt động nếu yếu tố <code><amp-audio></code> là con của <code><amp-story></code>.</td>
+    <td>Tạm dừng âm thanh. Không hoạt động nếu yếu tố <code><amp-audio></code> là con của <code>&lt;amp-story></code>.</td>
   </tr>
 </table>
 

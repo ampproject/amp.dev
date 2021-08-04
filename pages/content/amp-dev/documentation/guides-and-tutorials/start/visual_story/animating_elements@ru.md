@@ -109,7 +109,7 @@ author: bpaduch
 </tbody>
 </table>
 
-Чтобы применить начальную анимацию к элементу, следует указать атрибут <code>animate-in="<em data-md-type="raw_html"><animation data-md-type="raw_html" preset></animation></em>"</code> с одним из значений пресетов анимации. Например, чтобы текст «упал» на страницу, добавьте в текстовый элемент атрибут `animate-in="drop"`:
+Чтобы применить начальную анимацию к элементу, следует указать атрибут <code>animate-in="<em>&lt;animation preset></em>"</code> с одним из значений пресетов анимации. Например, чтобы текст «упал» на страницу, добавьте в текстовый элемент атрибут `animate-in="drop"`:
 
 ```html
 <amp-story-page id="page3">

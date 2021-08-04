@@ -109,7 +109,7 @@ Bir sayfadaki öğelere animasyon girişleri uygulayarak bir Web Hikayesini daha
 </tbody>
 </table>
 
-Bir öğeye animasyon girişi uygulamak için animasyon ön ayar değerlerinden biriyle <code>animate-in="<em data-md-type="raw_html"><animation data-md-type="raw_html" preset></animation></em>"</code> özniteliğini ayarlamalısınız. Örneğin, sayfaya bir metnin düşmesini sağlamak için metin öğesine `animate-in="drop"` özniteliğini ekleyin:
+Bir öğeye animasyon girişi uygulamak için animasyon ön ayar değerlerinden biriyle <code>animate-in="<em>&lt;animation preset></em>"</code> özniteliğini ayarlamalısınız. Örneğin, sayfaya bir metnin düşmesini sağlamak için metin öğesine `animate-in="drop"` özniteliğini ekleyin:
 
 ```html
 <amp-story-page id="page3">

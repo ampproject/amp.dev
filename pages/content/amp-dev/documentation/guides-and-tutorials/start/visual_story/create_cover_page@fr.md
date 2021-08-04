@@ -71,7 +71,7 @@ L'élément `<amp-story-grid-layer>` dispose ses éléments enfants dans une gri
     <td colspan="2"><h5 id="fill">Modèle : fill</h5></td>
 </tr>
 <tr>
-    <td width="65%">Le modèle <strong>fill</strong> remplit l'écran avec le premier élément enfant dans la couche. Tout autre enfant dans cette couche n'est pas affiché. Le modèle Fill fonctionne bien pour les arrière-plans, y compris pour les images et les vidéos.    <code class="nopad"><pre><amp-story-grid-layer template="fill">   <amp-img src="dog.png" width="720" height="1280" layout="responsive">   </amp-img> </amp-story-grid-layer></pre></code>
+    <td width="65%">Le modèle <strong>fill</strong> remplit l'écran avec le premier élément enfant dans la couche. Tout autre enfant dans cette couche n'est pas affiché. Le modèle Fill fonctionne bien pour les arrière-plans, y compris pour les images et les vidéos.    <code class="nopad"><pre>&lt;amp-story-grid-layer template="fill">   &lt;amp-img src="dog.png" width="720" height="1280" layout="responsive">   &lt;/amp-img> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341) }}</td>
 </tr>
@@ -79,7 +79,7 @@ L'élément `<amp-story-grid-layer>` dispose ses éléments enfants dans une gri
     <td colspan="2"><h5 id="vertical">Modèle : vertical</h5></td>
 </tr>
 <tr>
-    <td width="65%">Le modèle <strong>vertical</strong> dispose les éléments enfants sur l'axe Y. Les éléments sont alignés en haut de l'écran, et occupent tout l'écran sur l'axe X. Le modèle vertical fonctionne bien quand vous souhaitez accumuler verticalement les éléments l'un après l'autre. <code><br>   <br>element 1<br><br>   <br>element 2<br><br>   <br>element 3<br><br> <br></code>
+    <td width="65%">Le modèle <strong>vertical</strong> dispose les éléments enfants sur l'axe Y. Les éléments sont alignés en haut de l'écran, et occupent tout l'écran sur l'axe X. Le modèle vertical fonctionne bien quand vous souhaitez accumuler verticalement les éléments l'un après l'autre. <code class="nopad"><pre>&lt;amp-story-grid-layer template="vertical"> &lt;p>element 1&lt;/p> &lt;p>element 2&lt;/p> &lt;p>element 3&lt;/p> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341) }}</td>
 </tr>
@@ -87,7 +87,7 @@ L'élément `<amp-story-grid-layer>` dispose ses éléments enfants dans une gri
     <td colspan="2"><h5 id="horizontal">Modèle : horizontal</h5></td>
 </tr>
 <tr>
-    <td width="65%">Le modèle <strong>horizontal</strong> dispose les éléments enfants sur l'axe X.  Les éléments sont alignés au début de l'écran, et occupent tout l'écran sur l'axe Y. Le modèle horizontal fonctionne bien lorsque vous souhaitez accumuler horizontalement les éléments l'un après l'autre.     <code class="nopad"><pre><amp-story-grid-layer template="horizontal">   <p>élément 1</p>   <p>élément 2</p>   <p>élément 3</p> </amp-story-grid-layer></pre></code>
+    <td width="65%">Le modèle <strong>horizontal</strong> dispose les éléments enfants sur l'axe X.  Les éléments sont alignés au début de l'écran, et occupent tout l'écran sur l'axe Y. Le modèle horizontal fonctionne bien lorsque vous souhaitez accumuler horizontalement les éléments l'un après l'autre.     <code class="nopad"><pre>&lt;amp-story-grid-layer template="horizontal">   &lt;p>élément 1&lt;/p>   &lt;p>élément 2&lt;/p>   &lt;p>élément 3&lt;/p> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341) }}</td>
 </tr>
@@ -95,7 +95,7 @@ L'élément `<amp-story-grid-layer>` dispose ses éléments enfants dans une gri
     <td colspan="2"><h5 id="thirds">Modèle : thirds</h5></td>
 </tr>
 <tr>
-<td width="65%"> Le modèle <strong>thirds</strong> divise l'écran en trois bandes de dimensions égales, et vous permet de loger du contenu dans chaque zone. Vous pouvez également spécifier une zone nommée <code>grid-area</code> pour indiquer dans quel tiers vous souhaitez placer votre contenu (<code>upper-third</code>, <code>middle-third</code>, ou <code>lower-third</code>). Les zones de grille nommées sont utiles pour modifier le comportement par défaut des endroits d'apparition des éléments. Par exemple, si vous avez deux éléments dans la couche, vous pouvez spécifier le premier élément pour qu'il se trouve dans la zone <code>grid-area="upper-third"</code> et le deuxième élément pour qu'il se trouve dans la zone <code>grid-area="lower-third"</code>. <code class="nopad"><pre><amp-story-grid-layer template="thirds">   <h1 grid-area="upper-third">élément 1</h1>   <p grid-area="lower-third">élément 2</p> </amp-story-grid-layer> </pre></code>
+<td width="65%"> Le modèle <strong>thirds</strong> divise l'écran en trois bandes de dimensions égales, et vous permet de loger du contenu dans chaque zone. Vous pouvez également spécifier une zone nommée <code>grid-area</code> pour indiquer dans quel tiers vous souhaitez placer votre contenu (<code>upper-third</code>, <code>middle-third</code>, ou <code>lower-third</code>). Les zones de grille nommées sont utiles pour modifier le comportement par défaut des endroits d'apparition des éléments. Par exemple, si vous avez deux éléments dans la couche, vous pouvez spécifier le premier élément pour qu'il se trouve dans la zone <code>grid-area="upper-third"</code> et le deuxième élément pour qu'il se trouve dans la zone <code>grid-area="lower-third"</code>. <code class="nopad"><pre>&lt;amp-story-grid-layer template="thirds">   &lt;h1 grid-area="upper-third">élément 1&lt;/h1>   &lt;p grid-area="lower-third">élément 2&lt;/p> &lt;/amp-story-grid-layer> </pre></code>
 </td>
 <td>{{ image('/static/img/docs/tutorials/amp_story/layer-thirds.png', 216, 341) }}</td>
 </tr>

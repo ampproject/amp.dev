@@ -17,7 +17,7 @@ contributors:
 
 Cũng như một trang HTML thông thường, AMP cho phép bạn nhúng các **ảnh**, **video** và nội dung **âm thanh**. Tìm hiểu điểm khác biệt của AMP và học cách để bao gồm chúng trong các trang của bạn.
 
-## Tại sao không sử dụng <code>&lt;img></code>, <code>&lt;video></code> và <code>&lt;audio></code>?
+## Tại sao không sử dụng <code>&lt;img><66/code>, <code>&lt;video></code> và <code>&lt;audio></code>?
 
 AMP không hỗ trợ việc sử dụng các thẻ HTML mặc định tương ứng để hiển thị nội dung đa phương tiện, ví dụ như `<img>`. Chúng tôi cung cấp các thành phần tương đương vì lý do sau:
 

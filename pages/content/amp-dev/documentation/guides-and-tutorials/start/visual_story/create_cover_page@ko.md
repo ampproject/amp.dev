@@ -72,7 +72,7 @@ author: bpaduch
 </tr>
 <tr>
     <td width="65%">
-<strong>Fill</strong> 템플릿을 사용하면 레이어의 첫 번째 하위 요소가 화면을 채웁니다. 이 레이어의 다른 하위 요소는 표시되지 않습니다. Fill 템플릿은 이미지와 동영상을 포함한 배경에 사용하면 효과적입니다. <code class="nopad"><pre><amp-story-grid-layer template="fill">   <amp-img src="dog.png" width="720" height="1280" layout="responsive">   </amp-img> </amp-story-grid-layer></pre></code>
+<strong>Fill</strong> 템플릿을 사용하면 레이어의 첫 번째 하위 요소가 화면을 채웁니다. 이 레이어의 다른 하위 요소는 표시되지 않습니다. Fill 템플릿은 이미지와 동영상을 포함한 배경에 사용하면 효과적입니다. <code class="nopad"><pre>&lt;amp-story-grid-layer template="fill">   &lt;amp-img src="dog.png" width="720" height="1280" layout="responsive">   &lt;/amp-img> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341) }}     </td>
 </tr>
@@ -81,7 +81,7 @@ author: bpaduch
 </tr>
 <tr>
     <td width="65%">
-<strong>vertical</strong> 템플릿을 사용하면 하위 요소가 Y축을 따라 배치됩니다. 요소는 화면 상단에 정렬되며 x축을 따라 전체 화면을 차지합니다.  Vertical 템플릿은 각 요소를 수직으로 하나씩 이어서 배치하려는 경우 효과적입니다. <code class="nopad"><pre><amp-story-grid-layer template="vertical">   <p>element 1</p>   <p>element 2</p>   <p>element 3</p> </amp-story-grid-layer></pre></code>
+<strong>vertical</strong> 템플릿을 사용하면 하위 요소가 Y축을 따라 배치됩니다. 요소는 화면 상단에 정렬되며 x축을 따라 전체 화면을 차지합니다.  Vertical 템플릿은 각 요소를 수직으로 하나씩 이어서 배치하려는 경우 효과적입니다. <code class="nopad"><pre>&lt;amp-story-grid-layer template="vertical">   &lt;p>element 1&lt;/p>   &lt;p>element 2&lt;/p>   &lt;p>element 3&lt;/p> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341) }}     </td>
 </tr>
@@ -89,7 +89,7 @@ author: bpaduch
     <td colspan="2"><h5 id="horizontal">템플릿: Horizontal</h5></td>
 </tr>
 <tr>
-    <td width="65%"> <strong>Horizontal</strong> 템플릿을 사용하면 하위 요소가 X축을 따라 배치됩니다. 요소가 화면 시작 부분에 정렬되고 Y축을 따라 전체 화면을 차지합니다. Horizontal 템플릿은 각 요소를 수평으로 하나씩 이어서 배치하려는 경우 적합합니다.     <code class="nopad"><pre><amp-story-grid-layer template="horizontal">   <p>element 1</p>   <p>element 2</p>   <p>element 3</p> </amp-story-grid-layer></pre></code>
+    <td width="65%"> <strong>Horizontal</strong> 템플릿을 사용하면 하위 요소가 X축을 따라 배치됩니다. 요소가 화면 시작 부분에 정렬되고 Y축을 따라 전체 화면을 차지합니다. Horizontal 템플릿은 각 요소를 수평으로 하나씩 이어서 배치하려는 경우 적합합니다.     <code class="nopad"><pre>&lt;amp-story-grid-layer template="horizontal">   &lt;p>element 1&lt;/p>   &lt;p>element 2&lt;/p>   &lt;p>element 3&lt;/p> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341) }}     </td>
 </tr>
@@ -98,7 +98,7 @@ author: bpaduch
 </tr>
 <tr>
 <td width="65%">
-<strong>thirds</strong> 템플릿을 사용하면 화면이 동일한 크기의 3가지 열로 분할되며 각 영역에 콘텐츠를 삽입할 수 있습니다. 또한 <code>grid-area</code>의 이름을 지정하여 <code>upper-third</code>, <code>middle-third</code> 또는 <code>lower-third</code>와 같은 세 영역 중 콘텐츠를 삽입하려는 위치를 설정할 수 있습니다. 이름이 지정된 그리드 영역은 요소가 표시될 기본 동작을 변경할 때 유용합니다. 예를 들어 레이어의 요소가 2개일 경우 첫 번째 요소를 <code>grid-area="upper-third"</code>로, 두 번째 요소를 <code>grid-area="lower-third"</code>로 지정할 수 있습니다. <code class="nopad"><pre><amp-story-grid-layer template="thirds">   <h1 grid-area="upper-third">element 1</h1>   <p grid-area="lower-third">element 2</p> </amp-story-grid-layer> </pre></code>
+<strong>thirds</strong> 템플릿을 사용하면 화면이 동일한 크기의 3가지 열로 분할되며 각 영역에 콘텐츠를 삽입할 수 있습니다. 또한 <code>grid-area</code>의 이름을 지정하여 <code>upper-third</code>, <code>middle-third</code> 또는 <code>lower-third</code>와 같은 세 영역 중 콘텐츠를 삽입하려는 위치를 설정할 수 있습니다. 이름이 지정된 그리드 영역은 요소가 표시될 기본 동작을 변경할 때 유용합니다. 예를 들어 레이어의 요소가 2개일 경우 첫 번째 요소를 <code>grid-area="upper-third"</code>로, 두 번째 요소를 <code>grid-area="lower-third"</code>로 지정할 수 있습니다. <code class="nopad"><pre>&lt;amp-story-grid-layer template="thirds">   &lt;h1 grid-area="upper-third">element 1&lt;/h1>   &lt;p grid-area="lower-third">element 2&lt;/p> &lt;/amp-story-grid-layer> </pre></code>
 </td>
 <td>{{ image('/static/img/docs/tutorials/amp_story/layer-thirds.png', 216, 341) }}</td>
 </tr>

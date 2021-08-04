@@ -394,11 +394,11 @@ Ad esempio, in AMP è possibile la seguente struttura:
   </tr>
   <tr>
     <td><code>play</code></td>
-    <td>Riproduce l'audio. Sarà un no-op se l'elemento <code><amp-audio></code> è un discendente di un elemento <code><amp-story></code>.</td>
+    <td>Riproduce l'audio. Sarà un no-op se l'elemento <code><amp-audio></code> è un discendente di un elemento <code>&lt;amp-story></code>.</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
-    <td>Riproduce l'audio. Sarà un no-op se l'elemento <code><amp-audio></code> è un discendente di un elemento <code><amp-story></code>.</td>
+    <td>Riproduce l'audio. Sarà un no-op se l'elemento <code><amp-audio></code> è un discendente di un elemento <code>&lt;amp-story></code>.</td>
   </tr>
 </table>
 

@@ -109,7 +109,7 @@ Vous pouvez encore améliorer une story Web en appliquant des entrées d'animati
 </tbody>
 </table>
 
-Pour appliquer une entrée d'animation sur un élément, vous devez spécifier <code>animate-in="<em data-md-type="raw_html"><animation data-md-type="raw_html" preset></animation></em>"</code> avec une des valeurs d'animation prédéfinie. Par exemple, pour lâcher du texte dans une page, ajoutez `animate-in="drop"` à l'élément texte :
+Pour appliquer une entrée d'animation sur un élément, vous devez spécifier <code>animate-in="<em>&lt;animation preset></em>"</code> avec une des valeurs d'animation prédéfinie. Par exemple, pour lâcher du texte dans une page, ajoutez `animate-in="drop"` à l'élément texte :
 
 ```html
 <amp-story-page id="page3">
