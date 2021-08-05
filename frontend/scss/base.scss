@@ -31,7 +31,7 @@ html, body {
  * Elements under .ap-o-code-preview are rendered from example code, so we
  * should not style them. This classname is set on documentation.j2.
  */
-:not(.ap-o-code-preview) .amp-carousel-button {
+body > * > :not(.ap-o-code-preview) > * > .amp-carousel-button {
   width: 3em;
   height: 3em;
   border-radius: 50%;
