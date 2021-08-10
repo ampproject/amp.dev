@@ -24,7 +24,7 @@ stage:
   subline: MAR 12, 2018
   layout: all
   logo:
-    image_src: '/static/img/success-stories/bmw_jvm/bmw_logo-quote.png'
+    src: '/static/img/success-stories/bmw_jvm/bmw_logo-quote.png'
     width: 1
     height: 1
     alt: BMW
