@@ -58,7 +58,7 @@ In the example above, if the page has a screen of `1000px` or more, it applies `
 
 The following `amp-base-carousel` will show `3` slides at a time when width is greater than or equal to `800px`, and `2` otherwise.
 
-[example preview="top-frame" playground="true" imports="amp-base-carousel:1.0"]
+[example preview="top-frame" playground="true"]
 
 [sourcecode:html]
 <amp-base-carousel
