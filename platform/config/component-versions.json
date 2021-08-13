@@ -131,6 +131,8 @@
   "amp-story-interactive-poll": "1.0",
   "amp-story-interactive-binary-poll": "1.0",
   "amp-story-interactive-results": "1.0",
+  "amp-story-interactive-img-quiz": "1.0",
+  "amp-story-interactive-img-poll": "1.0",
   "amp-story-panning-media": "0.1",
   "amp-story-player": "0.1",
   "amp-story-page": "1.0",
