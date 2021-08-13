@@ -3,6 +3,7 @@
 	"fetchFromMaster": [
 		"amp-access-laterpay",
 		"amp-accordion",
+		"amp-autocomplete",
 		"amp-app-banner",
 		"amp-base-carousel",
 		"amp-bind",
