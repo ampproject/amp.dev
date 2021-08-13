@@ -306,6 +306,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/kargo.md
       - label: Ketshwa
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/ketshwa.md
+      - label: Kevel (Adzerk)
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../amp-ad-network-adzerk-impl/
       - label: Kiosked
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/kiosked.md
       - label: Kixer
@@ -498,7 +500,7 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/speakol.md
       - label: SpotX
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/spotx.md
-      - label: Spring AdTechnology AmpAd Integration
+      - label: Spring AdTechnology
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/springAds.md
       - label: SSP
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/ssp.md
