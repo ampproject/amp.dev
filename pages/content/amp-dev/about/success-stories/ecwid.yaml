@@ -24,7 +24,7 @@ stage:
   subline: MAY 18, 2020
   layout: all
   logo:
-    image_src: '/static/img/success-stories/ecwid/ecwid-logo.png'
+    src: '/static/img/success-stories/ecwid/ecwid-logo.png'
     width: 500
     height: 162
     alt: Ecwid

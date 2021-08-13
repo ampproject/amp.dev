@@ -207,7 +207,7 @@ Nó sẽ tạo ra lỗi xác thực AMP này và được hiển thị trong cá
 Mỗi công cụ đều cung cấp nhiều mảnh thông tin khác nhau:
 
 1. Địa điểm (dòng và cột) trong tài liệu HTML nơi xảy ra lỗi, có thể nhấn trong một số giao diện để nêu bật địa điểm đó. Trong trường hợp này, vấn đề xảy ra ở dòng 11, cột 2.
-2. Một dòng văn bản mô tả lỗi. Trong trường hợp này, văn bản thể hiện rằng chúng ta đang sử dụng một thẻ `<img>`, trong khi chúng ta nên sử dụng một thẻ <a><code><amp-img></code></a>.
+2. Một dòng văn bản mô tả lỗi. Trong trường hợp này, văn bản thể hiện rằng chúng ta đang sử dụng một thẻ `<img>`, trong khi chúng ta nên sử dụng một thẻ [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
 3. Liên kết đến một tài liệu liên quan đến lỗi. Trong trường hợp này là tài liệu cho thẻ [`<amp-img>`](../../../../documentation/components/reference/amp-img.md). Không phải lỗi nào cũng tạo các liên kết đến tài liệu.
 
 Sau khi đọc lại [thông số](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md), chúng ta nhận ra rằng mình đang sử dụng một thẻ `<img>`, trong khi chúng ta nên sử dụng một thẻ [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).

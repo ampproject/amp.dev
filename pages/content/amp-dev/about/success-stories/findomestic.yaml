@@ -24,7 +24,7 @@ stage:
   subline: FEB 24, 2020
   layout: mobile
   logo:
-    image_src: '/static/img/success-stories/findomestic/findomestic-logo.png'
+    src: '/static/img/success-stories/findomestic/findomestic-logo.png'
     width: 300
     height: 92
     alt: Findomestic
