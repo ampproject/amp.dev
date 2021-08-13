@@ -300,14 +300,14 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/iprom.md
       - label: Index Exchange AMP RTC
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/ix.md
+      - label: JIXIE
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/jixie.md
       - label: JUBNA
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/jubna.md
       - label: Kargo
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/kargo.md
       - label: Ketshwa
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/ketshwa.md
-      - label: Kevel (Adzerk)
-        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../amp-ad-network-adzerk-impl/
       - label: Kiosked
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/kiosked.md
       - label: Kixer
@@ -500,7 +500,7 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/speakol.md
       - label: SpotX
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/spotx.md
-      - label: Spring AdTechnology
+      - label: Spring AdTechnology AmpAd Integration
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/springAds.md
       - label: SSP
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/ssp.md
@@ -570,6 +570,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/wisteria.md
       - label: WP Media (Wirtualna Polska)
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/wpmedia.md
+      - label: Wunderkind (formerly BounceX)
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/wunderkind.md
       - label: Xlift
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/xlift.md
       - label: yahoo
