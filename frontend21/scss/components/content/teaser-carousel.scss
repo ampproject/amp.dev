@@ -62,7 +62,7 @@
       grid-column-end: -1;
     }
 
-    .amp-carousel-button {
+    & > button.amp-carousel-button {
       width: var(--spacing);
       height: var(--spacing);
       background-size: 19px 19px;
