@@ -155,7 +155,7 @@
 		"html-minifier": "4.0.0",
 		"html-webpack-inline-source-plugin": "1.0.0-beta.2",
 		"html-webpack-plugin": "5.3.2",
-		"husky": "7.0.1",
+		"husky": "7.0.2",
 		"jasmine": "3.9.0",
 		"jest": "27.0.6",
 		"jest-puppeteer": "5.0.4",
