@@ -304,12 +304,22 @@
     }
   }
 
-  &-flyout:hover,
-  &-nav-link:focus ~ &-flyout,
-  &-nav-link:hover ~ &-flyout {
-    display: block;
-    opacity: 1;
-    pointer-events: auto;
+  .amp-mode-mouse &, .amp-mode-keyboard & {
+    &-flyout:hover,
+    &-nav-link:focus ~ #{$header}-flyout,
+    &-nav-link:hover ~ #{$header}-flyout {
+      display: block;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  .amp-mode-touch & {
+    &-flyout.active {
+      display: block;
+      opacity: 1;
+      pointer-events: auto;
+    }
   }
 
   &-flyout:focus-within {
