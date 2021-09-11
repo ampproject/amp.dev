@@ -309,3 +309,30 @@ A Sponsored Story exists as a URL on the web, enabling the drive of user traffic
 {{ image('/static/img/docs/stampads/sponsored_story_full.png', 1600, 900, layout='intrinsic', alt='CTA button directs to a Sponsored Story', caption='CTA button directs to a Sponsored Story', align='' ) }}
 
 Read more about creating an [Web Story here](../start/create_successful_stories.md).
+
+## Advertiser Configurability
+
+Advertisers can now use meta tags within ads such as the ones listed below
+in order to style their own page-outlink.
+The page outlink with the customized styling configuration
+will be visible once an ad is shown.
+
+```html
+  <meta name="amp4ads-vars-cta-accent-element" content="text">
+  <meta name="amp4ads-vars-cta-accent-color" content="#FF00FF">
+  <meta name="amp4ads-vars-cta-image" content="/examples/visual-tests/picsum.photos/image1068_300x169.jpg">
+  <meta name="amp4ads-vars-theme" content="custom">
+```
+
+(example taken from [app install](https://github.com/ampproject/amphtml/blob/main/examples/amp-story/ads/app-install.html))
+
+### Meta Tag Display Options
+
+The following options and values are currently supported:
+
+| amp4ads-vars type               |           Accepted Values           |
+| ------------------------------- | :---------------------------------: |
+| amp4ads-vars-cta-accent-element |         text \| background          |
+| amp4ads-vars-cta-accent-color   | any hex value from #000000-#FFFFFF  |
+| amp4ads-vars-cta-image          | image files (\*.png \| \*.jpg etc.) |
+| amp4ads-vars-theme              |       custom \| light \| dark       |
