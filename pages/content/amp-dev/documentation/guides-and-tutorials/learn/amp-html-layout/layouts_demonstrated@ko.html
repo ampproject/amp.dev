@@ -2,131 +2,242 @@
 $title: AMP 레이아웃 살펴보기
 ---
 
-이 페이지는 서로 다른 [AMP 안의 레이아웃](index.md#layout)과 스크린이 리사이즈될 때 어떻게 동작하는 지 보여줍니다.
+<style amp-custom>
+  .layouts amp-img {
+    margin: 0;
+  }
 
-<div class="layouts">
+  .layouts .parent {
+    padding: 10px;
+    background: #ffa500;
+    animation-name: resize;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
 
-  <!-- fill -->
-  <div class="layout-item">
-    <h3>fill</h3>
-     <div class="description"><code>fill</code> 레이아웃을 사용하면 요소는 width와 height 모두 사용할 수 있는 공간을 사용합니다. 즉 fill 요소의 레이아웃과 크기는 해당 부모와 일치합니다.</div>
-    <div class="fixed-container">
-      <div class="parent">
-        <div class="wrapper">
-            <amp-img layout="fill" src="/static/img/docs/layouts/blue.jpg"></amp-img>
-        </div>
-      </div>
-    </div>
-  </div>
+  @keyframes resize {
+    from {
+      height: 200px;
+      width: 200px;
+    }
+    to {
+      height: 320px;
+      width: 100%;
+    }
+  }
 
-  <!-- fixed -->
-  <div class="layout-item">
-    <h3>fixed</h3>
-    <div class="description"><code>fixed</code> 레이아웃을 사용하면 요소는 요소의 width 및 height 속성을 기반으로 고정된 크기를 유지합니다. (반응형 없음)</div>
-    <div class="fixed-container">
-      <div class="parent">
-        <div class="wrapper">
-          <amp-img layout="fixed"
-            src="/static/img/docs/layouts/blue.jpg"
-            width="200" height="150">
-          </amp-img>
-        </div>
-      </div>
-    </div>
-  </div>
+  .layouts .wrapper {
+    display: block;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
 
-  <!-- fixed-height -->
-  <div class="layout-item">
-    <h3>fixed-height</h3>
-    <div class="description"><code>fixed-height</code> 레이아웃을 사용하면 요소는 사용 가능한 공간을 사용하지만 높이는 변경되지 않습니다. 이 레이아웃은 콘텐츠를 수평으로 배치해야하는 요소에 적합합니다. (예: <code>amp-carousel</code>)</div>
-    <div class="fixed-container">
-      <div class="parent">
-        <div class="wrapper">
-          <amp-img layout="fixed-height"
-            src="/static/img/docs/layouts/blue.jpg" height="150">
-          </amp-img>
-        </div>
-      </div>
-    </div>
-  </div>
+  .layouts .fixed-container {
+    height: 320px;
+  }
 
-  <!-- flex-item -->
-  <div class="layout-item">
-    <h3>flex-item</h3>
-    <div class="description"><code>flex-item</code> 레이아웃을 사용하면 부모 요소 내의 요소 및 다른 요소가 플렉스박스 모델 기반으로 사용 가능한 공간을 차지합니다.</div>
-    <div class="fixed-container">
-      <div class="parent">
-        <div class="wrapper">
-          <div class="flex-container">
-            <amp-img src="/static/img/docs/layouts/blue.jpg" layout="flex-item"></amp-img>
-            <amp-img src="/static/img/docs/layouts/red.jpg" layout="flex-item"></amp-img>
-            <amp-img src="/static/img/docs/layouts/green.jpg" layout="flex-item"></amp-img>
+  .layouts .flex-container {
+    display: flex;
+    flex-direction: row;
+    width: 330px;
+    height: 150px;
+  }
+
+  .layouts .layout-items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .layouts .layout-item {
+    width: 100%;
+  }
+
+  .layouts .layout-item:nth-child(odd) {
+    margin-right: 0;
+  }
+
+  .layouts .layout-item:nth-child(even) {
+    margin-left: 0;
+  }
+
+  .ap--content.layouts .layout-item h2 {
+    margin-top: 1em;
+  }
+
+  .layouts .description {
+    margin-bottom: 20px;
+  }
+
+  .layouts amp-selector {
+    background-color: hsl(214, 66%, 34%);
+  }
+
+  @media (min-width: 1024px) {
+    .layouts .layout-item {
+      width: 48%;
+    }
+
+    .layouts .layout-item:nth-child(odd) {
+      margin-right: 2%;
+    }
+
+    .layouts .layout-item:nth-child(even) {
+      margin-left: 2%;
+    }
+
+    .layouts .description {
+      height: 140px;
+    }
+  }
+</style>
+
+<div class="ap--content layouts">
+
+  <p>이 페이지는 서로 다른 <a href="index.md#layout">AMP 안의 레이아웃</a>과 스크린이 리사이즈될 때 어떻게 동작하는 지 보여줍니다.</p>
+
+  <div class="layout-items">
+    <!-- fill -->
+    <div class="layout-item">
+      <h2>fill</h2>
+      <p class="description"><code>fill</code> 레이아웃을 사용하면 요소는 width와 height 모두 사용할 수 있는 공간을 사용합니다. 즉 fill 요소의 레이아웃과 크기는
+        해당 부모와 일치합니다.</p>
+      <div class="fixed-container">
+        <div class="parent">
+          <div class="wrapper">
+            <amp-img layout="fill" src="/static/img/docs/layouts/blue.jpg" alt=""></amp-img>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- responsive -->
-  <div class="layout-item">
-    <h3>responsive</h3>
-    <div class="description"><code>responsive</code> 레이아웃을 사용하면 요소가 사용할 수 있는 공간을 사용하고 요소의 width 및 height 속성으로 지정된 종횡비로 높이를 자동으로 조정합니다.</div>
-    <div class="fixed-container">
-      <div class="parent">
-        <div class="wrapper">
-          <amp-img layout="responsive"
-            src="/static/img/docs/layouts/blue.jpg"
-            width="200" height="150">
-          </amp-img>
+    <!-- fixed -->
+
+    <div class="layout-item">
+      <h2>fixed</h2>
+      <p class="description"><code>fixed</code> 레이아웃을 사용하면 요소는 요소의 width 및 height 속성을 기반으로 고정된 크기를 유지합니다. (반응형 없음)</p>
+      <div class="fixed-container">
+        <div class="parent">
+          <div class="wrapper">
+            <amp-img layout="fixed"
+              src="/static/img/docs/layouts/blue.jpg"
+              width="200" height="150"
+              alt="">
+            </amp-img>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- intrinsic-->
-  <div class="layout-item">
-    <h3>intrinsic</h3>
-    <div class="description"><code>intrinsic</code> 레이아웃을 사용하면 요소의 width 및 height 속성으로 정의된 종횡비에 따라 요소의 원래 크기에 도달하거나 CSS 제약 조건에 도달할 때까지 요소의 사용 가능한 공간을 가져와서 크기를 자동으로 조정합니다.</div>
-    <div class="fixed-container">
-      <div class="parent">
-        <div class="wrapper">
-          <amp-img layout="intrinsic"
-            src="/static/img/docs/layouts/blue.jpg"
-            width="250" height="150">
-          </amp-img>
+    <!-- fixed-height -->
+
+    <div class="layout-item">
+      <h2>fixed-height</h2>
+      <p class="description"><code>fixed-height</code> 레이아웃을 사용하면 요소는 사용 가능한 공간을 사용하지만 높이는 변경되지 않습니다. 이 레이아웃은 콘텐츠를 수평으로
+        배치해야하는 요소에 적합합니다. (예: <code>amp-carousel</code>)</p>
+      <div class="fixed-container">
+        <div class="parent">
+          <div class="wrapper">
+            <amp-img layout="fixed-height"
+              src="/static/img/docs/layouts/blue.jpg" height="150"
+              alt="">
+            </amp-img>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- container -->
-  <div class="layout-item">
-    <h3>container</h3>
-    <div class="description"><code>container</code> 레이아웃을 사용하면 일반 HTML <code>div</code> 태그처럼 그 자식요소로 크기를 정합니다. 요소가 특정한 레이아웃을 가지고 있다고 가정했을 때 container처럼 동작합니다.</div>
-    <div class="fixed-container">
-      <div class="parent">
-        <div class="wrapper">
-          <amp-selector layout="container">
-              <amp-img src="/static/img/docs/layouts/green.jpg" width="80" height="80" option="a"></amp-img>
-              <amp-img src="/static/img/docs/layouts/red.jpg" width="80" height="80" option="b"></amp-img>
-              <amp-img src="/static/img/docs/layouts/yellow.jpg" width="80" height="80" option="c"></amp-img>
-          </amp-selector>
+    <!-- flex-item -->
+
+    <div class="layout-item">
+      <h2>flex-item</h2>
+      <p class="description"><code>flex-item</code> 레이아웃을 사용하면 부모 요소 내의 요소 및 다른 요소가 플렉스박스 모델 기반으로 사용 가능한 공간을 차지합니다.</p>
+      <div class="fixed-container">
+        <div class="parent">
+          <div class="wrapper">
+            <div class="flex-container">
+              <amp-img src="/static/img/docs/layouts/blue.jpg" layout="flex-item" alt=""></amp-img>
+              <amp-img src="/static/img/docs/layouts/red.jpg" layout="flex-item" alt=""></amp-img>
+              <amp-img src="/static/img/docs/layouts/green.jpg" layout="flex-item" alt=""></amp-img>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- nodisplay -->
-  <div class="layout-item">
-    <h3>nodisplay</h3>
-    <div class="description"><code>nodisplay</code> 레이아웃을 사용하면 요소가 보이지 않습니다. 요소는 공간을 가지지 않으며 display 스타일이 <code>none</code>인 것 처럼 동작합니다.</div>
-    <div class="fixed-container">
-      <div class="parent">
-        <div class="wrapper">
-          <amp-img layout="nodisplay"
-            src="/static/img/docs/layouts/blue.jpg"
-            width="200" height="150">
-          </amp-img>
+    <!-- responsive -->
+
+    <div class="layout-item">
+      <h2>responsive</h2>
+      <p class="description"><code>responsive</code> 레이아웃을 사용하면 요소가 사용할 수 있는 공간을 사용하고 요소의 width 및 height 속성으로 지정된 종횡비로
+        높이를 자동으로 조정합니다.</p>
+      <div class="fixed-container">
+        <div class="parent">
+          <div class="wrapper">
+            <amp-img layout="responsive"
+              src="/static/img/docs/layouts/blue.jpg"
+              width="200" height="150"
+              alt="">
+            </amp-img>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- intrinsic-->
+
+    <div class="layout-item">
+      <h2>intrinsic</h2>
+      <p class="description"><code>intrinsic</code> 레이아웃을 사용하면 요소의 width 및 height 속성으로 정의된 종횡비에 따라 요소의 원래 크기에 도달하거나 CSS
+        제약 조건에 도달할 때까지 요소의 사용 가능한 공간을 가져와서 크기를 자동으로 조정합니다.</p>
+      <div class="fixed-container">
+        <div class="parent">
+          <div class="wrapper">
+            <amp-img layout="intrinsic"
+              src="/static/img/docs/layouts/blue.jpg"
+              width="250" height="150"
+              alt="">
+            </amp-img>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- container -->
+
+    <div class="layout-item">
+      <h2>container</h2>
+      <p class="description"><code>container</code> 레이아웃을 사용하면 일반 HTML <code>div</code> 태그처럼 그 자식요소로 크기를 정합니다. 요소가 특정한
+        레이아웃을 가지고 있다고 가정했을 때 container처럼 동작합니다.</p>
+      <div class="fixed-container">
+        <div class="parent">
+          <div class="wrapper">
+            <amp-selector layout="container">
+              <amp-img src="/static/img/docs/layouts/green.jpg" width="80" height="80" option="a" alt=""></amp-img>
+                <amp-img src="/static/img/docs/layouts/red.jpg" width="80" height="80" option="b" alt=""></amp-img>
+                <amp-img src="/static/img/docs/layouts/yellow.jpg" width="80" height="80" option="c" alt=""></amp-img>
+            </amp-selector>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- nodisplay -->
+
+    <div class="layout-item">
+      <h2>nodisplay</h2>
+      <p class="description"><code>nodisplay</code> 레이아웃을 사용하면 요소가 보이지 않습니다. 요소는 공간을 가지지 않으며 display 스타일이
+        <code>none</code>인 것 처럼 동작합니다.</p>
+      <div class="fixed-container">
+        <div class="parent">
+          <div class="wrapper">
+            <amp-img layout="nodisplay"
+              src="/static/img/docs/layouts/blue.jpg"
+              width="200" height="150"
+              alt="">
+            </amp-img>
+          </div>
         </div>
       </div>
     </div>

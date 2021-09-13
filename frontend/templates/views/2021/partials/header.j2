@@ -45,14 +45,14 @@ to provide its state to other components #}
         {% elif not section %}
         <a class="ap-header-nav-link ap-nav-link [% if homepage.url.path == '{{ doc.url.path }}' %]active[% endif %]" href="{{ homepage.url.path }}">{{_(homepage.titles('navigation'))}}</a>
         {% else %}
-        <button class="ap-header-nav-link ap-nav-link [% if requestPath.startsWith('{{ section.pod_path.replace('/content/amp-dev/', '/') }}') %]active[% endif %]">
+        <button class="ap-header-nav-link ap-nav-link [% if requestPath.startsWith('{{ section.pod_path.replace('/content/amp-dev/', '/') }}') %]active[% endif %]" on="tap:AMP.setState({active{{ section.title }}: !active{{ section.title }}})">
           {{_(section.title)}}
           <div class="ap-icon ap-header-nav-link-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
           </div>
         </button>
 
-        <ul class="ap-header-flyout">
+        <ul class="ap-header-flyout" [class]="active{{ section.title }} ? 'ap-header-flyout active' : 'ap-header-flyout'">
           {% for path in section.flyout %}
           {% set flyout_doc = g.doc(path, locale=doc.locale) %}
           {% set flyout = flyout_doc.flyout or {} %}

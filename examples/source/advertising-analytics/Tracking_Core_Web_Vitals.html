@@ -47,28 +47,28 @@ macro into it's own seperate trigger to prevent underreporting.
         {
           "requests": {
             "event": "<% base_path %>/ping?user=[= user =]&account=ampdev&event=${eventId}",
-            'CWV_EVENT': '${event}?type=CWV'
+            "CWV_EVENT": "${event}&type=CWV"
           },
           "triggers": {
-              'cls': {
-                'on': 'visible',
-                'request': 'CWV_EVENT',
-                'extraUrlParams': {
-                  'cls': '${cumulativeLayoutShift}'
+              "cls": {
+                "on": "visible",
+                "request": "CWV_EVENT",
+                "extraUrlParams": {
+                  "cls": "${cumulativeLayoutShift}"
                 }
               },
-              'lcp': {
-                'on': 'visible',
-                'request': 'CWV_EVENT',
-                'extraUrlParams': {
-                  'lcp': '${largestContentfulPaint}'
+              "lcp": {
+                "on": "visible",
+                "request": "CWV_EVENT",
+                "extraUrlParams": {
+                  "lcp": "${largestContentfulPaint}"
                 }
               },
-              'fid': {
-                'on': 'visible',
-                'request': 'CWV_EVENT',
-                'extraUrlParams': {
-                  'fid': '${firstInputDelay}'
+              "fid": {
+                "on": "visible",
+                "request": "CWV_EVENT",
+                "extraUrlParams": {
+                  "fid": "${firstInputDelay}"
                 }
               },
             }
@@ -104,35 +104,35 @@ $CALC(${cumulativeLayoutShift}, 1000, multiply)
         },
         "requests": {
           "event": "<% base_path %>/ping?user=[= user =]&account=ampdev&event=${eventId}",
-          'CWV_EVENT': '${event}?type=CWV'
+          "CWV_EVENT": "${event}&type=CWV"
         },
         "triggers": {
-          'defaultPageview': {
-            'on': 'visible',
-            'request': 'pageview',
-            'vars': {
-              'title': '{{title}}'
+          "defaultPageview": {
+            "on": "visible",
+            "request": "pageview",
+            "vars": {
+              "title": "{{title}}"
             }
           },
-          'cls': {
-            'on': 'visible',
-            'request': 'CWV_EVENT',
-            'extraUrlParams': {
-              'cls': '$CALC(${cumulativeLayoutShift}, 1000, multiply)'
+          "cls": {
+            "on": "visible",
+            "request": "CWV_EVENT",
+            "extraUrlParams": {
+              "cls": "$CALC(${cumulativeLayoutShift}, 1000, multiply)"
             }
           },
-          'lcp': {
-            'on': 'visible',
-            'request': 'CWV_EVENT',
-            'extraUrlParams': {
-              'lcp': '${largestContentfulPaint}'
+          "lcp": {
+            "on": "visible",
+            "request": "CWV_EVENT",
+            "extraUrlParams": {
+              "lcp": "${largestContentfulPaint}"
             }
           },
-          'fid': {
-            'on': 'visible',
-            'request': 'CWV_EVENT',
-            'extraUrlParams': {
-              'fid': '${firstInputDelay}'
+          "fid": {
+            "on": "visible",
+            "request": "CWV_EVENT",
+            "extraUrlParams": {
+              "fid": "${firstInputDelay}"
             }
           }
         }
@@ -153,8 +153,8 @@ We can build on our Google Analytics to do this. One of substitutions provided b
 
 Once you have created the Custom Dimension to track the AMP Host, make sure you note the `Index` listed on the analytics page. This number is used in our configuration objects to connect `ampdocHost` to the Dimension you just created. Below  we assume your index was "1", (i.e. `cd1`). If your `Index` is 2, then use `cd2`, etc.
   -->
-    <amp-analytics>
-      <script type="application/json">
+  <amp-analytics>
+    <script type="application/json">
       {
         "vars": {
            "gtag_id": "UA-XXXXXXXXX-X",
@@ -164,21 +164,43 @@ Once you have created the Custom Dimension to track the AMP Host, make sure you 
              }
            }
         },
+        "requests": {
+          "event": "<% base_path %>/ping?user=[= user =]&account=ampdev&event=${eventId}",
+          "CWV_EVENT": "${event}&type=CWV"
+        },
         "triggers": {
-          "default pageview": {
+          "defaultPageview": {
             "on": "visible",
             "request": "pageview",
             "vars": {
               "title": "{{title}}"
             },
             "extraUrlParams": {
-              "lcp": "${largestContentfulPaint}",
-              "cls": "${cumulativeLayoutShift}",
-              "fid": "${firstInputDelay}",
               "cd1": "${ampdocHost}"
+            }
+          },
+          "cls": {
+            "on": "visible",
+            "request": "CWV_EVENT",
+            "extraUrlParams": {
+              "cls": "$CALC(${cumulativeLayoutShift}, 1000, multiply)"
+            }
+          },
+          "lcp": {
+            "on": "visible",
+            "request": "CWV_EVENT",
+            "extraUrlParams": {
+              "lcp": "${largestContentfulPaint}"
+            }
+          },
+          "fid": {
+            "on": "visible",
+            "request": "CWV_EVENT",
+            "extraUrlParams": {
+              "fid": "${firstInputDelay}"
             }
           }
         }
       }
       </script>
-    </amp-analytics>
+  </amp-analytics>
