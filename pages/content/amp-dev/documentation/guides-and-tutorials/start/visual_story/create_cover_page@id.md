@@ -71,7 +71,7 @@ Elemen `<amp-story-grid-layer>` mengatur tata letak berbagai elemen anaknya dala
     <td colspan="2"><h5 id="fill">Templat: Fill</h5></td>
 </tr>
 <tr>
-    <td width="65%">Templat <strong>fill</strong> akan mengisi layar dengan elemen anak pertama pada lapisan ini. Elemen anak lainnya pada lapisan ini tidak ditampilkan. Templat fill berfungsi dengan baik untuk latar belakang, termasuk gambar dan video. <code><pre><amp-story-grid-layer template="fill"> <amp-img src="https://github.com/ampproject/amp.dev/blob/future/pages/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/dog.png?raw=true" width="720" height="1280" layout="responsive"> </amp-img> </amp-story-grid-layer></pre></code>
+    <td width="65%">Templat <strong>fill</strong> akan mengisi layar dengan elemen anak pertama pada lapisan ini. Elemen anak lainnya pada lapisan ini tidak ditampilkan. Templat fill berfungsi dengan baik untuk latar belakang, termasuk gambar dan video. <code><pre>&lt;amp-story-grid-layer template="fill"> &lt;amp-img src="https://github.com/ampproject/amp.dev/blob/future/pages/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/dog.png?raw=true" width="720" height="1280" layout="responsive"> &lt;/amp-img> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341) }}     </td>
 </tr>
@@ -79,7 +79,7 @@ Elemen `<amp-story-grid-layer>` mengatur tata letak berbagai elemen anaknya dala
     <td colspan="2"><h5 id="vertical">Templat: Vertical</h5></td>
 </tr>
 <tr>
-    <td width="65%">Templat <strong>vertikal</strong> menempatkan elemen anak di sepanjang sumbu y. Elemen-elemen ini sejajar dengan bagian atas layar, dan menguasai seluruh layar di sepanjang sumbu x. Templat vertikal bekerja dengan baik jika Anda menginginkan tumpukan elemen vertikal satu demi satu. <code><pre><amp-story-grid-layer template="vertical"> <p>element 1</p> <p>element 2</p> <p>element 3</p> </amp-story-grid-layer></pre></code>
+    <td width="65%">Templat <strong>vertikal</strong> menempatkan elemen anak di sepanjang sumbu y. Elemen-elemen ini sejajar dengan bagian atas layar, dan menguasai seluruh layar di sepanjang sumbu x. Templat vertikal bekerja dengan baik jika Anda menginginkan tumpukan elemen vertikal satu demi satu. <code><pre>&lt;amp-story-grid-layer template="vertical"> &lt;p>element 1&lt;/p> &lt;p>element 2&lt;/p> &lt;p>element 3&lt;/p> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341) }}     </td>
 </tr>
@@ -87,7 +87,7 @@ Elemen `<amp-story-grid-layer>` mengatur tata letak berbagai elemen anaknya dala
     <td colspan="2"><h5 id="horizontal">Templat: Horizontal</h5></td>
 </tr>
 <tr>
-    <td width="65%">Templat <strong>horizontal</strong> menata elemen anak di sepanjang sumbu x. Elemen-elemen ini sejajar dengan bagian awal layar, dan memenuhi seluruh layar di sepanjang sumbu Y. Templat horizontal berfungsi dengan baik jika Anda ingin menumpuk elemen secara horizontal satu setelah yang lain. <<code>pre><amp-story-grid-layer template="horizontal"> <p>element 1</p> <p>element 2</p> <p>element 3</p> </amp-story-grid-layer></pre></code>
+    <td width="65%">Templat <strong>horizontal</strong> menata elemen anak di sepanjang sumbu x. Elemen-elemen ini sejajar dengan bagian awal layar, dan memenuhi seluruh layar di sepanjang sumbu Y. Templat horizontal berfungsi dengan baik jika Anda ingin menumpuk elemen secara horizontal satu setelah yang lain. <code><pre>&lt;amp-story-grid-layer template="horizontal"> &lt;p>element 1&lt;/p> &lt;p>element 2&lt;/p> &lt;p>element 3&lt;/p> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341) }}     </td>
 </tr>
@@ -95,7 +95,7 @@ Elemen `<amp-story-grid-layer>` mengatur tata letak berbagai elemen anaknya dala
     <td colspan="2"><h5 id="thirds">Templat: Third</h5></td>
 </tr>
 <tr>
-<td width="65%">Templat <strong>sepertiga</strong> membagi layar menjadi tiga baris berukuran sama, dan memungkinkan Anda membagikan konten ke dalam masing-masing area. Anda juga dapat menentukan sebuah <code>grid-area</code> bernama untuk mengindikasikan bagian sepertiga mana yang ingin Anda jadikan tempat konten — <code>upper-third</code>, <code>middle-third</code>, atau <code>lower-third</code>. Area kisi yang memiliki nama berguna untuk mengubah perilaku standar terkait di mana elemen-elemen muncul. Contohnya: jika Anda mempunyai dua elemen pada lapisan tersebut, Anda dapat menentukan bahwa elemen pertama ditempatkan di dalam <code>grid-area="upper-third"</code> dan elemen kedua di dalam <code>grid-area="lower-third"</code>. <code><pre><amp-story-grid-layer template="thirds"> <h1 grid-area="upper-third">element 1</h1> <p grid-area="lower-third">element 2</p> </amp-story-grid-layer> </pre></code>
+<td width="65%">Templat <strong>sepertiga</strong> membagi layar menjadi tiga baris berukuran sama, dan memungkinkan Anda membagikan konten ke dalam masing-masing area. Anda juga dapat menentukan sebuah <code>grid-area</code> bernama untuk mengindikasikan bagian sepertiga mana yang ingin Anda jadikan tempat konten — <code>upper-third</code>, <code>middle-third</code>, atau <code>lower-third</code>. Area kisi yang memiliki nama berguna untuk mengubah perilaku standar terkait di mana elemen-elemen muncul. Contohnya: jika Anda mempunyai dua elemen pada lapisan tersebut, Anda dapat menentukan bahwa elemen pertama ditempatkan di dalam <code>grid-area="upper-third"</code> dan elemen kedua di dalam <code>grid-area="lower-third"</code>. <code><pre>&lt;amp-story-grid-layer template="thirds"> &lt;h1 grid-area="upper-third">element 1&lt;/h1> &lt;p grid-area="lower-third">element 2&lt;/p> &lt;/amp-story-grid-layer> </pre></code>
 </td>
 <td>{{ image('/static/img/docs/tutorials/amp_story/layer-thirds.png', 216, 341) }}</td>
 </tr>

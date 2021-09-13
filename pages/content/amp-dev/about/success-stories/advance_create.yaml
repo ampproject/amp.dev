@@ -24,7 +24,7 @@ stage:
   subline: MAR 07, 2019
   layout: mobile
   logo:
-    image_src: '/static/img/success-stories/advance_create/advance_create_logo.png'
+    src: '/static/img/success-stories/advance_create/advance_create_logo.png'
     width: 150
     height: 51
     alt: Advance Create

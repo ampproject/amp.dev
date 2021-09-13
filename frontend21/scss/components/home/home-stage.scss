@@ -12,7 +12,7 @@
 
   @include respond-to('medium') {
     --spacing: 100px;
-
+    padding: var(--spacing) 0 60px;
     text-align: left;
   }
 
@@ -29,7 +29,7 @@
     }
 
     @include respond-to('large') {
-      grid-column: 2/14;
+      grid-column: 3/15;
     }
   }
 
@@ -58,7 +58,7 @@
     }
 
     @include respond-to('large') {
-      grid-column: 14/24;
+      grid-column: 15/-1;
       svg {
         max-width: 514px;
         max-height: 514px;

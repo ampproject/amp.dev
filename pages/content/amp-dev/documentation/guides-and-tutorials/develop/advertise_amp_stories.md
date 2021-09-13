@@ -20,8 +20,8 @@ Web Stories use a single  [`amp-story-auto-ads`](../../../documentation/componen
 
 A Web Story places the first ad sometime after the first two pages with the aim of optimizing monetization revenue and user experience.
 
-<amp-anim width=360 height=640 src="/static/img/docs/stampads/stamp_gif_ad.gif">
-  <amp-img placeholder width=360 height=640 src="/static/img/docs/stampads/stamp_gif_still.png">
+<amp-anim width=360 height=640 src="/static/img/docs/stampads/stamp_gif_ad.gif" alt="Animation showing a web story being navigated, with an ad appearing after the first few pages">
+  <amp-img placeholder width=360 height=640 src="/static/img/docs/stampads/stamp_gif_still.png" alt="A static rendition of an ad page in a Web Story">
   </amp-img>
 </amp-anim>
 
@@ -36,7 +36,7 @@ Users can progress past ads the same way as normal story pages; by tapping the r
 
 Users interact directly with the ad by tapping the system rendered [call to action](story_ads_best_practices.md#call-to-action-button-text-enum) button that appears in the bottom third of all Web Story ads.  The button can be configured to send the user to an arbitrary URL (or to the relevant app store).
 
-{{ image('/static/img/docs/stampads/sponsored_story.png', 1600, 597, layout='intrinsic', alt='Image showing that usersare redirected to an ad landing destination, but can return to the story.', caption='Users are redirected to an ad landing destination, but can return to the story.', align='' ) }}
+{{ image('/static/img/docs/stampads/sponsored_story.png', 1600, 597, layout='intrinsic', alt='Image showing that users are redirected to an ad landing destination, but can return to the story.', caption='Users are redirected to an ad landing destination, but can return to the story.', align='' ) }}
 
 ## Configure a Web Story for ads
 Web Stories cannot support an [`amp-ad`](../../../documentation/components/reference/amp-ad.md) directly on the page. Instead, all ads are fetched and displayed by the [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) component. The [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) component must be placed as a direct child element of [`amp-story`](../../../documentation/components/reference/amp-story.md).

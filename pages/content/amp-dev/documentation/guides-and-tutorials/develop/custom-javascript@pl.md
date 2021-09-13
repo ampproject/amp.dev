@@ -43,7 +43,7 @@ Serwer AMP Cache buforuje pliki JavaScript, a następnie je dostarcza. Użytkown
 
 # Używanie składnika `<amp-script>`
 
-Aby zagwarantować, że strony AMP będą konsekwentnie ładowane szybko i z płynnie działającymi UI, na składnik <kod><amp-script> nałożono ograniczenia.</kod>
+Aby zagwarantować, że strony AMP będą konsekwentnie ładowane szybko i z płynnie działającymi UI, na składnik `<amp-script>` nałożono ograniczenia.
 
 ## Inicjowanie
 
@@ -72,7 +72,7 @@ Ze względu na wrażenia użytkownika i bezpieczeństwo składnik `amp-script` w
 
 ### Interakcja z użytkownikiem
 
-Gdy użytkownik wchodzi w interakcję z elementami w otoce składnika `<amp-script>`, niestandardowy kod JavaScript musi szybko zwrócić manipulacje modelem DOM, gdy są potrzebne. Domyślnie zmiany w DOM są dozwolone <strong>przez czas krótszy niż jedna sekunda</strong> od początkowej interakcji. Znaczącym wyjątkiem jest sytuacja, gdy kod musi pobrać dane z sieci przy użyciu interfejsu <code>fetch</code>. Tutaj zmiany DOM mogą być wymagane po zwróceniu odpowiedzi użytkownikowi, a następnie przez czas <strong>krótszy niż jedna sekunda</strong>. Jeśli skrypt zmieni DOM poza dozwolonym przedziałem czasu, spowoduje to błąd krytyczny i składnik `<amp-script>` wymusi zakończenie procesu Web Worker. Po wymuszonym zakończeniu składnik <code><amp-script></code> nie zostanie wykonany ponownie.
+Gdy użytkownik wchodzi w interakcję z elementami w otoce składnika `<amp-script>`, niestandardowy kod JavaScript musi szybko zwrócić manipulacje modelem DOM, gdy są potrzebne. Domyślnie zmiany w DOM są dozwolone <strong>przez czas krótszy niż jedna sekunda</strong> od początkowej interakcji. Znaczącym wyjątkiem jest sytuacja, gdy kod musi pobrać dane z sieci przy użyciu interfejsu <code>fetch</code>. Tutaj zmiany DOM mogą być wymagane po zwróceniu odpowiedzi użytkownikowi, a następnie przez czas <strong>krótszy niż jedna sekunda</strong>. Jeśli skrypt zmieni DOM poza dozwolonym przedziałem czasu, spowoduje to błąd krytyczny i składnik `<amp-script>` wymusi zakończenie procesu Web Worker. Po wymuszonym zakończeniu składnik `<amp-script>` nie zostanie wykonany ponownie.
 
 ### Swobodne zmiany
 
@@ -84,7 +84,7 @@ AMP narzuca limit 150 kilobajtów niestandardowego kodu JavaScript na każdej st
 
 ## Zakres
 
-Wszystkie elementy DOM, z którymi mają współpracować niestandardowe pliki JavaScript, muszą być otoczone znacznikami składników `<amp-script>`. Dotyczy to również innych składników AMP. Składnik `<amp-script>` uważa, że `document.body` jest elementem składnika `<amp-script>`, a nie elementem sekcji <cod><body> dokumentu.</cod>
+Wszystkie elementy DOM, z którymi mają współpracować niestandardowe pliki JavaScript, muszą być otoczone znacznikami składników `<amp-script>`. Dotyczy to również innych składników AMP. Składnik `<amp-script>` uważa, że `document.body` jest elementem składnika `<amp-script>`, a nie elementem sekcji `<body>` dokumentu.
 
 Jeśliby wywołać funkcję `document.body.appendChild(document.createElement('span'))` w skrypcie zaimportowanym do elementu `<amp-script>` w następującym dokumencie:
 

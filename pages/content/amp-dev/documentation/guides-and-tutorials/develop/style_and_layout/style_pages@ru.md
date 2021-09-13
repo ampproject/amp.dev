@@ -40,7 +40,7 @@ contributors:
       <td data-th="Description">Запрещено использовать <code>!important</code> или ссылаться на него. Это требование важно для контроля выбора размеров элементов в AMP.</td>
     </tr>
     <tr>
-      <td data-th="Banned style"><code><link rel=”stylesheet”></code></td>
+      <td data-th="Banned style"><code>&lt;link rel=”stylesheet”></code></td>
       <td data-th="Description">Запрещен (за исключением <a href="#the-custom-fonts-exception">внешних шрифтов</a>).</td>
     </tr>
     <tr>

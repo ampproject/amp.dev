@@ -109,7 +109,7 @@ Bạn có thể cải tiến thêm nữa Câu chuyện web bằng cách áp dụ
 </tbody>
 </table>
 
-Để áp dụng chuyển động vào của hình hoạt họa đối với một phần tử, bạn phải quy định <code>animate-in="<em data-md-type="raw_html"><animation data-md-type="raw_html" preset></animation></em>"</code> với một trong những giá trị của hình hoạt họa thiết lập sẵn. Ví dụ như để thả chữ vào trang, hãy thêm `animate-in="drop"` vào phần tử văn bản:
+Để áp dụng chuyển động vào của hình hoạt họa đối với một phần tử, bạn phải quy định <code>animate-in="<em>&lt;animation preset></em>"</code> với một trong những giá trị của hình hoạt họa thiết lập sẵn. Ví dụ như để thả chữ vào trang, hãy thêm `animate-in="drop"` vào phần tử văn bản:
 
 ```html
 <amp-story-page id="page3">

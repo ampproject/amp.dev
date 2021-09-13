@@ -241,7 +241,7 @@ Se è possibile fornire un solo formato video, scegliere MP4. Se possibile, util
   </tr>
 </table>
 
-### Uso di <source> vs src</source>
+### Uso di &lt;source&gt; vs src
 
 Utilizzare più elementi figli `<source>` all'interno del componente `<amp-video>` per specificare la sorgente video sull'attributo `src`. L'utilizzo dell'elemento `<source>` consente di specificare il tipo di video e di aggiungere sorgenti video di backup. È necessario utilizzare l'attributo `type` per specificare il tipo MIME. Usare `application/x-mpegurl` o `application/vnd.apple.mpegurl` per i video HLS. Per tutti gli altri tipi di video, usare il prefisso MIME `video/` seguito dal formato video, ad esempio `”video/mp4”`.
 

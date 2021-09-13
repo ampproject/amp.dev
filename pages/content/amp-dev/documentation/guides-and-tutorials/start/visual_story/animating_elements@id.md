@@ -109,7 +109,7 @@ Anda dapat menyempurnakan Cerita Web lebih lanjut dengan menerapkan animasi pemb
 </tbody>
 </table>
 
-Untuk menerapkan animasi pembukaan pada elemen, Anda harus menetapkan <code>animate-in=""</code> dengan salah satu nilai preset animasi. Misalnya, untuk menjatuhkan beberapa teks ke halaman, tambahan `animate-in="drop"` ke elemen teks:
+Untuk menerapkan animasi pembukaan pada elemen, Anda harus menetapkan <code>animate-in="<em>&lt;animation preset></em>"</code> dengan salah satu nilai preset animasi. Misalnya, untuk menjatuhkan beberapa teks ke halaman, tambahan `animate-in="drop"` ke elemen teks:
 
 ```html
 <amp-story-page id="page3">

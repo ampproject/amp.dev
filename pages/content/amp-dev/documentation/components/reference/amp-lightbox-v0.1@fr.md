@@ -87,7 +87,7 @@ Pour afficher des images dans une annonce Lightbox, vous pouvez également utili
         <td width="40%"><strong>scrollable (facultatif)</strong></td>
         <td>Lorsque l'attribut <code>scrollable</code> est utilisé, l'internaute peut faire défiler le contenu de l'annonce Lightbox si sa taille est supérieure à la hauteur définie pour ce mode.
           <br><br>
-            <strong>Remarque</strong> : L'attribut <code>scrollable</code> n'est pas autorisé lorsque l'élément <code><amp-lightbox></code> est utilisé dans une annonce AMP HTML. Pour plus d'informations, consultez la section <a href="#a4a">Utiliser amp-lightbox dans des annonces AMP HTML</a>.</td>
+            <strong>Remarque</strong> : L'attribut <code>scrollable</code> n'est pas autorisé lorsque l'élément <code>&lt;amp-lightbox&gt;</code> est utilisé dans une annonce AMP HTML. Pour plus d'informations, consultez la section <a href="#a4a">Utiliser amp-lightbox dans des annonces AMP HTML</a>.</td>
           </tr>
           <tr>
             <td width="40%"><strong>scrollable (facultatif)</strong></td>

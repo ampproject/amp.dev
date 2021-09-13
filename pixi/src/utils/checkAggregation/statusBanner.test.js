@@ -15,10 +15,6 @@ const passedMobileFriendlinessPromise = Promise.resolve({
   mobileFriendly: true,
 });
 
-const passedSafeBrowsingPromise = Promise.resolve({
-  safeBrowsing: true,
-});
-
 describe('getStatusId', () => {
   it('returns invalid-url', async () => {
     const statusId = await getStatusId({
@@ -61,7 +57,6 @@ describe('getStatusId', () => {
           isValid: false,
         }),
         mobileFriendliness: passedMobileFriendlinessPromise,
-        safeBrowsing: passedSafeBrowsingPromise,
         pageExperience: Promise.resolve({
           pageExperience: {
             fieldData: {
@@ -84,7 +79,6 @@ describe('getStatusId', () => {
       {
         linter: passedLinterPromise,
         mobileFriendliness: passedMobileFriendlinessPromise,
-        safeBrowsing: passedSafeBrowsingPromise,
         pageExperience: Promise.resolve({
           pageExperience: {
             fieldData: {
@@ -116,7 +110,6 @@ describe('getStatusId', () => {
       {
         linter: passedLinterPromise,
         mobileFriendliness: passedMobileFriendlinessPromise,
-        safeBrowsing: passedSafeBrowsingPromise,
         pageExperience: Promise.resolve({
           pageExperience: {
             labData: {
@@ -145,7 +138,6 @@ describe('getStatusId', () => {
       {
         linter: passedLinterPromise,
         mobileFriendliness: passedMobileFriendlinessPromise,
-        safeBrowsing: passedSafeBrowsingPromise,
         pageExperience: Promise.resolve({
           pageExperience: {
             fieldData: {
@@ -177,7 +169,6 @@ describe('getStatusId', () => {
       {
         linter: passedLinterPromise,
         mobileFriendliness: passedMobileFriendlinessPromise,
-        safeBrowsing: passedSafeBrowsingPromise,
         pageExperience: Promise.resolve({
           pageExperience: {
             labData: {
@@ -206,7 +197,6 @@ describe('getStatusId', () => {
       {
         linter: passedLinterPromise,
         mobileFriendliness: passedMobileFriendlinessPromise,
-        safeBrowsing: passedSafeBrowsingPromise,
         pageExperience: Promise.resolve({
           pageExperience: {
             fieldData: {
@@ -238,7 +228,6 @@ describe('getStatusId', () => {
       {
         linter: passedLinterPromise,
         mobileFriendliness: passedMobileFriendlinessPromise,
-        safeBrowsing: passedSafeBrowsingPromise,
         pageExperience: Promise.resolve({
           pageExperience: {
             labData: {
@@ -267,7 +256,6 @@ describe('getStatusId', () => {
       {
         linter: passedLinterPromise,
         mobileFriendliness: passedMobileFriendlinessPromise,
-        safeBrowsing: passedSafeBrowsingPromise,
         pageExperience: Promise.resolve({
           pageExperience: {
             fieldData: {
@@ -299,7 +287,6 @@ describe('getStatusId', () => {
       {
         linter: passedLinterPromise,
         mobileFriendliness: passedMobileFriendlinessPromise,
-        safeBrowsing: passedSafeBrowsingPromise,
         pageExperience: Promise.resolve({
           pageExperience: {
             labData: {
@@ -328,34 +315,10 @@ describe('getStatusId', () => {
       {
         linter: passedLinterPromise,
         mobileFriendliness: passedMobileFriendlinessPromise,
-        safeBrowsing: passedSafeBrowsingPromise,
         pageExperience: Promise.resolve({
           pageExperience: {
             fieldData: {
               isAllFast: false,
-            },
-            labData: {
-              isAllFast: true,
-            },
-            source: 'fieldData',
-          },
-        }),
-      },
-      Promise.resolve(fixedRecommendations)
-    );
-    expect(statusId).toBe('failed-no-info');
-  });
-
-  it('returns failed-no-info due to safe browsing', async () => {
-    const statusId = await getStatusId(
-      {
-        linter: passedLinterPromise,
-        mobileFriendliness: passedMobileFriendlinessPromise,
-        safeBrowsing: Promise.resolve({}),
-        pageExperience: Promise.resolve({
-          pageExperience: {
-            fieldData: {
-              isAllFast: true,
             },
             labData: {
               isAllFast: true,
@@ -374,7 +337,6 @@ describe('getStatusId', () => {
       {
         linter: passedLinterPromise,
         mobileFriendliness: Promise.resolve({}),
-        safeBrowsing: passedSafeBrowsingPromise,
         pageExperience: Promise.resolve({
           pageExperience: {
             fieldData: {
@@ -403,7 +365,6 @@ describe('getStatusId', () => {
           usesHttps: false,
         }),
         mobileFriendliness: passedMobileFriendlinessPromise,
-        safeBrowsing: passedSafeBrowsingPromise,
         pageExperience: Promise.resolve({
           pageExperience: {
             labData: {
@@ -423,7 +384,6 @@ describe('getStatusId', () => {
       {
         linter: passedLinterPromise,
         mobileFriendliness: passedMobileFriendlinessPromise,
-        safeBrowsing: passedSafeBrowsingPromise,
         pageExperience: Promise.resolve({
           pageExperience: {
             fieldData: {
@@ -446,7 +406,6 @@ describe('getStatusId', () => {
       {
         linter: passedLinterPromise,
         mobileFriendliness: passedMobileFriendlinessPromise,
-        safeBrowsing: passedSafeBrowsingPromise,
         pageExperience: Promise.resolve({
           pageExperience: {
             fieldData: {
@@ -469,7 +428,6 @@ describe('getStatusId', () => {
       {
         linter: passedLinterPromise,
         mobileFriendliness: passedMobileFriendlinessPromise,
-        safeBrowsing: passedSafeBrowsingPromise,
         pageExperience: Promise.resolve({
           pageExperience: {
             fieldData: {
@@ -492,7 +450,6 @@ describe('getStatusId', () => {
       {
         linter: Promise.reject(new Error('error')),
         mobileFriendliness: pendingPromise,
-        safeBrowsing: pendingPromise,
         pageExperience: pendingPromise,
       },
       pendingPromise
@@ -505,7 +462,7 @@ describe('getStatusId', () => {
       {
         linter: passedLinterPromise,
         mobileFriendliness: passedMobileFriendlinessPromise,
-        safeBrowsing: passedSafeBrowsingPromise,
+
         pageExperience: Promise.resolve({error: new Error('error')}),
       },
       Promise.resolve(fixedRecommendations)
@@ -513,27 +470,11 @@ describe('getStatusId', () => {
     expect(statusId).toBe('cwv-error');
   });
 
-  it('returns api-error for safe browsing error', async () => {
-    const statusId = await getStatusId(
-      {
-        linter: passedLinterPromise,
-        mobileFriendliness: passedMobileFriendlinessPromise,
-        safeBrowsing: Promise.resolve({error: new Error('error')}),
-        pageExperience: Promise.resolve({
-          pageExperience: {},
-        }),
-      },
-      Promise.resolve(fixedRecommendations)
-    );
-    expect(statusId).toBe('api-error');
-  });
-
   it('returns api-error for mobile friendliness error', async () => {
     const statusId = await getStatusId(
       {
         linter: passedLinterPromise,
         mobileFriendliness: Promise.resolve({error: new Error('error')}),
-        safeBrowsing: passedSafeBrowsingPromise,
         pageExperience: Promise.resolve({
           pageExperience: {},
         }),

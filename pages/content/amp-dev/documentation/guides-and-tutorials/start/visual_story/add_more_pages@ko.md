@@ -51,7 +51,7 @@ author: bpaduch
       <ul>
       <li>레이어 3개 포함:       <ul>         <li> <b>레이어 1</b>: <a href="create_cover_page.md#fill"><code>fill</code></a> 템플릿을 구현하고 반응형 <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a>(<code class="filename">bird.jpg</code>, 720 x 1280px)</li>를 포함합니다.         <li> <b>레이어 2</b>:  <a href="create_cover_page.md#vertical"><code>vertical</code></a> 템플릿을 구현하고 요소 한 개를 포함합니다.           <ul>             <li>제목이 <em>새</em> </li>인 <code><h1></code> 요소           </ul>         </li>         <li> <b>레이어 3</b>:  <a href="create_cover_page.md#vertical"><code>vertical</code></a> 템플릿을 구현하고 요소 한 개를 포함합니다.           <ul>             <li>다음 인용문의 <code><q></code> 요소: <em>새는 깃털이 있고 날 수 있고 노래할 수 있습니다. 그중에 가장 중요하지 않은 것은 깃털입니다. --Marjorie Allen Seiffert</em> </li>             <li>세 번째 레이어가 <code>class="bottom"</code>을 지정하여 하위 요소를 화면 하단에 정렬합니다.</li>           </ul>         </li>       </ul>
 </li>
-      <li>페이지가 표시되는 동안 백그라운드에서 오디오 파일을 재생합니다. 전체 스토리나 페이지 한 개의 백그라운드에서 오디오를 재생할 수 있습니다.  페이지의 오디오를 재생하려면 <code>background-audio="assets/bird-singing.mp3"</code> 속성을 <code><amp-story-page></code> 요소에 추가합니다.</li>
+      <li>페이지가 표시되는 동안 백그라운드에서 오디오 파일을 재생합니다. 전체 스토리나 페이지 한 개의 백그라운드에서 오디오를 재생할 수 있습니다.  페이지의 오디오를 재생하려면 <code>background-audio="assets/bird-singing.mp3"</code> 속성을 <code>&lt;amp-story-page></code> 요소에 추가합니다.</li>
       </ul>
     </td>
     <td>{{ image('/static/img/docs/tutorials/amp_story/pg3-birds.png', 720, 1280, alt='3페이지 - 새' ) }}</td>

@@ -43,7 +43,7 @@ description: '시작 코드는 매우 기본적인 사용자 환경을 제공합
 </amp-state>
 ```
 
-<a><code data-md-type="codespan"><amp-state></code></a> 요소 내의 데이터는 연결된 ID로 액세스할 수 있습니다. 예를 들어 다음 표현식 조각으로 해당 변수를 참조할 수 있습니다.
+[`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) 요소 내의 데이터는 연결된 ID로 액세스할 수 있습니다. 예를 들어 다음 표현식 조각으로 해당 변수를 참조할 수 있습니다.
 
 ```javascript
 selected.slide; // Evaluates to 0.

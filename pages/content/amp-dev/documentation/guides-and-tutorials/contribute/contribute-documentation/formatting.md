@@ -16,7 +16,7 @@ Guides and tutorials are submitted in [Markdown](https://www.markdownguide.org/)
 
 Content on amp.dev is pulled from two repositories, [amp.dev](https://github.com/ampproject/amp.dev) and [AMPHTML](https://github.com/ampproject/amphtml). All reference documentation under components is pulled from AMPHTML, either from builtins or extensions.
 
-*   [Built-in components ](https://github.com/ampproject/amphtml/tree/main/builtins)
+*   [Built-in components ](https://github.com/ampproject/amphtml/tree/main/src/builtins)
 *   [Components](https://github.com/ampproject/amphtml/tree/main/extensions)
 *   [Courses](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/courses)
 *   [Examples](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/examples)

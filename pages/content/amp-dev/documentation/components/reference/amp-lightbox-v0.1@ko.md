@@ -93,7 +93,7 @@ teaser:
                 <td width="40%"><strong>scrollable(선택사항)</strong></td>
                 <td><code>scrollable</code> 속성이 있는 경우 라이트박스의 높이를 넘어가면 라이트박스의 콘텐츠를 스크롤할 수 있습니다.
                   <br><br>
-                    <strong>참고</strong>: <code>scrollable</code> 속성은 AMPHTML 광고에서 <code><amp-lightbox></code> 사용 시 허용되지 않습니다. 세부정보는 <a href="#a4a">AMPHTML 광고에서 amp-lightbox 사용</a> 섹션을 읽어보세요.</td>
+                    <strong>참고</strong>: <code>scrollable</code> 속성은 AMPHTML 광고에서 <code>&lt;amp-lightbox&gt;</code> 사용 시 허용되지 않습니다. 세부정보는 <a href="#a4a">AMPHTML 광고에서 amp-lightbox 사용</a> 섹션을 읽어보세요.</td>
                   </tr>
                   <tr>
                     <td width="40%"><strong>scrollable(선택사항)</strong></td>

@@ -52,22 +52,23 @@ Inoltre, i contenuti creativi devono rispettare le seguenti regole:
 <td>Consente agli strumenti di convalida di distinguere se i contenuti creativi sono documenti AMP generali o documenti di annunci AMPHTML limitati, permettendone la corretta visualizzazione.</td>
 </tr>
 <tr>
-<td>Deve includere <code><script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script></code> come script di runtime al posto di <code>https://cdn.ampproject.org/v0.js</code>.</td>
+<td>Deve includere <code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script></code> come script di runtime al posto di <code>https://cdn.ampproject.org/v0.js</code>.</td>
 <td>Consente comportamenti di runtime personalizzati per gli annunci AMPHTML pubblicati in iframe indipendenti dall'origine.</td>
 </tr>
 <tr>
-<td>Non deve includere un tag <code><link rel="canonical"></code>.</td>
+<td>Non deve includere un tag <code>&lt;link rel="canonical"></code>.</td>
 <td>I contenuti creativi degli annunci non hanno una "versione canonica non AMP" e non verranno indicizzati per le ricerche in modo indipendente, quindi l'autoreferenzialità sarebbe inutile.</td>
 </tr>
 <tr>
-<td>Può includere come identificatori dei tag meta opzionali nell'intestazione HTML, in formato <code><meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>. Questi tag meta devono essere collocati prima dello script <code>amp4ads-v0.js</code>. I valori di <code>vendor</code> e <code>id</code> sono stringhe contenenti i soli caratteri [0-9a-zA-Z_-]. Il valore di <code>type</code> può essere <code>creative-id</code> o <code>impression-id</code>.</td>
-<td>Questi identificatori personalizzati permettono di individuare gli annunci e i contenuti creativi. Possono essere utili a scopo di segnalazione e debugging.<br><br><p>Esempio:</p> <pre> <meta name="amp4ads-id" content="vendor=adsense,type=creative-id,id=1283474"> </pre>
-<meta name="amp4ads-id" content="vendor=adsense,type=impression-id,id=xIsjdf921S">
+<td>Può includere come identificatori dei tag meta opzionali nell'intestazione HTML, in formato <code>&lt;meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>. Questi tag meta devono essere collocati prima dello script <code>amp4ads-v0.js</code>. I valori di <code>vendor</code> e <code>id</code> sono stringhe contenenti i soli caratteri [0-9a-zA-Z_-]. Il valore di <code>type</code> può essere <code>creative-id</code> o <code>impression-id</code>.</td>
+<td>Questi identificatori personalizzati permettono di individuare gli annunci e i contenuti creativi. Possono essere utili a scopo di segnalazione e debugging.<br><br><p>Esempio:</p> <pre> &lt;meta name="amp4ads-id" content="vendor=adsense,type=creative-id,id=1283474">
+&lt;meta name="amp4ads-id" content="vendor=adsense,type=impression-id,id=xIsjdf921S">
+</pre>
 </td>
 </tr>
 <tr>
-<td>Il tracciamento di visibilità <code><amp-analytics></amp-analytics></code> può individuare il solo selettore di annuncio completo, tramite <code>"visibilitySpec": { "selector": "amp-ad" }</code> come riportato nella <a href="https://github.com/ampproject/amphtml/issues/4018">Segnalazione #4018</a> e in <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. In particolare, non permette di individuare selettori di elementi all'interno dei contenuti creativi dell'annuncio.</td>
-<td>In alcuni casi, gli annunci AMPHTML possono effettuare il rendering di elementi creativi di annunci in un iframe. In tali casi, gli strumenti di analisi della pagina host potranno individuare solo l'intero iframe e non saranno in grado di accedere a selettori di livello più dettagliato.<br><br> <p>Esempio:</p> <pre><br>{amp-analytics4}   <script type="application/json">&lt;br&gt;  {&lt;br&gt;    "requests": {&lt;br&gt;      "visibility": "https://example.com/nestedAmpAnalytics"&lt;br&gt;    },&lt;br&gt;    "triggers": {&lt;br&gt;      "visibilitySpec": {&lt;br&gt;      "selector": "amp-ad",&lt;br&gt;      "visiblePercentageMin": 50,&lt;br&gt;      "continuousTimeMin": 1000&lt;br&gt;      }&lt;br&gt;    }&lt;br&gt;  }&lt;br&gt;  </script> {/amp-analytics4}</pre><br> <p>Questa configurazione invia una richiesta all'URL <code>https://example.com/nestedAmpAnalytics</code> quando il 50% dell'annuncio che lo racchiude è stato visibile ininterrottamente per 1 secondo sullo schermo.</p></td>
+<td>Il tracciamento di visibilità <code>&lt;amp-analytics></code> può individuare il solo selettore di annuncio completo, tramite <code>"visibilitySpec": { "selector": "amp-ad" }</code> come riportato nella <a href="https://github.com/ampproject/amphtml/issues/4018">Segnalazione #4018</a> e in <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. In particolare, non permette di individuare selettori di elementi all'interno dei contenuti creativi dell'annuncio.</td>
+<td>In alcuni casi, gli annunci AMPHTML possono effettuare il rendering di elementi creativi di annunci in un iframe. In tali casi, gli strumenti di analisi della pagina host potranno individuare solo l'intero iframe e non saranno in grado di accedere a selettori di livello più dettagliato.<br><br> <p>Esempio:</p> <pre><br>{amp-analytics4}   &lt;script type="application/json">&lt;br&gt;  {&lt;br&gt;    "requests": {&lt;br&gt;      "visibility": "https://example.com/nestedAmpAnalytics"&lt;br&gt;    },&lt;br&gt;    "triggers": {&lt;br&gt;      "visibilitySpec": {&lt;br&gt;      "selector": "amp-ad",&lt;br&gt;      "visiblePercentageMin": 50,&lt;br&gt;      "continuousTimeMin": 1000&lt;br&gt;      }&lt;br&gt;    }&lt;br&gt;  }&lt;br&gt;  </script> {/amp-analytics4}</pre><br> <p>Questa configurazione invia una richiesta all'URL <code>https://example.com/nestedAmpAnalytics</code> quando il 50% dell'annuncio che lo racchiude è stato visibile ininterrottamente per 1 secondo sullo schermo.</p></td>
 </tr>
 </tbody>
 </table>

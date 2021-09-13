@@ -59,7 +59,7 @@ Bu adımları izledikten sonra hala bir sorun varsa, aşağıdaki tabloya bakın
     </tr>
     <tr>
       <td>
-<code><amp-form></amp-form></code>, <code><amp-list></amp-list></code> gibi dinamik öğeler beklendiği gibi davranmıyor.</td>
+      &lt;amp-form&gt;, &lt;amp-list&gt; gibi dinamik öğeler beklendiği gibi davranmıyor.</td>
       <td>Kırık veya eksik CORS başlıkları.</td>
       <td>Bu bileşenler, AMP Önbelleğinden kaynağınıza çapraz kaynak isteklerinde bulunur. Varsayılan olarak, tarayıcılar bu istekleri engeller. Bu isteklere izin vermek için, <a href="amp-cors-requests.md">tüm önbellekleri</a> listelemeye izin veren <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS başlıklarını</a> yayınlayın.</td>
     </tr>

@@ -40,7 +40,7 @@ staticText:
       action: Intervieni
   additionalChecks:
     headline: Controlli aggiuntivi
-    safeBrowsing: Navigazione sicura
+    
     https: HTTPS
     mobileFriendliness: Compatibilità cellulari
     intrusiveInterstitials: Annuncio intermedio avviato
@@ -80,8 +80,8 @@ scriptText:
     cls: CLS
     https: HTTPS
     mobileFriendliness: Compatibilità cellulari
-    safeBrowsing: Navigazione sicura
+    
     intrusiveInterstitials: Annunci intermedi in avvio
 ---
 
-La guida sull'esperienza d'uso delle pagine AMP è uno strumento che mostra agli sviluppatori AMP il rendimento delle loro pagine AMP rispetto all'indice di valutazione pagine di Google Search e fornisce suggerimenti su come migliorarle. Se qui non troverai informazioni sufficienti, non esitare a utilizzare gli strumenti disponibili per [segnalare un problema su GitHub](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue) in modo che il nostro team possa aiutarti a capire come migliorare le tue pagine AMP. Utilizziamo API disponibili al pubblico quali [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=it), [Safe browsing](https://developers.google.com/safe-browsing/v4/lookup-api?hl=it) e [Mobile-friendliness Test](https://search.google.com/test/mobile-friendly?hl=it).
+La guida sull'esperienza d'uso delle pagine AMP è uno strumento che mostra agli sviluppatori AMP il rendimento delle loro pagine AMP rispetto all'indice di valutazione pagine di Google Search e fornisce suggerimenti su come migliorarle. Se qui non troverai informazioni sufficienti, non esitare a utilizzare gli strumenti disponibili per [segnalare un problema su GitHub](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue) in modo che il nostro team possa aiutarti a capire come migliorare le tue pagine AMP. Utilizziamo API disponibili al pubblico quali [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=it), [Mobile-friendliness Test](https://search.google.com/test/mobile-friendly?hl=it).

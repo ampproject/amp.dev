@@ -53,7 +53,7 @@ Los creativos de los anuncios AMP HTML requieren de un [código reutilizable](..
 </style>
 ```
 
-Si desea establecer el estilo de su anuncio AMP HTML, su CSS debe estar integrado en el documento AMP HTML mediante las etiquetas <code><style amp-custom></style> </code> en la sección <code><head></code>. Como estamos renderizando un anuncio con una imagen básica, no se necesita ninguna CSS así que no agregaremos estas etiquetas.
+Si desea establecer el estilo de su anuncio AMP HTML, su CSS debe estar integrado en el documento AMP HTML mediante las etiquetas `<style amp-custom>` en la sección `<head>`. Como estamos renderizando un anuncio con una imagen básica, no se necesita ninguna CSS así que no agregaremos estas etiquetas.
 
 [tip type="note"] **NOTA –** Para los anuncios AMP HTML, el tamaño máximo para una hoja de estilos integrados en el código es de _20 kilobytes_. Puede obtener más información sobre [los requisitos de las CSS en las especificaciones para los anuncios AMP HTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#css). [/tip]
 

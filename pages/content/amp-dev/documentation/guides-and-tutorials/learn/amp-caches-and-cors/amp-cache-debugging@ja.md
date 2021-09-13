@@ -57,7 +57,7 @@ have a look and request a pull request there.
       <td>AMP キャッシュがアセットにアクセスできることと、IP アドレスやユーザーエージェントなどによってブロックされていないことを確認してください（<a href="https://support.google.com/webmasters/answer/1061943?hl=en">Google のクローラーが使用するエージェントのリスト</a>）。</td>
     </tr>
     <tr>
-      <td> <code><amp-form></amp-form></code>、<code><amp-list></amp-list></code> などの動的要素が期待通りに動作しない。</td>
+      <td> <code>&lt;amp-form&gt;</code>、<code>&lt;amp-list&gt;</code> などの動的要素が期待通りに動作しない。</td>
       <td>CORS ヘッダーが破損または欠落している。</td>
       <td>これらのコンポーネントは、AMP キャッシュからオリジンにクロスオリジンリクエストを発行します。デフォルトでは、これらのリクエストはブラウザによってブロックされています。これらのリクエストを許可するには、<a href="amp-cors-requests.md">すべてのキャッシュ</a>を allowlist に追加する <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS ヘッダー</a>を発行してください。</td>
     </tr>

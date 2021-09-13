@@ -34,7 +34,7 @@ const git = require('@lib/utils/git');
 const ComponentReferenceImporter = require('@lib/pipeline/componentReferenceImporter');
 const SpecImporter = require('@lib/pipeline/specImporter');
 const RecentGuides = require('@lib/pipeline/recentGuides');
-const gulpSass = require('@mr-hope/gulp-sass');
+const gulpSass = require('gulp-sass')(require('sass'));
 const importRoadmap = require('./import/importRoadmap.js');
 const importWorkingGroups = require('./import/importWorkingGroups.js');
 const importAdVendorList = require('./import/importAdVendorList.js');
@@ -102,7 +102,7 @@ function sass() {
 
   return gulp
     .src(`${project.paths.SCSS}/**/[^_]*.scss`)
-    .pipe(gulpSass.sassSync(options))
+    .pipe(gulpSass.sync(options))
     .on('error', function (e) {
       console.error(e);
       // eslint-disable-next-line no-invalid-this
@@ -259,11 +259,11 @@ function buildPrepare(done) {
   return gulp.series(
     // Build playground and boilerplate that early in the flow as they are
     // fairly quick to build and would be annoying to eventually fail downstream
+    buildSamples,
     gulp.parallel(
       buildPlayground,
       buildBoilerplate,
       buildPixi,
-      buildSamples,
       buildFrontend21,
       importAll,
       zipTemplates
@@ -313,6 +313,7 @@ function unpackArtifacts() {
     through.obj(async (artifact, encoding, callback) => {
       console.log('Unpacking', artifact.path, '...');
       await sh(`tar xf ${artifact.path}`);
+      await sh(`rm ${artifact.path}`);
       stream.push(artifact);
       callback();
     })
@@ -530,8 +531,8 @@ function persistBuildInfo(done) {
     'by': process.env.GITHUB_ACTOR || git.user(),
     'environment': config.environment,
     'commit': {
-      'sha': process.env.GITHUB_SHA || git.version,
-      'message': git.message,
+      'sha': process.env.GITHUB_SHA || git.version(),
+      'message': git.message(),
     },
   };
 

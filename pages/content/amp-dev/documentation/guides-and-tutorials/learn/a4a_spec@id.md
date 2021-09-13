@@ -48,32 +48,32 @@ Selain itu, kreatif harus mematuhi aturan-aturan berikut ini:
 </tr></thead>
 <tbody>
 <tr>
-<td>Harus menggunakan <code><html ⚡4ads></code> atau <code><html amp4ads></code> sebagai tag yang membalutnya.</td>
+<td>Harus menggunakan <code>&lt;html ⚡4ads></code> atau <code>&lt;html amp4ads></code> sebagai tag yang membalutnya.</td>
 <td>Mengizinkan validator untuk mengidentifikasi sebuah dokumen kreatif sebagai dokumen AMP umum atau dokumen iklan AMPHTML terbatas dan untuk mengirimkannya dengan tepat.</td>
 </tr>
 <tr>
-<td>Harus menyertakan <code><script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script></code> sebagai skrip runtime, bukan <code>https://cdn.ampproject.org/v0.js</code>.</td>
+<td>Harus menyertakan <code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script></code> sebagai skrip runtime, bukan <code>https://cdn.ampproject.org/v0.js</code>.</td>
 <td>Mengizinkan perilaku runtime yang disesuaikan untuk iklan AMPHTML disajikan di iframe lintas asal (cross-origin).</td>
 </tr>
 <tr>
-<td>Tidak boleh menyertakan <code><link rel="canonical"></code>.</td>
+<td>Tidak boleh menyertakan <code>&lt;link rel="canonical"></code>.</td>
 <td>Kreatif iklan tidak mempunyai "versi kanon non-AMP" dan tidak akan diindeks sesuai pencarian secara independen, sehingga referensi sendiri tidak akan ada gunanya.</td>
 </tr>
 <tr>
-<td>Dapat menyertakan tag-tag meta opsional di tajuk HTML sebagai pengenal, dalam format <code><meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>. Tag-tag meta tersebut harus ditempatkan sebelum skrip <code>amp4ads-v0.js</code>. Nilai <code>vendor</code> dan <code>id</code> adalah untai yang hanya berisi [0-9a-zA-Z_-]. Nilai <code>type</code> adalah <code>creative-id</code> atau <code>impression-id</code>.</td>
+<td>Dapat menyertakan tag-tag meta opsional di tajuk HTML sebagai pengenal, dalam format <code>&lt;meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>. Tag-tag meta tersebut harus ditempatkan sebelum skrip <code>amp4ads-v0.js</code>. Nilai <code>vendor</code> dan <code>id</code> adalah untai yang hanya berisi [0-9a-zA-Z_-]. Nilai <code>type</code> adalah <code>creative-id</code> atau <code>impression-id</code>.</td>
 <td>Pengenal kustom tersebut dapat digunakan untuk mengidentifikasi kesan (impresi) atau produk kreatif. Ini dapat berguna untuk pelaporan dan debugging.<br><br><p>Contoh:</p>
 <pre>
-<meta name="amp4ads-id"
+&lt;meta name="amp4ads-id"
   content="vendor=adsense,type=creative-id,id=1283474">
-<meta name="amp4ads-id"
+&lt;meta name="amp4ads-id"
   content="vendor=adsense,type=impression-id,id=xIsjdf921S"></pre>
 </td>
 </tr>
 <tr>
-<td> Pelacakan keterlihatan <code><amp-analytics></code> hanya boleh menyasar pemilih iklan penuh, melalui <code>"visibilitySpec": { "selector": "amp-ad" }</code> sebagaimana ditentukan di dalam <a href="https://github.com/ampproject/amphtml/issues/4018">Masalah #4018</a> dan <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. Secara khusus, ini mungkin tidak akan menyasar pemilih mana pun untuk elemen di dalam produk kreatif iklan.</td>
+<td> Pelacakan keterlihatan <code>&lt;amp-analytics></code> hanya boleh menyasar pemilih iklan penuh, melalui <code>"visibilitySpec": { "selector": "amp-ad" }</code> sebagaimana ditentukan di dalam <a href="https://github.com/ampproject/amphtml/issues/4018">Masalah #4018</a> dan <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. Secara khusus, ini mungkin tidak akan menyasar pemilih mana pun untuk elemen di dalam produk kreatif iklan.</td>
 <td>Dalam beberapa kasus, iklan AMPHTML mungkin memilih untuk merender produk kreatif iklan di dalam sebuah iframe. Dalam hal ini, analitik halaman pengelola (host) memang hanya dapat menyasar seluruh iframe, dan tidak akan mempunyai akses ke pemilih yang sangat mendetail.<br><br> <p>Contoh:</p> <pre>
-<amp-analytics id="nestedAnalytics">
-  <script type="application/json">
+&lt;amp-analytics id="nestedAnalytics">
+  &lt;script type="application/json">
   {
     "requests": {
       "visibility": "https://example.com/nestedAmpAnalytics"
@@ -86,8 +86,8 @@ Selain itu, kreatif harus mematuhi aturan-aturan berikut ini:
       }
     }
   }
-  </script>
-</amp-analytics>
+  &lt;/script>
+&lt;/amp-analytics>
 </pre> <p>Konfigurasi ini mengirimkan permintaan ke URL <code>https://example.com/nestedAmpAnalytics</code> saat 50% dari iklan penutup telah tampil terus-menerus pada layar selama 1 detik.</p>
 </td>
 </tr>

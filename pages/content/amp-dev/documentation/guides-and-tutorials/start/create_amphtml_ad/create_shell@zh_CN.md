@@ -53,7 +53,7 @@ AMPHTML 广告素材需要采用与 AMP 网页不同且更简单的[样板](../.
 </style>
 ```
 
-要为您的 AMPHTML 广告设置样式，必须在 AMPHTML 文档中内嵌您的 CSS，方法是在 <code><head></code> 部分中使用 <code><style amp-custom></style></code> 标记。由于我们呈现的是基本图片广告，不需要任何 CSS，因此我们暂不添加这些标记。
+要为您的 AMPHTML 广告设置样式，必须在 AMPHTML 文档中内嵌您的 CSS，方法是在 `<head>` 部分中使用 `<style amp-custom>` 标记。由于我们呈现的是基本图片广告，不需要任何 CSS，因此我们暂不添加这些标记。
 
 [tip type="note"] **注**：对于 AMPHTML 广告，内嵌样式表的最大大小为 _20 KB_。详细了解 [AMPHTML 广告规范中的 CSS 要求](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#css)。[/tip]
 

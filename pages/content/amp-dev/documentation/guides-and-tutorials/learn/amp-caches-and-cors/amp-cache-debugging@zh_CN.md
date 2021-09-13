@@ -57,7 +57,7 @@ have a look and request a pull request there.
       <td>确保 AMP 缓存可以访问您的素材资源，且未被 IP 地址或用户代理等阻止。（<a href="https://support.google.com/webmasters/answer/1061943?hl=en">Google 抓取工具使用的用户代理列表</a>）。</td>
     </tr>
     <tr>
-      <td>诸如 <code><amp-form></amp-form></code>、<code><amp-list></amp-list></code> 等动态元素的行为不符合预期。</td>
+      <td>诸如 <code>&lt;amp-form&gt;</code>、<code>&lt;amp-list&gt;</code> 等动态元素的行为不符合预期。</td>
       <td>CORS 标头损坏或丢失。</td>
       <td>这些组件从 AMP 缓存向来源发出跨源请求。默认情况下，浏览器会阻塞这些请求。要允许这些请求，请发出将<a href="amp-cors-requests.md">所有缓存</a>加入白名单的 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS 标头</a>。</td>
     </tr>

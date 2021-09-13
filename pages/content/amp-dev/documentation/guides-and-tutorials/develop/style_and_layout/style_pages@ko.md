@@ -41,7 +41,7 @@ contributors:
 <code>!important</code> 한정자를 style 작성에 사용하거나 <code>!important</code> 한정자가 적용된 style을 HTML 엘리먼트에서 사용할 수 없습니다. AMP 에서 엘리먼트 크기 조정 규칙을 시행하기 위한 필수 요구사항입니다.</td>
     </tr>
     <tr>
-      <td data-th="Banned style"><code><link rel=”stylesheet”></code></td>
+      <td data-th="Banned style"><code>&lt;link rel=”stylesheet”></code></td>
       <td data-th="Description">
 <a href="#the-custom-fonts-exception">맞춤 글꼴</a> 이외의 경우에는 사용할 수 없습니다.</td>
     </tr>

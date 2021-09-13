@@ -31,7 +31,7 @@ staticText:
       action: Jetzt handeln
   additionalChecks:
     headline: Weitere Checks
-    safeBrowsing: Safe Browsing
+    
     https: HTTPS
     mobileFriendliness: Mobile Friendliness
     intrusiveInterstitials: Intrusive Interstitials
@@ -71,7 +71,7 @@ scriptText:
     cls: CLS
     https: HTTPS
     mobileFriendliness: Mobile-friendliness
-    safeBrowsing: Safe browsing
+    
     intrusiveInterstitials: Intrusive Interstitials
 ---
 
@@ -87,5 +87,4 @@ zu verbessern.
 
 Wir nutzen öffentlich verfügbare APIs wie
 [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?dl=de),
-[Safe Browsing](https://developers.google.com/safe-browsing/v4/lookup-api?hl=de),
 und [Mobile-friendliness Test](https://search.google.com/test/mobile-friendly?hl=de).

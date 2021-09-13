@@ -60,7 +60,7 @@ Mapa miejsc jest renderowana za pomocą składników [`amp-list`](../../../docum
 
 ## Stylizacja niedostępnych miejsc
 
-W powyższym przykładzie `{% raw %}{{unavailable}}{% endraw %}` jest wartością pola zwróconą przez punkt końcowy JSON i używaną do stylizacji niedostępnego miejsca. Takie podejście nie pozwala na usunięcie atrybutów takich jak `option="{{id}}"` w przypadku, gdy miejsce jest niedostępne, ponieważ szablon nie może otoczyć elementu całych stron <code><html></code>.
+W powyższym przykładzie `{% raw %}{{unavailable}}{% endraw %}` jest wartością pola zwróconą przez punkt końcowy JSON i używaną do stylizacji niedostępnego miejsca. Takie podejście nie pozwala na usunięcie atrybutów takich jak `option="{{id}}"` w przypadku, gdy miejsce jest niedostępne, ponieważ szablon nie może otoczyć elementu całych stron <code>&lt;html></code>.
 
 Alternatywnym, bardziej szczegółowym podejściem jest powtarzanie znaczników w następujący sposób:
 

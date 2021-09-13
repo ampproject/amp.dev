@@ -55,7 +55,7 @@ creation:
     formats:
       - email
   - name: Plumrocket AMP Email
-    url: https://store.plumrocket.com/amp-email-magento2-extension.html
+    url: https://plumrocket.com/magento-amp-email
     type: Magento Extension
     description: Send engaging AMP Emails from Magento ecommerce platform. Use built-in templates for transactional and promotional dynamic emails.
     image:
@@ -136,9 +136,19 @@ creation:
       height: 3
     formats:
       - stories
+  - name: Webstoryz
+    description: Increase engagement on your website using Webstoryz widget!
+    url: https://webstoryz.com/?utm_source=google_listing
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/webstoryz.jpg
+      width: 5120
+      height: 2880
+    formats:
+      - stories
   - name: Zmooz
     description: Turn automatically articles into templated web stories. WYSIVYG Studio and Apps to edit and share
-    url: http://www.zmooz.com
+    url: https://www.zmooz.com
     type: WYSIWYG Editor
     image:
       src: /static/img/tools/zmooz-9e90a49586e8.jpg
@@ -238,6 +248,16 @@ creation:
       bgcolor: "#004e73"
     formats:
       - websites
+  - name: Unfold
+    description: Unfold helps brands and individuals easily create beautiful stories with templates.
+    url: https://unfold.com/
+    type: Content Platform
+    image:
+      src: /static/img/tools/unfold-d5403963b64e.jpg
+      width: 1600
+      height: 776
+    formats:
+      - stories
 platforms:
   - name: AMP for WordPress
     official: true
@@ -254,7 +274,7 @@ platforms:
   - name: AMP for Magento
     type: CMS
     description: Convert Magento website into lightning fast eСommerce store powered by AMP technology.
-    url: https://store.plumrocket.com/accelerated-mobile-pages-magento2-extension.html
+    url: https://plumrocket.com/magento-amp
     image:
       src: /static/img/tools/plumrocket-amp-magento.jpg
       width: 440

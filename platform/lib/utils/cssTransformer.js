@@ -58,7 +58,6 @@ const SAFE_CLASS_NAMES = [
   'ap-o-component-visual',
   'ap-o-consent',
   'ap-o-footer',
-  'ap-o-header',
   'ap-o-help',
   'ap-o-news',
   'ap-o-search',
@@ -90,6 +89,10 @@ const SAFE_CLASS_NAMES = [
   'ap-t-template',
   'ap-t-use-cases',
   'ap-t-what-is-amp',
+  'ap-home-stage',
+  'ap-stage',
+  'ap-intro',
+  'ap-teaser',
 ];
 
 rcs.selectorsLibrary.setExclude(

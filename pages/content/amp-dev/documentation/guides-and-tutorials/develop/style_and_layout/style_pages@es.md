@@ -39,7 +39,7 @@ The following styles aren’t allowed in AMP pages:
       <td data-th="Description">Su uso no está permitido. Este es un requisito necesario para habilitar que AMP aplique sus normas relativas al tamaño de los elementos.</td>
     </tr>
     <tr>
-      <td data-th="Banned style"><code><link rel=”stylesheet”></code></td>
+      <td data-th="Banned style"><code>&lt;link rel=”stylesheet”></code></td>
       <td data-th="Description"> No está permitido, salvo en el caso de las <a href="#the-custom-fonts-exception">fuentes personalizadas</a>.</td>
     </tr>
     <tr>

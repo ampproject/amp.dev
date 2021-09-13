@@ -1,8 +1,7 @@
 const path = require('path');
 
-const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
@@ -22,7 +21,7 @@ module.exports = (env, argv) => {
       path: path.join(process.cwd(), 'dist'),
     },
     optimization: {
-      minimizer: isDevelopment ? [] : [new OptimizeCSSAssetsPlugin({})],
+      minimizer: isDevelopment ? [] : [new CssMinimizerWebpackPlugin({})],
       splitChunks: {
         cacheGroups: {
           main: {
@@ -63,7 +62,7 @@ module.exports = (env, argv) => {
           svgo: {
             plugins: [
               {
-                removeAttrs: {},
+                name: 'removeAttrs',
               },
             ],
           },
@@ -98,7 +97,6 @@ module.exports = (env, argv) => {
           },
         },
       }),
-      new webpack.HotModuleReplacementPlugin({}),
       isDevelopment
         ? new WebpackBuildNotifierPlugin({
             title: 'amp.dev: Frontend',
@@ -175,15 +173,17 @@ module.exports = (env, argv) => {
     },
 
     devServer: {
-      overlay: true,
-      contentBase: '/',
-      writeToDisk: true,
-      disableHostCheck: true,
+      static: {
+        directory: '/',
+      },
+      devMiddleware: {
+        writeToDisk: true,
+      },
+      allowedHosts: 'all',
       port: 8090,
       headers: {
         'Access-Control-Allow-Origin': '*',
       },
-      compress: true,
       hot: true,
     },
   };

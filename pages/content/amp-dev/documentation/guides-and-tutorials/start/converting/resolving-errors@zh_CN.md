@@ -111,7 +111,7 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 <link href="base.css" rel="stylesheet" />
 ```
 
-问题在于，这是一个外部样式表引用。在 AMP 网页中，为尽可能缩短文档的加载用时，您不能添加外部样式表。相反，您必须使用 <code><style amp-custom></style></code> 标记在 AMP 文档中以内嵌的方式添加所有样式表规则。
+问题在于，这是一个外部样式表引用。在 AMP 网页中，为尽可能缩短文档的加载用时，您不能添加外部样式表。相反，您必须使用 `<style amp-custom></style>` 标记在 AMP 文档中以内嵌的方式添加所有样式表规则。
 
 ```html
 <style amp-custom>

@@ -55,7 +55,7 @@ Consultare la tabella seguente per le descrizioni di ciascun elemento della sint
   <tr>
     <td><code>targetId</code></td>
     <td>Sì</td>
-    <td>Questo è l'id DOM dell'elemento, oppure un <a href="#special-targets">target speciale</a> predefinito su cui occorre eseguire un'azione in risposta all'evento. Nel seguente esempio, il <code>targetId</code> è l'id DOM del target <code>amp-lightbox</code>, <code>photo-slides</code>.<pre><amp-lightbox id="photo-slides"></amp-lightbox> <button on="tap:photo-slides">Show Images</button></pre>
+    <td>Questo è l'id DOM dell'elemento, oppure un <a href="#special-targets">target speciale</a> predefinito su cui occorre eseguire un'azione in risposta all'evento. Nel seguente esempio, il <code>targetId</code> è l'id DOM del target <code>amp-lightbox</code>, <code>photo-slides</code>.<pre>&lt;amp-lightbox id="photo-slides">&lt;/amp-lightbox> &lt;button on="tap:photo-slides">Show Images&lt;/button></pre>
 </td>
   </tr>
   <tr>

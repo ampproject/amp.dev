@@ -53,7 +53,7 @@ Viele AMP Komponenten und Erweiterungen nutzen Remote Endpoints mithilfe von COR
 <li data-md-type="list_item" data-md-list-type="unordered">
 <p data-md-type="paragraph"><a href="#send-cors-response-headers" data-md-type="link">CORS Anfrageheader senden</a></p>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true"><li data-md-type="list_item" data-md-list-type="unordered">
-<a href="#access-control-allow-origin-origin" data-md-type="link">Access-Control-Allow-Origin: </a><origin></origin>
+<a href="#access-control-allow-origin-origin" data-md-type="link">Access-Control-Allow-Origin: </a>
 </li></ul>
 </li>
 <li data-md-type="list_item" data-md-list-type="unordered"><a href="#processing-state-changing-requests" data-md-type="link">Anfragen zur Zustandsänderung verarbeiten</a></li>
@@ -159,9 +159,9 @@ Dieser benutzerdefinierte Header wird von der AMP Runtime gesendet, wenn eine XH
 
 Nach der Verifizierung der CORS Anfrage muss die resultierende HTTP Antwort die folgenden Header enthalten:
 
-##### Access-Control-Allow-Origin: <origin> </origin><a name="access-control-allow-origin-origin"></a>
+##### Access-Control-Allow-Origin: &lt;origin&gt; <a name="access-control-allow-origin-origin"></a>
 
-Dieser Header wird von der <a href="https://www.w3.org/TR/cors/">W3 CORS Spezifikation</a> gefordert, wobei sich <code>origin</code> auf die anfragende Quelle bezieht, die über den CORS <code>Origin</code> Anfrageheader zugelassen wurde (z. B. <code>"https://<Subdomäne des Publishers>.cdn.ampproject.org"</code>).
+Dieser Header wird von der <a href="https://www.w3.org/TR/cors/">W3 CORS Spezifikation</a> gefordert, wobei sich <code>origin</code> auf die anfragende Quelle bezieht, die über den CORS <code>Origin</code> Anfrageheader zugelassen wurde (z. B. <code>"https://&lt;Subdomäne des Publishers>.cdn.ampproject.org"</code>).
 
 Obwohl die W3 CORS Spezifikation die Rückgabe des Wertes <code>\*</code> in der Antwort erlaubt, solltest du aus Sicherheitsgründen Folgendes tun:
 

@@ -219,11 +219,11 @@ limitations under the License.
   </tr>
   <tr>
     <td width="30%">img</td>
-    <td>استبدلت بـ <code>amp-img</code>.<br> يرجى ملاحظة: أن <code><img></code> عبارة عن <a href="https://www.w3.org/TR/html5/syntax.html#void-elements">عنصر خالٍ وفقًا لـ HTML5</a>، لذا لا يحتوي على علامة النهاية. ومع ذلك، فإن <code><amp-img></code> بها علامة نهاية <code></amp-img></code>.</td>
+    <td>استبدلت بـ <code>amp-img</code>.<br> يرجى ملاحظة: أن <code>&lt;img></code> عبارة عن <a href="https://www.w3.org/TR/html5/syntax.html#void-elements">عنصر خالٍ وفقًا لـ HTML5</a>، لذا لا يحتوي على علامة النهاية. ومع ذلك، فإن <code>&lt;amp-img></code> بها علامة نهاية <code>&lt;/amp-img></code>.</td>
   </tr>
     <tr>
     <td width="30%">picture</td>
-    <td>محظورة، إذ تعرض تنسيقات مختلفة للصور باستخدام السمة <a href="https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders?format=websites">fallback</a> أو تقدم  <a href="https://amp.dev/documentation/components/amp-img#attributes"><code>srcset</code> عديدة في </a><code><amp-img></code>.</td>
+    <td>محظورة، إذ تعرض تنسيقات مختلفة للصور باستخدام السمة <a href="https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders?format=websites">fallback</a> أو تقدم  <a href="https://amp.dev/documentation/components/amp-img#attributes"><code>srcset</code> عديدة في </a><code>&lt;amp-img></code>.</td>
   </tr>
   <tr>
     <td width="30%">video</td>
@@ -433,7 +433,7 @@ limitations under the License.
 
 يمكن إدراج مزودي الخطوط في القائمة البيضاء إذا كانوا يدعمون عمليات تكامل CSS فقط ويعملون عبر HTTPS. ويُسمح حاليًا للأصول التالية بعرض الخطوط عبر علامات الارتباط:
 
-يتم تحميل وقت تشغيل AMP عبر علامة <code><script src="https://cdn.ampproject.org/v0.js"></script></code> الإلزامية في <code><head></code> لمستند AMP.
+يتم تحميل وقت تشغيل AMP عبر علامة `<script src="https://cdn.ampproject.org/v0.js"></script>` الإلزامية في `<head>` لمستند AMP.
 
 ويمكن وضع وقت تشغيل AMP في وضع التطوير لأي صفحة. حيث سيؤدي وضع التطوير إلى تشغيل التحقق من صحة AMP على الصفحة المضمنة، مما يؤدي إلى إرسال حالة التحقق وأي أخطاء إلى وحدة تحكم مطوري JavaScript. وقد يتم تشغيل وضع التطوير من خلال إلحاق `#development=1` بعنوان URL للصفحة.
 

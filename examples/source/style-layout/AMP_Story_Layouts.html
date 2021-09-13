@@ -61,7 +61,7 @@ skipValidation: 'true'
       <!-- Images & videos should have a resolution of `720x1280` pixels when using the `fill` layout.-->
       <amp-story-page id="fill-template-example-2">
         <amp-story-grid-layer template="fill">
-          <amp-img src="https://unsplash.it/720/1280/" width="720" height="1280" layout="responsive"></amp-img>
+          <amp-img src="https://unsplash.it/720/1280/" width="720" height="1280" layout="responsive" alt="..."></amp-img>
         </amp-story-grid-layer>
       </amp-story-page>
 
@@ -103,10 +103,12 @@ skipValidation: 'true'
         <amp-story-grid-layer template="vertical">
           <amp-img src="https://unsplash.it/720/640/?image=10"
                    width="720"
-                   height="640" layout="responsive"></amp-img>
+                   height="640" layout="responsive"
+                   alt="..."></amp-img>
           <amp-img src="https://unsplash.it/720/640/?image=11"
                    width="720"
-                   height="640" layout="responsive"></amp-img>
+                   height="640" layout="responsive"
+                   alt="..."></amp-img>
         </amp-story-grid-layer>
       </amp-story-page>
 
@@ -127,6 +129,7 @@ skipValidation: 'true'
           <div class="content" grid-area="middle-third">Middle</div>
         </amp-story-grid-layer>
       </amp-story-page>
+      <!-- [tip type="note"]While these templates allow you to visually arrange content on the screen, the content will still be announced by screen readers / assistive technologies in the order in which it appears in the underlying markup. Make sure that the content order in your document's markup is logical, regardless of how it will be presented visually.[/tip] -->
 
       <!-- ## Horizontal -->
       <!-- The horizontal template lays its elements out along the x-axis. -->

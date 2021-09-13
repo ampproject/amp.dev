@@ -12,7 +12,7 @@ teaser:
 ---
 
 <!--
-This file is imported from https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/analytics-vendors-list.md.
+This file is imported from https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vendors-list.md.
 Please do not change this file.
 If you have found a bug or an issue please
 have a look and request a pull request there.
@@ -97,6 +97,12 @@ Adds support for Alexa Certified Site Metrics. The `atrk_acct` and `domain` vari
 
 Type attribute value: `amplitude`
 
+### AppsFlyer <a name="appsflyer"></a>
+
+Type attribute value: `appsflyer`
+
+Adds support for AppsFlyer. More details for adding AppsFlyer support can be found at [appsflyer.com](https://support.appsflyer.com/hc/en-us/articles/360001610038#amp-support)
+
 ### AT Internet <a name="at-internet"></a>
 
 Type attribute value: `atinternet`
@@ -134,6 +140,12 @@ Adds support for Black Crow AI. You are required to fill out the `site_name` var
 ### BlueConic <a name="blueconic"></a>
 
 Type attribute value: `blueconic`
+
+### Blue Triangle <a name="blue-triangle"></a>
+
+Type attribute value: `bluetriangle`
+
+Adds support for blue Triangle. More details can be found at [help.bluetriangle.com](https://help.bluetriangle.com/hc/en-us/articles/1500006133061).
 
 ### Browsi <a name="browsi"></a>
 
@@ -208,7 +220,7 @@ Adds support for Eulerian Technologies Analytics. Requires defining _var_ `analy
 
 Type attribute value: `facebookpixel`
 
-Adds support for the [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). In your [`amp-analytics`](https://github.com/ampproject/amphtml/blob/main/extensions/amp-analytics/./amp-analytics.md) configuration, you must define your Pixel ID as `pixelId: YOUR-PIXEL-ID`. The events supported along with the corresponding event values that can be specified are detailed in the [Facebook Pixel developer documentation](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
+Adds support for the [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). In your [`amp-analytics`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./amp-analytics.md) configuration, you must define your Pixel ID as `pixelId: YOUR-PIXEL-ID`. The events supported along with the corresponding event values that can be specified are detailed in the [Facebook Pixel developer documentation](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
 
 ### Gemius <a name="gemius"></a>
 
@@ -251,11 +263,15 @@ Type attribute value: `ibeatanalytics`
 
 Adds support for Ibeat Analytics. More details for adding Ibeat support can be found at [Ibeat Integration Support](https://ibeat.indiatimes.com/support.html#h.a5rit14mwie1).
 
+<!-- markdown-link-check-disable -->
+
 ### INFOnline / IVW <a name="infonline--ivw"></a>
 
 Type attribute value: `infonline`
 
 Adds support for [INFOnline](https://www.infonline.de) / [IVW](http://www.ivw.de). Requires a copy of [amp-analytics-infonline.html](https://3p.ampproject.net/custom/amp-analytics-infonline.html) on a different subdomain than the including AMP file ([why?](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-iframe-origin-policy.md)). The file must be served via HTTPS. For example, if your AMP files are hosted on `www.example.com`, then `amp-analytics-infonline.html` needs to be on another subdomain such as `iframe.example.com` or `assets.example.com`.
+
+<!-- markdown-link-check-enable -->
 
 Additionally, the following variables must be defined:
 
@@ -493,11 +509,7 @@ Adds support for Piwik PRO Analytics Suite. Configuration details can be found a
 
 Type attribute value: `pressboard`
 
-<!--
-(Link 404s, unclear whether vendor is still supported.)
-
-Adds support for Pressboard. Configuration details can be found at [help.pressboard.ca](http://help.pressboard.ca/publisher-resources/getting-started/implementing-google-amp).
--->
+Adds support for Pressboard. Configuration details can be found at [help.pressboardmedia.com](https://help.pressboardmedia.com/implementing-google-amp).
 
 ### Quantcast Measurement <a name="quantcast-measurement"></a>
 

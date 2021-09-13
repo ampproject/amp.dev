@@ -1,0 +1,68 @@
+.#{project('text-aside')} {
+  $text-aside: &;
+  position: relative;
+  grid-column: 2/-1;
+  display: grid;
+  grid-template-columns: 40px 1fr 30px;
+  grid-row-gap: 20px;
+  color: color('charade');
+
+  @include respond-to('medium') {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: 3/-1;
+    grid-column-gap: 60px;
+  }
+
+  @include respond-to('max') {
+    grid-column: 2/24;
+  }
+
+  &:before {
+    content: '';
+    width: 2px;
+    grid-column: 1;
+    grid-row: 2/span 2;
+    @include ci-websites;
+
+    @include respond-to('medium') {
+      margin-left: 28px;
+    }
+  }
+
+  &-item {
+    position: relative;
+    &.--start {
+      grid-column: 1/span 2;
+      grid-row: 1;
+
+      @include respond-to('medium') {
+        grid-column: 1;
+        grid-row: 1;
+      }
+    }
+    &.--right {
+      grid-column: 2/-1;
+      grid-row: 2/span 2;
+      background-color: color('iron');
+      padding: 40px 30px 0;
+      margin: 40px 0 80px;
+      max-width: 630px;
+
+      @include respond-to('medium') {
+        grid-column: 2;
+        grid-row: 1/span 2;
+        padding: 40px 60px 0;
+        margin: 0 0 110px;
+      }
+    }
+
+    &.--end {
+      grid-column: 1/span 2;
+      grid-row: 4;
+
+      @include respond-to('medium') {
+        grid-column: 1;
+      }
+    }
+  }
+}

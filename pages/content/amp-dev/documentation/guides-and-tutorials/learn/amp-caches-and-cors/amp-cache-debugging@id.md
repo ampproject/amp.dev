@@ -57,7 +57,7 @@ Jika Anda masih mengalami masalah setelah mengikuti langkah-langkah ini, periksa
       <td>Pastikan Cache AMP dapat mengakses aset Anda dan bahwa ia tidak diblokir oleh sebuah alamat IP, atau agen pengguna, dll. (<a href="https://support.google.com/webmasters/answer/1061943?hl=en">Daftar agen pengguna yang digunakan oleh pengambil Google</a>).</td>
     </tr>
     <tr>
-      <td>Elemen dinamis, seperti <code><amp-form></amp-form></code>, <code><amp-list></amp-list></code>, tidak berperilaku sebagaimana diharapkan.</td>
+      <td>Elemen dinamis, seperti <code>&lt;amp-form&gt;</code>, <code>&lt;amp-list&gt;</code>, tidak berperilaku sebagaimana diharapkan.</td>
       <td>Tajuk CORS tidak ada atau rusak</td>
       <td>Komponen-komponen ini membuat permintaan lintas asal dari Cache AMP ke asal Anda. Sebagai default, browser akan memblokir permintaan ini. Untuk mengizinkan permintaan ini, masukkan <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">tajuk CORS</a> yang mencantumkan daftar <a href="amp-cors-requests.md">semua cache</a> yang diizinkan.</td>
     </tr>

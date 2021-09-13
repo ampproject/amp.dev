@@ -20,13 +20,13 @@ ENV GO111MODULE=on
 # Clone amppackager files so we can use b3 directory
 WORKDIR /data
 # Get latet repo data to avoid caching the results of git clone. See https://stackoverflow.com/a/39278224/967
-ADD https://api.github.com/repos/ampproject/amppackager/git/refs/heads/master version.json
-# Run this if you clone from master branch.
-RUN git clone -b master https://github.com/ampproject/amppackager.git /data/amppackager
+ADD https://api.github.com/repos/ampproject/amppackager/git/refs/heads/main version.json
+# Run this if you clone from main branch.
+RUN git clone -b main https://github.com/ampproject/amppackager.git /data/amppackager
 # RUN git clone https://github.com/ampproject/amppackager.git /data/amppackager
 
 # Install AMP Packager
-# Run this if you want to go off master branch.
+# Run this if you want to go off main branch.
 RUN  cd /data/amppackager/ && go install github.com/ampproject/amppackager/cmd/amppkg
 
 # Seed the ocsp cache

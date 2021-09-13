@@ -53,7 +53,7 @@ Os criativos de anúncios AMPHTML requerem um estilo de [boilerplate](../../../.
 </style>
 ```
 
-Para aplicar um estilo no seu anúncio AMPHTML, seu CSS deve estar incorporado inline no documento AMPHTML usando tags <code><style amp-custom></style></code> na seção <code><head></code>. Como estamos renderizando um anúncio gráfico básico, não precisamos de nenhum CSS, portanto, não adicionaremos essas tags.
+Para aplicar um estilo no seu anúncio AMPHTML, seu CSS deve estar incorporado inline no documento AMPHTML usando tags `<style amp-custom>` na seção `<head>`. Como estamos renderizando um anúncio gráfico básico, não precisamos de nenhum CSS, portanto, não adicionaremos essas tags.
 
 [tip type="note"] **OBSERVAÇÃO –** Para anúncios AMPHTML, o tamanho máximo para uma folha de estilo inline é _20 kilobytes_. Saiba mais sobre [requisitos de CSS na especificação de anúncios AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#css). [/tip]
 

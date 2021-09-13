@@ -23,7 +23,7 @@ stage:
   subline: MAR 2, 2021
   layout: mobile
   logo:
-    image_src: '/static/img/success-stories/razorpay/razorpay-logo-white.png'
+    src: '/static/img/success-stories/razorpay/razorpay-logo-white.png'
     width: 402
     height: 86
     alt: Razorpay

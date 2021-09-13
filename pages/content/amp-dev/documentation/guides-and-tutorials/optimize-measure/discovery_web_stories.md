@@ -1,11 +1,10 @@
 ---
-formats:
-  - stories
 $title: Make your Web Stories discoverable
-$titles:
-  teaser: Make your Web Stories discoverable
 $order: 5
 description: 'Ensure your Web Stories are reaching your intended audience by including necessary metadata and markup.'
+
+formats:
+  - stories
 author: CrystalOnScript
 ---
 
@@ -22,7 +21,7 @@ Web Stories must include the following [`<amp-story>`](https://amp.dev/documenta
 
 ```html
 <body>
-    <amp-story standalone 
+    <amp-story standalone
     title="Web Story Title"
     publisher="Web Story Publisher"
     publisher-logo-src="https://example.com/logo/1x1.png"
@@ -34,7 +33,7 @@ Web Stories must include the following [`<amp-story>`](https://amp.dev/documenta
 
 ### `title`
 
-The title of the Web Story. 
+The title of the Web Story.
 
 ### `publisher`
 
@@ -50,7 +49,7 @@ A URL to the Web Story publisher's logo image. The logo image should be larger t
 A URL to an image used as the [Web Story poster](https://amp.dev/documentation/components/amp-story/#poster-guidelines-(for-poster-portrait-src,-poster-landscape-src,-and-poster-square-src)). Used as the cover for the Web Story and should be representative of the story. Do not embed or burn-in the Web Story title on it. Should be at least 640x853px and maintain a 3:4 aspect ratio.
 
 
-## Recommended <amp-story> attributes
+## Recommended &lt;amp-story&gt; attributes
 
 ### `poster-landscape-src`
 
@@ -64,11 +63,11 @@ A URL to an image used as the [Web Story poster](https://amp.dev/documentation/c
 
 Platforms that surface Web Stories rely on metadata to correctly index and display them. Include the following recommended information to give users a delightful Web Story experience.
 
-Include the following recommended HTML markup in your Web Stories for the best user experience. 
+Include the following recommended HTML markup in your Web Stories for the best user experience.
 
 ## Canonical link
 
-All Web Stories must include a canonical URL that points to the Web Story itself. 
+All Web Stories must include a canonical URL that points to the Web Story itself.
 
 ```html
 <link rel="canonical" href="https://www.example.com/url/to/Web/Story.html">
@@ -107,7 +106,7 @@ Including [Open Graph protocol](https://ogp.me/) enables Web Stories sharing on 
 
 ## Twitter card data
 
-Including [Twitter card data](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards) allows you to attach photos, videos and media experiences to a Tweet sharing your Web Story. 
+Including [Twitter card data](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards) allows you to attach photos, videos and media experiences to a Tweet sharing your Web Story.
 
 [tip type="read-on"]
 Read more about [SEO for Web Stories in the AMP Blog](https://blog.amp.dev/2020/02/12/seo-for-amp-stories/).

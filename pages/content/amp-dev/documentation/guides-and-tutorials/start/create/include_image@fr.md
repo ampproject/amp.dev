@@ -15,4 +15,4 @@ Pour découvrir à quoi ressemblerait un balisage supplémentaire, voici le code
 <amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>
 [/sourcecode]
 
-[tip type="read-on"] <strong>LIRE -</strong> Pour savoir pourquoi nous remplaçons des balises telles que <code><img></code> par <a><code><amp-img></code></a> ainsi que le nombre de balises disponibles, consultez la page <a>Inclure les images et vidéos</a>. [/tip]
+[tip type="read-on"] **LIRE -** Pour savoir pourquoi nous remplaçons des balises telles que `<img>` par [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) ainsi que le nombre de balises disponibles, consultez la page [Inclure les images et vidéos](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md). [/tip]

@@ -4,7 +4,6 @@
 
 The Page Experience Tool relies on external APIs to provide its results. Some of them are rate limited or not publicly available at all. For the tool to work provide the following API keys as environment variables (`$ export AMP_DEV_API_KEY...=...`)
 
-- [Google Safe Browsing API](https://developers.google.com/safe-browsing/v4): `AMP_DEV_API_KEY_SAFE_BROWSING`
 - [Page Speed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started): `AMP_DEV_API_KEY_PAGE_SPEED_INSIGHTS`
 
 ## Development
@@ -40,7 +39,7 @@ cd pixi
 npx rollup -c
 ```
 
-Before using the CLI you need to configure a GCloud API key that allows access to the PageSpeedServices and Safe Browsing APIs:
+Before using the CLI you need to configure a GCloud API key that allows access to the PageSpeedServices API:
 
 ```
 export AMP_DEV_PIXI_APIS_KEY=YOUR_GCLOUD_API_KEY
@@ -67,7 +66,6 @@ Which will give you:
   labLcp: '5.6 s',
   tbt: '3060 ms',
   labCls: '0.00 ',
-  safeBrowsing: 'pass',
   mobileFriendly: 'pass',
   url: 'https://axios.com',
   usedComponents: 'amp-accordion, amp-ad, amp-analytics, amp-bind, amp-list, amp-mustache, amp-form, amp-lightbox, amp-iframe, amp-jwplayer, amp-social-share',

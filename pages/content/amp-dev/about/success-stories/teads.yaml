@@ -45,7 +45,7 @@ kpis:
 contents:
 
   - layout: text
-    text: Historically, demand for digital video has <a href="https://www.emarketer.com/Article/Mobile-Video-Advertisers-Demand-More-Inventory/1013575" target="_blanked">far outstripped</a> online publishers’ limited supply of premium in-stream video inventory. So in 2011, French startup Teads designed a new type of video ad that appears natively inside editorial articles, without requiring existing video content.
+    text: Historically, demand for digital video has <a href="https://www.emarketer.com/Article/Mobile-Video-Advertisers-Demand-More-Inventory/1013575" target="_blank">far outstripped</a> online publishers’ limited supply of premium in-stream video inventory. So in 2011, French startup Teads designed a new type of video ad that appears natively inside editorial articles, without requiring existing video content.
     direction: left-flat
 
   - layout: quote

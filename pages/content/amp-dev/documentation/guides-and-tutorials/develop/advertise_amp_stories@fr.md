@@ -35,7 +35,7 @@ Les utilisateurs peuvent passer les annonces de la même manière que sur les pa
 
 Les utilisateurs interagissent directement avec l'annonce en appuyant sur le bouton [d'appel à l'action](story_ads_best_practices.md#call-to-action-button-text-enum) affiché par le système qui apparaît dans le tiers inférieur de toutes les annonces stories publicitaires Web. Le bouton peut être configuré pour envoyer l'utilisateur vers une URL arbitraire (ou vers l'App Store concerné).
 
-{{ image('/static/img/docs/stampads/sponsored_story.png', 1600, 597, layout='intrinsic', alt='Image showing that usersare redirected to an ad landing destination, but can return to the story.', caption='Users are redirected to an ad landing destination, but can return to the story.', align='' ) }}
+{{ image('/static/img/docs/stampads/sponsored_story.png', 1600, 597, layout='intrinsic', alt='Image showing that users are redirected to an ad landing destination, but can return to the story.', caption='Users are redirected to an ad landing destination, but can return to the story.', align='' ) }}
 
 ## Configurer une story Web pour les annonces
 

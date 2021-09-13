@@ -1,6 +1,6 @@
 const MarkdownDocument = require('./markdownDocument.js');
 
-test('Test frontmatter extraction', async (done) => {
+test('Test frontmatter extraction', (done) => {
   const doc = new MarkdownDocument(
     '/docs/amp-test-v0.1.md',
 
@@ -29,7 +29,7 @@ test('Test frontmatter extraction', async (done) => {
   done();
 });
 
-test('Test frontmatter formats normalization', async (done) => {
+test('Test frontmatter formats normalization', (done) => {
   const doc = new MarkdownDocument(
     '/docs/amp-test-v0.1.md',
 
@@ -54,7 +54,7 @@ test('Test frontmatter formats normalization', async (done) => {
   done();
 });
 
-test('Test teaser text extraction', async (done) => {
+test('Test teaser text extraction', (done) => {
   const teaserText = MarkdownDocument.extractTeaserText(
     '<!--\n' +
       'Copyright notice\n' +
@@ -73,7 +73,7 @@ test('Test teaser text extraction', async (done) => {
   done();
 });
 
-test('Test escape nunjucks tags', async (done) => {
+test('Test escape nunjucks tags', (done) => {
   const result = MarkdownDocument.escapeNunjucksTags(
     '<pre>\n' +
       "var href = location.href.replace(/?[^#]+/, '');\n" +
@@ -90,7 +90,7 @@ test('Test escape nunjucks tags', async (done) => {
   done();
 });
 
-test('Test escape mustache tags', async (done) => {
+test('Test escape mustache tags', (done) => {
   const result = MarkdownDocument.escapeMustacheTags(
     'The [`link`]({{notincode}}) test `code`.\n' +
       '```html\n' +
@@ -127,7 +127,7 @@ test('Test escape mustache tags', async (done) => {
   done();
 });
 
-test('Test escape mustache tags', async (done) => {
+test('Test escape mustache tags', (done) => {
   const doc = new MarkdownDocument(
     '/tmp/test.md',
     '---\n' +
@@ -158,7 +158,7 @@ test('Test escape mustache tags', async (done) => {
   done();
 });
 
-test('Test anchor generation', () => {
+test('Test anchor generation', (done) => {
   const doc = new MarkdownDocument(
     '/tmp/test.md',
     '---\n' +
@@ -191,4 +191,6 @@ test('Test anchor generation', () => {
       '# with [link](#anchor) <a name="with-link"></a>\n' +
       '# test `<code>` &lt;html&gt;<a>foo</a> <a name="test-code-htmlfoo"></a>'
   );
+
+  done();
 });

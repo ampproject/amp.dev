@@ -128,12 +128,13 @@ Using this implementation, AMP Optimizer will transform the following `amp-img` 
   width="400"
   height="800"
   layout="responsive"
+  alt="..."
 ></amp-img>
 <!-- Ignores existing srcset -->
 <amp-img
   layout="fill"
-  srcset="image-1x.png 1x,
-                             image-2x.png 2x"
+  alt="..."
+  srcset="image-1x.png 1x, image-2x.png 2x"
 ></amp-img>
 ```
 
@@ -146,13 +147,14 @@ into:
   width="400"
   height="800"
   layout="responsive"
+  alt="..."
   srcset="image1.470w.png 470w, image1.820w.png 820w, image1.1440w.png 1440w"
 ></amp-img>
 <!-- Ignores existing srcset -->
 <amp-img
   layout="fill"
-  srcset="image-1x.png 1x,
-                               image-2x.png 2x"
+  alt="..."
+  srcset="image-1x.png 1x, image-2x.png 2x"
 ></amp-img>
 ```
 

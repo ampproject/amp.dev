@@ -40,7 +40,7 @@ staticText:
       action: Podejmij działania
   additionalChecks:
     headline: Dodatkowe kontrole
-    safeBrowsing: Bezpieczne przeglądanie
+    
     https: HTTPS
     mobileFriendliness: Przyjazność mobilna
     intrusiveInterstitials: Natrętne reklamy pełnoekranowe
@@ -80,8 +80,8 @@ scriptText:
     cls: CLS
     https: HTTPS
     mobileFriendliness: Przyjazność mobilna
-    safeBrowsing: Bezpieczne przeglądanie
+    
     intrusiveInterstitials: Natrętne reklamy pełnoekranowe
 ---
 
-Narzędzie AMP Page Experience Guide pokazuje programistom AMP jak ich strony AMP radzą sobie z sygnałem czynników rankingowych Page Experience wyszukiwarki Google, a także dostarcza przydatnych informacji zwrotnych na temat tego, jak można je poprawić. Jeśli nie jesteśmy w stanie dostarczyć Ci użytecznych informacji, skorzystaj z dostępnych podpowiedzi, aby [zgłosić problem na GitHub](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue), a wówczas nasz zespół będzie w stanie pomóc Ci zrozumieć jak możesz poprawić swoje strony AMP. Używamy publicznie dostępnych interfejsów API, takich jak: [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=pl), <a>Safe Browsing</a> oraz <a>Mobile-frriendliness Test</a>.
+Narzędzie AMP Page Experience Guide pokazuje programistom AMP jak ich strony AMP radzą sobie z sygnałem czynników rankingowych Page Experience wyszukiwarki Google, a także dostarcza przydatnych informacji zwrotnych na temat tego, jak można je poprawić. Jeśli nie jesteśmy w stanie dostarczyć Ci użytecznych informacji, skorzystaj z dostępnych podpowiedzi, aby [zgłosić problem na GitHub](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue), a wówczas nasz zespół będzie w stanie pomóc Ci zrozumieć jak możesz poprawić swoje strony AMP. Używamy publicznie dostępnych interfejsów API, takich jak: [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=pl),oraz Mobile-frriendliness Test.

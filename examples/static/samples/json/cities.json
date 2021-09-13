@@ -1,0 +1,37 @@
+{
+  "header": "Cities of the universe",
+  "planets": {
+    "earth": {
+      "continents": {
+        "africa": [
+          {
+            "country": "Nigeria",
+            "city": "Lagos"
+          },
+          {
+            "country": "Kenya",
+            "city": "Nairobi"
+          },
+          {
+            "country": "Egypt",
+            "city": "Cairo"
+          },
+          {
+            "country": "Ghana",
+            "city": "Accra"
+          } 
+        ],
+        "southAmerica": [
+          {
+            "country": "Brazil",
+            "city": "Sāo Paulo"
+          },
+          {
+            "country": "Colombia",
+            "city": "Bogotá"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -53,7 +53,7 @@ Birçok AMP bileşeni ve uzantısı, kökler arası kaynak paylaşımı (CORS) i
 <li data-md-type="list_item" data-md-list-type="unordered">
 <p data-md-type="paragraph"><a href="#send-cors-response-headers" data-md-type="link">CORS yanıt başlıklarını gönderme</a></p>
 <ul data-md-type="list" data-md-list-type="unordered" data-md-list-tight="true"><li data-md-type="list_item" data-md-list-type="unordered">
-<a href="#access-control-allow-origin-origin" data-md-type="link">Kaynağa Erişime İzin Verme: </a><origin data-md-type="raw_html"></origin>
+<a href="#access-control-allow-origin-origin" data-md-type="link">Kaynağa Erişime İzin Verme: </a>
 </li></ul>
 </li>
 <li data-md-type="list_item" data-md-list-type="unordered"><a href="#processing-state-changing-requests" data-md-type="link">Durum değiştirme isteklerini işleme</a></li>
@@ -159,9 +159,9 @@ Bu özel başlık, aynı kaynaktan bir XHR isteği yapıldığında AMP Çalış
 
 CORS isteğini doğruladıktan sonra, ortaya çıkan HTTP yanıtı aşağıdaki üstbilgileri içermelidir:
 
-##### Access-Control-Allow-Origin: <origin> </origin><a name="access-control-allow-origin-origin"></a>
+##### Access-Control-Allow-Origin: &lt;origin&gt; <a name="access-control-allow-origin-origin"></a>
 
-Bu başlık, bir <a href="https://www.w3.org/TR/cors/">W3 CORS Teknik Özellikleri</a> gereksinimidir. Burada <code>origin</code>, CORS <code>Origin</code> istek başlığı aracılığıyla izin verilen talep kaynağı anlamına gelir. (Örneğin, <code>"https://<publisher's subdomain>.cdn.ampproject.org"</code>).
+Bu başlık, bir <a href="https://www.w3.org/TR/cors/">W3 CORS Teknik Özellikleri</a> gereksinimidir. Burada <code>origin</code>, CORS <code>Origin</code> istek başlığı aracılığıyla izin verilen talep kaynağı anlamına gelir. (Örneğin, <code>"https://&lt;publisher's subdomain>.cdn.ampproject.org"</code>).
 
 W3 CORS teknik özellikleri, yanıtta <code>\*</code> değerinin döndürülmesine izin verse de, daha iyi güvenlik için şunları yapmalısınız:
 

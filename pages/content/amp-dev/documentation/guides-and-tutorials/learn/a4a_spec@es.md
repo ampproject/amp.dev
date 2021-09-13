@@ -48,29 +48,29 @@ Adicionalmente, los creativos deben cumplir las siguientes reglas:
 </tr></thead>
 <tbody>
 <tr>
-<td>Debe utilizar <code><html ⚡4ads></code> o <code><html amp4ads></code> como etiquetas adjuntas.</td>
+<td>Debe utilizar <code>&lt;html ⚡4ads></code> o <code>&lt;html amp4ads></code> como etiquetas adjuntas.</td>
 <td>Permite que los validadores identifiquen un documento creativo, ya sea como un documento de AMP general o como un anuncio AMPHTML restringido, y lo envíen apropiadamente.</td>
 </tr>
 <tr>
-<td>Debe incluir <code><script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script></code> como el script que controla el tiempo de ejecución en lugar de <code>https://cdn.ampproject.org/v0.js</code>.</td>
+<td>Debe incluir <code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script></code> como el script que controla el tiempo de ejecución en lugar de <code>https://cdn.ampproject.org/v0.js</code>.</td>
 <td>Permite personalizar el comportamiento del tiempo de ejecución en el caso de los anuncios AMPHTML que se ocupan como iframes de origen cruzado.</td>
 </tr>
 <tr>
-<td>No debe incluir una etiqueta <code><link rel="canonical"></code>.</td>
+<td>No debe incluir una etiqueta <code>&lt;link rel="canonical"></code>.</td>
 <td>En los anuncios, los creativos carecen de una "versión no canónica de AMP" y la indexación en los buscadores no se realizará de manera independiente, por lo tanto, la auto-referencia no sería útil.</td>
 </tr>
 <tr>
-<td>Puede incluir metaetiquetas opcionales en el encabezado del HTML que funcionen como identificadores en el formato de <code><meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>. Esas metaetiquetas deben colocarse antes del script <code>amp4ads-v0.js</code>. Los valores de <code>vendor</code> e <code>id</code> son cadenas que solo contienen [0-9a-zA-Z_-]. El valor de <code>type</code> puede ser tanto <code>creative-id</code> como <code>impression-id</code>.</td>
+<td>Puede incluir metaetiquetas opcionales en el encabezado del HTML que funcionen como identificadores en el formato de <code>&lt;meta name="amp4ads-id" content="vendor=${vendor},type=${type},id=${id}"></code>. Esas metaetiquetas deben colocarse antes del script <code>amp4ads-v0.js</code>. Los valores de <code>vendor</code> e <code>id</code> son cadenas que solo contienen [0-9a-zA-Z_-]. El valor de <code>type</code> puede ser tanto <code>creative-id</code> como <code>impression-id</code>.</td>
 <td>Estos identificadores personalizados pueden utilizarse para identificar la impresión o la creatividad. Pueden ser útiles para presentar informes y la depuración.<br><br><p>Por ejemplo:</p>
-<pre> <meta name="amp4ads-id"
+<pre> &lt;meta name="amp4ads-id"
   content="vendor=adsense,type=creative-id,id=1283474">
-<meta name="amp4ads-id"
+&lt;meta name="amp4ads-id"
   content="vendor=adsense,type=impression-id,id=xIsjdf921S"></pre>
 </td>
 </tr>
 <tr>
 <td>
-<code><amp-analytics></code> el seguimiento de la visibilidad solo puede dirigirse al selector de anuncios completo, a través de <code>"visibilitySpec": { "selector": "amp-ad" }</code> como se define en la <a href="https://github.com/ampproject/amphtml/issues/4018">Problemática #4018</a> y <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. En particular, es posible que no se dirija a ningún selector de elementos dentro de la creatividad del anuncio.</td>
+<code>&lt;amp-analytics></code> el seguimiento de la visibilidad solo puede dirigirse al selector de anuncios completo, a través de <code>"visibilitySpec": { "selector": "amp-ad" }</code> como se define en la <a href="https://github.com/ampproject/amphtml/issues/4018">Problemática #4018</a> y <a href="https://github.com/ampproject/amphtml/pull/4368">PR #4368</a>. En particular, es posible que no se dirija a ningún selector de elementos dentro de la creatividad del anuncio.</td>
 <td>Algunas veces, en los anuncios AMPHTML puede selelecionarse renderizar un anuncio creativo en un iframe. En esos casos, el análisis de la página del host solo puede orientar el iframe completo y no tendrá acceso a ningún seleccionador de grano fino.<br><br> <p>Por ejemplo:</p> <pre> <amp-analytics id="nestedAnalytics"> <script type="application/json"> { "requests": { "visibility": "https://example.com/nestedAmpAnalytics" }, "triggers": { "visibilitySpec": { "selector": "amp-ad", "visiblePercentageMin": 50, "continuousTimeMin": 1000 } } } </script> </amp-analytics> </pre> <p> Esta configuración envía una solicitud a la <code>https://example.com/nestedAmpAnalytics</code> URL cuando el 50% del anuncio adjunto pudo visualizarse de forma continua en la pantalla durante 1 segundo.</p>
 </td>
 </tr>
@@ -91,7 +91,7 @@ Los creativos de los anuncios AMPHTML requieren de un código repetitivo diferen
 
 [/sourcecode]
 
-<em>Justificación: </em> El estilo <code>amp-boilerplate </code> oculta el contenido del cuerpo hasta que el tiempo de ejecución de AMP está listo y puede mostrarlo. Si Javascript está desactivado o el tiempo de ejecución de AMP no se carga, el texto estándar predeterminado garantiza que el contenido se seguirá mostrando independientemente. Sin embargo, en los anuncios AMPHTML, si Javascript está completamente deshabilitado, los anuncios AMPHTML no se ejecutarán y no se mostrará ningún anuncio, por lo que no es necesaria la sección <code><noscript></code>. En ausencia del tiempo de ejecución de AMP, la mayoría de la maquinaria en la que se basan los anuncios AMPHTML (por ejemplo, los análisis para el seguimiento de la visibilidad o <code>amp-img</code> para la visualización de contenido) no estarán disponibles, por lo que es preferible no mostrar ningún anuncio que uno defectuoso.
+<em>Justificación: </em> El estilo <code>amp-boilerplate </code> oculta el contenido del cuerpo hasta que el tiempo de ejecución de AMP está listo y puede mostrarlo. Si Javascript está desactivado o el tiempo de ejecución de AMP no se carga, el texto estándar predeterminado garantiza que el contenido se seguirá mostrando independientemente. Sin embargo, en los anuncios AMPHTML, si Javascript está completamente deshabilitado, los anuncios AMPHTML no se ejecutarán y no se mostrará ningún anuncio, por lo que no es necesaria la sección <code>&lt;noscript></code>. En ausencia del tiempo de ejecución de AMP, la mayoría de la maquinaria en la que se basan los anuncios AMPHTML (por ejemplo, los análisis para el seguimiento de la visibilidad o <code>amp-img</code> para la visualización de contenido) no estarán disponibles, por lo que es preferible no mostrar ningún anuncio que uno defectuoso.
 
 Por último, el código repetitivo del anuncio AMPHTML utiliza <code>amp-a4a-boilerplate</code> en lugar de <code>amp-boilerplate</code> para que los validadores puedan identificarlo fácilmente y generar mensajes de error más precisos para ayudar a los desarrolladores.
 

@@ -87,7 +87,7 @@ Untuk menampilkan gambar di lightbox, ada juga komponen [`<amp-image-lightbox>`]
         <td width="40%"><strong>scrollable (opsional)</strong></td>
         <td>Apabila atribut <code>scrollable</code> ada, konten lightbox dapat di-scroll jika melebihi tinggi lightbox.
           <br><br>
-            <strong>Catatan</strong>: Atribut <code>scrollable</code> tidak diizinkan saat menggunakan <code><amp-lightbox></code> di dalam iklan AMPHTML. Untuk selengkapnya, baca bagian <a href="#a4a">Menggunakan amp-lightbox dalam iklan AMPHTML</a>.</td>
+            <strong>Catatan</strong>: Atribut <code>scrollable</code> tidak diizinkan saat menggunakan <code>&lt;amp-lightbox&gt;</code> di dalam iklan AMPHTML. Untuk selengkapnya, baca bagian <a href="#a4a">Menggunakan amp-lightbox dalam iklan AMPHTML</a>.</td>
           </tr>
           <tr>
             <td width="40%"><strong>scrollable (opsional)</strong></td>

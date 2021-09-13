@@ -181,6 +181,10 @@ class MarkdownDocument {
     this._frontmatter['$localization'] = {path: '/{locale}' + path};
   }
 
+  get servingPath() {
+    return this._frontmatter['$path'];
+  }
+
   get contents() {
     return this._contents;
   }
