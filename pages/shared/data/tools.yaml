@@ -55,7 +55,7 @@ creation:
     formats:
       - email
   - name: Plumrocket AMP Email
-    url: https://store.plumrocket.com/amp-email-magento2-extension.html
+    url: https://plumrocket.com/magento-amp-email
     type: Magento Extension
     description: Send engaging AMP Emails from Magento ecommerce platform. Use built-in templates for transactional and promotional dynamic emails.
     image:
@@ -138,7 +138,7 @@ creation:
       - stories
   - name: Webstoryz
     description: Increase engagement on your website using Webstoryz widget!
-    url: https://webstoryz.com/
+    url: https://webstoryz.com/?utm_source=google_listing
     type: WYSIWYG Editor
     image:
       src: /static/img/tools/webstoryz.jpg
@@ -274,7 +274,7 @@ platforms:
   - name: AMP for Magento
     type: CMS
     description: Convert Magento website into lightning fast eСommerce store powered by AMP technology.
-    url: https://store.plumrocket.com/accelerated-mobile-pages-magento2-extension.html
+    url: https://plumrocket.com/magento-amp
     image:
       src: /static/img/tools/plumrocket-amp-magento.jpg
       width: 440
