@@ -1,6 +1,5 @@
 const path = require('path');
 
-const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -98,7 +97,6 @@ module.exports = (env, argv) => {
           },
         },
       }),
-      new webpack.HotModuleReplacementPlugin({}),
       isDevelopment
         ? new WebpackBuildNotifierPlugin({
             title: 'amp.dev: Frontend',
@@ -175,15 +173,17 @@ module.exports = (env, argv) => {
     },
 
     devServer: {
-      overlay: true,
-      contentBase: '/',
-      writeToDisk: true,
-      disableHostCheck: true,
+      static: {
+        directory: '/',
+      },
+      devMiddleware: {
+        writeToDisk: true,
+      },
+      allowedHosts: 'all',
       port: 8090,
       headers: {
         'Access-Control-Allow-Origin': '*',
       },
-      compress: true,
       hot: true,
     },
   };
