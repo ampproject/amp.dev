@@ -60,11 +60,12 @@ module.exports = (env, argv) => {
         },
         output: {
           svgo: {
-            plugins: [
-              {
-                name: 'removeAttrs',
+            name: 'preset-default',
+            params: {
+              overrides: {
+                removeAttrs: true,
               },
-            ],
+            },
           },
           filename: 'static/sprite.svg',
         },
@@ -99,10 +100,10 @@ module.exports = (env, argv) => {
       }),
       isDevelopment
         ? new WebpackBuildNotifierPlugin({
-            title: 'amp.dev: Frontend',
-            logo: path.join(process.cwd(), '../pages/static/img/favicon.png'),
-          })
-        : () => {},
+          title: 'amp.dev: Frontend',
+          logo: path.join(process.cwd(), '../pages/static/img/favicon.png'),
+        })
+        : () => { },
     ],
     module: {
       rules: [
