@@ -1,7 +1,7 @@
 $title: 1337 UGC
 $category: social-media
 $date: 2021-09-14
-description: 1337 UGC info portals generate 1.8x higher revenues on AMP vs. non-AMP pages
+description: 1337 UGC GmbH increased performance with AMP First (Canonical AMP)
 formats:
   - websites
 
@@ -16,10 +16,10 @@ teaser:
     width: 272
     height: 69
     alt: 1337 UGC
-  text: 1337 UGC info portals generate 1.8x higher revenues on AMP vs. non-AMP pages
+  text: 1337 UGC GmbH increased performance with AMP First (Canonical AMP)
 
 stage:
-  headline: 1337 UGC info portals generate 1.8x higher revenues on AMP vs. non-AMP pages
+  headline: 1337 UGC GmbH increased performance with AMP First (Canonical AMP)
   subline: SEP 14, 2021
   layout: mobile
   devices:
@@ -32,6 +32,8 @@ stage:
 kpis:
   - value: 1.8x
     text: Higher average revenues for AMP pages
+  - value: 29%
+    text: Increase in eCPM (kreuzwortraetsel.de)
 
 contents:
   - layout: text
