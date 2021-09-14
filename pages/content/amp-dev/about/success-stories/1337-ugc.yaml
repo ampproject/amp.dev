@@ -1,0 +1,56 @@
+$title: 1337 UGC
+$category: social-media
+$date: 2021-09-14
+description: 1337 UGC info portals generate 1.8x higher revenues on AMP vs. non-AMP pages
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/1337-ugc/teaser.jpg'
+    width: 1
+    height: 1
+    alt: AARP
+  logo:
+    src: '/static/img/success-stories/1337-ugc/1337-ugc-logo-272x69.svg'
+    width: 272
+    height: 69
+    alt: 1337 UGC
+  text: 1337 UGC info portals generate 1.8x higher revenues on AMP vs. non-AMP pages
+
+stage:
+  headline: 1337 UGC info portals generate 1.8x higher revenues on AMP vs. non-AMP pages
+  subline: SEP 14, 2021
+  layout: mobile
+  devices:
+    - image_src: '/static/img/success-stories/1337-ugc/screenshot.jpg'
+      width: 3
+      height: 5
+      type: mobile
+      alt: Screenshot of AARP on mobile
+
+kpis:
+  - value: 1.8x
+    text: Higher average revenues for AMP pages
+
+contents:
+  - layout: text
+    text: 'Headquartered in Schwanstetten, Germany, 1337 UGC (“Leet User Generated Content”) designs, develops, and markets web portals, some of which invite users to contribute content (and receive a fee for doing so). The company launched in 2009 with the website <a href="https://www.oeffnungszeitenbuch.de/">www.oeffnungszeitenbuch.de</a>, which promotes itself as the largest directory of business opening times in German-speaking countries with over 3 million entries. 1337 UGC’s portfolio now includes business directories, dictionaries, crossword and other puzzle helpers, and coupon/voucher websites, operating in 20+ countries. Some 70,000 registered users update business listings in six countries daily.'
+  - layout: text
+    headline: Challenge
+    text: Together, 1337 UGC info-portal websites can record more than 170 million page views per month from 30 million unique users across Europe. With a team of 40 employees, 1337 UGC is focused on optimizing the user experience across its properties.<br><br>Over 80 percent of 1337 UGC’s traffic comes from mobile users, and most of these site visitors spend just seconds on company sites while looking for quick answers, such as store hours or crossword puzzle answers.<br><br>For that reason, UGC knew that they needed fast page load speeds to keep their users coming back. And to monetize effectively, they also needed ads to load quickly — and in the first viewport of mobile devices.
+  - layout: text
+    headline: Approach
+    text: For the 89 percent of 1337 UGC’s portal sites that were already migrated to AMP, revenues were 1.8x higher on average than for non-AMP pages. So the company decided to go fully AMP First (or Canonical AMP) with the vast majority of their properties, meaning they would have a single version of their sites built entirely in AMP.<br><br>AMP First sites could load quickly — especially for those on mobile devices. And they could also allow for fast load times for ads in the first viewport. AMP First portal sites could fetch and render many ads that wouldn’t even be seen on slower-loading mobile websites, where the user would have scrolled down or found the info they were seeking and left — before the ad even loaded.
+  - layout: text
+    headline: Results
+    text: 'After going AMP First across all its info portal properties, 1337 UGC achieved significant improvements in many key areas. “The majority of our users are mobile,” reflects company CEO Dominik Jaworski. “Therefore, we wanted to make sure that all mobile users land on AMP pages.” According to 1337 UGC, serving AMP pages on mobile devices improved overall usability and viewability, due to fast-loading ads in the first viewport, leading to higher eCPMs.<br><br>Dominik explains how going AMP First helped optimize ad monetization. “Before AMP First, we had issues with individual ad slots that were delayed or did not load due to multiple demand sources coming from Ad Manager and a yield optimizer,” he shares. “With the simple AMP setup with only one demand source, we were able to solve these problems completely."'
+  - layout: quote
+    quote: 'The AMP First implementation had an extremely positive effect on revenues. Our expectations were exceeded by far.'
+    image_src: '/static/img/success-stories/1337-ugc/1337-ugc-logo-272x69.svg'
+    width: 272
+    height: 69
+    alt: 1337 UGC GmbH
+    author: Dominik Jaworski, CEO, 1337 UGC GmbH
+  - layout: text
+    text: 'For site monetization, 1337 UGC monitored and measured three key metrics: Earnings Per User (EPU), Earnings Per Impression (EPI), and eCPM. And in the 30-day period following AMP First implementation, the company saw impressive results on two flagship sites. Wort-suchen.de, Europe’s largest site for crossword and Scrabble® fans with over 50 million pageviews per month, for example, saw a 59-percent jump in EPU, a 69-percent lift in EPI, and a 15-percent rise in eCPM. Similarly, crossword puzzle helper site Kreuzwortraetsel.de saw increases of over 40 percent in EPU, 37 percent EPI, and 29 percent in eCPM.<br><br>In addition, by caching content on Google servers with AMP, the company saved on server costs, with more flexibility in scaling as traffic on fast-growing pages increases. They also saved time and resources on the development front by switching to AMP First, as they now only need to maintain one version of each page (AMP) for all mobile users, rather than two pages (AMP and non-AMP).<br><br>Dominik sums up his expectations and experience going AMP First: “I didn’t know what to expect in terms of monetization, and was pleasantly surprised to discover that the ads were able to keep up with the improved page load speeds, and with the improvement in viewability and eCPM.”'
