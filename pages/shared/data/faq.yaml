@@ -178,6 +178,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/appvador.md
       - label: Atomx
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/atomx.md
+      - label: Avantis Video
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/avantisvideo.md
       - label: Baidu
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/baidu.md
       - label: BeaverAds
@@ -236,6 +238,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/epeex.md
       - label: e-planning
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/eplanning.md
+      - label: EXCO
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/exco.md
       - label: Ezoic
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/ezoic.md
       - label: FlexOneELEPHANT
@@ -500,7 +504,7 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/speakol.md
       - label: SpotX
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/spotx.md
-      - label: Spring AdTechnology AmpAd Integration
+      - label: Spring AdTechnology
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/springAds.md
       - label: SSP
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/ssp.md
@@ -530,6 +534,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/torimochi.md
       - label: tracdelight
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/tracdelight.md
+      - label: TrafficStars
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/trafficstars.md
       - label: TripleLift
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/triplelift.md
       - label: Trugaze
