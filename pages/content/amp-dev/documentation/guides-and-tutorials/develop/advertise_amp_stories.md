@@ -72,7 +72,7 @@ Ad platforms that currently support Web Story ads:
 * Other ad platforms can integrate (contact us for [details via Github](https://github.com/ampproject/amphtml/issues/30769))
 
 
-If you are an advertiser interested in running your ads inside Web Stories please [reach out](mailto:story-ads-wg@google.com) for more information.
+If you are an advertiser interested in running your ads inside Web Stories please [reach out](mailto:story-ads-wg@amp.dev) for more information.
 
 Publishers can also place custom ads if they set up their own ad server. [The process is detailed here](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story/amp-story-ads.md#publisher-placed-ads).
 
