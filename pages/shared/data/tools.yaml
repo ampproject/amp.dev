@@ -13,7 +13,7 @@ creation:
   - name: Lodago
     url: https://lodago.com/en/
     type: CRM plugin
-    description: Request meetings from your favorite CRM and let your recipient book without leaving its inbox (AMP emails).
+    description: Request meetings from your favorite CRM and let your recipient book without leaving its inbox.
     image:
       src: /static/img/tools/lodago.png
       width: 400
