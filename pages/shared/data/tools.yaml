@@ -10,6 +10,17 @@ creation:
       height: 506
     formats:
       - ads
+  - name: Lodago
+    url: https://lodago.com/en/
+    type: CRM plugin
+    description: Request meetings from your favorite CRM and let your recipient book without leaving its inbox (AMP emails).
+    image:
+      src: /static/img/tools/lodago.png
+      width: 400
+      height: 150
+      fit: contain
+    formats:
+      - email
   - name: BEE
     url: https://beefree.io/bee-plugin/
     type: Embeddable Email Builder
