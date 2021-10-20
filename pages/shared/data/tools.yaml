@@ -324,16 +324,6 @@ platforms:
     formats:
       - websites
       - stories
-  - name: Jumprope
-    description: Platform to share and discover how-to stories that includes a creation tool on your phone to help you create how-to stories.
-    url: https://www.jumprope.com/
-    type: Content Platform
-    image:
-      src: /static/img/tools/jumprope.jpg
-      width: 1500
-      height: 1000
-    formats:
-      - stories
   - name: RebelMouse
     description: Build AMP sites, posts, and stories. Win search, social, and email. Fast. Flexible. Secure. Modern.
     url: https://www.rebelmouse.com/AMP/
