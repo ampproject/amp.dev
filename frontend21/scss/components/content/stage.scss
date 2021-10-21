@@ -50,6 +50,7 @@
     margin-bottom: var(--spacing);
     overflow: hidden;
     padding-bottom: 105%;
+    z-index: 0;
 
     amp-img img {
       object-fit: cover;
