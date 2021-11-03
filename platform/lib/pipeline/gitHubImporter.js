@@ -120,6 +120,15 @@ class GitHubImporter {
       request = Promise.reject(
         new Error('Importing from a local path is currently not implemented.')
       );
+      // TODO: remove once build breakage has been resolved
+    } else if (repo === DEFAULT_REPOSITORY) {
+      console.log('loading last working build');
+      const lastStableRelease = '2109161911000';
+      const tag = lastStableRelease;
+      request = await this._queue.add(() => {
+        log.await(`Downloading ${filePath} from remote [${tag}]...`);
+        return this._github.repo(repo).contentsAsync(filePath, tag);
+      });
     } else if (master || repo !== DEFAULT_REPOSITORY) {
       request = await this._queue.add(() => {
         log.await(`Downloading ${filePath} from remote master...`);
