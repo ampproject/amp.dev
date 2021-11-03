@@ -168,6 +168,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/aja.md
       - label: AMoAd
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/amoad.md
+      - label: Bandsintown Amplified
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/amplified.md
       - label: Aniview
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/aniview.md
       - label: AnyClip
@@ -192,6 +194,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/brainy.md
       - label: Bringhub
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/bringhub.md
+      - label: Broadbandy
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/broadbandy.md
       - label: Broadstreet Ads
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/broadstreetads.md
       - label: ByPlay
@@ -368,6 +372,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/myoffrz.md
       - label: myTarget
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/mytarget.md
+      - label: MYUA
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/myua.md
       - label: myWidget
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/mywidget.md
       - label: nativeroll
