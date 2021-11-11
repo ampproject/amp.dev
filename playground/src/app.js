@@ -187,7 +187,7 @@ if (preview) {
   const showPreview = new Fab(document.body, '▶&#xFE0E;', () => {
     params.push('preview', true);
     previewPanel.classList.add('show');
-    if (embedMode.isActive) {
+    if (modes.IS_EMBED) {
       hidePreviewFab.show();
     }
   });
@@ -196,7 +196,7 @@ if (preview) {
     params.push('preview', false);
     previewPanel.classList.remove('show');
     showPreview.show();
-    if (embedMode.isActive) {
+    if (modes.IS_EMBED) {
       hidePreviewFab.hide();
     }
   };
