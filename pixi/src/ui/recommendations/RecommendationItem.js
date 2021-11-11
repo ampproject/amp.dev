@@ -35,7 +35,6 @@ export default class RecommendationItem {
 
     this.element = element;
     this.element.id = `recommendation-${content.id}`;
-    this.element.style = null;
 
     this.header = element.querySelector(
       '.ap-m-pixi-recommendations-item-header'
