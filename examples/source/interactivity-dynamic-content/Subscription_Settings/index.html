@@ -4,7 +4,6 @@ preview: true
 author: TomerAberbach
 formats:
   - email
-  - websites
 --->
 
 <!--
@@ -14,13 +13,9 @@ formats:
 -->
 <!-- -->
 <!doctype html>
-<html ⚡4email lang="en">
+<html ⚡4email lang="en" data-css-strict>
   <head>
     <meta charset="utf-8">
-    <link rel="canonical" href="<% canonical %>">
-    <title>Subscription Settings</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <style amp4email-boilerplate>body{visibility:hidden}</style>
 
@@ -99,10 +94,6 @@ formats:
       .subscription-select {
         opacity: 0;
         cursor: pointer;
-      }
-
-      .disabled #select, select[disabled] {
-        cursor: progress;
       }
     </style>
   </head>
