@@ -112,17 +112,20 @@ formats:
           {
             "value": "watching",
             "isSelected": false,
-            "text": "Watching"
+            "text": "Watching",
+            "imgUrl": "/images/watching.jpg"
           },
           {
             "value": "only-mentions",
             "isSelected": true,
-            "text": "Only mentions"
+            "text": "Only mentions",
+            "imgUrl": "/images/only-mentions.jpg"
           },
           {
             "value": "ignoring",
             "isSelected": false,
-            "text": "Ignoring"
+            "text": "Ignoring",
+            "imgUrl": "/images/ignoring.jpg"
           }
         ]
       }
@@ -393,7 +396,7 @@ formats:
                [class]="(nextSubscription ? 'disabled ' : ' ') + 'icon-container relative icon-sized'">
             <div class="icon icon-sized" aria-hidden>
               {{#options}}
-                <amp-img width="30" height="30" src="/static/samples/img/{{value}}.png"
+                <amp-img width="30" height="30" src="{{imgUrl}}"
                    class="{{#isSelected}}visible {{/isSelected}}absolute"
                    [class]="((currentSubscription || '{{currentSubscription}}') == '{{value}}' ? 'visible ' : ' ') + 'absolute'">
                 </amp-img>
