@@ -156,6 +156,10 @@ class ComponentReferenceDocument extends MarkdownDocument {
     this._frontmatter['bentoPath'] = hasBento;
   }
 
+  set bentoDocUrl(url) {
+    this._frontmatter['bentoDocUrl'] = url;
+  }
+
   get version() {
     return this._frontmatter['version'];
   }
