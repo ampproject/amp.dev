@@ -74,6 +74,7 @@ class ComponentReferenceImporter {
       if (growDoc.bento) {
         bentoComponents.set(growDoc.title, {
           name: growDoc.title,
+          bentoName: growDoc.title.replace('amp-', 'bento-'),
           experimental: growDoc.experimental,
           path:
             growDoc.servingPath ||
@@ -87,6 +88,7 @@ class ComponentReferenceImporter {
       const bentoComponent = bentoComponents.get(growDoc.title);
       if (bentoComponent) {
         growDoc.bentoPath = bentoComponent.path;
+        growDoc.bentoDocUrl = `https://bentojs.dev/components/${bentoComponent.bentoName}/`;
       }
 
       const latestStableComponent = latestStableComponents[growDoc.title];
