@@ -26,7 +26,7 @@ The following markup is a basic AMP page.
 ```
 [/example]
 
-The body content is pretty straightforward, but there’s some additional code in the head. The required markdown is broken down in the table below. Each AMP HTML document must:
+The body content is pretty straightforward, but there’s some additional code in the head. The required markup is broken down in the table below. Each AMP HTML document must:
 
 <table>
   <tr>
