@@ -36,8 +36,5 @@ The course consists of a series of hands-on projects, most of which step you thr
 
 - The course uses the online editor Glitch. No IDE or local web server is required!
 
-### Certification
-If you are interested in our certification program, please <a href="mailto:morsssss@amp.dev">get in touch.</a>
-
 ### Talk to us
 Are you using these courses? Do you want to tell us about your experience? Or do you have ideas for how they can improved? Do you want to share your own version of the courses with the community? <a href="https://docs.google.com/forms/d/1H0qp9m5jq2ZaiaoU9zWu3Vd_WRGuluV7xPs14jxneSA/viewform" target="_blank">Give us feedback!</a>
