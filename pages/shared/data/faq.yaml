@@ -130,6 +130,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/adsensor.md
       - label: AdServSolution
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/adservsolutions.md
+      - label: AdsKeeper
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/adskeeper.md
       - label: AdsLoom
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/adsloom.md
       - label: AdsNative
@@ -170,6 +172,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/amoad.md
       - label: Bandsintown Amplified
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/amplified.md
+      - label: andbeyond
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/andbeyond.md
       - label: Aniview
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/aniview.md
       - label: AnyClip
@@ -210,6 +214,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/cedato.md
       - label: Colombia
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/colombia.md
+      - label: colombiafeed
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/colombiafeed.md
       - label: CONATIVE
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/conative.md
       - label: Connatix
@@ -222,6 +228,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/csa.md
       - label: Dable
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/dable.md
+      - label: DigitalExchange
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/dex.md
       - label: Digiteka
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/digiteka.md
       - label: Directadvert
@@ -302,6 +310,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/innity.md
       - label: Insticator
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/insticator.md
+      - label: InsurAds
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/insurads.md
       - label: Invibes
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/invibes.md
       - label: Iprom
@@ -476,10 +486,14 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/rubicon.md
       - label: RUNative
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/runative.md
+      - label: Sabavision
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/sabavision.md
       - label: SAS CI 360 Match
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/sas.md
       - label: Seeding Alliance
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/seedingalliance.md
+      - label: Seedtag
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/seedtag.md
       - label: Sekindo
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/sekindo.md
       - label: Sharethrough
@@ -558,8 +572,6 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/valuecommerce.md
       - label: VDO.AI
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/vdoai.md
-      - label: VerizonMedia
-        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/verizonmedia.md
       - label: video intelligence
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/videointelligence.md
       - label: VideoNow
