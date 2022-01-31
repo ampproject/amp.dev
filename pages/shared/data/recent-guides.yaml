@@ -8,8 +8,6 @@
   date: 2021-03-18 11:32:01 -0700
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-html-responsive-attributes.md
   date: 2021-03-03 18:54:08 +0100
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/bento_guide.md
-  date: 2021-01-26 23:21:52 -0800
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/email-inspiration.md
   date: 2020-12-04 09:09:23 -0800
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/productivity_sender.md
@@ -248,11 +246,11 @@
   date: 2018-12-01 03:04:02 -0800
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md
   date: 2018-12-01 03:04:02 -0800
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
+  date: 2018-12-01 02:17:35 -0800
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-debugging.md
   date: 2018-12-01 02:17:35 -0800
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md
-  date: 2018-12-01 02:17:35 -0800
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
   date: 2018-12-01 02:17:35 -0800
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md
   date: 2018-12-01 02:17:35 -0800
