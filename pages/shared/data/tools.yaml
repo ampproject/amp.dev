@@ -492,9 +492,9 @@ developer:
     type: Development
     description: Code, preview, and collaborate using the development platform designed for email. Generate AMP from HTML with one click, validate exisiting AMP, and send test emails.
     image:
-      src: /static/img/tools/parcel.png
-      width: 1223
-      height: 450
+      src: /static/img/tools/parcel.svg
+      width: 1500
+      height: 750
       fit: contain
     formats:
       - email
