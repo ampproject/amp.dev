@@ -200,7 +200,7 @@ creation:
   - name: Join Stories
     description: Long Story short, Join Stories is the fastest and easiest Story creation tool.
     url: https://www.join-stories.com/
-    type:  WYSIWYG Editor
+    type: WYSIWYG Editor
     image:
       src: /static/img/tools/joinstories.jpg
       width: 800
@@ -210,7 +210,7 @@ creation:
   - name: StorifyMe
     description: StorifyMe stands out as all-in-one Web Stories platform. Made for brands & individuals, tailored for e-commerce, marketers and publishers.
     url: https://storifyme.com/
-    type:  WYSIWYG Editor
+    type: WYSIWYG Editor
     image:
       src: /static/img/tools/storifyme.jpg
       width: 1600
@@ -256,7 +256,7 @@ creation:
       width: 1162
       height: 442
       fit: contain
-      bgcolor: "#004e73"
+      bgcolor: '#004e73'
     formats:
       - websites
   - name: Unfold
@@ -487,6 +487,17 @@ developer:
       height: 471
     formats:
       - websites
+  - name: Parcel
+    url: https://parcel.io/
+    type: Development
+    description: Code, preview, and collaborate using the development platform designed for email. Generate AMP from HTML with one click, validate exisiting AMP, and send test emails.
+    image:
+      src: /static/img/tools/parcel.png
+      width: 1223
+      height: 450
+      fit: contain
+    formats:
+      - email
   - name: Litmus
     url: https://litmus.com/
     type: Development
@@ -564,7 +575,7 @@ developer:
       width: 1500
       height: 1000
       fit: contain
-      bgcolor: "#55BFA7"
+      bgcolor: '#55BFA7'
     formats:
       - websites
 providers:
