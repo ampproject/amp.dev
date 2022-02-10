@@ -859,8 +859,8 @@ email:
           url: https://www.moonmail.io
         - label: Pepipost
           url: https://pepipost.com/
-        - label: Salesforce
-          url: https://www.salesforce.com/
+        - label: Salesforce MArketing Cloud
+          url: https://www.salesforce.com/products/marketing-cloud/overview/
         - label: SendPulse
           url: https://sendpulse.com/
         - label: SocketLabs
