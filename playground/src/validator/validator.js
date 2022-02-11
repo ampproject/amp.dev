@@ -17,7 +17,7 @@ import events from '../events/events.js';
 import lazyLoad from '../lazy-load/base.js';
 import {EVENT_SET_RUNTIME} from '../runtime/runtimes.js';
 
-const DEFAULT_VALIDATOR_URL = 'https://cdn.ampproject.org/v0/validator.js';
+const DEFAULT_VALIDATOR_URL = 'https://cdn.ampproject.org/v0/validator_wasm.js';
 
 export const NO_ERRORS = {
   errors: [],
@@ -50,12 +50,14 @@ class Validator {
         events.publish(EVENT_NEW_VALIDATION_RESULT, NO_VALIDATOR);
         return;
       }
-      const validationResult = amp.validator.validateString(
-        string,
-        this.runtime.validator
-      );
-      this.processErrors(validationResult);
-      events.publish(EVENT_NEW_VALIDATION_RESULT, validationResult);
+      amp.validator.init().then(() => {
+        const validationResult = amp.validator.validateString(
+          string,
+          this.runtime.validator
+        );
+        this.processErrors(validationResult);
+        events.publish(EVENT_NEW_VALIDATION_RESULT, validationResult);
+      });
     });
   }
 
@@ -69,7 +71,6 @@ class Validator {
   processErrors(validationResult) {
     validationResult.errors.forEach((error) => {
       error.message = amp.validator.renderErrorMessage(error);
-      error.category = amp.validator.categorizeError(error);
       error.icon = error.severity.toLowerCase();
       error.isError = error.severity === 'ERROR';
       error.isWarning = error.severity === 'WARNING';

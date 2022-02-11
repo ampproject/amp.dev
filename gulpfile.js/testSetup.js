@@ -23,7 +23,7 @@ const fetch = require('node-fetch');
 const signale = require('signale');
 const {BUILD} = require('@lib/utils/project').paths;
 
-const VALIDATOR_SCRIPT_URL = 'https://cdn.ampproject.org/v0/validator.js';
+const VALIDATOR_SCRIPT_URL = 'https://cdn.ampproject.org/v0/validator_wasm.js';
 const VALIDATOR_TARGET_PATH = join(BUILD, 'testing/validator.js');
 
 /**
