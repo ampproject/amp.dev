@@ -17,7 +17,7 @@ import events from '../events/events.js';
 import lazyLoad from '../lazy-load/base.js';
 import {EVENT_SET_RUNTIME} from '../runtime/runtimes.js';
 
-const DEFAULT_VALIDATOR_URL = 'https://cdn.ampproject.org/v0/validator.js';
+const DEFAULT_VALIDATOR_URL = 'https://cdn.ampproject.org/v0/validator_wasm.js';
 
 export const NO_ERRORS = {
   errors: [],
