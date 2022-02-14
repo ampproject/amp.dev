@@ -97,7 +97,7 @@
 		"postcss": "8.3.6",
 		"postcss-css-variables": "0.18.0",
 		"process": "0.11.10",
-		"randomstring": "1.2.1",
+		"randomstring": "1.2.2",
 		"rcs-core": "3.7.0",
 		"rss-to-json": "2.0.2",
 		"shrink-ray-current": "4.1.3",
