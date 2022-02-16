@@ -38,9 +38,6 @@ jobs:
       - name: Setting up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v0
 
-      - name: test gcloud CLI
-        run: gcloud info
-
       - name: Cloning repository
         uses: actions/checkout@v2
 
