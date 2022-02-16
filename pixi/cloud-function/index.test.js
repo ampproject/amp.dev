@@ -6,7 +6,7 @@ class MockResponse {
   }
 }
 
-test('runs amp page experience checks', async () => {
+test.skip('runs amp page experience checks', async () => {
   const req = {
     query: {
       url: 'https://amp.dev',
