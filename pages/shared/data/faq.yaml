@@ -789,6 +789,10 @@ email:
   clients:
     title: Email Clients
     list:
+      - label: FairEmail
+        url: https://email.faircode.eu/
+        image:
+          src: /static/img/email-clients/fairemail.png
       - label: Gmail
         url: https://developers.google.com/gmail/ampemail/
         image:
