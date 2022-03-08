@@ -171,10 +171,10 @@ creation:
     description: Allows publishers to automate the creation of high-quality stories focused on sports content.
     url: https://pendular.io/
     type:  WYSIWYG Editor
-    image: /static/img/tools/pend-c3a1c71e-8f09-4e5b-829f-96ddd6a67d7f.jpg
-      src:
-      width:
-      height:
+    image:
+      src: /static/img/tools/pend-c3a1c71e-8f09-4e5b-829f-96ddd6a67d7f.jpg
+      width: 1340
+      height: 653
     formats:
       - stories
   - name: Visual Stories
