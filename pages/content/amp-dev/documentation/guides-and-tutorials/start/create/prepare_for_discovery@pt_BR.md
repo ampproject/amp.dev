@@ -9,7 +9,7 @@ contributors:
 
 Em alguns casos, você pode querer uma versão não-AMP e uma versão AMP da mesma página, por exemplo, no caso de um artigo de notícia. Considere o seguinte: se a Busca do Google encontrar uma versão não-AMP dessa página, _como saberá que há uma versão AMP dela_?
 
-## Páginas vinculadas com <code><link></code>
+## Páginas vinculadas com `<link>`
 
 Para solucionar esse problema, adicionamos informações sobre a página AMP na página não-AMP e vice-versa, na forma de tags `<link>` no elemento `<head>`.
 

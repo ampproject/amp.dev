@@ -24,7 +24,7 @@ stage:
   subline: DEC 2, 2019
   layout: all
   logo:
-    image_src: '/static/img/success-stories/ameba/ameba-logo.png'
+    src: '/static/img/success-stories/ameba/ameba-logo.png'
     width: 164
     height: 50
     alt: Ameba

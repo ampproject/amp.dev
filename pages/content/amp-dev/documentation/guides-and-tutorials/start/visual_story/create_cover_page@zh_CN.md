@@ -72,7 +72,7 @@ author: bpaduch
 </tr>
 <tr>
     <td width="65%">
-<strong>fill</strong> 模板会使用图层中的第一个子元素填充屏幕。但此图层中的任何其他子元素都不会显示。fill 模板非常适用于添加背景（包括图片和视频）。<code class="nopad"><pre><amp-story-grid-layer template="fill">   <amp-img src="dog.png" width="720" height="1280" layout="responsive">   </amp-img> </amp-story-grid-layer></pre></code>
+<strong>fill</strong> 模板会使用图层中的第一个子元素填充屏幕。但此图层中的任何其他子元素都不会显示。fill 模板非常适用于添加背景（包括图片和视频）。<code class="nopad"><pre>&lt;amp-story-grid-layer template="fill">   &lt;amp-img src="dog.png" width="720" height="1280" layout="responsive">   &lt;/amp-img> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341) }}     </td>
 </tr>
@@ -81,7 +81,7 @@ author: bpaduch
 </tr>
 <tr>
     <td width="65%">
-<strong>vertical</strong> 模板会沿 y 轴放置子元素。这些元素与屏幕顶部对齐，并占据 x 轴方向的整个屏幕。如果想沿竖直方向相继堆叠元素，vertical 模板无疑是不错的选择。<code class="nopad"><pre><amp-story-grid-layer template="vertical">   <p>element 1</p>   <p>element 2</p>   <p>element 3</p> </amp-story-grid-layer></pre></code>
+<strong>vertical</strong> 模板会沿 y 轴放置子元素。这些元素与屏幕顶部对齐，并占据 x 轴方向的整个屏幕。如果想沿竖直方向相继堆叠元素，vertical 模板无疑是不错的选择。<code class="nopad"><pre>&lt;amp-story-grid-layer template="vertical">   &lt;p>element 1&lt;/p>   &lt;p>element 2&lt;/p>   &lt;p>element 3&lt;/p> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341) }}     </td>
 </tr>
@@ -89,7 +89,7 @@ author: bpaduch
     <td colspan="2"><h5 id="horizontal">模板：Horizontal</h5></td>
 </tr>
 <tr>
-    <td width="65%"> <strong>horizontal</strong> 模板会沿 x 轴放置子元素。这些元素会与屏幕起始位置对齐，并且会沿着 y 轴占据整个屏幕。如果想沿水平方向相继堆叠元素，horizontal 模板无疑是不错的选择。<code class="nopad"><pre><amp-story-grid-layer template="horizontal">   <p>element 1</p>   <p>element 2</p>   <p>element 3</p> </amp-story-grid-layer></pre></code>
+    <td width="65%"> <strong>horizontal</strong> 模板会沿 x 轴放置子元素。这些元素会与屏幕起始位置对齐，并且会沿着 y 轴占据整个屏幕。如果想沿水平方向相继堆叠元素，horizontal 模板无疑是不错的选择。<code class="nopad"><pre>&lt;amp-story-grid-layer template="horizontal">   &lt;p>element 1&lt;/p>   &lt;p>element 2&lt;/p>   &lt;p>element 3&lt;/p> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>     {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341) }}     </td>
 </tr>
@@ -98,7 +98,7 @@ author: bpaduch
 </tr>
 <tr>
 <td width="65%">
-<strong>thirds</strong> 模板将屏幕分成大小相等的三行，用于将内容插入每个区域中。此外，您也可以指定一个命名的 <code>grid-area</code>，用于指明要将内容插入哪一个 third 区域：<code>upper-third</code>、<code>middle-third</code> 或 <code>lower-third</code>。命名的网格区域可用于更改元素显示位置的默认行为。例如，如果图层中有两个元素，可以指定第一个元素显示在 <code>grid-area="upper-third"</code> 中，第二个元素显示在 <code>grid-area="lower-third"</code> 中。<code class="nopad"><pre><amp-story-grid-layer template="thirds">   <h1 grid-area="upper-third">element 1</h1>   <p grid-area="lower-third">element 2</p> </amp-story-grid-layer> </pre></code>
+<strong>thirds</strong> 模板将屏幕分成大小相等的三行，用于将内容插入每个区域中。此外，您也可以指定一个命名的 <code>grid-area</code>，用于指明要将内容插入哪一个 third 区域：<code>upper-third</code>、<code>middle-third</code> 或 <code>lower-third</code>。命名的网格区域可用于更改元素显示位置的默认行为。例如，如果图层中有两个元素，可以指定第一个元素显示在 <code>grid-area="upper-third"</code> 中，第二个元素显示在 <code>grid-area="lower-third"</code> 中。<code class="nopad"><pre>&lt;amp-story-grid-layer template="thirds">   &lt;h1 grid-area="upper-third">element 1&lt;/h1>   &lt;p grid-area="lower-third">element 2&lt;/p> &lt;/amp-story-grid-layer> </pre></code>
 </td>
 <td>{{ image('/static/img/docs/tutorials/amp_story/layer-thirds.png', 216, 341) }}</td>
 </tr>

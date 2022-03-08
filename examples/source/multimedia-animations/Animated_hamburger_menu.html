@@ -1,128 +1,203 @@
 <!---
- 
+
 teaserImage: '/static/samples/img/teaser/animated-hamburger-menu.jpg'
 author: CrystalOnScript
- 
+
 --->
 <!-- -->
 <!doctype html>
 <html ⚡ lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Animated hamburger menu</title>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <link rel="canonical" href="<% canonical %>">
   <meta name="viewport" content="width=device-width">
-  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-  <!-- 
-    ## Introduction 
-    Small interactive UI animations communicate state and purpose to users. A common case is a hamburger menu button that animates into an "X" when open. This animation communicates that the user can press the same button again to close the menu. 
+  <style amp-boilerplate>
+    body {
+      -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      animation: -amp-start 8s steps(1, end) 0s 1 normal both
+    }
+
+    @-webkit-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @-moz-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @-ms-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @-o-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+  </style><noscript>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: none;
+        -moz-animation: none;
+        -ms-animation: none;
+        animation: none
+      }
+
+    </style>
+  </noscript>
+  <!--
+    ## Introduction
+    Small interactive UI animations communicate state and purpose to users. A common case is a hamburger menu button that animates into an "X" when open. This animation communicates that the user can press the same button again to close the menu.
 
     ## CSS animations
-    Below is the custom styles and CSS animations for the hamburger menu: 
+    Below is the custom styles and CSS animations for the hamburger menu:
   -->
-    <style amp-custom>
-      .hamburger_wrapper {
-        padding: 5px;
-        z-index: 10;
-      }
+  <style amp-custom>
+    .hamburger_wrapper {
+      padding: 5px;
+      z-index: 10;
+    }
 
-      #hamburger {
-        width: 60px;
-        height: 45px;
-        position: relative;
-        cursor: pointer;
-        outline: none;
+    #hamburger {
+      width: 60px;
+      height: 45px;
+      position: relative;
+      cursor: pointer;
+      outline: none;
 
-      }
-      #hamburger span {
-        display: block;
-        position: absolute;
-        height: 9px;
-        width: 100%;
-        background:#005af0;
-        border-radius: 9px;
-        opacity: 1;
-        left: 0;
-        transform: rotate(0deg);
-        transition: .5s ease-in-out;
-      }
+    }
 
-      #hamburger span:nth-child(1) {
-        top: 0px;
-        transform-origin: left center;
-      }
+    #hamburger span {
+      display: block;
+      position: absolute;
+      height: 9px;
+      width: 100%;
+      background: #005af0;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: .5s ease-in-out;
+    }
 
-      #hamburger span:nth-child(2) {
-        top: 21px;
-        transform-origin: left center;
-      }
+    #hamburger span:nth-child(1) {
+      top: 0px;
+      transform-origin: left center;
+    }
 
-      #hamburger span:nth-child(3) {
-        top: 42px;
-        transform-origin: left center;
-      }
+    #hamburger span:nth-child(2) {
+      top: 21px;
+      transform-origin: left center;
+    }
 
-      #hamburger.close span:nth-child(1) {
-        transform: rotate(45deg);
-      }
+    #hamburger span:nth-child(3) {
+      top: 42px;
+      transform-origin: left center;
+    }
 
-      #hamburger.close span:nth-child(2) {
-        width: 0%;
-        opacity: 0;
-        transition: .1s;
-      }
+    #hamburger.close span:nth-child(1) {
+      transform: rotate(45deg);
+    }
 
-      #hamburger.close span:nth-child(3) {
-        transform: rotate(-45deg);
-      }
-      
-      #nav-menu {
-        position: relative;
-        transform: translateX(-100vw);
-        opacity: 0;
-        z-index: 10;
-        transition: transform .5s ease, opacity ease .2s;
-      }
+    #hamburger.close span:nth-child(2) {
+      width: 0%;
+      opacity: 0;
+      transition: .1s;
+    }
 
-      #nav-menu.now-active {
-        transform: translateX(0);
-        transition: transform .5s ease, opacity ease .2s;
-        opacity: 1;
-        background-color:#eaeaea;
-      }
+    #hamburger.close span:nth-child(3) {
+      transform: rotate(-45deg);
+    }
 
-      .nav-list {
-        padding: 10px;
-        list-style-type: none;
-        font-size: 2em;
-      }
-    </style>
+    #nav-menu {
+      position: relative;
+      transform: translateX(-100vw);
+      opacity: 0;
+      z-index: 10;
+      transition: transform .5s ease, opacity ease .2s;
+    }
+
+    #nav-menu.now-active {
+      transform: translateX(0);
+      transition: transform .5s ease, opacity ease .2s;
+      opacity: 1;
+      background-color: #eaeaea;
+    }
+
+    .nav-list {
+      padding: 10px;
+      list-style-type: none;
+      font-size: 2em;
+    }
+
+  </style>
 </head>
+
 <body>
- 
+
   <!-- ## Markup -->
   <!--
     The hamburger menu element contains three styled `span` elements inside a `div`. The hamburger `div` uses the `tap` AMP action to trigger the `toggleClass()` event, which targets an element by its `id`. In this example, it targets `hamburger`.
 
-    The `toggleClass()` event will add and remove any class it's given as an argument. This example passes `class='close'`. Additionally, it toggles an animation class for the navigation menu to slide out. 
+    The `toggleClass()` event will add and remove any class it's given as an argument. This example passes `class='close'`. Additionally, it toggles an animation class for the navigation menu to slide out.
   -->
- <div>
-  <div class="hamburger_wrapper">
-    <div id="hamburger" tabindex="1" role="button" on="tap:hamburger.toggleClass(class='close'),nav-menu.toggleClass(class='now-active')">
-      <span></span>
-      <span></span>
-      <span></span>
+  <div>
+    <div class="hamburger_wrapper">
+      <div id="hamburger" tabindex="1" role="button"
+        on="tap:hamburger.toggleClass(class='close'),nav-menu.toggleClass(class='now-active')">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div id="nav-menu">
+      <ul class="nav-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Account</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
     </div>
   </div>
-  <div id="nav-menu">
-    <ul class="nav-list">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Account</a></li>
-      <li><a href="#">Products</a></li>
-      <li><a href="#">Support</a></li>
-    </ul>
-  </div>
-<div>
+
 </body>
+
 </html>

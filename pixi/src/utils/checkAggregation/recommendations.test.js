@@ -6,7 +6,6 @@ describe('getRecommendationIds', () => {
   it('returns https', async () => {
     const ids = await getRecommendations(
       Promise.resolve({}),
-      Promise.resolve({}),
       Promise.resolve({
         usesHttps: false,
       }),
@@ -18,7 +17,6 @@ describe('getRecommendationIds', () => {
 
   it('returns valid-cached-amp', async () => {
     const ids = await getRecommendations(
-      Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({
         isValid: false,
@@ -32,7 +30,6 @@ describe('getRecommendationIds', () => {
   it('returns preload-amp-runtime', async () => {
     const ids = await getRecommendations(
       Promise.resolve({}),
-      Promise.resolve({}),
       Promise.resolve({
         runtimeIsPreloaded: false,
       }),
@@ -44,7 +41,6 @@ describe('getRecommendationIds', () => {
 
   it('returns preload-render-blocking-extensions', async () => {
     const ids = await getRecommendations(
-      Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({
         blockingExtensionsPreloaded: false,
@@ -58,7 +54,6 @@ describe('getRecommendationIds', () => {
   it('returns preconnect-google-fonts', async () => {
     const ids = await getRecommendations(
       Promise.resolve({}),
-      Promise.resolve({}),
       Promise.resolve({
         googleFontPreconnect: false,
       }),
@@ -70,7 +65,6 @@ describe('getRecommendationIds', () => {
 
   it('returns use-amp-optimizer', async () => {
     const ids = await getRecommendations(
-      Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({
         isTransformedAmp: false,
@@ -86,7 +80,6 @@ describe('getRecommendationIds', () => {
       Promise.resolve({
         pageExperience: {fieldData: {lcp: {data: {category: 'SLOW'}}}},
       }),
-      Promise.resolve({}),
       Promise.resolve({
         boilerplateIsRemoved: false,
         updateOptimizerForBoilerplateRemoval: false,
@@ -102,7 +95,6 @@ describe('getRecommendationIds', () => {
       Promise.resolve({
         pageExperience: {fieldData: {lcp: {data: {category: 'FAST'}}}},
       }),
-      Promise.resolve({}),
       Promise.resolve({
         boilerplateIsRemoved: false,
         updateOptimizerForBoilerplateRemoval: false,
@@ -116,7 +108,6 @@ describe('getRecommendationIds', () => {
   it('returns upgrade-amp-optimizer (boilerplate removal)', async () => {
     const ids = await getRecommendations(
       Promise.resolve({}),
-      Promise.resolve({}),
       Promise.resolve({
         boilerplateIsRemoved: false,
         updateOptimizerForBoilerplateRemoval: true,
@@ -129,7 +120,6 @@ describe('getRecommendationIds', () => {
 
   it('returns prevent-render-blocking-extensions', async () => {
     const ids = await getRecommendations(
-      Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({
         noRenderBlockingExtension: false,
@@ -145,7 +135,6 @@ describe('getRecommendationIds', () => {
       Promise.resolve({
         pageExperience: {fieldData: {cls: {data: {category: 'SLOW'}}}},
       }),
-      Promise.resolve({}),
       Promise.resolve({
         noDynamicLayoutExtensions: false,
       }),
@@ -160,7 +149,6 @@ describe('getRecommendationIds', () => {
       Promise.resolve({
         pageExperience: {fieldData: {cls: {data: {category: 'FAST'}}}},
       }),
-      Promise.resolve({}),
       Promise.resolve({
         noDynamicLayoutExtensions: false,
       }),
@@ -175,7 +163,6 @@ describe('getRecommendationIds', () => {
       Promise.resolve({
         usesAppropriatelySizedImages: false,
       }),
-      Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({})
     );
@@ -192,7 +179,6 @@ describe('getRecommendationIds', () => {
         },
       }),
       Promise.resolve({}),
-      Promise.resolve({}),
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
@@ -208,7 +194,6 @@ describe('getRecommendationIds', () => {
         textCompression: false,
       }),
       Promise.resolve({}),
-      Promise.resolve({}),
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
@@ -220,7 +205,6 @@ describe('getRecommendationIds', () => {
       Promise.resolve({
         fastServerResponse: false,
       }),
-      Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({})
     );
@@ -234,7 +218,6 @@ describe('getRecommendationIds', () => {
         usesOptimizedImages: false,
       }),
       Promise.resolve({}),
-      Promise.resolve({}),
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
@@ -246,7 +229,6 @@ describe('getRecommendationIds', () => {
       Promise.resolve({
         usesWebpImages: false,
       }),
-      Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({})
     );
@@ -260,29 +242,14 @@ describe('getRecommendationIds', () => {
         minifiedCss: false,
       }),
       Promise.resolve({}),
-      Promise.resolve({}),
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
     expect(ids).toContainEqual({id: 'minify-css'});
   });
 
-  it('returns safe-browsing', async () => {
-    const ids = await getRecommendations(
-      Promise.resolve({}),
-      Promise.resolve({
-        safeBrowsing: false,
-      }),
-      Promise.resolve({}),
-      Promise.resolve({})
-    );
-    expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContainEqual({id: 'safe-browsing'});
-  });
-
   it('returns mobile-friendly', async () => {
     const ids = await getRecommendations(
-      Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({
@@ -295,7 +262,6 @@ describe('getRecommendationIds', () => {
 
   it('returns mobile-friendly', async () => {
     const ids = await getRecommendations(
-      Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({
@@ -313,9 +279,6 @@ describe('getRecommendationIds', () => {
         minifiedCss: false,
       }),
       Promise.resolve({
-        safeBrowsing: false,
-      }),
-      Promise.resolve({
         usesHttps: false,
         isValid: false,
       }),
@@ -323,10 +286,9 @@ describe('getRecommendationIds', () => {
         mobileFriendly: false,
       })
     );
-    expect(ids.length).toBe(fixedRecommendations.length + 6);
+    expect(ids.length).toBe(fixedRecommendations.length + 5);
     expect(ids).toContainEqual({id: 'appropriately-sized-images'});
     expect(ids).toContainEqual({id: 'minify-css'});
-    expect(ids).toContainEqual({id: 'safe-browsing'});
     expect(ids).toContainEqual({id: 'https'});
     expect(ids).toContainEqual({id: 'valid-cached-amp'});
     expect(ids).toContainEqual({id: 'mobile-friendly'});
@@ -335,9 +297,6 @@ describe('getRecommendationIds', () => {
   it('returns fixed recommendations', async () => {
     const ids = await getRecommendations(
       Promise.resolve({}),
-      Promise.resolve({
-        safeBrowsing: true,
-      }),
       Promise.resolve({
         usesHttps: true,
         isValid: true,
@@ -354,7 +313,6 @@ describe('getRecommendationIds', () => {
 
   it('returns no-icon-fonts', async () => {
     const ids = await getRecommendations(
-      Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({
         noIconFontIsUsed: false,

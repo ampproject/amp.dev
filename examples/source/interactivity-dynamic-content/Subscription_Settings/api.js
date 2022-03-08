@@ -40,6 +40,7 @@ examples.get('/subscription', upload.none(), (request, response) => {
       value,
       isSelected: value === currentSubscription,
       text: `${value[0].toUpperCase()}${value.substring(1).replace(/-/g, ' ')}`,
+      imgUrl: `/static/samples/img/${value}`,
     })),
   });
 });

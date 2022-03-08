@@ -871,5 +871,3 @@ Bu uyarı, AMP dokümanında önceden geçerli olan bir AMP özniteliği bulundu
 Bu yalnızca bir uyarıdır: Uyarılar içeren AMP dokümanlarının geçerliliği devam eder.
 
 [AMP doğrulayıcı spesifikasyonunda](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii) `deprecation` terimini arayarak her bir AMP etiketi için kullanımdan kaldırılan öznitelikleri tanımlayın.
-</body>
-</html>

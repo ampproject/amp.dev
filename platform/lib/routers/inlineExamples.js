@@ -26,7 +26,6 @@ const {promisify} = require('util');
 const fs = require('fs');
 const readFileAsync = promisify(fs.readFile);
 const LRU = require('lru-cache');
-const {optimize} = require('@lib/utils/ampOptimizer.js');
 const path = require('path');
 
 // eslint-disable-next-line new-cap
@@ -50,8 +49,6 @@ inlineExamples.get('/*', async (request, response, next) => {
         path.join(project.paths.INLINE_EXAMPLES_DEST, examplePath),
         'utf-8'
       );
-      example = await optimize(request, example);
-      // we can ignore optimizer query params here
       exampleCache.set(examplePath, example);
     }
     response.send(example);

@@ -40,7 +40,7 @@ Neste exemplo, adicionaremos um local de anúncio para veicular anúncios da red
 
 ### Etapa 3: especifique o tamanho do bloco de anúncios
 
-Adicione os atributos `width` e `height` à tag <code><amp-ad></code>. Isso especificará o tamanho do anúncio na página AMP:
+Adicione os atributos `width` e `height` à tag [`amp-ad`](../../../../documentation/components/reference/amp-ad.md). Isso especificará o tamanho do anúncio na página AMP:
 
 ```html
 <amp-ad type="a9"> width="300" height="250" </amp-ad>
@@ -48,7 +48,7 @@ Adicione os atributos `width` e `height` à tag <code><amp-ad></code>. Isso espe
 
 ### Etapa 4: defina os parâmetros da rede de publicidade
 
-Cada rede exige atributos de dados específicos para veicular os anúncios. Consulte a documentação <code><amp-ad></code> da rede de publicidade e adicione os atributos necessários. No exemplo a seguir, a rede a9 exige parâmetros adicionais para especificar o tamanho do anúncio, entre outros detalhes:
+Cada rede exige atributos de dados específicos para veicular os anúncios. Consulte a documentação [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) da rede de publicidade e adicione os atributos necessários. No exemplo a seguir, a rede a9 exige parâmetros adicionais para especificar o tamanho do anúncio, entre outros detalhes:
 
 ```html
 <amp-ad

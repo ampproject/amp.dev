@@ -40,7 +40,7 @@ staticText:
       action: 対応策
   additionalChecks:
     headline: その他のチェック
-    safeBrowsing: セーフブラウジング
+    
     https: HTTPS
     mobileFriendliness: モバイルフレンドリー
     intrusiveInterstitials: 侵入型インタースティシャル
@@ -80,8 +80,8 @@ scriptText:
     cls: CLS
     https: HTTPS
     mobileFriendliness: モバイル対応
-    safeBrowsing: セーフブラウジング
+    
     intrusiveInterstitials: 侵入型インタースティシャル
 ---
 
-AMP ページのエクスペリエンスガイドは、AMP 開発者が Google 検索ページのエクスペリエンスランキングシグナルに対する AMP ページのパフォーマンスを計測できるツールです。フィードバックとして、解析結果に基づく対応策が提示されます。対応策が推奨されない場合は、表示されるプロンプトに従って [GitHub に課題を提出](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue)してください。AMP ページの改善方法について、チームがご相談を承ります。使用する API は、[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=ja)、[Safe Browsing](https://developers.google.com/safe-browsing/v4/lookup-api?hl=ja)、および [Mobile-friendliness Test](https://search.google.com/test/mobile-friendly?hl=ja) など、一般公開されている API です。
+AMP ページのエクスペリエンスガイドは、AMP 開発者が Google 検索ページのエクスペリエンスランキングシグナルに対する AMP ページのパフォーマンスを計測できるツールです。フィードバックとして、解析結果に基づく対応策が提示されます。対応策が推奨されない場合は、表示されるプロンプトに従って [GitHub に課題を提出](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue)してください。AMP ページの改善方法について、チームがご相談を承ります。使用する API は、[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=ja)、[Mobile-friendliness Test](https://search.google.com/test/mobile-friendly?hl=ja) など、一般公開されている API です。

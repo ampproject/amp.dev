@@ -43,7 +43,7 @@ const DESTINATION_BASE_PATH =
 const FORMATS = ['AMP', 'AMP4ADS', 'AMP4EMAIL'];
 
 // ... this path
-const BUILT_IN_PATH = 'builtins';
+const BUILT_IN_PATH = 'src/builtins';
 const AMP_STORY_TAG = 'amp-story';
 const MARKDOWN_EXTENSION = '.md';
 
@@ -74,6 +74,7 @@ class ComponentReferenceImporter {
       if (growDoc.bento) {
         bentoComponents.set(growDoc.title, {
           name: growDoc.title,
+          bentoName: growDoc.title.replace('amp-', 'bento-'),
           experimental: growDoc.experimental,
           path:
             growDoc.servingPath ||
@@ -87,6 +88,7 @@ class ComponentReferenceImporter {
       const bentoComponent = bentoComponents.get(growDoc.title);
       if (bentoComponent) {
         growDoc.bentoPath = bentoComponent.path;
+        growDoc.bentoDocUrl = `https://bentojs.dev/components/${bentoComponent.bentoName}/`;
       }
 
       const latestStableComponent = latestStableComponents[growDoc.title];

@@ -39,7 +39,7 @@ Content on [amp.dev](https://amp.dev) is how developers learn to build successfu
 
  Documentation? We've got all sorts -- examples for uses of AMP, tutorials to get developers started, and guides to explore AMP's features. 
 
-[amp.dev](https://amp.dev) is where most people get familiar with AMP.  You can contribute to documentation in the [ampproject docs GitHub project](https://github.com/ampproject/docs).  (You can even make [the page you are reading](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md) better!
+[amp.dev](https://amp.dev) is where most people get familiar with AMP.  You can contribute to documentation in the [ampproject docs GitHub project](https://github.com/ampproject/docs).  (You can even make [the page you are reading](https://github.com/ampproject/amp.dev/blob/future/pages/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md) better!
 
 Get started by reading our [content contribution guide](contribute-documentation/index.md?format=websites).
 

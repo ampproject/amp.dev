@@ -229,22 +229,22 @@ Esta etiqueta genera el error de validación de AMP que se muestra en estas dife
 * Developers Console para el navegador
 <amp-img src="/static/img/docs/validator_console_imgerror.png"
          width="696" height="30" layout="responsive"
-         alt="Error de AMP: La etiqueta "img" solo puede depender de la etiqueta
-         "noscript". ¿Querías decir "amp-img"? línea 11, columna 2">
+         alt="Error de AMP: La etiqueta &quot;img&quot; solo puede depender de la etiqueta
+         &quot;noscript&quot;. ¿Querías decir &quot;amp-img&quot;? línea 11, columna 2">
 </amp-img>
 
 * Interfaz web
 <amp-img src="/static/img/docs/validator_webui_imgerror.png"
          width="676" height="58" layout="responsive"
-         alt="Error de AMP: La etiqueta "img" solo puede depender de la etiqueta
-         "noscript". ¿Querías decir "amp-img"? línea 11, columna 2">
+         alt="Error de AMP: La etiqueta &quot;img&quot; solo puede depender de la etiqueta
+         &quot;noscript&quot;. ¿Querías decir &quot;amp-img&quot;? línea 11, columna 2">
 </amp-img>
 
 * Extensión del navegador
 <amp-img src="/static/img/docs/validator_extension_imgerror.png"
          width="724" height="108" layout="responsive"
-         alt="Error de AMP: La etiqueta "img" solo puede depender de la etiqueta
-         "noscript". ¿Querías decir "amp-img"? línea 11, columna 2">
+         alt="Error de AMP: La etiqueta &quot;img&quot; solo puede depender de la etiqueta
+         &quot;noscript&quot;. ¿Querías decir &quot;amp-img&quot;? línea 11, columna 2">
 </amp-img>
 
 Cada herramienta ofrece varios fragmentos de información:

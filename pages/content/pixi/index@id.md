@@ -40,7 +40,7 @@ staticText:
       action: Ambil tindakan
   additionalChecks:
     headline: Pemeriksaan tambahan
-    safeBrowsing: Penelusuran Aman
+    
     https: HTTPS
     mobileFriendliness: Kemudahan Seluler
     intrusiveInterstitials: Pengantara yang Mengganggu
@@ -80,8 +80,8 @@ scriptText:
     cls: CLS
     https: HTTPS
     mobileFriendliness: Kemudahan seluler
-    safeBrowsing: Penelusuran aman
+    
     intrusiveInterstitials: Pengantara yang Mengganggu
 ---
 
-Panduan pengalaman halaman AMP adalah alat yang menunjukkan kepada pengembang AMP bagaimana kinerja halaman AMP mereka pada sinyal peringkat pengalaman halaman Google Search, dan memberikan umpan balik yang dapat ditindaklanjuti tentang bagaimana mereka dapat lebih baik. Jika kami tidak dapat memberi Anda wawasan yang dapat ditindaklanjuti, gunakan petunjuk yang tersedia untuk [mengajukan masalah di GitHub](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue) agar tim kami dapat membantu Anda memahami bagaimana halaman AMP Anda dapat ditingkatkan. Kami menggunakan API yang tersedia untuk umum, seperti [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=id), [Safe Browsing](https://developers.google.com/safe-browsing/v4/lookup-api?hl=id), dan [Mobile-friendliness Test](https://search.google.com/test/mobile-friendly?hl=id).
+Panduan pengalaman halaman AMP adalah alat yang menunjukkan kepada pengembang AMP bagaimana kinerja halaman AMP mereka pada sinyal peringkat pengalaman halaman Google Search, dan memberikan umpan balik yang dapat ditindaklanjuti tentang bagaimana mereka dapat lebih baik. Jika kami tidak dapat memberi Anda wawasan yang dapat ditindaklanjuti, gunakan petunjuk yang tersedia untuk [mengajukan masalah di GitHub](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue) agar tim kami dapat membantu Anda memahami bagaimana halaman AMP Anda dapat ditingkatkan. Kami menggunakan API yang tersedia untuk umum, seperti [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?hl=id), dan [Mobile-friendliness Test](https://search.google.com/test/mobile-friendly?hl=id).

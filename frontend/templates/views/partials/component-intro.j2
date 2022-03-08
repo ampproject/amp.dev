@@ -9,7 +9,7 @@
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#speech-bubble"> </use></svg>
     </div>
     <div class="ap-m-tip-content">
-      You can now use this component outside valid AMP documents using the <a href="{{ doc.bentoPath }}">experimental Bento version of this component</a>. Learn more in our <a href="../../guides-and-tutorials/start/bento_guide.md">Bento guide</a>.
+      You can now use this component outside valid AMP documents using the <a href="{{ doc.bentoDocUrl }}">Bento version of this component</a>. Learn more in the <a href="https://bentojs.dev/get-started/">Bento guide</a>.
     </div>
   </div>
   {% endif %}
@@ -26,11 +26,11 @@
     {% if doc.bento %}
     <div class="ap-o-component-intro-filter">
       <label>
-        <input type="radio" name="format-switch"
+        <input type="radio" role="radio" tabindex="0" name="format-switch"
           on="tap:bento-script.hide,amp-script.show" checked>AMP
       </label>
       <label>
-        <input type="radio" name="format-switch"
+        <input type="radio" role="radio" tabindex="0" name="format-switch"
           on="tap:amp-script.hide,bento-script.show">Bento (Standalone)
       </label>
     </div>

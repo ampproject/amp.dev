@@ -109,7 +109,7 @@ Per migliorare ulteriormente una storia web, è possibile applicare elementi ani
 </tbody>
 </table>
 
-Per applicare un ingresso animato a un elemento occorre indicare l'attributo <code>animate-in="<em data-md-type="raw_html"><animation data-md-type="raw_html" preset></animation></em>"</code> con uno dei valori delle animazioni preimpostate. Ad esempio per far scendere del testo in una pagina, aggiungere l'attributo `animate-in="drop"` all'elemento di testo:
+Per applicare un ingresso animato a un elemento occorre indicare l'attributo <code>animate-in="<em>&lt;animation preset></em>"</code> con uno dei valori delle animazioni preimpostate. Ad esempio per far scendere del testo in una pagina, aggiungere l'attributo `animate-in="drop"` all'elemento di testo:
 
 ```html
 <amp-story-page id="page3">

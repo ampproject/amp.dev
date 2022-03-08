@@ -430,13 +430,13 @@ Autorzy mogą dołączać wszystkie czcionki niestandardowe za pomocą reguły <
 
 Środowisko uruchomieniowe AMP to JavaScript, który działa wewnątrz każdego dokumentu AMP. Zapewnia on implementacje niestandardowych elementów AMP, zarządza ładowaniem zasobów i nadawaniem priorytetów oraz opcjonalnie zawiera walidatora środowiska uruchomieniowego AMP HTML do użytku podczas tworzenia.
 
-Środowisko uruchomieniowe AMP jest ładowane za pomocą obowiązkowego znacznika `<script src="https://cdn.ampproject.org/v0.js"></script>` w sekcji <code><head></code> dokumentu AMP.
+Środowisko uruchomieniowe AMP jest ładowane za pomocą obowiązkowego znacznika `<script src="https://cdn.ampproject.org/v0.js"></script>` w sekcji `<head>` dokumentu AMP.
 
 Środowisko uruchomieniowe AMP można umieszczać w każdej stronie w trybie programistycznym. Tryb programistyczny wyzwoli walidację AMP w osadzonej stronie, co spowoduje wyświetlenie statusu walidacji i ewentualnych błędów w konsoli programistycznej JavaScript. Tryb programistyczny można wywoływać poprzez dołączenie parametru `#development=1` do adresu URL strony.
 
 ## Zasoby <a name="resources"></a>
 
-Zasoby takie jak obrazy, filmy, pliki audio lub reklamy muszą być włączane do pliku AMP HTML za pomocą elementów niestandardowych, takich jak <code><amp-img></code>. Nazywamy je „zasobami zarządzanymi”, ponieważ o tym, czy i kiedy zostaną załadowane i wyświetlone użytkownikowi, decyduje środowisko uruchomieniowe AMP.
+Zasoby takie jak obrazy, filmy, pliki audio lub reklamy muszą być włączane do pliku AMP HTML za pomocą elementów niestandardowych, takich jak `<amp-img>`. Nazywamy je „zasobami zarządzanymi”, ponieważ o tym, czy i kiedy zostaną załadowane i wyświetlone użytkownikowi, decyduje środowisko uruchomieniowe AMP.
 
 Nie ma żadnych szczególnych gwarancji co do sposobu działania ładowania środowiska uruchomieniowego AMP, ale generalnie powinno się w miarę możliwości dążyć do ładowania zasobów na tyle szybko, aby zostały one załadowane do chwili, w której użytkownik chciałby je zobaczyć. Środowisko uruchomieniowe powinno nadać priorytet zasobom aktualnie znajdującym się w okienku na ekranie i starać się odpowiednio przewidzieć zmiany w tym okienku, aby wstępnie załadować zasoby.
 

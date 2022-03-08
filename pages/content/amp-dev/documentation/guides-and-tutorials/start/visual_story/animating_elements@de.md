@@ -109,7 +109,7 @@ Du kannst deine Web Story noch weiter verbessern, indem du Eingangsanimationen f
 </tbody>
 </table>
 
-Um eine Eingangsanimations auf ein Element anzuwenden, musst du <code>animate-in="<em data-md-type="raw_html"><animation data-md-type="raw_html" preset></animation></em>"</code> mit einem der voreingestellten Animationswerte angeben. Wenn du z. B. willst, dass Text von oben in die Seite fällt, füge dem Textelement `animate-in="drop"` hinzu:
+Um eine Eingangsanimations auf ein Element anzuwenden, musst du <code>animate-in="<em>&lt;animation preset></em>"</code> mit einem der voreingestellten Animationswerte angeben. Wenn du z. B. willst, dass Text von oben in die Seite fällt, füge dem Textelement `animate-in="drop"` hinzu:
 
 ```html
 <amp-story-page id="page3">

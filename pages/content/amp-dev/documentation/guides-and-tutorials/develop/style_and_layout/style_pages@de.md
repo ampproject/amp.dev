@@ -40,7 +40,7 @@ The following styles aren’t allowed in AMP pages:
       <td data-th="Description">Die Verwendung und das Verweisen auf <code>!important</code> sind nicht zulässig.       Dies ist eine notwendige Voraussetzung, damit AMP eigene Regeln für die Elementgröße durchsetzen kann.</td>
     </tr>
     <tr>
-      <td data-th="Banned style"><code><link rel=”stylesheet”></code></td>
+      <td data-th="Banned style"><code>&lt;link rel=”stylesheet”></code></td>
       <td data-th="Description">Mit Ausnahme von <a href="#the-custom-fonts-exception">benutzerdefinierten Schriftarten</a> nicht zulässig.</td>
     </tr>
     <tr>

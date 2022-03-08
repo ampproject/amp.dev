@@ -51,7 +51,7 @@ author: bpaduch
       <ul>
       <li>包含 3 个图层：       <ul>         <li> <b>第 1 个图层</b>：实施 <a href="create_cover_page.md#fill"><code>fill</code></a> 模板，并包含一个自适应 <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a>（<code class="filename">bird.jpg</code>，大小为 720 x 1280px）。</li>         <li> <b>第 2 个图层</b>：实施 <a href="create_cover_page.md#vertical"><code>vertical</code></a> 模板，并包含 1 个元素：           <ul>             <li>1 个 <code><h1></code> 元素，标题为：小鸟</li>           </ul>         </li>         <li> <b>第 3 个图层</b>：实施 <a href="create_cover_page.md#vertical"><code>vertical</code></a> 模板，并包含 1 个元素：           <ul>             <li>1 个 <code><q></code> 元素，用于引用以下语录：鸟有三宝：羽毛、飞行的本领和歌声，其中羽毛是最次要的。--玛乔丽·艾伦·塞弗特</li>             <li>第三个图层指定 <code>class="bottom"</code>，以将子元素与屏幕底部对齐。           </li> </ul>         </li>       </ul>
 </li>
-      <li>网页显示时在后台播放音频文件。您可以在后台针对整个故事或单个网页播放音频。要针对某个网页播放音频，请将 <code>background-audio="assets/bird-singing.mp3"</code> 属性添加到 <code><amp-story-page></code> 元素中。</li>
+      <li>网页显示时在后台播放音频文件。您可以在后台针对整个故事或单个网页播放音频。要针对某个网页播放音频，请将 <code>background-audio="assets/bird-singing.mp3"</code> 属性添加到 <code>&lt;amp-story-page></code> 元素中。</li>
       </ul>
     </td>
     <td>{{ image('/static/img/docs/tutorials/amp_story/pg3-birds.png', 720, 1280, alt='第 3 页 - 小鸟' ) }}</td>

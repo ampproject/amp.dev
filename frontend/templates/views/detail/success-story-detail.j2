@@ -19,7 +19,7 @@
           <div class="ap-o-stage-content">
             {% if doc.stage.logo %}
             <div class="ap-a-img ap-a-img-static stage-logo">
-              <amp-img src="{{doc.stage.logo.image_src}}" layout="responsive" height="{{ doc.stage.logo.height }}" width="{{ doc.stage.logo.width }}" alt="placeholder" />
+              <amp-img src="{{doc.stage.logo.src}}" layout="responsive" height="{{ doc.stage.logo.height }}" width="{{ doc.stage.logo.width }}" alt="placeholder" />
             </div>
             {% endif %}
             {% if doc.stage.subline %}
@@ -250,9 +250,11 @@
                 {% do doc.icons.useIcon('icons/quote.svg') %}
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
               </div>
+                {% if content.image_src %}
                 <div class="ap-a-img ap-a-img-static fixed-container">
                   <amp-img class="contain" src="{{content.image_src}}" layout="fill" alt="placeholder" />
                 </div>
+                {% endif %}
             </div>
             <div class="ap-m-quote-quote">
               <blockquote>

@@ -26,7 +26,7 @@ The following markup is a basic AMP page.
 ```
 [/example]
 
-The body content is pretty straightforward, but there’s some additional code in the head. The required markdown is broken down in the table below. Each AMP HTML document must:
+The body content is pretty straightforward, but there’s some additional code in the head. The required markup is broken down in the table below. Each AMP HTML document must:
 
 <table>
   <tr>
@@ -60,7 +60,7 @@ The body content is pretty straightforward, but there’s some additional code i
    </td>
   </tr>
   <tr>
-   <td>Contain a <code>&lt;script async src="https://cdn.ampproject.org/v0.js">&lt;/script></code<>> tag inside the <code>&lt;head></code> tag. As a best practice, you should include the script as early as possible.
+   <td>Contain a <code>&lt;script async src="https://cdn.ampproject.org/v0.js">&lt;/script></code> tag inside the <code>&lt;head></code> tag. As a best practice, you should include the script as early as possible.
    </td>
    <td>Includes and loads the AMP JS library.
    </td>

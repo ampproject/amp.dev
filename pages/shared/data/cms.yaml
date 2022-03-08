@@ -7,9 +7,9 @@ cmsUsers:
 
   - image:
       src: '/static/img/docs/guides/cms_logos/arcpublishing.jpg'
-      alt: Arc Publishing
-    label: Arc Publishing
-    url: https://www.arcpublishing.com/
+      alt: Arc XP
+    label: Arc XP
+    url: https://www.arcxp.com/
 
   - image:
       src: '/static/img/docs/guides/cms_logos/canvas.jpg'

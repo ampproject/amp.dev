@@ -46,3 +46,4 @@
 /community/platform-and-vendor-partners: /support/faq/platform-and-vendor-partners/
 /examples/source/user-consent/basic_user_consent_flow: /examples/source/user-consent/client_side_user_consent_flow/
 /documentation/guides-and-tutorials/optimize-and-measure/server-side-rendering/: /documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/
+/documentation/guides-and-tutorials/start/bento_guide/: https://bentojs.dev/get-started/

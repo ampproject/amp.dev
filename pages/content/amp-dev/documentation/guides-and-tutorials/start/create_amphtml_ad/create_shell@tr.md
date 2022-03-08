@@ -53,7 +53,7 @@ AMPHTML reklam öğeleri, AMP sayfalarından farklı ve oldukça basit bir [stan
 </style>
 ```
 
-AMPHTML reklamınızı biçimlendirmek için CSS'nizin `<head>` bölümündeki `<style amp-custom></style>` etiketleri kullanılarak AMPHTML belgesine satır içi olarak yerleştirilmesi gerekir. Temel bir görüntü reklamı oluşturduğumuz için herhangi bir CSS'ye ihtiyacımız olmadığından bu etiketleri eklemeyeceğiz.
+AMPHTML reklamınızı biçimlendirmek için CSS'nizin `<head>` bölümündeki `<style amp-custom>` etiketleri kullanılarak AMPHTML belgesine satır içi olarak yerleştirilmesi gerekir. Temel bir görüntü reklamı oluşturduğumuz için herhangi bir CSS'ye ihtiyacımız olmadığından bu etiketleri eklemeyeceğiz.
 
 [tip type="note"] **NOT -** AMPHTML reklamları için satır içi stil sayfasının maksimum boyutu _20 kilobayttır_. [AMPHTML reklam teknik özelliklerinde CSS gereksinimleri](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#css) hakkında daha fazla bilgi edinin. [/tip]
 

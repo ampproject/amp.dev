@@ -40,7 +40,7 @@ staticText:
       action: Выполнить действие
   additionalChecks:
     headline: Дополнительные проверки
-    safeBrowsing: Безопасный просмотр
+    
     https: HTTPS
     mobileFriendliness: Оптимизация под мобильные устройства
     intrusiveInterstitials: Навязчивая межстраничная реклама
@@ -80,8 +80,8 @@ scriptText:
     cls: CLS
     https: HTTPS
     mobileFriendliness: Оптимизация под мобильные устройства
-    safeBrowsing: Безопасный просмотр
+    
     intrusiveInterstitials: Навязчивая межстраничная реклама
 ---
 
-Помощник по созданию удобных AMP-страниц позволяет AMP-разработчикам понять, как ранжируются их страницы в  рейтинге удобства страниц, который применяется в Поиске Google, и предоставляет рекомендации о том, как можно повысить их позицию в рейтинге. Если получить рекомендации автоматически не удалось, программа позволит вам [создать задачу на GitHub](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue), чтобы привлечь к рассмотрению вопроса нашу команду. Мы используем открытые API, такие как [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/), [Safe Browsing](https://developers.google.com/safe-browsing/v4/lookup-api) и [Mobile-friendliness Test](https://search.google.com/test/mobile-friendly).
+Помощник по созданию удобных AMP-страниц позволяет AMP-разработчикам понять, как ранжируются их страницы в  рейтинге удобства страниц, который применяется в Поиске Google, и предоставляет рекомендации о том, как можно повысить их позицию в рейтинге. Если получить рекомендации автоматически не удалось, программа позволит вам [создать задачу на GitHub](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue), чтобы привлечь к рассмотрению вопроса нашу команду. Мы используем открытые API, такие как [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/), и [Mobile-friendliness Test](https://search.google.com/test/mobile-friendly).

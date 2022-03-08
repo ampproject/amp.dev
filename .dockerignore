@@ -15,17 +15,10 @@ CONTRIBUTING.md
 packager/
 thumbor/
 
-# The complete frontend and pages folders aren't needed on App Engine
-/frontend/
-/pages
-# The transformed pages from dist/pages are used instead
-platform/pages*
-
 # Infrastructure
 contributing
 jest.config.js
 smoke-tests
 renovate.json
-gulpfile.js
 scripts
 tests

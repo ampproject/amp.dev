@@ -9,7 +9,7 @@ contributors:
 
 Dans certains cas, vous pouvez avoir besoin de deux versions (non-AMP et AMP) de la même page. Par exemple, pour un article d'actualités. Supposons ceci : si la recherche Google trouve la version non-AMP de cette page, <em>comment sait-elle qu'il en existe également une version AMP</em>?
 
-## Lier des pages avec <code><link></code>
+## Lier des pages avec `<link>`
 
 Pour établir qu'une page non-AMP et une page AMP doivent être traitées comme étant "associées", nous ajoutons des informations de la page AMP à la page non-AMP et vice versa, sous la forme de balises `<link>` dans la section `<head>`.
 

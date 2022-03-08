@@ -16,7 +16,7 @@ Các hướng dẫn và thực hành được gửi trong [Markdown](https://www
 
 Nội dung trên amp.dev được kéo từ hai kho lưu trữ, [amp.dev](https://github.com/ampproject/amp.dev) và [AMPHTML](https://github.com/ampproject/amphtml). Mọi tài liệu tham khảo trong các thành phần đều được kéo từ AMPHTML, từ các thành phần tích hợp hoặc mở rộng.
 
-- [Thành phần tích hợp ](https://github.com/ampproject/amphtml/tree/main/builtins)
+- [Thành phần tích hợp ](https://github.com/ampproject/amphtml/tree/main/src/builtins)
 - [Thành phần](https://github.com/ampproject/amphtml/tree/main/extensions)
 - [Khóa học](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/courses)
 - [Ví dụ](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/examples)
@@ -227,25 +227,26 @@ Sử dụng xem trước top-frame mỗi khi bạn cần quy định các yếu 
 
 Quan trọng: Không thêm bất kỳ đoạn code soạn sẵn AMP nào vào phần đầu mục bởi nó sẽ được thêm tự động tùy vào định dạng AMP. Chỉ thêm các yếu tố mà code mẫu cần vào đầu mục!
 
-<div class="ap-m-code-snippet"><pre>[example preview="top-frame"
+<div class="ap-m-code-snippet"><pre>
+  &#91;example preview="top-frame"
          playground="true"]
     ```html
-    <head>
-      <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
-      <style amp-custom>
+    &lt;head&gt;
+      &lt;script async custom-element=&quot;amp-youtube&quot; src=&quot;https://cdn.ampproject.org/v0/amp-youtube-0.1.js&quot;&gt;&lt;/script&gt;
+      &lt;style amp-custom&gt;
         body {
           background: red;
         }
-      </style>
-    </head>
-    <body>
-      <h1>Hello AMP</h1>
-      <amp-youtube width="480"
-        height="270"
-        layout="responsive"
-        data-videoid="lBTCB7yLs8Y">
-      </amp-youtube>
-    </body>
+      &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;h1&gt;Hello AMP&lt;/h1&gt;
+      &lt;amp-youtube width=&quot;480&quot;
+        height=&quot;270&quot;
+        layout=&quot;responsive&quot;
+        data-videoid=&quot;lBTCB7yLs8Y&quot;&gt;
+      &lt;/amp-youtube&gt;
+    &lt;/body&gt;
     ```
   [/example]</pre></div>
 
@@ -285,38 +286,39 @@ playground="true"]
 
 Sử dụng `preview="top-frame"` cùng với `orientation="portrait"` để xem trước các Câu chuyện AMP.
 
-<div class="ap-m-code-snippet"><pre>[example preview="top-frame"
+<div class="ap-m-code-snippet"><pre>
+  &#91;example preview="top-frame"
          orientation="portrait"
          playground="true"]
     ```html
-    <head>
-      <script async custom-element="amp-story"
-          src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-      <style amp-custom>
+    &lt;head&gt;
+      &lt;script async custom-element=&quot;amp-story&quot;
+          src=&quot;https://cdn.ampproject.org/v0/amp-story-1.0.js&quot;&gt;&lt;/script&gt;
+      &lt;style amp-custom&gt;
         body {
           font-family: 'Roboto', sans-serif;
         }
         amp-story-page {
           background: white;
         }
-      </style>
-    </head>
-    <body>
-      <amp-story standalone>
-        <amp-story-page id="cover">
-          <amp-story-grid-layer template="vertical">
-            <h1>Hello World</h1>
-            <p>This is the cover page of this story.</p>
-          </amp-story-grid-layer>
-        </amp-story-page>
-        <amp-story-page id="page-1">
-          <amp-story-grid-layer template="vertical">
-            <h1>First Page</h1>
-            <p>This is the first page of this story.</p>
-          </amp-story-grid-layer>
-        </amp-story-page>
-      </amp-story>
-    </body>
+      &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;amp-story standalone&gt;
+        &lt;amp-story-page id=&quot;cover&quot;&gt;
+          &lt;amp-story-grid-layer template=&quot;vertical&quot;&gt;
+            &lt;h1&gt;Hello World&lt;/h1&gt;
+            &lt;p&gt;This is the cover page of this story.&lt;/p&gt;
+          &lt;/amp-story-grid-layer&gt;
+        &lt;/amp-story-page&gt;
+        &lt;amp-story-page id=&quot;page-1&quot;&gt;
+          &lt;amp-story-grid-layer template=&quot;vertical&quot;&gt;
+            &lt;h1&gt;First Page&lt;/h1&gt;
+            &lt;p&gt;This is the first page of this story.&lt;/p&gt;
+          &lt;/amp-story-grid-layer&gt;
+        &lt;/amp-story-page&gt;
+      &lt;/amp-story&gt;
+    &lt;/body&gt;
     ```
   [/example]</pre></div>
 

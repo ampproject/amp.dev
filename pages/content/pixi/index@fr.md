@@ -40,7 +40,7 @@ staticText:
       action: "Passer à l'action"
   additionalChecks:
     headline: Contrôles supplémentaires
-    safeBrowsing: Navigation sécurisée
+    
     https: HTTPS
     mobileFriendliness: Convivialité mobile
     intrusiveInterstitials: Interstitiels intrusifs
@@ -80,7 +80,7 @@ scriptText:
     cls: CLS
     https: HTTPS
     mobileFriendliness: Convivialité mobile
-    safeBrowsing: Navigation sécurisée
+    
     intrusiveInterstitials: Interstitiels intrusifs
 ---
 

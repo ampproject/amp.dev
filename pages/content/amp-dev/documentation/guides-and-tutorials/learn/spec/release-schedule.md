@@ -44,7 +44,7 @@ The [AMPHTML Validator](https://github.com/ampproject/amphtml/tree/main/validato
 
 The AMP runtime and extensions are provided through a variety of different _release channels_. Each channel serves a purpose for developers and for the AMP HTML Project itself. See the [release cadence section](#release-cadence) for a more detailed breakdown of how and when code from the [`ampproject/amphtml`](https://github.com/ampproject/amphtml) repository makes it into release builds.
 
-To determine if a PR has been included in any of the following release channels, look for the GitHub labels _PR Use: In Canary_, _PR Use: In Production_, or _PR Use: In LTS_ (see the section on [determining if your change is in a release](#determining-if-your-change-is-in-a-release) for more details).
+To determine if a PR has been included in any of the following release channels, look for the GitHub labels _PR Use: In Canary_, _PR Use: In Production_, or _PR Use: In LTS_ (see the section on [determining if your change is in a release](#Determining-if-your-change-is-in-a-release) for more details).
 
 ### Nightly <a name="nightly"></a>
 
@@ -86,16 +86,16 @@ The **lts** release channel provides a previous **stable** build for one-month i
 
 If the second Monday of the month falls on a holiday, the promotion will be performed after the end of the [release freeze](#release-freezes).
 
-Important: Publishers using the **lts** release channel should not use newly introduced features. Because of the longer cycle, the **lts** release may be as much as seven weeks behind the `HEAD` of [`ampproject/amphtml`](https://github.com/ampproject/amphtml). See the section on [determining if your change is in a release](#determining-if-your-change-is-in-a-release) to validate if a change will be ready with your chosen release cycle.
+Important: Publishers using the **lts** release channel should not use newly introduced features. Because of the longer cycle, the **lts** release may be as much as seven weeks behind the `HEAD` of [`ampproject/amphtml`](https://github.com/ampproject/amphtml). See the section on [determining if your change is in a release](#Determining-if-your-change-is-in-a-release) to validate if a change will be ready with your chosen release cycle.
 
 ## Determining if your change is in a release <a name="determining-if-your-change-is-in-a-release"></a>
 
 [_Type: Release_ GitHub issues](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) are used to track the status of current and past releases; from the initial cut, to testing via **experimental**/**beta** channels, to eventual release via the **stable** and **lts** channels. Announcements about releases are made on the [AMP Slack #release channel](https://amphtml.slack.com/messages/C4NVAR0H3/) ([sign up for Slack](https://bit.ly/amp-slack-signup)).
 
-You can determine what changes are in a given build using one of the following:
+You can determine what changes are in a given release using one of the following:
 
--   The [_Type: Release_ GitHub issues](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) for each release build will include a link to the specific [release page](https://github.com/ampproject/amphtml/releases) listing the changes contained in that release.
--   The [_PR Use: In Beta / Experimental_](https://github.com/ampproject/amphtml/issues?q=label%3A%22PR+use%3A+In+Beta+%2F+Experimental%22), [_PR Use: In Stable_](https://github.com/ampproject/amphtml/issues?utf8=%E2%9C%93&q=label%3A%22PR%20use%3A%20In%20Production%22), and [_PR Use: In LTS_](https://github.com/ampproject/amphtml/issues?utf8=%E2%9C%93&q=label%3A%22PR%20use%3A%20In%20LTS%22) labels are added to PRs when they've made it into a _weekly_ or **lts** build. There may be a delay between when the build is created and when the label is added.
+-   The [_Type: Release_ GitHub issues](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) for each release will include a link to the specific [release page](https://github.com/ampproject/amphtml/releases) listing the changes contained in that release.
+-   The [_PR Use: In Beta / Experimental_](https://github.com/ampproject/amphtml/issues?q=label%3A%22PR+use%3A+In+Beta+%2F+Experimental%22), [_PR Use: In Stable_](https://github.com/ampproject/amphtml/issues?utf8=%E2%9C%93&q=label%3A%22PR%20use%3A%20In%20Production%22), and [_PR Use: In LTS_](https://github.com/ampproject/amphtml/issues?utf8=%E2%9C%93&q=label%3A%22PR%20use%3A%20In%20LTS%22) labels are added to PRs when they've made it into a _weekly_ or **lts** release. There may be a delay between when the release is created and when the label is added.
 
 ## Release Cadence <a name="release-cadence"></a>
 
@@ -114,10 +114,10 @@ After considering all of these factors, we have arrived at the 1-2 week push cyc
 We try to stick to this schedule as closely as possible, though complications may cause delays. You can track the latest status about any release in the [_Type: Release_ GitHub issues](https://github.com/ampproject/amphtml/labels/Type%3A%20Release) and the [AMP Slack #release channel](https://amphtml.slack.com/messages/C4NVAR0H3/) ([sign up for Slack](https://bit.ly/amp-slack-signup)).
 
 -   Every weeknight: a new **nightly** build is automatically cut and released to the [AMP Nightly Channel](#nightly).
--   Tuesday @ [11am Pacific](https://www.google.com/search?q=11am+pacific+in+current+time+zone): new **experimental** and **beta** release builds are created from a recent known-good nightly channel release and are pushed to users who opted into the [AMP Experimental Channel](#amp-experimental-and-beta-channels) or [AMP Beta Channel](#amp-experimental-and-beta-channels), respectively.
+-   Tuesday @ [11am Pacific](https://www.google.com/search?q=11am+pacific+in+current+time+zone): new **experimental** and **beta** releases are created from a recent known-good nightly channel release and are served to users who opted into the [AMP Experimental Channel](#amp-experimental-and-beta-channels) or [AMP Beta Channel](#amp-experimental-and-beta-channels), respectively.
 -   Wednesday: we check bug reports for _Experimental Channel_ and _Beta Channel_ users and if everything looks fine, we push the **beta** to 1% of AMP pages
 -   Thursday-Monday: we continue to monitor error rates and bug reports for _Experimental Channel_ and _Beta Channel_ users and the 1% of pages with the **experimental**/**beta** builds
--   Tuesday the following week: the **beta** build is fully promoted to **stable** (i.e. all AMP pages will now use this build)
+-   Tuesday the following week: the **beta** release is fully promoted to **stable** (i.e. all AMP pages will now use this release)
 
 ### Release Freezes <a name="release-freezes"></a>
 
@@ -125,9 +125,9 @@ There are occasions when we will skip a release of AMP to production, known as a
 
 If a one week release freeze is announced for Week N:
 
--   The previous week's release build remains in **experimental**/**beta** for an extra week, i.e. the release cut in Week N-1 is not pushed to **stable** in Week N as would normally be the case. Instead, it will be pushed to **stable** in Week N+1.
--   A new release build is _not_ made in the freeze week (Week N).
--   The normal schedule will resume in Week N+1, i.e. **experimental**/**beta** are cut in Week N+1 and promoted to **stable** in Week N+2.
+-   The previous week's **stable** release will remain for an extra week, i.e. a new release will not be promoted to **stable** in Week N as would normally be the case.
+-   However, new **beta** and **experimental** releases will be created during the freeze week (Week N).
+-   The normal schedule will resume in Week N+1, i.e. the **experimental**/**beta** releases from Week N are promoted to **stable** in Week N+1. In addition, new **experimental**/**beta** releases are created in Week N+1 and will be promoted to **stable** during Week N+2.
 -   If the **stable** release promoted during Week N-1 was originally scheduled to be promoted to **lts** during Week N, it will now be promoted to **lts** on the Monday of Week N+1.
 -   **nightly** releases are still generated and promoted, as they are fully automated.
 

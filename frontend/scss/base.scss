@@ -26,8 +26,12 @@ html, body {
   }
 }
 
-/* Default amp-carousel button styley */
-.amp-carousel-button {
+/*
+ * Default amp-carousel button styles
+ * Elements under .ap-o-code-preview are rendered from example code, so we
+ * should not style them. This classname is set on documentation.j2.
+ */
+body > * > :not(.ap-o-code-preview) > * > .amp-carousel-button {
   width: 3em;
   height: 3em;
   border-radius: 50%;

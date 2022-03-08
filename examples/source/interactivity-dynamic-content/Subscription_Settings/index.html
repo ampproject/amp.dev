@@ -4,7 +4,6 @@ preview: true
 author: TomerAberbach
 formats:
   - email
-  - websites
 --->
 
 <!--
@@ -14,13 +13,9 @@ formats:
 -->
 <!-- -->
 <!doctype html>
-<html ⚡4email lang="en">
+<html ⚡4email lang="en" data-css-strict>
   <head>
     <meta charset="utf-8">
-    <link rel="canonical" href="<% canonical %>">
-    <title>Subscription Settings</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <style amp4email-boilerplate>body{visibility:hidden}</style>
 
@@ -100,10 +95,6 @@ formats:
         opacity: 0;
         cursor: pointer;
       }
-
-      .disabled #select, select[disabled] {
-        cursor: progress;
-      }
     </style>
   </head>
   <body>
@@ -121,17 +112,20 @@ formats:
           {
             "value": "watching",
             "isSelected": false,
-            "text": "Watching"
+            "text": "Watching",
+            "imgUrl": "/images/watching.jpg"
           },
           {
             "value": "only-mentions",
             "isSelected": true,
-            "text": "Only mentions"
+            "text": "Only mentions",
+            "imgUrl": "/images/only-mentions.jpg"
           },
           {
             "value": "ignoring",
             "isSelected": false,
-            "text": "Ignoring"
+            "text": "Ignoring",
+            "imgUrl": "/images/ignoring.jpg"
           }
         ]
       }
@@ -142,7 +136,7 @@ formats:
     -->
 
     <!--
-      ### AMP
+      ### AMP-HTML
 
       #### Step 1: Basic Dropdown
 
@@ -402,7 +396,7 @@ formats:
                [class]="(nextSubscription ? 'disabled ' : ' ') + 'icon-container relative icon-sized'">
             <div class="icon icon-sized" aria-hidden>
               {{#options}}
-                <amp-img width="30" height="30" src="/static/samples/img/{{value}}.png"
+                <amp-img width="30" height="30" src="{{imgUrl}}"
                    class="{{#isSelected}}visible {{/isSelected}}absolute"
                    [class]="((currentSubscription || '{{currentSubscription}}') == '{{value}}' ? 'visible ' : ' ') + 'absolute'">
                 </amp-img>

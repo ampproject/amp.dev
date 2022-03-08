@@ -1,10 +1,11 @@
-FROM node:lts-alpine
+FROM node:14-alpine
 
 # Create app directory
 WORKDIR /usr/src/app
 
 # Install dependencies
-RUN apk --no-cache add g++ gcc libgcc libstdc++ linux-headers make python tini
+RUN apk --no-cache add g++ gcc libgcc libstdc++ linux-headers make python3 tini
+RUN ln -s /usr/bin/python3 /usr/bin/python
 RUN npm install --quiet node-gyp -g
 # Add Tini
 ENTRYPOINT ["/sbin/tini", "--"]

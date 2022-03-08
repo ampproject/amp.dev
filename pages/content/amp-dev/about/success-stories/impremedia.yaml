@@ -24,7 +24,7 @@ stage:
   subline: MAR 12, 2020
   layout: mobile
   logo:
-    image_src: '/static/img/success-stories/impremedia/impremedia-logo.png'
+    src: '/static/img/success-stories/impremedia/impremedia-logo.png'
     width: 300
     height: 60
     alt: ImpreMedia

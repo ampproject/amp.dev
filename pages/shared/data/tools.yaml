@@ -10,6 +10,17 @@ creation:
       height: 506
     formats:
       - ads
+  - name: Lodago
+    url: https://lodago.com/en/
+    type: CRM plugin
+    description: Request meetings from your favorite CRM and let your recipient book without leaving its inbox.
+    image:
+      src: /static/img/tools/lodago.png
+      width: 400
+      height: 150
+      fit: contain
+    formats:
+      - email
   - name: BEE
     url: https://beefree.io/bee-plugin/
     type: Embeddable Email Builder
@@ -55,7 +66,7 @@ creation:
     formats:
       - email
   - name: Plumrocket AMP Email
-    url: https://store.plumrocket.com/amp-email-magento2-extension.html
+    url: https://plumrocket.com/magento-amp-email
     type: Magento Extension
     description: Send engaging AMP Emails from Magento ecommerce platform. Use built-in templates for transactional and promotional dynamic emails.
     image:
@@ -138,7 +149,7 @@ creation:
       - stories
   - name: Webstoryz
     description: Increase engagement on your website using Webstoryz widget!
-    url: https://webstoryz.com/
+    url: https://webstoryz.com/?utm_source=google_listing
     type: WYSIWYG Editor
     image:
       src: /static/img/tools/webstoryz.jpg
@@ -189,7 +200,7 @@ creation:
   - name: Join Stories
     description: Long Story short, Join Stories is the fastest and easiest Story creation tool.
     url: https://www.join-stories.com/
-    type:  WYSIWYG Editor
+    type: WYSIWYG Editor
     image:
       src: /static/img/tools/joinstories.jpg
       width: 800
@@ -199,7 +210,7 @@ creation:
   - name: StorifyMe
     description: StorifyMe stands out as all-in-one Web Stories platform. Made for brands & individuals, tailored for e-commerce, marketers and publishers.
     url: https://storifyme.com/
-    type:  WYSIWYG Editor
+    type: WYSIWYG Editor
     image:
       src: /static/img/tools/storifyme.jpg
       width: 1600
@@ -245,9 +256,19 @@ creation:
       width: 1162
       height: 442
       fit: contain
-      bgcolor: "#004e73"
+      bgcolor: '#004e73'
     formats:
       - websites
+  - name: Unfold
+    description: Unfold helps brands and individuals easily create beautiful stories with templates.
+    url: https://unfold.com/
+    type: Content Platform
+    image:
+      src: /static/img/tools/unfold-d5403963b64e.jpg
+      width: 1600
+      height: 776
+    formats:
+      - stories
 platforms:
   - name: AMP for WordPress
     official: true
@@ -264,7 +285,7 @@ platforms:
   - name: AMP for Magento
     type: CMS
     description: Convert Magento website into lightning fast eСommerce store powered by AMP technology.
-    url: https://store.plumrocket.com/accelerated-mobile-pages-magento2-extension.html
+    url: https://plumrocket.com/magento-amp
     image:
       src: /static/img/tools/plumrocket-amp-magento.jpg
       width: 440
@@ -302,16 +323,6 @@ platforms:
       height: 582
     formats:
       - websites
-      - stories
-  - name: Jumprope
-    description: Platform to share and discover how-to stories that includes a creation tool on your phone to help you create how-to stories.
-    url: https://www.jumprope.com/
-    type: Content Platform
-    image:
-      src: /static/img/tools/jumprope.jpg
-      width: 1500
-      height: 1000
-    formats:
       - stories
   - name: RebelMouse
     description: Build AMP sites, posts, and stories. Win search, social, and email. Fast. Flexible. Secure. Modern.
@@ -476,6 +487,17 @@ developer:
       height: 471
     formats:
       - websites
+  - name: Parcel
+    url: https://parcel.io/
+    type: Development
+    description: Code, preview, and collaborate using the development platform designed for email. Generate AMP from HTML with one click, validate exisiting AMP, and send test emails.
+    image:
+      src: /static/img/tools/parcel.svg
+      width: 1500
+      height: 750
+      fit: contain
+    formats:
+      - email
   - name: Litmus
     url: https://litmus.com/
     type: Development
@@ -553,7 +575,7 @@ developer:
       width: 1500
       height: 1000
       fit: contain
-      bgcolor: "#55BFA7"
+      bgcolor: '#55BFA7'
     formats:
       - websites
 providers:

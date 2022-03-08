@@ -111,7 +111,7 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 <link href="base.css" rel="stylesheet" />
 ```
 
-문제는 외부 스타일시트를 참조한 데서 발생합니다. 문서를 가능한 한 빨리 로드하기 위해 AMP에는 외부 스타일시트를 포함할 수 없습니다. 대신 모든 스타일시트 규칙은 <code><style amp-custom></style></code> 태그를 사용하여 AMP 문서에 인라인으로 추가되어야 합니다.
+문제는 외부 스타일시트를 참조한 데서 발생합니다. 문서를 가능한 한 빨리 로드하기 위해 AMP에는 외부 스타일시트를 포함할 수 없습니다. 대신 모든 스타일시트 규칙은 `<style amp-custom></style>` 태그를 사용하여 AMP 문서에 인라인으로 추가되어야 합니다.
 
 ```html
 <style amp-custom>

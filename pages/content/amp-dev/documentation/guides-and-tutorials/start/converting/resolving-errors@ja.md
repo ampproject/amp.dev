@@ -111,7 +111,7 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 <link href="base.css" rel="stylesheet" />
 ```
 
-問題は、これが外部スタイルシートの参照であることです。AMP では、ドキュメントの読み込み時間をできるだけ高速にするために、外部スタイルシートを使用できないようになっています。代わりに、AMP ドキュメントでは、<code><style amp-custom></style></code> タグを使って、すべてのスタイルシートのルールをインラインで追加する必要があります。
+問題は、これが外部スタイルシートの参照であることです。AMP では、ドキュメントの読み込み時間をできるだけ高速にするために、外部スタイルシートを使用できないようになっています。代わりに、AMP ドキュメントでは、`<style amp-custom></style>` タグを使って、すべてのスタイルシートのルールをインラインで追加する必要があります。
 
 ```html
 <style amp-custom>

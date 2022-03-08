@@ -43,7 +43,7 @@ Các quảng cáo AMPHTML cần phiên bản riêng của thời gian chạy AMP
 <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
 ```
 
-Các quảng cáo AMPHTML đòi hỏi một kiểu phong cách [code soạn sẵn](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#boilerplate) khác, và đơn giản hơn đáng kể so với các trang AMP. Thêm mã sau vào phần <code><head></code> của bạn.
+Các quảng cáo AMPHTML đòi hỏi một kiểu phong cách [code soạn sẵn](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#boilerplate) khác, và đơn giản hơn đáng kể so với các trang AMP. Thêm mã sau vào phần `<head>` của bạn.
 
 ```html
 <style amp4ads-boilerplate>
@@ -53,7 +53,7 @@ Các quảng cáo AMPHTML đòi hỏi một kiểu phong cách [code soạn sẵ
 </style>
 ```
 
-Để tạo phong cách cho quảng cáo AMPHTML của bạn, mã CSS của bạn phải được nhúng inline trong tài liệu AMPHTML sử dụng thẻ <code><style amp-custom></style></code> trong phần <code><head></code>. Khi chúng ta render một ảnh quảng cáo cơ bản, chúng ta không cần CSS nào, vậy nên chúng ta sẽ không thêm các thẻ này.
+Để tạo phong cách cho quảng cáo AMPHTML của bạn, mã CSS của bạn phải được nhúng inline trong tài liệu AMPHTML sử dụng thẻ `<style amp-custom>` trong phần `<head>`. Khi chúng ta render một ảnh quảng cáo cơ bản, chúng ta không cần CSS nào, vậy nên chúng ta sẽ không thêm các thẻ này.
 
 [tip type="note"] **LƯU Ý –** Đối với các quảng cáo AMPHTML, kích cỡ tối đa cho một stylesheet inline là _20 KB_. Tìm hiểu thêm về [Các yêu cầu đối với CSS trong thông số quảng cáo AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#css). [/tip]
 

@@ -71,7 +71,7 @@ author: bpaduch
     <td colspan="2"><h5 id="fill">Шаблон: Fill</h5></td>
 </tr>
 <tr>
-    <td width="65%">Шаблон <strong>fill</strong> заполняет экран первым дочерним элементом слоя. Остальные дочерние элементы слоя не отображаются. Шаблон fill хорошо подходит для создания фона с помощью изображений и видео. <code class="nopad"><pre><amp-story-grid-layer template="fill">   <amp-img src="dog.png" width="720" height="1280" layout="responsive">   </amp-img> </amp-story-grid-layer></pre></code>
+    <td width="65%">Шаблон <strong>fill</strong> заполняет экран первым дочерним элементом слоя. Остальные дочерние элементы слоя не отображаются. Шаблон fill хорошо подходит для создания фона с помощью изображений и видео. <code class="nopad"><pre>&lt;amp-story-grid-layer template="fill">   &lt;amp-img src="dog.png" width="720" height="1280" layout="responsive">   &lt;/amp-img> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>{{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341) }}</td>
 </tr>
@@ -79,7 +79,7 @@ author: bpaduch
     <td colspan="2"><h5 id="vertical">Шаблон: Vertical</h5></td>
 </tr>
 <tr>
-    <td width="65%">Шаблон <strong>vertical</strong> размещает дочерние элементы вдоль оси Y. Элементы выравниваются по верху экрана и занимают весь экран по оси X. Шаблон vertical подходит для ситуаций, когда вы хотите расположить элементы «стопкой» сверху вниз.  <code class="nopad"><pre><amp-story-grid-layer template="vertical">   <p>element 1</p>   <p>element 2</p>   <p>element 3</p> </amp-story-grid-layer></pre></code>
+    <td width="65%">Шаблон <strong>vertical</strong> размещает дочерние элементы вдоль оси Y. Элементы выравниваются по верху экрана и занимают весь экран по оси X. Шаблон vertical подходит для ситуаций, когда вы хотите расположить элементы «стопкой» сверху вниз.  <code class="nopad"><pre>&lt;amp-story-grid-layer template="vertical">   &lt;p>element 1&lt;/p>   &lt;p>element 2&lt;/p>   &lt;p>element 3&lt;/p> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341) }}</td>
 </tr>
@@ -87,7 +87,7 @@ author: bpaduch
     <td colspan="2"><h5 id="horizontal">Шаблон: Horizontal</h5></td>
 </tr>
 <tr>
-    <td width="65%">Шаблон <strong>horizontal</strong> размещает дочерние элементы вдоль оси X.  Элементы выравниваются по начальной стороне экрана и занимают экран целиком по оси Y. Шаблон horizontal подходит для того, чтобы размещать элементы в виде горизонтальной очереди.    <code class="nopad"><pre><amp-story-grid-layer template="horizontal">   <p>element 1</p>   <p>element 2</p>   <p>element 3</p> </amp-story-grid-layer></pre></code>
+    <td width="65%">Шаблон <strong>horizontal</strong> размещает дочерние элементы вдоль оси X.  Элементы выравниваются по начальной стороне экрана и занимают экран целиком по оси Y. Шаблон horizontal подходит для того, чтобы размещать элементы в виде горизонтальной очереди.    <code class="nopad"><pre>&lt;amp-story-grid-layer template="horizontal">   &lt;p>element 1&lt;/p>   &lt;p>element 2&lt;/p>   &lt;p>element 3&lt;/p> &lt;/amp-story-grid-layer></pre></code>
 </td>
     <td> {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341) }}</td>
 </tr>
@@ -95,7 +95,7 @@ author: bpaduch
     <td colspan="2"><h5 id="thirds">Шаблон: Thirds</h5></td>
 </tr>
 <tr>
-<td width="65%">Шаблон <strong>thirds</strong> делит экран на три равных горизонтальных части и позволяет вам вставлять контент в каждую из них. Вы также можете использовать именованный элемент <code>grid-area</code>, чтобы указать, какую треть вы хотите использовать для контента: верхнюю (<code>upper-third</code>), среднюю (<code>middle-third</code>) или нижнюю (<code>lower-third</code>). Именованные элементы grid-area полезны для изменения стандартного порядка размещения элементов. Например, если в вашем слое два элемента, вы можете заставить первый отображаться в верхней трети (<code>grid-area="upper-third"</code>), а второй — в нижней (<code>grid-area="lower-third"</code>). <code class="nopad"><pre><amp-story-grid-layer template="thirds">   <h1 grid-area="upper-third">element 1</h1>   <p grid-area="lower-third">element 2</p> </amp-story-grid-layer> </pre></code>
+<td width="65%">Шаблон <strong>thirds</strong> делит экран на три равных горизонтальных части и позволяет вам вставлять контент в каждую из них. Вы также можете использовать именованный элемент <code>grid-area</code>, чтобы указать, какую треть вы хотите использовать для контента: верхнюю (<code>upper-third</code>), среднюю (<code>middle-third</code>) или нижнюю (<code>lower-third</code>). Именованные элементы grid-area полезны для изменения стандартного порядка размещения элементов. Например, если в вашем слое два элемента, вы можете заставить первый отображаться в верхней трети (<code>grid-area="upper-third"</code>), а второй — в нижней (<code>grid-area="lower-third"</code>). <code class="nopad"><pre>&lt;amp-story-grid-layer template="thirds">   &lt;h1 grid-area="upper-third">element 1&lt;/h1>   &lt;p grid-area="lower-third">element 2&lt;/p> &lt;/amp-story-grid-layer> </pre></code>
 </td>
 <td>{{ image('/static/img/docs/tutorials/amp_story/layer-thirds.png', 216, 341) }}</td>
 </tr>

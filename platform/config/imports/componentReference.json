@@ -3,6 +3,7 @@
 	"fetchFromMaster": [
 		"amp-access-laterpay",
 		"amp-accordion",
+		"amp-autocomplete",
 		"amp-app-banner",
 		"amp-base-carousel",
 		"amp-bind",
@@ -11,6 +12,7 @@
 		"amp-date-countdown",
 		"amp-date-display",
 		"amp-fit-text",
+		"amp-iframe",
 		"amp-inline-gallery",
 		"amp-inline-gallery-pagination",
 		"amp-inline-gallery-thumbnails",

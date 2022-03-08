@@ -431,7 +431,7 @@ Les auteurs sont libres d'ajouter toutes les polices personnalisées via une ins
 
 Le runtime AMP est un morceau de JavaScript qui s'exécute dans chaque document AMP. Il fournit des implémentations pour les éléments personnalisés AMP, gère le chargement et la hiérarchisation des ressources et ajoute éventuellement un validateur de runtime pour AMP HTML à utiliser pendant le développement.
 
-Le runtime AMP se charge via la balise obligatoire `<script src="https://cdn.ampproject.org/v0.js"></script>` du document AMPS <code><head></code>.
+Le runtime AMP se charge via la balise obligatoire `<script src="https://cdn.ampproject.org/v0.js"></script>` du document AMPS `<head>`.
 
 Le runtime AMP peut être placé dans un mode de développement pour n'importe quelle page. Le mode de développement déclenchera la validation AMP sur la page intégrée, qui émettra l'état de validation et toutes les erreurs sur la console de développement JavaScript. Le mode de développement peut être déclenché en ajoutant `#development=1` à l'URL de la page.
 
