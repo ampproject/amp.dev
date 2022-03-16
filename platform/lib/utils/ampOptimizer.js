@@ -51,6 +51,9 @@ async function optimize(request, html, params = {}) {
   if (request.query.optimize == 'false') {
     return html;
   }
+  if (request.query.ampjs === '1') {
+    params.ampUrlPrefix = 'https://ampjs.org';
+  }
 
   try {
     return await optimizer.transformHtml(html, params);
