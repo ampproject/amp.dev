@@ -46,29 +46,24 @@ author: philipbell
       poster-portrait-src="https://source.unsplash.com/_HqHX3LBN18/1000x2000"
       publisher-logo-src="https://amp.dev/static/img/icons/icon-512x512.png">
       <!-- 
-        ## Overview
+        ## Basic usage
 
         `amp-story-shopping` is defined in the document using its two custom elements, [`amp-story-shopping-attachment`](/documentation/components/amp-story-shopping#amp-story-shopping-attachment/?format=stories) and [`amp-story-shopping-tag`](/documentation/components/amp-story-shopping#amp-story-shopping-tag/?format=stories).
-
-        ## Basic usage
 
         Specify a shopping experience by defining one [`amp-story-shopping-attachment`](/documentation/components/amp-story-shopping#amp-story-shopping-attachment/?format=stories) as the last element on the page.
         The `amp-story-shopping-attachment` component accepts 1 descendant, a script element that with product JSON that configures the experience.
 
-        Product JSON must be configured inline by default. It can also be loaded remotely with a src tag on `amp-story-shopping-attachment`.
-        For a full description of the product JSON see the [documentation](/documentation/components/amp-story-shopping#amp-story-shopping-attachment/?format=stories).
+        Product JSON must be configured inline with the script child by default. It can also be loaded remotely with a `src` tag on the `amp-story-shopping-attachment` element.
+        For a full description of the product JSON see the [documentation](/documentation/components/amp-story-shopping#product-json-configuration/?format=stories).
 
-        At least one [`amp-story-shopping-tag`](/documentation/components/amp-story-shopping#amp-story-shopping-tag/?format=stories) element must also be on the page for the experience to display.
-        The `amp-story-shopping-tag` component displays a tappable button that will open the product details in an inline attachment.
-        The `data-product-id` must match the `productId` in the product JSON. Pay special attention to this to be sure that the button displays the correct product data.
+        At least one [`amp-story-shopping-tag`](/documentation/components/amp-story-shopping#amp-story-shopping-tag/?format=stories) element must be on the page for the experience to display.
+        The `amp-story-shopping-tag` component displays a tappable button that will open the more information about the product in an inline attachment.
+        The `data-product-id` attribute must match the `productId` in the product JSON. Pay special attention to this to be sure the button displays the correct data.
 
         Custom CSS is used to position the button on the page. The button is positioned absolute by default. For responsive placement use `left` and `right` CSS rules with percentage based values.
         The `amp-story-shopping-tag` must be a descendant of [`amp-story-grid-layer`](https://amp.dev/documentation/components/amp-story-grid-layer/).
 
-        In this example we configure the shopping experience with a single product defined in the `amp-story-shopping-attachment` and one `amp-story-shopping-tag` associated with the product.
-        The tag is positioned with custom CSS in the `head` of the document.
-
-        Notice how a "Shop now" CTA button is also displayed at the bottom of the page.
+        Notice that a "Shop now" CTA button displays at the bottom of the page when the experience is configured.
       -->
 
       <amp-story-page id="page-1">
@@ -113,10 +108,10 @@ author: philipbell
       <!--
         ## Remote product JSON with `src` attribute
         
-        Add a `src` attribute to the `amp-story-shopping-attachment` to remotely fetch the data at render time.
-        Since amp documents can be served from cache, using `src` ensures the data will be up to date. For this reason it is highly recomended to specify a `src` while having an inline fallback.
+        Add a `src` attribute to the [`amp-story-shopping-attachment`](/documentation/components/amp-story-shopping#amp-story-shopping-attachment/?format=stories) to remotely fetch the data at render time.
+        Using `src` ensures product data will be up to date, even when served from the cache.
 
-        It is important to notice that product data is specific to each page. It cannot be shared between pages.
+        It is important to note that product data is specific to each page. It cannot be shared between pages.
         This ensures data is only loaded when needed.
       -->
 
@@ -181,9 +176,9 @@ author: philipbell
         ## Optional configuration
         
         In this example we display a custom icon and text in the [`amp-story-shopping-tag`](/documentation/components/amp-story-shopping#amp-story-shopping-tag/?format=stories) by defining `productIcon` and `productTagText` within the product JSON.
-        We recommend using a 48 x 48px image for `productIcon`. We recommend using only a 1-3 words for `productTagText`. It will become two lines and display ellipses if the text is too long.
+        We recommend using a 48 x 48px image for `productIcon`. We recommend using 1-3 words for `productTagText`. If the text is too long it will become two lines and display ellipses.
 
-        We also set `theme="dark"` on the [`amp-story-shopping-attachment`](/documentation/components/amp-story-shopping#amp-story-shopping-attachment/?format=stories) to display the "Shop now" cta button and attachment with a dark palette.
+        We also set `theme="dark"` on the [`amp-story-shopping-attachment`](/documentation/components/amp-story-shopping#amp-story-shopping-attachment/?format=stories) to render the "Shop now" cta button and inline attachment in a dark palette.
       -->
 
       <amp-story-page id="page-3">
