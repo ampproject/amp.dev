@@ -1,0 +1,249 @@
+<!---
+author: philipbell
+--->
+
+<!--
+  ## Introduction
+
+  The [`amp-story-shopping`](/documentation/components/amp-story-shopping/?format=stories) component is used to create shopping experiences within Web Stories. 
+-->
+
+<!-- -->
+<!doctype html>
+<html ⚡ lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="This is an Web Story with a shopping experience.">
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-story-1.0.js">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+    <!-- To begin, import `amp-story-shopping` along with your other stories imports. -->
+    <script async custom-element="amp-story-shopping" src="https://cdn.ampproject.org/v0/amp-story-shopping-0.1.js"></script>
+    <style amp-custom>
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <link rel="canonical" href=".">
+    <title>amp-story-shopping</title>
+  </head>
+  <body>
+    <amp-story standalone
+      publisher="Stories Format"
+      title="amp-story-shopping"
+      poster-portrait-src="https://source.unsplash.com/_HqHX3LBN18/1000x2000"
+      publisher-logo-src="https://amp.dev/static/img/icons/icon-512x512.png">
+      <!-- 
+        ## Overview
+
+        `amp-story-shopping` is defined in the document using its two custom elements, [`amp-story-shopping-attachment`](/documentation/components/amp-story-shopping#amp-story-shopping-attachment/?format=stories) and [`amp-story-shopping-tag`](/documentation/components/amp-story-shopping#amp-story-shopping-tag/?format=stories).
+
+        ## Basic usage
+
+        Specify a shopping experience by defining one [`amp-story-shopping-attachment`](/documentation/components/amp-story-shopping#amp-story-shopping-attachment/?format=stories) as the last element on the page.
+        The `amp-story-shopping-attachment` component accepts 1 descendant, a script element that with product JSON that configures the experience.
+
+        Product JSON must be configured inline by default. It can also be loaded remotely with a src tag on `amp-story-shopping-attachment`.
+
+        At least one [`amp-story-shopping-tag`](/documentation/components/amp-story-shopping#amp-story-shopping-tag/?format=stories) element must also be on the page for the experience to display.
+        The `amp-story-shopping-tag` component displays a tappable button that will open the product details in an inline attachment.
+        The `data-product-id` must match the `productId` in the product JSON. Pay special attention to this to be sure that the button displays the correct product data.
+
+        Custom CSS is used to position the button on the page. The button is positioned absolute by default. For responsive placement use `left` and `right` CSS rules with percentage based values.
+        The `amp-story-shopping-tag` must be a descendant of [`amp-story-grid-layer`](https://amp.dev/documentation/components/amp-story-grid-layer/).
+
+        In this example we configure the shopping experience with a single product defined in the `amp-story-shopping-attachment` and one `amp-story-shopping-tag` associated with the product.
+        The tag is positioned with custom CSS in the `head` of the document.
+
+        Notice how a "Shop now" CTA button is also displayed at the bottom of the page.
+      -->
+
+      <amp-story-page id="page-1">
+        <amp-story-grid-layer template="vertical">
+          <amp-story-shopping-tag class="shopping-tag-one" data-product-id="product1"></amp-story-shopping-tag>
+        </amp-story-grid-layer>
+        <amp-story-shopping-attachment>
+          <script type="application/json">
+            {
+                "items" : [
+                   {
+                    "productUrl": "https://www.google.com",
+                    "productId": "product1",
+                    "productTitle": "Product One",
+                    "productBrand": "Product Co.",
+                    "productPrice": 10.00,
+                    "productPriceCurrency": "USD",
+                    "productImages": [
+                      {"url": "https://source.unsplash.com/Ry9WBo3qmoc/500x500", "alt": "image 1 of product"},
+                      {"url": "https://source.unsplash.com/KP7p0-DRGbg", "alt": "image 2 of product"},
+                      {"url": "https://source.unsplash.com/mFnbFaCIu1I", "alt": "image 3 of product"}
+                    ],
+                    "aggregateRating": {
+                      "ratingValue": 4.4,
+                      "reviewCount": 89,
+                      "reviewUrl": "https://www.google.com"
+                    },
+                    "productDetails": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere error deserunt dignissimos in laborum ea molestias veritatis sint laudantium iusto expedita atque provident doloremque, ad voluptatem culpa adipisci."
+                   }
+                ]
+              }
+          </script>
+        </amp-story-shopping-attachment>
+      </amp-story-page>
+
+      <!--
+        ## Remote product JSON with `src` attribute
+        
+        Add a `src` attribute to the `amp-story-shopping-attachment` to remotely fetch the data at render time.
+        Since amp documents can be served from cache, using `src` ensures the data will be up to date. For this reason it is highly recomended to specify a `src` while having an inline fallback.
+
+        It is important to notice that product data is specific to each page. It cannot be shared between pages.
+        This ensures data is only loaded when needed.
+      -->
+
+      <amp-story-page id="page-2">
+        <amp-story-grid-layer template="vertical">
+          <amp-story-shopping-tag class="shopping-tag-two" data-product-id="product2"></amp-story-shopping-tag>
+          <amp-story-shopping-tag class="shopping-tag-one" data-product-id="product1"></amp-story-shopping-tag>
+        </amp-story-grid-layer>
+        <amp-story-shopping-attachment src="/static/samples/json/amp-story-shopping.json">
+          <script type="application/json">
+            {
+                "items" : [
+                   {
+                    "productUrl": "https://www.google.com",
+                    "productId": "product2",
+                    "productTitle": "Product Two",
+                    "productBrand": "Product Co.",
+                    "productPrice": 10.00,
+                    "productPriceCurrency": "USD",
+                    "productImages": [
+                      {"url": "https://source.unsplash.com/Ry9WBo3qmoc/500x500", "alt": "image 1 of product"},
+                      {"url": "https://source.unsplash.com/KP7p0-DRGbg", "alt": "image 2 of product"},
+                      {"url": "https://source.unsplash.com/mFnbFaCIu1I", "alt": "image 3 of product"}
+                    ],
+                    "aggregateRating": {
+                      "ratingValue": 4.4,
+                      "reviewCount": 89,
+                      "reviewUrl": "https://www.google.com"
+                    },
+                    "productDetails": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere error deserunt dignissimos in laborum ea molestias veritatis sint laudantium iusto expedita atque provident doloremque, ad voluptatem culpa adipisci."
+                   },
+                   {
+                    "productUrl": "https://www.google.com",
+                    "productId": "product1",
+                    "productTitle": "Product One",
+                    "productBrand": "Product Co.",
+                    "productPrice": 10.00,
+                    "productPriceCurrency": "USD",
+                    "productImages": [
+                      {"url": "https://source.unsplash.com/Ry9WBo3qmoc/500x500", "alt": "image 1 of product"},
+                      {"url": "https://source.unsplash.com/KP7p0-DRGbg", "alt": "image 2 of product"},
+                      {"url": "https://source.unsplash.com/mFnbFaCIu1I", "alt": "image 3 of product"}
+                    ],
+                    "aggregateRating": {
+                      "ratingValue": 4.4,
+                      "reviewCount": 89,
+                      "reviewUrl": "https://www.google.com"
+                    },
+                    "productDetails": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere error deserunt dignissimos in laborum ea molestias veritatis sint laudantium iusto expedita atque provident doloremque, ad voluptatem culpa adipisci."
+                   }                   
+                ]
+              }
+          </script>
+        </amp-story-shopping-attachment>
+      </amp-story-page>
+
+      <!--
+        ## Optional configuration
+        
+        In this example we display a custom icon and text in the [`amp-story-shopping-tag`](/documentation/components/amp-story-shopping#amp-story-shopping-tag/?format=stories) by defining `productIcon` and `productTagText` within the product JSON.
+        We recommend using a 48 x 48px image for `productIcon`. We recommend using only a 1-3 words for `productTagText`. It will become two lines and display ellipses if the text is too long.
+
+        We also set `theme="dark"` on the [`amp-story-shopping-attachment`](/documentation/components/amp-story-shopping#amp-story-shopping-attachment/?format=stories) to display the "Shop now" cta button and attachment with a dark palette.
+      -->
+
+      <amp-story-page id="page-3">
+        <amp-story-grid-layer template="vertical">
+          <amp-story-shopping-tag class="shopping-tag-three" data-product-id="product3"></amp-story-shopping-tag>
+          <amp-story-shopping-tag class="shopping-tag-two" data-product-id="product2"></amp-story-shopping-tag>
+          <amp-story-shopping-tag class="shopping-tag-one" data-product-id="product1"></amp-story-shopping-tag>
+        </amp-story-grid-layer>
+        <amp-story-shopping-attachment theme="dark" src="/static/samples/json/amp-story-shopping.json">
+          <script type="application/json">
+            {
+                "items" : [
+                   {
+                    "productUrl": "https://www.google.com",
+                    "productIcon": "Product Three",
+                    "productTagText": "Product Three",
+                    "productId": "product3",
+                    "productTitle": "Product Three",
+                    "productBrand": "Product Co.",
+                    "productPrice": 30.00,
+                    "productPriceCurrency": "USD",
+                    "productImages": [
+                      {"url": "https://source.unsplash.com/Ry9WBo3qmoc/500x500", "alt": "image 1 of product"},
+                      {"url": "https://source.unsplash.com/KP7p0-DRGbg", "alt": "image 2 of product"},
+                      {"url": "https://source.unsplash.com/mFnbFaCIu1I", "alt": "image 3 of product"}
+                    ],
+                    "aggregateRating": {
+                      "ratingValue": 4.4,
+                      "reviewCount": 89,
+                      "reviewUrl": "https://www.google.com"
+                    },
+                    "productDetails": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere error deserunt dignissimos in laborum ea molestias veritatis sint laudantium iusto expedita atque provident doloremque, ad voluptatem culpa adipisci."
+                   },
+                   {
+                    "productUrl": "https://www.google.com",
+                    "productId": "product2",
+                    "productTitle": "Product Two",
+                    "productBrand": "Product Co.",
+                    "productPrice": 20.00,
+                    "productPriceCurrency": "USD",
+                    "productImages": [
+                      {"url": "https://source.unsplash.com/Ry9WBo3qmoc/500x500", "alt": "image 1 of product"},
+                      {"url": "https://source.unsplash.com/KP7p0-DRGbg", "alt": "image 2 of product"},
+                      {"url": "https://source.unsplash.com/mFnbFaCIu1I", "alt": "image 3 of product"}
+                    ],
+                    "aggregateRating": {
+                      "ratingValue": 4.4,
+                      "reviewCount": 89,
+                      "reviewUrl": "https://www.google.com"
+                    },
+                    "productDetails": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere error deserunt dignissimos in laborum ea molestias veritatis sint laudantium iusto expedita atque provident doloremque, ad voluptatem culpa adipisci."
+                   },
+                   {
+                    "productUrl": "https://www.google.com",
+                    "productId": "product1",
+                    "productTitle": "Product One",
+                    "productBrand": "Product Co.",
+                    "productPrice": 10.00,
+                    "productPriceCurrency": "USD",
+                    "productImages": [
+                      {"url": "https://source.unsplash.com/Ry9WBo3qmoc/500x500", "alt": "image 1 of product"},
+                      {"url": "https://source.unsplash.com/KP7p0-DRGbg", "alt": "image 2 of product"},
+                      {"url": "https://source.unsplash.com/mFnbFaCIu1I", "alt": "image 3 of product"}
+                    ],
+                    "aggregateRating": {
+                      "ratingValue": 4.4,
+                      "reviewCount": 89,
+                      "reviewUrl": "https://www.google.com"
+                    },
+                    "productDetails": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere error deserunt dignissimos in laborum ea molestias veritatis sint laudantium iusto expedita atque provident doloremque, ad voluptatem culpa adipisci."
+                   }                   
+                ]
+              }
+          </script>
+        </amp-story-shopping-attachment>
+      </amp-story-page>
+
+    </amp-story>
+  </body>
+</html>
+
+<!--
+  # More Resources
+
+  If you want to learn more about shopping within Web Stories, head over to the [documentation](/documentation/components/amp-story-shopping?format=stories).
+-->
