@@ -1,61 +1,60 @@
 {
-  "items" : [
+  "items": [
+    {
+      "productIcon": "/static/samples/img/amp-story-shopping-icon.png",
+      "productUrl": "https://www.google.com",
+      "productId": "flowers",
+      "productTagText": "Flowers",
+      "productBrand": "Flower Company Name",
+      "productPrice": 10.0,
+      "productPriceCurrency": "USD",
+      "productImages": [
+        {"url": "https://source.unsplash.com/SavQfLRm4Do/500x500", "alt": "flowers"}
+      ],
+      "aggregateRating": {
+        "ratingValue": "4.4",
+        "reviewCount": "89",
+        "reviewUrl": "https://www.google.com"
+      }
+    },
     {
       "productUrl": "https://www.google.com",
-      "productId": "product3",
-      "productTitle": "Product Three",
-      "productBrand": "Product Co.",
-      "productPrice": 30.00,
+      "productId": "chair",
+      "productTitle": "Yellow chair",
+      "productBrand": "Chair Co.",
+      "productPrice": 1000.0,
       "productPriceCurrency": "USD",
       "productImages": [
-        {"url": "https://source.unsplash.com/Ry9WBo3qmoc/500x500", "alt": "image 1 of product"},
-        {"url": "https://source.unsplash.com/KP7p0-DRGbg", "alt": "image 2 of product"},
-        {"url": "https://source.unsplash.com/mFnbFaCIu1I", "alt": "image 3 of product"}
+        {"url": "https://source.unsplash.com/DgQGKKLaVhY/500x500", "alt": "chair"}
       ],
       "aggregateRating": {
-        "ratingValue": 4.4,
-        "reviewCount": 89,
+        "ratingValue": "4.4",
+        "reviewCount": "89",
         "reviewUrl": "https://www.google.com"
       },
       "productDetails": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere error deserunt dignissimos in laborum ea molestias veritatis sint laudantium iusto expedita atque provident doloremque, ad voluptatem culpa adipisci."
-     },    
-     {
+    },
+    {
       "productUrl": "https://www.google.com",
-      "productId": "product2",
-      "productTitle": "Product Two",
-      "productBrand": "Product Co.",
-      "productPrice": 20.00,
+      "productId": "lamp",
+      "productTitle": "Brass Lamp",
+      "productBrand": "Lamp Co",
+      "productPrice": 799.0,
       "productPriceCurrency": "USD",
       "productImages": [
-        {"url": "https://source.unsplash.com/Ry9WBo3qmoc/500x500", "alt": "image 1 of product"},
-        {"url": "https://source.unsplash.com/KP7p0-DRGbg", "alt": "image 2 of product"},
-        {"url": "https://source.unsplash.com/mFnbFaCIu1I", "alt": "image 3 of product"}
+        {"url": "https://source.unsplash.com/Ry9WBo3qmoc/500x500", "alt": "lamp 1"},
+        {"url": "https://source.unsplash.com/KP7p0-DRGbg", "alt": "lamp 2"},
+        {"url": "https://source.unsplash.com/mFnbFaCIu1I", "alt": "lamp 3"},
+        {"url": "https://source.unsplash.com/py9sH2rThWs", "alt": "lamp 4"},
+        {"url": "https://source.unsplash.com/VDPauwJ_sHo", "alt": "lamp 5"},
+        {"url": "https://source.unsplash.com/3LTht2nxd34", "alt": "lamp 6"}
       ],
       "aggregateRating": {
-        "ratingValue": 4.4,
-        "reviewCount": 89,
+        "ratingValue": "4.4",
+        "reviewCount": "89",
         "reviewUrl": "https://www.google.com"
       },
       "productDetails": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere error deserunt dignissimos in laborum ea molestias veritatis sint laudantium iusto expedita atque provident doloremque, ad voluptatem culpa adipisci."
-     },
-     {
-      "productUrl": "https://www.google.com",
-      "productId": "product1",
-      "productTitle": "Product One",
-      "productBrand": "Product Co.",
-      "productPrice": 10.00,
-      "productPriceCurrency": "USD",
-      "productImages": [
-        {"url": "https://source.unsplash.com/Ry9WBo3qmoc/500x500", "alt": "image 1 of product"},
-        {"url": "https://source.unsplash.com/KP7p0-DRGbg", "alt": "image 2 of product"},
-        {"url": "https://source.unsplash.com/mFnbFaCIu1I", "alt": "image 3 of product"}
-      ],
-      "aggregateRating": {
-        "ratingValue": 4.4,
-        "reviewCount": 89,
-        "reviewUrl": "https://www.google.com"
-      },
-      "productDetails": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere error deserunt dignissimos in laborum ea molestias veritatis sint laudantium iusto expedita atque provident doloremque, ad voluptatem culpa adipisci."
-     }     
+    }                
   ]
 }
