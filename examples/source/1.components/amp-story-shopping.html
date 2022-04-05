@@ -53,7 +53,7 @@ author: philipbell
         Specify a shopping experience by defining one [`amp-story-shopping-attachment`](/documentation/components/amp-story-shopping#amp-story-shopping-attachment/?format=stories) as the last element on the page.
         The `amp-story-shopping-attachment` component accepts 1 descendant, a script element that with product JSON that configures the experience.
 
-        Product JSON is configured inline as a child script tag. An optional `src` attribute will fetch data from an endpoint at render time. If `src` is defined it overrides the inline configuration.
+        Configuring inline product JSON as a child script tag is required. An optional `src` attribute will fetch data from an endpoint at render time. If `src` is defined it overrides the inline configuration. If the remote configuration request fails the inline configuration will be used as a fallback.
         For a full description of the product JSON see the [documentation](/documentation/components/amp-story-shopping#product-json-configuration/?format=stories).
 
         At least one [`amp-story-shopping-tag`](/documentation/components/amp-story-shopping#amp-story-shopping-tag/?format=stories) element must be on the page for the experience to display.
