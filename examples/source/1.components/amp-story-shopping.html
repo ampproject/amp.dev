@@ -53,11 +53,11 @@ author: philipbell
         Specify a shopping experience by defining one [`amp-story-shopping-attachment`](/documentation/components/amp-story-shopping#amp-story-shopping-attachment/?format=stories) as the last element on the page.
         The `amp-story-shopping-attachment` component accepts 1 descendant, a script element that with product JSON that configures the experience.
 
-        Product JSON must be configured inline with the script child by default. It can also be loaded remotely with a `src` tag on the `amp-story-shopping-attachment` element.
+        Product JSON is configured inline as a child script tag. An optional `src` attribute will fetch data from an endpoint at render time. If `src` is defined it overrides the inline configuration.
         For a full description of the product JSON see the [documentation](/documentation/components/amp-story-shopping#product-json-configuration/?format=stories).
 
         At least one [`amp-story-shopping-tag`](/documentation/components/amp-story-shopping#amp-story-shopping-tag/?format=stories) element must be on the page for the experience to display.
-        The `amp-story-shopping-tag` component displays a tappable button. When tapped, it opens more information about the product in an inline attachment.
+        The `amp-story-shopping-tag` component displays a tappable button. When tapped, it opens more information about the product in an page attachment.
         The `data-product-id` attribute must match the `productId` in the product JSON. Pay special attention to this to be sure the button displays the correct data.
 
         Custom CSS is used to position the button on the page. The button is positioned absolute by default. For responsive placement use `left` and `right` CSS rules with percentage based values.
@@ -178,7 +178,7 @@ author: philipbell
         In this example we display a custom icon and text in the [`amp-story-shopping-tag`](/documentation/components/amp-story-shopping#amp-story-shopping-tag/?format=stories) by defining `productIcon` and `productTagText` within the product JSON.
         We recommend using a 48 x 48px image for `productIcon`. We recommend using 1-3 words for `productTagText`. If the text is too long it will become two lines and display ellipses.
 
-        We also set `theme="dark"` on the [`amp-story-shopping-attachment`](/documentation/components/amp-story-shopping#amp-story-shopping-attachment/?format=stories) to render the "Shop now" cta button and inline attachment in a dark palette.
+        We also set `theme="dark"` on the [`amp-story-shopping-attachment`](/documentation/components/amp-story-shopping#amp-story-shopping-attachment/?format=stories) to render the "Shop now" cta button and page attachment in a dark palette.
       -->
 
       <amp-story-page id="page-3">
