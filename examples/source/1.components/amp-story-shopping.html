@@ -1,0 +1,269 @@
+<!---
+author: philipbell
+--->
+
+<!--
+  ## Introduction
+
+  The [`amp-story-shopping`](/documentation/components/amp-story-shopping/?format=stories) component is used to create shopping experiences within Web Stories. 
+-->
+
+<!-- -->
+<!doctype html>
+<html ⚡ lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="This is an Web Story with a shopping experience.">
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-story-1.0.js">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+    <!-- To begin, import `amp-story-shopping` along with your other stories imports. -->
+    <script async custom-element="amp-story-shopping" src="https://cdn.ampproject.org/v0/amp-story-shopping-0.1.js"></script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <link rel="canonical" href=".">
+    <title>amp-story-shopping</title>
+    <style amp-custom>
+      [data-product-id="lamp"] {
+        top: 20%;
+        left: 21%;
+      }
+      [data-product-id="chair"] {
+        top: 53%;
+        left: 30%;
+      }
+      [data-product-id="flowers"] {
+        top: 46%;
+        left: 83%;
+      }
+    </style>
+  </head>
+  <body>
+    <amp-story standalone
+      publisher="Stories Format"
+      title="amp-story-shopping"
+      poster-portrait-src="https://source.unsplash.com/_HqHX3LBN18/1000x2000"
+      publisher-logo-src="https://amp.dev/static/img/icons/icon-512x512.png">
+      <!-- 
+        ## Basic usage
+
+        `amp-story-shopping` is defined in the document using two custom elements, [`amp-story-shopping-attachment`](/documentation/components/amp-story-shopping#amp-story-shopping-attachment/?format=stories) and [`amp-story-shopping-tag`](/documentation/components/amp-story-shopping#amp-story-shopping-tag/?format=stories).
+
+        Specify a shopping experience by defining one [`amp-story-shopping-attachment`](/documentation/components/amp-story-shopping#amp-story-shopping-attachment/?format=stories) as the last element on the page.
+        The `amp-story-shopping-attachment` component accepts 1 descendant, a script element that with product JSON that configures the experience.
+
+        Configuring inline product JSON as a child script tag is required. An optional `src` attribute will fetch data from an endpoint at render time. If `src` is defined it overrides the inline configuration. If the remote configuration request fails the inline configuration will be used as a fallback.
+        For a full description of the product JSON see the [documentation](/documentation/components/amp-story-shopping#product-json-configuration/?format=stories).
+
+        At least one [`amp-story-shopping-tag`](/documentation/components/amp-story-shopping#amp-story-shopping-tag/?format=stories) element must be on the page for the experience to display.
+        The `amp-story-shopping-tag` component displays a tappable button. When tapped, it opens more information about the product in an page attachment.
+        The `data-product-id` attribute must match the `productId` in the product JSON. Pay special attention to this to be sure the button displays the correct data.
+
+        Custom CSS is used to position the button on the page. The button is positioned absolute by default. For responsive placement use `left` and `right` CSS rules with percentage based values.
+        The `amp-story-shopping-tag` must be a descendant of [`amp-story-grid-layer`](https://amp.dev/documentation/components/amp-story-grid-layer/).
+
+        Notice that a "Shop now" CTA button displays at the bottom of the page when the experience is configured.
+      -->
+
+      <amp-story-page id="page-1">
+        <amp-story-grid-layer template="fill">
+          <amp-img layout="fill" src="https://source.unsplash.com/_HqHX3LBN18/1000x2000"></amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical">
+          <amp-story-shopping-tag data-product-id="lamp"></amp-story-shopping-tag>
+        </amp-story-grid-layer>
+        <amp-story-shopping-attachment>
+          <script type="application/json">
+            {
+              "items": [
+                {
+                  "productUrl": "https://www.google.com",
+                  "productId": "lamp",
+                  "productTitle": "Brass Lamp",
+                  "productBrand": "Lamp Co",
+                  "productPrice": 799.0,
+                  "productPriceCurrency": "USD",
+                  "productImages": [
+                    {"url": "https://source.unsplash.com/Ry9WBo3qmoc/500x500", "alt": "lamp 1"},
+                    {"url": "https://source.unsplash.com/KP7p0-DRGbg", "alt": "lamp 2"},
+                    {"url": "https://source.unsplash.com/mFnbFaCIu1I", "alt": "lamp 3"},
+                    {"url": "https://source.unsplash.com/py9sH2rThWs", "alt": "lamp 4"},
+                    {"url": "https://source.unsplash.com/VDPauwJ_sHo", "alt": "lamp 5"},
+                    {"url": "https://source.unsplash.com/3LTht2nxd34", "alt": "lamp 6"}
+                  ],
+                  "aggregateRating": {
+                    "ratingValue": "4.4",
+                    "reviewCount": "89",
+                    "reviewUrl": "https://www.google.com"
+                  },
+                  "productDetails": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere error deserunt dignissimos in laborum ea molestias veritatis sint laudantium iusto expedita atque provident doloremque, ad voluptatem culpa adipisci."
+                }                
+              ]
+            }            
+          </script>
+        </amp-story-shopping-attachment>
+      </amp-story-page>
+
+      <!--
+        ## Remote product JSON with `src` attribute
+        
+        Add a `src` attribute to the [`amp-story-shopping-attachment`](/documentation/components/amp-story-shopping#amp-story-shopping-attachment/?format=stories) to remotely fetch the data at render time.
+        Using `src` ensures product data will be up to date, even when served from the cache.
+
+        It is important to note that product data is specific to each page. It cannot be shared between pages.
+        This ensures data is only loaded when needed.
+      -->
+
+      <amp-story-page id="page-2">
+        <amp-story-grid-layer template="fill">
+          <amp-img layout="fill" src="https://source.unsplash.com/_HqHX3LBN18/1000x2000"></amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical">
+          <amp-story-shopping-tag data-product-id="chair"></amp-story-shopping-tag>
+          <amp-story-shopping-tag data-product-id="lamp"></amp-story-shopping-tag>
+        </amp-story-grid-layer>
+        <amp-story-shopping-attachment src="/static/samples/json/amp-story-shopping.json">
+          <script type="application/json">
+            {
+              "items": [
+                {
+                  "productUrl": "https://www.google.com",
+                  "productId": "chair",
+                  "productTitle": "Yellow chair",
+                  "productBrand": "Chair Co.",
+                  "productPrice": 1000.0,
+                  "productPriceCurrency": "USD",
+                  "productImages": [
+                    {"url": "https://source.unsplash.com/DgQGKKLaVhY/500x500", "alt": "chair"}
+                  ],
+                  "aggregateRating": {
+                    "ratingValue": "4.4",
+                    "reviewCount": "89",
+                    "reviewUrl": "https://www.google.com"
+                  },
+                  "productDetails": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere error deserunt dignissimos in laborum ea molestias veritatis sint laudantium iusto expedita atque provident doloremque, ad voluptatem culpa adipisci."
+                },
+                {
+                  "productUrl": "https://www.google.com",
+                  "productId": "lamp",
+                  "productTitle": "Brass Lamp",
+                  "productBrand": "Lamp Co",
+                  "productPrice": 799.0,
+                  "productPriceCurrency": "USD",
+                  "productImages": [
+                    {"url": "https://source.unsplash.com/Ry9WBo3qmoc/500x500", "alt": "lamp 1"},
+                    {"url": "https://source.unsplash.com/KP7p0-DRGbg", "alt": "lamp 2"},
+                    {"url": "https://source.unsplash.com/mFnbFaCIu1I", "alt": "lamp 3"},
+                    {"url": "https://source.unsplash.com/py9sH2rThWs", "alt": "lamp 4"},
+                    {"url": "https://source.unsplash.com/VDPauwJ_sHo", "alt": "lamp 5"},
+                    {"url": "https://source.unsplash.com/3LTht2nxd34", "alt": "lamp 6"}
+                  ],
+                  "aggregateRating": {
+                    "ratingValue": "4.4",
+                    "reviewCount": "89",
+                    "reviewUrl": "https://www.google.com"
+                  },
+                  "productDetails": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere error deserunt dignissimos in laborum ea molestias veritatis sint laudantium iusto expedita atque provident doloremque, ad voluptatem culpa adipisci."
+                }                
+              ]
+            }            
+          </script>
+        </amp-story-shopping-attachment>
+      </amp-story-page>
+
+      <!--
+        ## Optional configuration
+        
+        In this example we display a custom icon and text in the [`amp-story-shopping-tag`](/documentation/components/amp-story-shopping#amp-story-shopping-tag/?format=stories) by defining `productIcon` and `productTagText` within the product JSON.
+        We recommend using a 48 x 48px image for `productIcon`. We recommend using 1-3 words for `productTagText`. If the text is too long it will become two lines and display ellipses.
+
+        We also set `theme="dark"` on the [`amp-story-shopping-attachment`](/documentation/components/amp-story-shopping#amp-story-shopping-attachment/?format=stories) to render the "Shop now" cta button and page attachment in a dark palette.
+      -->
+
+      <amp-story-page id="page-3">
+        <amp-story-grid-layer template="fill">
+          <amp-img layout="fill" src="https://source.unsplash.com/_HqHX3LBN18/1000x2000"></amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical">
+          <amp-story-shopping-tag data-product-id="flowers"></amp-story-shopping-tag>
+          <amp-story-shopping-tag data-product-id="chair"></amp-story-shopping-tag>
+          <amp-story-shopping-tag data-product-id="lamp"></amp-story-shopping-tag>
+        </amp-story-grid-layer>
+        <amp-story-shopping-attachment theme="dark" src="/static/samples/json/amp-story-shopping.json">
+          <script type="application/json">
+            {
+              "items": [
+                {
+                  "productIcon": "/static/samples/img/amp-story-shopping-icon.png",
+                  "productTagText": "Flowers",
+                  "productUrl": "https://www.google.com",
+                  "productId": "flowers",
+                  "productTitle": "Flowers",
+                  "productBrand": "Flower Company Name",
+                  "productPrice": 10.0,
+                  "productPriceCurrency": "USD",
+                  "productImages": [
+                    {"url": "https://source.unsplash.com/SavQfLRm4Do/500x500", "alt": "flowers"}
+                  ],
+                  "aggregateRating": {
+                    "ratingValue": "4.4",
+                    "reviewCount": "89",
+                    "reviewUrl": "https://www.google.com"
+                  },
+                  "productDetails": "Lorem ipsum dolor sit amet consectetur adipisicing elit. \n Facere error deserunt dignissimos in laborum ea molestias veritatis sint laudantium iusto expedita atque provident doloremque, ad voluptatem culpa adipisci."
+                },
+                {
+                  "productUrl": "https://www.google.com",
+                  "productId": "chair",
+                  "productTitle": "Yellow chair",
+                  "productBrand": "Chair Co.",
+                  "productPrice": 1000.0,
+                  "productPriceCurrency": "USD",
+                  "productImages": [
+                    {"url": "https://source.unsplash.com/DgQGKKLaVhY/500x500", "alt": "chair"}
+                  ],
+                  "aggregateRating": {
+                    "ratingValue": "4.4",
+                    "reviewCount": "89",
+                    "reviewUrl": "https://www.google.com"
+                  },
+                  "productDetails": "Lorem ipsum dolor sit amet consectetur adipisicing elit. \n Facere error deserunt dignissimos in laborum ea molestias veritatis sint laudantium iusto expedita atque provident doloremque, ad voluptatem culpa adipisci."
+                },
+                {
+                  "productUrl": "https://www.google.com",
+                  "productId": "lamp",
+                  "productTitle": "Brass Lamp",
+                  "productBrand": "Lamp Co",
+                  "productPrice": 799.0,
+                  "productPriceCurrency": "USD",
+                  "productImages": [
+                    {"url": "https://source.unsplash.com/Ry9WBo3qmoc/500x500", "alt": "lamp 1"},
+                    {"url": "https://source.unsplash.com/KP7p0-DRGbg", "alt": "lamp 2"},
+                    {"url": "https://source.unsplash.com/mFnbFaCIu1I", "alt": "lamp 3"},
+                    {"url": "https://source.unsplash.com/py9sH2rThWs", "alt": "lamp 4"},
+                    {"url": "https://source.unsplash.com/VDPauwJ_sHo", "alt": "lamp 5"},
+                    {"url": "https://source.unsplash.com/3LTht2nxd34", "alt": "lamp 6"}
+                  ],
+                  "aggregateRating": {
+                    "ratingValue": "4.4",
+                    "reviewCount": "89",
+                    "reviewUrl": "https://www.google.com"
+                  },
+                  "productDetails": "Lorem ipsum dolor sit amet consectetur adipisicing elit. \n Facere error deserunt dignissimos in laborum ea molestias veritatis sint laudantium iusto expedita atque provident doloremque, ad voluptatem culpa adipisci."
+                }                
+              ]
+            }
+          </script>
+        </amp-story-shopping-attachment>
+      </amp-story-page>
+
+    </amp-story>
+  </body>
+</html>
+
+<!--
+  # More Resources
+
+  If you want to learn more about shopping within Web Stories, head over to the [documentation](/documentation/components/amp-story-shopping?format=stories).
+-->

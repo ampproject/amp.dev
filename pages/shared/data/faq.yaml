@@ -126,6 +126,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/adpushup.md
       - label: AdReactor
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/adreactor.md
+      - label: ads2.bid
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/ads2bid.md
       - label: AdSensor
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/adsensor.md
       - label: AdServSolution

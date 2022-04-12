@@ -167,6 +167,16 @@ creation:
       height: 354
     formats:
       - stories
+  - name: Pendular.io
+    description: Allows publishers to automate the creation of high-quality stories focused on sports content.
+    url: https://pendular.io/
+    type:  WYSIWYG Editor
+    image:
+      src: /static/img/tools/pend-c3a1c71e-8f09-4e5b-829f-96ddd6a67d7f.jpg
+      width: 1340
+      height: 653
+    formats:
+      - stories
   - name: Visual Stories
     description: Multi-site, multi-author blogging tools and WYSIWYG editor to create Web Stories on your own domain.
     url: https://visualstories.com
