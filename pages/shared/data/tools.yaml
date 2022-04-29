@@ -177,6 +177,16 @@ creation:
       height: 653
     formats:
       - stories
+  - name: Zazu
+    description: Design award-winning Web Story builder. Rely on the most intuitive editor to build Stories with your team or automate the entire process.
+    url: https://zazuapp.co/
+    type:  WYSIWYG Editor
+    image:
+      src: /static/img/tools/Zazu-c580-d8e1.jpeg
+      width: 3840
+      height: 2160
+    formats:
+      - stories
   - name: Visual Stories
     description: Multi-site, multi-author blogging tools and WYSIWYG editor to create Web Stories on your own domain.
     url: https://visualstories.com
