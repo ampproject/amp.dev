@@ -153,7 +153,7 @@
 		"handlebars-registrar": "1.5.2",
 		"highlight.js": "11.2.0",
 		"hogan.js": "3.0.2",
-		"html-loader": "2.1.2",
+		"html-loader": "3.1.2",
 		"html-minifier": "4.0.0",
 		"html-webpack-inline-source-plugin": "1.0.0-beta.2",
 		"html-webpack-plugin": "5.3.2",
