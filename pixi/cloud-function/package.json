@@ -10,6 +10,6 @@
 	"author": "AMPHTML Authors",
 	"license": "Apache 2",
 	"dependencies": {
-		"@ampproject/toolbox-page-experience": "2.8.10"
+		"@ampproject/toolbox-page-experience": "2.9.0"
 	}
 }
