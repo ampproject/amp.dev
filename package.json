@@ -58,10 +58,10 @@
 		"not dead"
 	],
 	"dependencies": {
-		"@ampproject/toolbox-cache-list": "2.8.0",
-		"@ampproject/toolbox-cors": "2.8.0",
-		"@ampproject/toolbox-linter": "2.8.8",
-		"@ampproject/toolbox-optimizer": "2.8.10",
+		"@ampproject/toolbox-cache-list": "2.9.0",
+		"@ampproject/toolbox-cors": "2.9.0",
+		"@ampproject/toolbox-linter": "2.9.0",
+		"@ampproject/toolbox-optimizer": "2.9.0",
 		"@google-cloud/datastore": "6.5.0",
 		"acorn": "8.5.0",
 		"buffer": "6.0.3",
@@ -109,8 +109,8 @@
 		"ws": "8.2.2"
 	},
 	"devDependencies": {
-		"@ampproject/toolbox-cache-url": "2.8.0",
-		"@ampproject/toolbox-validator-rules": "2.8.0",
+		"@ampproject/toolbox-cache-url": "2.9.0",
+		"@ampproject/toolbox-validator-rules": "2.9.0",
 		"@babel/cli": "7.15.4",
 		"@babel/core": "7.15.5",
 		"@babel/node": "7.15.4",
