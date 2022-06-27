@@ -44,7 +44,7 @@ const routers = {
   healthCheck: require('@lib/routers/healthCheck.js').router,
   log: require('@lib/routers/runtimeLog.js'),
   notFound: require('@lib/routers/notFound.js'),
-  packager: require('@lib/routers/packager.js'),
+  // packager: require('@lib/routers/packager.js'),
   pixi: require('../../pixi/backend/'),
   playground: require('../../playground/backend/'),
   search: require('@lib/routers/search.js'),
@@ -170,7 +170,8 @@ class Platform {
 
   _configureRouters() {
     this.server.use(routers.cspReport);
-    this.server.use(routers.packager);
+    // Disable packager until we have a better way to manage our certs
+    // this.server.use(routers.packager);
     this.server.use(routers.thumbor);
     this.server.use(routers.whoAmI);
     this.server.use(routers.healthCheck);
