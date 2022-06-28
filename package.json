@@ -76,7 +76,7 @@
 		"express": "4.17.1",
 		"express-formidable": "1.2.0",
 		"gcp-metadata": "4.3.1",
-		"google-spreadsheet": "3.1.15",
+		"google-spreadsheet": "3.3.0",
 		"helmet-csp": "3.4.0",
 		"http-proxy": "1.18.1",
 		"iltorb": "2.4.5",
