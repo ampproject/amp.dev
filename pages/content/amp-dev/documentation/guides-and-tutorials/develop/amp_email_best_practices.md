@@ -38,11 +38,11 @@ When working AMP for Email, keep in mind the following tips and tricks:
 - The AMP MIME part should appear before the HTML MIME part in your email to ensure maximum compatibility across email clients.
 - The `src` attribute of [`amp-list`](../../../documentation/components/reference/amp-list.md?format=email), [`action-xhr`](../../../documentation/components/reference/amp-form.md?format=email#action-xhr) of [`amp-form`](../../../documentation/components/reference/amp-form.md?format=email), the `src` for [`amp-img`](../../../documentation/examples/documentation/amp-img.html?format=email), or the href attribute of an `<a>` tag cannot be mutated by [`amp-bind`](../../../documentation/examples/documentation/amp-bind.html?format=email).
 - Your messages should include a static HTML version in the event that a user is taken to the HTML version of the message, or if that user forwards the message.
-- The AMP for Email format imposes a [byte limit on the size of the email](../learn/email-spec/amp-email-format/?format=email#required-markup). Prevent your email from falling back to static email due to exceeding the size limit by
+- The AMP for Email format imposes a [byte limit on the size of the email](../learn/email-spec/amp-email-format.md?format=email#required-markup). Prevent your email from falling back to static email due to exceeding the size limit by
     - Trimming your email and removing unnecessary content
     - Minimizing the number of hyperlinks in your email, whose URLs could be rewritten into very long URLs by ESPs and analytics platforms
     - Eliminating unncessary use of HTML constructs such as multiple nested `div`s that can be collapsed into one `div`
-    - Minimizing whitespace characters in the [`on` attribute for events and actions](../learn/amp-email-actions-and-events/?format=email) and [`amp-bind` binding expressions](../../components/reference/amp-bind-v0.1.md?format=email#expressions)
+    - Minimizing whitespace characters in the [`on` attribute for events and actions](../learn/amp-email-actions-and-events.md?format=email) and [`amp-bind` binding expressions](../../components/reference/amp-bind-v0.1.md?format=email#expressions)
     - Using tools like [HTML and CSS minifiers](https://github.com/kangax/html-minifier) to perform compressions such as:
         - Removing unnecessary whitespace characters (such as space and newline characters used for making the source code human-readable) in HTML and CSS
         - Removing comments in HTML and CSS
