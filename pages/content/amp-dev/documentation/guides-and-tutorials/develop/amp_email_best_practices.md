@@ -10,13 +10,13 @@ AMP allows for exciting new types of immersive and engaging content in email! Wh
 
 #Speed
 
-When using [`amp-list`](../../../documentation/components/reference/amp-list.md?format=email) to dynamically fetch content, include a placeholder to keep the integrity of the components structure. The placeholder should be as similar in layout as possible to the document after it's returned the requested data. This ensures the message size isn't changing or mutating the layout significantly.
+When using [`amp-list`](../../components/reference/amp-list-v0.1.md?format=email) to dynamically fetch content, include a placeholder to keep the integrity of the components structure. The placeholder should be as similar in layout as possible to the document after it's returned the requested data. This ensures the message size isn't changing or mutating the layout significantly.
 
 #Usability and accessibility
 
 - When using
   [`amp-carousel`](../../components/reference/amp-carousel-v0.1.md?format=email), ensure the `controls` attribute is set. This lets users on touchscreen devices such as smartphones to navigate the carousel.
-- When using [`amp-form`](../../../documentation/components/reference/amp-form.md?format=email), keep in mind not all input types are supported on iOS. Refer to [Supported Input Values](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/InputTypes.html) in the Safari HTML Reference for more information.
+- When using [`amp-form`](../../components/reference/amp-form-v0.1.md?format=email), keep in mind not all input types are supported on iOS. Refer to [Supported Input Values](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/InputTypes.html) in the Safari HTML Reference for more information.
 - Not all [`autocomplete` attribute values](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) are supported across different apps and browsers. Assume that autocomplete isn't available to your users and keep the forms short.
 
 #Styling
@@ -36,7 +36,7 @@ When working AMP for Email, keep in mind the following tips and tricks:
 
 - The AMP for Email playground doesn't proxy XHRs, but some email providers do.
 - The AMP MIME part should appear before the HTML MIME part in your email to ensure maximum compatibility across email clients.
-- The `src` attribute of [`amp-list`](../../../documentation/components/reference/amp-list.md?format=email), [`action-xhr`](../../../documentation/components/reference/amp-form.md?format=email#action-xhr) of [`amp-form`](../../../documentation/components/reference/amp-form.md?format=email), the `src` for [`amp-img`](../../../documentation/examples/documentation/amp-img.html?format=email), or the href attribute of an `<a>` tag cannot be mutated by [`amp-bind`](../../../documentation/examples/documentation/amp-bind.html?format=email).
+- The `src` attribute of [`amp-list`](../../components/reference/amp-list-v0.1.md?format=email), [`action-xhr`](../../components/reference/amp-form-v0.1.md?format=email#action-xhr) of [`amp-form`](../../components/reference/amp-form-v0.1.md?format=email), the `src` for [`amp-img`](../../components/reference/amp-img-v0.1.md?format=email), or the href attribute of an `<a>` tag cannot be mutated by [`amp-bind`](../../components/reference/amp-bind-v0.1.md?format=email).
 - Your messages should include a static HTML version in the event that a user is taken to the HTML version of the message, or if that user forwards the message.
 - The AMP for Email format imposes a [byte limit on the size of the email](../learn/email-spec/amp-email-format.md?format=email#required-markup). Prevent your email from falling back to static email due to exceeding the size limit by
     - Trimming your email and removing unnecessary content
