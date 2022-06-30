@@ -49,7 +49,7 @@ Content-Type: text/html; charset="UTF-8"
 
 ```
 [tip type="important"]
-    Some email clients will only render the last MIME part. To ensure an email is rendered, place the `text/x-amp-html` MIME part _before _the `text/html` MIME part.
+    Some email clients will only render the last MIME part. To ensure an email is rendered, place the `text/x-amp-html` MIME part _before_ the `text/html` MIME part.
 [/tip]
 
 # What happens when recipients forward or reply to an AMP Email?

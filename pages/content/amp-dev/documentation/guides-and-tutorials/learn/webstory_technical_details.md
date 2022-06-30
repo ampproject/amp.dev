@@ -167,7 +167,7 @@ Try to keep HLS segments under 10 seconds in duration.
 
 Keep videos smaller than 4MB for optimal performance. Consider splitting large videos up over multiple pages.
 
-If you can only provide a single video format, provide MP4. When possible, use HLS video and specify MP4 as a fallback for browser compatibility. Use the following video codec:
+If you can only provide a single video format, provide MP4. Use the following video codec:
 
 <table>
   <tr>
