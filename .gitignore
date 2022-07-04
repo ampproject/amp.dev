@@ -9,6 +9,8 @@
 *.log
 node_modules
 .com.apple.timemachine.supported
+*.swp
+*.swo
 
 dist
 /build
