@@ -15,7 +15,7 @@ We know that diving into using a technology can be overwhelming so here are some
     - AMP components used: 
         - Use `<amp-list>` to pull information in dynamically from an endpoint.
         - Use a generic `<input>` tag to leave a comment.
-        - Use `<amp-form>` to submit an "Reply/Resolve" state to an end point. 
+        - Use `<amp-form>` to submit an "Reply/Resolve" state to an endpoint. 
 - Mentioning/tagging someone in a doc comment:
     - AMP components used: 
         - Use `<amp-list>` to pull information in dynamically from an endpoint.
@@ -23,16 +23,16 @@ We know that diving into using a technology can be overwhelming so here are some
 - Granting access to a file/asset via email:
     - AMP components used:
         - Use `<button>` to display the action
-        - Use `<amp-form>` to submit the form to an end point. 
+        - Use `<amp-form>` to submit the form to an endpoint. 
 
 ## Approvals/reviews
 - Expenses, Vacation, Content, Ticketing, workflows - Instant approvals, moving something along a workflow, commenting on or assign issues:
     - AMP components used: 
         - Use `<amp-list>` to pull information in dynamically from an endpoint.
         - Use a generic `<input>` tag to leave a comment.
-        - Use `<amp-form>` to submit an "Reply/Resolve" state to an end point. 
+        - Use `<amp-form>` to submit an "Reply/Resolve" state to an endpoint. 
 
 ## Triggering a failed service
 - Trigger a failed service via an email notification:
     - AMP components used: 
-        - Use `<amp-form>` to submit the form (with the button) to an end point.
+        - Use `<amp-form>` to submit the form (with the button) to an endpoint.
