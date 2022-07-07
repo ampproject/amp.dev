@@ -193,7 +193,7 @@ And then add some styling into the head.
 
 # Add Dynamic Capabilities
 
-Classically, emails only allow for static content. Through AMP, emails are opened to an entire new world of possibilities! Users can now respond to [forms](/content/amp-dev/documentation/components/reference/amp-form.md), get [content updated dynamically list](/content/amp-dev/documentation/components/reference/amp-list.md), and interact with content.
+Classically, emails only allow for static content. Through AMP, emails are opened to an entire new world of possibilities! Users can now respond to [forms](/content/amp-dev/documentation/components/reference/amp-form.md), get [content updated dynamically](/content/amp-dev/documentation/components/reference/amp-list-v0.1.md), and interact with content.
 
 In this tutorial, we'll use [`<amp-bind>`](/content/amp-dev/documentation/components/reference/amp-bind.md) to display our adoptable cat's name and a description when the user is on that cat's slide. Start by including the `amp-bind` script in the head of your email.
 
@@ -235,7 +235,7 @@ Next, we'll declare an AMP bind variable "myState" as a JSON string inside an [`
 ```
 
 
-[AMP actions and events](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md) trigger different states. In our case, we want to update the state when the user clicks on the carousel navigation arrows. The amp-carousel fires a [`slideChange`](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp-carouseltypeslides) event, on which we will update the `currentCat` variable using `AMP.setState`.
+[AMP actions and events](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-email-actions-and-events.md) trigger different states. In our case, we want to update the state when the user clicks on the carousel navigation arrows. The amp-carousel fires a [`slideChange`](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-email-actions-and-events.md#amp-carouseltypeslides) event, on which we will update the `currentCat` variable using `AMP.setState`.
 
 
 ```html
