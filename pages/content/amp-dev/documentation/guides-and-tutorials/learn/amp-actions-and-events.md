@@ -21,7 +21,7 @@ have a look and request a pull request there.
 
 
 [tip type="note"]
-This documentation covers actions and events for AMP websites, stories and ads. Read [Actions and events in AMP email](amp-email-actions-and-events.md) for the AMP email format.
+This documentation covers actions and events for AMP websites, stories and ads. Read [Actions and events in AMP email](https://github.com/ampproject/amphtml/blob/master/docs/spec/amp-email-actions-and-events.md) for the AMP email format.
 [/tip]
 
 The `on` attribute is used to install event handlers on elements. The events that are supported depend on the element.
