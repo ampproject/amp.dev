@@ -28,6 +28,7 @@
     "amp-story-player",
 		"amp-stream-gallery",
 		"amp-subscriptions",
+    "amp-story-subscriptions",
 		"amp-timeago",
 		"amp-video",
 		"amp-video-iframe",
