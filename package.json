@@ -86,7 +86,7 @@
 		"js-yaml": "4.1.0",
 		"json-tree-view": "0.4.12",
 		"linkifyjs": "2.1.9",
-		"lru-cache": "6.0.0",
+		"lru-cache": "7.14.0",
 		"module-alias": "2.2.2",
 		"mri": "1.2.0",
 		"multer": "1.4.3",
