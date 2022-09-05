@@ -104,7 +104,7 @@
 		"signale": "1.4.0",
 		"stream-browserify": "3.0.0",
 		"util": "0.12.4",
-		"uuid": "8.3.2",
+		"uuid": "9.0.0",
 		"web-push": "3.4.5",
 		"ws": "8.2.2"
 	},
