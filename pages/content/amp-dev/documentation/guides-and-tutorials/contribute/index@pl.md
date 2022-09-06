@@ -44,4 +44,4 @@ Zacznij od przeczytania naszego [przewodnika po tworzeniu treści](contribute-do
 
 #### Pomoc przy tłumaczeniach
 
-AMP dąży do tego, aby sieć WWW zapewniała wszystkim lepsze wrażenia. Aby umożliwić korzystanie z AMP na całym świecie, potrzebujemy współpracowników tłumaczących przewodniki, samoczuki, blogi i wszystkie pisemne materiały na temat AMP. Aby zaangażować się w lokalizowanie dokumentacji AMP dla swojej społeczności, sprawdź [inicjatywę tłumaczenia AMP](https://github.com/ampproject/docs/blob/master/TRANSLATIONS.md).
+AMP dąży do tego, aby sieć WWW zapewniała wszystkim lepsze wrażenia. Aby umożliwić korzystanie z AMP na całym świecie, potrzebujemy współpracowników tłumaczących przewodniki, samoczuki, blogi i wszystkie pisemne materiały na temat AMP. Aby zaangażować się w lokalizowanie dokumentacji AMP dla swojej społeczności, sprawdź [inicjatywę tłumaczenia AMP](translations/?format=websites).

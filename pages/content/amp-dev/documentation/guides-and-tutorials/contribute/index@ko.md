@@ -34,4 +34,4 @@ AMP 프로젝트는 기술적 기여를 강하게 장려합니다.
 
 #### 번역을 돕기
 
-AMP는 월드 와이드 웹이 모두에게 더 좋은 경험이 될 수 있도록 노력하고 있습니다. 전세계의 모든 사람이 AMP를 사용할 수 있도록 하려면 가이드, 튜토리얼, 블로그와 AMP로 쓰여진 모든 사항에 대한 번역 기여자들이 필요합니다. 커뮤니티의 AMP 문서 현지화에 참여하려면 [AMP Translation Initiative](https://github.com/ampproject/docs/blob/master/TRANSLATIONS.md)를 확인하십시오. ([번역 추가하기 페이지 바로가기](https://amp.dev/ko/documentation/guides-and-tutorials/contribute/translations/)
+AMP는 월드 와이드 웹이 모두에게 더 좋은 경험이 될 수 있도록 노력하고 있습니다. 전세계의 모든 사람이 AMP를 사용할 수 있도록 하려면 가이드, 튜토리얼, 블로그와 AMP로 쓰여진 모든 사항에 대한 번역 기여자들이 필요합니다. 커뮤니티의 AMP 문서 현지화에 참여하려면 [AMP Translation Initiative](translations/?format=websites)를 확인하십시오. ([번역 추가하기 페이지 바로가기](https://amp.dev/ko/documentation/guides-and-tutorials/contribute/translations/)

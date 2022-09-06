@@ -44,4 +44,4 @@ Content on [amp.dev](https://amp.dev) is how developers learn to build successfu
 Get started by reading our [content contribution guide](contribute-documentation/index.md?format=websites).
 
 #### Helping with translations
-AMP strives to make the world wide web a better experience for everyone. To enable everyone in the world to use AMP, we need translation contributors for guides, tutorials, blogs and all things written for AMP. To get involved with localizing AMP documentation for your community, check out the [AMP Translation Initiative](https://github.com/ampproject/docs/blob/master/TRANSLATIONS.md).
+AMP strives to make the world wide web a better experience for everyone. To enable everyone in the world to use AMP, we need translation contributors for guides, tutorials, blogs and all things written for AMP. To get involved with localizing AMP documentation for your community, check out the [AMP Translation Initiative](translations/?format=websites).

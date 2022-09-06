@@ -44,4 +44,4 @@ Bắt đầu bằng cách đọc [hướng dẫn đóng góp nội dung](contrib
 
 #### Giúp đỡ với việc dịch tài liệu
 
-AMP luôn nỗ lực cải thiện trải nghiệm trên mạng lưới toàn cầu cho tất cả mọi người. Để cho phép tất cả mọi người trên thế giới sử dụng AMP, chúng tôi cần các cộng tác viên đóng góp bản dịch cho hướng dẫn, bài thực hành, blog và mọi thứ được viết cho AMP. Để tham gia quá trình bản địa hóa tài liệu AMP cho cộng đồng của bạn, hãy xem [Sáng kiến Biên dịch AMP](https://github.com/ampproject/docs/blob/master/TRANSLATIONS.md).
+AMP luôn nỗ lực cải thiện trải nghiệm trên mạng lưới toàn cầu cho tất cả mọi người. Để cho phép tất cả mọi người trên thế giới sử dụng AMP, chúng tôi cần các cộng tác viên đóng góp bản dịch cho hướng dẫn, bài thực hành, blog và mọi thứ được viết cho AMP. Để tham gia quá trình bản địa hóa tài liệu AMP cho cộng đồng của bạn, hãy xem [Sáng kiến Biên dịch AMP](translations/?format=websites).

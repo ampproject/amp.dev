@@ -44,4 +44,4 @@ Inicie leyendo nuestra [guía de contribución a los contenidos](https://github.
 
 #### Ayuda con las traducciones
 
-AMP se esfuerza por hacer de la web una mejor experiencia para todos. Para que todos puedan usar AMP, necesitamos colaboradores de traducción para las guías, tutoriales, blogs y toda la documentación escrita de AMP. Para participar en la localización de la documentación de AMP para su comunidad, revise la [Iniciativa de traducción de AMP](https://github.com/ampproject/docs/blob/master/TRANSLATIONS.md).
+AMP se esfuerza por hacer de la web una mejor experiencia para todos. Para que todos puedan usar AMP, necesitamos colaboradores de traducción para las guías, tutoriales, blogs y toda la documentación escrita de AMP. Para participar en la localización de la documentación de AMP para su comunidad, revise la [Iniciativa de traducción de AMP](translations/?format=websites).

@@ -44,4 +44,4 @@ Mulailah dengan membaca [panduan kontribusi konten](contribute-documentation/ind
 
 #### Membantu menerjemahkan
 
-AMP berusaha untuk membuat web di seluruh dunia menjadi pengalaman yang lebih baik bagi semua orang. Agar semua orang di dunia dapat menggunakan AMP, kami membutuhkan kontributor terjemahan untuk panduan, tutorial, blog, dan semua hal yang ditulis untuk AMP. Untuk terlibat dalam pelokalan dokumentasi AMP untuk komunitas Anda, kunjungi [Inisiatif Penerjemahan AMP](https://github.com/ampproject/docs/blob/master/TRANSLATIONS.md).
+AMP berusaha untuk membuat web di seluruh dunia menjadi pengalaman yang lebih baik bagi semua orang. Agar semua orang di dunia dapat menggunakan AMP, kami membutuhkan kontributor terjemahan untuk panduan, tutorial, blog, dan semua hal yang ditulis untuk AMP. Untuk terlibat dalam pelokalan dokumentasi AMP untuk komunitas Anda, kunjungi [Inisiatif Penerjemahan AMP](translations/?format=websites).

@@ -44,4 +44,4 @@ Inizia leggendo la nostra [guida per contribuire ai contenuti](contribute-docume
 
 #### Collaborare per le traduzioni
 
-AMP si impegna a rendere il World Wide Web un'esperienza migliore per tutti gli utenti. Per consentire l'utilizzo di AMP in tutto il mondo, abbiamo bisogno di collaboratori per la traduzione di guide, esercitazioni, blog e tutta la documentazione scritta per AMP. Per contribuire alla localizzazione della documentazione AMP per la tua comunità, dai un'occhiata al documento [Iniziativa per le traduzioni AMP](https://github.com/ampproject/docs/blob/master/TRANSLATIONS.md).
+AMP si impegna a rendere il World Wide Web un'esperienza migliore per tutti gli utenti. Per consentire l'utilizzo di AMP in tutto il mondo, abbiamo bisogno di collaboratori per la traduzione di guide, esercitazioni, blog e tutta la documentazione scritta per AMP. Per contribuire alla localizzazione della documentazione AMP per la tua comunità, dai un'occhiata al documento [Iniziativa per le traduzioni AMP](translations/?format=websites).

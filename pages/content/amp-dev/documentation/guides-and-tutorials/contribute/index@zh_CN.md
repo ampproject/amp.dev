@@ -44,4 +44,4 @@ AMP 项目极力鼓励大家踊跃做出技术方面的贡献！
 
 #### 提供翻译方面的帮助
 
-AMP 致力于让所有人都能更好地体验万维网。为了让全球所有人都能使用 AMP，我们需要翻译贡献者来翻译 AMP 的指南、教程、博客等内容。要想参与社区 AMP 文档的本地化工作，请查阅 [AMP 翻译计划](https://github.com/ampproject/docs/blob/master/TRANSLATIONS.md)。
+AMP 致力于让所有人都能更好地体验万维网。为了让全球所有人都能使用 AMP，我们需要翻译贡献者来翻译 AMP 的指南、教程、博客等内容。要想参与社区 AMP 文档的本地化工作，请查阅 [AMP 翻译计划](translations/?format=websites)。

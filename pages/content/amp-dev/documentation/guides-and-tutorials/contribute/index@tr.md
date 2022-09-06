@@ -44,4 +44,4 @@ Belgeleme mi? AMP kullanım örnekleri, geliştiricilerin kullanıma başlaması
 
 #### Çeviriler konusunda yardımcı olma
 
-AMP, dünya çapında ağı herkes için daha iyi bir deneyim haline getirmeye çalışıyor. Dünyadaki herkesin AMP'yi kullanmasını sağlamak için kılavuzlar, eğitimler, bloglar ve AMP için yazılan her şey için çeviri konusunda katkıda bulacaklara ihtiyacımız var. Topluluğunuz için AMP belgelerinin yerelleştirilmesine dahil olmak için [AMP Çeviri Girişimi'ne](https://github.com/ampproject/docs/blob/master/TRANSLATIONS.md) bakın.
+AMP, dünya çapında ağı herkes için daha iyi bir deneyim haline getirmeye çalışıyor. Dünyadaki herkesin AMP'yi kullanmasını sağlamak için kılavuzlar, eğitimler, bloglar ve AMP için yazılan her şey için çeviri konusunda katkıda bulacaklara ihtiyacımız var. Topluluğunuz için AMP belgelerinin yerelleştirilmesine dahil olmak için [AMP Çeviri Girişimi'ne](translations/?format=websites) bakın.

@@ -44,4 +44,4 @@ Lies zunächst unseren [Leitfaden für Content Beiträge](contribute-documentati
 
 #### Helping with translations
 
-AMP will das Internet für alle zu einem besseren Erlebnis zu machen. Damit jeder auf der Welt AMP verwenden kann, brauchen wir Mitarbeiter für die Übersetzung von Leitfäden, Tutorials, Blogs und allem, was für AMP geschrieben wird. Informationen zur Lokalisierung der AMP Dokumentation für deine Community findest du in der [AMP Übersetzungsinitiative](https://github.com/ampproject/docs/blob/master/TRANSLATIONS.md).
+AMP will das Internet für alle zu einem besseren Erlebnis zu machen. Damit jeder auf der Welt AMP verwenden kann, brauchen wir Mitarbeiter für die Übersetzung von Leitfäden, Tutorials, Blogs und allem, was für AMP geschrieben wird. Informationen zur Lokalisierung der AMP Dokumentation für deine Community findest du in der [AMP Übersetzungsinitiative](translations/?format=websites).

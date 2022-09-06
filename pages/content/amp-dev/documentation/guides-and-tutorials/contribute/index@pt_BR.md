@@ -44,4 +44,4 @@ Comece lendo nosso [guia para contribuição de conteúdo](contribute-documentat
 
 #### Ajudando com traduções
 
-O AMP busca fazer da world wide web uma experiência melhor para todo mundo. Para permitir que todas as pessoas no mundo usem AMP, precisamos de colaboradores de tradução para guias, tutoriais, blogs e todas as coisas escritas para o AMP. Para se envolver com a localização de documentação de AMP para sua comunidade, confira o [AMP Translation Initiative](https://github.com/ampproject/docs/blob/master/TRANSLATIONS.md).
+O AMP busca fazer da world wide web uma experiência melhor para todo mundo. Para permitir que todas as pessoas no mundo usem AMP, precisamos de colaboradores de tradução para guias, tutoriais, blogs e todas as coisas escritas para o AMP. Para se envolver com a localização de documentação de AMP para sua comunidade, confira o [AMP Translation Initiative](translations/?format=websites).
