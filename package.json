@@ -120,7 +120,7 @@
 		"@babel/preset-env": "7.15.6",
 		"@babel/runtime": "7.15.4",
 		"@rollup/plugin-commonjs": "20.0.0",
-		"@rollup/plugin-node-resolve": "13.0.4",
+		"@rollup/plugin-node-resolve": "14.1.0",
 		"@rollup/plugin-replace": "3.0.0",
 		"absolutify": "0.1.0",
 		"amphtml-validator": "1.0.35",
