@@ -1,0 +1,34 @@
+[build]
+  publish = "./sources"
+
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    Content-Security-Policy-Report-Only="default-src * data: blob:;worker-src 'self' blob:;script-src blob: 'unsafe-inline' https://cdn.ampproject.org/v0.js https://cdn.ampproject.org/v0.mjs https://cdn.ampproject.org/v0/ https://cdn.ampproject.org/sw/ https://cdn.ampproject.org/viewer/ https://cdn.ampproject.org/rtv/ https://www.googletagmanager.com/gtag/js https://playground.amp.dev/ https://preview.amp.dev/ https://go.amp.dev/ https://log.amp.dev/;object-src 'none';style-src 'unsafe-inline' https://cdn.ampproject.org/rtv/ https://playground.amp.dev/ https://preview.amp.dev/ https://go.amp.dev/ https://log.amp.dev/;report-uri /csp-report"
+    X-Content-Type-Options="nosniff"
+    X-XSS-Protection="1; mode=block"
+    Access-Control-Allow-Origin="*"
+
+[[redirects]]
+  from = "/documentation/examples/*"
+  to = "/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/static/*"
+  to = "https://amp.dev/static/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/img/*"
+  to = "https://amp.dev/static/samples/img/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/news-publishing/live_blog"
+  to = "/.netlify/functions/examples_source_news_publishing_amp-live-list_api"
+  status = 200
+
+[functions]
+  directory = "../../netlify/functions/"

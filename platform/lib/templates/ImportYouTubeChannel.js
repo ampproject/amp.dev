@@ -26,7 +26,7 @@ const log = require('@lib/utils/log')('Import YouTube Channel');
 async function importYouTubeChannel(value, callback) {
   let channel;
   try {
-    channel = await Feed.load(FEED_PATH);
+    channel = await Feed.parse(FEED_PATH);
   } catch (err) {
     log.error('Fetching YouTube Channel failed:', err);
     callback(null, []);

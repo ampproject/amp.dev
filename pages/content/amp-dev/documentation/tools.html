@@ -62,7 +62,7 @@ tools: !g.yaml /shared/data/tools.yaml
     {% for link in doc.filters %}
       <li>
         <button class="ap-a-pill {{link|slug}} [% if requestedFormat == '{{link}}'|lower or not requestedFormat%]active[% endif %]"
-          on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/documentation/tools.html', locale=doc.locale).url.path }}?format={{link|slug}}')">
+                on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/documentation/tools.html', locale=doc.locale).url.path }}/{{link|slug}}')">
           <div class="ap-a-pill-icon ap-a-ico {{link|lower}}">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{link|lower}}"></use></svg>
           </div>

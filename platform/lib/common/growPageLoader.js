@@ -18,7 +18,7 @@
 
 const config = require('../config.js');
 const {promisify} = require('util');
-const {join} = require('path');
+const {isAbsolute, join} = require('path');
 const {readFile} = require('fs');
 const readFileAsync = promisify(readFile);
 const fetch = require('node-fetch');
@@ -33,6 +33,8 @@ async function fetchPage(pageUrlPath) {
   if (config.isTestMode()) {
     // fetch original doc page from filesystem for testing
     return readFileAsync(join(paths.PAGES_SRC, pageUrlPath), 'utf-8');
+  } else if (isAbsolute(pageUrlPath)) {
+    return readFileAsync(pageUrlPath, 'utf-8');
   } else if (config.isDevMode()) {
     // fetch doc from proxy
     return fetchPageFromGrowServer(pageUrlPath);

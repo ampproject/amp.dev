@@ -1,5 +1,5 @@
 $title@: Components
-$path: /documentation/components/{base}.html
+$path: /documentation/components/{format}/{base}.html
 $localization:
-  path: /{locale}/documentation/components/{base}.html
+  path: /{locale}/documentation/components/{format}/{base}.html
 $order: 2

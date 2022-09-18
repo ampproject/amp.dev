@@ -17,6 +17,8 @@
 'use strict';
 
 const gulp = require('gulp');
+const filter = require('gulp-filter');
+const mergeStream = require('merge-stream');
 const {sh} = require('@lib/utils/sh');
 const grow = require('@lib/utils/grow');
 const mkdirp = require('mkdirp').sync;
@@ -35,6 +37,7 @@ const ComponentReferenceImporter = require('@lib/pipeline/componentReferenceImpo
 const SpecImporter = require('@lib/pipeline/specImporter');
 const RecentGuides = require('@lib/pipeline/recentGuides');
 const gulpSass = require('gulp-sass')(require('sass'));
+const gulpFile = require('gulp-file');
 const importRoadmap = require('./import/importRoadmap.js');
 const importWorkingGroups = require('./import/importWorkingGroups.js');
 const importAdVendorList = require('./import/importAdVendorList.js');
@@ -42,6 +45,23 @@ const {thumborImageIndex} = require('./thumbor.js');
 const CleanCSS = require('clean-css');
 const {PIXI_CLOUD_ROOT} = require('@lib/utils/project').paths;
 const {copyFile} = require('fs/promises');
+const nunjucks = require('nunjucks');
+const {importBlog} = require('@lib/templates/ImportBlogFilter.js');
+const {
+  importYouTubeChannel,
+} = require('@lib/templates/ImportYouTubeChannel.js');
+const {survey} = require('@lib/templates/SurveyFilter.js');
+const {
+  SupportedFormatsExtension,
+} = require('@lib/templates/SupportedFormatsExtension.js');
+const {optimize} = require('@lib/utils/ampOptimizer.js');
+const Vinyl = require('vinyl');
+const Cheerio = require('cheerio');
+const {
+  FORMAT_WEBSITES,
+  SUPPORTED_FORMATS,
+} = require('@lib/amp/formatHelper.js');
+const toml = require('@iarna/toml');
 
 // Path of the grow test pages for filtering in the grow podspec.yaml
 const TEST_CONTENT_PATH_REGEX = '^/tests/';
@@ -151,7 +171,23 @@ function buildFrontend(done) {
  */
 async function buildPlayground() {
   await sh('mkdir -p playground/dist');
-  return sh('npm run build:playground');
+  await sh('npm run build:playground');
+
+  await gulp
+    .src(project.absolute('netlify/configs/preview.amp.dev/netlify.toml'))
+    .pipe(gulp.dest(`${project.paths.DIST}/examples`));
+
+  await gulp
+    .src(project.absolute('playground/netlify.toml'))
+    .pipe(gulp.dest(`${project.paths.DIST}/playground`));
+
+  await gulp
+    .src([project.absolute('pages/static/**/*')])
+    .pipe(gulp.dest(`${project.paths.DIST}/playground/static`));
+
+  return await gulp
+    .src(project.absolute('playground/dist/**/*'))
+    .pipe(gulp.dest(`${project.paths.DIST}/playground`));
 }
 
 /**
@@ -234,9 +270,6 @@ function importAll() {
     importRoadmap.importRoadmap(),
     importWorkingGroups.importWorkingGroups(),
     importAdVendorList.importAdVendorList(),
-
-    // TODO: Fails on Travis with HttpError: Requires authentication
-    // roadmapImporter.importRoadmap(),
   ]);
 }
 
@@ -263,7 +296,7 @@ function buildPrepare(done) {
     gulp.parallel(
       buildPlayground,
       buildBoilerplate,
-      buildPixi,
+      //buildPixi,
       buildFrontend21,
       importAll,
       zipTemplates
@@ -355,24 +388,62 @@ function buildPages(done) {
         .pipe(gulp.dest(`${project.paths.PAGES_DEST}/shared`));
     },
     // eslint-disable-next-line prefer-arrow-callback
-    async function publishPages() {
-      if (!config.options.locales.includes(config.getDefaultLocale())) {
+    async function copyBuildFiles(done) {
+      if (!config.options?.locales?.includes(config.getDefaultLocale())) {
         console.log(
           'Skipping page publishing. Default language is not build, only:',
           config.options.locales
         );
-        return;
+        return done();
       }
+
+      await copyFile(
+        `${project.paths.GROW_POD}/static/manifest.json`,
+        `${project.paths.PAGES_DEST}/manifest.json`
+      );
+
+      await copyFile(
+        `${project.paths.GROW_POD}/static/serviceworker.js`,
+        `${project.paths.PAGES_DEST}/serviceworker.js`
+      );
 
       await copyFile(
         `${project.paths.GROW_BUILD_DEST}/index-2021.html`,
         `${project.paths.PAGES_DEST}/index.html`
       );
+
       await copyFile(
         `${project.paths.GROW_BUILD_DEST}/about/websites-2021.html`,
         `${project.paths.PAGES_DEST}/about/websites.html`
       );
+
+      await gulp
+        .src([project.absolute('pages/static/**/*')])
+        .pipe(gulp.dest(`${project.paths.PAGES_DEST}/static`));
+
+      await gulp.src(project.absolute('netlify/configs/amp.dev/netlify.toml'))
+        .pipe(
+          through.obj((file, encoding, callback) => {
+            let config = file.contents.toString();
+
+            config = toml.parse(config);
+            config.build.publish = '.';
+            delete config.build.base
+
+            config = toml.stringify(config, 0, 2);
+
+            file.contents = Buffer.from(config);
+
+            return callback(null, file);
+          })
+        )
+        .pipe(gulp.dest(`${project.paths.PAGES_DEST}`));
+
+      done()
     },
+    staticify,
+    renderExamples,
+    optimizeFiles,
     // eslint-disable-next-line prefer-arrow-callback
     function sitemap() {
       // Copy XML files written by Grow
@@ -392,8 +463,453 @@ function buildPages(done) {
         `tar cfj ${archive} ./dist/pages ./dist/inline-examples ` +
           './dist/static/files/search-promoted-pages'
       );
-    }
+    },
+    generateWhoAmI
   )(done);
+}
+
+/**
+ * creates a new nunjucks environment for rendering
+ *
+ */
+function nunjucksEnv() {
+  const env = new nunjucks.Environment(null, {
+    tags: {
+      blockStart: '[%',
+      blockEnd: '%]',
+      variableStart: '[=',
+      variableEnd: '=]',
+      commentStart: '[[[[#',
+      commentEnd: '#]]]]',
+    },
+  });
+
+  env.addExtension(
+    'SupportedFormatsExtension',
+    new SupportedFormatsExtension()
+  );
+  env.addFilter('importBlog', importBlog, true);
+
+  env.addFilter('importYouTubeChannel', importYouTubeChannel, true);
+  env.addFilter('survey', survey, true);
+
+  return env;
+}
+
+
+const getUpdatedURL = (u, requestedFormat, forcedFormat) => {
+  return u.replace(
+    /(.*documentation\/[^/]+)[\/.]([^?]+)(?:\?(?:[^=]*)=(.*))?/,
+    (match, section, page, format) => {
+      // covering the case where /documentation/tools.html, which matches differently than all other paths
+      if (page === 'html') {
+        page = 'index.html';
+      }
+
+      const hasFormat = forcedFormat || requestedFormat;
+      const fmt = hasFormat ? `${hasFormat}/` : '';
+      return `${section}/${fmt}${page}`;
+    }
+  );
+};
+
+
+function optimizeFiles(cb) {
+  const logger = require('@lib/utils/log')('AMP Optimizer');
+  return gulp.src(`${project.paths.PAGES_DEST}/**/*.html`)
+    .pipe(
+      through.obj(
+        function optimizer(file, encoding, callback) {
+          const unoptimizedFile = file.contents.toString();
+
+          optimize({query: ''}, unoptimizedFile, {})
+            .then((optimizedFile) => {
+              file.contents = Buffer.from(optimizedFile);
+              callback(null, file)
+            });
+        })
+    )
+    .pipe(gulp.dest((f) => {
+      logger.log(`staticified ${path.relative(project.absolute('.'), f.path)}`);
+      return f.base
+    }))
+    .on('end', cb);
+}
+
+function newPost(text, img, id) {
+  return {
+    id: id,
+    text: text,
+    img: '/static/samples/img/' + img,
+    timestamp: Number(new Date()),
+  };
+}
+
+async function renderExamples(done) {
+  const logger = require('@lib/utils/log')('Static File Generator');
+  const env = nunjucksEnv();
+  const seats = require(project.absolute(
+      '/examples/static/samples/json/seats.json'
+  ));
+  const blogItems = [
+    newPost('A green landscape with trees.', 'landscape_green_1280x853.jpg', 1),
+    newPost(
+      'Mountains reflecting on a lake.',
+      'landscape_mountains_1280x657.jpg',
+      2
+    ),
+    newPost(
+      'A road leading to a lake with mountains on the back.',
+      'landscape_lake_1280x857.jpg',
+      3
+    ),
+    newPost(
+      'Forested hills with a grey sky in the background.',
+      'landscape_trees_1280x960.jpg',
+      4
+    ),
+    newPost(
+      'Scattered houses in a mountain village.',
+      'landscape_village_1280x853.jpg',
+      5
+    ),
+    newPost('A deep canyon.', 'landscape_canyon_1280x1700.jpg', 6),
+    newPost(
+      'A desert with mountains in the background.',
+      'landscape_desert_1280x853.jpg',
+      7
+    ),
+    newPost('Colorful houses on a street.', 'landscape_houses_1280x803.jpg', 8),
+    newPost('Blue sea surrounding a cave.', 'landscape_sea_1280x848.jpg', 9),
+    newPost(
+      'A ship sailing the sea at sunset.',
+      'landscape_ship_1280x853.jpg',
+      10
+    ),
+  ];
+
+  const configObj = {
+    time: new Date().toLocaleTimeString(),
+    timestamp: Number(new Date()),
+    // send a random list of blog items to make it also work on the cache
+    blogItems: blogItems.filter(() => Math.floor(Math.random() * Math.floor(2)))
+    }
+
+    return gulp.src(`${project.paths.DIST}/examples/sources/**/*.html`)
+    .pipe(
+      through.obj(async (file, enc, callback) => {
+
+        const srcHTML = file.contents.toString();
+
+        env.renderString(srcHTML, configObj, (err, result) => {
+          if (err) {
+            logger.error(`Error rendering ${file.path}`);
+            return callback(err)
+          }
+
+          file.contents = Buffer.from(result)
+          callback(null, file);
+        });
+      })
+    )
+    .pipe(gulp.dest(f => f.base))
+    .on('end', () => {
+      done();
+    })
+}
+
+/**
+ * Compiles the pages into standalone static files
+ *
+ * @return {Promise}
+ */
+async function staticify(done) {
+  const logger = require('@lib/utils/log')('Static File Generator');
+
+  const requestPathRegex = new RegExp(
+    `${project.paths.PAGES_DEST}|(index)?.html`,
+    'g'
+  );
+
+  const generatedFormats = SUPPORTED_FORMATS.map(format => {
+    const f = (cb) => {
+      const env = nunjucksEnv();
+
+      const f = filter([`${project.paths.PAGES_DEST}/**/*html`, 'index'], {restore: true});
+
+      return gulp
+        .src(`${project.paths.PAGES_DEST}/**/*.html`)
+        .pipe(f)
+        .pipe(
+          // Render a static version of all of our pages
+
+          through.obj(async (file, enc, callback) => {
+            const configObj = {
+              requestPath: `${file.path.replace(requestPathRegex, '')}/`,
+              format,
+              requestedFormat: format
+            }
+
+            const srcHTML = file.contents.toString();
+
+            env.renderString(srcHTML, configObj, (err, result) => {
+              if (err) {
+                logger.error(`Error rendering ${file.path}`);
+                return callback(err)
+              }
+
+              file.contents = Buffer.from(result)
+              callback(null, file);
+            });
+
+          })
+        )
+        .pipe(
+          through.obj(async function(file, enc, callback) {
+            // Rewrite links inside of each of the pages
+
+            const $ = Cheerio.load(file.contents.toString());
+
+            $('a.nav-link, a.ap-m-format-toggle-link').each(
+              function () {
+                const $this = $(this);
+                const origURL = $this.attr('href');
+                const fmt = $this.hasClass('.nav-link')
+                  ? format
+                  : undefined;
+
+                $this.attr('href', getUpdatedURL(origURL, format));
+              }
+            );
+
+            const renderedPage = $.root().html();
+
+            if (
+              format === FORMAT_WEBSITES &&
+              !file.path.endsWith('tools.html')
+            ) {
+              const defaultFormatVersion = new Vinyl({
+                path: getUpdatedURL(file.path),
+                contents: Buffer.from(renderedPage),
+              });
+
+              this.push(defaultFormatVersion);
+            }
+
+            file.path = getUpdatedURL(file.path, format);
+            file.contents = Buffer.from(renderedPage);
+
+            callback(null, file);
+          })
+        )
+        .pipe(gulp.dest((f) => {
+          logger.log(`staticified ${path.relative(project.absolute('.'), f.path)}`);
+          return f.base
+        }))
+        .on('end', cb);
+    }
+
+    Object.defineProperty(f, 'name', {value: `generatePagesFor${format}`, writable: false});
+    return f
+  });
+
+  const generatedLevels = ['beginner', 'advanced'].map(level => {
+    const coursesPath = '/documentation/courses';
+    const coursesRegex = new RegExp(`^(.+)(?:${coursesPath})(.*)$`);
+
+    const f = (cb) => {
+      const env = nunjucksEnv();
+
+      console.log(`${project.paths.PAGES_DEST}${coursesPath}/**/*.html`)
+
+      return gulp.src(`${project.paths.PAGES_DEST}${coursesPath}/**/*.html`)
+        .pipe(
+          through.obj((file, enc, callback) => {
+            console.log(file.path);
+
+            const srcHTML = file.contents.toString();
+            const configObj = {
+              requestPath: `${file.path.replace(requestPathRegex, '')}/`,
+              level, format: FORMAT_WEBSITES
+            }
+
+            env.renderString( srcHTML, configObj, (err, result) => {
+              if (err) {
+                return callback(err)
+              }
+
+              file.contents = Buffer.from(result);
+              callback(null, file);
+            })
+          })
+        )
+        .pipe(
+          through.obj(function(file, enc, callback) {
+            let renderedPage = file.contents.toString();
+
+            const $ = Cheerio.load(renderedPage);
+
+            $('.nav-link').each(function (el) {
+              const origURL = $(this).attr('href');
+              const updatedURL = origURL.replace(
+                coursesRegex,
+                (match, a, b) => `${a}/${coursesPath}/${level}${b}`
+              );
+
+              $(this).attr('href', updatedURL);
+            });
+
+            renderedPage = $.root().html();
+
+            if (level === 'beginner') {
+              this.push(
+                new Vinyl({
+                  path: `${file.path}`,
+                  contents: Buffer.from(renderedPage),
+                })
+              );
+            }
+
+            file.path = file.path.replace(
+              coursesRegex,
+              (match, a, b) => `${a}/${coursesPath}/${level}${b}`
+            );
+            file.contents  = Buffer.from(renderedPage);
+            callback(null, file);
+          })
+        )
+        .pipe(gulp.dest((f) => f.base ))
+        .on('end', cb);
+    }
+
+    Object.defineProperty(f, 'name', {value: `generateCoursesFor${level}`, writable: false});
+    return f
+  })
+
+  await gulp
+    .src(`${project.paths.STATICS_DEST}/files/search-promoted-pages/*json`)
+    .pipe(
+      through.obj(function (file, encoding, callback) {
+        const rawJSON = file.contents.toString();
+        const data = JSON.parse(rawJSON);
+
+        for (const page of data.pages) {
+          page.url = new URL(page.url, config.hosts.platform.base).toString();
+        }
+
+        for (const page of data.components) {
+          // addExampleAndPlaygroundLink(page, locale);
+          // cleanupTexts(page);
+          page.url = new URL(page.url, config.hosts.platform.base).toString();
+        }
+
+        file.contents = Buffer.from(
+          JSON.stringify({
+            result: data,
+            initial: true,
+          })
+        );
+        this.push(file);
+        callback(null, file);
+      })
+    )
+    .pipe(
+      gulp.dest((file) => {
+        return `${project.paths.PAGES_DEST}/search/highlights/`;
+      })
+    );
+
+  await gulp
+    .src([
+      project.absolute('pages/static/**/*'),
+      project.absolute('examples/static/**/*'),
+      project.absolute('frontend21/dist/static/**/*'),
+    ])
+    .pipe(gulp.dest(`${project.paths.PAGES_DEST}/static`));
+
+  await gulp
+    .src(`${project.paths.STATICS_DEST}/**/*`)
+    .pipe(gulp.dest((e) => `${project.paths.PAGES_DEST}/static`));
+
+
+
+  return new Promise((resolve, reject) => {
+
+    gulp.series(gulp.parallel(...generatedFormats), gulp.parallel(...generatedLevels), (seriesDone) => {
+      seriesDone();
+      resolve();
+      done();
+    })();
+  })
+}
+
+
+
+async function generateWhoAmI() {
+  const buildInfo = {
+    'environment': config.environment,
+    'instance': process.env.GAE_INSTANCE,
+    'build': yaml.load(fs.readFileSync(project.paths.BUILD_INFO_PATH, 'utf8')),
+  };
+
+  return await gulpFile(`who-am-i`, JSON.stringify(buildInfo, 0, 2), {
+    src: true,
+  }).pipe(gulp.dest(`${project.paths.PAGES_DEST}`));
+}
+
+async function collectSuccessStories() {
+  const env = nunjucksEnv();
+  const categories = {All: []};
+  const successStoryBasePath = 'pages/content/amp-dev/about/success-stories/';
+  const successStoryFiles = project.absolute(
+    `${successStoryBasePath}/**/*yaml`
+  );
+
+  const successStories = await new Promise((resolve, reject) => {
+    return gulp
+      .src(successStoryFiles)
+      .pipe(
+        through.obj(function (successStory, encoding, callback) {
+          const story = yaml.load(successStory.contents);
+          const category = story.$category;
+
+          this.push([category, story]);
+
+          callback();
+        })
+      )
+      .on('data', ([category, story]) => {
+        if (category) {
+          categories[category] = categories[category] || [];
+          categories[category].push(story);
+          categories['All'].push(story);
+        }
+      })
+      .on('end', () => {
+        resolve(categories);
+      });
+  });
+
+  return gulp
+    .src(`${successStoryBasePath}/index.html`)
+    .pipe(
+      through.obj(function (file, encoding, callback) {
+        const env = nunjucksEnv();
+        const srcHTML = file.contents.toString();
+
+        const result = env.renderString(srcHTML);
+        this.push(result);
+        callback();
+      })
+    )
+    .pipe(
+      through.obj((file, encoding, callback) => {
+        const env = new nunjucks.Environment(null);
+        const result = env.renderString(file, {category: 'finance'});
+
+        console.log(result);
+      })
+    );
 }
 
 /**
@@ -554,13 +1070,18 @@ exports.zipTemplates = zipTemplates;
 exports.buildPages = buildPages;
 exports.buildPrepare = buildPrepare;
 exports.minifyPages = minifyPages;
+exports.staticifyPages = staticify;
 exports.unpackArtifacts = unpackArtifacts;
 exports.collectStatics = collectStatics;
+exports.successStories = collectSuccessStories;
+exports.generateWhoAmI = generateWhoAmI;
 exports.buildPixiFunctions = buildPixiFunctions;
 exports.buildFinalize = gulp.series(
   gulp.parallel(collectStatics, persistBuildInfo),
   thumborImageIndex
 );
+
+exports.zzz = renderExamples;
 
 exports.build = gulp.series(
   clean,

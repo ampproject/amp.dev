@@ -1,0 +1,36 @@
+[build]
+  base = "."
+  # Directory to change to before starting a build.
+  # This is where we will look for package.json/.nvmrc/etc.
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    Content-Security-Policy-Report-Only="default-src * data: blob:;worker-src 'self' blob:;script-src blob: 'unsafe-inline' https://playground.amp.dev https://cdn.ampproject.org/v0.js https://cdn.ampproject.org/v0.mjs https://cdn.ampproject.org/v0/ https://cdn.ampproject.org/sw/ https://cdn.ampproject.org/viewer/ https://cdn.ampproject.org/rtv/ https://www.googletagmanager.com/gtag/js https://playground.amp.dev/ https://preview.amp.dev/ https://go.amp.dev/ https://log.amp.dev/;object-src 'none';style-src 'unsafe-inline' https://playground.amp.dev https://cdn.ampproject.org/rtv/ https://playground.amp.dev/ https://preview.amp.dev/ https://go.amp.dev/ https://log.amp.dev/;report-uri /csp-report"
+    X-Content-Type-Options="nosniff"
+    X-XSS-Protection="1; mode=block"
+
+[[redirects]]
+  from = "/csp-report"
+  to = "/.netlify/functions/csp-report"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/*"
+  to = "https://amp.dev/documentation/examples/api/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/*"
+  to = "https://preview.amp.dev/documentation/examples/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/static/*"
+  to = "https://amp.dev/static/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/api/fetch"
+  to = "/.netlify/functions/fetch"
+  status = 200

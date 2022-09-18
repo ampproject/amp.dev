@@ -1,0 +1,754 @@
+[build]
+  base = "../../../"
+  # Directory to change to before starting a build.
+  # This is where we will look for package.json/.nvmrc/etc.
+  # If not set, defaults to the root directory.
+
+  publish = "dist/pages"
+
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    Content-Security-Policy-Report-Only="default-src * data: blob:;worker-src 'self' blob:;script-src blob: 'unsafe-inline' https://cdn.ampproject.org/v0.js https://cdn.ampproject.org/v0.mjs https://cdn.ampproject.org/v0/ https://cdn.ampproject.org/sw/ https://cdn.ampproject.org/viewer/ https://cdn.ampproject.org/rtv/ https://www.googletagmanager.com/gtag/js https://playground.amp.dev/ https://preview.amp.dev/ https://go.amp.dev/ https://log.amp.dev/;object-src 'none';style-src 'unsafe-inline' https://cdn.ampproject.org/rtv/ https://playground.amp.dev/ https://preview.amp.dev/ https://go.amp.dev/ https://log.amp.dev/;report-uri /csp-report"
+    X-Content-Type-Options="nosniff"
+    X-XSS-Protection="1; mode=block"
+
+[[headers]]
+  for = "/who-am-i"
+
+  [headers.values]
+    Content-Type="application/json"
+
+[[redirects]]
+  from = "/documentation/components/*"
+  to = "/documentation/components/:format/:splat?redirected"
+  query = {format = ":format"}
+  status = 301
+  force=true
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/*"
+  to = "/documentation/guides-and-tutorials/:format/:splat?redirected"
+  query = {format = ":format"}
+  status = 301
+  force=true
+
+
+[[redirects]]
+  from = "/documentation/examples/*"
+  to = "/documentation/examples/:format/:splat?redirected"
+  query = {format = ":format"}
+  status = 301
+  force=true
+
+[[redirects]]
+  from = "/documentation/courses/*"
+  to = "/documentation/courses/:level/:splat/?redirected"
+  status = 301
+  force=true
+  query = {level = ":level"}
+
+#################
+# Imported from platform/config/go-links.yaml
+#################
+
+[[redirects]]
+  from = "/c/amp-*"
+  to = "/documentation/components/amp-:splat"
+  status = 301
+
+[[redirects]]
+  from = "/e/amp-*"
+  to = "/documentation/examples/components/amp-:splat"
+  status = 301
+
+[[redirects]]
+  from = "/pr/:githubIssueId"
+  to = "https://github.com/ampproject/amphtml/pull/:githubIssueId"
+  status = 301
+
+[[redirects]]
+  from = "/issue/:githubIssueId"
+  to = "https://github.com/ampproject/amphtml/issues/:githubIssueId"
+  status = 301
+
+
+[[redirects]]
+  from = "https://go.amp.dev/ads"
+  to = "https://amp.dev/about/ads/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/ampdevmode"
+  to = "https://github.com/ampproject/amphtml/issues/20974"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/amp-email-register"
+  to = "https://docs.google.com/forms/d/e/1FAIpQLSdso95e7UDLk_R-bnpzsAmuUMDQEMUgTErcfGGItBDkghHU2A/viewform?gxids=7628"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/amp-optimizer"
+  to = "https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/amp-packager"
+  to = "https://github.com/ampproject/amppackager"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/amp-pwa-amp"
+  to = "https://blog.amp.dev/2018/06/19/the-shadow-reader-improved/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/amp-script-apis"
+  to = "https://github.com/ampproject/worker-dom/blob/main/web_compat_table.md"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/ampcs"
+  to = "https://amp.dev/events/amp-cs-2019/#Schedule"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/auto-sw"
+  to = "https://github.com/ampproject/amp-sw/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/axios-case-study"
+  to = "https://blog.amp.dev/2020/04/07/people-behind-the-code-the-axios-ascent/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/camp-code"
+  to = "https://github.com/ampproject/samples/tree/master/amp-camp"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/cherry-picks"
+  to = "https://github.com/ampproject/amphtml/blob/main/docs/contributing-code.md#Cherry-picks"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/components"
+  to = "https://amp.dev/documentation/components/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/contribute"
+  to = "https://amp.dev/documentation/guides-and-tutorials/contribute/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/contribute/code"
+  to = "https://github.com/ampproject/amphtml/blob/main/docs/contributing-code.md"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/contribute/code-samples"
+  to = "https://amp.dev/documentation/guides-and-tutorials/contribute/contribute-documentation/formatting/#preview-code-samples"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/contribute/docs"
+  to = "https://amp.dev/documentation/guides-and-tutorials/contribute/contribute-documentation/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/contribute/samples"
+  to = "https://amp.dev/documentation/examples/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/contribute/translations"
+  to = "https://amp.dev/documentation/guides-and-tutorials/contribute/translations/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/cors"
+  to = "https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/design-reviews"
+  to = "https://github.com/ampproject/amphtml/issues?q=is%3Aissue+is%3Aopen+design+review+utc+in%3Atitle"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/devx-survey"
+  to = "https://google.qualtrics.com/jfe/form/SV_1FA0wBp7elD7Xa5"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/docs"
+  to = "https://amp.dev/documentation/guides-and-tutorials/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/docsgfi"
+  to = "https://github.com/ampproject/amp.dev/issues?q=is:open+is:issue+label:%22good+first+issue%22"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/eleventy"
+  to = "https://github.com/ampproject/eleventy-plugin-amp"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/email"
+  to = "https://amp.dev/about/email/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/email-registration"
+  to = "https://docs.google.com/forms/d/e/1FAIpQLSdso95e7UDLk_R-bnpzsAmuUMDQEMUgTErcfGGItBDkghHU2A/viewform?gxids=7628"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/email-support"
+  to = "https://amp.dev/support/faq/email-support/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/email-tools"
+  to = "https://amp.dev/documentation/tools/?redirectedormat=email"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/email-viewer"
+  to = "https://github.com/ampproject/amp-email-viewer"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/getting-started"
+  to = "https://github.com/ampproject/amphtml/blob/main/docs/getting-started-quick.md"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/github"
+  to = "https://github.com/ampproject/amphtml"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/governance"
+  to = "https://amp.dev/community/governance/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/i2i"
+  to = "https://github.com/ampproject/amphtml/issues/new?assignees=&labels=INTENT+TO+IMPLEMENT&template=intent-to-implement.yml"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/io-email"
+  to = "https://amp.dev/documentation/examples/interactivity-dynamic-content/conference_survey_email/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/learn"
+  to = "https://amp.dev/documentation/courses/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/learn-advanced"
+  to = "https://amp.dev/documentation/guides-and-tutorials/start/add_advanced/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/learn-email"
+  to = "https://amp.dev/documentation/guides-and-tutorials/learn/email/email_fundamentals"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/learn-first"
+  to = "https://amp.dev/documentation/guides-and-tutorials/start/create/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/learn-interact"
+  to = "https://amp.dev/documentation/guides-and-tutorials/develop/interactivity/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/learn-script"
+  to = "https://amp.dev/documentation/guides-and-tutorials/develop/custom-javascript-tutorial/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/learn-story"
+  to = "https://amp.dev/documentation/guides-and-tutorials/start/visual_story/stories/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/learn-pwa"
+  to = "https://codelabs.developers.google.com/codelabs/amp-pwa-workbox/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/nextjs"
+  to = "https://nextjs.org/docs/advanced-features/amp-support/introduction"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/optimize"
+  to = "https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/optimizer"
+  to = "https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/optimize-amp"
+  to = "https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/optimize-guide"
+  to = "https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/optimize_amp/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/owners"
+  to = "https://ampproject-owners-bot.appspot.com/tree"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/publishing-checklist"
+  to = "https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/publishing_checklist/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/px-faq"
+  to = "https://support.google.com/webmasters/thread/104436075"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/px-video-series"
+  to = "https://www.youtube.com/playlist?list=PLKoqnv2vTMUPC5r00xToO6wPtxkmprj13"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/reftemplate"
+  to = "https://docs.google.com/document/d/1lRFcErFBnqsuv6W9mZsfYk2qnXO9nPzMkeog4Xtunl8/edit?usp=sharing"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/service"
+  to = "https://blog.amp.dev/2020/06/29/amp-as-a-service-2020-roadmap/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/shopify-apps"
+  to = "https://blog.amp.dev/2019/04/15/shopify-apps-make-amp-easy-and-effective-for-ecommerce"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/stories-best-practices"
+  to = "https://amp.dev/documentation/guides-and-tutorials/develop/amp_story_best_practices/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/stories"
+  to = "https://amp.dev/about/stories/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/sxg"
+  to = "https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/signed-exchange/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/templates"
+  to = "https://amp.dev/documentation/templates/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/test-email"
+  to = "https://amp.dev/documentation/guides-and-tutorials/develop/email/testing_amp_emails"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/twitter-devx-survey"
+  to = "https://google.qualtrics.com/jfe/form/SV_2fZ0z843nw0CBOR"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/tools"
+  to = "https://amp.dev/documentation/tools/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/validate"
+  to = "https://amp.dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/verizonmedia"
+  to = "https://developer.verizonmedia.com/mail/amp-for-email/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/vision-mission"
+  to = "https://amp.dev/about/mission-and-vision/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/web-story-player"
+  to = "https://amp.dev/documentation/guides-and-tutorials/integrate/stories/web-story-player-guide"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/web-player"
+  to = "https://amp.dev/documentation/guides-and-tutorials/integrate/stories/web-story-player-guide"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "/websites"
+  to = "https://amp.dev/about/websites/"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/wg"
+  to = "https://github.com/ampproject/meta/tree/master/working-groups"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/wg-updates"
+  to = "https://github.com/search?o=desc&q=org%3Aampproject+label%3A%22Type%3A+Status+Update%22&s=created&"
+  status = 200
+  force = true
+
+
+[[redirects]]
+  from = "https://go.amp.dev/wordpress"
+  to = "https://amp-wp.org/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/documentation/examples/api/products"
+  to = "/.netlify/functions/examples_api_products"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/get-consent"
+  to = "/.netlify/functions/examples_api_amp-consent_get_consent"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/get-consent-server-side"
+  to = "/.netlify/functions/examples_api_amp-consent_get_consent_server_side"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/default"
+  to = "/.netlify/functions/examples_api_amp-inputmask"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/postal"
+  to = "/.netlify/functions/examples_api_amp-inputmask"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/phone"
+  to = "/.netlify/functions/examples_api_amp-inputmask"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/autosuggest/search_list"
+  to = "/.netlify/functions/examples_api_autosuggest_search_list"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/autosuggest/cities"
+  to = "/.netlify/functions/examples_api_autosuggest_cities"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/autosuggest/characters"
+  to = "/.netlify/functions/examples_api_autosuggest_characters"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/autosuggest/address"
+  to = "/.netlify/functions/examples_api_autosuggest_address"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/query"
+  to = "/.netlify/functions/examples_api_cache_query"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/not-found"
+  to = "/.netlify/functions/examples_api_cache_not_found"
+  status = 200
+force = true
+
+[[redirects]]
+  from = "/documentation/examples/api/redirect"
+  to = "/.netlify/functions/examples_api_cache_redirect"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/server-error"
+  to = "/.netlify/functions/examples_api_cache_server_error"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/echo"
+  to = "/.netlify/functions/examples_api_echo"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/hello"
+  to = "/.netlify/functions/examples_api_hello"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/authorization"
+  to = "/.netlify/functions/examples_api_amp-access_authorization"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/login"
+  to = "/.netlify/functions/examples_api_amp-access_login"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/logout"
+  to = "/.netlify/functions/examples_api_amp-access_logout"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/pingback"
+  to = "/.netlify/functions/examples_api_amp-access_pingback"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/submit"
+  to = "/.netlify/functions/examples_api_amp-form_submit"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/submit-form-input-text-xhr"
+  to = "/.netlify/functions/examples_api_amp-form_submit_form_input_text_xhr"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/verify-form-input-text-xhr"
+  to = "/.netlify/functions/oexamples_api_amp-form_verify_form_input_text_xhr"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/photo-stream"
+  to = "/.netlify/functions/examples_api_photo_stream"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/slow-json"
+  to = "/.netlify/functions/examples_api_slow_response_slow_json"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/slow-json-with-items"
+  to = "/.netlify/functions/examples_api_slow_response_slow_json_with_items"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/slow-iframe"
+  to = "/.netlify/functions/examples_api_slow_response_slow_iframe"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/slow-text"
+  to = "/.netlify/functions/examples_api_slow_response_slow_text"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/time"
+  to = "/.netlify/functions/examples_api_time"
+  status = 200
+
+[[redirects]]
+  from = "/csp-report"
+  to = "/.netlify/functions/csp-report"
+  status = 200
+
+[[redirects]]
+  from = "/latest-query"
+  to = "/.netlify/functions/latest-query"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/interactivity-dynamic-content/favorite_button/favorite"
+  to = "/.netlify/functions/examples_interactivity_dynamic_content_favorite_button"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/interactivity-dynamic-content/favorite_button/favorite-with-count"
+  to = "/.netlify/functions/examples_interactivity_dynamic_content_favorite_button_with_count"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/news-publishing/live_blog"
+  to = "/.netlify/functions/examples_source_news_publishing_amp-live-list_api"
+  status = 200
+
+[[redirects]]
+  from = "/page-experience/api"
+  to = "/500"
+  status = 401
+
+[[redirects]]
+  from = "/page-experience"
+  to = "https://web.dev/measure/"
+
+[functions]
+  directory = "../../netlify/functions/"
