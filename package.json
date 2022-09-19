@@ -85,7 +85,7 @@
 		"joi": "17.4.2",
 		"js-yaml": "4.1.0",
 		"json-tree-view": "0.4.12",
-		"linkifyjs": "2.1.9",
+		"linkifyjs": "4.0.0",
 		"lru-cache": "6.0.0",
 		"module-alias": "2.2.2",
 		"mri": "1.2.0",
