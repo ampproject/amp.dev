@@ -41,7 +41,7 @@ When working AMP for Email, keep in mind the following tips and tricks:
 - The AMP for Email format imposes a [byte limit on the size of the email](../learn/email-spec/amp-email-format.md?format=email#required-markup). Prevent your email from falling back to static email due to exceeding the size limit by
     - Trimming your email and removing unnecessary content
     - Minimizing the number of hyperlinks in your email, whose URLs could be rewritten into very long URLs by ESPs and analytics platforms
-    - Eliminating unncessary use of HTML constructs such as multiple nested `div`s that can be collapsed into one `div`
+    - Eliminating unnecessary use of HTML constructs such as multiple nested `div`s that can be collapsed into one `div`
     - Minimizing whitespace characters in the [`on` attribute for events and actions](../learn/amp-email-actions-and-events.md?format=email) and [`amp-bind` binding expressions](../../components/reference/amp-bind-v0.1.md?format=email#expressions)
     - Using tools like [HTML and CSS minifiers](https://github.com/kangax/html-minifier) to perform compressions such as:
         - Removing unnecessary whitespace characters (such as space and newline characters used for making the source code human-readable) in HTML and CSS
