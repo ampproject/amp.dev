@@ -135,8 +135,8 @@ author: cvializ
   <amp-list class="paged-amp-list"
             layout="fixed-height"
             height="720"
-            src="Paged_List/search"
-            [src]="'Paged_List/search?page=' + pageNumber"
+            src="<% base_path %>/search"
+            [src]="'<% base_path %>/search?page=' + pageNumber"
             binding="no"
             reset-on-refresh
             single-item>
@@ -170,8 +170,8 @@ author: cvializ
     </button>
   </div>
   <amp-state id="page"
-             src="Paged_List/search"
-             [src]="'Paged_List/search?page=' + pageNumber">
+             src="<% base_path %>/search"
+             [src]="'<% base_path %>/search?page=' + pageNumber">
   </amp-state>
 </div>
 </body>
