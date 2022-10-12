@@ -130,21 +130,11 @@ async function createLiveBlogSample(ev, newStatus = 0) {
 function getUpdatedStatus(ev) {
   const newStatus = parseInt(readStatus(ev)) + 1;
   return {
-    'cookie': Cookie.serialize(
-      AMP_LIVE_LIST_COOKIE_NAME,
-      newStatus,
-      {expires: new Date(Date.now() + EXPIRATION_DATE)}
-    ),
-    'status': newStatus
-  }
-}
-
-function generateStatus(response, newValue) {
-  Cookie.serialize(
-    AMP_LIVE_LIST_COOKIE_NAME,
-    {value: newValue},
-    {expires: new Date(Date.now() + EXPIRATION_DATE)}
-  );
+    'cookie': Cookie.serialize(AMP_LIVE_LIST_COOKIE_NAME, newStatus, {
+      expires: new Date(Date.now() + EXPIRATION_DATE),
+    }),
+    'status': newStatus,
+  };
 }
 
 function getBlogEntries(size) {
@@ -201,10 +191,8 @@ function getPrevPageId(firstItemIndex) {
 }
 
 function getFirstBlogId(ev) {
-  const from = ev.queryStringParameters.from
-  const firstItemIndex = !!from
-    ? from
-    : `${BLOG_ID_PREFIX}1`;
+  const from = ev.queryStringParameters.from;
+  const firstItemIndex = !!from ? from : `${BLOG_ID_PREFIX}1`;
   return Number(firstItemIndex.split(BLOG_ID_PREFIX)[1]);
 }
 
@@ -276,12 +264,9 @@ function readStatus(ev) {
 const handler = async (ev) => {
   const newStatus = getUpdatedStatus(ev);
 
-  const metadata = await createLiveBlogSample(ev, newStatus.status)
+  const metadata = await createLiveBlogSample(ev, newStatus.status);
 
-  const body = env.renderString(
-    LiveBlogSrc,
-    metadata
-  );
+  const body = env.renderString(LiveBlogSrc, metadata);
 
   return {
     statusCode: 200,
@@ -289,9 +274,9 @@ const handler = async (ev) => {
       // set max-age to 15 s - the minimum refresh time for an amp-live-list
       'Cache-Control': getMaxAgeStr(15),
       'Content-Type': 'text/html',
-      'Set-Cookie': newStatus.cookie
+      'Set-Cookie': newStatus.cookie,
     },
-    body
+    body,
   };
 };
 

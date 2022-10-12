@@ -151,7 +151,7 @@ function readStatus(request) {
   return Number(cookie.value);
 }
 
-
+function writeStatus(response, newValue) {
   response.cookie(
     AMP_LIVE_LIST_COOKIE_NAME,
     {value: newValue},

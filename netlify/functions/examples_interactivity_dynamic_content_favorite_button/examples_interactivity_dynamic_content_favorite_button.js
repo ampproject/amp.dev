@@ -1,9 +1,8 @@
-const AMP_FAVORITE_COOKIE= 'amp-favorite';
-const AMP_FAVORITE_COUNT_COOKIE = 'amp-favorite-with-count';
+const AMP_FAVORITE_COOKIE = 'amp-favorite';
 const EXPIRATION_DATE = 365 * 24 * 60 * 60 * 1000; // 365 days in ms
 const Cookie = require('cookie');
 
-function readFavoriteFromCookie(cookieStr, name) {
+function readFavoriteFromCookie(cookieStr) {
   const cookies = Cookie.parse(cookieStr);
   const favorite = cookies[AMP_FAVORITE_COOKIE];
 
@@ -11,7 +10,7 @@ function readFavoriteFromCookie(cookieStr, name) {
     return false;
   }
 
-  return favorite
+  return favorite;
 }
 
 const handler = async (ev) => {
@@ -24,17 +23,17 @@ const handler = async (ev) => {
   };
 
   if (ev.httpMethod !== 'POST') {
-    favorite = !favorite
+    favorite = !favorite;
     headers = {
       ...headers,
-      'Set-Cookie': `${favorite}; Max-Age=${EXPIRATION_DATE}`
-    }
+      'Set-Cookie': `${favorite}; Max-Age=${EXPIRATION_DATE}`,
+    };
   }
 
   return {
     statusCode: 200,
     headers,
-    body: `${favorite}`
+    body: `${favorite}`,
   };
 };
 

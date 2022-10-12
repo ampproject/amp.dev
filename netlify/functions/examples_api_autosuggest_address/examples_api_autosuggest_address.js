@@ -1,21 +1,21 @@
 const {US_CAPITAL_CITIES} = require('../autosuggest.js');
-const Busboy = require("busboy");
+const busboyLib = require('busboy');
 
 const parseFormData = (ev) => {
   return new Promise((resolve, reject) => {
-    const busboy = Busboy({
+    const busboy = busboyLib({
       headers: {
         ...ev.headers,
-        "content-type":
-          ev.headers["Content-Type"] || ev.headers["content-type"],
+        'content-type':
+          ev.headers['Content-Type'] || ev.headers['content-type'],
       },
     });
     const result = {
       files: [],
     };
 
-    busboy.on("file", (fieldname, file, filename, encoding, mimetype) => {
-      file.on("data", (data) => {
+    busboy.on('file', (fieldname, file, filename, encoding, mimetype) => {
+      file.on('data', (data) => {
         result.files.push({
           file: data,
           fileName: filename,
@@ -23,19 +23,19 @@ const parseFormData = (ev) => {
         });
       });
     });
-    busboy.on("field", (fieldname, value) => {
+    busboy.on('field', (fieldname, value) => {
       try {
         result[fieldname] = JSON.parse(value);
       } catch (err) {
         result[fieldname] = value;
       }
     });
-    busboy.on("error", (error) => reject(`Parse error: ${error}`));
-    busboy.on("finish", () => {
+    busboy.on('error', (error) => reject(new Error(`Parse error: ${error}`)));
+    busboy.on('finish', () => {
       ev.body = result;
       resolve(ev);
     });
-    busboy.write(ev.body, ev.isBase64Encoded ? "base64" : "binary");
+    busboy.write(ev.body, ev.isBase64Encoded ? 'base64' : 'binary');
     busboy.end();
   });
 };

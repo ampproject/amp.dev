@@ -1,13 +1,11 @@
 const handler = async () => {
-
   return {
     headers: {
-      'Content-Type': 'text/plain'
+      'Content-Type': 'text/plain',
     },
     statusCode: 200,
-    body: 'null'
+    body: 'null',
   };
-
 };
 
 module.exports = {handler};

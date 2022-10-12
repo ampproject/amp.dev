@@ -10,7 +10,7 @@ function readFavoriteFromCookie(cookieStr, name) {
     return false;
   }
 
-  return favorite
+  return favorite;
 }
 
 function writeFavoriteWithCount(value) {
@@ -23,20 +23,14 @@ function writeFavoriteWithCount(value) {
   return {
     value,
     count,
-  }
+  };
 }
 
 function writeFavoriteCookie(name, value) {
-
-  return Cookie.serialize(
-    name,
-    {value},
-    {maxAge: EXPIRATION_DATE}
-  );
+  return Cookie.serialize(name, {value}, {maxAge: EXPIRATION_DATE});
 }
 
 const handler = async (ev) => {
-
   const cookieStr = ev.headers.cookie || '';
 
   let favorite = readFavoriteFromCookie(cookieStr, AMP_FAVORITE_COUNT_COOKIE);
@@ -45,19 +39,21 @@ const handler = async (ev) => {
     'Content-Type': 'application/json',
   };
 
-    if (ev.httpMethod === 'POST') {
-      favorite = !favorite
-      headers = {
-        ...headers,
-        'Set-Cookie': `${writeFavoriteCookie(AMP_FAVORITE_COUNT_COOKIE, favorite)}`
-
-      }
-    }
+  if (ev.httpMethod === 'POST') {
+    favorite = !favorite;
+    headers = {
+      ...headers,
+      'Set-Cookie': `${writeFavoriteCookie(
+        AMP_FAVORITE_COUNT_COOKIE,
+        favorite
+      )}`,
+    };
+  }
 
   return {
     statusCode: 200,
     headers,
-    body: JSON.stringify(writeFavoriteWithCount(favorite))
+    body: JSON.stringify(writeFavoriteWithCount(favorite)),
   };
 };
 
