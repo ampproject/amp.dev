@@ -500,7 +500,6 @@ const getUpdatedURL = (u, requestedFormat, forcedFormat) => {
   return u.replace(
     /(.*documentation\/[^/]+)[\/.]([^?]+)(?:\?(?:[^=]*)=(.*))?/,
     (match, section, page) => {
-      // covering the case where /documentation/tools.html, which matches differently than all other paths
       if (page === 'html') {
         page = 'index.html';
       }
@@ -685,6 +684,7 @@ async function staticify(done) {
               format === FORMAT_WEBSITES &&
               !file.path.endsWith('tools.html')
             ) {
+              // covering the case where /documentation/tools.html, which matches differently than all other paths
               const defaultFormatVersion = new Vinyl({
                 path: getUpdatedURL(file.path),
                 contents: Buffer.from(renderedPage),
@@ -807,8 +807,6 @@ async function staticify(done) {
         }
 
         for (const page of data.components) {
-          // addExampleAndPlaygroundLink(page, locale);
-          // cleanupTexts(page);
           page.url = new URL(page.url, config.hosts.platform.base).toString();
         }
 
@@ -1026,8 +1024,6 @@ exports.buildFinalize = gulp.series(
   gulp.parallel(collectStatics, persistBuildInfo),
   thumborImageIndex
 );
-
-exports.zzz = renderExamples;
 
 exports.build = gulp.series(
   clean,
