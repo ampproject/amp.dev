@@ -424,15 +424,40 @@ function buildPages(done) {
         .src(project.absolute('netlify/configs/amp.dev/netlify.toml'))
         .pipe(
           through.obj((file, encoding, callback) => {
-            let config = file.contents.toString();
+            let netlifyConfig = file.contents.toString();
 
-            config = toml.parse(config);
-            config.build.publish = '.';
-            delete config.build.base;
+            const goLinks = project.absolute('platform/config/go-links.yaml')
+            let redirects = yaml.load(fs.readFileSync(goLinks, 'utf-8'));
 
-            config = toml.stringify(config, 0, 2);
+            // remove the regex entries in the go links, they were manually added
+            // to the config
+            redirects = Object.entries(redirects).filter( ([path,dest]) => !path.includes('^'));
 
-            file.contents = Buffer.from(config);
+            redirects = redirects.map(([from,to]) => {
+              from = `https://go.amp.dev${from}`;
+
+              // we only want to update the URL of shorturls that point to relative URLs
+              if (!to.startsWith('http')) {
+                to = `https://amp.dev${to}`
+              }
+
+              return {
+                from,
+                to,
+                'status': 200,
+                'force': true
+              }
+            })
+
+            netlifyConfig = toml.parse(netlifyConfig);
+            netlifyConfig.build.publish = '.';
+            netlifyConfig.redirects = redirects
+
+            delete netlifyConfig.build.base;
+
+            netlifyConfig = toml.stringify(netlifyConfig, 0, 2);
+
+            file.contents = Buffer.from(netlifyConfig);
 
             return callback(null, file);
           })
