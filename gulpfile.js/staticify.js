@@ -20,7 +20,6 @@ const Cheerio = require('cheerio');
 const Vinyl = require('vinyl');
 const config = require('@lib/config');
 const filter = require('gulp-filter');
-const fs = require('fs');
 const gulp = require('gulp');
 const nunjucks = require('nunjucks');
 const path = require('path');
