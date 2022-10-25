@@ -16,6 +16,7 @@
 
 'use strict';
 
+const gulp = require('gulp');
 const config = require('@lib/config');
 const yaml = require('js-yaml');
 const gulpFile = require('gulp-file');
