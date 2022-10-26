@@ -218,6 +218,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/caprofitx.md
       - label: Cedato
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/cedato.md
+      - label: Clever
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/clever.md
       - label: Colombia
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/colombia.md
       - label: colombiafeed
@@ -286,6 +288,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/gecko.md
       - label: Geniee SSP
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/genieessp.md
+      - label: Geozo
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/geozo.md
       - label: Giraff
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/giraff.md
       - label: Glomex
