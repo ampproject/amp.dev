@@ -1,11 +1,11 @@
 ---
-name: 'Release: Staging'
+name: 'Release: Static Production'
 
 on:
   workflow_dispatch:
   push:
     branches:
-      - future
+      - static-production-amp-dev
 
 jobs:
   queue:
@@ -21,23 +21,9 @@ jobs:
           skip_after_successful_duplicate: true
           paths_ignore: '["**/README.md", "**/docs/**"]'
           do_not_skip: '["workflow_dispatch", "schedule"]'
-
   verify:
     runs-on: ubuntu-latest
-    environment: Staging
-    permissions:
-      contents: 'read'
-      id-token: 'write'
     steps:
-      - id: auth
-        uses: google-github-actions/auth@v0
-        with:
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
-          credentials_json: ${{ secrets.GCP_SA_KEY }}
-
-      - name: Setting up Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@v0
-
       - name: Cloning repository
         uses: actions/checkout@v2
 
@@ -50,20 +36,18 @@ jobs:
         if: ${{ !env.ACT }}
         with:
           path: '**/node_modules'
-          key: node_modules-v2-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
+          key: node_modules-${{ hashFiles('**/package-lock.json') }}
 
       - name: Installing Node.js packages
         run: npm ci
 
       - name: Running tests
         run: |
-          gulp updateTestResources
-          gulp buildPixiFunctions
-          gulp lintNode
-          gulp lintYaml
+          npx gulp updateTestResources
+          npx gulp lintNode
+          npx gulp lintYaml
           npm run test:platform
           npm run test:playground
-          npm run test:pixi
   prepare:
     needs: verify
     runs-on: ubuntu-latest
@@ -80,18 +64,18 @@ jobs:
         if: ${{ !env.ACT }}
         with:
           path: '**/node_modules'
-          key: node_modules-v2-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
+          key: node_modules-${{ hashFiles('**/package-lock.json') }}
 
       - name: Installing Node.js packages
         run: npm install
 
       - name: Preparing build
         env:
-          APP_ENV: staging
+          APP_ENV: production
           AMP_DOC_TOKEN: ${{ secrets.AMP_DOC_TOKEN }}
           AMP_DEV_PIXI_APIS_KEY: ${{ secrets.AMP_DEV_PIXI_APIS_KEY }}
         run: |
-          gulp buildPrepare
+          npx gulp buildPrepare
 
       - name: Storing build artifacts
         uses: actions/upload-artifact@v2
@@ -101,7 +85,7 @@ jobs:
 
   build:
     env:
-      APP_ENV: staging
+      APP_ENV: production
     needs: prepare
     strategy:
       matrix:
@@ -137,7 +121,7 @@ jobs:
         if: ${{ !env.ACT }}
         with:
           path: '**/node_modules'
-          key: node_modules-v2-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
+          key: node_modules-${{ hashFiles('**/package-lock.json') }}
 
       - name: Installing Node.js packages
         run: npm install
@@ -165,11 +149,11 @@ jobs:
 
       - name: Unpacking artifacts
         run: |
-          gulp unpackArtifacts
+          npx gulp unpackArtifacts
 
       - name: Building pages
         run: |
-          gulp buildPages --locales ${{ matrix.language }}
+          npx gulp buildPages --locales ${{ matrix.language }}
 
       - name: Storing build artifacts
         uses: actions/upload-artifact@v2
@@ -180,7 +164,10 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment: Staging
+    environment: Production
+    env:
+      APP_ENV: production
+      CLOUDSDK_CORE_DISABLE_PROMPTS: 1
     steps:
       - name: Cloning repository
         uses: actions/checkout@v2
@@ -194,17 +181,19 @@ jobs:
         if: ${{ !env.ACT }}
         with:
           path: '**/node_modules'
-          key: node_modules-v2-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
+          key: node_modules-${{ hashFiles('**/package-lock.json') }}
 
       - name: Installing Node.js packages
         run: npm install
 
-      - name: Setting up Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@v0
+      - id: auth
+        uses: google-github-actions/auth@v0
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
-          service_account_key: ${{ secrets.GCP_SA_KEY }}
-          export_default_credentials: true
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Setting up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0
 
       - name: Fetching build artifacts
         uses: actions/download-artifact@v2
@@ -213,15 +202,15 @@ jobs:
 
       - name: Unpacking artifacts
         run: |
-          gulp unpackArtifacts
+          npx gulp unpackArtifacts
 
       - name: Finalizing build
         run: |
-          gulp buildFinalize
+          npx gulp buildFinalize
           npm run smoke-test -- --colors
-        # npm run test:pixi:e2e
 
       - name: Deploying
         run: |
-          gcloud config set app/cloud_build_timeout 1800
-          gcloud app deploy --quiet --version=1
+          gcloud components update --quiet
+          gcloud components install beta --quiet
+          npx gulp deploy
