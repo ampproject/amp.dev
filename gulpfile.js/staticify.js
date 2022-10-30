@@ -19,10 +19,8 @@
 const Cheerio = require('cheerio');
 const Vinyl = require('vinyl');
 const config = require('@lib/config');
-const filter = require('gulp-filter');
 const gulp = require('gulp');
 const nunjucks = require('nunjucks');
-const path = require('path');
 const through = require('through2');
 const {project} = require('@lib/utils');
 const {survey} = require('@lib/templates/SurveyFilter.js');
@@ -37,18 +35,20 @@ const {
   FORMAT_WEBSITES,
   SUPPORTED_FORMATS,
 } = require('@lib/amp/formatHelper.js');
+const coursesPath = '/documentation/courses';
+const coursesRegex = new RegExp(`^(.+)(?:${coursesPath})(.*)$`);
 
 const getUpdatedURL = (u, requestedFormat, forcedFormat) => {
   return u.replace(
-    /(.*documentation\/[^/]+)[\/.]([^?]+)(?:\?(?:[^=]*)=(.*))?/,
-    (match, section, page) => {
+    /(.*documentation\/[^/]+)[\/.]([^?]+)?(?:\?(?:[^=]*)=(.*))?/,
+    (match, section, page, embeddedQueryFormat) => {
       if (page === 'html') {
         page = 'index.html';
       }
 
-      const hasFormat = forcedFormat || requestedFormat;
+      const hasFormat = forcedFormat || embeddedQueryFormat || requestedFormat;
       const fmt = hasFormat ? `${hasFormat}/` : '';
-      return `${section}/${fmt}${page}`;
+      return `${section}/${fmt}${page || ''}`;
     }
   );
 };
@@ -98,13 +98,8 @@ async function staticify(done) {
     const f = (cb) => {
       const env = nunjucksEnv();
 
-      const f = filter([`${project.paths.PAGES_DEST}/**/*html`, 'index'], {
-        restore: true,
-      });
-
       return gulp
-        .src(`${project.paths.PAGES_DEST}/**/*.html`)
-        .pipe(f)
+        .src(`${project.paths.PAGES_DEST}/**/*html`)
         .pipe(
           // Render a static version of all of our pages
 
@@ -133,29 +128,33 @@ async function staticify(done) {
             // Rewrite links inside of each of the pages
 
             const $ = Cheerio.load(file.contents.toString());
+            const $links = $('a.nav-link, a.ap-m-format-toggle-link');
 
-            $('a.nav-link, a.ap-m-format-toggle-link').each(function () {
+            $links.each(function () {
               // eslint-disable-next-line no-invalid-this
               const $this = $(this);
               const origURL = $this.attr('href');
+              const updatedURL = getUpdatedURL(origURL, format);
 
-              $this.attr('href', getUpdatedURL(origURL, format));
+              $this.attr('href', updatedURL);
             });
 
             const renderedPage = $.root().html();
 
-            if (
-              format === FORMAT_WEBSITES &&
-              !file.path.endsWith('tools.html')
-            ) {
-              // covering the case where /documentation/tools.html, which matches differently than all other paths
-              const defaultFormatVersion = new Vinyl({
-                path: getUpdatedURL(file.path),
-                contents: Buffer.from(renderedPage),
-              });
+            // we need to render a "default" version for the URLs, and treat the "website" version as such
+            if (format === FORMAT_WEBSITES) {
+              const {path} = file;
+              let contents = Buffer.from(renderedPage);
+
+              if (file.path.endsWith('tools.html')) {
+                // In addition to the tools pages for each format, we need to render a seperate main version that
+                // shows all of them. Rather than render its twice, we can just toggle a classname.
+                $('.ap-a-pill').addClass('active');
+                contents = Buffer.from($.root().html());
+              }
 
               // eslint-disable-next-line no-invalid-this
-              this.push(defaultFormatVersion);
+              this.push(new Vinyl({path, contents}));
             }
 
             file.path = getUpdatedURL(file.path, format);
@@ -164,14 +163,7 @@ async function staticify(done) {
             callback(null, file);
           })
         )
-        .pipe(
-          gulp.dest((f) => {
-            logger.log(
-              `staticified ${path.relative(project.absolute('.'), f.path)}`
-            );
-            return f.base;
-          })
-        )
+        .pipe(gulp.dest((file) => file.base))
         .on('end', cb);
     };
 
@@ -183,9 +175,6 @@ async function staticify(done) {
   });
 
   const generatedLevels = ['beginner', 'advanced'].map((level) => {
-    const coursesPath = '/documentation/courses';
-    const coursesRegex = new RegExp(`^(.+)(?:${coursesPath})(.*)$`);
-
     const f = (cb) => {
       const env = nunjucksEnv();
 
@@ -198,7 +187,10 @@ async function staticify(done) {
               requestPath: `${file.path.replace(requestPathRegex, '')}/`,
               level,
               format: FORMAT_WEBSITES,
+              requestedFormat: FORMAT_WEBSITES,
             };
+
+            logger.log(`trying to rendering ${file.path}`);
 
             env.renderString(srcHTML, configObj, (err, result) => {
               if (err) {
@@ -215,8 +207,10 @@ async function staticify(done) {
             let renderedPage = file.contents.toString();
 
             const $ = Cheerio.load(renderedPage);
+            const $links = $('.nav-link');
+            const $levelToggle = $('.toggle-button input');
 
-            $('.nav-link').each(function () {
+            $links.each(function () {
               // eslint-disable-next-line no-invalid-this
               const $this = $(this);
               const origURL = $this.attr('href');
@@ -228,7 +222,18 @@ async function staticify(done) {
               $this.attr('href', updatedURL);
             });
 
-            renderedPage = $.root().html();
+            const originalToggleLink = $levelToggle.attr('on');
+
+            if (originalToggleLink) {
+              const updatedToggleLink = originalToggleLink.replace(
+                /(^[^\/]+\/[^\/]+\/[^\/]+\/)([^?]+)+\?level=([^']+)(.+)$/,
+                (match, prefix, coursePath, level, suffix) =>
+                  `${prefix}${level}/${coursePath}${suffix}`
+              );
+              $levelToggle.attr('on', updatedToggleLink);
+
+              renderedPage = $.root().html();
+            }
 
             if (level === 'beginner') {
               // eslint-disable-next-line no-invalid-this
@@ -300,8 +305,8 @@ async function staticify(done) {
 
   return new Promise((resolve, reject) => {
     gulp.series(
-      gulp.parallel(...generatedFormats),
       gulp.parallel(...generatedLevels),
+      gulp.parallel(...generatedFormats),
       (seriesDone) => {
         seriesDone();
         resolve();

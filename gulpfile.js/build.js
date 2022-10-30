@@ -517,7 +517,6 @@ function nunjucksEnv() {
 }
 
 function optimizeFiles(cb) {
-  const logger = require('@lib/utils/log')('AMP Optimizer');
   return gulp
     .src(`${project.paths.PAGES_DEST}/**/*.html`)
     .pipe(
@@ -530,14 +529,7 @@ function optimizeFiles(cb) {
         });
       })
     )
-    .pipe(
-      gulp.dest((f) => {
-        logger.log(
-          `staticified ${path.relative(project.absolute('.'), f.path)}`
-        );
-        return f.base;
-      })
-    )
+    .pipe(gulp.dest((f) => f.base))
     .on('end', cb);
 }
 

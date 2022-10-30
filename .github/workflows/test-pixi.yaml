@@ -1,12 +1,6 @@
 ---
 name: 'Test: Pixi'
 
-on:
-  push:
-    paths:
-      - 'package.json'
-      - 'pixi/**'
-
 jobs:
   test:
     runs-on: ubuntu-latest

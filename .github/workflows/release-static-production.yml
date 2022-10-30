@@ -73,7 +73,6 @@ jobs:
         env:
           APP_ENV: production
           AMP_DOC_TOKEN: ${{ secrets.AMP_DOC_TOKEN }}
-          AMP_DEV_PIXI_APIS_KEY: ${{ secrets.AMP_DEV_PIXI_APIS_KEY }}
         run: |
           npx gulp buildPrepare
 
@@ -167,7 +166,7 @@ jobs:
     environment: Production
     env:
       APP_ENV: production
-      CLOUDSDK_CORE_DISABLE_PROMPTS: 1
+      NETLIFY_DEPLOY_TOKEN: ${{ secrets.NETLIFY_DEPLOY_TOKEN }}
     steps:
       - name: Cloning repository
         uses: actions/checkout@v2

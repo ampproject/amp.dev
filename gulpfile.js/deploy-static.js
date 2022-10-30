@@ -17,12 +17,37 @@
 'use strict';
 
 const {sh} = require('@lib/utils/sh.js');
-const {GROW_BUILD_DEST} = require('@lib/utils/project').paths;
+const {DIST, PAGES_DEST} = require('@lib/utils/project').paths;
+const {NETLIFY_DEPLOY_TOKEN} = process.env;
+const SITES = [
+  {
+    NAME: 'amp.dev',
+    ID: 'e571c70e-d23f-4cbf-ac4e-802bb08e5261',
+    DIR: PAGES_DEST,
+  },
+  {
+    NAME: 'playground.amp.dev',
+    ID: 'acead270-9404-4dde-81e4-aec0e6884869',
+    DIR: `${DIST}/playground`,
+  },
+  {
+    NAME: 'preview.amp.dev',
+    ID: 'caf28d42-024a-4efb-b266-b00cf10847a3',
+    DIR: `${DIST}/examples`,
+  },
+];
 
 async function staticDeploy() {
-  return sh('npx netlify deploy --prod --site amp-dev-static', {
-    workingDir: GROW_BUILD_DEST,
-  });
+  for (const SITE of SITES) {
+    console.log(`attempting to deploy ${SITE.DIR}`);
+
+    await sh(
+      `npx netlify deploy --prod --auth ${NETLIFY_DEPLOY_TOKEN} --site ${SITE.ID}`,
+      {
+        workingDir: SITE.DIR,
+      }
+    );
+  }
 }
 
 exports.staticDeploy = staticDeploy;
