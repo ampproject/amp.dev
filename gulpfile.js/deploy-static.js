@@ -16,21 +16,16 @@
 
 'use strict';
 
-const {series} = require('gulp');
 const {sh} = require('@lib/utils/sh.js');
-const {GROW_BUILD_DEST} =
-  require('@lib/utils/project').paths;
+const {GROW_BUILD_DEST} = require('@lib/utils/project').paths;
 
 /**
  * Deploy the pixi puppeteer cloud cuntion
  */
 async function staticDeploy() {
-  return sh(
-    'npx netlify deploy --prod --site amp-dev-static',
-    {
-      workingDir: GROW_BUILD_DEST,
-    }
-  );
+  return sh('npx netlify deploy --prod --site amp-dev-static', {
+    workingDir: GROW_BUILD_DEST,
+  });
 }
 
-exports.staticDeploy = staticDeploy
+exports.staticDeploy = staticDeploy;
