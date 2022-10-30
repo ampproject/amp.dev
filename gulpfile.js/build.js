@@ -308,7 +308,6 @@ function buildPrepare(done) {
         './boilerplate/dist/',
         './playground/dist/',
         './frontend21/dist/',
-        './frontend/templates/views/partials/pixi/webpack.j2',
         './.cache/',
         './examples/static/samples/samples.json',
       ];
