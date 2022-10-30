@@ -34,8 +34,8 @@
 		"test:prepare": "gulp updateTestResources",
 		"test:platform": "APP_ENV=test jest --runInBand --detectOpenHandles --forceExit --testPathPattern platform --testPathIgnorePatterns smoke-tests",
 		"test:playground": "APP_ENV=test jest --runInBand --detectOpenHandles --forceExit --testPathPattern playground",
-		"test:pixi": "APP_ENV=test jest --runInBand --detectOpenHandles --forceExit --testPathPattern pixi",
-		"test:pixi:e2e": "APP_ENV=local jest --forceExit -c e2e.jest.config.js",
+		"_test:pixi": "APP_ENV=test jest --runInBand --detectOpenHandles --forceExit --testPathPattern pixi",
+		"_test:pixi:e2e": "APP_ENV=local jest --forceExit -c e2e.jest.config.js",
 		"test:grow-extensions": "cd pages/extensions && if which grow; then python3 -m unittest discover -p \"*_test.py\"; else echo grow not installed with pip. skip tests; fi"
 	},
 	"keywords": [

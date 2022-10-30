@@ -20,6 +20,7 @@ jobs:
           node-version: 14
 
       - uses: actions/cache@v2
+        if: ${{ !env.ACT }}
         with:
           path: '**/node_modules'
           key: node_modules-${{ hashFiles('**/package-lock.json') }}

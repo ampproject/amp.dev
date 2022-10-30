@@ -47,6 +47,7 @@ jobs:
           node-version: 14
 
       - uses: actions/cache@v2
+        if: ${{ !env.ACT }}
         with:
           path: '**/node_modules'
           key: node_modules-v2-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
@@ -76,6 +77,7 @@ jobs:
           node-version: 14
 
       - uses: actions/cache@v2
+        if: ${{ !env.ACT }}
         with:
           path: '**/node_modules'
           key: node_modules-v2-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
@@ -132,6 +134,7 @@ jobs:
           node-version: 14
 
       - uses: actions/cache@v2
+        if: ${{ !env.ACT }}
         with:
           path: '**/node_modules'
           key: node_modules-v2-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
@@ -188,6 +191,7 @@ jobs:
           node-version: 14
 
       - uses: actions/cache@v2
+        if: ${{ !env.ACT }}
         with:
           path: '**/node_modules'
           key: node_modules-v2-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
