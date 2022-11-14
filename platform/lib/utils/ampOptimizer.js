@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-const imageOptimizer = require('@lib/utils/imageOptimizer');
 const HeadDedupTransformer = require('@lib/utils/HeadDedupTransformer');
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 const CssTransformer = require('@lib/utils/cssTransformer');
@@ -22,7 +21,6 @@ const signale = require('signale');
 
 const optimizerConfig = {
   imageBasePath: 'pages',
-  imageOptimizer,
   autoExtensionImport: true,
   extensionVersions: {
     'amp-base-carousel': '0.1',

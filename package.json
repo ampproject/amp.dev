@@ -81,7 +81,6 @@
 		"gcp-metadata": "4.3.1",
 		"google-spreadsheet": "3.1.15",
 		"gulp-file": "0.4.0",
-		"gulp-filter": "7.0.0",
 		"helmet-csp": "3.4.0",
 		"http-proxy": "1.18.1",
 		"iltorb": "2.4.5",
