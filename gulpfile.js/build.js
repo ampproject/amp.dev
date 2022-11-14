@@ -446,7 +446,10 @@ function buildPages(done) {
 
             netlifyConfig = toml.parse(netlifyConfig);
             netlifyConfig.build.publish = '.';
-            netlifyConfig.redirects = redirects;
+            netlifyConfig.redirects = [
+              ...(netlifyConfig.redirects || []),
+              ...redirects,
+            ];
 
             delete netlifyConfig.build.base;
 
