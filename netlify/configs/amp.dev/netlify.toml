@@ -246,6 +246,10 @@ force = true
   status = 401
 
 [[redirects]]
+  from = "/pixi"
+  to = "https://web.dev/measure/"
+
+[[redirects]]
   from = "/page-experience"
   to = "https://web.dev/measure/"
 
