@@ -181,7 +181,6 @@ async function buildPlayground() {
   return await gulp
     .src(project.absolute('playground/netlify.toml'))
     .pipe(gulp.dest(`${project.paths.DIST}/playground`));
-
 }
 
 /**
