@@ -250,6 +250,10 @@ force = true
   to = "https://web.dev/measure/"
 
 [[redirects]]
+  from = "/about/page-experience"
+  to = "https://developers.google.com/search/docs/appearance/page-experience"
+
+[[redirects]]
   from = "/page-experience"
   to = "https://web.dev/measure/"
 
