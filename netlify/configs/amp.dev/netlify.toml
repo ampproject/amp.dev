@@ -221,7 +221,7 @@ force = true
   status = 200
 
 [[redirects]]
-  from = "/latest-query"
+  from = "/search/latest-query"
   to = "/.netlify/functions/latest-query"
   status = 200
 
@@ -239,6 +239,14 @@ force = true
   from = "/documentation/examples/news-publishing/live_blog"
   to = "/.netlify/functions/examples_source_news_publishing_amp-live-list_api"
   status = 200
+
+[[redirects]]
+  from = "/search/autosuggest"
+  to = "/.netlify/functions/search_autosuggest/search_autosuggest.js"
+
+[[redirects]]
+  from = "/search/do"
+  to = "/.netlify/functions/search_do/search_do.js"
 
 [[redirects]]
   from = "/page-experience/api"
