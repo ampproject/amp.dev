@@ -123,36 +123,6 @@ success_stories:
         >
         </amp-img>
       </div>
-      <div class="ap-text-media-col">
-        <div class="ap-text-block">
-          <h2 class="ap-h1">{{ _('Guaranteed Page Experience') }}</h2>
-          <p>
-            {{ _('AMP provides you with the tools needed to build websites that
-            meet Page Experience ranking signals while remaining flexible and
-            customizable to your needs. Page experience is a set of signals from
-            Google that measure how users perceive their experience interacting
-            with a web page beyond its pure information value. AMP is a
-            straightforward way to a high page experience score. Domains built
-            with AMP are 5 times more likely to pass Core Web Vitals metrics
-            than non-AMP!') }}
-          </p>
-        </div>
-
-        <a
-          class="ap-button"
-          href="{{ g.doc('/content/amp-dev/page-experience.html', locale=doc.locale).url.path }}"
-        >
-          {{ _('Check your page’s performance') }}
-        </a>
-
-        {% with %}
-          {% set href = g.doc('/content/amp-dev/about/page-experience.html', locale=doc.locale).url.path %}
-          {% set text = _("Learn more") %}
-          {% include '/views/2021/partials/content/link.j2' %}
-        {% endwith %}
-      </div>
-    </div>
-  </section>
 
   <section class="ap-center-stage">
     <div class="ap-center-stage-content">

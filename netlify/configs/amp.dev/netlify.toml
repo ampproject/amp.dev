@@ -221,7 +221,7 @@ force = true
   status = 200
 
 [[redirects]]
-  from = "/latest-query"
+  from = "/search/latest-query"
   to = "/.netlify/functions/latest-query"
   status = 200
 
@@ -241,9 +241,25 @@ force = true
   status = 200
 
 [[redirects]]
+  from = "/search/autosuggest"
+  to = "/.netlify/functions/search_autosuggest/search_autosuggest.js"
+
+[[redirects]]
+  from = "/search/do"
+  to = "/.netlify/functions/search_do/search_do.js"
+
+[[redirects]]
   from = "/page-experience/api"
   to = "/500"
   status = 401
+
+[[redirects]]
+  from = "/pixi"
+  to = "https://web.dev/measure/"
+
+[[redirects]]
+  from = "/about/page-experience"
+  to = "https://developers.google.com/search/docs/appearance/page-experience"
 
 [[redirects]]
   from = "/page-experience"

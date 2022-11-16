@@ -171,15 +171,15 @@ async function buildPlayground() {
     .pipe(gulp.dest(`${project.paths.DIST}/examples`));
 
   await gulp
-    .src(project.absolute('playground/netlify.toml'))
-    .pipe(gulp.dest(`${project.paths.DIST}/playground`));
-
-  await gulp
     .src([project.absolute('pages/static/**/*')])
     .pipe(gulp.dest(`${project.paths.DIST}/playground/static`));
 
-  return await gulp
+  await gulp
     .src(project.absolute('playground/dist/**/*'))
+    .pipe(gulp.dest(`${project.paths.DIST}/playground`));
+
+  return await gulp
+    .src(project.absolute('playground/netlify.toml'))
     .pipe(gulp.dest(`${project.paths.DIST}/playground`));
 }
 
