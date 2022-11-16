@@ -22,6 +22,7 @@ const handler = async (ev) => {
     return {
       statusCode: 422,
       headers: {
+        'Access-Control-Allow-Origin': ev.headers?.origin || '',
         'Content-Type': 'text/plain',
       },
       body: 'Invalid return URL',

@@ -1,7 +1,7 @@
 ---
 '$title': Meningkatkan interaktivitas
 $order: 2
-description: 'Kode awal memberikan pengalaman pengguna yang cukup sederhana. Ada beberapa cara untuk memperbaikinya \: - Tambahkan indikator yang menampilkan ....'
+description: 'Kode awal memberikan pengalaman pengguna yang cukup sederhana. Ada beberapa cara untuk memperbaikinya - Tambahkan indikator yang menampilkan ....'
 ---
 
 Kode awal memberikan pengalaman pengguna yang cukup sederhana. Ada beberapa cara untuk memperbaikinya:

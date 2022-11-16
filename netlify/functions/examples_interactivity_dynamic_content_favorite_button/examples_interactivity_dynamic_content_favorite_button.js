@@ -20,6 +20,7 @@ const handler = async (ev) => {
   let headers = {
     'Cache-Control': 'public, max-age=0, stale-while-revalidate=0',
     'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': ev.headers?.origin || '',
   };
 
   if (ev.httpMethod !== 'POST') {

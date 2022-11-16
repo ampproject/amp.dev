@@ -3,6 +3,7 @@ const handler = async () => {
     statusCode: 303,
     headers: {
       'Location': '/static/samples/files/amp-form-success.html',
+      'Access-Control-Allow-Origin': ev.headers?.origin || '',
     },
   };
 };

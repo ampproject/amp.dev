@@ -526,10 +526,12 @@ function optimizeFiles(cb) {
       through.obj((file, encoding, callback) => {
         const unoptimizedFile = file.contents.toString();
 
-        optimize({query: ''}, unoptimizedFile, {}).then((optimizedFile) => {
-          file.contents = Buffer.from(optimizedFile);
-          callback(null, file);
-        });
+        optimize({query: ''}, unoptimizedFile, {}, file.path).then(
+          (optimizedFile) => {
+            file.contents = Buffer.from(optimizedFile);
+            callback(null, file);
+          }
+        );
       })
     )
     .pipe(gulp.dest((f) => f.base))
@@ -730,6 +732,10 @@ function collectStatics(done) {
           })
         );
       }
+
+      await gulp
+        .src(`${project.paths.DIST}/inline-examples/documentation**/**/*`)
+        .pipe(gulp.dest(`${project.paths.DIST}/examples/sources/`));
 
       await Promise.all(writes);
       signale.await('Finished collecting static files!');

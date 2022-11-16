@@ -1,7 +1,7 @@
 ---
 '$title': Zwiększanie interaktywności
 $order: 2
-description: 'Kod startowy zapewnia użytkownikowi raczej niezauważalne wrażenia. Można go ulepszyć na kilka sposobów: - Dodać wskaźnik, który wyświetla ...'
+description: 'Kod startowy zapewnia użytkownikowi raczej niezauważalne wrażenia. Można go ulepszyć na kilka sposobów - Dodać wskaźnik, który wyświetla ...'
 ---
 
 Kod startowy zapewnia użytkownikowi raczej niezauważalne wrażenia. Można go ulepszyć na kilka sposobów:

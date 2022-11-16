@@ -30,6 +30,7 @@ const handler = async () => {
   return {
     statusCode: 200,
     headers: {
+      'Access-Control-Allow-Origin': ev.headers?.origin || '',
       'Content-Type': 'application/javascript',
       'Cache-Control': `max-age=${RESPONSE_MAX_AGE.autosuggest}, immutable`,
     },

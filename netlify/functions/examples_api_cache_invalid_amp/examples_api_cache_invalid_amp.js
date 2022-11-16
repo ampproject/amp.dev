@@ -21,6 +21,7 @@ const handler = async () => {
   return {
     statusCode: 200,
     headers: {
+      'Access-Control-Allow-Origin': ev.headers?.origin || '',
       'Content-Type': 'text/html',
       'Cache-Control': 'max-age=365000000, immutable',
     },

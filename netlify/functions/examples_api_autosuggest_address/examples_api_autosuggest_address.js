@@ -1,4 +1,4 @@
-const {US_CAPITAL_CITIES} = require('../autosuggest.js');
+const {US_CAPITAL_CITIES} = require('./autosuggest.js');
 const busboyLib = require('busboy');
 
 const parseFormData = (ev) => {
@@ -67,6 +67,7 @@ const handler = async (ev) => {
     statusCode: 200,
     headers: {
       'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': ev.headers?.origin || '',
     },
     body,
   };

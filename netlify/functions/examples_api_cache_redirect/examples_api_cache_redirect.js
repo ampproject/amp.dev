@@ -5,6 +5,7 @@ const handler = async (ev) => {
     return {
       statusCode: 422,
       headers: {
+        'Access-Control-Allow-Origin': ev.headers?.origin || '',
         'Content-Type': 'text/html',
         'Cache-Control': 'max-age=365000000, immutable',
       },
@@ -18,6 +19,7 @@ const handler = async (ev) => {
     return {
       statusCode: 422,
       headers: {
+        'Access-Control-Allow-Origin': ev.headers?.origin || '',
         'Cache-Control': 'max-age=365000000, immutable',
         'Content-Type': 'text/plain',
       },
@@ -28,6 +30,7 @@ const handler = async (ev) => {
   return {
     statusCode: 301,
     headers: {
+      'Access-Control-Allow-Origin': ev.headers?.origin || '',
       'Cache-Control': 'max-age=365000000, immutable',
       'Location': _url,
     },

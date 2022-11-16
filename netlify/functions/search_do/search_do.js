@@ -108,7 +108,7 @@ function createResult(
 }
 
 const handler = async (ev) => {
-  const searchQuery = ev.searchQueryStringParameters;
+  const searchQuery = ev.queryStringParameters;
 
   const locale = searchQuery.locale ? searchQuery.locale : DEFAULT_LOCALE;
   const page = searchQuery.page ? parseInt(searchQuery.page) : 1;
@@ -144,6 +144,7 @@ const handler = async (ev) => {
     return {
       statusCode: 200,
       headers: {
+        'Access-Control-Allow-Origin': ev.headers?.origin || '',
         'Content-Type': 'application/javascript',
         'Cache-Control': `max-age=${RESPONSE_MAX_AGE.search}, immutable`,
       },
@@ -161,6 +162,7 @@ const handler = async (ev) => {
     return {
       statusCode: 500,
       headers: {
+        'Access-Control-Allow-Origin': ev.headers?.origin || '',
         'Content-Type': 'text/plain',
         'Cache-Control': `no-cache`,
       },
@@ -201,6 +203,7 @@ const handler = async (ev) => {
   return {
     statusCode: 200,
     headers: {
+      'Access-Control-Allow-Origin': ev.headers?.origin || '',
       'Content-Type': 'application/javascript',
       'Cache-Control': `max-age=${RESPONSE_MAX_AGE.search}, immutable`,
     },

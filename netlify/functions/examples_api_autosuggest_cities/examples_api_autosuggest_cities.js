@@ -1,4 +1,4 @@
-const {US_CAPITAL_CITIES_RICH} = require('../autosuggest.js');
+const {US_CAPITAL_CITIES_RICH} = require('./autosuggest.js');
 
 const handler = async (ev) => {
   const query = ev.rawQuery.replace(/=/g, '');
@@ -16,6 +16,7 @@ const handler = async (ev) => {
   return {
     statusCode: 200,
     headers: {
+      'Access-Control-Allow-Origin': ev.headers?.origin || '',
       'Content-Type': 'application/json',
     },
     body,

@@ -39,41 +39,27 @@ const parseFormData = (ev) => {
   });
 };
 
-function isUserTryingTheInputTextErrorDemo(name) {
-  return name === ERROR_CASE_AMP_FORM;
-}
-
-const ERROR_CASE_AMP_FORM = 'error';
-
 const handler = async (ev) => {
   if (ev.httpMethod !== 'POST') {
     return {statusCode: 405, body: 'Method Not Allowed'};
   }
 
   const parsedEvent = await parseFormData(ev);
-
   ev.body = ev.body ? parsedEvent.body : {};
 
-  const {email, name} = ev.body;
-
-  if (isUserTryingTheInputTextErrorDemo(name)) {
-    return {
-      statusCode: 400,
-    };
-  }
-
-  const body = JSON.stringify({
-    email,
-    name,
-  });
+  const rating = ev.body?.rating || '';
 
   return {
     statusCode: 200,
     headers: {
-      'Access-Control-Allow-Origin': ev.headers?.origin || '',
+      'Cache-Control': 'no-cache',
       'Content-Type': 'application/json',
+      'Access-Control-Allow-Credentials': true,
+      'Access-Control-Allow-Origin': ev.headers?.origin || '',
     },
-    body,
+    body: JSON.stringify({
+      rating,
+    }),
   };
 };
 

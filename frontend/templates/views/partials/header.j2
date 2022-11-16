@@ -95,14 +95,6 @@
     {{ doc.pod.amp_dev.template_cache.get(cache_key)|safe }}
     {% endif %}
 
-    {% do doc.styles.addCssFile('/css/components/molecules/search-trigger.css') %}
-    {% do doc.icons.useIcon('/icons/magnifier.svg') %}
-    <div id="searchTriggerOpen" class="ap-m-search-trigger" on="tap:searchLightbox" role="button" aria-label="{{ _('Search') }}"  tabindex="0">
-      <div class="ap-a-ico ap-m-search-trigger-icon">
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#magnifier"></use></svg>
-      </div>
-    </div>
-
     {# blog.amp.dev shares the header with amp.dev but isn't localized.
        Therefore it's nice to have a way to turn off the language selector #}
     {% if language_selector != False %}

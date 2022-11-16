@@ -27,6 +27,7 @@ const handler = async (ev) => {
     statusCode: 200,
     headers: {
       'Content-Type': 'text/plain',
+      'Access-Control-Allow-Origin': ev.headers?.origin || '',
     },
     body: `This call returned in ${delay} ${timeWord}!`,
   };

@@ -13,6 +13,8 @@ const handler = async (ev) => {
   return {
     statusCode: 200,
     headers: {
+      'Access-Control-Allow-Origin': ev.headers?.origin || '',
+      'Access-Control-Allow-Credentials': 'true',
       'Content-Type': 'application/json',
     },
     body,
