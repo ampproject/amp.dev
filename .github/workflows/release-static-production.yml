@@ -3,15 +3,13 @@ name: 'Release: Static Production'
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - static-production-amp-dev
+  pull_request:
 
 jobs:
   queue:
     runs-on: ubuntu-latest
     outputs:
-      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+      should_skip: ${{ steps.skip_check.outputs.should_skip || steps.check_user.check-result == 'false' }}
     steps:
       - id: skip_check
         uses: fkirc/skip-duplicate-actions@master
@@ -21,6 +19,10 @@ jobs:
           skip_after_successful_duplicate: true
           paths_ignore: '["**/README.md", "**/docs/**"]'
           do_not_skip: '["workflow_dispatch", "schedule"]'
+      - id: check_user
+        uses: actions-cool/check-user-permission@main
+        with:
+           require: 'write'
   verify:
     runs-on: ubuntu-latest
     steps:
@@ -32,7 +34,14 @@ jobs:
         with:
           node-version: 14
 
-      - uses: actions/cache@v2
+      - id: changes
+        uses: tj-actions/changed-files@main
+        with:
+          since_last_remote_commit: 'true'
+          files: |
+            netlify/**
+
+      - uses: actions/cache@v3
         if: ${{ !env.ACT }}
         with:
           path: '**/node_modules'
@@ -60,7 +69,7 @@ jobs:
         with:
           node-version: 14
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         if: ${{ !env.ACT }}
         with:
           path: '**/node_modules'
@@ -81,7 +90,6 @@ jobs:
         with:
           name: build-setup
           path: artifacts/setup.tar.gz
-
   build:
     env:
       APP_ENV: production
@@ -116,7 +124,7 @@ jobs:
         with:
           node-version: 14
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         if: ${{ !env.ACT }}
         with:
           path: '**/node_modules'
@@ -130,7 +138,7 @@ jobs:
         with:
           python-version: '3.9'
 
-#      - uses: actions/cache@v2
+#      - uses: actions/cache@v3
 #        with:
 #          path: ${{ env.pythonLocation }}
 #          key: ${{ env.pythonLocation }}
@@ -152,7 +160,13 @@ jobs:
 
       - name: Building pages
         run: |
-          npx gulp buildPages --locales ${{ matrix.language }}
+          if ${{ steps.changed-files-specific.outputs.only_changed == 'true'}}; then
+            echo 'only touching static server config, skipping the build...'
+          elif ${{ github.ref_name }} != "production-amp-dev"; then
+            npx gulp buildPages --locales ${{ matrix.language }} --env PR
+          else
+            npx gulp buildPages --locales ${{ matrix.language }}
+          fi
 
       - name: Storing build artifacts
         uses: actions/upload-artifact@v2
@@ -163,7 +177,6 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment: Production
     env:
       APP_ENV: production
       NETLIFY_DEPLOY_TOKEN: ${{ secrets.NETLIFY_DEPLOY_TOKEN }}
@@ -176,7 +189,7 @@ jobs:
         with:
           node-version: 14
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         if: ${{ !env.ACT }}
         with:
           path: '**/node_modules'
@@ -200,4 +213,8 @@ jobs:
 
       - name: Deploying
         run: |
-          npx gulp staticDeploy
+          if ${{ github.ref_name }} != "production-amp-dev" ; then
+            npx gulp staticDeploy
+          else
+            npx gulp staticDeploy --stage
+          fi

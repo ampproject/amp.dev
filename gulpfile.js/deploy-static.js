@@ -16,6 +16,9 @@
 
 'use strict';
 
+const git = require('@lib/utils/git');
+const mri = require('mri');
+const argv = mri(process.argv.slice(2));
 const {sh} = require('@lib/utils/sh.js');
 const {DIST, PAGES_DEST} = require('@lib/utils/project').paths;
 const {NETLIFY_DEPLOY_TOKEN} = process.env;
@@ -38,11 +41,15 @@ const SITES = [
 ];
 
 async function staticDeploy() {
+  const branchInfo = argv.stage ? `--alias ${git.version()}` : '--prod';
+
   for (const SITE of SITES) {
     console.log(`attempting to deploy ${SITE.DIR}`);
 
     await sh(
-      `npx netlify deploy --prod --auth ${NETLIFY_DEPLOY_TOKEN} --site ${SITE.ID}`,
+      `npx netlify deploy ${branchInfo} --auth ${NETLIFY_DEPLOY_TOKEN} --site ${
+        SITE.ID
+      } --message ${git.message()}`,
       {
         workingDir: SITE.DIR,
       }

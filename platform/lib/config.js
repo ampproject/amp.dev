@@ -52,6 +52,46 @@ const AVAILABLE_LOCALES = [
   'vi',
 ];
 
+function generateStaticStagingHost(
+  host,
+  subdomain = '',
+  scheme = 'https',
+  port = ''
+) {
+  return {
+    scheme,
+    subdomain,
+    host,
+    port,
+  };
+}
+
+function generateStaticStagingConfig(commitHash) {
+  const TAG = commitHash || `${require('@lib/utils/git').version()}}`;
+
+  return {
+    'name': 'staging',
+    'hosts': {
+      'pages': generateStaticStagingHost('amp.dev', `${TAG}`),
+      'api': generateStaticStagingHost('amp.dev', `${TAG}`),
+      'platform': generateStaticStagingHost('amp.dev', `${TAG}`),
+      'log': generateStaticStagingHost('amp.dev', 'https', `${TAG}`),
+      'webocket': generateStaticStagingHost('amp.dev', 'wss', 'wss'),
+      'playground': generateStaticStagingHost(
+        `amp.dev`,
+        'https',
+        `${TAG}-playground`
+      ),
+      'preview': generateStaticStagingHost(
+        `amp.dev`,
+        'https',
+        `${TAG}-preview`
+      ),
+      'go': generateStaticStagingHost(`amp.dev`, 'https', `${TAG}-go`),
+    },
+  };
+}
+
 class Config {
   constructor(environment = ENV_DEV) {
     if (environment === 'test') {
@@ -65,9 +105,14 @@ class Config {
       this.test = false;
     }
     signale.info(`Config: environment=${environment} test=${this.test}`);
-    const env = require(utils.project.absolute(
-      `platform/config/environments/${environment}.json`
-    ));
+    let env;
+    if (env === 'PR') {
+      env = generateStaticStagingConfig();
+    } else {
+      env = require(utils.project.absolute(
+        `platform/config/environments/${environment}.json`
+      ));
+    }
 
     this.environment = env.name;
     this.hosts = env.hosts;
