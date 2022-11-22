@@ -418,6 +418,11 @@ force = true
   status = 200
 
 [[redirects]]
+  from = "/documentation/examples/interactivity-dynamic-content/paged_list/search"
+  to = "/.netlify/functions/examples_interactivity_dynamic_content_pages_list_search"
+  status = 200
+
+[[redirects]]
   from = "/static/samples/json/cart.json"
   to = "/.netlify/functions/examples_static_samples_json_cart"
   status = 200
