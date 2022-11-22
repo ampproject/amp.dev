@@ -49,7 +49,7 @@ async function staticDeploy() {
     await sh(
       `npx netlify deploy ${branchInfo} --auth ${NETLIFY_DEPLOY_TOKEN} --site ${
         SITE.ID
-      } --message ${git.message()}`,
+      } --message "${git.message()}"`,
       {
         workingDir: SITE.DIR,
       }

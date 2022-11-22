@@ -214,7 +214,7 @@ jobs:
       - name: Deploying
         run: |
           if ${{ github.ref_name }} != "production-amp-dev" ; then
-            npx gulp staticDeploy
-          else
             npx gulp staticDeploy --stage
+          else
+            npx gulp staticDeploy
           fi
