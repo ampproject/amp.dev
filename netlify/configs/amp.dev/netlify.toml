@@ -418,7 +418,6 @@ Content-Type="application/json"
   status = 200
 
 [[redirects]]
-<<<<<<< HEAD
   from = "/documentation/examples/interactivity-dynamic-content/paged_list/search"
   to = "/.netlify/functions/examples_interactivity_dynamic_content_pages_list_search"
   status = 200
