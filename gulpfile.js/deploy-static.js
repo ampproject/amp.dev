@@ -52,6 +52,9 @@ async function staticDeploy() {
       } --message "${git.message()}"`,
       {
         workingDir: SITE.DIR,
+        env: {
+          NETLIFY_SITE_ID: SITE.ID,
+        },
       }
     );
   }
