@@ -41,6 +41,7 @@ const handler = async (ev) => {
       headers: {
         'Cache-Control': getMaxAgeStr(60 * 60), // 1h
         'Access-Control-Allow-Origin': ev.headers?.origin || '',
+        'Access-Control-Allow-Credentials': true,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -83,6 +84,7 @@ const handler = async (ev) => {
     statusCode: 200,
     headers: {
       'Content-Type': 'application/json',
+      'Access-Control-Allow-Credentials': true,
       'Access-Control-Allow-Origin': ev.headers?.origin || '',
     },
     body: JSON.stringify(results),
