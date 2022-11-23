@@ -130,7 +130,7 @@ Content-Type="application/json"
   from = "/documentation/examples/api/not-found"
   to = "/.netlify/functions/examples_api_cache_not_found"
   status = 200
-force = true
+  force = true
 
 [[redirects]]
   from = "/documentation/examples/api/redirect"

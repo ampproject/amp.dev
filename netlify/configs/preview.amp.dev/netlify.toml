@@ -13,6 +13,7 @@
   from = "/documentation/examples/api/submit-form"
   to = "/.netlify/functions/examples_api_amp-form_submit_form"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/documentation/examples/*"

@@ -1,4 +1,4 @@
-const handler = async () => {
+const handler = async (ev) => {
   return {
     statusCode: 303,
     headers: {
