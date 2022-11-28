@@ -89,18 +89,6 @@ to provide its state to other components #}
     {% include '/views/2021/partials/language-selector.j2' %}
     {% endif %}
 
-    {% do doc.icons.useIcon('/icons/magnifier.svg') %}
-    <button id="searchTriggerOpen"
-        class="ap-search-trigger"
-        on="tap:searchLightbox"
-        role="button"
-        aria-label="{{ _('Search') }}"
-        tabindex="0">
-      <div class="ap-icon ap-search-trigger-icon">
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#magnifier"></use></svg>
-      </div>
-    </button>
-
     <button class="ap-header-burger"
         on="tap:AMP.setState({mainmenuopen: !mainmenuopen, noScrollState: !noScrollState})"
         [class]="'ap-header-burger ' + (mainmenuopen ? '--mainmenuopen ' : '')"

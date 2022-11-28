@@ -275,6 +275,7 @@ const handler = async (ev) => {
       'Cache-Control': getMaxAgeStr(15),
       'Content-Type': 'text/html',
       'Set-Cookie': newStatus.cookie,
+      'Access-Control-Allow-Origin': ev.headers?.origin || '',
     },
     body,
   };

@@ -11,6 +11,7 @@ const handler = async (ev) => {
   return {
     statusCode: 200,
     headers: {
+      'Access-Control-Allow-Origin': ev.headers?.origin || '',
       'Content-Type': 'text/html',
     },
     body,

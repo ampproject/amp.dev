@@ -25,6 +25,7 @@ const handler = async (ev) => {
     statusCode: 200,
     headers: {
       'Content-Type': 'application/javascript',
+      'Access-Control-Allow-Origin': ev.headers?.origin || '',
     },
     body: JSON.stringify({
       items: [

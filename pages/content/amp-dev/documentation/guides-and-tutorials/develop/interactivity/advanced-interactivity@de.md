@@ -1,7 +1,7 @@
 ---
 '$title': Verbesserung der Interaktivität
 $order: 2
-description: 'Der Startercode bietet eine recht einfache Benutzererfahrung. Es gibt mehrere Möglichkeiten, ihn zu verbessern\: - Füge einen Indikator hinzu …'
+description: 'Der Startercode bietet eine recht einfache Benutzererfahrung. Es gibt mehrere Möglichkeiten, ihn zu verbessern - Füge einen Indikator hinzu …'
 ---
 
 Der Startercode bietet eine recht einfache Benutzererfahrung. Es gibt mehrere Möglichkeiten, ihn zu verbessern:

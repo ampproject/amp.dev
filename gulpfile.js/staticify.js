@@ -22,6 +22,7 @@ const config = require('@lib/config');
 const gulp = require('gulp');
 const nunjucks = require('nunjucks');
 const through = require('through2');
+const {htmlContent} = require('@lib/utils/cheerioHelper');
 const {project} = require('@lib/utils');
 const {survey} = require('@lib/templates/SurveyFilter.js');
 const {importBlog} = require('@lib/templates/ImportBlogFilter.js');
@@ -139,7 +140,7 @@ async function staticify(done) {
               $this.attr('href', updatedURL);
             });
 
-            const renderedPage = $.root().html();
+            const renderedPage = htmlContent($.root());
 
             // we need to render a "default" version for the URLs, and treat the "website" version as such
             if (format === FORMAT_WEBSITES) {
@@ -150,7 +151,8 @@ async function staticify(done) {
                 // In addition to the tools pages for each format, we need to render a seperate main version that
                 // shows all of them. Rather than render its twice, we can just toggle a classname.
                 $('.ap-a-pill').addClass('active');
-                contents = Buffer.from($.root().html());
+                contents = htmlContent($.root());
+                contents = Buffer.from(contents);
               }
 
               // eslint-disable-next-line no-invalid-this
@@ -232,7 +234,7 @@ async function staticify(done) {
               );
               $levelToggle.attr('on', updatedToggleLink);
 
-              renderedPage = $.root().html();
+              renderedPage = htmlContent($.root());
             }
 
             if (level === 'beginner') {

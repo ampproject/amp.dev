@@ -31,6 +31,7 @@ const handler = async (ev) => {
     statusCode: 200,
     headers: {
       'Content-Type': 'text/html',
+      'Access-Control-Allow-Origin': ev.headers?.origin || '',
     },
     body,
   };

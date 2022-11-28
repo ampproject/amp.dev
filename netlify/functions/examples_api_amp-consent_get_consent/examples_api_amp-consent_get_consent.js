@@ -11,6 +11,8 @@ const handler = async (ev) => {
     statusCode: 200,
     headers: {
       'Content-Type': 'application/json',
+      'Access-Control-Allow-Credentials': 'true',
+      'Access-Control-Allow-Origin': ev.headers?.origin || '',
     },
     body,
   };

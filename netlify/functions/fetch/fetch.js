@@ -30,6 +30,7 @@ const handler = async (ev) => {
     'Cache-Control': `public, max-age=${MAX_AGE}, stale-while-revalidate=${Math.floor(
       MAX_AGE * 2
     )}`,
+    'Access-Control-Allow-Origin': ev.headers?.origin || '',
     'Content-Type': 'text/html',
   };
   let body = '';

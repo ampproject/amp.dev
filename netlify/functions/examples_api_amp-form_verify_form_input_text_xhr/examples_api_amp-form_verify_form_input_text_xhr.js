@@ -59,6 +59,7 @@ const handler = async (ev) => {
     return {
       statusCode: 400,
       headers: {
+        'Access-Control-Allow-Origin': ev.headers?.origin || '',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -75,6 +76,7 @@ const handler = async (ev) => {
   return {
     statusCode: 200,
     headers: {
+      'Access-Control-Allow-Origin': ev.headers?.origin || '',
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({

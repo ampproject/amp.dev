@@ -39,7 +39,9 @@ const parseFormData = (ev) => {
   });
 };
 const handler = async (ev) => {
-  const headers = {};
+  const headers = {
+    'Access-Control-Allow-Origin': ev.headers?.origin || '',
+  };
   let name;
 
   if (ev.httpMethod === 'POST') {

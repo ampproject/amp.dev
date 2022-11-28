@@ -1,7 +1,20 @@
-const {CHARACTERS} = require('../autosuggest.js');
+const {CHARACTERS} = require('./autosuggest.js');
 
 const handler = async (ev) => {
   const query = ev.rawQuery.replace(/=/g, '');
+
+  const ampSourceOrigin = ev.queryStringParameters?.['__amp_source_origin'];
+
+  const headers = {
+    'Access-Control-Allow-Origin': ev.headers?.origin || '',
+    'Content-Type': 'application/json',
+  };
+
+  if (ampSourceOrigin) {
+    headers['AMP-Access-Control-Allow-Source-Origin'] = ampSourceOrigin;
+    headers['Access-Control-Expose-Headers'] =
+      'AMP-Access-Control-Allow-Source-Origin';
+  }
 
   const results = CHARACTERS.filter((key) =>
     key.name.toUpperCase().includes(query.toUpperCase())
@@ -13,9 +26,7 @@ const handler = async (ev) => {
 
   return {
     statusCode: 200,
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    headers,
     body,
   };
 };

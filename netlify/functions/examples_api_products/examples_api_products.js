@@ -38,6 +38,7 @@ const handler = async (ev) => {
   return {
     statusCode: 200,
     headers: {
+      'Access-Control-Allow-Origin': ev.headers?.origin || '',
       'Cache-Control': 'no-cache',
       'Content-Type': 'application/json',
     },

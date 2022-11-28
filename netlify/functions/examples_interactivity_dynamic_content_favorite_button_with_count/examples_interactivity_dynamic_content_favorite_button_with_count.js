@@ -32,9 +32,11 @@ function writeFavoriteCookie(name, value) {
 
 const handler = async (ev) => {
   const cookieStr = ev.headers.cookie || '';
+  console.log(ev.headers);
 
   let favorite = readFavoriteFromCookie(cookieStr, AMP_FAVORITE_COUNT_COOKIE);
   let headers = {
+    'Access-Control-Allow-Origin': ev.headers?.origin || '',
     'Cache-Control': 'public, max-age=0, stale-while-revalidate=0',
     'Content-Type': 'application/json',
   };

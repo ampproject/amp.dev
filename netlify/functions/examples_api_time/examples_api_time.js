@@ -5,6 +5,7 @@ const handler = async () => {
   return {
     statusCode: 200,
     headers: {
+      'Access-Control-Allow-Origin': ev.headers?.origin || '',
       'Cache-Control': 'private, no-cache, no-store, must-revalidate',
       'Content-Type': 'application/json',
     },

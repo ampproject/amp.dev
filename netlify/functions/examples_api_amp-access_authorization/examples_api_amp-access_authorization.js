@@ -13,6 +13,7 @@ const handler = async (ev) => {
       statusCode: 200,
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': ev.headers?.origin || '',
       },
       body: JSON.stringify({
         loggedIn: false,
@@ -38,6 +39,7 @@ const handler = async (ev) => {
     statusCode: 200,
     headers: {
       'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': ev.headers?.origin || '',
     },
     body,
   };

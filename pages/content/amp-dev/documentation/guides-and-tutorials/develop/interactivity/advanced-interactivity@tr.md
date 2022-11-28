@@ -1,7 +1,7 @@
 ---
 '$title': Etkileşimi geliştirme
 $order: 2
-description: 'Başlangıç kodu oldukça basit bir kullanıcı deneyimi sağlar. Bunu iyileştirmenin birkaç yolu var\: - Geçerli slaydı ve toplam slayt sayısını gösteren bir gösterge ekleyin.'
+description: 'Başlangıç kodu oldukça basit bir kullanıcı deneyimi sağlar. Bunu iyileştirmenin birkaç yolu var - Geçerli slaydı ve toplam slayt sayısını gösteren bir gösterge ekleyin.'
 ---
 
 Başlangıç kodu oldukça basit bir kullanıcı deneyimi sağlar. Bunu iyileştirmenin birkaç yolu var:

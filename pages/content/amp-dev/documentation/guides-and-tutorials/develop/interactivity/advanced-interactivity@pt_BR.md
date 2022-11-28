@@ -1,7 +1,7 @@
 ---
 '$title': Improving the interactivity
 $order: 2
-description: 'O código inicial oferece uma experiência do usuário bastante crua. Há algumas maneiras de aprimorá-lo\: - Adicionar um indicador que mostre o ...'
+description: 'O código inicial oferece uma experiência do usuário bastante crua. Há algumas maneiras de aprimorá-lo - Adicionar um indicador que mostre o ...'
 ---
 
 O código inicial oferece uma experiência do usuário bastante crua. Há algumas maneiras de aprimorá-lo:

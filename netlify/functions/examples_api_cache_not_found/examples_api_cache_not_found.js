@@ -4,6 +4,7 @@ const handler = async () => {
     headers: {
       'Content-Type': 'text/plain',
       'Cache-Control': 'max-age=365000000, immutable',
+      'Access-Control-Allow-Origin': ev.headers?.origin || '',
     },
     body: '404 - Not found',
   };

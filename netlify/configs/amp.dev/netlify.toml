@@ -10,9 +10,11 @@
   for = "/*"
 
   [headers.values]
-    Content-Security-Policy-Report-Only="default-src * data: blob:;worker-src 'self' blob:;script-src blob: 'unsafe-inline' https://cdn.ampproject.org/v0.js https://cdn.ampproject.org/v0.mjs https://cdn.ampproject.org/v0/ https://cdn.ampproject.org/sw/ https://cdn.ampproject.org/viewer/ https://cdn.ampproject.org/rtv/ https://www.googletagmanager.com/gtag/js https://playground.amp.dev/ https://preview.amp.dev/ https://go.amp.dev/ https://log.amp.dev/;object-src 'none';style-src 'unsafe-inline' https://cdn.ampproject.org/rtv/ https://playground.amp.dev/ https://preview.amp.dev/ https://go.amp.dev/ https://log.amp.dev/;report-uri /csp-report"
+    Access-Control-Allow-Origin="*"
+    Cache-Control="public,max-age=604800,stale-while-revalidate=86400"
     X-Content-Type-Options="nosniff"
     X-XSS-Protection="1; mode=block"
+
 
 [[headers]]
   for = "/who-am-i"
@@ -128,7 +130,7 @@ Content-Type="application/json"
   from = "/documentation/examples/api/not-found"
   to = "/.netlify/functions/examples_api_cache_not_found"
   status = 200
-force = true
+  force = true
 
 [[redirects]]
   from = "/documentation/examples/api/redirect"
@@ -215,10 +217,6 @@ force = true
   to = "/.netlify/functions/examples_api_time"
   status = 200
 
-[[redirects]]
-  from = "/csp-report"
-  to = "/.netlify/functions/csp-report"
-  status = 200
 
 [[redirects]]
   from = "/search/latest-query"
@@ -243,10 +241,12 @@ force = true
 [[redirects]]
   from = "/search/autosuggest"
   to = "/.netlify/functions/search_autosuggest/search_autosuggest.js"
+  status = 200
 
 [[redirects]]
   from = "/search/do"
   to = "/.netlify/functions/search_do/search_do.js"
+  status = 200
 
 [[redirects]]
   from = "/page-experience/api"
@@ -256,14 +256,177 @@ force = true
 [[redirects]]
   from = "/pixi"
   to = "https://web.dev/measure/"
+  status = 302
 
 [[redirects]]
   from = "/about/page-experience"
   to = "https://developers.google.com/search/docs/appearance/page-experience"
+  status = 302
 
 [[redirects]]
   from = "/page-experience"
   to = "https://web.dev/measure/"
+  status = 302
+
+[[redirects]]
+  from = "/webvitals"
+  to = "https://web.dev/measure/"
+  status = 302
+
+[[redirects]]
+  from = "/pageexperience"
+  to = "https://web.dev/measure/"
+  status = 302
+
+[[redirects]]
+  from = "/vitals"
+  to = "https://web.dev/measure/"
+  status = 302
+
+[[redirects]]
+  from = "/web-vitals"
+  to = "https://web.dev/measure/"
+  status = 302
+
+[[redirects]]
+  from = "/ads"
+  to = "/about/ads/"
+  status = 302
+
+[[redirects]]
+  from = "/amp-optimizer"
+  to = "/documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/"
+  status = 302
+
+[[redirects]]
+  from = "/docs"
+  to = "/documentation/guides-and-tutorials/"
+  status = 302
+
+[[redirects]]
+  from = "/email"
+  to = "/about/email/"
+  status = 302
+
+[[redirects]]
+  from = "/learn"
+  to = "/documentation/courses/"
+  status = 302
+
+[[redirects]]
+  from = "/optimizer"
+  to = "/documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/"
+  status = 302
+
+[[redirects]]
+  from = "/pixi"
+  to = "https://web.dev/measure/"
+  status = 302
+
+[[redirects]]
+  from = "/samples"
+  to = "/documentation/examples/"
+  status = 302
+
+[[redirects]]
+  from = "/stories"
+  to = "/about/stories/"
+  status = 302
+
+[[redirects]]
+  from = "/websites"
+  to = "/about/websites/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/examples/interactivity-dynamic-content/autosuggest_form/"
+  to = "/documentation/examples/components/amp-autocomplete/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/examples/interactivity-dynamic-content/simple_autosuggest/"
+  to = "/documentation/examples/components/amp-autocomplete/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/learn/amp-email-format"
+  to = "/documentation/guides-and-tutorials/learn/email-spec/amp-email-format/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/contribute/ad-integration-guide/"
+  to = "/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/contribute/integrate-your-tech/"
+  to = "/documentation/guides-and-tutorials/contribute/vendor-contributions/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/develop/amp_story_best_practices/"
+  to = "/documentation/guides-and-tutorials/stories/start/create_successful_stories/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/optimize-measure/configure-analytics/"
+  to = "/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors"
+  to = "/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics-vendors/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics"
+  to = "/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics_basics/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics"
+  to = "/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/deep_dive_analytics/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases"
+  to = "/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/use_cases/"
+  status = 302
+
+[[redirects]]
+  from = "/community/platform-and-vendor-partners"
+  to = "/support/faq/platform-and-vendor-partners/"
+  status = 302
+
+[[redirects]]
+  from = "/examples/source/user-consent/basic_user_consent_flow"
+  to = "/documentation/examples/user-consent/client_side_user_consent_flow"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/optimize-and-measure/server-side-rendering/"
+  to = "/documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/start/bento_guide/"
+  to = "https://bentojs.dev/get-started/"
+
+[[redirects]]
+  from = "/documentation/examples/interactivity-dynamic-content/star_rating/set"
+  to = "/.netlify/functions/examples_interactivity_dynamic_content_star_rating"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/interactivity-dynamic-content/paged_list/search"
+  to = "/.netlify/functions/examples_interactivity_dynamic_content_pages_list_search"
+  status = 200
+
+[[redirects]]
+  from = "/static/samples/json/cart.json"
+  to = "/.netlify/functions/examples_static_samples_json_cart"
+  status = 200
+  force=true
 
 [functions]
   directory = "../../netlify/functions/"

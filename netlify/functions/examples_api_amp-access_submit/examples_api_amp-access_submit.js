@@ -75,6 +75,7 @@ const businessLogic = async (ev) => {
       statusCode: 401,
       headers: {
         'Content-Type': 'text/plain',
+        'Access-Control-Allow-Origin': ev.headers?.origin || '',
       },
       body: 'Invalid Email',
     };

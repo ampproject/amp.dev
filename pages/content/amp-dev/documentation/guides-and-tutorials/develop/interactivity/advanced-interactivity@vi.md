@@ -1,7 +1,7 @@
 ---
 '$title': Cải thiện tính tương tác
 $order: 2
-description: 'Đoạn code bắt đầu chỉ cung cấp một trải nghiệm người dùng rất cơ bản. Có một vài cách để cải thiện đoạn code này\: - Thêm một chỉ báo để hiển thị...'
+description: 'Đoạn code bắt đầu chỉ cung cấp một trải nghiệm người dùng rất cơ bản. Có một vài cách để cải thiện đoạn code này - Thêm một chỉ báo để hiển thị...'
 ---
 
 Đoạn code bắt đầu chỉ cung cấp một trải nghiệm người dùng rất cơ bản. Có một vài cách để cải thiện đoạn code này:

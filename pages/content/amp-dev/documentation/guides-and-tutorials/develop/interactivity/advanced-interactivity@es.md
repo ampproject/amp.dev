@@ -1,7 +1,7 @@
 ---
 '$title': Mejoras en la interactividad
 $order: 2
-description: 'El código de inicio proporciona una experiencia bastante básica para el usuario. Hay un par de maneras en que podemos mejorarlo\: - Agregue un indicador que muestre...'
+description: 'El código de inicio proporciona una experiencia bastante básica para el usuario. Hay un par de maneras en que podemos mejorarlo - Agregue un indicador que muestre...'
 ---
 
 El código de inicio proporciona una experiencia bastante básica para el usuario. Hay un par de maneras en que podemos mejorarlo:
