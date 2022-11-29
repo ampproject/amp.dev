@@ -42,9 +42,9 @@ const handler = async (ev) => {
       response.products.push(productListing);
     }
 
-    return JSON.stringify({
+    return {
       items: response,
-    });
+    };
   }
 
   return {
