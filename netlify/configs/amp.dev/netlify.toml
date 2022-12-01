@@ -174,13 +174,14 @@ Content-Type="application/json"
 
 [[redirects]]
   from = "/documentation/examples/api/submit"
-  to = "/.netlify/functions/examples_api_amp-form_submit"
+  to = "/.netlify/functions/examples_api_amp-form_submit_form_xhr"
   status = 200
 
 [[redirects]]
   from = "/documentation/examples/api/submit-form-input-text-xhr"
   to = "/.netlify/functions/examples_api_amp-form_submit_form_input_text_xhr"
   status = 200
+  force=true
 
 [[redirects]]
   from = "/documentation/examples/api/verify-form-input-text-xhr"
