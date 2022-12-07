@@ -621,6 +621,17 @@ developer:
       height: 350
     formats:
       - email
+  - name: Ampier
+    official: true
+    description: Ampier simplifies email creation, boost interactive experience and increases ROI from email campaigns.
+    url: https://ampier.io/
+    type: Email Templates Editor
+    image:
+      src: /static/img/tools/ampier.jpg
+      width: 700
+      height: 350
+    formats:
+      - email
 providers:
   - name: WompMobile
     url: https://www.wompmobile.com/amp-experience-platform/
