@@ -632,6 +632,17 @@ developer:
       height: 350
     formats:
       - email
+  - name: MakeForms.io
+    official: true
+    description: MakeForms is a no-code Form Creation tool that allows users to create forms and then send such forms over email via single-send and multi-send campaigns.
+    url: https://makeforms.io/
+    type: Email Templates Editor
+    image:
+      src: /static/img/tools/makeforms.jpg
+      width: 700
+      height: 350
+    formats:
+      - email
 providers:
   - name: WompMobile
     url: https://www.wompmobile.com/amp-experience-platform/
