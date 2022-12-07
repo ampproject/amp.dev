@@ -598,6 +598,18 @@ developer:
       bgcolor: '#55BFA7'
     formats:
       - websites
+  - name: Snackeet
+    official: true
+    description: Snackeet is the only tool you will ever need to build outstanding Webstories and interactive digital experiences.
+    url: https://www.snackeet.com/?utm_source=google_listing
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/snackeet.jpg
+      width: 700
+      height: 350
+      fit: contain
+    formats:
+      - stories
 providers:
   - name: WompMobile
     url: https://www.wompmobile.com/amp-experience-platform/
