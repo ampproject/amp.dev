@@ -2785,8 +2785,8 @@ msgstr "云端电子邮件发送服务，旨在帮助数字营销人员和应用
 msgid "Aweber's platform and API allows you to create and send emails your customers will love."
 msgstr "Aweber 的平台和 API 让您可以撰写和发送客户喜爱的电子邮件。"
 
-msgid "Pepipost is an innovative transactional email solution that offers you with a streamlined user experience that you only get from high-end premium software. The software is designed to ensure that your emails are sent to your recipients' inbox and not get mixed and lost in spam and other folders."
-msgstr "Pepipost 是一款创新的业务型电子邮件解决方案，为您提供仅能从高端软件获得的流畅用户体验。该软件旨在确保您的电子邮件可以送达收件人的收件箱，不会被混在垃圾邮件或其他文件夹中。"
+msgid "Netcore Cloud is an innovative transactional email solution that offers you with a streamlined user experience that you only get from high-end premium software. The software is designed to ensure that your emails are sent to your recipients' inbox and not get mixed and lost in spam and other folders."
+msgstr "Netcore Cloud 是一款创新的业务型电子邮件解决方案，为您提供仅能从高端软件获得的流畅用户体验。该软件旨在确保您的电子邮件可以送达收件人的收件箱，不会被混在垃圾邮件或其他文件夹中。"
 
 msgid "Delivery and Analytics for Better Email Performance."
 msgstr "递送和分析，旨在提高电子邮件效果。"

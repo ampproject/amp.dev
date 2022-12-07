@@ -2788,8 +2788,8 @@ msgstr "Облачный сервис рассылки электронной п
 msgid "Aweber's platform and API allows you to create and send emails your customers will love."
 msgstr "Платформа и API от Aweber позволяет создавать и отправлять такие электронные письма, которые точно понравятся вашим клиентам."
 
-msgid "Pepipost is an innovative transactional email solution that offers you with a streamlined user experience that you only get from high-end premium software. The software is designed to ensure that your emails are sent to your recipients' inbox and not get mixed and lost in spam and other folders."
-msgstr "Pepipost — это инновационное решение для деловой электронной переписки, которое предлагает оптимальное взаимодействие с пользователем, возможное только с использованием премиумного программного обеспечения. Pepipost гарантирует, что ваши электронные письма будут доставлены получателям и при этом не смешаются и не потеряются в спаме и других папках."
+msgid "Netcore Cloud is an innovative transactional email solution that offers you with a streamlined user experience that you only get from high-end premium software. The software is designed to ensure that your emails are sent to your recipients' inbox and not get mixed and lost in spam and other folders."
+msgstr "Netcore Cloud — это инновационное решение для деловой электронной переписки, которое предлагает оптимальное взаимодействие с пользователем, возможное только с использованием премиумного программного обеспечения. Pepipost гарантирует, что ваши электронные письма будут доставлены получателям и при этом не смешаются и не потеряются в спаме и других папках."
 
 msgid "Delivery and Analytics for Better Email Performance."
 msgstr "Доставка и аналитика для повышения эффективности электронной почты."

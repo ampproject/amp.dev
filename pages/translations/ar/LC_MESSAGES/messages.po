@@ -2785,8 +2785,8 @@ msgstr "خدمة إرسال رسائل بريد إلكتروني قائمة عل
 msgid "Aweber's platform and API allows you to create and send emails your customers will love."
 msgstr "تتيح لك منصّة Aweber وواجهة برمجة التطبيقات إنشاء وإرسال الرسائل الإلكترونية التي ستعجب عملاءك."
 
-msgid "Pepipost is an innovative transactional email solution that offers you with a streamlined user experience that you only get from high-end premium software. The software is designed to ensure that your emails are sent to your recipients' inbox and not get mixed and lost in spam and other folders."
-msgstr "Pepipost هو حل مبتكر لمعاملات البريد الإلكتروني يقدم لك تجربة مستخدم انسيابية لا تحصل عليها إلا من البرامج رفيعة المستوى والمتميزة. تم تصميم البرنامج لضمان إرسال الرسائل الإلكترونية منك إلى صندوق الوارد لدى المستلمين وعدم اختلاطها وضياعها في البريد العشوائي والمجلدات الأخرى."
+msgid "Netcore Cloud is an innovative transactional email solution that offers you with a streamlined user experience that you only get from high-end premium software. The software is designed to ensure that your emails are sent to your recipients' inbox and not get mixed and lost in spam and other folders."
+msgstr "Netcore Cloud هو حل مبتكر لمعاملات البريد الإلكتروني يقدم لك تجربة مستخدم انسيابية لا تحصل عليها إلا من البرامج رفيعة المستوى والمتميزة. تم تصميم البرنامج لضمان إرسال الرسائل الإلكترونية منك إلى صندوق الوارد لدى المستلمين وعدم اختلاطها وضياعها في البريد العشوائي والمجلدات الأخرى."
 
 msgid "Delivery and Analytics for Better Email Performance."
 msgstr "التسليم والتحليلات من أجل أداء أفضل للبريد الإلكتروني."

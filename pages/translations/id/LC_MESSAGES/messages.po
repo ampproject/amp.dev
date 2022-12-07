@@ -2792,8 +2792,8 @@ msgstr "Layanan pengiriman email berbasis cloud yang dirancang untuk membantu pe
 msgid "Aweber's platform and API allows you to create and send emails your customers will love."
 msgstr "Dengan platform dan API Aweber, Anda dapat membuat dan mengirim email yang akan disenangi pelanggan."
 
-msgid "Pepipost is an innovative transactional email solution that offers you with a streamlined user experience that you only get from high-end premium software. The software is designed to ensure that your emails are sent to your recipients' inbox and not get mixed and lost in spam and other folders."
-msgstr "Pepipost adalah solusi email transaksional inovatif yang menawarkan pengalaman pengguna yang efisien yang hanya Anda dapatkan dari perangkat lunak premium kelas atas. Perangkat lunak ini dirancang untuk memastikan bahwa email Anda dikirim ke kotak masuk penerima serta tidak tercampur dan hilang dalam folder spam dan folder lain."
+msgid "Netcore Cloud is an innovative transactional email solution that offers you with a streamlined user experience that you only get from high-end premium software. The software is designed to ensure that your emails are sent to your recipients' inbox and not get mixed and lost in spam and other folders."
+msgstr "Netcore Cloud adalah solusi email transaksional inovatif yang menawarkan pengalaman pengguna yang efisien yang hanya Anda dapatkan dari perangkat lunak premium kelas atas. Perangkat lunak ini dirancang untuk memastikan bahwa email Anda dikirim ke kotak masuk penerima serta tidak tercampur dan hilang dalam folder spam dan folder lain."
 
 msgid "Delivery and Analytics for Better Email Performance."
 msgstr "Pengiriman dan Analitik untuk Kinerja Email yang Lebih Baik."
