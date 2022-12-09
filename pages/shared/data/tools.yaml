@@ -127,6 +127,18 @@ creation:
       height: 393
     formats:
       - stories
+  - name: Snackeet
+    official: true
+    description: Snackeet is the only tool you will ever need to build outstanding Webstories and interactive digital experiences.
+    url: https://www.snackeet.com/?utm_source=google_listing
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/snackeet.jpg
+      width: 700
+      height: 350
+      fit: contain
+    formats:
+      - stories
   - name: Newsroom AI
     description: Newsroom Studio helps you create engaging, instant loading mobile experiences.
     url: https://www.nws.ai/
@@ -598,22 +610,10 @@ developer:
       bgcolor: '#55BFA7'
     formats:
       - websites
-  - name: Snackeet
-    official: true
-    description: Snackeet is the only tool you will ever need to build outstanding Webstories and interactive digital experiences.
-    url: https://www.snackeet.com/?utm_source=google_listing
-    type: WYSIWYG Editor
-    image:
-      src: /static/img/tools/snackeet.jpg
-      width: 700
-      height: 350
-      fit: contain
-    formats:
-      - stories
   - name: Sendsay
     official: true
     description: Sendsay is a complex solution for marketing automation. Automate communication with customers and watch sales grow!
-    url: https://sendsay.ru/features/email-delivery
+    url: https://sendsay.com
     type: Email Templates Editor
     image:
       src: /static/img/tools/sendsay.jpg
