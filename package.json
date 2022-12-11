@@ -76,7 +76,7 @@
 		"crypto-browserify": "3.12.0",
 		"crypto-es": "1.2.7",
 		"dropzone": "5.9.2",
-		"express": "4.17.1",
+		"express": "4.17.3",
 		"express-formidable": "1.2.0",
 		"gcp-metadata": "4.3.1",
 		"google-spreadsheet": "3.1.15",
