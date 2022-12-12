@@ -50,6 +50,20 @@ const handler = async (ev) => {
     return {statusCode: 405, body: 'Method Not Allowed'};
   }
 
+  const query = ev.queryStringParameters;
+  const ampSourceOrigin = query['__amp_source_origin'];
+
+  const headers = {
+    'Access-Control-Allow-Origin': ev.headers?.origin || '',
+    'Content-Type': 'application/json',
+  };
+
+  if (ampSourceOrigin) {
+    headers['AMP-Access-Control-Allow-Source-Origin'] = ampSourceOrigin;
+    headers['Access-Control-Expose-Headers'] =
+      'AMP-Access-Control-Allow-Source-Origin';
+  }
+
   const parsedEvent = await parseFormData(ev);
 
   ev.body = ev.body ? parsedEvent.body : {};
@@ -69,10 +83,7 @@ const handler = async (ev) => {
 
   return {
     statusCode: 200,
-    headers: {
-      'Access-Control-Allow-Origin': ev.headers?.origin || '',
-      'Content-Type': 'application/json',
-    },
+    headers,
     body,
   };
 };

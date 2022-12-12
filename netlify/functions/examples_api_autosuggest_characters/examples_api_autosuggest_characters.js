@@ -1,9 +1,9 @@
 const {CHARACTERS} = require('./autosuggest.js');
 
 const handler = async (ev) => {
-  const query = ev.rawQuery.replace(/=/g, '');
+  const query = ev.queryStringParameters;
 
-  const ampSourceOrigin = ev.queryStringParameters?.['__amp_source_origin'];
+  const ampSourceOrigin = query['__amp_source_origin'];
 
   const headers = {
     'Access-Control-Allow-Origin': ev.headers?.origin || '',
@@ -17,7 +17,7 @@ const handler = async (ev) => {
   }
 
   const results = CHARACTERS.filter((key) =>
-    key.name.toUpperCase().includes(query.toUpperCase())
+    key.name.toUpperCase().includes(query.q?.toUpperCase())
   );
 
   const body = JSON.stringify({
