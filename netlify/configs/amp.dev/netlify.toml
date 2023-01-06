@@ -184,9 +184,16 @@ Content-Type="application/json"
   force=true
 
 [[redirects]]
-  from = "/documentation/examples/api/verify-form-input-text-xhr"
-  to = "/.netlify/functions/oexamples_api_amp-form_verify_form_input_text_xhr"
+  from = "/documentation/examples/api/submit-form-xhr"
+  to = "/.netlify/functions/examples_api_amp-form_submit_form_xhr"
   status = 200
+  force=true
+
+[[redirects]]
+  from = "/documentation/examples/api/verify-form-input-text-xhr"
+  to = "/.netlify/functions/examples_api_amp-form_verify_form_input_text_xhr"
+  status = 200
+  force=true
 
 [[redirects]]
   from = "/documentation/examples/api/photo-stream"
