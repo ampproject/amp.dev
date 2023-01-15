@@ -55,6 +55,7 @@ const handler = async (ev) => {
 
   const headers = {
     'Access-Control-Allow-Origin': ev.headers?.origin || '',
+    'Access-Control-Allow-Credentials': true,
     'Content-Type': 'application/json',
   };
 
@@ -73,6 +74,8 @@ const handler = async (ev) => {
   if (isUserTryingTheInputTextErrorDemo(name)) {
     return {
       statusCode: 400,
+      headers,
+      body: JSON.stringify({name, email}),
     };
   }
 

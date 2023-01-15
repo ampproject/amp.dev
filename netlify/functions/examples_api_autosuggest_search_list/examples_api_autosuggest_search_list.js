@@ -1,7 +1,7 @@
 const {US_CAPITAL_CITIES} = require('./autosuggest.js');
 
 const handler = async (ev) => {
-  const query = ev.rawQuery.replace(/=/g, '');
+  const query = ev.queryStringParameters?.q;
 
   const results = US_CAPITAL_CITIES.filter((key) =>
     key.toUpperCase().includes(query.toUpperCase())

@@ -44,6 +44,21 @@
   status = 200
 
 [[redirects]]
+  from = "/static/samples/img/watching"
+  to = "https://amp.dev/static/samples/img/watching.png"
+  status = 200
+
+[[redirects]]
+  from = "/static/samples/img/only-mentions"
+  to = "https://amp.dev/static/samples/img/only-mentions.png"
+  status = 200
+
+[[redirects]]
+  from = "/static/samples/img/ignoring"
+  to = "https://amp.dev/static/samples/img/ignoring.png"
+  status = 200
+
+[[redirects]]
   from = "/img/*"
   to = "https://amp.dev/static/samples/img/:splat"
   status = 200

@@ -431,6 +431,16 @@ Content-Type="application/json"
   status = 200
 
 [[redirects]]
+  from = "/documentation/examples/interactivity-dynamic-content/article_bookmark_email/submit-form-bookmark"
+  to = "/.netlify/functions/examples_interactivity-dynamic-content_article_bookmark_email_submit-form-bookmark"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/interactivity-dynamic-content/subscription_settings/subscription"
+  to = "/.netlify/functions/examples_interactivity-dynamic-content_subscription_settings_subscription"
+  status = 200
+
+[[redirects]]
   from = "/static/samples/json/cart.json"
   to = "/.netlify/functions/examples_static_samples_json_cart"
   status = 200
