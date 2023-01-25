@@ -68,6 +68,7 @@ const handler = async (ev) => {
   const headers = {
     'Cache-Control': 'public, max-age=0, stale-while-revalidate=0',
     'Content-Type': 'application/json',
+    'Access-Control-Allow-Credentials': true,
     'Access-Control-Allow-Origin': ev.headers?.origin || '',
   };
 
