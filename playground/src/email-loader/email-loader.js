@@ -104,10 +104,13 @@ class EmailLoader {
 
   parseMultipartBody(body, boundary) {
     const rawParts = body.split('--' + boundary);
-    if (
-      rawParts[0].trim() !== '' ||
-      rawParts[rawParts.length - 1].trim() !== '--'
-    ) {
+
+    // See https://bit.ly/3wHQtDw
+    // by spec, you can have anything string before the first boundary.
+    // So we just dump everything before the first CLRF
+    rawParts[0] = '';
+
+    if (rawParts[rawParts.length - 1].trim() !== '--') {
       throw new Error('Invalid multipart body');
     }
     const parts = rawParts.slice(1, -1);
