@@ -1,0 +1,60 @@
+$title: PsyCat Games
+$category: publishers
+$date: 2022-12-03
+description: PsyCat Games’ AMP optimizations resulted in a 2.5x increase in overall page speed and a 28% lower bounce rate on mobile.
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/psycatgames/teaser.png'
+    width: 1
+    height: 1
+    alt: PsyCat Games
+  logo:
+    src: '/static/img/success-stories/psycatgames/logo.png'
+    width: 276
+    height: 70
+    alt: PsyCat Games
+  text: PsyCat Games speeds up page performance on mobile by 2.5x
+
+stage:
+  headline: PsyCat Games speeds up page performance on mobile by 2.5x
+  subline: DECEMBER 3, 2022
+  layout: mobile
+  devices:
+    - image_src: '/static/img/success-stories/psycatgames/screenshot.png'
+      width: 3
+      height: 5
+      type: mobile
+      alt: Screenshot of PsyCat Games on mobile
+
+kpis:
+  - value: 2.5x
+    text: Increase in page speed
+
+  - value: 28%
+    text: Lower bounce rate
+
+contents:
+  - layout: text
+    text: '<a href="https://psycatgames.com/" target="_blank">PsyCat Games</a> is an entertainment platform that produces and distributes fresh content across the web. Founded in 2018, PsyCat Games publishes articles, lists, quizzes, and videos on a variety of topics covering everything from party games to internet culture and quizzes. Today it reaches over 10 million people every month.'
+
+  - layout: text
+    headline: Challenge
+    text: 'As more and more people access the internet from mobile devices, it’s become clear that having a top-notch mobile experience is essential. Over 80% of PsyCat Games’ visitors are coming from mobile devices. That is why a technical deep-dive was performed to see whether AMP could contribute to speed improvements.'
+
+  - layout: text
+    headline: Results
+    text: 'Over 1,000 articles and 600 interactive quizzes and name generators have been transformed to use the AMP format. PsyCat Games has shown that AMP can be used to create an engaging experience for the user. This is done not only by making a visit more interactive but also by providing valuable content that users will want to return to.<br><br>AMP has had a positive impact on key metrics, according to a deep dive in Google Analytics. The average click-through rates from search results improved by 25%. Moreover, the page load speed increased by 2.5x on mobile devices. Lastly, there was a noticeable 28% lower bounce rate on mobile devices.'
+
+  - layout: quote
+    quote: 'We’re excited about AMP - it has improved the mobile experience for our users by drastically improving long load times.'
+    src: '/static/img/success-stories/psycatgames/logo.png'
+    width: 276
+    height: 70
+    alt: PsyCat Games
+    author: Daniel Hannih, Founder
+
+  - layout: text
+    text: The study provides new evidence that AMP contributes to a better user experience. This is good news for publishers who are looking to improve their traffic and monetize their content.
