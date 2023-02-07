@@ -30,3 +30,6 @@
   from = "/api/fetch"
   to = "/.netlify/functions/fetch"
   status = 200
+
+[functions]
+  directory = "../../netlify/functions/"
