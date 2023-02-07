@@ -6,6 +6,12 @@ cmsUsers:
     url: https://www.ampize.me/
 
   - image:
+      src: '/static/img/docs/guides/cms_logos/publive.jpg'
+      alt: Screenshot of thepublive.com
+    label: PubLive
+    url: https://thepublive.com/
+
+  - image:
       src: '/static/img/docs/guides/cms_logos/arcpublishing.jpg'
       alt: Arc XP
     label: Arc XP
