@@ -698,6 +698,8 @@ platform_and_vendor_partners:
         url: https://github.com/Kentico/kentico-amp
       - label: Marfeel
         url: https://atenea.marfeel.com/atn/product/marfeel-press/360-platform/google-amp/marfeel-s-accelerated-mobile-pages-google-amp-solution
+      - label: PubLive
+        url: https://thepublive.com/
       - label: Quintype
         url: https://www.quintype.com/
       - label: Rabbit
