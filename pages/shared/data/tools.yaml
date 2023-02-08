@@ -356,6 +356,18 @@ platforms:
     formats:
       - websites
       - stories
+
+  - name: PubLive
+    description: CMS for Content Creators & Publishers which creates AMP websites with automated SEO capabilites.
+    url: https://thepublive.com/
+    type: Content Platform
+    image:
+      src: /static/img/docs/guides/cms_logos/publive.jpg
+      width: 1600
+      height: 800
+    formats:
+      - websites
+
   - name: RebelMouse
     description: Build AMP sites, posts, and stories. Win search, social, and email. Fast. Flexible. Secure. Modern.
     url: https://www.rebelmouse.com/AMP/
