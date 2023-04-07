@@ -69,6 +69,8 @@ author: CrystalOnScript
   - [直接销售广告](https://support.google.com/admanager/answer/9038178)
   - [程序化广告](https://support.google.com/admanager/answer/9416436)
 - 即将推出的 Google AdSense
+- Mgid
+  - [直接销售广告](https://help.mgid.com/generate-revenue-with-amp-web-stories)
 - 可以整合其他广告平台（有关[详细信息](https://github.com/ampproject/amphtml/issues/30769)，请通过 GitHub 联系我们）
 
 如果您是一家广告客户，想在网页故事中投放自有广告，请[联系我们](mailto:story-ads-wg@google.com)了解详情。

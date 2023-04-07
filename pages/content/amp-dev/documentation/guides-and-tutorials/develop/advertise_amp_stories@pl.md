@@ -52,6 +52,7 @@ Najprostszym sposobem dodania reklam do relacji AMP jest serwowanie reklam z obs
 Serwery reklam, które obecnie obsługują reklamy w formacie AMP Story:
 
 - [Google Ad Manager (wcześniej DoubleClick)](advertise_amp_stories.md#google-ad-manager)
+- [Mgid](https://help.mgid.com/generate-revenue-with-amp-web-stories)
 
 Jeśli prowadzisz serwer reklam i chcesz serwować reklamy fabularne, skontaktuj się z nami, zgłaszając [problem w GitHub](https://github.com/ampproject/amphtml/issues/new). Zespół AMP chętnie się z Tobą skontaktuje!
 

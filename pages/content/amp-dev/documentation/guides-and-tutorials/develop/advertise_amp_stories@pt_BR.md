@@ -69,6 +69,8 @@ Servidores de anúncios que atualmente suportam anúncios de Histórias Web:
   - [Anúncios de venda direta](https://support.google.com/admanager/answer/9038178)
   - [Anúncios programados](https://support.google.com/admanager/answer/9416436)
 - Google AdSense em breve
+- Mgid
+  - [Anúncios de venda direta](https://help.mgid.com/generate-revenue-with-amp-web-stories)
 - Outras plataformas de anúncios podem integrar (entre em contato para mais [detalhes via Github](https://github.com/ampproject/amphtml/issues/30769))
 
 Se você for um anunciante interessado em veicular seus anúncios em Histórias Web, [entre em contato](mailto:story-ads-wg@google.com) para mais informações.
