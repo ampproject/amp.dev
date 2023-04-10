@@ -69,7 +69,7 @@ Server di annunci che attualmente supportano gli annunci nelle storie web:
   - [Annunci a vendita diretta](https://support.google.com/admanager/answer/9038178)
   - [Annunci programmati](https://support.google.com/admanager/answer/9416436)
 - Google AdSense (presto disponibile)
-- Mgid
+- MGID
   - [Annunci a vendita diretta](https://help.mgid.com/generate-revenue-with-amp-web-stories)
 - Si possono integrare anche altre piattaforme pubblicitarie (contattaci per i [dettagli tramite Github](https://github.com/ampproject/amphtml/issues/30769))
 

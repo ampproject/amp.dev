@@ -69,7 +69,7 @@ Server iklan yang saat ini mendukung iklan Cerita AMP:
   - [Iklan yang dijual langsung](https://support.google.com/admanager/answer/9038178)
   - [Iklan terprogram](https://support.google.com/admanager/answer/9416436)
 - Google AdSense segera hadir
-- Mgid
+- MGID
   - [Iklan yang dijual langsung](https://help.mgid.com/generate-revenue-with-amp-web-stories)
 - Platform iklan lain dapat berintegrasi (hubungi kami untuk [detail melalui Github](https://github.com/ampproject/amphtml/issues/30769))
 
