@@ -69,7 +69,7 @@ author: CrystalOnScript
   - [직접 판매된 광고](https://support.google.com/admanager/answer/9038178)
   - [프로그래매틱 광고](https://support.google.com/admanager/answer/9416436)
 - Google AdSense 지원 예정
-- Mgid
+- MGID
   - [직접 판매된 광고](https://help.mgid.com/generate-revenue-with-amp-web-stories)
 - 기타 광고 플랫폼 통합 가능([Github를 통해 자세한 내용](https://github.com/ampproject/amphtml/issues/30769)을 문의하세요)
 

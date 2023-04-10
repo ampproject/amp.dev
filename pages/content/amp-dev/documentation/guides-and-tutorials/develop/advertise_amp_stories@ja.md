@@ -69,7 +69,7 @@ Web ストーリーに広告を含めるには、サポートされているア�
   - [直接販売広告](https://support.google.com/admanager/answer/9038178)
   - [プログラマティック広告](https://support.google.com/admanager/answer/9416436)
 - Google アドセンス（近日対応）
-- Mgid
+- MGID
   - [直接販売広告](https://help.mgid.com/generate-revenue-with-amp-web-stories)
 - その他の広告プラットフォームも統合可能（[GitHub で詳細](https://github.com/ampproject/amphtml/issues/30769)をお問い合わせください）
 
