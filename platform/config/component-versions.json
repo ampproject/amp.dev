@@ -16,6 +16,7 @@
   "amp-ad-network-dianomi-impl": "0.1",
   "amp-ad-network-doubleclick-impl": "0.1",
   "amp-ad-network-fake-impl": "0.1",
+  "amp-ad-network-mgid-impl": "0.1",
   "amp-ad-network-nws-impl": "0.1",
   "amp-ad-network-smartadserver-impl": "0.1",
   "amp-ad-network-valueimpression-impl": "0.1",

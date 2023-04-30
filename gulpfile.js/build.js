@@ -529,6 +529,8 @@ function optimizeFiles(cb) {
       through.obj((file, encoding, callback) => {
         const unoptimizedFile = file.contents.toString();
 
+        console.log(`running optimize on ${file.path}...`);
+
         optimize({query: ''}, unoptimizedFile, {}, file.path).then(
           (optimizedFile) => {
             file.contents = Buffer.from(optimizedFile);

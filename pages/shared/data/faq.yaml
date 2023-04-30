@@ -172,6 +172,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/adyoulike.md
       - label: AffiliateB
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/affiliateb.md
+      - label: Affinity
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/affinity.md
       - label: AJA
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/aja.md
       - label: AMoAd
@@ -220,6 +222,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/cedato.md
       - label: Clever
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/clever.md
+      - label: Cognativex
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/cognativex.md
       - label: Colombia
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/colombia.md
       - label: colombiafeed
@@ -450,6 +454,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/promoteiq.md
       - label: PubExchange
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/pubexchange.md
+      - label: Pubfuture
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/pubfuture.md
       - label: PubGuru
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/pubguru.md
       - label: pubmatic
@@ -466,6 +472,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/purch.md
       - label: Quora
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/quoraad.md
+      - label: r9x
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/r9x.md
       - label: Rakuten Unified Ads
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/rakutenunifiedads.md
       - label: Rb.Infox.SG
