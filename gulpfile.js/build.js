@@ -521,7 +521,10 @@ function nunjucksEnv() {
 
 function optimizeFiles(cb) {
   return gulp
-    .src([`${project.paths.PAGES_DEST}/**/*.html`, `!${project.paths.PAGES_DEST}/static/samples/**/*.html`])
+    .src([
+      `${project.paths.PAGES_DEST}/**/*.html`,
+      `!${project.paths.PAGES_DEST}/static/samples/**/*.html`,
+    ])
     .pipe(
       through.obj((file, encoding, callback) => {
         const unoptimizedFile = file.contents.toString();
