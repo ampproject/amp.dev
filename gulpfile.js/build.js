@@ -410,6 +410,14 @@ function buildPages(done) {
       );
 
       await gulp
+        .src([`${project.paths.TEMPLATES}/**/*`])
+        .pipe(
+          gulp.dest(
+            `${project.paths.PAGES_DEST}/documentation/templates/preview/`
+          )
+        );
+
+      await gulp
         .src([project.absolute('pages/static/**/*')])
         .pipe(gulp.dest(`${project.paths.PAGES_DEST}/static`));
 
