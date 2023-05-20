@@ -507,7 +507,7 @@ author:
         };
 
         const lang = navigator.language.slice(0, 2);
-        const translation = translationMap[lang];
+        let translation = translationMap[lang];
         if (!translation) {
           translation = "Couldn't recognize your language. So: Saluton";
         }
