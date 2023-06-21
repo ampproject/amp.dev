@@ -34,6 +34,11 @@
   force=true
 
 [[redirects]]
+  from = "/documentation/examples/*/embed"
+  to = "/:splat"
+  status = 200
+
+[[redirects]]
   from = "/documentation/examples/*"
   to = "/:splat"
   status = 200
