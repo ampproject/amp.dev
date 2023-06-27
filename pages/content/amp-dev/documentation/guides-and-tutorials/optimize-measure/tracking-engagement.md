@@ -15,6 +15,9 @@ Analytics platforms are commonly integrated into websites through inline JavaScr
 **TIP –** If you're using Google Analytics as your analytics provider, learn [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md).
 [/tip]
 
+## Google Analytics 4 and AMP
+The documentation on this page mostly applies for Universal Analytics. For information on how to set up Google Analytics 4 with amp-analytics see https://developers.google.com/analytics/devguides/collection/amp-analytics  and https://developers.devsite.corp.google.com/tag-platform/gtagjs/amp?technology=gtagjs.
+
 ## For context: Analytics on non-AMP pages
 
 The following is an example of traditional JavaScript-driven Google Analytics tracking. We'll rewrite this into the [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) JSON format but first, let's look at the traditional approach:

@@ -83,7 +83,9 @@ macro into it's own seperate trigger to prevent underreporting.
   ## Tracking Core Web Vitals in AMP using Google Analytics
   -->
   <!--
-  Analytics must be configured in the body. Here we use Google Analytics to track pageviews and use the `extraUrlParams` feature to append the Core Web Vitals to the request URL.
+  Analytics must be configured in the body. Here we use the `type=gtag` attribute and value to enable Google Analytics to track pageviews and use the `extraUrlParams` feature to append the Core Web Vitals to the request URL.
+
+  We also set the data-credentials attribute to "include" to enable cookies.
 
 [tip type="note"]
 Google Analytics metrics are required to be whole numbers. Since Cumulative Layout Shift is measured from 0 to 1, you can use the built in "$CALC" macro to get greater precision.
@@ -91,13 +93,13 @@ Google Analytics metrics are required to be whole numbers. Since Cumulative Layo
 $CALC(${cumulativeLayoutShift}, 1000, multiply)
 [/tip]
   -->
-  <amp-analytics type="googleanalytics">
+  <amp-analytics type="gtag" data-credentials="include">
     <script type="application/json">
       {
         "vars": {
-           "gtag_id": "UA-XXXXXXXXX-X",
+           "gtag_id": "G-XXXXXXXX",
            "config": {
-             "UA-XXXXXXXXX-X": {
+             "G-XXXXXXXX": {
                 "groups": "default"
              }
            }
@@ -140,6 +142,12 @@ $CALC(${cumulativeLayoutShift}, 1000, multiply)
     </script>
   </amp-analytics>
 
+  <!--
+  ## Google Analytics 4 and AMP
+  -->
+  <!--
+  For more information on how to set up Google Analytics 4 with amp-analytics see https://developers.google.com/analytics/devguides/collection/amp-analytics and https://developers.devsite.corp.google.com/tag-platform/gtagjs/amp?technology=gtagjs
+  -->
 
   <!--
   ## Comparing performance on AMP Cache vs Origin
@@ -153,13 +161,13 @@ We can build on our Google Analytics to do this. One of substitutions provided b
 
 Once you have created the Custom Dimension to track the AMP Host, make sure you note the `Index` listed on the analytics page. This number is used in our configuration objects to connect `ampdocHost` to the Dimension you just created. Below  we assume your index was "1", (i.e. `cd1`). If your `Index` is 2, then use `cd2`, etc.
   -->
-  <amp-analytics>
+  <amp-analytics type="gtag" data-credentials="include">
     <script type="application/json">
       {
         "vars": {
-           "gtag_id": "UA-XXXXXXXXX-X",
+           "gtag_id": "G-XXXXXXXX",
            "config": {
-             "UA-XXXXXXXXX-X": {
+             "G-XXXXXXXX": {
                 "groups": "default"
              }
            }
