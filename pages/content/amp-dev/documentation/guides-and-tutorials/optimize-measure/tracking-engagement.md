@@ -16,6 +16,7 @@ Analytics platforms are commonly integrated into websites through inline JavaScr
 [/tip]
 
 ## Google Analytics 4 and AMP
+
 For information on how to set up Google Analytics 4 with amp-analytics see [amp-analytics dev guide](https://developers.google.com/analytics/devguides/collection/amp-analytics) and [Tag setup for AMP](https://developers.google.com/tag-platform/gtagjs/amp?technology=gtagjs) documentation.
 
 **The rest of this document mostly talks about Universal Analytics which is [superseded](https://support.google.com/analytics/answer/11583528?sjid=14304562669355559826-NA) by Google Analytics 4**.
