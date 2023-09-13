@@ -40,16 +40,26 @@ class AmpUrlConverter {
       .catch(this.showError.bind(this));
   }
 
+  clearResultView() {
+    while (this.resultView.firstChild) {
+      this.resultView.removeChild(this.resultView.firstChild);
+    }
+  }
+
   showError() {
+    this.clearResultView();
     this.resultView.className = 'error';
-    this.resultView.innerHTML = 'invalid URL';
+    this.resultView.textContent = 'invalid URL';
   }
 
   showResult(cacheUrl) {
-    const result =
-      '<a href="' + cacheUrl + '" target="_blank">' + cacheUrl + '</a>';
+    this.clearResultView();
+    const result = window.document.createElement('a');
+    result.setAttribute('href', cacheUrl);
+    result.setAttribute('target', '_blank');
+    result.textContent = cacheUrl;
     this.resultView.className = '';
-    this.resultView.innerHTML = result;
+    this.resultView.appendChild(result);
   }
 
   onChange() {
