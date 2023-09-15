@@ -218,6 +218,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/caprofitx.md
       - label: Cedato
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/cedato.md
+      - label: Clever
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/clever.md
       - label: Colombia
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/colombia.md
       - label: colombiafeed
@@ -286,6 +288,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/gecko.md
       - label: Geniee SSP
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/genieessp.md
+      - label: Geozo
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/geozo.md
       - label: Giraff
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/giraff.md
       - label: Glomex
@@ -694,6 +698,8 @@ platform_and_vendor_partners:
         url: https://github.com/Kentico/kentico-amp
       - label: Marfeel
         url: https://atenea.marfeel.com/atn/product/marfeel-press/360-platform/google-amp/marfeel-s-accelerated-mobile-pages-google-amp-solution
+      - label: PubLive
+        url: https://thepublive.com/
       - label: Quintype
         url: https://www.quintype.com/
       - label: Rabbit
@@ -871,7 +877,7 @@ email:
           url: https://mindbox.cloud/
         - label: MoonMail
           url: https://www.moonmail.io
-        - label: Pepipost
+        - label: Netcore Cloud
           url: https://pepipost.com/
         - label: Salesforce Marketing Cloud
           url: https://www.salesforce.com/products/marketing-cloud/overview/

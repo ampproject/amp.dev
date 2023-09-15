@@ -61,8 +61,7 @@ tools: !g.yaml /shared/data/tools.yaml
   <ul class="ap-o-tool-format-filter none" [class]="activeFilter.chosenFilter != 'none' ? 'ap-o-tool-format-filter filtered' : 'ap-o-tool-format-filter none' ">
     {% for link in doc.filters %}
       <li>
-        <button class="ap-a-pill {{link|slug}} [% if requestedFormat == '{{link}}'|lower or not requestedFormat%]active[% endif %]"
-          on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/documentation/tools.html', locale=doc.locale).url.path }}?format={{link|slug}}')">
+        <a href="{{ g.doc('/content/amp-dev/documentation/tools.html', locale=doc.locale).url.path }}/{{link|slug}}" class="ap-a-pill {{link|slug}} [% if requestedFormat == '{{link}}'|lower or not requestedFormat%]active[% endif %]" >
           <div class="ap-a-pill-icon ap-a-ico {{link|lower}}">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{link|lower}}"></use></svg>
           </div>
@@ -72,7 +71,7 @@ tools: !g.yaml /shared/data/tools.yaml
             on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/documentation/tools.html', locale=doc.locale).url.path }}')">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
           </div>
-        </button>
+        </a>
       </li>
     {% endfor %}
   </ul>

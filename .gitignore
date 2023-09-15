@@ -54,3 +54,6 @@ frontend/templates/views/partials/pixi/webpack.j2
 # Ignore certs from being accidentally committed
 packager/certs/*pem
 packager/certs/*pem.enc
+
+# Local Netlify folder
+.netlify

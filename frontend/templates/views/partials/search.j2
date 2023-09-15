@@ -61,11 +61,11 @@
 
       <div class="ap-o-search-result" id="searchResult" tabindex="-1">
         <amp-state id="search"
-                  src="{{ base_url }}/search/highlights?locale={{ doc.locale }}"
-                  [src]="query == null || clear ? '{{ base_url }}/search/highlights?locale={{ doc.locale }}' : '{{ base_url }}/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"></amp-state>
+                  src="{{ base_url }}/search/highlights/{{ doc.locale }}.json"
+                  [src]="query == null || clear ? '{{ base_url }}/search/highlights/{{ doc.locale }}.json' : '{{ base_url }}/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"></amp-state>
         <amp-list id="searchList"
-                  src="{{ base_url }}/search/highlights?locale={{ doc.locale }}"
-                  [src]="query == null || clear ? '{{ base_url }}/search/highlights?locale={{ doc.locale }}' : '{{ base_url }}/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"
+                  src="{{ base_url }}/search/highlights/{{ doc.locale }}.json"
+                  [src]="query == null || clear ? '{{ base_url }}/search/highlights/{{ doc.locale }}.json' : '{{ base_url }}/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"
                   binding="no"
                   items="."
                   height="80vh"
@@ -76,70 +76,70 @@
                   single-item
         >
 
-          <template type="amp-mustache" id="searchResultTemplate">
-            <div class="ap-o-search-result-list">
-              {{'{{^prevUrl}}'}}
-              {{'{{#result.components.length}}'}}
-              <h4 class="ap-o-search-result-category">
-                {{-'{{#initial}}'}}{{_('Important Components')}}{{'{{/initial}}'-}}
-                {{-'{{^initial}}'}}{{_('Components')}}{{'{{/initial}}'-}}
+        <template type="amp-mustache" id="searchResultTemplate">
+          <div class="ap-o-search-result-list">
+            {{'{{^prevUrl}}'}}
+            {{'{{#result.components.length}}'}}
+            <h4 class="ap-o-search-result-category">
+              {{-'{{#initial}}'}}{{_('Important Components')}}{{'{{/initial}}'-}}
+              {{-'{{^initial}}'}}{{_('Components')}}{{'{{/initial}}'-}}
+            </h4>
+          {{'{{/result.components.length}}'}}
+          {{'{{/prevUrl}}'}}
+          {{'{{#result.components}}'}}
+          <div class="ap-o-search-result-item ap-o-search-result-item-highlight">
+            <a class="ap-o-search-result-link" href="{{'{{url}}'}}">
+              <h4 class="ap-o-search-result-title">
+                {{-'{{#initial}}'}}&lt;{{'{{title}}'}}&gt;{{'{{/initial}}'-}}
+                {{-'{{^initial}}'}}{{'{{title}}'}}{{'{{/initial}}'-}}
               </h4>
-              {{'{{/result.components.length}}'}}
-              {{'{{/prevUrl}}'}}
-              {{'{{#result.components}}'}}
-              <div class="ap-o-search-result-item ap-o-search-result-item-highlight">
-                <a class="ap-o-search-result-link" href="{{'{{url}}'}}">
-                  <h4 class="ap-o-search-result-title">
-                    {{-'{{#initial}}'}}&lt;{{'{{title}}'}}&gt;{{'{{/initial}}'-}}
-                    {{-'{{^initial}}'}}{{'{{title}}'}}{{'{{/initial}}'-}}
-                  </h4>
-                  <p class="ap-o-search-result-description">{{'{{description}}'}}</p>
-                </a>
-                {{'{{#exampleUrl}}'}}
-                <div class="ap-o-search-result-linklist">
-                  <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-example ap-m-lnk" href="{{'{{exampleUrl}}'}}">
-                    <div class="ap-a-ico ap-m-lnk-icon">
-                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-                    </div>
-                    <span class="ap-m-lnk-text">{{_('Open example')}}</span>
-                  </a>
-                  {{'{{#playgroundUrl}}'}}
-                  <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-playground ap-m-lnk" href="{{'{{playgroundUrl}}'}}" target="_blank">
-                    <div class="ap-a-ico ap-m-lnk-icon">
-                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-                    </div>
-                    <span class="ap-m-lnk-text">{{_('Open in playground')}}</span>
-                  </a>
-                  {{'{{/playgroundUrl}}'}}
+              <p class="ap-o-search-result-description">{{'{{description}}'}}</p>
+            </a>
+            {{'{{#exampleUrl}}'}}
+            <div class="ap-o-search-result-linklist">
+              <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-example ap-m-lnk" href="{{'{{exampleUrl}}'}}">
+                <div class="ap-a-ico ap-m-lnk-icon">
+                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
                 </div>
-                {{'{{/exampleUrl}}'}}
-              </div>
-              {{'{{/result.components}}'}}
-
-              {{'{{^prevUrl}}'}}
-              {{'{{#result.pages.length}}'}}
-              <h4 class="ap-o-search-result-category">
-                {{-'{{#initial}}'}}{{_('Popular Articles')}}{{'{{/initial}}'-}}
-                {{-'{{^initial}}'}}{{_('Results')}}{{'{{/initial}}'-}}
-              </h4>
-              {{'{{/result.pages.length}}'}}
-              {{'{{/prevUrl}}'}}
-              {{'{{#result.pages}}'}}
-              <div class="ap-o-search-result-item">
-                <a class="ap-o-search-result-link" href="{{'{{url}}'}}">
-                  <h4 class="ap-o-search-result-title">{{'{{title}}'}}</h4>
-                  <p class="ap-o-search-result-description">{{'{{description}}'}}</p>
-                </a>
-              </div>
-              {{'{{/result.pages}}'}}
-
-              {{'{{#result.isTruncated}}'}}
-              <div class="ap-o-search-result-hint">
-                {{_('Although there are {hits} hits in total we cannot show more than 100.', hits='{'+'{result.totalResults}'+'}')}}
-              </div>
-              {{'{{/result.isTruncated}}'}}
+                <span class="ap-m-lnk-text">{{_('Open example')}}</span>
+              </a>
+              {{'{{#playgroundUrl}}'}}
+              <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-playground ap-m-lnk" href="{{'{{playgroundUrl}}'}}" target="_blank">
+                <div class="ap-a-ico ap-m-lnk-icon">
+                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+                </div>
+                <span class="ap-m-lnk-text">{{_('Open in playground')}}</span>
+              </a>
+              {{'{{/playgroundUrl}}'}}
             </div>
-          </template>
+            {{'{{/exampleUrl}}'}}
+          </div>
+          {{'{{/result.components}}'}}
+
+          {{'{{^prevUrl}}'}}
+          {{'{{#result.pages.length}}'}}
+          <h4 class="ap-o-search-result-category">
+            {{-'{{#initial}}'}}{{_('Popular Articles')}}{{'{{/initial}}'-}}
+            {{-'{{^initial}}'}}{{_('Results')}}{{'{{/initial}}'-}}
+          </h4>
+          {{'{{/result.pages.length}}'}}
+          {{'{{/prevUrl}}'}}
+          {{'{{#result.pages}}'}}
+          <div class="ap-o-search-result-item">
+            <a class="ap-o-search-result-link" href="{{'{{url}}'}}">
+              <h4 class="ap-o-search-result-title">{{'{{title}}'}}</h4>
+              <p class="ap-o-search-result-description">{{'{{description}}'}}</p>
+            </a>
+          </div>
+          {{'{{/result.pages}}'}}
+
+          {{'{{#result.isTruncated}}'}}
+          <div class="ap-o-search-result-hint">
+            {{_('Although there are {hits} hits in total we cannot show more than 100.', hits='{'+'{result.totalResults}'+'}')}}
+          </div>
+          {{'{{/result.isTruncated}}'}}
+          </div>
+        </template>
 
           <amp-list-load-more load-more-button>
             <div class="ap-o-search-result-load-button" overflow>

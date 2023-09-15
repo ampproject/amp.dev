@@ -2786,8 +2786,8 @@ msgstr "デジタルマーケティング担当者やアプリケーション開
 msgid "Aweber's platform and API allows you to create and send emails your customers will love."
 msgstr "Aweber のプラットフォームと API を使用すると、顧客から気に入ってもらえるようなメールを作成して送信できます。"
 
-msgid "Pepipost is an innovative transactional email solution that offers you with a streamlined user experience that you only get from high-end premium software. The software is designed to ensure that your emails are sent to your recipients' inbox and not get mixed and lost in spam and other folders."
-msgstr "Pepipost は、ハイエンドのプレミアムソフトウェアからしか得られない合理的なユーザー体験を提供する革新的な取引メールソリューションです。このソフトウェアは、メールが確実に受信者の受信トレイに送信され、スパムやその他のフォルダーに紛れ込まないようにします。"
+msgid "Netcore Cloud is an innovative transactional email solution that offers you with a streamlined user experience that you only get from high-end premium software. The software is designed to ensure that your emails are sent to your recipients' inbox and not get mixed and lost in spam and other folders."
+msgstr "Netcore Cloud は、ハイエンドのプレミアムソフトウェアからしか得られない合理的なユーザー体験を提供する革新的な取引メールソリューションです。このソフトウェアは、メールが確実に受信者の受信トレイに送信され、スパムやその他のフォルダーに紛れ込まないようにします。"
 
 msgid "Delivery and Analytics for Better Email Performance."
 msgstr "メールのパフォーマンスを向上させるための配信機能と分析機能を提供します。"

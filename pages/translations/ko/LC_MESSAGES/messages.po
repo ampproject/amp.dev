@@ -2785,8 +2785,8 @@ msgstr "클라우드 기반 이메일 전송 서비스로, 디지털 마케팅 �
 msgid "Aweber's platform and API allows you to create and send emails your customers will love."
 msgstr "Aweber 플랫폼 및 API를 통해 고객의 마음을 사로잡을 이메일을 작성하고 전송할 수 있습니다."
 
-msgid "Pepipost is an innovative transactional email solution that offers you with a streamlined user experience that you only get from high-end premium software. The software is designed to ensure that your emails are sent to your recipients' inbox and not get mixed and lost in spam and other folders."
-msgstr "Pepipost는 혁신적인 트랜잭션 이메일 솔루션으로, 최신 프리미엄 소프트웨어에서만 경험할 수 있는 원활한 사용자 경험을 선사합니다. 이 소프트웨어는 이메일이 스팸 및 기타 폴더로 분류되는 일 없이 수신자의 받은편지함으로 전송될 수 있도록 설계되었습니다."
+msgid "Netcore Cloud is an innovative transactional email solution that offers you with a streamlined user experience that you only get from high-end premium software. The software is designed to ensure that your emails are sent to your recipients' inbox and not get mixed and lost in spam and other folders."
+msgstr "Netcore Cloud는 혁신적인 트랜잭션 이메일 솔루션으로, 최신 프리미엄 소프트웨어에서만 경험할 수 있는 원활한 사용자 경험을 선사합니다. 이 소프트웨어는 이메일이 스팸 및 기타 폴더로 분류되는 일 없이 수신자의 받은편지함으로 전송될 수 있도록 설계되었습니다."
 
 msgid "Delivery and Analytics for Better Email Performance."
 msgstr "이메일 성능 향상을 위한 전송 및 분석 서비스."

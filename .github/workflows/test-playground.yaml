@@ -19,7 +19,8 @@ jobs:
         with:
           node-version: 14
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
+        if: ${{ !env.ACT }}
         with:
           path: '**/node_modules'
           key: node_modules-${{ hashFiles('**/package-lock.json') }}
@@ -29,5 +30,5 @@ jobs:
 
       - name: Running Playground tests
         run: |
-          gulp updateTestResources
+          npx gulp updateTestResources
           npm run test:playground -- --colors

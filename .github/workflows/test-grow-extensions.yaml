@@ -18,7 +18,8 @@ jobs:
         with:
           node-version: 14
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
+        if: ${{ !env.ACT }}
         with:
           path: '**/node_modules'
           key: node_modules-${{ hashFiles('**/package-lock.json') }}
@@ -31,7 +32,7 @@ jobs:
         with:
           python-version: '3.x'
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: ${{ env.pythonLocation }}
           key: ${{ env.pythonLocation }}

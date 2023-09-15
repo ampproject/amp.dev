@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-const imageOptimizer = require('@lib/utils/imageOptimizer');
 const HeadDedupTransformer = require('@lib/utils/HeadDedupTransformer');
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 const CssTransformer = require('@lib/utils/cssTransformer');
@@ -22,7 +21,6 @@ const signale = require('signale');
 
 const optimizerConfig = {
   imageBasePath: 'pages',
-  imageOptimizer,
   autoExtensionImport: true,
   extensionVersions: {
     'amp-base-carousel': '0.1',
@@ -47,7 +45,7 @@ const optimizer = AmpOptimizer.create(optimizerConfig);
  * @param {String} html - HTML Markup
  * @param {Object} params - Optional configuration for the optimizer
  */
-async function optimize(request, html, params = {}) {
+async function optimize(request, html, params = {}, filename) {
   if (request.query.optimize == 'false') {
     return html;
   }
@@ -58,7 +56,7 @@ async function optimize(request, html, params = {}) {
   try {
     return await optimizer.transformHtml(html, params);
   } catch (e) {
-    signale.error('[OPTIMIZER]', e);
+    signale.error(`[OPTIMIZER] file - ${filename}`, e);
     return html;
   }
 }

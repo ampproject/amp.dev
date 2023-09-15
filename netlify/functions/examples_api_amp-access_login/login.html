@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Login</title>
+    <style>
+      body {
+          font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+      }
+      .button {
+        border-radius: 2px;
+      }
+
+      .note {
+        font-size: 0.7rem;
+        text-decoration: italic;
+        padding-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="main-body">
+      <h1>Login</h1>
+      <p>
+        Use mark@gmail.com or jane@gmail.com (power user) with any password
+        to perform a successful login.
+      </p>
+      <form method="post" action="submit" id="login-form">
+        <div class="label">Email:</div>
+          <input type="email" name="email" value="mark@gmail.com">
+        <div class="form-line">
+          <div class="label">Password:</div>
+          <input type="password" name="password" value="">
+        </div>
+        <input name="returnurl" type="hidden" value="{{ returnurl }}">
+        <input type="submit" value="Login" class="button">
+      </form>
+      <p class="note">Note: The login page is standalone and doesn't need to be valid AMP.</p>
+    </main>
+  </body>
+</html>

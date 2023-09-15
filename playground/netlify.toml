@@ -1,0 +1,31 @@
+[build]
+  base = "."
+  # Directory to change to before starting a build.
+  # This is where we will look for package.json/.nvmrc/etc.
+  publish = "./dist/playground"
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    X-Content-Type-Options="nosniff"
+    X-XSS-Protection="1; mode=block"
+
+[[redirects]]
+  from = "/documentation/examples/api/*"
+  to = "https://amp.dev/documentation/examples/api/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/*"
+  to = "https://preview.amp.dev/documentation/examples/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/static/*"
+  to = "https://amp.dev/static/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/api/fetch"
+  to = "/.netlify/functions/fetch"
+  status = 200

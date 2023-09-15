@@ -69,6 +69,8 @@ Các nền tảng quảng cáo hiện hỗ trợ quảng cáo Câu chuyện Web:
   - [Quảng cáo được bán trực tiếp](https://support.google.com/admanager/answer/9038178)
   - [Quảng cáo theo lập trình](https://support.google.com/admanager/answer/9416436)
 - Sắp có quảng cáo Google AdSense
+- MGID
+  - [Quảng cáo được bán trực tiếp](https://help.mgid.com/generate-revenue-with-amp-web-stories)
 - Các nền tảng quảng cáo khác có thể tích hợp (vui lòng liên hệ với chúng tôi để biết [chi tiết qua Github](https://github.com/ampproject/amphtml/issues/30769))
 
 Nếu bạn là một nhà quảng cáo và muốn chạy quảng cáo của mình trong Câu chuyện Web, hãy [liên hệ](mailto:story-ads-wg@google.com) để biết thêm thông tin.

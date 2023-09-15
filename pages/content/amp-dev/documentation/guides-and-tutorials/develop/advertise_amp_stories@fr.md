@@ -69,6 +69,8 @@ Les serveurs publicitaires qui prennent actuellement en charge les annonces Web 
   - [Annonces à vente directe](https://support.google.com/admanager/answer/9038178)
   - [Annonces programmatiques](https://support.google.com/admanager/answer/9416436)
 - Google AdSense bientôt disponible
+- MGID
+  - [Annonces à vente directe](https://help.mgid.com/generate-revenue-with-amp-web-stories)
 - Possibilité d'intégrer d'autres plateformes (contactez-nous pour plus de [détails via Github](https://github.com/ampproject/amphtml/issues/30769))
 
 Si vous êtes un annonceur et souhaitez diffuser vos annonces dans les stories Web, veuillez nous [contacter](mailto:story-ads-wg@google.com) pour plus d'informations.

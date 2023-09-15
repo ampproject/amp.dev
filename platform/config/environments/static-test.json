@@ -1,0 +1,59 @@
+{
+	"name": "production",
+	"hosts": {
+		"pages": {
+			"scheme": "https",
+			"host": "amp-dev-static-test.patrickkettner.com",
+			"port": ""
+		},
+		"api": {
+			"scheme": "https",
+			"host": "amp-dev-staging.appspot.com",
+			"port": ""
+		},
+		"platform": {
+			"scheme": "https",
+			"host": "amp-dev-static-test.patrickkettner.com",
+			"port": ""
+		},
+		"websocket": {
+			"scheme": "wss",
+			"host": "amp-dev-static-test.patrickkettner.com",
+			"port": ""
+		},
+		"playground": {
+			"scheme": "https",
+			"subdomain": "playground",
+			"host": "amp-dev-static-test.patrickkettner.com",
+			"port": ""
+		},
+		"preview": {
+			"scheme": "https",
+			"subdomain": "preview",
+			"host": "amp-dev-static-test.patrickkettner.com",
+			"port": ""
+		},
+		"go": {
+			"scheme": "https",
+			"subdomain": "go",
+			"host": "amp-dev-static-test.patrickkettner.com",
+			"port": ""
+		},
+		"log": {
+			"scheme": "https",
+			"subdomain": "log",
+			"host": "amp-dev-static-test.patrickkettner.com",
+			"port": ""
+		},
+		"packager": {
+			"scheme": "http",
+			"host": "ig-amp-dev-packager-qwdb.us-east1-b.c.amp-dev-230314.internal",
+			"port": "8080"
+		},
+		"thumbor": {
+			"scheme": "http",
+			"host": "ig-amp-dev-thumbor-34q6.us-central1-a.c.amp-dev-230314.internal",
+			"port": "8080"
+		}
+	}
+}

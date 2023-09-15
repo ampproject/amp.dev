@@ -30,7 +30,6 @@ function bootstrap(done) {
   gulp.parallel(
     build.buildBoilerplate,
     build.buildPlayground,
-    build.buildPixiFunctions,
     build.importAll,
     samplesBuilder.build.bind(samplesBuilder)
   )(done);

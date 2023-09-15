@@ -69,6 +69,8 @@ Server iklan yang saat ini mendukung iklan Cerita AMP:
   - [Iklan yang dijual langsung](https://support.google.com/admanager/answer/9038178)
   - [Iklan terprogram](https://support.google.com/admanager/answer/9416436)
 - Google AdSense segera hadir
+- MGID
+  - [Iklan yang dijual langsung](https://help.mgid.com/generate-revenue-with-amp-web-stories)
 - Platform iklan lain dapat berintegrasi (hubungi kami untuk [detail melalui Github](https://github.com/ampproject/amphtml/issues/30769))
 
 Jika Anda adalah pengiklan yang tertarik menjalankan iklan Anda di dalam Cerita Web, harap [hubungi kami](mailto:story-ads-wg@google.com) untuk mendapatkan informasi lebih lanjut.

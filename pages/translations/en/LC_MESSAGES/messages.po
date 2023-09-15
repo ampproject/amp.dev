@@ -2786,7 +2786,7 @@ msgstr ""
 msgid "Aweber's platform and API allows you to create and send emails your customers will love."
 msgstr ""
 
-msgid "Pepipost is an innovative transactional email solution that offers you with a streamlined user experience that you only get from high-end premium software. The software is designed to ensure that your emails are sent to your recipients' inbox and not get mixed and lost in spam and other folders."
+msgid "Netcore Cloud is an innovative transactional email solution that offers you with a streamlined user experience that you only get from high-end premium software. The software is designed to ensure that your emails are sent to your recipients' inbox and not get mixed and lost in spam and other folders."
 msgstr ""
 
 msgid "Delivery and Analytics for Better Email Performance."

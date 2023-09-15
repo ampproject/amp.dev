@@ -1,0 +1,450 @@
+[build]
+  base = "../../../"
+  # Directory to change to before starting a build.
+  # This is where we will look for package.json/.nvmrc/etc.
+  # If not set, defaults to the root directory.
+
+  publish = "dist/pages"
+
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    Access-Control-Allow-Origin="*"
+    Cache-Control="public,max-age=604800,stale-while-revalidate=86400"
+    X-Content-Type-Options="nosniff"
+    X-XSS-Protection="1; mode=block"
+
+
+[[headers]]
+  for = "/who-am-i"
+
+[headers.values]
+Content-Type="application/json"
+
+[[redirects]]
+  from = "/documentation/components/*"
+  to = "/documentation/components/:format/:splat?redirected"
+  query = {format = ":format"}
+  status = 301
+  force=true
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/*"
+  to = "/documentation/guides-and-tutorials/:format/:splat?redirected"
+  query = {format = ":format"}
+  status = 301
+  force=true
+
+
+[[redirects]]
+  from = "/documentation/examples/*"
+  to = "/documentation/examples/:format/:splat?redirected"
+  query = {format = ":format"}
+  status = 301
+  force=true
+
+[[redirects]]
+  from = "/documentation/courses/*"
+  to = "/documentation/courses/:level/:splat/?redirected"
+  status = 301
+  force=true
+  query = {level = ":level"}
+
+[[redirects]]
+  from = "/c/amp-*"
+  to = "/documentation/components/amp-:splat"
+  status = 301
+
+[[redirects]]
+  from = "/e/amp-*"
+  to = "/documentation/examples/components/amp-:splat"
+  status = 301
+
+[[redirects]]
+  from = "/pr/:githubIssueId"
+  to = "https://github.com/ampproject/amphtml/pull/:githubIssueId"
+  status = 301
+
+[[redirects]]
+  from = "/issue/:githubIssueId"
+  to = "https://github.com/ampproject/amphtml/issues/:githubIssueId"
+  status = 301
+
+[[redirects]]
+  from = "/documentation/examples/api/products"
+  to = "/.netlify/functions/examples_api_products"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/get-consent"
+  to = "/.netlify/functions/examples_api_amp-consent_get_consent"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/get-consent-server-side"
+  to = "/.netlify/functions/examples_api_amp-consent_get_consent_server_side"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/default"
+  to = "/.netlify/functions/examples_api_amp-inputmask"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/postal"
+  to = "/.netlify/functions/examples_api_amp-inputmask"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/phone"
+  to = "/.netlify/functions/examples_api_amp-inputmask"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/autosuggest/search_list"
+  to = "/.netlify/functions/examples_api_autosuggest_search_list"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/autosuggest/cities"
+  to = "/.netlify/functions/examples_api_autosuggest_cities"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/autosuggest/characters"
+  to = "/.netlify/functions/examples_api_autosuggest_characters"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/autosuggest/address"
+  to = "/.netlify/functions/examples_api_autosuggest_address"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/query"
+  to = "/.netlify/functions/examples_api_cache_query"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/not-found"
+  to = "/.netlify/functions/examples_api_cache_not_found"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/documentation/examples/api/redirect"
+  to = "/.netlify/functions/examples_api_cache_redirect"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/server-error"
+  to = "/.netlify/functions/examples_api_cache_server_error"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/echo"
+  to = "/.netlify/functions/examples_api_echo"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/hello"
+  to = "/.netlify/functions/examples_api_hello"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/authorization"
+  to = "/.netlify/functions/examples_api_amp-access_authorization"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/login"
+  to = "/.netlify/functions/examples_api_amp-access_login"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/logout"
+  to = "/.netlify/functions/examples_api_amp-access_logout"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/pingback"
+  to = "/.netlify/functions/examples_api_amp-access_pingback"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/submit"
+  to = "/.netlify/functions/examples_api_amp-form_submit_form_xhr"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/submit-form-input-text-xhr"
+  to = "/.netlify/functions/examples_api_amp-form_submit_form_input_text_xhr"
+  status = 200
+  force=true
+
+[[redirects]]
+  from = "/documentation/examples/api/submit-form-xhr"
+  to = "/.netlify/functions/examples_api_amp-form_submit_form_xhr"
+  status = 200
+  force=true
+
+[[redirects]]
+  from = "/documentation/examples/api/verify-form-input-text-xhr"
+  to = "/.netlify/functions/examples_api_amp-form_verify_form_input_text_xhr"
+  status = 200
+  force=true
+
+[[redirects]]
+  from = "/documentation/examples/api/photo-stream"
+  to = "/.netlify/functions/examples_api_photo_stream"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/slow-json"
+  to = "/.netlify/functions/examples_api_slow_response_slow_json"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/slow-json-with-items"
+  to = "/.netlify/functions/examples_api_slow_response_slow_json_with_items"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/slow-iframe"
+  to = "/.netlify/functions/examples_api_slow_response_slow_iframe"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/slow-text"
+  to = "/.netlify/functions/examples_api_slow_response_slow_text"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/api/time"
+  to = "/.netlify/functions/examples_api_time"
+  status = 200
+
+
+[[redirects]]
+  from = "/search/latest-query"
+  to = "/.netlify/functions/latest-query"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/interactivity-dynamic-content/favorite_button/favorite"
+  to = "/.netlify/functions/examples_interactivity_dynamic_content_favorite_button"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/interactivity-dynamic-content/favorite_button/favorite-with-count"
+  to = "/.netlify/functions/examples_interactivity_dynamic_content_favorite_button_with_count"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/news-publishing/live_blog"
+  to = "/.netlify/functions/examples_source_news_publishing_amp-live-list_api"
+  status = 200
+
+[[redirects]]
+  from = "/search/autosuggest"
+  to = "/.netlify/functions/search_autosuggest/search_autosuggest.js"
+  status = 200
+
+[[redirects]]
+  from = "/search/do"
+  to = "/.netlify/functions/search_do/search_do.js"
+  status = 200
+
+[[redirects]]
+  from = "/page-experience/api"
+  to = "/500"
+  status = 401
+
+[[redirects]]
+  from = "/pixi"
+  to = "https://web.dev/measure/"
+  status = 302
+
+[[redirects]]
+  from = "/about/page-experience"
+  to = "https://developers.google.com/search/docs/appearance/page-experience"
+  status = 302
+
+[[redirects]]
+  from = "/page-experience"
+  to = "https://web.dev/measure/"
+  status = 302
+
+[[redirects]]
+  from = "/webvitals"
+  to = "https://web.dev/measure/"
+  status = 302
+
+[[redirects]]
+  from = "/pageexperience"
+  to = "https://web.dev/measure/"
+  status = 302
+
+[[redirects]]
+  from = "/vitals"
+  to = "https://web.dev/measure/"
+  status = 302
+
+[[redirects]]
+  from = "/web-vitals"
+  to = "https://web.dev/measure/"
+  status = 302
+
+[[redirects]]
+  from = "/ads"
+  to = "/about/ads/"
+  status = 302
+
+[[redirects]]
+  from = "/amp-optimizer"
+  to = "/documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/"
+  status = 302
+
+[[redirects]]
+  from = "/docs"
+  to = "/documentation/guides-and-tutorials/"
+  status = 302
+
+[[redirects]]
+  from = "/email"
+  to = "/about/email/"
+  status = 302
+
+[[redirects]]
+  from = "/learn"
+  to = "/documentation/courses/"
+  status = 302
+
+[[redirects]]
+  from = "/optimizer"
+  to = "/documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/"
+  status = 302
+
+[[redirects]]
+  from = "/pixi"
+  to = "https://web.dev/measure/"
+  status = 302
+
+[[redirects]]
+  from = "/samples"
+  to = "/documentation/examples/"
+  status = 302
+
+[[redirects]]
+  from = "/stories"
+  to = "/about/stories/"
+  status = 302
+
+[[redirects]]
+  from = "/websites"
+  to = "/about/websites/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/examples/interactivity-dynamic-content/autosuggest_form/"
+  to = "/documentation/examples/components/amp-autocomplete/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/examples/interactivity-dynamic-content/simple_autosuggest/"
+  to = "/documentation/examples/components/amp-autocomplete/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/learn/amp-email-format"
+  to = "/documentation/guides-and-tutorials/learn/email-spec/amp-email-format/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/contribute/ad-integration-guide/"
+  to = "/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/contribute/integrate-your-tech/"
+  to = "/documentation/guides-and-tutorials/contribute/vendor-contributions/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/develop/amp_story_best_practices/"
+  to = "/documentation/guides-and-tutorials/stories/start/create_successful_stories/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/optimize-measure/configure-analytics/"
+  to = "/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors"
+  to = "/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics-vendors/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics"
+  to = "/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics_basics/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics"
+  to = "/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/deep_dive_analytics/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases"
+  to = "/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/use_cases/"
+  status = 302
+
+[[redirects]]
+  from = "/community/platform-and-vendor-partners"
+  to = "/support/faq/platform-and-vendor-partners/"
+  status = 302
+
+[[redirects]]
+  from = "/examples/source/user-consent/basic_user_consent_flow"
+  to = "/documentation/examples/user-consent/client_side_user_consent_flow"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/optimize-and-measure/server-side-rendering/"
+  to = "/documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/"
+  status = 302
+
+[[redirects]]
+  from = "/documentation/guides-and-tutorials/start/bento_guide/"
+  to = "https://bentojs.dev/get-started/"
+
+[[redirects]]
+  from = "/documentation/examples/interactivity-dynamic-content/star_rating/set"
+  to = "/.netlify/functions/examples_interactivity_dynamic_content_star_rating"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/interactivity-dynamic-content/paged_list/search"
+  to = "/.netlify/functions/examples_interactivity_dynamic_content_pages_list_search"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/interactivity-dynamic-content/article_bookmark_email/submit-form-bookmark"
+  to = "/.netlify/functions/examples_interactivity-dynamic-content_article_bookmark_email_submit-form-bookmark"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/interactivity-dynamic-content/subscription_settings/subscription"
+  to = "/.netlify/functions/examples_interactivity-dynamic-content_subscription_settings_subscription"
+  status = 200
+
+[[redirects]]
+  from = "/static/samples/json/cart.json"
+  to = "/.netlify/functions/examples_static_samples_json_cart"
+  status = 200
+  force=true
+
+[functions]
+  directory = "../../netlify/functions/"

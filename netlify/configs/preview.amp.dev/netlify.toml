@@ -1,0 +1,72 @@
+[build]
+  publish = "./sources"
+
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    X-Content-Type-Options="nosniff"
+    X-XSS-Protection="1; mode=block"
+    Access-Control-Allow-Origin="*"
+
+[[redirects]]
+  from = "/documentation/examples/api/submit-form-xhr"
+  to = "/.netlify/functions/examples_api_amp-form_submit_form_xhr"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/documentation/examples/api/verify-form-input-text-xhr"
+  to = "/.netlify/functions/examples_api_amp-form_verify_form_input_text_xhr"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/documentation/examples/api/submit-form"
+  to = "/.netlify/functions/examples_api_amp-form_submit_form"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/documentation/examples/api/submit-form-input-text-xhr"
+  to = "/.netlify/functions/examples_api_amp-form_submit_form_input_text_xhr"
+  status = 200
+  force=true
+
+[[redirects]]
+  from = "/documentation/examples/*"
+  to = "/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/static/*"
+  to = "https://amp.dev/static/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/static/samples/img/watching"
+  to = "https://amp.dev/static/samples/img/watching.png"
+  status = 200
+
+[[redirects]]
+  from = "/static/samples/img/only-mentions"
+  to = "https://amp.dev/static/samples/img/only-mentions.png"
+  status = 200
+
+[[redirects]]
+  from = "/static/samples/img/ignoring"
+  to = "https://amp.dev/static/samples/img/ignoring.png"
+  status = 200
+
+[[redirects]]
+  from = "/img/*"
+  to = "https://amp.dev/static/samples/img/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/documentation/examples/news-publishing/live_blog"
+  to = "/.netlify/functions/examples_source_news_publishing_amp-live-list_api"
+  status = 200
+
+[functions]
+  directory = "../../netlify/functions/"

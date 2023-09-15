@@ -1,0 +1,223 @@
+<!---
+
+preview: default
+skipValidation: true
+teaserImage: '/static/samples/img/teaser/live_blog.jpg'
+author: aghassemi
+
+--->
+
+<!--
+  ## Introduction
+
+This is a sample template for implementing live blogs in AMP.
+-->
+<!-- -->
+<!doctype html>
+<html ⚡ lang="en">
+  <head>
+    <meta charset="utf-8">
+  <title>Live Blog</title>
+      <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!-- ## Setup -->
+    <!-- Import `amp-social-share` for adding share buttons-->
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+   <!-- Import `amp-live-list` for implementing a live blog. -->
+    <script async custom-element="amp-live-list" src="https://cdn.ampproject.org/v0/amp-live-list-0.1.js"></script>
+    <link rel="canonical" href="<% canonical %>">
+    <meta name="viewport" content="width=device-width">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+      <!-- ## Metadata -->
+      <!-- Live blog updates can be represented in Google Search results as carousel items of the blog page. [Learn more](https://developers.google.com/search/pilot/open/live-blogs#properties). -->
+      <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@type": "LiveBlogPosting",
+          "url": "<% hosts.platform %>/documentation/examples/news-publishing/live_blog/",
+          "articleBody": "This is the initial text in the blog post",
+          "datePublished": "2016-09-08T23:04:28.24337",
+          "about": {
+            "@type": "Event",
+            "description": "This is my great live blog sample",
+            "startDate": "2016-07-23T13:00:00-07:00",
+            "endDate": "2016-07-23T15:00:00-07:00",
+            "name": "An AMP Live Blog",
+            "url": "<% hosts.platform %>/documentation/examples/news-publishing/live_blog/",
+            "location": {
+              "@type": "EventVenue",
+              "name": "The Venue Name",
+              "address" : {
+                "@type": "PostalAddress",
+                "streetAddress": "701 Mission St",
+                "addressLocality": "San Francisco",
+                "addressRegion": "CA",
+                "postalCode": "94103",
+                "addressCountry": "US"
+              }
+            }
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Google",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "/static/samples/img/favicon.png",
+              "width": "512",
+              "height": "512"
+            }
+          },
+          "author": {
+            "@type": "Person",
+            "sameAs": "https://github.com/kul3r4",
+            "name": "Chiara Chiappini"
+          },
+          "image": {
+            "@type": "ImageObject",
+            "url": "/static/samples/img/abe_preview.png",
+            "height": "1532",
+            "width": "2046"
+          },
+          "coverageStartTime": "2016-07-23T11:30:00-07:00",
+          "coverageEndTime": "2016-07-23T16:00:00-07:00",
+          "headline": "An AMP Live Blog",
+          "description": "A Live Blog implementation with AMP",
+          "liveBlogUpdate": "[% for blogItem in blogMetaData %][= blogItem | dump(2) =][% endfor %]"
+        }
+      </script>
+      <style amp-custom>
+        :root {
+        --color-primary: #005AF0;
+        --color-secondary: #00DCC0;
+        --color-text-light: #fff;
+        --color-text-dark: #000;
+
+        --space-1: .5rem;  /* 8px */
+        --space-2: 1rem;   /* 16px */
+        }
+        .carousel .slide > amp-img > img {
+          object-fit: contain;
+        }
+        .amp-social-share {
+          margin-right: var(--space-1);
+        }
+        .heading {
+          padding: var(--space-2);
+        }
+        .heading > #summary {
+          font-weight: 500;
+        }
+        .heading > small {
+          color: var(--color-primary);
+        }
+        .date {
+          color: var(--color-primary);
+          font-size: 12px;
+        }
+        .blog {
+          padding: 0;
+          min-width: 70%;
+          background: var(--color-text-light);
+        }
+        .blog p {
+          margin: 0 var(--space-2);
+        }
+        .blog .text {
+          color: var(--color-text-dark);
+          padding-top: 0;
+        }
+        .blog .title {
+          color: var(--color-text-light);
+          position: relative;
+          top: -48px;
+          margin: 0 var(--space-2);
+          height: 0;
+          padding-bottom: var(--space-2);
+        }
+        .blog .social-share {
+          line-height:36px;
+          display: flex;
+          padding-bottom: var(--space-2);
+          padding-top: var(--space-2);
+        }
+        #live-list-update-button {
+          position: fixed;
+          top: var(--space-1);
+          right: var(--space-2);
+        }
+        @media (max-width: 600px) {
+          #live-list-update-button {
+            top: 60px;
+          }
+        }
+        .pagination {
+          display: inline-block;
+          padding: 0;
+        }
+        .live-list [pagination] nav {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .pagination li {
+          display: inline;
+          padding: var(--space-1);
+          list-style-type: none;
+        }
+      </style>
+  </head>
+  <body>
+    <section class="heading">
+      <h1>An AMP Live Blog</h1>
+      <p><small class="date">Fri July 22 2016</small></p>
+      <p><small>by Chiara Chiappini</small></p>
+      <p id="summary">This is a sample article demonstrating how to write a live blog in AMP. It demonstrates the usage of amp-live-list component which allows to create live blogs.</p>
+    </section>
+    <!-- ## Blog Posts -->
+    <!-- Use amp-live-list to implement a live blog. The amp-live-list component regularly polls the host document for updated content and updates the end user's browser as new items become available. This means that every time a new post needs to be added, the host document should be updated by the CMS to include the update both the body and the metadata section. Find an amp-live-list example [here](/documentation/examples/components/amp-live-list/).
+
+    Long blogs could use pagination to improve performance by limiting the number of blog items to be displayed on a page. To implement pagination, amp-live-list allows to add the `<div pagination></div>` element, to then insert any markup needed for pagination, for example the page number, a link to the next and previous page. -->
+    <amp-live-list
+    class="live-list"
+    layout="container"
+    data-poll-interval="15000"
+    data-max-items-per-page="5"
+    id="amp-live-list-insert-blog">
+
+      <button id ="live-list-update-button" update on="tap:amp-live-list-insert-blog.update">You have updates</button>
+      <div items>
+        [% for item in blogItems %]
+            <div id="[= item.id =]" data-sort-time="[= item.timestamp =]">
+              <div class="blog">
+                <amp-img src="[= item.img =]"
+                    layout="responsive" width="1280" height="853">
+                </amp-img>
+                <h4 class="title">[= item.heading =]</h4>
+                <p class="date">[= item.date =]</p>
+                <p class="text">[= item.text =]</p>
+                <p class="social-share">
+                  <amp-social-share type="twitter" width="45" height="33" data-param-url="AMPDOC_URL#[= item.id =]"></amp-social-share>
+                  <amp-social-share type="facebook" width="45" height="33" data-attribution="254325784911610" data-param-url="AMPDOC_URL#[= item.id =]"></amp-social-share>
+                  <amp-social-share type="gplus" width="45" height="33" data-param-url="AMPDOC_URL#[= item.id =]"></amp-social-share>
+                  <amp-social-share type="email" width="45" height="33" data-param-url="AMPDOC_URL#[= item.id =]"></amp-social-share>
+                  <amp-social-share type="pinterest" width="45" height="33" data-param-url="AMPDOC_URL#[= item.id =]"></amp-social-share>
+                </p>
+              </div>
+            </div>
+          [% endfor %]
+      </div>
+      <div pagination>
+        <nav aria-label="amp live list pagination">
+          <ul class="pagination">
+            [% if prevPageUrl %]
+              <li><a href="[= prevPageUrl =]">Prev</a></li>
+            [% endif %]
+            <li>[= pageNumber =]</li>
+            [% if nextPageUrl %]
+              <li><a href="[= nextPageUrl =]">Next</a></li>
+            [% endif %]
+          </ul>
+        </nav>
+      </div>
+    </amp-live-list>
+  </body>
+</html>

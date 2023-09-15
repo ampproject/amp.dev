@@ -17,6 +17,8 @@
 'use strict';
 
 const {REMOTE_STATIC_MOUNT} = require('@lib/routers/thumbor.js');
+const {createWriteStream, mkdirSync} = require('fs');
+const {project} = require('@lib/utils');
 
 const POST_COUNT = 6;
 const BLOG_PATH = `https://blog.amp.dev/wp-json/wp/v2/posts?per_page=${POST_COUNT}&_embed`;
@@ -26,6 +28,7 @@ const log = require('@lib/utils/log')('Import Blog Filter');
 
 async function importBlog(value, callback) {
   let response;
+
   try {
     response = await fetch(BLOG_PATH);
   } catch (err) {
@@ -46,9 +49,28 @@ async function importBlog(value, callback) {
     let imageUrl = '';
     if (mediaDetails && !mediaDetails.file.endsWith(DEFAULT_IMG)) {
       // Mount image URLs to the virtual static directory
-      imageUrl = `${REMOTE_STATIC_MOUNT}?url=${encodeURIComponent(
-        mediaDetails.sizes.medium_large.source_url
-      )}`;
+      const imgPostURL = mediaDetails.sizes.medium_large.source_url;
+      const encodedURL = encodeURIComponent(imgPostURL);
+
+      const imgDir = `${project.paths.PAGES_DEST}${REMOTE_STATIC_MOUNT}`;
+      imageUrl = `${REMOTE_STATIC_MOUNT}${encodeURIComponent(encodedURL)}`;
+
+      try {
+        mkdirSync(imgDir, {recursive: true});
+
+        const writeStream = createWriteStream(`${imgDir}${encodedURL}`);
+        const rawImg = await fetch(imgPostURL);
+
+        await new Promise((resolve, reject) => {
+          rawImg.body.pipe(writeStream);
+          rawImg.body.on('error', reject);
+          writeStream.on('finish', resolve);
+        });
+      } catch (err) {
+        log.error(`Fetching/saving image ${imgPostURL} failed:`, err);
+        callback(null, []);
+        return;
+      }
     }
 
     const post = {
