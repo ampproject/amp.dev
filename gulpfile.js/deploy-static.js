@@ -42,7 +42,7 @@ async function staticDeploy() {
     console.log(`attempting to deploy ${SITE.DIR}`);
 
     await sh(
-      `npx netlify@15.7.0 deploy --prod --auth ${NETLIFY_DEPLOY_TOKEN} --site ${SITE.ID}`,
+      `npx netlify deploy --prod --auth ${NETLIFY_DEPLOY_TOKEN} --site ${SITE.ID}`,
       {
         workingDir: SITE.DIR,
       }
