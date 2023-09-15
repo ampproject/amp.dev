@@ -1,10 +1,10 @@
 number: null
-at: 2021-03-19T11:33:43.785Z
-by: Patrick Kettner
-environment: production
+at: 2023-09-15T18:48:03.176Z
+by: Erwin Mombay
+environment: development
 commit:
-  sha: a1bb32aad3
+  sha: dd21a6cb2
   message: |-
-    Revert "functional survey (#5533)" (#5545)
+    use netlify wrapper version instead of netlify-cli
 
-    This reverts commit 656d8c2f528a369f93facaa4b6b28c7164bdbb47.
+    use the netlify wrapper version instead of the netlify-cli
