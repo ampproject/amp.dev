@@ -33,7 +33,7 @@ If you are looking for help to get started using AMP on your site or you are hav
 -   [AMP tools](https://amp.dev/documentation/tools) helping you get started with building AMP pages.
 -   [AMP supported browsers](https://amp.dev/support/faq/supported-browsers) to learn which browsers support AMP.
 -   [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) is our recommended way to find answers to questions about AMP. Since members of the AMP Project community regularly monitor Stack Overflow, you will probably receive the fastest response to your questions there.
--   For AMP on Google Search questions or issues, please use [Google's AMP forum](https://goo.gl/utQ1KZ).
+-   For AMP on Google Search questions or issues, please use [Google's Search Central forum](https://support.google.com/webmasters/community).
 -   To check the status of AMP serving and its related services, see the [AMP Status](https://status.ampproject.org/) page.
 
 **Found a bug? Suggest a feature?**
