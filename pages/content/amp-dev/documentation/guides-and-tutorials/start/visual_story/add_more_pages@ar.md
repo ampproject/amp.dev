@@ -5,7 +5,7 @@ description: الآن بعد أن ألِفت إضافة صفحة إلى قصة �
 author: bpaduch
 ---
 
-Now that you are familiar with adding a page to a Web Story, adding the next pages in our "The Joy of Pets" story is very similar. Based on the information provided below, **go ahead and create the remaining pages** by using what you've learned so far. If you get stuck, look at the completed (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) code.
+Now that you are familiar with adding a page to a Web Story, adding the next pages in our "The Joy of Pets" story is very similar. Based on the information provided below, **go ahead and create the remaining pages** by using what you've learned so far. If you get stuck, look at the completed (<a href="https://github.com/ampproject/amp.dev/blob/legacy-master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) code.
 
 [tip type="tip"] **ملحوظة –** تذكر أن كل صفحة تحتاج إلى سمة "معرِّف" فريدة (على سبيل المثال، `id="page1"`). [/tip]
 

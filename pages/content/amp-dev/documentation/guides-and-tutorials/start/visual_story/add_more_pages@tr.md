@@ -5,7 +5,7 @@ description: Artık bir Web Hikayesine sayfa eklemeye aşina olduğunuza göre, 
 author: bpaduch
 ---
 
-Artık bir Web Hikayesine sayfa eklemeye aşina olduğunuza göre, "The Joy of Pets" hikayemize sonraki sayfaları eklemek benzer bir şekilde olacaktır. Aşağıda verilen bilgilere göre şu ana kadar öğrendiklerinizi kullanarak **devam edin ve kalan sayfaları oluşturun**. Takılırsanız, tamamlanmış koda (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) bakın.
+Artık bir Web Hikayesine sayfa eklemeye aşina olduğunuza göre, "The Joy of Pets" hikayemize sonraki sayfaları eklemek benzer bir şekilde olacaktır. Aşağıda verilen bilgilere göre şu ana kadar öğrendiklerinizi kullanarak **devam edin ve kalan sayfaları oluşturun**. Takılırsanız, tamamlanmış koda (<a href="https://github.com/ampproject/amp.dev/blob/legacy-master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) bakın.
 
 [tip type="tip"] **İPUCU –** Her sayfanın benzersiz bir "id" özniteliği (örneğin, `id="page1"`) alması gerektiğini unutmayın. [/tip]
 

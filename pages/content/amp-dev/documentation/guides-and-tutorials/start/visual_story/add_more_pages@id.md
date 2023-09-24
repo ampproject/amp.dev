@@ -5,7 +5,7 @@ description: Setelah kini Anda menguasai cara menambahkan halaman ke Cerita Web,
 author: bpaduch
 ---
 
-Setelah kini Anda menguasai cara menambahkan halaman ke Cerita Web, cara menambahkan halaman berikutnya dalam cerita "The Joy of Pets" sangat mirip. Berdasarkan informasi yang diberikan di bawah, **lanjutkan membuat halaman lainnya** dengan memanfaatkan pengetahuan yang telah Anda pelajari sejauh ini. Jika menemui kesulitan, lihat kode (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) yang telah selesai.
+Setelah kini Anda menguasai cara menambahkan halaman ke Cerita Web, cara menambahkan halaman berikutnya dalam cerita "The Joy of Pets" sangat mirip. Berdasarkan informasi yang diberikan di bawah, **lanjutkan membuat halaman lainnya** dengan memanfaatkan pengetahuan yang telah Anda pelajari sejauh ini. Jika menemui kesulitan, lihat kode (<a href="https://github.com/ampproject/amp.dev/blob/legacy-master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) yang telah selesai.
 
 [tip type="tip"] **KIAT –** Ingatlah bahwa setiap halaman membutuhkan atribut "id" yang unik (cth.: `id="page1"`). [/tip]
 

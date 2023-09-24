@@ -5,7 +5,7 @@ description: 现在，您已熟悉如何为 Web 故事添加网页，为我们�
 author: bpaduch
 ---
 
-现在，您已熟悉如何为 AMP 故事添加网页，为我们的故事“宠物的乐趣”添加后续网页的步骤与此非常相似。请根据下面提供的信息，利用您目前已掌握的知识**继续制作其余网页**。如果您遇到问题，请查看已完成的 (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) 代码。
+现在，您已熟悉如何为 AMP 故事添加网页，为我们的故事“宠物的乐趣”添加后续网页的步骤与此非常相似。请根据下面提供的信息，利用您目前已掌握的知识**继续制作其余网页**。如果您遇到问题，请查看已完成的 (<a href="https://github.com/ampproject/amp.dev/blob/legacy-master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) 代码。
 
 [tip type="tip"] 请注意，每个网页都需要有唯一的“id”属性（例如 `id="page1"`）。 [/tip]
 

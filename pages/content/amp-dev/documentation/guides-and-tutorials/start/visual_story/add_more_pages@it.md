@@ -5,7 +5,7 @@ description: 'Ora che abbiamo imparato come aggiungere una pagina a una storia w
 author: bpaduch
 ---
 
-Ora che abbiamo imparato come aggiungere una pagina a una storia web, possiamo procedere all'aggiunta di altre pagine alla nostra storia "The Joy of Pets" in modo molto simile. Sulla base delle informazioni fornite di seguito, **proviamo a continuare con la creazione delle pagine rimanenti** utilizzando quanto appreso finora. In caso di problemi, puoi consultare il codice completato (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>).
+Ora che abbiamo imparato come aggiungere una pagina a una storia web, possiamo procedere all'aggiunta di altre pagine alla nostra storia "The Joy of Pets" in modo molto simile. Sulla base delle informazioni fornite di seguito, **proviamo a continuare con la creazione delle pagine rimanenti** utilizzando quanto appreso finora. In caso di problemi, puoi consultare il codice completato (<a href="https://github.com/ampproject/amp.dev/blob/legacy-master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>).
 
 [tip type="tip"] **SUGGERIMENTO:** Ricorda che ogni pagina richiede un proprio attributo "id" univoco (ad esempio, `id="page1"`). [/tip]
 

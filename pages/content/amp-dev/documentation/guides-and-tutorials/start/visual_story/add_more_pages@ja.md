@@ -2,7 +2,7 @@
 $title: ページを追加する
 ---
 
-ここまでで、AMP ストーリーにページを追加する方法を説明しました。同じようにして「ペットとの楽しい時間」のストーリーに続きのページを追加してみましょう。これまでに学んだ内容を思い出しながら、以下の手順に沿って**残りのページを作成してみてください**。途中でわからなくなったら、完成版のコード（<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>）を参考にしてください。
+ここまでで、AMP ストーリーにページを追加する方法を説明しました。同じようにして「ペットとの楽しい時間」のストーリーに続きのページを追加してみましょう。これまでに学んだ内容を思い出しながら、以下の手順に沿って**残りのページを作成してみてください**。途中でわからなくなったら、完成版のコード（<a href="https://github.com/ampproject/amp.dev/blob/legacy-master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>）を参考にしてください。
 
 [tip type="success"]
 

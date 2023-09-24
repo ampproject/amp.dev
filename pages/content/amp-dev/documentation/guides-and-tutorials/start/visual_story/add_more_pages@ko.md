@@ -5,7 +5,7 @@ description: "이전 페이지에서는 AMP 스토리에 페이지를 추가하�
 author: bpaduch
 ---
 
-이전 페이지에서는 AMP 스토리에 페이지를 추가하는 방법을 익혔습니다. '애완동물이 주는 기쁨' 스토리에 다음 페이지를 추가하는 것도 지금까지 배운 방법과 아주 비슷합니다. 아래에 제공된 정보에 따라 학습한 내용을 활용하여 **남은 페이지를 만들어 보세요**. 잘 모르는 내용이 있으면 완성된(<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) 코드를 살펴보세요.
+이전 페이지에서는 AMP 스토리에 페이지를 추가하는 방법을 익혔습니다. '애완동물이 주는 기쁨' 스토리에 다음 페이지를 추가하는 것도 지금까지 배운 방법과 아주 비슷합니다. 아래에 제공된 정보에 따라 학습한 내용을 활용하여 **남은 페이지를 만들어 보세요**. 잘 모르는 내용이 있으면 완성된(<a href="https://github.com/ampproject/amp.dev/blob/legacy-master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) 코드를 살펴보세요.
 
 [tip type="tip"] 각 페이지에는 고유 'id' 속성(예: `id="page1"`)이 필요합니다. [/tip]
 

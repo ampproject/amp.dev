@@ -5,7 +5,7 @@ description: 'Maintenant que vous êtes familiarisé(e) avec l''ajout d''une pag
 author: bpaduch
 ---
 
-Maintenant que vous êtes familiarisé(e) avec l'ajout d'une page à une story Web, l'ajout des pages suivantes dans notre histoire "La joie des animaux domestiques" est très similaire. Sur la base des informations fournies ci-dessous, **créez les pages restantes** en utilisant ce que vous avez appris jusqu'à présent. Si vous êtes bloqué(e), regardez le code complet (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>).
+Maintenant que vous êtes familiarisé(e) avec l'ajout d'une page à une story Web, l'ajout des pages suivantes dans notre histoire "La joie des animaux domestiques" est très similaire. Sur la base des informations fournies ci-dessous, **créez les pages restantes** en utilisant ce que vous avez appris jusqu'à présent. Si vous êtes bloqué(e), regardez le code complet (<a href="https://github.com/ampproject/amp.dev/blob/legacy-master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>).
 
 [tip type="tip"] **CONSEIL -** N'oubliez pas que chaque page a besoin d'un attribut unique "id" (par exemple, `id="page1"`). [/tip]
 

@@ -20,7 +20,7 @@ Prima di iniziare questa esercitazione, hai bisogno di quanto segue:
 
 1. Scaricare il codice per l'esercitazione, compresso in un file zip, dal seguente URL: <a href="/static/files/tutorials/amp-pets-story.zip">/static/files/tutorials/amp-pets-story.zip</a>
 
-2. Estrarre il contenuto del file zip. Nella directory **amp-pets-story** ci sono i file di immagini, video, audio e dati che useremo per creare la nostra storia. Il file **Pets.html** è il nostro punto di partenza per la storia. La versione completa della storia può essere trovata nel file [Pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html).
+2. Estrarre il contenuto del file zip. Nella directory **amp-pets-story** ci sono i file di immagini, video, audio e dati che useremo per creare la nostra storia. Il file **Pets.html** è il nostro punto di partenza per la storia. La versione completa della storia può essere trovata nel file [Pets-completed.html](https://github.com/ampproject/amp.dev/blob/legacy-master/tutorial_source/amp-pets-story/pets-completed.html).
 
 #### Passo 2. Eseguire la pagina di esempio
 

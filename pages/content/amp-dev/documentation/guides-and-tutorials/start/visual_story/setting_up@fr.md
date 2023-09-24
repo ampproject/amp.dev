@@ -20,7 +20,7 @@ Avant de commencer ce tutoriel, vous aurez besoin des éléments suivants :
 
 1. Téléchargez le code du tutoriel, qui est compressé sous forme de fichier zip à partir de l'URL suivante : <a href="/static/files/tutorials/amp-pets-story.zip">/static/files/tutorials/amp-pets-story.zip</a>
 
-2. Extrayez le contenu du fichier zip. Dans le répertoire **amp-pets-story** se trouvent les fichiers d'images, vidéo, audio et de données que nous utiliserons pour créer notre story. Le fichier **pets.html** est notre point de départ pour la story. La version complète de la story se trouve dans le fichier [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html).
+2. Extrayez le contenu du fichier zip. Dans le répertoire **amp-pets-story** se trouvent les fichiers d'images, vidéo, audio et de données que nous utiliserons pour créer notre story. Le fichier **pets.html** est notre point de départ pour la story. La version complète de la story se trouve dans le fichier [pets-completed.html](https://github.com/ampproject/amp.dev/blob/legacy-master/tutorial_source/amp-pets-story/pets-completed.html).
 
 #### Étape 2. Exécutez la page d'exemple
 

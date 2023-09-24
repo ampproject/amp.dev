@@ -20,7 +20,7 @@ Bu öğreticiye başlamadan önce aşağıdakilere ihtiyacınız olacak:
 
 1. Aşağıdaki URL'den bir zip dosyası olarak sıkıştırılmış öğretici kodunu indirin: <a href="/static/files/tutorials/amp-pets-story.zip">/static/files/tutorials/amp-pets-story.zip</a>
 
-2. Zip dosyasının içeriğini çıkarın. **amp-pets-story** dizininde, hikayemizi oluşturmak için kullanacağımız resimler, video, ses ve veri dosyaları bulunuyor. **pets.html** dosyası, hikaye için başlangıç noktamızdır. Hikayenin tamamlanmış hali, [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html) dosyasında bulunabilir.
+2. Zip dosyasının içeriğini çıkarın. **amp-pets-story** dizininde, hikayemizi oluşturmak için kullanacağımız resimler, video, ses ve veri dosyaları bulunuyor. **pets.html** dosyası, hikaye için başlangıç noktamızdır. Hikayenin tamamlanmış hali, [pets-completed.html](https://github.com/ampproject/amp.dev/blob/legacy-master/tutorial_source/amp-pets-story/pets-completed.html) dosyasında bulunabilir.
 
 #### 2. Adım. Örnek sayfayı çalıştırın
 

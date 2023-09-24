@@ -20,7 +20,7 @@ author: bpaduch
 
 1. チュートリアルのコードを次の URL からダウンロードします（コードは zip ファイルとして圧縮されています）: <a href="/static/files/tutorials/amp-pets-story.zip">/static/files/tutorials/amp-pets-story.zip</a>
 
-2. zip ファイルのコンテンツを抽出します。**amp-pets-story** ディレクトリには、ストーリーの作成に使用する画像、動画、音声、データファイルがあります。**pets.html** ファイルをたたき台として、ストーリーを作成します。ストーリーの完成版は [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html) ファイルにあります。
+2. zip ファイルのコンテンツを抽出します。**amp-pets-story** ディレクトリには、ストーリーの作成に使用する画像、動画、音声、データファイルがあります。**pets.html** ファイルをたたき台として、ストーリーを作成します。ストーリーの完成版は [pets-completed.html](https://github.com/ampproject/amp.dev/blob/legacy-master/tutorial_source/amp-pets-story/pets-completed.html) ファイルにあります。
 
 #### ステップ 2. サンプルページを実行する
 

@@ -5,7 +5,7 @@ description: Wiesz już jak dodawać strony do relacji internetowej, a dodawanie
 author: bpaduch
 ---
 
-Wiesz już jak dodawać strony do relacji internetowej, a dodawanie kolejnych stron do naszej relacji „The Joy of Pets” przebiega bardzo podobnie. W oparciu o informacje podane poniżej **utwórz pozostałe strony**, korzystając z nabytej do tej pory wiedzy. Jeśli utkniesz, spójrz na ukończony kod (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>).
+Wiesz już jak dodawać strony do relacji internetowej, a dodawanie kolejnych stron do naszej relacji „The Joy of Pets” przebiega bardzo podobnie. W oparciu o informacje podane poniżej **utwórz pozostałe strony**, korzystając z nabytej do tej pory wiedzy. Jeśli utkniesz, spójrz na ukończony kod (<a href="https://github.com/ampproject/amp.dev/blob/legacy-master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>).
 
 [tip type="tip"] **PORADA —** pamiętaj, że każda strona wymaga unikalnego atrybutu „id” (np. `id="page1"`). [/tip]
 

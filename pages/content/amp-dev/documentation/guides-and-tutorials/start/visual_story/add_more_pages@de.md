@@ -5,7 +5,7 @@ description: Da du mit dem Hinzufügen einer Seite zu einer Web Story nun vertra
 author: bpaduch
 ---
 
-Da du mit dem Hinzufügen einer Seite zu einer Web Story nun vertraut bist, sollte dir das Hinzufügen der nächsten Seiten in unserer Story "Die Freude an Haustieren" nicht schwerfallen. Nutze die unten angegebenen Informationen und wende dein neues Wissen an, um **die restlichen Seiten zu erstellen**. Wenn du nicht weiterkommst, kannst du dir den fertigen Code ansehen (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>).
+Da du mit dem Hinzufügen einer Seite zu einer Web Story nun vertraut bist, sollte dir das Hinzufügen der nächsten Seiten in unserer Story "Die Freude an Haustieren" nicht schwerfallen. Nutze die unten angegebenen Informationen und wende dein neues Wissen an, um **die restlichen Seiten zu erstellen**. Wenn du nicht weiterkommst, kannst du dir den fertigen Code ansehen (<a href="https://github.com/ampproject/amp.dev/blob/legacy-master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>).
 
 [tip type="tip"] **TIPP:** Denke daran, dass jede Seite ein eindeutiges Attribut "id" benötigt (z. B. `id="page1"`). [/tip]
 

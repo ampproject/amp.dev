@@ -20,7 +20,7 @@ author: bpaduch
 
 1. قم بتنزيل الكود الخاص بالبرنامج التعليمي، والذي يتم ضغطه كملف مضغوط بتنسيق zip من عنوان URL التالي: <a href="/static/files/tutorials/amp-pets-story.zip">/static/files/tutorials/amp-pets-story.zip</a>
 
-2. استخرج محتويات الملف المضغوط، وفي الدليل **amp-pets-story** توجد ملفات الصور والفيديو والصوت والبيانات التي سنستخدمها لإنشاء قصتنا. ويُعد ملف **pets.html** نقطة البداية للقصة، فيما يمكن العثور على النسخة المكتملة من القصة في ملف [pets-complete.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html).
+2. استخرج محتويات الملف المضغوط، وفي الدليل **amp-pets-story** توجد ملفات الصور والفيديو والصوت والبيانات التي سنستخدمها لإنشاء قصتنا. ويُعد ملف **pets.html** نقطة البداية للقصة، فيما يمكن العثور على النسخة المكتملة من القصة في ملف [pets-complete.html](https://github.com/ampproject/amp.dev/blob/legacy-master/tutorial_source/amp-pets-story/pets-completed.html).
 
 #### الخطوة 2. قم بتشغيل صفحة المثال
 

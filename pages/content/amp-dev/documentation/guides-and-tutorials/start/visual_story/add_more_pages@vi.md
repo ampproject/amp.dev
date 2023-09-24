@@ -5,7 +5,7 @@ description: Giờ đây bạn đã quen thuộc với thao tác thêm một tra
 author: bpaduch
 ---
 
-Giờ đây bạn đã quen thuộc với thao tác thêm một trang vào Câu chuyện web, thao tác thêm những trang tiếp theo trong câu chuyện "Niềm vui của thú cưng" cũng thực hiện tương tự vậy. Dựa trên thông tin được cung cấp bên dưới, **hãy tiếp tục tạo những trang còn lại** bằng cách dùng những điều mà bạn đã học được tới giờ. Nếu bị kẹt, hãy nhìn vào mã (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) hoàn chỉnh.
+Giờ đây bạn đã quen thuộc với thao tác thêm một trang vào Câu chuyện web, thao tác thêm những trang tiếp theo trong câu chuyện "Niềm vui của thú cưng" cũng thực hiện tương tự vậy. Dựa trên thông tin được cung cấp bên dưới, **hãy tiếp tục tạo những trang còn lại** bằng cách dùng những điều mà bạn đã học được tới giờ. Nếu bị kẹt, hãy nhìn vào mã (<a href="https://github.com/ampproject/amp.dev/blob/legacy-master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) hoàn chỉnh.
 
 [tip type="tip"] **MẸO –** Nhớ rằng mỗi trang cần có một thuộc tính "id" đặc trưng (ví dụ như `id="page1"`). [/tip]
 

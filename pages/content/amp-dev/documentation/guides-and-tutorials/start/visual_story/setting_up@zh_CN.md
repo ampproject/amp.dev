@@ -20,7 +20,7 @@ author: bpaduch
 
 1. 从以下网址下载本教程所要使用的代码（已压缩成 ZIP 文件）：<a href="/static/files/tutorials/amp-pets-story.zip">/static/files/tutorials/amp-pets-story.zip</a>
 
-2. 解压缩该 ZIP 文件的内容。**amp-pets-story** 目录中是供我们用来创作故事的图片、视频、音频和数据文件。**pets.html** 文件是供我们用来创作故事的着手点。故事的完成版位于 [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html) 文件中。
+2. 解压缩该 ZIP 文件的内容。**amp-pets-story** 目录中是供我们用来创作故事的图片、视频、音频和数据文件。**pets.html** 文件是供我们用来创作故事的着手点。故事的完成版位于 [pets-completed.html](https://github.com/ampproject/amp.dev/blob/legacy-master/tutorial_source/amp-pets-story/pets-completed.html) 文件中。
 
 #### 第 2 步：运行示例网页
 
