@@ -1,10 +1,10 @@
 const {STYLE} = require('../cache.js');
 
-function htmlEncode(str) {
-  return String(str).replace(/[^\w. ]/gi, function(c){
-    return '&#' + c.charCodeAt(0) + ';';
+const htmlEncode = (str) => {
+  return String(str).replace(/[^\w. ]/gi, (c) => {
+    return `&#${c.charCodeAt(0)};`;
   });
-}
+};
 
 const handler = async (ev) => {
   const queryString = JSON.stringify(ev.queryStringParameters, null, 2);
