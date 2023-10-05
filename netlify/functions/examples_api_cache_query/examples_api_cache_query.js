@@ -1,5 +1,11 @@
 const {STYLE} = require('../cache.js');
 
+function htmlEncode(str) {
+  return String(str).replace(/[^\w. ]/gi, function(c){
+    return '&#' + c.charCodeAt(0) + ';';
+  });
+}
+
 const handler = async (ev) => {
   const queryString = JSON.stringify(ev.queryStringParameters, null, 2);
 
@@ -19,7 +25,7 @@ const handler = async (ev) => {
     <main>
       <h1>Hello World!</h1>
       <p>Query parameters:</p>
-      <pre>${queryString}</pre>
+      <pre>${htmlEncode(queryString)}</pre>
       <small>This document has been generated at: <date>${new Date()}</date></small>
     </main>
   </body>
