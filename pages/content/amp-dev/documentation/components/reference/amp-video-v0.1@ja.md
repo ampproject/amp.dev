@@ -29,7 +29,7 @@ HTML5 `video` タグの代替機能です。HTML5 動画ファイルを直接埋
 <table>
   <tr>
     <td width="40%"><strong>必須のスクリプト</strong></td>
-    <td><code>&lt;script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js">&lt;/script></code></td>
+    <td><code>&lt;script async custom-element="amp-video" src="https://ampjs.org/v0/amp-video-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
     <td width="40%"><strong>例</strong></td>

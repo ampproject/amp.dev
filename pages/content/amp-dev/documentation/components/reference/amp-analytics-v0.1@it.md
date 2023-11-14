@@ -29,7 +29,7 @@ Consente di acquisire dati di analisi da un documento AMP.
 <table>
   <tr>
     <td class="col-fourty"><strong>Script obbligatorio</strong></td>
-    <td><code>&lt;script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"&ht;&lt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js"&ht;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong>Esempi</strong></td>

@@ -25,7 +25,7 @@ Sân thực hành AMP hỗ trợ định dạng AMP cho Email, cho phép bạn p
 <html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
     <style amp4email-boilerplate>
       body {
         visibility: hidden;
@@ -48,7 +48,7 @@ Nó chứa tất cả các đánh dấu cần thiết và đoạn code tối thi
 Hãy dành một chút thời gian để lưu ý một số điểm khác biệt so với email HTML truyền thống:
 
 - Các email AMP phải tự xác nhận bằng cách bao gồm `⚡4email`, hoặc `amp4email`, trong thẻ HTML.
-- Thẻ `<head>` (đầu đề) cũng phải chứa một thẻ `<script>` (kịch bản) để tải thời gian chạy AMP. `<script async src="https://cdn.ampproject.org/v0.js"></script>`
+- Thẻ `<head>` (đầu đề) cũng phải chứa một thẻ `<script>` (kịch bản) để tải thời gian chạy AMP. `<script async src="https://ampjs.org/v0.js"></script>`
 - Một đoạn code soạn sẵn CSS để ẩn nội dung từ đầu cho đến khi AMP được tải. ` <style amp4email-boilerplate>body{visibility:hidden}</style>`
 
 Nếu trước đây bạn đã làm việc với email, ý tưởng đặt một kịch bản vào một email có thể phát ra những hồi chuông cảnh báo trong đầu bạn! Hãy yên tâm, các nhà cung cấp email hỗ trợ email AMP sẽ áp đặt các biện pháp kiểm tra bảo mật nghiêm ngặt để chỉ cho phép những kịch bản AMP đã được phê duyệt mới được chạy trên máy khách của họ. Điều này cho phép các tính năng động và tương tác có thể được chạy trực tiếp trong hộp thư của người nhận mà không có lỗ hổng bảo mật nào! Đọc thêm về đánh dấu bắt buộc cho Email AMP ở đây.
@@ -119,7 +119,7 @@ Thêm kịch bản `amp-carousel` vào phần head của email của bạn.
 <script
   async
   custom-element="amp-carousel"
-  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+  src="https://ampjs.org/v0/amp-carousel-0.1.js"
 ></script>
 ```
 
@@ -218,7 +218,7 @@ Trong bài thực hành này, chúng ta sẽ sử dụng [`<amp-bind>`](/content
 <script
   async
   custom-element="amp-bind"
-  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+  src="https://ampjs.org/v0/amp-bind-0.1.js"
 ></script>
 ```
 

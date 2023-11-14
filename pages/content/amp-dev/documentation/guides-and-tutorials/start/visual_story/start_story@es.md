@@ -14,7 +14,7 @@ Para ello, **abra** el archivo `pets.html` que se encuentra en su editor de text
 ```html
 <head>
 <script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+        src="https://ampjs.org/v0/amp-story-1.0.js"></script>
 </head>
 ```
 

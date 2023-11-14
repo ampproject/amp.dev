@@ -38,7 +38,7 @@ AMP позволяет устанавливать Service Worker вашего п
 [sourcecode:html]
 
 <script async custom-element="amp-install-serviceworker"
-  src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+  src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 [/sourcecode]
 

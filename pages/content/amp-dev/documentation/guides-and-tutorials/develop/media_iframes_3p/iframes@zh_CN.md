@@ -34,7 +34,7 @@ iframe 在 AMP 中特别有用，可显示主网页中不支持的内容，例�
 [sourcecode:html]
 
 <script async custom-element="amp-iframe"
-  src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  src="https://ampjs.org/v0/amp-iframe-0.1.js"></script>
 
 [/sourcecode]
 

@@ -11,7 +11,7 @@ Another common feature in mobile pages is a carousel.  You can easily add carous
 Remember to include the [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) component library by **adding** the following JavaScript request to the `<head>` tag of your document:
 
 ```html
-<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script async custom-element="amp-carousel" src="https://ampjs.org/v0/amp-carousel-0.1.js"></script>
 ```
 
 Next, let's embed a simple carousel of images with a responsive layout and a predefined width and height. **Add** the following to your page:

@@ -132,7 +132,7 @@ As regras a seguir são especificamente para configurar o AMP runtime. As págin
 
 - Conter uma tag `<html ⚡>` de nível superior. O símbolo de raio indica que este é um site AMP. **Nota**: `<html amp>` também é aceito.
 
-- Conter a tag`<script async src="https://cdn.ampproject.org/v0.js"></script>` dentro da tag `<head>`. Isso carrega a biblioteca JavaScript AMP. **Nota**: Como prática recomendada, você deve incluir o script no`<head>`.
+- Conter a tag`<script async src="https://ampjs.org/v0.js"></script>` dentro da tag `<head>`. Isso carrega a biblioteca JavaScript AMP. **Nota**: Como prática recomendada, você deve incluir o script no`<head>`.
 
 - Conter uma tag `<link rel="canonical" href="$SOME_URL">` dentro de seu `<head>`.  Isso aponta para a versão HTML normal do seu site, se houver, ou aponta para si mesmo, se não houver uma versão não AMP do site. **Nota**: Você deve substituir `$SOME_URL` no atributo` href` acima pelo URL real de sua página.
 
@@ -196,7 +196,7 @@ A solução pode ser encontrada nesse <a href="https://glitch.com/~hungry-modem"
 [sourcecode:html]
 {% raw %}<head>
   <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async src="https://ampjs.org/v0.js"></script>
   <title>Chico's Cheese Bicycles</title>
   <link rel="shortcut icon" href="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-favicon.png?1540228964214">
   <meta name="viewport"
@@ -356,7 +356,7 @@ As regras a seguir são especificamente para configurar o AMP runtime. As págin
 
 - Conter uma tag `<html ⚡>` de nível superior. O símbolo de raio indica que este é um site AMP. **Nota**: `<html amp>` também é aceito.
 
-- Conter a tag`<script async src="https://cdn.ampproject.org/v0.js"></script>` dentro da tag `<head>`. Isso carrega a biblioteca JavaScript AMP. **Nota**: Como prática recomendada, você deve incluir o script no`<head>`.
+- Conter a tag`<script async src="https://ampjs.org/v0.js"></script>` dentro da tag `<head>`. Isso carrega a biblioteca JavaScript AMP. **Nota**: Como prática recomendada, você deve incluir o script no`<head>`.
 
 - Conter uma tag `<link rel="canonical" href="$SOME_URL">` dentro de seu `<head>`.  Isso aponta para a versão HTML normal do seu site, se houver, ou aponta para si mesmo, se não houver uma versão não AMP do site. **Nota**: Você deve substituir `$SOME_URL` no atributo` href` acima pelo URL real de sua página.
 
@@ -420,7 +420,7 @@ A solução pode ser encontrada nesse <a href="https://glitch.com/~hungry-modem"
 [sourcecode:html]
 {% raw %}<head>
   <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async src="https://ampjs.org/v0.js"></script>
   <title>Chico's Cheese Bicycles</title>
   <link rel="shortcut icon" href="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-favicon.png?1540228964214">
   <meta name="viewport"

@@ -30,7 +30,7 @@ Mostra un iframe.
 <table>
   <tr>
     <td width="40%"><strong>Script obbligatorio</strong></td>
-    <td><code>&lt;script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js">&lt;/script></code></td>
+    <td><code>&lt;script async custom-element="amp-iframe" src="https://ampjs.org/v0/amp-iframe-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layout supportati</a></strong></td>

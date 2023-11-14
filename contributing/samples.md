@@ -100,7 +100,7 @@ This works for elements in the `<head>` as well:
 ```html
 <head>
   <!-- Import the amp-youtube component -->
-  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://ampjs.org/v0/amp-youtube-0.1.js"></script>
   ...
 </head>
 ```

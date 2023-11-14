@@ -35,7 +35,7 @@ CORS JSON 엔드포인트에서 동적으로 콘텐츠를 가져오고 제공된
 <table>
   <tr>
     <td width="40%"><strong>필수 스크립트</strong></td>
-    <td><code>&lt;script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-list" src="https://ampjs.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">지원되는 레이아웃</a></strong></td>
@@ -309,7 +309,7 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 
 ## 실험: 추가 로드 및 무한 스크롤(amp-list-load-more) <a name="load-more-and-infinite-scroll"></a>
 
-`<amp-list>`의 페이지로 나누기 및 무한 스크롤의 구현으로 `amp-list-load-more` 실험을 소개했습니다. [실험 페이지](https://cdn.ampproject.org/experiments.html)에서 'amp-list-load-more' 실험을 켜고 `load-more` 속성을 `<amp-list>`로 추가하여 이 기능을 사용 설정할 수 있습니다. 이 기능은 현재 원본 평가판에 있으며 최종 API는 변경될 수 있습니다.
+`<amp-list>`의 페이지로 나누기 및 무한 스크롤의 구현으로 `amp-list-load-more` 실험을 소개했습니다. [실험 페이지](https://ampjs.org/experiments.html)에서 'amp-list-load-more' 실험을 켜고 `load-more` 속성을 `<amp-list>`로 추가하여 이 기능을 사용 설정할 수 있습니다. 이 기능은 현재 원본 평가판에 있으며 최종 API는 변경될 수 있습니다.
 
 #### 샘플 사용 <a name="sample-usage"></a>
 

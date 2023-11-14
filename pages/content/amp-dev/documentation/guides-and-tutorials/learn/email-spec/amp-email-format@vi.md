@@ -50,7 +50,7 @@ AMP là một công nghệ nổi tiếng để phát triển các trang web siê
         visibility: hidden;
       }
     </style>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
   </head>
   <body>
     Hello, world.
@@ -64,7 +64,7 @@ Một email AMP PHẢI
 - <a name="ampd"></a>chứa một thẻ `<html ⚡4email>` cấp cao nhất (`<html amp4email>` cũng được chấp nhận). [🔗](#ampd)
 - <a name="crps"></a>chứa các thẻ `<head>` và `<body>` (Chúng là không bắt buộc trong HTML). [🔗](#crps)
 - <a name="chrs"></a>chứa một thẻ `<meta charset="utf-8">` như con đầu tiên của thẻ head. [🔗](#chrs)
-- <a name="scrpt"></a>chứa một thẻ `<script async src="https://cdn.ampproject.org/v0.js"></script>` bên trong thẻ head. [🔗](#scrpt)
+- <a name="scrpt"></a>chứa một thẻ `<script async src="https://ampjs.org/v0.js"></script>` bên trong thẻ head. [🔗](#scrpt)
 - <a name="boilerplate"></a>chứa code soạn sẵn amp4email (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) trong thẻ head để ẩn nội dung ban đầu cho đến khi AMP JS được tải. [🔗](#boilerplate)
 
 Toàn bộ đánh dấu AMPHTML phải không vượt quá 200,000 byte.

@@ -50,7 +50,7 @@ O código a seguir representa a quantidade mínima de marcação que compõe uma
         visibility: hidden;
       }
     </style>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
   </head>
   <body>
     Hello, world.
@@ -64,7 +64,7 @@ Uma mensagem de e-mail AMP DEVE
 - <a name="ampd"></a>conter uma tag top-level `<html ⚡4email>` (`<html amp4email>` também é aceito). [🔗](#ampd)
 - <a name="crps"></a>conter as tags `<head>` e `<body>` (São opcionais em HTML). [🔗](#crps)
 - <a name="chrs"></a>conter uma tag `<meta charset="utf-8">` como primeiro elemento filho da tag head. [🔗](#chrs)
-- <a name="scrpt"></a>conter uma tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` dentro da tag head. [🔗](#scrpt)
+- <a name="scrpt"></a>conter uma tag `<script async src="https://ampjs.org/v0.js"></script>` dentro da tag head. [🔗](#scrpt)
 - <a name="boilerplate"></a>conter bolierplate amp4email (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) dentro da tag head para inicialmente ocultar o conteúdo até que o AMP JS seja carregado. [🔗](#boilerplate)
 
 A marcação AMPHTML inteira não pode exceder 200.000 bytes.

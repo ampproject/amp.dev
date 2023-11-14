@@ -133,7 +133,7 @@ Cuando su endpoint reciba una solicitud CORS, realice lo siguiente:
 
 <span id="verify-cors-header"></span>
 
-Los endpoints de CORS reciben la solicitud del origen a través del encabezado HTTP `Origin`. Los endpoints solo deben permitir solicitudes que provengan de: (1) el propio origen del editor y de (2) cada `cacheDomain` con un origen registrado en [https://cdn.ampproject.org/caches.json](https://cdn.ampproject.org/caches.json).
+Los endpoints de CORS reciben la solicitud del origen a través del encabezado HTTP `Origin`. Los endpoints solo deben permitir solicitudes que provengan de: (1) el propio origen del editor y de (2) cada `cacheDomain` con un origen registrado en [https://ampjs.org/caches.json](https://ampjs.org/caches.json).
 
 Por ejemplo, los endpoints deben permitir solicitudes que provengan de:
 

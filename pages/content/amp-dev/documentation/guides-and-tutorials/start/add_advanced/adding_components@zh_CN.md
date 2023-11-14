@@ -56,7 +56,7 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
 <script
   async
   custom-element="amp-ad"
-  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+  src="https://ampjs.org/v0/amp-ad-0.1.js"
 ></script>
 ```
 
@@ -137,7 +137,7 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
 <script
   async
   custom-element="amp-twitter"
-  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+  src="https://ampjs.org/v0/amp-twitter-0.1.js"
 ></script>
 ```
 
@@ -161,7 +161,7 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
 <script
   async
   custom-element="amp-twitter"
-  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+  src="https://ampjs.org/v0/amp-twitter-0.1.js"
 ></script>
 ```
 
@@ -201,7 +201,7 @@ AMP 提供了另一个组件来专门应对这种情况，即 [`amp-fit-text`](.
 <script
   async
   custom-element="amp-fit-text"
-  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+  src="https://ampjs.org/v0/amp-fit-text-0.1.js"
 ></script>
 ```
 

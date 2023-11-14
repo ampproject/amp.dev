@@ -52,7 +52,7 @@ limitations under the License.
 * <a name="utf"></a>`<meta charset="utf-8">`
 * <a name="viewport"></a>`<meta name="viewport" content="...">`
 * <a name="boilerplate"></a>`<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
-* <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
+* <a name="ampscript"></a>`<script async src="https://ampjs.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
 在 <a href="https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii">AMP 验证工具规范</a>中，这些必需的标记包含 `mandatory: true` 字段；
@@ -632,7 +632,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 * `<style amp-custom>`
 * `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
 * `<body>`
-* `<script src="https://cdn.ampproject.org/v0.js">`
+* `<script src="https://ampjs.org/v0.js">`
 
 ## 样式和布局错误 <a name="style-and-layout-errors"></a>
 

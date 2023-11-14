@@ -18,7 +18,7 @@ Inclua a Shadow AMP no cabeçalho da sua página, por exemplo:
 
 [sourcecode:html]
 <!-- Asynchronously load the AMP-with-Shadow-DOM runtime library. -->
-<script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
+<script async src="https://ampjs.org/shadow-v0.js"></script>
 [/sourcecode]
 
 ### Como saber quando a Shadow AMP API está pronta para o uso?

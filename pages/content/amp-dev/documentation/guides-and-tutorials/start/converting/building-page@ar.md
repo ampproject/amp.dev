@@ -47,7 +47,7 @@ description: في دليل المشروع، ستجد ملفًا باسم article
 لتضمين مكتبة AMP، **أضف** هذا السطر إلى أسفل علامة `<head>`:
 
 ```html
-<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async src="https://ampjs.org/v0.js"></script>
 ```
 
 **حمِّل** صفحة `article.amp.html` الجديدة في متصفحك من [http://localhost:8000/article.amp.html](http://localhost:8000/article.amp.html) ثم **افتح** [وحدة تحكم المطور](https://developer.chrome.com/devtools/docs/console) في Chrome (أو متصفحك المفضل).

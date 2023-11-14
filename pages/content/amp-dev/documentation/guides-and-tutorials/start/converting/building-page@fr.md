@@ -47,7 +47,7 @@ Pour commencer, nous allons ajouter le fichier de bibliothèque AMP. Cela seul n
 Pour inclure la bibliothèque AMP, **ajoutez** cette ligne au bas de la balise `<head>`:
 
 ```html
-<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async src="https://ampjs.org/v0.js"></script>
 ```
 
 **Chargez** la nouvelle page `article.amp.html` dans votre navigateur sur [http: // localhost: 8000 / article.amp.html](http://localhost:8000/article.amp.html), puis **ouvrez** la [console de développement](https://developer.chrome.com/devtools/docs/console) dans Chrome (ou votre navigateur préféré).

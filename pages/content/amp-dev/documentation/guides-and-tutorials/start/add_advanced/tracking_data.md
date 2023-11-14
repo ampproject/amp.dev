@@ -25,7 +25,7 @@ This JavaScript is quite simple; it sends a notification to track the pageview e
 To replicate this functionality in AMP, we must first **include** the [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) component library in our document’s `<head>`:
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js"></script>
 ```
 
 Then, let's **add** the [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) component to the end of the `body` of the document:

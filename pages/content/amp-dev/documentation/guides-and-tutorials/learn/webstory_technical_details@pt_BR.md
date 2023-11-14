@@ -18,7 +18,7 @@ Uma História Web é tecnicamente uma única página Web criada com o AMP e que 
 - Inclua uma tag top-level `<html ⚡>` ou `<html amp>`.
 - Inclua as tags `<head>` e `<body>`.
 - Inclua uma tag `<meta charset="utf-8">` como primeiro elemento-filho da tag `<head>`.
-- Inclua uma `<script async src="https://cdn.ampproject.org/v0.js"></script>` dentro da tag `<head>`. Como boa prática, você deve incluir o script o mais próximo do início do bloco `<head>`.
+- Inclua uma `<script async src="https://ampjs.org/v0.js"></script>` dentro da tag `<head>`. Como boa prática, você deve incluir o script o mais próximo do início do bloco `<head>`.
 - Inclua uma tag ` <link rel="canonical" href="page/url">` dentro de `<head>` com o href apontando para a URL da História Web.
 - Inclua uma tag `<meta name="viewport" content="width=device-width">` dentro de `<head>`. Também é recomendada a inclusão de initial-scale=1.
 - Inclua o código [AMP boilerplate](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) dentro da tag `<head>`.
@@ -91,16 +91,16 @@ A diferença entre uma página Web do AMP e uma História Web criada com o AMP �
         }
       </style></noscript
     >
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
     <script
       async
       custom-element="amp-video"
-      src="https://cdn.ampproject.org/v0/amp-video-0.1.js"
+      src="https://ampjs.org/v0/amp-video-0.1.js"
     ></script>
     <script
       async
       custom-element="amp-story"
-      src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+      src="https://ampjs.org/v0/amp-story-1.0.js"
     ></script>
     <style amp-custom>
       ...;

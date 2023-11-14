@@ -92,5 +92,5 @@ test('caches messages.json', async () => {
 });
 
 function logUrl(version) {
-  return `https://cdn.ampproject.org/rtv/${version}/log-messages.json`;
+  return `https://ampjs.org/rtv/${version}/log-messages.json`;
 }

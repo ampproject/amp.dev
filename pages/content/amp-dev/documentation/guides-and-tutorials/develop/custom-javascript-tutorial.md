@@ -76,7 +76,7 @@ To use `<amp-script>`, we need to import its own JavaScript. Open `index.html` a
 ```html
 <head>
  ...
-  <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+  <script async custom-element="amp-script" src="https://ampjs.org/v0/amp-script-0.1.js"></script>
   ...
 </head>
 

@@ -89,12 +89,12 @@ Les performances prévisibles sont un objectif de conception clé pour AMP HTML.
     <script
       async
       custom-element="amp-carousel"
-      src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+      src="https://ampjs.org/v0/amp-carousel-0.1.js"
     ></script>
     <script
       async
       custom-element="amp-ad"
-      src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+      src="https://ampjs.org/v0/amp-ad-0.1.js"
     ></script>
     <style amp-boilerplate>
       body {
@@ -154,7 +154,7 @@ Les performances prévisibles sont un objectif de conception clé pour AMP HTML.
         }
       </style></noscript
     >
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
   </head>
   <body>
     <h1>Sample document</h1>
@@ -185,7 +185,7 @@ Les documents AMP HTML DOIVENT
 - <a name="canon"></a>contenir une balise `<link rel="canonical" href="$SOME_URL">` dans leur en-tête qui pointe vers la version HTML normale du document AMP HTML ou vers elle-même si une telle version HTML n'existe pas. [🔗](#canon)
 - <a name="chrs"></a>contenir une balise `<meta charset="utf-8">` comme premier enfant de la balise head. [🔗](#chrs)
 - <a name="vprt"></a>contenir une balise `<meta name="viewport" content="width=device-width">` dans leur en-tête. Il est également recommandé d'ajouter `minimum-scale=1` and `initial-scale=1`. [🔗](#vprt)
-- <a name="scrpt"></a>contenir une balise `<script async src="https://cdn.ampproject.org/v0.js"></script>` dans la balise head. [🔗](#scrpt)
+- <a name="scrpt"></a>contenir une balise `<script async src="https://ampjs.org/v0.js"></script>` dans la balise head. [🔗](#scrpt)
 - <a name="boilerplate"></a>contenir le [code du modèle AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md) (`head > style[amp-boilerplate]` et `noscript > style[amp-boilerplate]`) dan sleur balise head. [🔗](#boilerplate)
 
 ### Métadonnées <a name="metadata"></a>
@@ -431,7 +431,7 @@ Les auteurs sont libres d'ajouter toutes les polices personnalisées via une ins
 
 Le runtime AMP est un morceau de JavaScript qui s'exécute dans chaque document AMP. Il fournit des implémentations pour les éléments personnalisés AMP, gère le chargement et la hiérarchisation des ressources et ajoute éventuellement un validateur de runtime pour AMP HTML à utiliser pendant le développement.
 
-Le runtime AMP se charge via la balise obligatoire `<script src="https://cdn.ampproject.org/v0.js"></script>` du document AMPS `<head>`.
+Le runtime AMP se charge via la balise obligatoire `<script src="https://ampjs.org/v0.js"></script>` du document AMPS `<head>`.
 
 Le runtime AMP peut être placé dans un mode de développement pour n'importe quelle page. Le mode de développement déclenchera la validation AMP sur la page intégrée, qui émettra l'état de validation et toutes les erreurs sur la console de développement JavaScript. Le mode de développement peut être déclenché en ajoutant `#development=1` à l'URL de la page.
 
@@ -502,7 +502,7 @@ Les composants étendus sont chargés en incluant une balise `<script>` dans l'e
 <script
   async
   custom-element="amp-carousel"
-  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+  src="https://ampjs.org/v0/amp-carousel-0.1.js"
 ></script>
 
 [/sourcecode]
@@ -518,7 +518,7 @@ L'URL du script doit commencer par `https://cdn.ampproject.org` et doit suivre u
 L'URL des composants étendus est de la forme:
 
 [sourcecode:http]
-https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
+https://ampjs.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 [/sourcecode]
 
 ##### Contrôle des versions <a name="versioning"></a>
@@ -538,7 +538,7 @@ Les modèles ne sont pas fournis avec le runtime AMP et doivent être téléchar
 <script
   async
   custom-template="amp-mustache"
-  src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+  src="https://ampjs.org/v0/amp-mustache-0.2.js"
 ></script>
 
 [/sourcecode]
@@ -566,7 +566,7 @@ Pour en savoir plus sur la syntaxe et les restrictions d'un modèle, consultez l
 L'URL des composants étendus est de la forme:
 
 [sourcecode:http]
-https://cdn.ampproject.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
+https://ampjs.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
 [/sourcecode]
 
 ##### Contrôle des versions <a name="versioning-1"></a>

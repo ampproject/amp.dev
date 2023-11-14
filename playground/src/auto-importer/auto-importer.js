@@ -16,9 +16,8 @@
 import CodeMirror from 'codemirror';
 
 const ENGINE_MAP = {
-  'amphtml engine v0.js script': '"https://cdn.ampproject.org/v0.js"',
-  'amp4ads engine amp4ads-v0.js script':
-    '"https://cdn.ampproject.org/amp4ads-v0.js"',
+  'amphtml engine v0.js script': '"https://ampjs.org/v0.js"',
+  'amp4ads engine amp4ads-v0.js script': '"https://ampjs.org/amp4ads-v0.js"',
 };
 const ENGINE_SET = new Set();
 
@@ -255,7 +254,7 @@ class AutoImporter {
     const ver = components[tagName];
     return (
       `<script async ${scriptType}="${tagName}" ` +
-      `src="https://cdn.ampproject.org/v0/${tagName}-${ver}.js"></script>`
+      `src="https://ampjs.org/v0/${tagName}-${ver}.js"></script>`
     );
   }
 }

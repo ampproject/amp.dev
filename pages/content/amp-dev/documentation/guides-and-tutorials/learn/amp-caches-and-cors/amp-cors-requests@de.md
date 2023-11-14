@@ -133,7 +133,7 @@ Wenn dein Endpoint eine CORS Anfrage erhält:
 
 <span id="verify-cors-header"></span>
 
-CORS Endpoints empfangen die anfragende Quelle über den `Origin` HTTP Header. Endpoints sollten nur folgende Anfragen zulassen: (1) Anfragen von der eigenen Quelle des Publishers, und (2) Anfragen von jeder unter [https://cdn.ampproject.org/caches.json](https://cdn.ampproject.org/caches.json) aufgeführten `cacheDomain` Quelle.
+CORS Endpoints empfangen die anfragende Quelle über den `Origin` HTTP Header. Endpoints sollten nur folgende Anfragen zulassen: (1) Anfragen von der eigenen Quelle des Publishers, und (2) Anfragen von jeder unter [https://ampjs.org/caches.json](https://ampjs.org/caches.json) aufgeführten `cacheDomain` Quelle.
 
 So sollten Endpoints z. B. Anfragen zulassen von:
 

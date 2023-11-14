@@ -17,7 +17,7 @@ A Web Story is technically a single web page built with AMP and adheres to AMP s
 *   Contain a top-level `<html ⚡>` or `<html amp>` tag.
 *   Contain `<head>` and `<body>` tags.
 *   Contain a` <meta charset="utf-8">` tag as the first child of the `<head>` tag.
-*   Contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their `<head>` tag. As a best practice, you should include the script as early as possible in the `<head>`.
+*   Contain a `<script async src="https://ampjs.org/v0.js"></script>` tag inside their `<head>` tag. As a best practice, you should include the script as early as possible in the `<head>`.
 *   Contain a` <link rel="canonical" href="page/url">` tag inside their `<head>` with the href pointing to the Web Story URL.
 *   Contain a `<meta name="viewport" content="width=device-width">` tag inside the `<head>` tag. It's also recommended to include initial-scale=1.
 *   Contain the [AMP boilerplate](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) code in the `<head>` tag.
@@ -34,11 +34,11 @@ The difference between an AMP webpage and a Web Story built with AMP is the [`am
     <link rel="canonical" href="pets.html">
     <meta name="viewport" content="width=device-width">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
     <script async custom-element="amp-video"
-        src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+        src="https://ampjs.org/v0/amp-video-0.1.js"></script>
     <script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+        src="https://ampjs.org/v0/amp-story-1.0.js"></script>
     <style amp-custom>
     ...
     </style>

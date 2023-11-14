@@ -50,7 +50,7 @@ Poniższy kod zawiera minimalną ilość znaczników, niezbędnych w prawidłowe
         visibility: hidden;
       }
     </style>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
   </head>
   <body>
     Hello, world.
@@ -64,7 +64,7 @@ Wiadomość e-mail AMP musi
 - <a name="ampd"></a>Zawierać znacznik najwyższego poziomu `<html ⚡4email>` (albo `<html amp4email>`). [🔗](#ampd)
 - <a name="crps"></a>Zawierać znaczniki `<head>` oraz `<body>` (w HTML są one opcjonalne). [🔗](#crps)
 - <a name="chrs"></a>Zawierać znacznik `<meta charset="utf-8">` jako pierwszy element podrzędny w sekcji head. [🔗](#chrs)
-- <a name="scrpt"></a>Zawierać znacznik `<script async src="https://cdn.ampproject.org/v0.js"></script>` w sekcji head. [🔗](#scrpt)
+- <a name="scrpt"></a>Zawierać znacznik `<script async src="https://ampjs.org/v0.js"></script>` w sekcji head. [🔗](#scrpt)
 - <a name="boilerplate"></a>Zawierać kod standardowy amp4email (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) w sekcji head, początkowo ukrywający zawartość do chwili załadowania JS AMP. [🔗](#boilerplate)
 
 Rozmiar wszystkich znaczników AMPHTML nie może przekraczać 200 000 bajtów.

@@ -21,7 +21,7 @@ $title: 在您的 AMP 网页中利用广告获利
 `<amp-ad>` 组件是 AMP 库的一个自定义广告扩展组件。`<amp-ad>` 本质上是专为优化性能而精心设计的自定义 JavaScript。要运行 `<amp-ad>` 组件，您必须在 AMP 网页的 `head` 部分添加此组件所需的 JavaScript：
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script async custom-element="amp-ad" src="https://ampjs.org/v0/amp-ad-0.1.js"></script>
 ```
 
 ### 第 2 步：将 amp-ad 标记添加到 AMP 网页中

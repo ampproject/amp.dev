@@ -118,7 +118,7 @@ and provides additional functionality to manage loading and playing of animated 
 [/example]
 
 [tip type="note"]
-**NOTE –**  Include `<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` in the head of your page to use this component.
+**NOTE –**  Include `<script async custom-element="amp-anim" src="https://ampjs.org/v0/amp-anim-0.1.js"></script>` in the head of your page to use this component.
 [/tip]
 
 ## Video
@@ -178,5 +178,5 @@ Include a fallback, if the browser doesn't support HTML5 audio, for example:
 [/example]
 
 [tip type="note"]
-**NOTE –**  Include `<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` in the head of your page to use this component.
+**NOTE –**  Include `<script async custom-element="amp-audio" src="https://ampjs.org/v0/amp-audio-0.1.js"></script>` in the head of your page to use this component.
 [/tip]

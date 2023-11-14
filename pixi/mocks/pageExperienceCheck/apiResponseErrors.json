@@ -595,7 +595,7 @@
 							"resourceType": "Stylesheet"
 						},
 						{
-							"url": "https://cdn.ampproject.org/v0/amp-lightbox-0.1.js",
+							"url": "https://ampjs.org/v0/amp-lightbox-0.1.js",
 							"statusCode": 200,
 							"endTime": 966.77300008013844,
 							"resourceSize": 22754,
@@ -608,7 +608,7 @@
 						{
 							"statusCode": 200,
 							"resourceType": "Script",
-							"url": "https://cdn.ampproject.org/v0/amp-analytics-0.1.js",
+							"url": "https://ampjs.org/v0/amp-analytics-0.1.js",
 							"resourceSize": 97881,
 							"endTime": 976.60999977961183,
 							"transferSize": 30912,
@@ -623,7 +623,7 @@
 							"statusCode": 200,
 							"mimeType": "text/javascript",
 							"resourceSize": 49677,
-							"url": "https://cdn.ampproject.org/v0/amp-bind-0.1.js",
+							"url": "https://ampjs.org/v0/amp-bind-0.1.js",
 							"resourceType": "Script",
 							"endTime": 980.72799993678927
 						},
@@ -633,7 +633,7 @@
 							"startTime": 969.198000151664,
 							"endTime": 979.4000000692904,
 							"finished": true,
-							"url": "https://cdn.ampproject.org/v0/amp-social-share-0.1.js",
+							"url": "https://ampjs.org/v0/amp-social-share-0.1.js",
 							"statusCode": 200,
 							"transferSize": 7464,
 							"mimeType": "text/javascript"
@@ -843,23 +843,23 @@
 							"url": "https://www.amp.dev/videoplayer.js"
 						},
 						{
-							"url": "https://cdn.ampproject.org/v0.js",
+							"url": "https://ampjs.org/v0.js",
 							"duration": 157,
 							"startTime": 1360
 						},
 						{
-							"url": "https://cdn.ampproject.org/rtv/012008150009001/v0/amp-ad-network-doubleclick-impl-0.1.js",
+							"url": "https://ampjs.org/rtv/012008150009001/v0/amp-ad-network-doubleclick-impl-0.1.js",
 							"duration": 67,
 							"startTime": 2445
 						},
 						{
 							"startTime": 1610,
 							"duration": 63,
-							"url": "https://cdn.ampproject.org/v0.js"
+							"url": "https://ampjs.org/v0.js"
 						},
 						{
 							"duration": 63,
-							"url": "https://cdn.ampproject.org/v0.js",
+							"url": "https://ampjs.org/v0.js",
 							"startTime": 2280
 						}
 					]
@@ -963,7 +963,7 @@
 						{
 							"scriptParseCompile": 6.825,
 							"scripting": 857.79199999999241,
-							"url": "https://cdn.ampproject.org/v0.js",
+							"url": "https://ampjs.org/v0.js",
 							"total": 1007.5789999999928
 						},
 						{
@@ -975,7 +975,7 @@
 						{
 							"scriptParseCompile": 8.3990000000000009,
 							"total": 265.67900000000003,
-							"url": "https://cdn.ampproject.org/rtv/012008150009001/v0/amp-ad-network-doubleclick-impl-0.1.js",
+							"url": "https://ampjs.org/rtv/012008150009001/v0/amp-ad-network-doubleclick-impl-0.1.js",
 							"scripting": 160.385
 						}
 					],
@@ -1517,7 +1517,7 @@
 						},
 						{
 							"wastedPercent": 58.770729080178619,
-							"url": "https://cdn.ampproject.org/rtv/012008150009001/v0/amp-ad-network-doubleclick-impl-0.1.js",
+							"url": "https://ampjs.org/rtv/012008150009001/v0/amp-ad-network-doubleclick-impl-0.1.js",
 							"wastedBytes": 50475,
 							"totalBytes": 85885,
 							"subItems": {
@@ -1554,7 +1554,7 @@
 						{
 							"totalBytes": 71814,
 							"wastedPercent": 40.472262717716568,
-							"url": "https://cdn.ampproject.org/v0.js",
+							"url": "https://ampjs.org/v0.js",
 							"wastedBytes": 29065,
 							"subItems": {
 								"type": "subitems",

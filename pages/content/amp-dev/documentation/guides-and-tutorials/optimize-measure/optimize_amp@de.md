@@ -44,11 +44,11 @@ Für den Abschnitt `<head>` auf einer AMP Seite wird die folgende Struktur empfo
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="This is the AMP Boilerplate.">
-    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
-    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
+    <link rel="preload" as="script" href="https://ampjs.org/v0.js">
+    <link rel="preload" as="script" href="https://ampjs.org/v0/amp-experiment-0.1.js">
     <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-experiment" src="https://cdn.ampproject.org/v0/amp-experiment-0.1.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
+    <script async custom-element="amp-experiment" src="https://ampjs.org/v0/amp-experiment-0.1.js"></script>
     <!-- Import other AMP Extensions here -->
     <style amp-custom>
       /* Add your styles here */
@@ -68,15 +68,15 @@ Das wollen wir uns Schritt für Schritt anschauen:
 
 1. Das erste Tag sollte das `meta charset` Tag sein. Diesem folgen alle übrigen `meta` Tags.
 
-2. Der nächste Schritt besteht im Vorladen des AMP Runtime `v0.js` `<script>` Tags durch `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`. Die AMP Runtime sollte so schnell wie möglich mit dem Download beginnen, da die [AMP Boilerplate](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) das Dokument über `body { visibility:hidden }` verbirgt, bis die AMP Runtime geladen wurde. Durch das Vorladen der AMP Runtime wird der Browser angewiesen, das Skript mit einer höheren Priorität herunterzuladen. Schau dir [server-side-rendering](#server-side-rendering) an, um zu erfahren, wie sich dies vermeiden lässt. {amp-img6} {/amp-img6}
+2. Der nächste Schritt besteht im Vorladen des AMP Runtime `v0.js` `<script>` Tags durch `<link as=script href=https://ampjs.org/v0.js rel=preload>`. Die AMP Runtime sollte so schnell wie möglich mit dem Download beginnen, da die [AMP Boilerplate](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) das Dokument über `body { visibility:hidden }` verbirgt, bis die AMP Runtime geladen wurde. Durch das Vorladen der AMP Runtime wird der Browser angewiesen, das Skript mit einer höheren Priorität herunterzuladen. Schau dir [server-side-rendering](#server-side-rendering) an, um zu erfahren, wie sich dies vermeiden lässt. {amp-img6} {/amp-img6}
 
 3. Wenn deine Seite Erweiterungen enthält, die das Rendern verzögern (z. B. amp-experiment, amp-dynamic-css-classes, amp-story), lade diese Erweiterungen vor, da sie von der AMP Runtime zum Rendern der Seite benötigt werden.
 
 [sourcecode:html]
 
-<link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
-<link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
-<link as="script" rel="preload" href="https://cdn.ampproject.org/v0/story-1.0.js">[/sourcecode]
+<link as="script" rel="preload" href="https://ampjs.org/v0/amp-custom-css-0.1.js">
+<link as="script" rel="preload" href="https://ampjs.org/v0/amp-experiment-0.1.js">
+<link as="script" rel="preload" href="https://ampjs.org/v0/story-1.0.js">[/sourcecode]
 
 1. Verwende [preconnect](https://www.igvita.com/2015/08/17/eliminating-roundtrips-with-preconnect/), um die Verbindung zu einer anderen Quelle zu beschleunigen, wenn die vollständige URL der Ressource nicht im Voraus bekannt ist, zum Beispiel bei der Verwendung von Google Fonts:
 
@@ -84,7 +84,7 @@ Das wollen wir uns Schritt für Schritt anschauen:
 
 1. Laden Sie die AMP-Laufzeit:
 
-[sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
+[sourcecode:html]<script async src="https://ampjs.org/v0.js"></script>[/sourcecode]
 
 1. Gib die `<script>` Tags für [Erweiterungen an, die das Rendern verzögern](https://github.com/ampproject/amphtml/blob/main/src/render-delaying-services.js) (z. B. [`amp-experiment`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md) und [`amp-story`](../../../documentation/components/reference/amp-story.md).
 2. Gib die `<script>` Tags für übrige Erweiterungen an (z. B. [`amp-bind`](../../../documentation/components/reference/amp-bind.md) ...). Solche Erweiterungen verzögern nicht das Rendern und sollten deshalb nicht vorab geladen werden, um nicht mit dem ersten Rendern um Bandbreite zu konkurrieren.
@@ -189,7 +189,7 @@ Wenn du nach einem Service Worker für deine AMP Website suchst, schau dir diese
 
 Precaching ist nicht nur relevant für den Wechsel von zwischengespeicherten AMP Seiten zu Nicht-AMP Seiten deines eigenen Ursprungs, sondern ebenso für den Wechsel von zwischengespeicherten AMP Seiten zu AMP Seiten deines eigenen Ursprungs. Dafür gibt es folgenden Grund: Der AMP Cache aktualisiert die AMP Runtime URLs aus der stets aktuellen URL auf die zuletzt veröffentlichte Version, zum Beispiel:
 
-`https://cdn.ampproject.org/v0.js` -> `https://cdn.ampproject.org/rtv/001515617716922/v0.js`.
+`https://ampjs.org/v0.js` -> `https://ampjs.org/rtv/001515617716922/v0.js`.
 
 Als Folge profitiert eine AMP Seite, die von deinem eigenen Ursprung bereitgestellt wird, nicht vom Browsercaching und muss in diesem Fall die (nicht versionierte) AMP Runtime erneut herunterladen. Mit einem Service Worker kannst du die nicht versionierte AMP Runtime vorab zwischenspeichern und den Wechsel beschleunigen. In [diesem Dokument](https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer##versioned-amp-runtime) erfährst du, warum der AMP Cache die AMP Runtime URLs versioniert.
 

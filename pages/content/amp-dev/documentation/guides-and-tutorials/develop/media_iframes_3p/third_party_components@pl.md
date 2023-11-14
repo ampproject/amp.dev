@@ -24,7 +24,7 @@ Aby osadzić tweet w swojej stronie, należy najpierw umieścić następujący s
 [sourcecode:html]
 
 <script async custom-element="amp-twitter"
-  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+  src="https://ampjs.org/v0/amp-twitter-0.1.js"></script>
 
 [/sourcecode]
 
@@ -55,7 +55,7 @@ Aby osadzić Instagram, należy najpierw umieścić następujący skrypt w sekcj
 [sourcecode:html]
 
 <script async custom-element="amp-instagram"
-  src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+  src="https://ampjs.org/v0/amp-instagram-0.1.js"></script>
 
 [/sourcecode]
 
@@ -86,7 +86,7 @@ Najpierw musisz umieścić następujący skrypt w sekcji `<head>`:
 [sourcecode:html]
 
 <script async custom-element="amp-facebook"
-  src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
+  src="https://ampjs.org/v0/amp-facebook-0.1.js"></script>
 
 [/sourcecode]
 
@@ -134,7 +134,7 @@ Najpierw musisz umieścić następujący skrypt w sekcji `<head>`:
 [sourcecode:html]
 
 <script async custom-element="amp-youtube"
-  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  src="https://ampjs.org/v0/amp-youtube-0.1.js"></script>
 
 [/sourcecode]
 

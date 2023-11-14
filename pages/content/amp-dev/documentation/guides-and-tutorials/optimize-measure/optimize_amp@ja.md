@@ -44,11 +44,11 @@ AMP では、`<head>` セクションに許可されるマークアップを制�
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="This is the AMP Boilerplate.">
-    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
-    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
+    <link rel="preload" as="script" href="https://ampjs.org/v0.js">
+    <link rel="preload" as="script" href="https://ampjs.org/v0/amp-experiment-0.1.js">
     <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-experiment" src="https://cdn.ampproject.org/v0/amp-experiment-0.1.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
+    <script async custom-element="amp-experiment" src="https://ampjs.org/v0/amp-experiment-0.1.js"></script>
     <!-- Import other AMP Extensions here -->
     <style amp-custom>
       /* Add your styles here */
@@ -68,15 +68,15 @@ AMP では、`<head>` セクションに許可されるマークアップを制�
 
 1. 最初のタグは、`meta charset` タグで、その後に残りの `meta` タグを挿入します。
 
-2. 次に、`<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>` で AMP ランタイム `v0.js` `<script>` タグをプリロードします。[AMP ボイラープレート](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) は AMP ランタイムが読み込まれるまで `body { visibility:hidden }` 経由でドキュメントを非表示にするため、AMP ランタイムはできるだけ早い段階でダウンロードし始めます。AMP ランタイムをプリロードすると、ブラウザに最優先でスクリプトをダウンロードするように指示されます。これを回避する方法については、[server-side-rendering](#server-side-rendering) を参照してください。{amp-img6} {/amp-img6}
+2. 次に、`<link as=script href=https://ampjs.org/v0.js rel=preload>` で AMP ランタイム `v0.js` `<script>` タグをプリロードします。[AMP ボイラープレート](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) は AMP ランタイムが読み込まれるまで `body { visibility:hidden }` 経由でドキュメントを非表示にするため、AMP ランタイムはできるだけ早い段階でダウンロードし始めます。AMP ランタイムをプリロードすると、ブラウザに最優先でスクリプトをダウンロードするように指示されます。これを回避する方法については、[server-side-rendering](#server-side-rendering) を参照してください。{amp-img6} {/amp-img6}
 
 3. ページにレンダリングを遅延させる拡張機能（amp-experiment、amp-dynamic-css-classes、amp-story など）が含まれる場合、AMP ランタイムがページをレンダリングするにはその拡張機能が必要であるため、拡張機能をプリロードします。
 
 [sourcecode:html]
 
-<link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
-<link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
-<link as="script" rel="preload" href="https://cdn.ampproject.org/v0/story-1.0.js">[/sourcecode]
+<link as="script" rel="preload" href="https://ampjs.org/v0/amp-custom-css-0.1.js">
+<link as="script" rel="preload" href="https://ampjs.org/v0/amp-experiment-0.1.js">
+<link as="script" rel="preload" href="https://ampjs.org/v0/story-1.0.js">[/sourcecode]
 
 1. Google Fonts を使う場合など、前もってフルリソース URL がわかっていない他のオリジンへの接続を高速化するために、[preconnect](https://www.igvita.com/2015/08/17/eliminating-roundtrips-with-preconnect/) を使います。
 
@@ -84,7 +84,7 @@ AMP では、`<head>` セクションに許可されるマークアップを制�
 
 1. AMP ランタイムを読み込みます。
 
-[sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
+[sourcecode:html]<script async src="https://ampjs.org/v0.js"></script>[/sourcecode]
 
 1. [遅延レンダリング拡張機能](https://github.com/ampproject/amphtml/blob/main/src/render-delaying-services.js)（[`amp-experiment`](../../../documentation/components/reference/amp-experiment.md)、[`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md)、[`amp-story`](../../../documentation/components/reference/amp-story.md) など）用に `<script>` タグを指定します。
 2. 残りの拡張機能（[`amp-bind`](../../../documentation/components/reference/amp-bind.md) など）用に `<script>` タグを指定します。これらの拡張機能は遅延レンダリングではないため、プリロードしてはいけません。初期レンダリングに必要な重要な帯域幅が奪われてしまいます。
@@ -189,7 +189,7 @@ AMP サイトでサービスワーカーを使用し始めようと考えてい�
 
 プリキャッシュは、キャッシュされた AMP ページからオリジン上の非 AMP ページに移行するだけでなく、キャッシュされた AMP ページからオリジン上の AMP ページに移行する場合にも関係があります。これは、AMP キャッシュがエバーグリーン URL から最新のリリースバージョンに AMP ランタイム URL を書き換えるためです。以下にその例を示します。
 
-`https://cdn.ampproject.org/v0.js` -> `https://cdn.ampproject.org/rtv/001515617716922/v0.js`.
+`https://ampjs.org/v0.js` -> `https://ampjs.org/rtv/001515617716922/v0.js`.
 
 その結果、自分のオリジンから配信される AMP ページはブラウザのキャッシュ機能の恩恵を受けないため、この場合はもう一度（バージョン管理されていない）AMP ランタイムをダウンロードしなければなりません。サービスワーカーを使用すると、バージョン管理されていない AMP ランタイムをプリキャッシュし、移行を高速化することができます。AMP キャッシュが AMP ランタイム URL をバージョン管理する理由については、[こちらのドキュメント](https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer##versioned-amp-runtime)を参照してください。
 

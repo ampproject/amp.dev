@@ -67,7 +67,7 @@ Service Worker AMP tự động [lưu các kịch bản AMP](https://github.com/
 Tạo một tập tin mang tên `sw.js` và thêm vào đoạn mã sau:
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init();
 [/sourcecode]
 
@@ -82,7 +82,7 @@ Website AMP sử dụng thành phần [`<amp-install-serviceworker>`](../../../d
 [sourcecode:html]
 …
 
-<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async custom-element="amp-install-serviceworker" src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 …
 ...
@@ -122,7 +122,7 @@ Service Worker AMP đi kèm với những lợi ích tích hợp đồng thời 
 Bạn có thể cấu hình Service Worker AMP để [lưu tài sản vào bộ nhớ đệm](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching), chẳng hạn như các hình ảnh, video và phông chữ. Chúng ta sẽ dùng nó để lưu vào bộ nhớ đệm đối với hình ảnh nền và logo AMP. Mở tập tin `sw.js` và cập nhật mã bên dưới:
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,
@@ -148,7 +148,7 @@ Service Worker AMP truy xuất sẵn những liên kết vốn có thuộc tính
 Để giải quyết những trường hợp bất ngờ hoặc những lần nhấp chuột vào liên kết dẫn đến những trang mà chúng ta không tìm nạp trước, ta sẽ thêm một trang ngoại tuyến để mang đến trải nghiệm nhất quán cho người dùng, vốn là điều "phản ánh đúng thương hiệu", ngược lại với việc hiển thị trang ngoại tuyến chung chung của trình duyệt . Tải xuống [`offline.html` ở đây](/static/files/tutorials/offline.zip) và cập nhật `sw.js` vào mã sau:
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,

@@ -43,7 +43,7 @@ JavaScript này rất đơn giản; nó gửi một thông báo để theo dõi 
 <script
   async
   custom-element="amp-analytics"
-  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+  src="https://ampjs.org/v0/amp-analytics-0.1.js"
 ></script>
 ```
 

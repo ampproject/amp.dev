@@ -107,7 +107,7 @@ class ComponentReferenceDocument extends MarkdownDocument {
   }
 
   _generateCss(extensionName, extensionVersion) {
-    return `<link rel="stylesheet" href="https://cdn.ampproject.org/v0/${extensionName}-${extensionVersion}.css">`;
+    return `<link rel="stylesheet" href="https://ampjs.org/v0/${extensionName}-${extensionVersion}.css">`;
   }
 
   _generateScript(
@@ -115,7 +115,7 @@ class ComponentReferenceDocument extends MarkdownDocument {
     extensionVersion,
     extensionType = EXTENSION_TYPE_ELEMENT
   ) {
-    return `<script async custom-${extensionType}="${extensionName}" src="https://cdn.ampproject.org/v0/${extensionName}-${extensionVersion}.js"></script>`;
+    return `<script async custom-${extensionType}="${extensionName}" src="https://ampjs.org/v0/${extensionName}-${extensionVersion}.js"></script>`;
   }
 
   get contents() {

@@ -18,7 +18,7 @@ AMP メールは、外観的に従来の HTML メールに似ていますが、�
 <html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
     <style amp4email-boilerplate>
       body {
         visibility: hidden;
@@ -37,7 +37,7 @@ AMP メールをサポートするメールプロバイダーは、ユーザー�
 - トップレベルの `<html amp4email>` タグ、または非常に見栄えのよいメールの場合は `<html ⚡4email>` タグを含めること。このタグは、ドキュメントを AMP メールとして扱うように定義しています。
 - `<head>` タグと `<body>` タグの両方を定義すること。これは HTML ではオプションですが、AMP では元の状態を保持する必要があります！
 - `<meta charset="utf-8>` タグを `<head>` タグの最初の子として含めること。これはページのエンコーディングを識別するタグです。
-- AMP ライブラリは、 `<head>` タグに配置された `<script async src="https://cdn.ampproject.org/v0.js"></script>` タグにインポートすること。これがない場合、AMP から得られる優れた動的機能が機能しません！これは、`<head>` の `<meta charset="utf-8">` の直下に、なるべく早い段階で含めることをベストプラクティスとしています。
+- AMP ライブラリは、 `<head>` タグに配置された `<script async src="https://ampjs.org/v0.js"></script>` タグにインポートすること。これがない場合、AMP から得られる優れた動的機能が機能しません！これは、`<head>` の `<meta charset="utf-8">` の直下に、なるべく早い段階で含めることをベストプラクティスとしています。
 - `<head>` に AMP for Email ボイラープレートを配置し、最初に AMP ライブラリが読み込まれるまでメールコンテンツを非表示にすること。
 
 ```html

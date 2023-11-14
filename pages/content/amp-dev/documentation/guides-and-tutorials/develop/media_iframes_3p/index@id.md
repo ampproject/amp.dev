@@ -121,7 +121,7 @@ Elemen [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) 
 
 [/example]
 
-[tip type="note"] **CATATAN –** Sertakan `<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` di tajuk halaman Anda untuk menggunakan komponen ini. [/tip]
+[tip type="note"] **CATATAN –** Sertakan `<script async custom-element="amp-anim" src="https://ampjs.org/v0/amp-anim-0.1.js"></script>` di tajuk halaman Anda untuk menggunakan komponen ini. [/tip]
 
 ## Video
 
@@ -175,4 +175,4 @@ Sertakan fallback, jika browser tidak mendukung audio HTML5, misalnya:
 
 [/example]
 
-[tip type="note"] <strong>CATATAN –</strong> Sertakan <code>&lt;script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js">&lt;/script></code> di tajuk halaman Anda untuk menggunakan komponen ini. [/tip]
+[tip type="note"] <strong>CATATAN –</strong> Sertakan <code>&lt;script async custom-element="amp-audio" src="https://ampjs.org/v0/amp-audio-0.1.js">&lt;/script></code> di tajuk halaman Anda untuk menggunakan komponen ini. [/tip]

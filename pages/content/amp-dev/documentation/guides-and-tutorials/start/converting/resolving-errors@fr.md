@@ -397,7 +397,7 @@ Votre document AMP devrait maintenant ressembler à ceci:
         margin: 0.5em;
       }
     </style>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
   </head>
   <body>
     <header>News Site</header>

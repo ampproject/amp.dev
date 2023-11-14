@@ -21,14 +21,14 @@ El canal para desarrolladores es perfecto para:
 
 Si encuentras un problema que parece darse únicamente en la versión del canal para desarrolladores de AMP, [regístralo](https://github.com/ampproject/amphtml/issues/new) y descríbelo. Incluye siempre la URL de una página donde se pueda reproducir el problema.
 
-Para habilitar el canal para desarrolladores de AMP en tu navegador, ve a la [página AMP Experiments] (https://cdn.ampproject.org/experiments.html) y activa el experimento "AMP Beta Channel" (Canal para desarrolladores de AMP). Si quieres recibir notificaciones sobre cambios importantes o novedades de AMP, suscríbete a la lista de distribución [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
+Para habilitar el canal para desarrolladores de AMP en tu navegador, ve a la [página AMP Experiments] (https://ampjs.org/experiments.html) y activa el experimento "AMP Beta Channel" (Canal para desarrolladores de AMP). Si quieres recibir notificaciones sobre cambios importantes o novedades de AMP, suscríbete a la lista de distribución [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
 
 ## Habilitar componentes experimentales
 
 #### Publicado desde cdn.ampproject.org
 
 En el caso de contenido publicado desde [https://cdn.ampproject.org](https://cdn.ampproject.org), 
-ve a la [página AMP Experiments](https://cdn.ampproject.org/experiments.html)
+ve a la [página AMP Experiments](https://ampjs.org/experiments.html)
 y habilita (o inhabilita) los componentes experimentales que quieras con el botón que aparece junto a ellos. Si activas un componente, se añadirá una cookie a tu navegador que habilitará el experimento en todas las páginas AMP que se publiquen a través de la caché de AMP de Google.
 
 #### Publicado desde otros dominios
@@ -45,14 +45,14 @@ Quita estos componentes experimentales de los documentos de AMP listos para publ
 
 ## Habilitar experimentos en documentos concretos
 
-Puedes habilitar determinados experimentos en documentos concretos. Para hacerlo, solo tienes que colocar una metaetiqueta que tenga el valor `amp-experiments-opt-in` en el atributo de nombre en el encabezado del documento HTML, antes de la secuencia de comandos de AMP (`https://cdn.ampproject.org/v0.js`). El contenido de esta metaetiqueta deben ser los ID de los experimentos que quieras habilitar, separados por comas.
+Puedes habilitar determinados experimentos en documentos concretos. Para hacerlo, solo tienes que colocar una metaetiqueta que tenga el valor `amp-experiments-opt-in` en el atributo de nombre en el encabezado del documento HTML, antes de la secuencia de comandos de AMP (`https://ampjs.org/v0.js`). El contenido de esta metaetiqueta deben ser los ID de los experimentos que quieras habilitar, separados por comas.
 
 ```html
 <head>
   ...
   <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async src="https://ampjs.org/v0.js"></script>
   ...
 </head>
 ```

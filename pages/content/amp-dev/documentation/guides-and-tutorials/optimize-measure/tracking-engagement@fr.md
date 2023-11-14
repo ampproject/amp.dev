@@ -54,7 +54,7 @@ Pour répliquer cette fonctionnalité dans AMP, nous devons d'abord **inclure** 
 <script
   async
   custom-element="amp-analytics"
-  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+  src="https://ampjs.org/v0/amp-analytics-0.1.js"
 ></script>
 ```
 

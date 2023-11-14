@@ -25,7 +25,7 @@ Der AMP Playground unterstützt das Format "AMP für E-Mail" und erlaubt dir, de
 <html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
     <style amp4email-boilerplate>
       body {
         visibility: hidden;
@@ -48,7 +48,7 @@ Er enthält das erforderliche Markup und das Grundgerüst einer gültigen AMP E-
 Werfen wir einen kurzen Blick auf einige relevante Unterschiede zu klassischen HTML E-Mails:
 
 - AMP E-Mails müssen sich als solche identifizieren, indem sie `⚡4email` oder `amp4email` im HTML Tag enthalten.
-- Das Tag `<head>` muss auch das Tag `<script>` enthalten, welches die AMP Runtime lädt. `<script async src="https://cdn.ampproject.org/v0.js"></script>`
+- Das Tag `<head>` muss auch das Tag `<script>` enthalten, welches die AMP Runtime lädt. `<script async src="https://ampjs.org/v0.js"></script>`
 - Eine CSS Boilerplate wird benötigt, die den Inhalt zunächst ausblendet, bis AMP geladen ist. `<style amp4email-boilerplate>body{visibility:hidden}</style>`
 
 Wenn du schon mit E-Mails gearbeitet hast, lässt der Gedanke, ein Skript in einer E-Mail zu platzieren, womöglich alle Alarmglocken in deinem Kopf schrillen. Keine Sorge: E-Mail Anbieter, die AMP E-Mails unterstützen, haben sehr strenge Sicherheitsüberprüfungen eingerichtet, um sicherzustellen, dass nur geprüfte AMP Skripte auf ihren Clients ausgeführt werden. Auf diese Weise können dynamische und interaktive Features direkt in den Posteingängen der Empfänger eingesetzt werden, ohne dass dadurch Sicherheitslücken entstehen. Weitere Informationen zum erforderlichen Markup für AMP E-Mails findest du hier.
@@ -119,7 +119,7 @@ Füge das Skript für `amp-carousel` im Abschnitt "head" deiner E-Mail hinzu.
 <script
   async
   custom-element="amp-carousel"
-  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+  src="https://ampjs.org/v0/amp-carousel-0.1.js"
 ></script>
 ```
 
@@ -218,7 +218,7 @@ In diesem Tutorial verwenden wir [`<amp-bind>`](/content/amp-dev/documentation/c
 <script
   async
   custom-element="amp-bind"
-  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+  src="https://ampjs.org/v0/amp-bind-0.1.js"
 ></script>
 ```
 

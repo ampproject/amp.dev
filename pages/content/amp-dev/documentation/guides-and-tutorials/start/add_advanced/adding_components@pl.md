@@ -56,7 +56,7 @@ Pamiętaj, że nie wszystkie składniki są zawarte w głównym pliku JavaScript
 <script
   async
   custom-element="amp-ad"
-  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+  src="https://ampjs.org/v0/amp-ad-0.1.js"
 ></script>
 ```
 
@@ -137,7 +137,7 @@ Pamiętaj, że nie wszystkie składniki są zawarte w głównym pliku JavaScript
 <script
   async
   custom-element="amp-youtube"
-  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+  src="https://ampjs.org/v0/amp-youtube-0.1.js"
 ></script>
 ```
 
@@ -161,7 +161,7 @@ Zacznij od dodania następującego żądania JavaScript do sekcji `<head>` dokum
 <script
   async
   custom-element="amp-twitter"
-  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+  src="https://ampjs.org/v0/amp-twitter-0.1.js"
 ></script>
 ```
 
@@ -201,7 +201,7 @@ Wypróbujmy go. Najpierw **dodaj** bibliotekę składnika do sekcji `<head>`:
 <script
   async
   custom-element="amp-fit-text"
-  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+  src="https://ampjs.org/v0/amp-fit-text-0.1.js"
 ></script>
 ```
 

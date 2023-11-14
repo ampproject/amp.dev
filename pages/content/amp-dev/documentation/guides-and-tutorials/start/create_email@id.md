@@ -25,7 +25,7 @@ AMP Playground mendukung format AMP untuk Email, sehingga memungkinkan Anda untu
 <html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
     <style amp4email-boilerplate>
       body {
         visibility: hidden;
@@ -48,7 +48,7 @@ Ini berisi semua kode minimum dan markah yang diperlukan untuk menjadi email AMP
 Mari kita luangkan waktu untuk mempelajari perbedaan besar dari email HTML klasik:
 
 - Email AMP harus mengidentifikasi diri sendiri dengan menyertakan `⚡4email` atau `amp4email`, pada tag HTML.
-- Tag `<head>` juga harus berisi tag `<script>` yang memuat runtime AMP. `<script async src="https://cdn.ampproject.org/v0.js"></script>`
+- Tag `<head>` juga harus berisi tag `<script>` yang memuat runtime AMP. `<script async src="https://ampjs.org/v0.js"></script>`
 - Sebuah boilerplate CSS awalnya akan menyembunyikan konten hingga AMP dimuat. ` <style amp4email-boilerplate>body{visibility:hidden}</style>`
 
 Jika Anda pernah mengerjakan email, ide untuk menempatkan skrip ke dalam email mungkin membuat Anda tegang! Tenang, penyedia email yang mendukung email AMP menerapkan pemeriksaan keamanan yang ketat yang hanya mengizinkan skrip AMP yang telah diperiksa untuk berjalan di klien mereka. Ini memungkinkan fitur-fitur interaktif dan dinamis untuk berjalan secara langsung di dalam kotak surat penerima tanpa kerentanan keamanan! Baca lebih lanjut tentang markah yang diperlukan untuk Email AMP di sini.
@@ -119,7 +119,7 @@ Tambahkan skrip `amp-carousel` ke tajuk email Anda.
 <script
   async
   custom-element="amp-carousel"
-  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+  src="https://ampjs.org/v0/amp-carousel-0.1.js"
 ></script>
 ```
 
@@ -218,7 +218,7 @@ Di dalam tutorial ini, kita akan menggunakan [`<amp-bind>`](/content/amp-dev/doc
 <script
   async
   custom-element="amp-bind"
-  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+  src="https://ampjs.org/v0/amp-bind-0.1.js"
 ></script>
 ```
 

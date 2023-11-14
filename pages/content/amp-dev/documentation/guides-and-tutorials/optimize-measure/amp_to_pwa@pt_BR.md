@@ -67,7 +67,7 @@ O AMP Service Worker automaticamente [armazena em cache scripts AMP](https://git
 Crie um arquivo chamado `sw.js` e acrescente o código a seguir:
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init();
 [/sourcecode]
 
@@ -82,7 +82,7 @@ Coloque a tag de script necessária no cabeçalho do `index.html` e o elemento `
 [sourcecode:html]
 …
 
-<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async custom-element="amp-install-serviceworker" src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 …
 ...
@@ -122,7 +122,7 @@ Nosso aplicativo de festival de música armazenará em cache nossos ativos de im
 Você pode configurar o AMP Service Worker para [ativos de cache](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching), tais como imagens, vídeos e fontes. Ele será usado para armazenar em cache nossa imagem de fundo e o logotipo AMP. Abra o arquivo `sw.js` atualize-o para incluir o código abaixo:
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,
@@ -148,7 +148,7 @@ O AMP Service Worker realiza carregamento prévio de links que têm o atributo `
 Para lidar com casos inesperados ou cliques em links para páginas que não carregamos previamente, adicionaremos uma página offline para oferecer uma experiência de usuário consistente que esteja "dentro da marca", em vez de mostrar a página offline do navegador genérico. Baixe [`offline.html` aqui](/static/files/tutorials/offline.zip) e atualize`sw.js` para o código a seguir:
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,

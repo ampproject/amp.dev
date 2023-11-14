@@ -44,11 +44,11 @@ AMP 运行时的[速度进行了优化](../../../about/how-amp-works.html)，如
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="This is the AMP Boilerplate.">
-    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
-    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
+    <link rel="preload" as="script" href="https://ampjs.org/v0.js">
+    <link rel="preload" as="script" href="https://ampjs.org/v0/amp-experiment-0.1.js">
     <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-experiment" src="https://cdn.ampproject.org/v0/amp-experiment-0.1.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
+    <script async custom-element="amp-experiment" src="https://ampjs.org/v0/amp-experiment-0.1.js"></script>
     <!-- Import other AMP Extensions here -->
     <style amp-custom>
       /* Add your styles here */
@@ -68,15 +68,15 @@ AMP 运行时的[速度进行了优化](../../../about/how-amp-works.html)，如
 
 1. 第一个标记应该是 `meta charset`，后跟其余的所有 `meta` 标记。
 
-2. 接着，使用 `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>` 预加载 AMP 运行时 `v0.js` `<script>` 标记。AMP 运行时应当尽快开始下载，因为 [AMP 样板](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md)使用 `body { visibility:hidden }` 隐藏文档，直到 AMP 运行时已加载。预加载 AMP 运行时是告知浏览器按较高的优先级下载该脚本。请参阅[服务器端呈现](#server-side-rendering)，了解如何避免此问题。{amp-img6} {/amp-img6}
+2. 接着，使用 `<link as=script href=https://ampjs.org/v0.js rel=preload>` 预加载 AMP 运行时 `v0.js` `<script>` 标记。AMP 运行时应当尽快开始下载，因为 [AMP 样板](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md)使用 `body { visibility:hidden }` 隐藏文档，直到 AMP 运行时已加载。预加载 AMP 运行时是告知浏览器按较高的优先级下载该脚本。请参阅[服务器端呈现](#server-side-rendering)，了解如何避免此问题。{amp-img6} {/amp-img6}
 
 3. 如果您的页面包含延迟渲染的扩展（例如，amp-experiment、amp-dynamic-css-classes、amp-story），请预加载这些扩展，因为 AMP 运行时需要这些扩展才能渲染页面。
 
 [sourcecode:html]
 
-<link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
-<link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
-<link as="script" rel="preload" href="https://cdn.ampproject.org/v0/story-1.0.js">[/sourcecode]
+<link as="script" rel="preload" href="https://ampjs.org/v0/amp-custom-css-0.1.js">
+<link as="script" rel="preload" href="https://ampjs.org/v0/amp-experiment-0.1.js">
+<link as="script" rel="preload" href="https://ampjs.org/v0/story-1.0.js">[/sourcecode]
 
 1. 在很多情况下，使用 [preconnect](https://www.igvita.com/2015/08/17/eliminating-roundtrips-with-preconnect/) 可以加快与事先不知道完整资源网址的其他源站的连接速度，例如，在使用 Google Fonts 时：
 
@@ -84,7 +84,7 @@ AMP 运行时的[速度进行了优化](../../../about/how-amp-works.html)，如
 
 1. 加载 AMP 运行时：
 
-[sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
+[sourcecode:html]<script async src="https://ampjs.org/v0.js"></script>[/sourcecode]
 
 1. 为[延迟呈现的扩展项](https://github.com/ampproject/amphtml/blob/main/src/render-delaying-services.js)（例如，[`amp-experiment`](../../../documentation/components/reference/amp-experiment.md)、[`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md) 和 [`amp-story`](../../../documentation/components/reference/amp-story.md)）指定 `<script>` 标记。
 2. 为其余扩展项（例如，[`amp-bind`](../../../documentation/components/reference/amp-bind.md) 等）指定 `<script>` 标记。这些扩展项不会延迟呈现，因此，不应当预加载。因为它们可能会占用初始呈现的重要带宽。
@@ -189,7 +189,7 @@ AMP 运行时的[速度进行了优化](../../../about/how-amp-works.html)，如
 
 预缓存不仅与从缓存的 AMP 网页过渡到您自己来源的非 AMP 网页相关，而且还与从缓存的 AMP 网页过渡到您自己来源的 AMP 网页相关。原因是，AMP 缓存会将长期有效的网址中的 AMP 运行时网址重新写入最新发布版本，例如：
 
-`https://cdn.ampproject.org/v0.js` -> `https://cdn.ampproject.org/rtv/001515617716922/v0.js`.
+`https://ampjs.org/v0.js` -> `https://ampjs.org/rtv/001515617716922/v0.js`.
 
 结果是，从您自己的来源提供的 AMP 网页不会从浏览器缓存中获益，此时必须重新下载（未进行版本控制的）AMP 运行时。借助 Service Worker，可以预缓存未进行版本控制的 AMP 运行时，并加快过渡速度。要详细了解 AMP 缓存对 AMP 运行时网址进行版本控制的原因，请参阅[本文档](https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer##versioned-amp-runtime)。
 

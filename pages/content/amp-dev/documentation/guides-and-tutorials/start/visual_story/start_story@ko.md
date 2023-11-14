@@ -13,7 +13,7 @@ $title: 본격적으로 스토리 시작하기
 ```html hl_lines="2 3"
 <head>
 <script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+        src="https://ampjs.org/v0/amp-story-1.0.js"></script>
 </head>
 ```
 

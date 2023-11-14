@@ -19,7 +19,7 @@ A questo scopo, occorre prima includere il componente [`amp-install-serviceworke
 
 [sourcecode:html]
 
-<script async="" custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async="" custom-element="amp-install-serviceworker" src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 [/sourcecode]
 
@@ -39,7 +39,7 @@ Se sei arrivato a leggere queste pagine, stai realizzando pagine con contenuti A
 
 Installare il processo di lavoro dei servizi AMP con la seguente semplice procedura:
 
-- Importare il codice del processo di lavoro dei servizi AMP nel relativo file. [sourcecode:js] importScripts ('https://cdn.ampproject.org/sw/amp-sw.js'); [/sourcecode]
+- Importare il codice del processo di lavoro dei servizi AMP nel relativo file. [sourcecode:js] importScripts ('https://ampjs.org/sw/amp-sw.js'); [/sourcecode]
 
 - Installare il processo di lavoro dei servizi con il seguente codice. [sourcecode:js] AMP_SW.init(); [/sourcecode]
 

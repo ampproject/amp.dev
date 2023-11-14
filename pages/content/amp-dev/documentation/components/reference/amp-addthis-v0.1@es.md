@@ -28,7 +28,7 @@ Muestra un elemento insertado de las herramientas del sitio web [AddThis](https:
 <table>
   <tr>
     <td width="40%"><strong>Secuencia de comandos obligatoria</strong></td>
-    <td><code>&lt;script async custom-element="amp-addthis" src="https://cdn.ampproject.org/v0/amp-addthis-0.1.js">&lt;/script></code></td>
+    <td><code>&lt;script async custom-element="amp-addthis" src="https://ampjs.org/v0/amp-addthis-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Diseños admitidos</a></strong></td>

@@ -31,7 +31,7 @@ teaser:
     <td width="40%"><strong>필수 스크립트</strong></td>
     <td>
       <div>
-          <code>&lt;script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js">&lt;/script></code>
+          <code>&lt;script async custom-template="amp-mustache" src="https://ampjs.org/v0/amp-mustache-0.2.js">&lt;/script></code>
       </div>
     </td>
   </tr>
@@ -66,7 +66,7 @@ Mustache는 로직이 없는 템플릿 구문입니다. 자세한 내용은 [Mus
 먼저 `amp-mustache`를 선언/로드해야 합니다.
 
 ```html
-<script src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" async="" custom-template="amp-mustache"></script>
+<script src="https://ampjs.org/v0/amp-mustache-0.2.js" async="" custom-template="amp-mustache"></script>
 ```
 
 그리고 나서 다음과 같이 `script` 또는 `template` 태그로 Mustache 템플릿을 정의할 수 있습니다.

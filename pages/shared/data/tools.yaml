@@ -566,7 +566,7 @@ developer:
     official: true
     type: Essential
     description: Beta-test new features of AMP before they're available for everyone.
-    url: https://cdn.ampproject.org/experiments.html
+    url: https://ampjs.org/experiments.html
     image:
       src: /static/img/docs/tools/ampexperiments.jpg
       width: 10

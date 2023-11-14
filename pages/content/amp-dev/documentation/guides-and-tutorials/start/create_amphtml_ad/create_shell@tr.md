@@ -40,7 +40,7 @@ Bu işaretleme, geçerli, temel bir HTML dosyası içindir. <a>Duyarlı bir gör
 AMPHTML reklamları kendi AMP çalışma zamanı sürümünü gerektirir, bu nedenle aşağıdaki `<script>` etiketini belgenizin `<head>` bölümüne ekleyin:
 
 ```html
-<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+<script async src="https://ampjs.org/amp4ads-v0.js"></script>
 ```
 
 AMPHTML reklam öğeleri, AMP sayfalarından farklı ve oldukça basit bir [standart metin](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#boilerplate) stil satırı gerektirir. Aşağıdaki kodu `<head>` bölümünüze ekleyin:
@@ -66,7 +66,7 @@ HTML dosyanızın tam kodu aşağıdadır:
     <meta charset="utf-8" />
     <title>My amphtml ad</title>
     <meta name="viewport" content="width=device-width" />
-    <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+    <script async src="https://ampjs.org/amp4ads-v0.js"></script>
     <style amp4ads-boilerplate>
       body {
         visibility: hidden;

@@ -19,7 +19,7 @@ Start
 <html amp lang="en">
   <head>
     <meta charset="utf-8" />
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
     <title>Hello, AMPs</title>
     <link rel="canonical" href="{{doc.url}}" />
     <meta name="viewport" content="width=device-width" />

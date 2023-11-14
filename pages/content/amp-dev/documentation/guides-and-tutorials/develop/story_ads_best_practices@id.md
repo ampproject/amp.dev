@@ -57,7 +57,7 @@ Data tag meta menentukan bahwa iklan memenuhi format Cerita Web, menetapkan enum
     <style amp-custom>
      amp-img {height: 100vh}
     </style>
-    <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+    <script async src="https://ampjs.org/amp4ads-v0.js"></script>
 
   </head>
   <body>

@@ -47,7 +47,7 @@ description: В директории проекта есть файл article.ht
 Для того чтобы включить библиотеку AMP, **добавьте** в конец тега `<head>` следующую строку:
 
 ```html
-<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async src="https://ampjs.org/v0.js"></script>
 ```
 
 **Загрузите** в браузере новый файл `article.amp.html`, перейдя по адресу [http://localhost:8000/article.amp.html](http://localhost:8000/article.amp.html), а затем **откройте** [консоль разработчика](https://developer.chrome.com/devtools/docs/console) в Chrome (или в другом удобном вам браузере).

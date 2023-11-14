@@ -232,7 +232,7 @@ Python 마크다운에는 일부 제한이 있습니다. 목록에 코드 조각
          playground="true"]
     ```html
     &lt;head&gt;
-      &lt;script async custom-element=&quot;amp-youtube&quot; src=&quot;https://cdn.ampproject.org/v0/amp-youtube-0.1.js&quot;&gt;&lt;/script&gt;
+      &lt;script async custom-element=&quot;amp-youtube&quot; src=&quot;https://ampjs.org/v0/amp-youtube-0.1.js&quot;&gt;&lt;/script&gt;
       &lt;style amp-custom&gt;
         body {
           background: red;
@@ -260,7 +260,7 @@ playground="true"]
   <script
     async
     custom-element="amp-youtube"
-    src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+    src="https://ampjs.org/v0/amp-youtube-0.1.js"
   ></script>
   <style amp-custom>
     body {
@@ -293,7 +293,7 @@ AMP 스토리 미리보기 시 `preview="top-frame"`과 `orientation="portrait"`
     ```html
     &lt;head&gt;
       &lt;script async custom-element=&quot;amp-story&quot;
-          src=&quot;https://cdn.ampproject.org/v0/amp-story-1.0.js&quot;&gt;&lt;/script&gt;
+          src=&quot;https://ampjs.org/v0/amp-story-1.0.js&quot;&gt;&lt;/script&gt;
       &lt;style amp-custom&gt;
         body {
           font-family: 'Roboto', sans-serif;
@@ -333,7 +333,7 @@ playground="true"]
   <script
     async
     custom-element="amp-story"
-    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+    src="https://ampjs.org/v0/amp-story-1.0.js"
   ></script>
   <style amp-custom>
     body {

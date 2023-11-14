@@ -42,7 +42,7 @@ Opting into Beta Channel is great to:
 
 If you find an issue that appears to only occur in the Beta Channel version of AMP, [file an issue](https://github.com/ampproject/amphtml/issues/new) with a description of the problem. Always include a URL to a page that reproduces the issue.
 
-To opt your browser into the AMP Beta Channel, go to [the AMP experiments page](https://cdn.ampproject.org/experiments.html) and activate the "AMP Beta Channel" experiment. To get notified about important/breaking changes about AMP, subscribe to the [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce) mailing list.
+To opt your browser into the AMP Beta Channel, go to [the AMP experiments page](https://ampjs.org/experiments.html) and activate the "AMP Beta Channel" experiment. To get notified about important/breaking changes about AMP, subscribe to the [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce) mailing list.
 
 ## Enable an experimental component
 
@@ -69,14 +69,14 @@ Remove these experimental components for production-ready AMP documents.
 
 ## Enable an experiment for a particular document
 
-Document can choose to opt in a certain experiments. To do that, place a meta tag of the `amp-experiments-opt-in` name in the head of the HTML document before your AMP script (`https://cdn.ampproject.org/v0.js`). Its content value is a comma-separated string of experiment IDs to opt in.
+Document can choose to opt in a certain experiments. To do that, place a meta tag of the `amp-experiments-opt-in` name in the head of the HTML document before your AMP script (`https://ampjs.org/v0.js`). Its content value is a comma-separated string of experiment IDs to opt in.
 
 ```html
 <head>
   ...
   <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async src="https://ampjs.org/v0.js"></script>
   ...
 </head>
 ```

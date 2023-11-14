@@ -153,7 +153,7 @@ The portion of the page containing the sidebar should look like this:
 Also, remember to include the `<amp-sidebar>` JavaScript in the `<head>`:
 
 [sourcecode:html]
-{% raw %}<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+{% raw %}<script async custom-element="amp-sidebar" src="https://ampjs.org/v0/amp-sidebar-0.1.js"></script>
 {% endraw %}[/sourcecode]
 
 ## Accessibility
@@ -272,7 +272,7 @@ Once you have finished, your expanded side menu should look like this:
 Remember to include the `<amp-accordion>` JavaScript in the `<head>`:
 
 [sourcecode:html]
-{% raw %}<script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+{% raw %}<script async custom-element="amp-accordion" src="https://ampjs.org/v0/amp-accordion-0.1.js"></script>
 {% endraw %}[/sourcecode]
 [/filter]
 [filter level="advanced"]
@@ -414,7 +414,7 @@ The portion of the page containing the sidebar should look like this:
 Also, remember to include the `<amp-sidebar>` JavaScript in the `<head>`:
 
 [sourcecode:html]
-{% raw %}<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+{% raw %}<script async custom-element="amp-sidebar" src="https://ampjs.org/v0/amp-sidebar-0.1.js"></script>
 {% endraw %}[/sourcecode]
 
 ## Accessibility
@@ -526,6 +526,6 @@ Once you have finished, your expanded side menu should look like this:
 Remember to include the `<amp-accordion>` JavaScript in the `<head>`:
 
 [sourcecode:html]
-{% raw %}<script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+{% raw %}<script async custom-element="amp-accordion" src="https://ampjs.org/v0/amp-accordion-0.1.js"></script>
 {% endraw %}[/sourcecode]
 [/filter]

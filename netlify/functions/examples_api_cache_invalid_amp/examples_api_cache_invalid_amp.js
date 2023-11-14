@@ -6,7 +6,7 @@ const handler = async () => {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
     <title>Invalid AMP</title>
     ${STYLE}
   </head>

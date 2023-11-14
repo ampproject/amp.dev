@@ -32,7 +32,7 @@ Este JavaScript es bastante sencillo, envía una notificación para realizar un 
 Para replicar esta función en AMP, lo primero que debemos hacer es **incluir** la biblioteca de componentes [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md)  en el `<head>` de nuestro documento:
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js"></script>
 ```
 
 ## Paso 2: agregue el código de configuración

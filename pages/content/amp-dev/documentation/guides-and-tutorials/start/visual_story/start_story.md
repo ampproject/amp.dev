@@ -14,7 +14,7 @@ The [`amp-story`](../../../../documentation/components/reference/amp-story.md) c
 ```html hl_lines="2 3"
 <head>
 <script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+        src="https://ampjs.org/v0/amp-story-1.0.js"></script>
 </head>
 ```
 

@@ -47,7 +47,7 @@ Başlangıç olarak AMP kütüphane dosyasını ekleyeceğiz. Bu tek başına ye
 AMP kütüphanesini eklemek için `<head>` etiketinin altına bu satırı **ekleyin**:
 
 ```html
-<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async src="https://ampjs.org/v0.js"></script>
 ```
 
 Yeni <code>article.amp.html</code> sayfasını tarayıcınıza <a>http://localhost:8000/article.amp.html</a> adresinden <strong>yükleyin</strong> ve ardından Chrome'da (veya tercih ettiğiniz tarayıcıda) <a>Geliştirici Konsolunu</a> <strong>açın</strong>.

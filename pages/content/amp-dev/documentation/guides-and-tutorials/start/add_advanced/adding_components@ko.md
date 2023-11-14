@@ -56,7 +56,7 @@ AMP 광고는 [`amp-ad`](../../../../documentation/components/reference/amp-ad.m
 <script
   async
   custom-element="amp-ad"
-  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+  src="https://ampjs.org/v0/amp-ad-0.1.js"
 ></script>
 ```
 
@@ -137,7 +137,7 @@ AMP 광고는 [`amp-ad`](../../../../documentation/components/reference/amp-ad.m
 <script
   async
   custom-element="amp-youtube"
-  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+  src="https://ampjs.org/v0/amp-youtube-0.1.js"
 ></script>
 ```
 
@@ -161,7 +161,7 @@ YouTube 동영상 삽입과 관련한 자세한 정보는 [`amp-youtube`](../../
 <script
   async
   custom-element="amp-twitter"
-  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+  src="https://ampjs.org/v0/amp-twitter-0.1.js"
 ></script>
 ```
 
@@ -200,7 +200,7 @@ AMP는 이러한 상황을 위해 특별히 제작된 <a><code>amp-fit-text</cod
 <script
   async
   custom-element="amp-fit-text"
-  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+  src="https://ampjs.org/v0/amp-fit-text-0.1.js"
 ></script>
 ```
 

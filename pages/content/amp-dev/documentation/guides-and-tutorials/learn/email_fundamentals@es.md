@@ -18,7 +18,7 @@ Los correos electrónicos de AMP son parecidos a los correos electrónicos HTML 
 <html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
     <style amp4email-boilerplate>
       body {
         visibility: hidden;
@@ -37,7 +37,7 @@ Los proveedores de correo electrónico que son compatibles con AMP para correo e
 - Incluir una etiqueta `<html amp4email>` de nivel superior o una etiqueta `<html ⚡4email>`si su correo electrónico es más genial. Esto identifica al documento como un correo electrónico de AMP para que pueda tratarse como tal.
 - Definir las etiquetas `<head>` y `<body>`. Esto es opcional en HTML, ¡pero AMP mantiene las cosas perfectas!
 - Incluir una etiqueta `<meta charset="utf-8>` como primer elemento secundario de la etiqueta `<head>`. Esto identifica la codificación de la página.
-- La biblioteca de AMP se importa mediante una etiqueta `<script async src="https://cdn.ampproject.org/v0.js"></script>` colocada en `<head>`. ¡Sin ella, ninguna de las increíbles y dinámicas funciones obtenidas a través de AMP funcionará! Como práctica recomendada, esto debe incluirse lo antes posible en el `<head>`, directamente debajo de la etiqueta `<meta charset="utf-8">`.
+- La biblioteca de AMP se importa mediante una etiqueta `<script async src="https://ampjs.org/v0.js"></script>` colocada en `<head>`. ¡Sin ella, ninguna de las increíbles y dinámicas funciones obtenidas a través de AMP funcionará! Como práctica recomendada, esto debe incluirse lo antes posible en el `<head>`, directamente debajo de la etiqueta `<meta charset="utf-8">`.
 - Al principio, oculte el contenido del correo electrónico hasta que se cargue la biblioteca de AMP colocando el modelo estándar de AMP para correo electrónico en el `<head>`.
 
 ```html

@@ -109,7 +109,7 @@ Si possono aggiungere e rimuovere tutte le classi CSS con stati che occorre, uti
   <script
     async
     custom-element="amp-bind"
-    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+    src="https://ampjs.org/v0/amp-bind-0.1.js"
   ></script>
   <style amp-custom>
     div {

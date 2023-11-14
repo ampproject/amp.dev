@@ -89,12 +89,12 @@ Przewidywalna wydajność jest kluczowym celem projektowania AMP HTML. Dążymy 
     <script
       async
       custom-element="amp-carousel"
-      src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+      src="https://ampjs.org/v0/amp-carousel-0.1.js"
     ></script>
     <script
       async
       custom-element="amp-ad"
-      src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+      src="https://ampjs.org/v0/amp-ad-0.1.js"
     ></script>
     <style amp-boilerplate>
       body {
@@ -154,7 +154,7 @@ Przewidywalna wydajność jest kluczowym celem projektowania AMP HTML. Dążymy 
         }
       </style></noscript
     >
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
   </head>
   <body>
     <h1>Sample document</h1>
@@ -185,7 +185,7 @@ Dokumenty AMP HTML muszą:
 - <a name="canon"></a>Zawierać znacznik `<link rel="canonical" href="$SOME_URL">` w sekcji head, wskazujący wersję HTML dokumentu AMP HTML lub sam siebie, jeśli nie ma takiej wersji HTML. [🔗](#canon)
 - <a name="chrs"></a>Zawierać znacznik `<meta charset="utf-8">` jako pierwszy element podrzędny w sekcji head. [🔗](#chrs)
 - <a name="vprt"></a>Zawierać znacznik `<meta name="viewport" content="width=device-width">` w sekcji head. Zalecane jest również dodanie właściwości `minimum-scale=1` i `initial-scale=1`. [🔗](#vprt)
-- <a name="scrpt"></a>Zawierać znacznik `<script async src="https://cdn.ampproject.org/v0.js"></script>` w sekcji head. [🔗](#scrpt)
+- <a name="scrpt"></a>Zawierać znacznik `<script async src="https://ampjs.org/v0.js"></script>` w sekcji head. [🔗](#scrpt)
 - <a name="boilerplate"></a>Zawierać [kod standardowy AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md) (`head > style[amp-boilerplate]` i `noscript > style[amp-boilerplate]`) w sekcji head. [🔗](#boilerplate)
 
 ### Metadane <a name="metadata"></a>
@@ -430,7 +430,7 @@ Autorzy mogą dołączać wszystkie czcionki niestandardowe za pomocą reguły <
 
 Środowisko uruchomieniowe AMP to JavaScript, który działa wewnątrz każdego dokumentu AMP. Zapewnia on implementacje niestandardowych elementów AMP, zarządza ładowaniem zasobów i nadawaniem priorytetów oraz opcjonalnie zawiera walidatora środowiska uruchomieniowego AMP HTML do użytku podczas tworzenia.
 
-Środowisko uruchomieniowe AMP jest ładowane za pomocą obowiązkowego znacznika `<script src="https://cdn.ampproject.org/v0.js"></script>` w sekcji `<head>` dokumentu AMP.
+Środowisko uruchomieniowe AMP jest ładowane za pomocą obowiązkowego znacznika `<script src="https://ampjs.org/v0.js"></script>` w sekcji `<head>` dokumentu AMP.
 
 Środowisko uruchomieniowe AMP można umieszczać w każdej stronie w trybie programistycznym. Tryb programistyczny wyzwoli walidację AMP w osadzonej stronie, co spowoduje wyświetlenie statusu walidacji i ewentualnych błędów w konsoli programistycznej JavaScript. Tryb programistyczny można wywoływać poprzez dołączenie parametru `#development=1` do adresu URL strony.
 
@@ -501,7 +501,7 @@ W jednym elemencie można nasłuchiwać wielu zdarzeń, rozdzielając zdarzenia 
 <script
   async
   custom-element="amp-carousel"
-  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+  src="https://ampjs.org/v0/amp-carousel-0.1.js"
 ></script>
 
 [/sourcecode]
@@ -517,7 +517,7 @@ Adres URL skryptu musi zaczynać się od <code>https://cdn.ampproject.org</code>
 Adres URL składników rozszerzonych ma postać:
 
 [sourcecode:http]
-https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
+https://ampjs.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 [/sourcecode]
 
 ##### Przechowywanie wersji <a name="versioning"></a>
@@ -537,7 +537,7 @@ Szablony nie są dostarczane z środowiskiem uruchomieniowym AMP i muszą być p
 <script
   async
   custom-template="amp-mustache"
-  src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+  src="https://ampjs.org/v0/amp-mustache-0.2.js"
 ></script>
 
 [/sourcecode]
@@ -565,7 +565,7 @@ Aby dowiedzieć się więcej o składni i ograniczeniach dotyczących szablonu, 
 Adres URL składników rozszerzonych ma postać:
 
 [sourcecode:http]
-https://cdn.ampproject.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
+https://ampjs.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
 [/sourcecode]
 
 ##### Przechowywanie wersji <a name="versioning-1"></a>

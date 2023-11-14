@@ -32,7 +32,7 @@ Menambahkan interaktivitas kustom dengan data binding dan ekspresi.
     <td class="col-fourty"><strong>Skrip yang Diperlukan</strong></td>
     <td>
       <div>
-          <code>&lt;script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js">&lt;/script&gt;</code>
+          <code>&lt;script async custom-element="amp-bind" src="https://ampjs.org/v0/amp-bind-0.1.js">&lt;/script&gt;</code>
       </div>
     </td>
   </tr>

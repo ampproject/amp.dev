@@ -18,7 +18,7 @@ AMP E-Mails sehen aus wie klassische HTML E-Mails, weisen jedoch einige Untersch
 <html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
     <style amp4email-boilerplate>
       body {
         visibility: hidden;
@@ -37,7 +37,7 @@ E-Mail Anbieter, die AMP E-Mails unterstützen, haben Sicherheitsüberprüfungen
 - Sie muss das Top-Level Tag `<html amp4email>` enthalten (oder das Tag `<html ⚡4email>`, wenn deine E-Mail besonders cool ist). Dadurch wird das Dokument als AMP E-Mail identifiziert und dementsprechend behandelt.
 - Sowohl das Tag `<head>` als auch das Tag `<body>` müssen definiert sein. Das ist in HTML optional, aber AMP strebt eine tadellose Struktur an!
 - Das Tag `<meta charset="utf-8>` muss als erstes untergeordnetes Element des Tags `<head>` enthalten sein. Damit wird die Zeichencodierung der Seite festgelegt.
-- Die AMP Bibliothek wird über das Tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` importiert, welches im Tag `<head>` platziert wird. Ohne sie können die fantastischen und dynamischen Funktionen, die AMP bietet, nicht funktionieren! Als Best Practice sollte sie so früh wie möglich im Tag `<head>`, am besten direkt unter dem Tag `<meta charset="utf-8">` platziert werden.
+- Die AMP Bibliothek wird über das Tag `<script async src="https://ampjs.org/v0.js"></script>` importiert, welches im Tag `<head>` platziert wird. Ohne sie können die fantastischen und dynamischen Funktionen, die AMP bietet, nicht funktionieren! Als Best Practice sollte sie so früh wie möglich im Tag `<head>`, am besten direkt unter dem Tag `<meta charset="utf-8">` platziert werden.
 - Der Inhalt der E-Mail muss ausgeblendet sein, solange die AMP Bibliothek geladen wird. Dazu wird die Boilerplate für AMP für E-Mail im Tag `<head>` platziert.
 
 ```html

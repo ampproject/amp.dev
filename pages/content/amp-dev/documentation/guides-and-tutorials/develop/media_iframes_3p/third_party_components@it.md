@@ -24,7 +24,7 @@ Per includere un tweet nella pagina, inserire innanzitutto lo script seguente ne
 [sourcecode:html]
 
 <script async custom-element="amp-twitter"
-  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+  src="https://ampjs.org/v0/amp-twitter-0.1.js"></script>
 
 [/sourcecode]
 
@@ -55,7 +55,7 @@ Per incorporare un Instagram, includi prima il seguente script in `<head>` :
 [sourcecode:html]
 
 <script async custom-element="amp-instagram"
-  src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+  src="https://ampjs.org/v0/amp-instagram-0.1.js"></script>
 
 [/sourcecode]
 
@@ -86,7 +86,7 @@ Per visualizzare post o video di Facebook nella pagina, utilizzare l'elemento [`
 [sourcecode:html]
 
 <script async custom-element="amp-facebook"
-  src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
+  src="https://ampjs.org/v0/amp-facebook-0.1.js"></script>
 
 [/sourcecode]
 
@@ -134,7 +134,7 @@ Per includere un video di YouTube nella pagina, utilizzare l'elemento [`amp-yout
 [sourcecode:html]
 
 <script async custom-element="amp-youtube"
-  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  src="https://ampjs.org/v0/amp-youtube-0.1.js"></script>
 
 [/sourcecode]
 

@@ -75,7 +75,7 @@ AMP 페이지는 안정적인 성능을 제공하기 위한 몇 가지 제한사
         }
       </style></noscript
     >
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
   </head>
   <body>
     Hello World!
@@ -93,22 +93,22 @@ AMP 구성요소는 AMP 페이지에 풍부한 상호작용을 더해주는 추�
 <script
   async
   custom-element="amp-carousel"
-  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+  src="https://ampjs.org/v0/amp-carousel-0.1.js"
 ></script>
 <script
   async
   custom-template="amp-mustache"
-  src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"
+  src="https://ampjs.org/v0/amp-mustache-0.1.js"
 ></script>
 <script
   async
   custom-element="amp-form"
-  src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
+  src="https://ampjs.org/v0/amp-form-0.1.js"
 ></script>
 <script
   async
   custom-element="amp-selector"
-  src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"
+  src="https://ampjs.org/v0/amp-selector-0.1.js"
 ></script>
 ```
 

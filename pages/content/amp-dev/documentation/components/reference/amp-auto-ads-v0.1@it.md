@@ -37,7 +37,7 @@ Inserisce in modo dinamico gli annunci in una pagina AMP utilizzando un file di 
       <code>
       <code>
         &lt;script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">&lt;/script>
+        src="https://ampjs.org/v0/amp-auto-ads-0.1.js">&lt;/script>
       </code>
       </td>
     </tr>

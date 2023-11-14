@@ -25,7 +25,7 @@ AMP Playground 支持 AMP 电子邮件格式，允许您撰写、测试和验证
 <html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
     <style amp4email-boilerplate>
       body {
         visibility: hidden;
@@ -48,7 +48,7 @@ AMP Playground 支持 AMP 电子邮件格式，允许您撰写、测试和验证
 我们花一些时间来了解 AMP 电子邮件与传统 HTML 电子邮件的一些明显差异：
 
 - AMP 电子邮件必须在 html 标记中加入 `⚡4email` 或 `amp4email`，借此来标识其本身。
-- `<head>` 标记还必须包含 `<script>` 标记，用于加载 AMP 运行时。`<script async src="https://cdn.ampproject.org/v0.js"></script>`
+- `<head>` 标记还必须包含 `<script>` 标记，用于加载 AMP 运行时。`<script async src="https://ampjs.org/v0.js"></script>`
 - CSS 样板，用于在最初隐藏内容，直到加载 AMP。`<style amp4email-boilerplate>body{visibility:hidden}</style>`
 
 如果您以前使用过电子邮件，可能会担心电子邮件中被嵌入脚本！请放心，支持 AMP 电子邮件的电子邮件服务提供商会强制执行严格的安全检查，仅允许通过审查的 AMP 脚本在客户端中运行。因此，动态和互动功能可以直接在收件人邮箱中运行，而不会存在任何安全漏洞！本文介绍了有关 AMP 电子邮件必需标记的详细信息。
@@ -119,7 +119,7 @@ AMP Playground 支持 AMP 电子邮件格式，允许您撰写、测试和验证
 <script
   async
   custom-element="amp-carousel"
-  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+  src="https://ampjs.org/v0/amp-carousel-0.1.js"
 ></script>
 ```
 
@@ -218,7 +218,7 @@ AMP 支持在文档 head 的 `<style amp-custom>` 标记中设置样式。此外
 <script
   async
   custom-element="amp-bind"
-  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+  src="https://ampjs.org/v0/amp-bind-0.1.js"
 ></script>
 ```
 

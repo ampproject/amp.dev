@@ -30,7 +30,7 @@ Obtiene contenido de forma dinámica desde un punto de conexión CORS JSON y lo 
 <table>
   <tr>
     <td width="40%"><strong>Secuencia de comandos obligatoria</strong></td>
-    <td><code>&lt;script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-list" src="https://ampjs.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Diseños admitidos</a></strong></td>
@@ -294,7 +294,7 @@ Si no se proporciona el atributo `binding`, el valor predeterminado es `always`.
 
 ## Experimento: Cargar más y desplazamiento infinito (amp-list-load-more) <a name="common-attributes"></a>
 
-Hemos introducido los atributos `load-more` con las opciones [manual](https://cdn.ampproject.org/experiments.html) y `auto` para que se pueda aplicar la paginación y el desplazamiento infinito.
+Hemos introducido los atributos `load-more` con las opciones [manual](https://ampjs.org/experiments.html) y `auto` para que se pueda aplicar la paginación y el desplazamiento infinito.
 
 #### Ejemplo de uso <a name="load-more-and-infinite-scroll"></a>
 

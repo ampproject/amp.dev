@@ -89,12 +89,12 @@ Tahmin edilebilir performans, AMP HTML için temel bir tasarım hedefidir. Önce
     <script
       async
       custom-element="amp-carousel"
-      src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+      src="https://ampjs.org/v0/amp-carousel-0.1.js"
     ></script>
     <script
       async
       custom-element="amp-ad"
-      src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+      src="https://ampjs.org/v0/amp-ad-0.1.js"
     ></script>
     <style amp-boilerplate>
       body {
@@ -154,7 +154,7 @@ Tahmin edilebilir performans, AMP HTML için temel bir tasarım hedefidir. Önce
         }
       </style></noscript
     >
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
   </head>
   <body>
     <h1>Sample document</h1>
@@ -185,7 +185,7 @@ AMP HTML belgelerinde şunlar ZORUNLUDUR:
 - <a name="canon"></a> AMP HTML belgesinin normal HTML sürümüne veya böyle bir HTML sürümü yoksa kendi kendisine işaret eden bir `<link rel="canonical" href="$SOME_URL">` etiketi başlık (head) bölümünde içermek. [🔗](#canon)
 - <a name="chrs"></a>başlık (head) etiketinin ilk alt öğesi olarak bir `<meta charset="utf-8">` etiketi içermek. [🔗](#chrs)
 - <a name="vprt"></a> head (başlık) etiketlerinin içinde bir `<meta name="viewport" content="width=device-width">` etiketi içermek. Ayrıca `minimum-scale=1` ve `initial-scale=1` dahil edilmesi önerilir. [🔗](#vprt)
-- <a name="scrpt"></a> head (başlık) etiketlerinin içinde bir `<script async src="https://cdn.ampproject.org/v0.js"></script>` etiketi içermek. [🔗](#scrpt)
+- <a name="scrpt"></a> head (başlık) etiketlerinin içinde bir `<script async src="https://ampjs.org/v0.js"></script>` etiketi içermek. [🔗](#scrpt)
 - <a name="boilerplate"></a> head (başlık) etiketinde [AMP ortak metin kodunu](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md) ( `head > style[amp-boilerplate]` ve `noscript > style[amp-boilerplate]` ) içermek. [🔗](#boilerplate)
 
 ### Meta veriler <a name="metadata"></a>
@@ -438,7 +438,7 @@ Yazarlar, kendi özel CSS'leri yoluyla bir <code>@font-face</code> CSS talimatı
 
 AMP çalışma zamanı, her AMP belgesinin içinde çalışan bir JavaScript parçasıdır. AMP özel öğeleri için uygulamalar sağlar, kaynak yüklemesini ve önceliklendirmeyi yönetir ve isteğe bağlı olarak geliştirme sırasında kullanılmak üzere AMP HTML için bir çalışma zamanı doğrulayıcısı içerir.
 
-AMP çalışma zamanı, AMP belgesi `<head>` etiketindeki zorunlu `<script src="https://cdn.ampproject.org/v0.js"></script>` etiketi aracılığıyla yüklenir.
+AMP çalışma zamanı, AMP belgesi `<head>` etiketindeki zorunlu `<script src="https://ampjs.org/v0.js"></script>` etiketi aracılığıyla yüklenir.
 
 AMP çalışma zamanı, herhangi bir sayfa için bir geliştirme moduna yerleştirilebilir. Geliştirme modu, gömülü sayfada AMP doğrulamasını tetikler ve bu işlem, doğrulama durumunu ve JavaScript geliştirici konsoluna yönelik tüm hataları gösterir. Geliştirme modu, sayfanın URL'sine `#development=1` eklenerek tetiklenebilir.
 
@@ -509,7 +509,7 @@ Genişletilmiş bileşenler, aşağıdaki gibi belgenin başlığına bir `<scri
 <script
   async
   custom-element="amp-carousel"
-  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+  src="https://ampjs.org/v0/amp-carousel-0.1.js"
 ></script>
 
 [/sourcecode]
@@ -525,7 +525,7 @@ Betik URL'si `https://cdn.ampproject.org` ile başlamalı ve çok sıkı bir `/v
 Genişletilmiş bileşenlerin URL'si şu biçimdedir:
 
 [sourcecode:http]
-https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
+https://ampjs.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 [/sourcecode]
 
 ##### Sürüm oluşturma <a name="versioning"></a>
@@ -545,7 +545,7 @@ Desteklenen şablonlarla ilgili ayrıntılar için [AMP şablon teknik özellikl
 <script
   async
   custom-template="amp-mustache"
-  src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+  src="https://ampjs.org/v0/amp-mustache-0.2.js"
 ></script>
 
 [/sourcecode]
@@ -573,7 +573,7 @@ Bir şablonun sözdizimi ve kısıtlamaları hakkında bilgi edinmek için [şab
 Genişletilmiş bileşenlerin URL'si şu biçimdedir:
 
 [sourcecode:http]
-https://cdn.ampproject.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
+https://ampjs.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
 [/sourcecode]
 
 ##### Sürüm oluşturma <a name="versioning-1"></a>

@@ -100,7 +100,7 @@ Once you have finished, your page should look like this:
 Remember to include the `<amp-form>` script in the `<head>`:
 
 [sourcecode:html]
-{% raw %}<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+{% raw %}<script async custom-element="amp-form" src="https://ampjs.org/v0/amp-form-0.1.js"></script>
 {% endraw %}[/sourcecode]
 
 ## Using Templates To Give Feedback
@@ -229,7 +229,7 @@ Once you have finished, the result should look like this:
 Remember to include the `<amp-mustache>` library in the `<head>`:
 
 [sourcecode:html]
-{% raw %}<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+{% raw %}<script async custom-template="amp-mustache" src="https://ampjs.org/v0/amp-mustache-0.2.js"></script>
 {% endraw %}[/sourcecode]
 [/filter]
 [filter level="advanced"]
@@ -324,7 +324,7 @@ Once you have finished, your page should look like this:
 Remember to include the `<amp-form>` script in the `<head>`:
 
 [sourcecode:html]
-{% raw %}<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+{% raw %}<script async custom-element="amp-form" src="https://ampjs.org/v0/amp-form-0.1.js"></script>
 {% endraw %}[/sourcecode]
 
 ## Using Templates To Give Feedback
@@ -449,6 +449,6 @@ Once you have finished, the result should look like this:
 Remember to include the `<amp-mustache>` library in the `<head>`:
 
 [sourcecode:html]
-{% raw %}<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+{% raw %}<script async custom-template="amp-mustache" src="https://ampjs.org/v0/amp-mustache-0.2.js"></script>
 {% endraw %}[/sourcecode]
 [/filter]

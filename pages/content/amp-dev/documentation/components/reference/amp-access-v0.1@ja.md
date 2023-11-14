@@ -37,7 +37,7 @@ limitations under the License.
   <td class="col-fourty"><strong>必要なスクリプト</strong></td>
   <td>
     <div>
-      <code>&lt;script async custom-element="amp-access" src="https://cdn.ampproject.org/v0/amp-access-0.1.js">&lt;/script></code>
+      <code>&lt;script async custom-element="amp-access" src="https://ampjs.org/v0/amp-access-0.1.js">&lt;/script></code>
     </div>
   </td>
 </tr>

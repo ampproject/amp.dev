@@ -41,7 +41,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>Secuencia de comandos obligatoria</strong></td>
-    <td><code>&lt;script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js">&lt;</code><br>Nota: amp-ad puede funcionar sin esta secuencia de comandos, pero se recomienda encarecidamente su uso para mantener la compatibilidad con versiones futuras.</td>
+    <td><code>&lt;script async custom-element="amp-ad" src="https://ampjs.org/v0/amp-ad-0.1.js">&lt;</code><br>Nota: amp-ad puede funcionar sin esta secuencia de comandos, pero se recomienda encarecidamente su uso para mantener la compatibilidad con versiones futuras.</td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Diseños admitidos</a></strong></td>

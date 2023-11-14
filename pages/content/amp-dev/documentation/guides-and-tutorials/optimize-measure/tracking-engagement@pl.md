@@ -54,7 +54,7 @@ Aby odtworzyć tę funkcjonalność w AMP, musimy najpierw **dodać** bibliotek�
 <script
   async
   custom-element="amp-analytics"
-  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+  src="https://ampjs.org/v0/amp-analytics-0.1.js"
 ></script>
 ```
 

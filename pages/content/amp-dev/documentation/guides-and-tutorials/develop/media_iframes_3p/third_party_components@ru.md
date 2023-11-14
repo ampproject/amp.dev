@@ -23,7 +23,7 @@ contributors:
 
 [sourcecode:html]
 
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script async custom-element="amp-twitter" src="https://ampjs.org/v0/amp-twitter-0.1.js"></script>
 
 [/sourcecode]
 
@@ -53,7 +53,7 @@ contributors:
 
 [sourcecode:html]
 
-<script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+<script async custom-element="amp-instagram" src="https://ampjs.org/v0/amp-instagram-0.1.js"></script>
 
 [/sourcecode]
 
@@ -83,7 +83,7 @@ contributors:
 
 [sourcecode:html]
 
-<script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
+<script async custom-element="amp-facebook" src="https://ampjs.org/v0/amp-facebook-0.1.js"></script>
 
 [/sourcecode]
 
@@ -130,7 +130,7 @@ Preview: <amp-facebook width="476" height="316" layout="responsive" data-embed-a
 
 [sourcecode:html]
 
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script async custom-element="amp-youtube" src="https://ampjs.org/v0/amp-youtube-0.1.js"></script>
 
 [/sourcecode]
 

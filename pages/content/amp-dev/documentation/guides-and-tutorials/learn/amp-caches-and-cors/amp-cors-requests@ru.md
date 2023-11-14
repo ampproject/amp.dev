@@ -133,7 +133,7 @@ src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)"
 
 <span id="verify-cors-header"></span>
 
-Конечные точки CORS получают источник запроса посредством HTTP-заголовка `Origin`. Конечные точки должны разрешать запросы только от: (1) собственного источника издателя; и (2) всех источников `cacheDomain`, указанных в файле [https://cdn.ampproject.org/caches.json](https://cdn.ampproject.org/caches.json).
+Конечные точки CORS получают источник запроса посредством HTTP-заголовка `Origin`. Конечные точки должны разрешать запросы только от: (1) собственного источника издателя; и (2) всех источников `cacheDomain`, указанных в файле [https://ampjs.org/caches.json](https://ampjs.org/caches.json).
 
 Например, конечные точки должны разрешать запросы от:
 

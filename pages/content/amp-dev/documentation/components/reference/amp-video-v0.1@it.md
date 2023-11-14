@@ -30,7 +30,7 @@ Sostituisce il tag `video` HTML5. Deve essere utilizzato esclusivamente per gli 
 <table>
   <tr>
     <td width="40%"><strong>Script obbligatorio</strong></td>
-    <td><code>&lt;script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js">&lt;/script></code></td>
+    <td><code>&lt;script async custom-element="amp-video" src="https://ampjs.org/v0/amp-video-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
     <td width="40%"><strong>Esempi</strong></td>

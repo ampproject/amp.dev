@@ -24,7 +24,7 @@ Untuk menyertakan tweet di halaman Anda, sertakan dahulu skrip berikut ini dalam
 [sourcecode:html]
 
 <script async custom-element="amp-twitter"
-  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+  src="https://ampjs.org/v0/amp-twitter-0.1.js"></script>
 
 [/sourcecode]
 
@@ -55,7 +55,7 @@ Untuk menyertakan Instagram, sertakan dahulu skrip berikut ini dalam `<head>`:
 [sourcecode:html]
 
 <script async custom-element="amp-instagram"
-  src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+  src="https://ampjs.org/v0/amp-instagram-0.1.js"></script>
 
 [/sourcecode]
 
@@ -86,7 +86,7 @@ Anda harus menyertakan skrip berikut ini dalam `<head>`:
 [sourcecode:html]
 
 <script async custom-element="amp-facebook"
-  src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
+  src="https://ampjs.org/v0/amp-facebook-0.1.js"></script>
 
 [/sourcecode]
 
@@ -134,7 +134,7 @@ Anda harus menyertakan skrip berikut ini dalam `<head>`:
 [sourcecode:html]
 
 <script async custom-element="amp-youtube"
-  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  src="https://ampjs.org/v0/amp-youtube-0.1.js"></script>
 
 [/sourcecode]
 

@@ -83,7 +83,7 @@ $title: "Analytics: الأساسيات"
 [تصريح بشأن تضمين مكون](../../../../documentation/components/index.html)):
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js"></script>
 ```
 
 النموذج التالي مشابه [للنموذج <span dir="ltr" class="nowrap">`amp-pixel`</span>](../../../../documentation/components/reference/amp-pixel.md).

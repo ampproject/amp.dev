@@ -22,10 +22,10 @@ Anda dapat menyematkan cerita AMP di dalam halaman non-AMP, sehingga pengguna da
     <head>
       <script
           async
-          src="https://cdn.ampproject.org/amp-story-player-v0.js"
+          src="https://ampjs.org/amp-story-player-v0.js"
       ></script>
       <link
-          href="https://cdn.ampproject.org/amp-story-player-v0.css"
+          href="https://ampjs.org/amp-story-player-v0.css"
           rel="stylesheet"
           type="text/css"
       />
@@ -80,9 +80,9 @@ Menampilkan sebuah cerita AMP di halaman non-AMP memerlukan penggunaan elemen [`
 Sertakan kedua skrip yang diperlukan di kepala dokumen Anda:
 
 ```html
-<script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>
+<script async src="https://ampjs.org/amp-story-player-v0.js"></script>
 <link
-  href="https://cdn.ampproject.org/amp-story-player-v0.css"
+  href="https://ampjs.org/amp-story-player-v0.css"
   rel="stylesheet"
   type="text/css"
 />

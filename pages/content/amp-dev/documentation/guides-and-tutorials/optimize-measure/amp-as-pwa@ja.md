@@ -64,7 +64,7 @@ Service Worker は、ブラウザで見つけて実行できるように、特�
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
-  src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+  src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
 [/sourcecode]
 
 次に、下記のコードを `<body>` 内に追加します（実際にお使いの Service Worker に変更してください）。

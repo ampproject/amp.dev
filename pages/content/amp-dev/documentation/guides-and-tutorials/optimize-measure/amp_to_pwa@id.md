@@ -67,7 +67,7 @@ Pekerja Layanan AMP secara otomatis [menyimpan skrip AMP di cache](https://githu
 Buat sebuah berkas bernama `sw.js`, lalu tambahkan kode berikut ini:
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init();
 [/sourcecode]
 
@@ -82,7 +82,7 @@ Tempatkan tag skrip yang diperlukan di tajuk `index.html` dan elemen `<amp-insta
 [sourcecode:html]
 …
 
-<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async custom-element="amp-install-serviceworker" src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 …
 ...
@@ -122,7 +122,7 @@ Aplikasi festival musik kami akan menyimpan aset gambar kami di cache, mengambil
 Anda dapat mengonfigurasi Pekerja Layanan AMP untuk [menyimpan aset di cache](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching), seperti gambar, video, dan font. Kita akan menggunakannya untuk menyimpan gambar dan logo AMP di cache. Buka berkas `sw.js` dan perbarui sesuai kode di bawah ini:
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,
@@ -148,7 +148,7 @@ Pekerja Layanan AMP sebelumnya telah mengambil tautan yang mempunyai atribut `da
 Untuk mengatasi kasus yang tidak terduga atau klik pada tautan ke halaman yang tidak kita ambil sebelumnya atau belum disiapkan, kita akan menambahkan sebuah halaman offline untuk menawarkan pengalaman pengguna yang “berpusat pada merek”, yang berbeda dengan memperlihatkan halaman offline browser umum. Unduh <a><code>offline.html</code> di sini</a> dan perbarui <code>sw.js</code> sesuai dengan kode berikut ini:
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,

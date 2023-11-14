@@ -18,7 +18,7 @@ Cerita Web secara teknis adalah halaman web tunggal yang dibuat dengan AMP dan m
 - Berisi `<html ⚡>` tingkat atas atau tag `<html amp>`.
 - Berisi tag `<head>` dan `<body>`.
 - Berisi tag` <meta charset="utf-8">` sebagai anak atau turunan pertama dari tag `<head>`.
-- Berisi tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` di dalam `<head>`-nya. Sebagai praktik terbaik, Anda seharusnya menyertakan skrip ini sedini mungkin di dalam `<head>`.
+- Berisi tag `<script async src="https://ampjs.org/v0.js"></script>` di dalam `<head>`-nya. Sebagai praktik terbaik, Anda seharusnya menyertakan skrip ini sedini mungkin di dalam `<head>`.
 - Berisi tag` <link rel="canonical" href="page/url">` di dalam `<head>`-nya dengan href yang mengarah ke URL Cerita Web.
 - Berisi tag `<meta name="viewport" content="width=device-width">` di dalam `<head>`-nya. Disarankan juga untuk menyertakan skala inisial=1.
 - Berisi kode [boilerplate AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) di dalam tag `<head>`.
@@ -91,16 +91,16 @@ Perbedaan antara halaman web AMP dan Cerita Web yang dibuat dengan AMP adalah ko
         }
       </style></noscript
     >
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
     <script
       async
       custom-element="amp-video"
-      src="https://cdn.ampproject.org/v0/amp-video-0.1.js"
+      src="https://ampjs.org/v0/amp-video-0.1.js"
     ></script>
     <script
       async
       custom-element="amp-story"
-      src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+      src="https://ampjs.org/v0/amp-story-1.0.js"
     ></script>
     <style amp-custom>
       ...;

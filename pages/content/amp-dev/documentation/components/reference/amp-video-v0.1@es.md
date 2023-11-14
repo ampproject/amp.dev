@@ -30,7 +30,7 @@ Funciona como sustituto de la etiqueta `video` de HTML5. Solo se utiliza para in
 <table>
   <tr>
     <td width="40%"><strong>Secuencia de comandos obligatoria</strong></td>
-    <td><code>&lt;script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js">&lt;/script></code></td>
+    <td><code>&lt;script async custom-element="amp-video" src="https://ampjs.org/v0/amp-video-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
     <td width="40%"><strong>Ejemplos</strong></td>

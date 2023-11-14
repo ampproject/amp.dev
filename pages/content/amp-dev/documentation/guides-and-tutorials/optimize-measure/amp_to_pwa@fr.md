@@ -67,7 +67,7 @@ Le service worker AMP [met automatiquement en cache les scripts](https://github.
 Créez un fichier appelé `sw.js` et ajoutez le code suivant:
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init();
 [/sourcecode]
 
@@ -82,7 +82,7 @@ Placez la balise de script requise dans l'en-tête de `index.html` et l'élémen
 [sourcecode:html]
 …
 
-<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async custom-element="amp-install-serviceworker" src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 …
 ...
@@ -122,7 +122,7 @@ Notre application de festival de musique mettra en cache nos ressources d'image,
 Vous pouvez configurer le service worker AMP de sorte qu'il [mette en cache des ressources](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching), telles que des images, des vidéos et des polices. Nous allons utiliser cette option pour mettre en cache notre image d'arrière-plan et le logo AMP. Ouvrez le fichier `sw.js` et mettez-le à jour avec le code ci-dessous:
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,
@@ -148,7 +148,7 @@ Le service worker AMP récupère en amont les liens qui ont l'attribut `data-rel
 Pour faire face aux cas surprise ou aux clics involontaires sur des liens vers des pages que nous n'avons pas préchargées, nous ajouterons une page hors ligne pour offrir une expérience utilisateur cohérente ciblée, par opposition à l'affichage de la page hors connexion générique du navigateur. Téléchargez [`offline.html` ici](/static/files/tutorials/offline.zip) et mettez à jour `sw.js` avec le code suivant:
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,

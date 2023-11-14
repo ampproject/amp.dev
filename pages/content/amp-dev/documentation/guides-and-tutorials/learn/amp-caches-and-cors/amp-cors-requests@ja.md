@@ -131,7 +131,7 @@ AMP ページのリクエストとレスポンスの有効性と安全性を確�
 
 <span id="verify-cors-header"></span>
 
-CORS エンドポイントは、`Origin` HTTP ヘッダーを通じてリクエストを発行するオリジンを受け取ります。エンドポイントが許可するリクエストは、（1）サイト運営者自身のオリジンであり、（2）[https://cdn.ampproject.org/caches.json](https://cdn.ampproject.org/caches.json) に記載される `cacheDomain` オリジンである必要があります。
+CORS エンドポイントは、`Origin` HTTP ヘッダーを通じてリクエストを発行するオリジンを受け取ります。エンドポイントが許可するリクエストは、（1）サイト運営者自身のオリジンであり、（2）[https://ampjs.org/caches.json](https://ampjs.org/caches.json) に記載される `cacheDomain` オリジンである必要があります。
 
 たとえば、エンドポイントは、以下から送られるリクエストを許可します。
 

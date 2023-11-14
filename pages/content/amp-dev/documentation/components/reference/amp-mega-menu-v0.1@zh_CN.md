@@ -189,17 +189,17 @@ Here is the JSON file used:
   <script
     async
     custom-element="amp-mega-menu"
-    src="https://cdn.ampproject.org/v0/amp-mega-menu-0.1.js"
+    src="https://ampjs.org/v0/amp-mega-menu-0.1.js"
   ></script>
   <script
     async
     custom-element="amp-sidebar"
-    src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
+    src="https://ampjs.org/v0/amp-sidebar-0.1.js"
   ></script>
   <script
     async
     custom-element="amp-accordion"
-    src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"
+    src="https://ampjs.org/v0/amp-accordion-0.1.js"
   ></script>
   <style amp-custom>
     .sidebar-open-btn {
@@ -279,7 +279,7 @@ Here is the JSON file used:
   <script
     async
     custom-element="amp-mega-menu"
-    src="https://cdn.ampproject.org/v0/amp-mega-menu-0.1.js"
+    src="https://ampjs.org/v0/amp-mega-menu-0.1.js"
   ></script>
   <style amp-custom>
     .title {

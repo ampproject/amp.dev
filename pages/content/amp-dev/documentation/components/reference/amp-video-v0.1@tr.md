@@ -30,7 +30,7 @@ HTML5 `video` etiketinin yerine gelen bir etiket; yalnızca doğrudan HTML5 vide
 <table>
   <tr>
     <td width="40%"><strong>Zorunlu Komut Dosyası</strong></td>
-    <td><code>&lt;script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js">&lt;/script></code></td>
+    <td><code>&lt;script async custom-element="amp-video" src="https://ampjs.org/v0/amp-video-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
     <td width="40%"><strong>Örnekler</strong></td>

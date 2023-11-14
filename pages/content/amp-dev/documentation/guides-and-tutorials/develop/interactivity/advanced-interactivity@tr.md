@@ -21,7 +21,7 @@ Başlangıç kodu oldukça basit bir kullanıcı deneyimi sağlar. Bunu iyileşt
 <script
   async
   custom-element="amp-bind"
-  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+  src="https://ampjs.org/v0/amp-bind-0.1.js"
 ></script>
 ```
 

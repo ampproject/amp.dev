@@ -18,7 +18,7 @@ Wiadomości e-mail AMP wyglądają jak klasyczne wiadomości HTML, ale z kilkoma
 <html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
     <style amp4email-boilerplate>
       body {
         visibility: hidden;
@@ -37,7 +37,7 @@ Dostawcy usług poczty elektronicznej, którzy obsługują pocztę elektroniczn�
 - Zawierać znacznik najwyższego poziomu `<html amp4email>` albo znacznik `<html ⚡4email>`, jeśli dana wiadomość jest wyjątkowo rozbudowana. Identyfikują one dokument jako wiadomość e-mail AMP, dzięki czemu może być odpowiednio przetwarzana.
 - Definiować zarówno znaczniki `<head>`, jak i `<body>`. Jest to opcjonalne w HTML, ale AMP utrzymuje nieskazitelną czystość spraw!
 - Zawierać znacznik `<meta charset="utf-8>` jako pierwszy element podrzędny znacznika `<head>`. Identyfikuje on kodowanie strony.
-- Biblioteka AMP jest importowana za pomocą znacznika `<script async src="https://cdn.ampproject.org/v0.js"></script>` umieszczonego w sekcji `<head>`. Bez niego żadna ze wspaniałych i dynamicznych funkcjonalności uzyskiwanych dzięki AMP nie będzie działać! Zgodnie z najlepszą praktyką należy go umieścić jak najwcześniej w sekcji `<head>`, bezpośrednio pod znacznikiem `<meta charset="utf-8">`.
+- Biblioteka AMP jest importowana za pomocą znacznika `<script async src="https://ampjs.org/v0.js"></script>` umieszczonego w sekcji `<head>`. Bez niego żadna ze wspaniałych i dynamicznych funkcjonalności uzyskiwanych dzięki AMP nie będzie działać! Zgodnie z najlepszą praktyką należy go umieścić jak najwcześniej w sekcji `<head>`, bezpośrednio pod znacznikiem `<meta charset="utf-8">`.
 - Początkowo należy ukryć zawartość wiadomości e-mail do chwili załadowania biblioteki AMP, umieszczając kod standardowy AMP dla poczty e-mail w sekcji `<head>`.
 
 ```html

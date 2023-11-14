@@ -25,7 +25,7 @@ AMP playground es compatible con el formato de AMP for Email, lo que le permite 
 <html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
     <style amp4email-boilerplate>
       body {
         visibility: hidden;
@@ -48,7 +48,7 @@ Este contiene todas las etiquetas obligatorias y la cantidad mínima de código 
 Dediquemos un momento para establecer algunas diferencias significativas con los correos electrónicos de HTML clásicos:
 
 - Los correos electrónicos de AMP deben identificarse como tales incluyendo `⚡4email`, o `amp4email`, en la etiqueta html.
-- La etiqueta `<head>` también debe incluir una etiqueta `<script>` que cargue el tiempo de ejecución de AMP. `<script async src="https://cdn.ampproject.org/v0.js"></script>`
+- La etiqueta `<head>` también debe incluir una etiqueta `<script>` que cargue el tiempo de ejecución de AMP. `<script async src="https://ampjs.org/v0.js"></script>`
 - Deben tener un código repetitivo CSS para que primero oculte el contenido hasta que AMP se cargue. ` <style amp4email-boilerplate>body{visibility:hidden}</style>`
 
 Si ya trabajó previamente con correos electrónicos, ¡la idea de colocar un script en un correo electrónico quizás haga sonar las alarmas en su cabeza! Tenga la certeza de que los proveedores de correos electrónicos que admiten los correos de AMP imponen estrictos controles de seguridad, los cuales solo permiten que los scripts de AMP que se hayan analizado se ejecuten en sus clientes. ¡Esto permite que las funciones dinámicas e interactivas se ejecuten directamente en los buzones de los destinatarios sin que haya vulnerabilidades en su seguridad! Obtenga más información sobre las etiquetas obligatorias para los correos electrónicos de AMP aquí.
@@ -119,7 +119,7 @@ Agregue el script `amp-carousel` en el encabezado de su correo electrónico.
 <script
   async
   custom-element="amp-carousel"
-  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+  src="https://ampjs.org/v0/amp-carousel-0.1.js"
 ></script>
 ```
 
@@ -218,7 +218,7 @@ En este tutorial, usaremos [`<amp-bind>`](/content/amp-dev/documentation/compone
 <script
   async
   custom-element="amp-bind"
-  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+  src="https://ampjs.org/v0/amp-bind-0.1.js"
 ></script>
 ```
 

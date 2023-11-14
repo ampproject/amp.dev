@@ -18,7 +18,7 @@ Le e-mail AMP assomigliano alle e-mail HTML classiche, ma presentano alcune diff
 <html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
     <style amp4email-boilerplate>
       body {
         visibility: hidden;
@@ -37,7 +37,7 @@ I fornitori di servizi di posta elettronica che supportano le email AMP prevedon
 - Contenere un tag di primo livello `<html amp4email>` o un tag `<html ⚡4email>` per rendere l'e-mail ancora più elegante. Tali tag identificano il documento come e-mail AMP in modo che possa essere gestito come tale.
 - Definire entrambi i tag `<head>` e `<body>`. Questo è facoltativo in HTML, ma AMP ne ha bisogno per garantire l'integrità della struttura!
 - Contenere un tag `<meta charset="utf-8">` come primo elemento figlio del tag `<head>`. Questo identifica il formato per la codifica della pagina.
-- La libreria AMP viene importata tramite un tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` inserito nella sezione `<head>`. Senza tale tag, nessuna delle straordinarie e dinamiche funzionalità messe a disposizione da AMP sarebbero utilizzabili! Le procedure consigliate suggeriscono di includere il tag quanto prima possibile nella sezione `<head>`, direttamente sotto il tag `<meta charset="utf-8">`.
+- La libreria AMP viene importata tramite un tag `<script async src="https://ampjs.org/v0.js"></script>` inserito nella sezione `<head>`. Senza tale tag, nessuna delle straordinarie e dinamiche funzionalità messe a disposizione da AMP sarebbero utilizzabili! Le procedure consigliate suggeriscono di includere il tag quanto prima possibile nella sezione `<head>`, direttamente sotto il tag `<meta charset="utf-8">`.
 - Inizialmente il contenuto dell'e-mail deve essere nascosto fino a quando la libreria AMP non è caricata, posizionando il boilerplate AMP per E-mail nella sezione `<head>`.
 
 ```html

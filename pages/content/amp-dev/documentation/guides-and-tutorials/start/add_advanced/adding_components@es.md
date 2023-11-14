@@ -56,7 +56,7 @@ Recuerde que no todos los componentes están incluidos en el archivo JavaScript 
 <script
   async
   custom-element="amp-ad"
-  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+  src="https://ampjs.org/v0/amp-ad-0.1.js"
 ></script>
 ```
 
@@ -138,7 +138,7 @@ Recuerde que no todos los componentes están incluidos en el archivo JavaScript 
 <script
   async
   custom-element="amp-twitter"
-  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+  src="https://ampjs.org/v0/amp-twitter-0.1.js"
 ></script>
 ```
 
@@ -162,7 +162,7 @@ Comience agregando la siguiente solicitud de JavaScript a la etiqueta <code><hea
 <script
   async
   custom-element="amp-twitter"
-  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+  src="https://ampjs.org/v0/amp-twitter-0.1.js"
 ></script>
 ```
 
@@ -202,7 +202,7 @@ Hagamos un intento. Primero, **agregue** a la etiqueta la biblioteca del compone
 <script
   async
   custom-element="amp-fit-text"
-  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+  src="https://ampjs.org/v0/amp-fit-text-0.1.js"
 ></script>
 ```
 

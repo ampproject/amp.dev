@@ -280,7 +280,7 @@ Important: Do not add any AMP boilerplate code to the header as this will get ad
          playground="true"]
     ```html
     &lt;head&gt;
-      &lt;script async custom-element=&quot;amp-youtube&quot; src=&quot;https://cdn.ampproject.org/v0/amp-youtube-0.1.js&quot;&gt;&lt;/script&gt;
+      &lt;script async custom-element=&quot;amp-youtube&quot; src=&quot;https://ampjs.org/v0/amp-youtube-0.1.js&quot;&gt;&lt;/script&gt;
       &lt;style amp-custom&gt;
         body {
           background: red;
@@ -305,7 +305,7 @@ This is what it looks like:
          playground="true"]
 ```html
 <head>
-  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://ampjs.org/v0/amp-youtube-0.1.js"></script>
   <style amp-custom>
     body {
       background: red;
@@ -334,7 +334,7 @@ Use `preview="top-frame"` together with `orientation="portrait"` for previewing 
     ```html
     &lt;head&gt;
       &lt;script async custom-element=&quot;amp-story&quot;
-          src=&quot;https://cdn.ampproject.org/v0/amp-story-1.0.js&quot;&gt;&lt;/script&gt;
+          src=&quot;https://ampjs.org/v0/amp-story-1.0.js&quot;&gt;&lt;/script&gt;
       &lt;style amp-custom&gt;
         body {
           font-family: 'Roboto', sans-serif;
@@ -372,7 +372,7 @@ This is what it looks like:
 ```html
   <head>
     <script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+        src="https://ampjs.org/v0/amp-story-1.0.js"></script>
     <style amp-custom>
       body {
         font-family: 'Roboto', sans-serif;

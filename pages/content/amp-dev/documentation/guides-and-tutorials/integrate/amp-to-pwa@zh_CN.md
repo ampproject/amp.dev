@@ -37,7 +37,7 @@ AMP 技术能够从 AMP 网页内安装渐进式 Web 应用的 Service Worker - 
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
-  src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+  src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
 [/sourcecode]
 
 然后，在您 `<body>` 中的某个位置添加以下内容（请酌情进行修改以使其指向您的实际 Service Worker）：

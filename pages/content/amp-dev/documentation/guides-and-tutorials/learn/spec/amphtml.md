@@ -82,12 +82,12 @@ In concrete terms this means that:
     <script
       async
       custom-element="amp-carousel"
-      src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+      src="https://ampjs.org/v0/amp-carousel-0.1.js"
     ></script>
     <script
       async
       custom-element="amp-ad"
-      src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+      src="https://ampjs.org/v0/amp-ad-0.1.js"
     ></script>
     <style amp-boilerplate>
       body {
@@ -147,7 +147,7 @@ In concrete terms this means that:
         }
       </style></noscript
     >
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
   </head>
   <body>
     <h1>Sample document</h1>
@@ -178,7 +178,7 @@ AMP HTML documents MUST
 -   <a name="canon"></a>contain a `<link rel="canonical" href="$SOME_URL">` tag inside their head that points to the regular HTML version of the AMP HTML document or to itself if no such HTML version exists. [🔗](#canon)
 -   <a name="chrs"></a>contain a `<meta charset="utf-8">` tag as the first child of their head tag. [🔗](#chrs)
 -   <a name="vprt"></a>contain a `<meta name="viewport" content="width=device-width">` tag inside their head tag. It's also recommended to include `minimum-scale=1` and `initial-scale=1`. [🔗](#vprt)
--   <a name="scrpt"></a>contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their head tag. [🔗](#scrpt)
+-   <a name="scrpt"></a>contain a `<script async src="https://ampjs.org/v0.js"></script>` tag inside their head tag. [🔗](#scrpt)
 -   <a name="boilerplate"></a>contain the [AMP boilerplate code](https://github.com/ampproject/amphtml/blob/master/docs/spec/amp-boilerplate.md) (`head > style[amp-boilerplate]` and `noscript > style[amp-boilerplate]`) in their head tag. [🔗](#boilerplate)
 
 ### Metadata <a name="metadata"></a>
@@ -419,7 +419,7 @@ Authors are free to include all custom fonts via an `@font-face` CSS instruction
 
 The AMP runtime is a piece of JavaScript that runs inside every AMP document. It provides implementations for AMP custom elements, manages resource loading and prioritization and optionally includes a runtime validator for AMP HTML for use during development.
 
-The AMP runtime is loaded via the mandatory `<script src="https://cdn.ampproject.org/v0.js"></script>` tag in the AMP document `<head>`.
+The AMP runtime is loaded via the mandatory `<script src="https://ampjs.org/v0.js"></script>` tag in the AMP document `<head>`.
 
 The AMP runtime can be placed into a development mode for any page. Development mode will trigger AMP validation on the embedded page, which will emit the validation status and any errors to the JavaScript developer console. Development mode may be triggered by appending `#development=1` to the URL of the page.
 
@@ -492,7 +492,7 @@ Extended components are loaded by including a `<script>` tag in the head of the 
 <script
   async
   custom-element="amp-carousel"
-  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+  src="https://ampjs.org/v0/amp-carousel-0.1.js"
 ></script>
 [/sourcecode]
 
@@ -507,7 +507,7 @@ The script URL must start with `https://cdn.ampproject.org` and must follow a ve
 The URL for extended components is of the form:
 
 [sourcecode:http]
-https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
+https://ampjs.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 [/sourcecode]
 
 ##### Versioning <a name="versioning"></a>
@@ -527,7 +527,7 @@ Extended components are loaded by including a `<script>` tag in the head of the 
 <script
   async
   custom-template="amp-mustache"
-  src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+  src="https://ampjs.org/v0/amp-mustache-0.2.js"
 ></script>
 [/sourcecode]
 
@@ -556,7 +556,7 @@ To learn about the syntax and restrictions for an template, visit the [template'
 The URL for extended components is of the form:
 
 [sourcecode:http]
-https://cdn.ampproject.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
+https://ampjs.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
 [/sourcecode]
 
 ##### Versioning <a name="versioning-1"></a>

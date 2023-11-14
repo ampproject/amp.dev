@@ -47,7 +47,7 @@ description: 프로젝트 디렉토리에서 article.html라는 파일을 찾을
 AMP 라이브러리를 포함하려면 다음 줄을 `<head>` 태그 하단에 **추가**합니다.
 
 ```html
-<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async src="https://ampjs.org/v0.js"></script>
 ```
 
 브라우저에서 [http://localhost:8000/article.amp.html](http://localhost:8000/article.amp.html)을 연 다음, 새 `article.amp.html` 페이지를 **로드**하고 Chrome이나 선호하는 브라우저에서 [Developer Console](https://developer.chrome.com/devtools/docs/console)을 **엽니다**.

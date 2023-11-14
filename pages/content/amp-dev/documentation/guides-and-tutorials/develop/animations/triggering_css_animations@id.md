@@ -109,7 +109,7 @@ Anda dapat menambahkan dan menghapus berapa pun jumlah kelas CSS dengan status y
   <script
     async
     custom-element="amp-bind"
-    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+    src="https://ampjs.org/v0/amp-bind-0.1.js"
   ></script>
   <style amp-custom>
     div {

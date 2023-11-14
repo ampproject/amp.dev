@@ -50,7 +50,7 @@ AMP 电子邮件格式提供了可在电子邮件中使用的[一部分 AMP 组�
         visibility: hidden;
       }
     </style>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
   </head>
   <body>
     Hello, world.
@@ -64,7 +64,7 @@ AMP 电子邮件必须
 - <a name="ampd"></a>包含顶级 `<html ⚡4email>` 标记（也接受 `<html amp4email>`）。[🔗](#ampd)
 - <a name="crps"></a>包含 `<head>` 和 `<body>` 标记（它们在 HTML 中为可选标记）。[🔗](#crps)
 - <a name="chrs"></a>包含 `<meta charset="utf-8">` 标记，作为其 head 标记的第一个子项。[🔗](#chrs)
-- <a name="scrpt"></a>在其 head 标记内包含 `<script async src="https://cdn.ampproject.org/v0.js"></script>`。[🔗](#scrpt)
+- <a name="scrpt"></a>在其 head 标记内包含 `<script async src="https://ampjs.org/v0.js"></script>`。[🔗](#scrpt)
 - <a name="boilerplate"></a>在其 head 标记内包含 amp4email 样板 (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) 以在 AMP JS 加载完成前隐藏内容。[🔗](#boilerplate)
 
 整个 AMPHTML 标记不得超过 200,000 个字节。

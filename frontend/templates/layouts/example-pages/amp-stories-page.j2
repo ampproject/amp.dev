@@ -9,18 +9,18 @@
   <title>{{export.title|e}} - {{_('Example')|e}} {{example.index|e}}</title>
 {% endif %}
 {% if not example.has_amp_script() %}
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async src="https://ampjs.org/v0.js"></script>
 {% endif %}
 {% if not example.has_tag_in_head('script', 'custom-element', 'amp-story') %}
-  <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+  <script async custom-element="amp-story" src="https://ampjs.org/v0/amp-story-1.0.js"></script>
 {% endif %}
 {% for dependency in example.imports if dependency %}
 {% if not example.has_import_in_head(dependency) and dependency.name != 'amp-story' %}
-  <script custom-element="{{dependency.name}}" src="https://cdn.ampproject.org/v0/{{dependency.name}}-{{dependency.version}}.js" async></script>
+  <script custom-element="{{dependency.name}}" src="https://ampjs.org/v0/{{dependency.name}}-{{dependency.version}}.js" async></script>
 {% endif %}
 {% endfor %}
 {% if example.template and not example.has_import_in_head(example.template) %}
-  <script custom-template="{{example.template.name}}" src="https://cdn.ampproject.org/v0/{{example.template.name}}-{{example.template.version}}.js" async></script>
+  <script custom-template="{{example.template.name}}" src="https://ampjs.org/v0/{{example.template.name}}-{{example.template.version}}.js" async></script>
 {% endif %}
 {% if not example.has_tag_in_head('link', 'rel', 'canonical') %}
   <link rel="canonical" href="{{export.canonical}}">
