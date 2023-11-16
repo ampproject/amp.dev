@@ -23,7 +23,7 @@ const fetch = require('node-fetch');
 const signale = require('signale');
 const {BUILD} = require('@lib/utils/project').paths;
 
-const VALIDATOR_SCRIPT_URL = 'https://cdn.ampproject.org/v0/validator_wasm.js';
+const VALIDATOR_SCRIPT_URL = 'https://ampjs.org/v0/validator_wasm.js';
 const VALIDATOR_TARGET_PATH = join(BUILD, 'testing/validator.js');
 
 /**
@@ -61,6 +61,8 @@ async function _doDownloadTestResources(timeout = 10000) {
   const pageUrl = new URL(VALIDATOR_SCRIPT_URL);
   const fetchResponse = await fetch(pageUrl, {timeout});
 
+  console.log(VALIDATOR_SCRIPT_URL);
+  console.log('fetchResponse', fetchResponse.status);
   if (fetchResponse.status && fetchResponse.status === 200) {
     mkdirp(dirname(VALIDATOR_TARGET_PATH));
     fs.writeFileSync(VALIDATOR_TARGET_PATH, await fetchResponse.text());
