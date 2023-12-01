@@ -94,7 +94,7 @@ jobs:
           gulp buildPrepare
 
       - name: Storing build artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: build-setup
           path: artifacts/setup.tar.gz
@@ -172,7 +172,7 @@ jobs:
           gulp buildPages --locales ${{ matrix.language }}
 
       - name: Storing build artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: pages-${{ github.run_id }}-${{ matrix.language }}
           path: artifacts
