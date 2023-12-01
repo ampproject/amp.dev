@@ -141,7 +141,7 @@ jobs:
           pip install grow --upgrade-strategy eager
 
       - name: Fetching build artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: build-setup
           path: artifacts
@@ -186,7 +186,7 @@ jobs:
         run: npm install
 
       - name: Fetching build artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           path: artifacts
 
