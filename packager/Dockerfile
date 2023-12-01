@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Use an official Go runtime as a parent image
-FROM golang:1.16
+FROM golang:1.21
 
 ENV GO111MODULE=on
 
