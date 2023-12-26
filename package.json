@@ -113,7 +113,7 @@
 		"uuid": "8.3.2",
 		"vinyl": "2.2.1",
 		"web-push": "3.4.5",
-		"ws": "8.2.2"
+		"ws": "8.16.0"
 	},
 	"devDependencies": {
 		"@ampproject/toolbox-cache-url": "2.9.0",
