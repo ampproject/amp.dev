@@ -64,7 +64,7 @@
 		"@ampproject/toolbox-optimizer": "2.9.0",
 		"@google-cloud/datastore": "6.5.0",
 		"@iarna/toml": "2.2.5",
-		"acorn": "8.5.0",
+		"acorn": "8.11.3",
 		"buffer": "6.0.3",
 		"busboy": "1.6.0",
 		"casual": "1.6.2",
