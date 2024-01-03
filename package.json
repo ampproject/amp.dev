@@ -86,7 +86,7 @@
 		"iltorb": "2.4.5",
 		"ioredis": "4.27.9",
 		"jimp": "0.16.1",
-		"joi": "17.4.2",
+		"joi": "17.11.0",
 		"js-yaml": "4.1.0",
 		"json-tree-view": "0.4.12",
 		"linkifyjs": "2.1.9",
