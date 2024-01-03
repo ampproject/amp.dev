@@ -155,7 +155,7 @@
 		"gulp-once": "2.1.1",
 		"gulp-sass": "5.0.0",
 		"gulp-strip-css-comments": "2.0.0",
-		"handlebars": "4.7.7",
+		"handlebars": "4.7.8",
 		"handlebars-loader": "1.7.1",
 		"handlebars-registrar": "1.5.2",
 		"highlight.js": "11.2.0",
