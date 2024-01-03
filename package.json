@@ -93,7 +93,7 @@
 		"lru-cache": "6.0.0",
 		"merge2": "1.4.1",
 		"middy": "0.36.0",
-		"module-alias": "2.2.2",
+		"module-alias": "2.2.3",
 		"mri": "1.2.0",
 		"multer": "1.4.3",
 		"node-fetch": "2.6.2",
