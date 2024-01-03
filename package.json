@@ -131,7 +131,7 @@
 		"@rollup/plugin-replace": "3.0.0",
 		"absolutify": "0.1.0",
 		"amphtml-validator": "1.0.35",
-		"archiver": "5.3.0",
+		"archiver": "5.3.2",
 		"babel-eslint": "10.1.0",
 		"babel-loader": "8.3.0",
 		"clean-css": "5.1.5",
