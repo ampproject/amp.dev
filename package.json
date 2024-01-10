@@ -70,7 +70,7 @@
 		"casual": "1.6.2",
 		"cheerio": "1.0.0-rc.3",
 		"client-sessions": "0.8.0",
-		"cookie": "0.5.0",
+		"cookie": "0.6.0",
 		"cookie-parser": "1.4.5",
 		"cors": "2.8.5",
 		"crypto-browserify": "3.12.0",
