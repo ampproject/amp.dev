@@ -100,7 +100,7 @@
 		"node-zopfli-es": "1.0.7",
 		"nunjucks": "3.2.4",
 		"p-queue": "6.6.2",
-		"postcss": "8.4.31",
+		"postcss": "8.4.33",
 		"postcss-css-variables": "0.19.0",
 		"process": "0.11.10",
 		"randomstring": "1.2.1",
