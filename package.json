@@ -112,7 +112,7 @@
 		"util": "0.12.4",
 		"uuid": "8.3.2",
 		"vinyl": "2.2.1",
-		"web-push": "3.6.6",
+		"web-push": "3.6.7",
 		"ws": "8.2.2"
 	},
 	"devDependencies": {
