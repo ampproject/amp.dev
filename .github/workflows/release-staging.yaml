@@ -158,7 +158,7 @@ jobs:
           pip install grow --upgrade-strategy eager
 
       - name: Fetching build artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: build-setup
           path: artifacts
@@ -207,7 +207,7 @@ jobs:
           export_default_credentials: true
 
       - name: Fetching build artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           path: artifacts
 
