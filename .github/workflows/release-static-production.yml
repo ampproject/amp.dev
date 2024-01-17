@@ -32,7 +32,7 @@ jobs:
         with:
           node-version: 14
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         if: ${{ !env.ACT }}
         with:
           path: '**/node_modules'
@@ -60,7 +60,7 @@ jobs:
         with:
           node-version: 14
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         if: ${{ !env.ACT }}
         with:
           path: '**/node_modules'
@@ -116,7 +116,7 @@ jobs:
         with:
           node-version: 14
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         if: ${{ !env.ACT }}
         with:
           path: '**/node_modules'
@@ -176,7 +176,7 @@ jobs:
         with:
           node-version: 14
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         if: ${{ !env.ACT }}
         with:
           path: '**/node_modules'
