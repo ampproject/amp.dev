@@ -39,7 +39,7 @@ jobs:
         uses: google-github-actions/setup-gcloud@v0
 
       - name: Cloning repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setting up Node.js
         uses: actions/setup-node@v4
@@ -69,7 +69,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cloning repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setting up Node.js
         uses: actions/setup-node@v4
@@ -126,7 +126,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cloning repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setting up Node.js
         uses: actions/setup-node@v4
@@ -183,7 +183,7 @@ jobs:
     environment: Staging
     steps:
       - name: Cloning repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setting up Node.js
         uses: actions/setup-node@v4
