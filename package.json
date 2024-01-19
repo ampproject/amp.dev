@@ -78,7 +78,7 @@
 		"dropzone": "5.9.2",
 		"express": "4.17.1",
 		"express-formidable": "1.2.0",
-		"gcp-metadata": "4.3.1",
+		"gcp-metadata": "6.1.0",
 		"google-spreadsheet": "3.1.15",
 		"gulp-file": "0.4.0",
 		"helmet-csp": "3.4.0",
