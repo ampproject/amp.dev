@@ -1,2 +1,10 @@
 {
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "packagePatterns": [".*"],
+      "groupName": "packages",
+      "schedule": ["after 4am on sunday"]
+    }
+  ]
 }
