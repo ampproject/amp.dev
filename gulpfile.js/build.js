@@ -440,14 +440,14 @@ function buildPages(done) {
               from = `https://go.amp.dev${from}`;
 
               // we only want to update the URL of shorturls that point to relative URLs
-              if (!to.startsWith('http')) {
+              if (!to.startsWith('http://') && !to.startsWith('https://')) {
                 to = `https://amp.dev${to}`;
               }
 
               return {
                 from,
                 to,
-                'status': 200,
+                'status': 302,
                 'force': true,
               };
             });
