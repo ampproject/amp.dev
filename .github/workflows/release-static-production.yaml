@@ -30,12 +30,8 @@ jobs:
       - name: Setting up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: lts
-
-      - uses: actions/cache@v4
-        with:
-          path: '**/node_modules'
-          key: node_modules-${{ hashFiles('**/package-lock.json') }}
+          node-version: lts/*
+          cache: npm
 
       - name: Installing Node.js packages
         run: npm ci
@@ -57,15 +53,11 @@ jobs:
       - name: Setting up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: lts
-
-      - uses: actions/cache@v4
-        with:
-          path: '**/node_modules'
-          key: node_modules-${{ hashFiles('**/package-lock.json') }}
+          node-version: lts/*
+          cache: npm
 
       - name: Installing Node.js packages
-        run: mpm ci
+        run: npm ci
 
       - name: Preparing build
         env:
@@ -112,15 +104,11 @@ jobs:
       - name: Setting up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: lts
-
-      - uses: actions/cache@v4
-        with:
-          path: '**/node_modules'
-          key: node_modules-${{ hashFiles('**/package-lock.json') }}
+          node-version: lts/*
+          cache: npm
 
       - name: Installing Node.js packages
-        run: mpm ci
+        run: npm ci
 
       - name: Setting up Python
         uses: actions/setup-python@v5
@@ -166,15 +154,11 @@ jobs:
       - name: Setting up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: lts
-
-      - uses: actions/cache@v4
-        with:
-          path: '**/node_modules'
-          key: node_modules-${{ hashFiles('**/package-lock.json') }}
+          node-version: lts/*
+          cache: npm
 
       - name: Installing Node.js packages
-        run: mpm ci
+        run: npm ci
 
       - name: Fetching build artifacts
         uses: actions/download-artifact@v4

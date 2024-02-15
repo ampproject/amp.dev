@@ -15,15 +15,11 @@ jobs:
       - name: Setting up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: lts
-
-      - uses: actions/cache@v4
-        with:
-          path: '**/node_modules'
-          key: node_modules-${{ hashFiles('**/package-lock.json') }}
+          node-version: lts/*
+          cache: npm
 
       - name: Installing Node.js packages
-        run: mpm ci
+        run: npm ci
 
       - name: Linting JavaScript files
         run: |
