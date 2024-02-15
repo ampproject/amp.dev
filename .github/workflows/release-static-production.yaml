@@ -30,7 +30,7 @@ jobs:
       - name: Setting up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version: lts
 
       - uses: actions/cache@v4
         with:
@@ -57,7 +57,7 @@ jobs:
       - name: Setting up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version: lts
 
       - uses: actions/cache@v4
         with:
@@ -112,7 +112,7 @@ jobs:
       - name: Setting up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version: lts
 
       - uses: actions/cache@v4
         with:
@@ -166,7 +166,7 @@ jobs:
       - name: Setting up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version: lts
 
       - uses: actions/cache@v4
         with:
