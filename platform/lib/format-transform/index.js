@@ -116,14 +116,14 @@ class FormatTransform {
       return;
     }
 
-    comment.type = null;
-    comment.data = null;
+    comment.type = 'text';
+    comment.data = '';
 
     let next = comment.next;
     while (next) {
       const type = next.type;
-      next.type = null;
-      next.data = null;
+      next.type = 'text';
+      next.data = '';
 
       if (type !== 'text') {
         break;

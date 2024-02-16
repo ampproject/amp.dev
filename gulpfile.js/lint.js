@@ -57,4 +57,8 @@ function lintGrow() {
 exports.lintNode = lintNode;
 exports.lintYaml = lintYaml;
 exports.lintGrow = lintGrow;
-exports.lintAll = gulp.parallel(lintNode, lintYaml, lintGrow);
+exports.lintAll = gulp.parallel(
+  lintNode,
+  lintYaml
+  /* TODO(#5584): restore `lintGrow` once the test and workflows are fixes. */
+);

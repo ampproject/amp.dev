@@ -127,19 +127,19 @@ describe('formatTransform', () => {
     const input = s(`<!doctype html><html ⚡><head></head>
 <body>
 <!-- comment @formats(websites) -->
-<div>foo</div>
+  <div>foo</div>
 <!-- comment -->
-<div>bar</div>
+  <div>bar</div>
 <!-- comment @formats(email) -->
-<div>baz</div>
+  <div>baz</div>
 </body>
 </html>`);
     const want = s(`<!doctype html><html ⚡4email data-css-strict><head></head>
 <body>
 <!-- comment -->
-<div>bar</div>
+  <div>bar</div>
 <!-- comment  -->
-<div>baz</div>
+  <div>baz</div>
 </body>
 </html>`);
 

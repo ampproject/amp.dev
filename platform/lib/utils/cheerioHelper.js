@@ -22,7 +22,7 @@
  * @return {String}
  */
 function htmlContent(dom) {
-  let html = dom.html();
+  let html = dom.html({_useHtmlParser2: true});
   html = html.replace(
     'xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"',
     'xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"'
