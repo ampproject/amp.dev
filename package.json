@@ -38,11 +38,7 @@
 		"_test:pixi:e2e": "APP_ENV=local jest --forceExit -c e2e.jest.config.js",
 		"test:grow-extensions": "cd pages/extensions && if which grow; then python3 -m unittest discover -p \"*_test.py\"; else echo grow not installed with pip. skip tests; fi"
 	},
-	"keywords": [
-		"amphtml",
-		"framework",
-		"documentation"
-	],
+	"keywords": ["amphtml", "framework", "documentation"],
 	"author": "The AMP HTML Authors",
 	"license": "Apache-2.0",
 	"signale": {
@@ -53,10 +49,7 @@
 		"@boilerplate": "boilerplate",
 		"@lib": "platform/lib"
 	},
-	"browserslist": [
-		"last 2 versions",
-		"not dead"
-	],
+	"browserslist": ["last 2 versions", "not dead"],
 	"dependencies": {
 		"@ampproject/toolbox-cache-list": "2.9.0",
 		"@ampproject/toolbox-cors": "2.9.0",
@@ -105,7 +98,7 @@
 		"process": "0.11.10",
 		"randomstring": "1.3.0",
 		"rcs-core": "3.7.1",
-		"rss-to-json": "2.1.1",
+		"rss-to-json": "2.1.0",
 		"shrink-ray-current": "4.1.3",
 		"signale": "1.4.0",
 		"stream-browserify": "3.0.0",
