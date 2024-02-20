@@ -2,6 +2,7 @@
 name: 'Test: Playground'
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'package.json'

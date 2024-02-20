@@ -2,6 +2,7 @@
 name: 'Lint: YAML'
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - '**/*.yml'

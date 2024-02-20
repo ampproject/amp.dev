@@ -2,6 +2,7 @@
 name: 'Lint: JavaScript'
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - '**/*.js'

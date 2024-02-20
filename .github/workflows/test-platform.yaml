@@ -2,6 +2,7 @@
 name: 'Test: Platform'
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'package.json'
