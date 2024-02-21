@@ -20,9 +20,9 @@ const utils = require('@lib/utils');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
-const products = require(utils.project.absolute(
-  '/examples/static/samples/json/related_products.json'
-));
+const products = require(
+  utils.project.absolute('/examples/static/samples/json/related_products.json')
+);
 const productNames = products.items.map((item) => {
   return item.name;
 });
@@ -102,9 +102,11 @@ function handleProductsAutosuggestRequest(request, response) {
 
 function handleLoadMoreRequest(request, response) {
   const moreItemsPageIndex = request.query.moreItemsPageIndex;
-  const productsFile = require(utils.project.absolute(
-    `/examples/static/samples/json/more_related_products_page${moreItemsPageIndex}.json`
-  ));
+  const productsFile = require(
+    utils.project.absolute(
+      `/examples/static/samples/json/more_related_products_page${moreItemsPageIndex}.json`
+    )
+  );
 
   hasMorePages = Number(moreItemsPageIndex) !== 1;
 

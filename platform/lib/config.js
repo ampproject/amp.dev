@@ -65,9 +65,9 @@ class Config {
       this.test = false;
     }
     signale.info(`Config: environment=${environment} test=${this.test}`);
-    const env = require(utils.project.absolute(
-      `platform/config/environments/${environment}.json`
-    ));
+    const env = require(
+      utils.project.absolute(`platform/config/environments/${environment}.json`)
+    );
 
     this.environment = env.name;
     this.hosts = env.hosts;
@@ -83,9 +83,9 @@ class Config {
 
     this.redis = env.redis || {};
 
-    this.shared = require(utils.project.absolute(
-      'platform/config/shared.json'
-    ));
+    this.shared = require(
+      utils.project.absolute('platform/config/shared.json')
+    );
 
     // Globally initialize command line arguments for use across all modules
     this.options = options;

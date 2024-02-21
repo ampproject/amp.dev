@@ -27,9 +27,9 @@ const {
   GitHubImporter,
   DEFAULT_ORGANISATION,
 } = require('@lib/pipeline/gitHubImporter');
-const config = require(utils.project.absolute(
-  'platform/config/imports/roadmap.json'
-));
+const config = require(
+  utils.project.absolute('platform/config/imports/roadmap.json')
+);
 const log = require('@lib/utils/log')('Import Roadmap');
 
 /* Path where the roadmap data gets imported to */
