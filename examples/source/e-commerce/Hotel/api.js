@@ -18,9 +18,9 @@
 const express = require('express');
 const {setMaxAge} = require('@lib/utils/cacheHelpers');
 const utils = require('@lib/utils');
-const rooms = require(utils.project.absolute(
-  '/examples/static/samples/json/rooms.json'
-));
+const rooms = require(
+  utils.project.absolute('/examples/static/samples/json/rooms.json')
+);
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();

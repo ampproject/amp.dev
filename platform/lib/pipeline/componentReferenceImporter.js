@@ -31,8 +31,9 @@ const ComponentReferenceDocument = require('./componentReferenceDocument.js');
 const ComponentVersionImporter = require('./ComponentVersionImporter');
 
 const log = require('@lib/utils/log')('Component Reference Importer');
-const config = require(__dirname +
-  '/../../config/imports/componentReference.json');
+const config = require(
+  __dirname + '/../../config/imports/componentReference.json'
+);
 
 // Where to save the documents/collection to
 const DESTINATION_BASE_PATH =
