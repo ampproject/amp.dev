@@ -10,17 +10,6 @@ creation:
       height: 506
     formats:
       - ads
- - name: Zaymo
-    url: https://zaymo.com/
-    type: Email Editor
-    description: Let ecommerce brands easily convert their existing email templates to AMP emails.
-    image:
-      src: /static/img/tools/zaymo.png
-      width: 600
-      height: 94
-      fit: contain
-    formats:
-      - email
   - name: Lodago
     url: https://lodago.com/en/
     type: CRM plugin
@@ -312,6 +301,17 @@ creation:
       height: 776
     formats:
       - stories
+  - name: Zaymo
+    url: https://zaymo.com/
+    type: Email Editor
+    description: Let ecommerce brands easily convert their existing email templates to AMP emails.
+    image:
+      src: /static/img/tools/zaymo.png
+      width: 600
+      height: 94
+      fit: contain
+    formats:
+      - email
 platforms:
   - name: AMP for WordPress
     official: true
