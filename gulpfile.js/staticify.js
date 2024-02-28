@@ -36,6 +36,7 @@ const {
   FORMAT_WEBSITES,
   SUPPORTED_FORMATS,
 } = require('@lib/amp/formatHelper.js');
+const {cheerioOptions} = require('../platform/lib/common/cheerioOptions');
 const coursesPath = '/documentation/courses';
 const coursesRegex = new RegExp(`^(.+)(?:${coursesPath})(.*)$`);
 
@@ -208,7 +209,7 @@ async function staticify(done) {
           through.obj(function (file, enc, callback) {
             let renderedPage = file.contents.toString();
 
-            const $ = Cheerio.load(renderedPage);
+            const $ = Cheerio.load(renderedPage, cheerioOptions);
             const $links = $('.nav-link');
             const $levelToggle = $('.toggle-button input');
 
