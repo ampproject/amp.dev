@@ -16,7 +16,7 @@ jobs:
       - name: Setting up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version: 16
           cache: npm
 
       - name: Installing Node.js packages
