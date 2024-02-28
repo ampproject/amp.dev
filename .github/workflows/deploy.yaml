@@ -1,11 +1,21 @@
 ---
-name: 'Release: Static Production'
+name: Deploy
+run-name: Deploy to ${{ inputs.deploy-environment || 'Staging' }}
 
 on:
   workflow_dispatch:
+    inputs:
+      deploy-environment:
+        description: 'Which environment to deploy to'
+        required: true
+        type: choice
+        options:
+          - Staging
+          - Production
+        default: Staging
   push:
     branches:
-      - static-production-amp-dev
+      - main
 
 jobs:
   queue:
@@ -174,5 +184,7 @@ jobs:
           npx gulp buildFinalize
 
       - name: Deploying
+        env:
+          DEPLOY_ENVIRONMENT: ${{ inputs.deploy-environment || 'Staging' }}
         run: |
           npx gulp staticDeploy

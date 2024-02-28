@@ -1,4 +1,5 @@
 [build]
+  base = "./dist/examples"
   publish = "./sources"
 
 [[headers]]
@@ -32,6 +33,11 @@
   to = "/.netlify/functions/examples_api_amp-form_submit_form_input_text_xhr"
   status = 200
   force=true
+
+[[redirects]]
+  from = "/documentation/examples/news-publishing/live_blog"
+  to = "/.netlify/functions/examples_source_news_publishing_amp-live-list_api"
+  status = 200
 
 [[redirects]]
   from = "/documentation/examples/*/embed"
@@ -68,10 +74,5 @@
   to = "https://amp.dev/static/samples/img/:splat"
   status = 200
 
-[[redirects]]
-  from = "/documentation/examples/news-publishing/live_blog"
-  to = "/.netlify/functions/examples_source_news_publishing_amp-live-list_api"
-  status = 200
-
 [functions]
-  directory = "../../netlify/functions/"
+  directory = "./netlify/functions/"
