@@ -144,7 +144,9 @@ module.exports = (env, argv) => {
     },
 
     devServer: {
-      writeToDisk: true,
+      devMiddleware: {
+        writeToDisk: true,
+      },
     },
   };
 };
