@@ -19,6 +19,7 @@ const amphtmlValidator = require('amphtml-validator');
 const {htmlContent} = require('@lib/utils/cheerioHelper');
 const config = require('@lib/config.js');
 const formats = require('./formats');
+const {cheerioOptions} = require('../common/cheerioOptions');
 
 const host = config.hosts.platform;
 const FORMATS_REGEXP = /@formats\(([^)]+)\)/;
@@ -49,7 +50,7 @@ class FormatTransform {
       throw new Error(`Unsupported transform format: ${target}`);
     }
     const {transforms, validatorRuntime} = this.formats[target];
-    const $ = cheerio.load(input, {decodeEntities: false});
+    const $ = cheerio.load(input, cheerioOptions);
     this.applyCommentFormatFilters_($, target);
     for (const selector of Object.keys(transforms)) {
       const elements = $(selector);
@@ -116,14 +117,14 @@ class FormatTransform {
       return;
     }
 
-    comment.type = null;
-    comment.data = null;
+    comment.type = 'text';
+    comment.data = '';
 
     let next = comment.next;
     while (next) {
       const type = next.type;
-      next.type = null;
-      next.data = null;
+      next.type = 'text';
+      next.data = '';
 
       if (type !== 'text') {
         break;

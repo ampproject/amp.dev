@@ -34,6 +34,7 @@ module.exports = (env, argv) => {
       fallback: {
         util: require.resolve('util/util.js'),
         stream: require.resolve('stream-browserify'),
+        process: false,
       },
     },
     optimization: {
