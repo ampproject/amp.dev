@@ -1,10 +1,6 @@
 [build]
-  base = "../../../"
-  # Directory to change to before starting a build.
-  # This is where we will look for package.json/.nvmrc/etc.
-  # If not set, defaults to the root directory.
-
-  publish = "dist/pages"
+  base = "./dist/pages"
+  publish = "."
 
 [[headers]]
   for = "/*"
@@ -447,4 +443,4 @@ Content-Type="application/json"
   force=true
 
 [functions]
-  directory = "../../netlify/functions/"
+  directory = "./netlify/functions/"

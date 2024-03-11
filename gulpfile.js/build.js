@@ -179,7 +179,7 @@ async function buildPlayground() {
     .pipe(gulp.dest(`${project.paths.DIST}/playground`));
 
   return await gulp
-    .src(project.absolute('playground/netlify.toml'))
+    .src(project.absolute('netlify/configs/playground.amp.dev/netlify.toml'))
     .pipe(gulp.dest(`${project.paths.DIST}/playground`));
 }
 
@@ -453,13 +453,10 @@ function buildPages(done) {
             });
 
             netlifyConfig = toml.parse(netlifyConfig);
-            netlifyConfig.build.publish = '.';
             netlifyConfig.redirects = [
               ...(netlifyConfig.redirects || []),
               ...redirects,
             ];
-
-            delete netlifyConfig.build.base;
 
             netlifyConfig = toml.stringify(netlifyConfig, 0, 2);
 
