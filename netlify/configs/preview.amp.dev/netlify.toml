@@ -41,12 +41,12 @@
 
 [[redirects]]
   from = "/documentation/examples/*/embed"
-  to = "/:splat"
+  to = "/sources/:splat"
   status = 200
 
 [[redirects]]
   from = "/documentation/examples/*"
-  to = "/:splat"
+  to = "/sources/:splat"
   status = 200
 
 [[redirects]]
