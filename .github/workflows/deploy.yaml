@@ -15,7 +15,8 @@ on:
         default: Staging
   push:
     branches:
-      - main
+      - 'main'
+      - 'gha-deploy-*'
 
 jobs:
   queue:

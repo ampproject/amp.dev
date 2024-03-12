@@ -74,5 +74,10 @@
   to = "https://amp.dev/static/samples/img/:splat"
   status = 200
 
+[[redirects]]
+  from = "/*"
+  to = "/sources/:splat"
+  status = 200
+
 [functions]
   directory = "./netlify/functions/"
