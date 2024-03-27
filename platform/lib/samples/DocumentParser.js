@@ -270,8 +270,8 @@ class DocumentParser {
       AMPHTML_BOILERPLATE
     );
     return string.replace(
-      'https://cdn.ampproject.org/amp4ads-v0.js',
-      'https://cdn.ampproject.org/v0.js'
+      'https://ampjs.org/amp4ads-v0.js',
+      'https://ampjs.org/v0.js'
     );
   }
 

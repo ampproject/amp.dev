@@ -30,7 +30,7 @@ Busca conteúdo dinamicamente a partir de um endpoint JSON CORS e o renderiza us
 <table>
   <tr>
     <td width="40%"><strong>Script obrigatório</strong></td>
-    <td><code>&lt;script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-list" src="https://ampjs.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layouts compatíveis</a></strong></td>
@@ -298,7 +298,7 @@ Se o atributo `binding` não for fornecido, o padrão será `always`.
 
 ## Experimental: carregar mais e rolagem infinita (amp-list-load-more) <a name="common-attributes"></a>
 
-Introduzimos o experimento `amp-list-load-more` como uma implementação de paginação e rolagem infinita em `<amp-list>`. É possível ativar esse recurso ativando o experimento "amp-list-load-more" na [página de experimentos](https://cdn.ampproject.org/experiments.html) (link em inglês) e adicionando o atributo `load-more` a `<amp-list>`. Esse recurso está em versão de teste de origem, e as APIs finais podem mudar.
+Introduzimos o experimento `amp-list-load-more` como uma implementação de paginação e rolagem infinita em `<amp-list>`. É possível ativar esse recurso ativando o experimento "amp-list-load-more" na [página de experimentos](https://ampjs.org/experiments.html) (link em inglês) e adicionando o atributo `load-more` a `<amp-list>`. Esse recurso está em versão de teste de origem, e as APIs finais podem mudar.
 
 #### Exemplo de uso <a name="load-more-and-infinite-scroll"></a>
 

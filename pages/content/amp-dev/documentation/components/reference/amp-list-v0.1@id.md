@@ -30,7 +30,7 @@ Mengambil konten secara dinamis dari endpoint CORS JSON dan merendernya mengguna
 <table>
   <tr>
     <td width="40%"><strong>Skrip yang Diperlukan</strong></td>
-    <td><code>&lt;script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-list" src="https://ampjs.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Tata Letak yang Didukung</a></strong></td>
@@ -297,7 +297,7 @@ Jika atribut `binding` tidak disediakan, setelan default-nya adalah `always`.
 
 ## Eksperimental: Muat Lebih Banyak dan Scroll Tanpa Batas (amp-list-load-more) <a name="common-attributes"></a>
 
-Kami memperkenalkan eksperimen `amp-list-load-more` sebagai implementasi untuk penomoran halaman dan scroll tanpa batas di `<amp-list>`. Anda dapat menggunakan fitur ini dengan mengaktifkan eksperimen 'amp-list-load-more' di [halaman eksperimen](https://cdn.ampproject.org/experiments.html) dan menambahkan atribut `load-more` ke `<amp-list>`. Saat ini, fitur ini masih dalam uji coba, dan API akhirnya dapat berubah.
+Kami memperkenalkan eksperimen `amp-list-load-more` sebagai implementasi untuk penomoran halaman dan scroll tanpa batas di `<amp-list>`. Anda dapat menggunakan fitur ini dengan mengaktifkan eksperimen 'amp-list-load-more' di [halaman eksperimen](https://ampjs.org/experiments.html) dan menambahkan atribut `load-more` ke `<amp-list>`. Saat ini, fitur ini masih dalam uji coba, dan API akhirnya dapat berubah.
 
 #### Contoh Penggunaan <a name="load-more-and-infinite-scroll"></a>
 

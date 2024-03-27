@@ -47,7 +47,7 @@ description: プロジェクトディレクトリには、article.html という
 AMP ライブラリを追加するには、`<head>` タグの末尾に次の行を**追加**します。
 
 ```html
-<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async src="https://ampjs.org/v0.js"></script>
 ```
 
 [http://localhost:8000/article.amp.html](http://localhost:8000/article.amp.html) にある新しい `article.amp.html` ページをブラウザで**読み込み**、Chrome（または任意のブラウザ）で[開発者コンソール](https://developer.chrome.com/devtools/docs/console)を開きます。

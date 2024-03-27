@@ -64,9 +64,9 @@ class SourceCodeExporterTestCase(unittest.TestCase):
       '<head>\n'
       ' <meta charset="utf-8">\n'
       ' <title>Title</title>\n'
-      ' <script async src="https://cdn.ampproject.org/v0.js"></script>\n'
-      ' <script async custom-element="amp-date-display" src="https://cdn.ampproject.org/v0/amp-date-display-0.1.js"></script>\n'
-      ' <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>\n'
+      ' <script async src="https://ampjs.org/v0.js"></script>\n'
+      ' <script async custom-element="amp-date-display" src="https://ampjs.org/v0/amp-date-display-0.1.js"></script>\n'
+      ' <script async custom-template="amp-mustache" src="https://ampjs.org/v0/amp-mustache-0.2.js"></script>\n'
       ' <link rel="canonical" href="{{doc.url}}">\n'
       ' <meta name="viewport" content="width=device-width">\n'
       ' <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>\n'
@@ -98,7 +98,7 @@ class SourceCodeExporterTestCase(unittest.TestCase):
     example_doc = self.get_example_document(
       '<head>\n'
       ' <meta lang="en">\n'
-      ' <script async custom-element="amp-date-display" src="https://cdn.ampproject.org/v0/amp-date-display-0.1.js"></script>\n'
+      ' <script async custom-element="amp-date-display" src="https://ampjs.org/v0/amp-date-display-0.1.js"></script>\n'
       '</head>\n'
       '<body><h1>Headline</h1></body>\n')
     self.assertFalse(example_doc.has_tag_in_head('title'))
@@ -136,7 +136,7 @@ class SourceCodeExporterTestCase(unittest.TestCase):
       '<html amp lang="en">\n'
       '  <head>\n'
       '    <meta charset="utf-8">\n'
-      '    <script async src="https://cdn.ampproject.org/v0.js"></script>\n'
+      '    <script async src="https://ampjs.org/v0.js"></script>\n'
       '    <title>Hello, AMPs</title>\n'
       '    <link rel="canonical" href="{{doc.url}}">\n'
       '    <meta name="viewport" content="width=device-width">\n'

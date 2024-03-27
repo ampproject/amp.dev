@@ -32,7 +32,7 @@ Sunucu tarafında oluşturma şu üç şeyi yapar:
 
 ⁣ ** 1. AMP standart metnini kaldırır: **AMP yerleşimini kullanan her öğe için yerleşime özel biçimlendirme enjekte edilir.
 
-⁣** 2. Satır içi AMP'ye dahil CSS stilleri: **AMP standart metni, [AMP çalışma zamanı CSS stilleri](https://cdn.ampproject.org/v0.css) ile değiştirilir: `<style amp-runtime>...</style>`. Sunucu tarafında oluşturulmamış belgeler için, AMP bu stilleri çalışma zamanında ekler. Ancak, sunucu tarafında oluşturulan AMP sayfaları, AMP yerleşimlerinin AMP yüklenmeden önce çalışması için bunları gerekli kılar. Olası sürüm çakışmalarını önlemek için, çalışma zamanında AMP, i-amphtml-version="011905222334000" içinde belirtilen sürümün mevcut AMP sürümünden farklı olup olmadığını kontrol edecek ve değilse CSS'yi en son sürümle güncelleyecektir.
+⁣** 2. Satır içi AMP'ye dahil CSS stilleri: **AMP standart metni, [AMP çalışma zamanı CSS stilleri](https://ampjs.org/v0.css) ile değiştirilir: `<style amp-runtime>...</style>`. Sunucu tarafında oluşturulmamış belgeler için, AMP bu stilleri çalışma zamanında ekler. Ancak, sunucu tarafında oluşturulan AMP sayfaları, AMP yerleşimlerinin AMP yüklenmeden önce çalışması için bunları gerekli kılar. Olası sürüm çakışmalarını önlemek için, çalışma zamanında AMP, i-amphtml-version="011905222334000" içinde belirtilen sürümün mevcut AMP sürümünden farklı olup olmadığını kontrol edecek ve değilse CSS'yi en son sürümle güncelleyecektir.
 
 ```
 <style amp-runtime i-amphtml-version="011905222334000">html{overflow-x:hidden!important}html.i-amphtml-...</style>

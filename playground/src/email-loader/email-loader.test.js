@@ -70,7 +70,7 @@ Content-Type: text/x-amp-html; charset="UTF-8"
 <head>
   <meta charset="utf-8">
   <style amp4email-boilerplate>body{visibility:hidden}</style>
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async src="https://ampjs.org/v0.js"></script>
 </head>
 <body>
 Hello World in AMP!
@@ -87,7 +87,7 @@ Content-Type: text/html; charset="UTF-8"
 <head>
   <meta charset="utf-8">
   <style amp4email-boilerplate>body{visibility:hidden}</style>
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async src="https://ampjs.org/v0.js"></script>
 </head>
 <body>
 Hello World in AMP!

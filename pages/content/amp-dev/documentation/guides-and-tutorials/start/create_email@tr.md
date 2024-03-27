@@ -25,7 +25,7 @@ AMP playground, E-posta için AMP biçimini destekler ve AMP e-postalarınızı 
 <html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
     <style amp4email-boilerplate>
       body {
         visibility: hidden;
@@ -48,7 +48,7 @@ Bu, geçerli bir AMP e-postası olmak için gerekli tüm işaretlemeyi ve minimu
 Klasik HTML e-postalarından bazı önemli farklılıkları aramak için bir dakikanızı ayıralım:
 
 - AMP e-postaları, html etiketine `⚡4email` veya `amp4email` ekleyerek kendilerini bu şekilde tanımlamalıdır.
-- `<head>` etiketi, AMP çalışma zamanını yükleyen bir `<script>` etiketi de içermelidir. `<script async src="https://cdn.ampproject.org/v0.js"></script>`
+- `<head>` etiketi, AMP çalışma zamanını yükleyen bir `<script>` etiketi de içermelidir. `<script async src="https://ampjs.org/v0.js"></script>`
 - Başlangıçta içeriği AMP yüklenene kadar gizlemek için bir CSS standart metni. ` <style amp4email-boilerplate>body{visibility:hidden}</style>`
 
 Daha önce e-postalarla çalıştıysanız, bir e-postaya bir komut dosyası yerleştirme fikri kafanızdaki alarm zillerini tetikleyebilir! Emin olun, AMP e-postalarını destekleyen e-posta sağlayıcıları, yalnızca doğrulanmış AMP komut dosyalarının istemcilerinde çalışmasına izin veren şiddetli güvenlik kontrolleri uygular. Bu, dinamik ve etkileşimli özelliklerin doğrudan alıcıların posta kutularında herhangi bir güvenlik açığı olmadan çalışmasına izin verir! AMP e-postaları için gerekli biçimlendirme hakkında daha fazla bilgi için buraya bakın.
@@ -119,7 +119,7 @@ E-postanızın başına `amp-carousel` komut dosyasını ekleyin.
 <script
   async
   custom-element="amp-carousel"
-  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+  src="https://ampjs.org/v0/amp-carousel-0.1.js"
 ></script>
 ```
 
@@ -218,7 +218,7 @@ Bu eğitimde, kullanıcı o kedinin slaytında olduğunda, sahiplendirilebilir k
 <script
   async
   custom-element="amp-bind"
-  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+  src="https://ampjs.org/v0/amp-bind-0.1.js"
 ></script>
 ```
 

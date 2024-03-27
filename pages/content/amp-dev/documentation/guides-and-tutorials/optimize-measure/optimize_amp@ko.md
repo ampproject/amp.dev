@@ -44,11 +44,11 @@ AMP 페이지의 `<head>` 섹션에 권장되는 정렬은 다음과 같습니�
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="This is the AMP Boilerplate.">
-    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
-    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
+    <link rel="preload" as="script" href="https://ampjs.org/v0.js">
+    <link rel="preload" as="script" href="https://ampjs.org/v0/amp-experiment-0.1.js">
     <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-experiment" src="https://cdn.ampproject.org/v0/amp-experiment-0.1.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
+    <script async custom-element="amp-experiment" src="https://ampjs.org/v0/amp-experiment-0.1.js"></script>
     <!-- Import other AMP Extensions here -->
     <style amp-custom>
       /* Add your styles here */
@@ -68,15 +68,15 @@ AMP 페이지의 `<head>` 섹션에 권장되는 정렬은 다음과 같습니�
 
 1. 첫 번째 태그는 `meta charset` 태그여야 하며 그다음에는 남은 `meta` 태그를 배치해야 합니다.
 
-2. 다음으로 `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`를 활용해 AMP 런타임 `v0.js` `<script>` 태그를 미리 로드합니다. AMP 런타임이 로드될 때까지 [AMP 상용구는](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) `body { visibility:hidden }`를 통해 문서를 숨김 처리하므로 AMP 런타임은 최대한 빨리 다운로드를 시작해야 합니다. AMP 런타임을 미리 로드할 경우 브라우저에서 우선순위가 더 높은 스크립트를 다운로드하도록 지시할 수 있습니다. 이를 방지하는 방법을 알아보려면 [server-side-rendering](#server-side-rendering)을 참조하세요. {amp-img6} {/amp-img6}
+2. 다음으로 `<link as=script href=https://ampjs.org/v0.js rel=preload>`를 활용해 AMP 런타임 `v0.js` `<script>` 태그를 미리 로드합니다. AMP 런타임이 로드될 때까지 [AMP 상용구는](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) `body { visibility:hidden }`를 통해 문서를 숨김 처리하므로 AMP 런타임은 최대한 빨리 다운로드를 시작해야 합니다. AMP 런타임을 미리 로드할 경우 브라우저에서 우선순위가 더 높은 스크립트를 다운로드하도록 지시할 수 있습니다. 이를 방지하는 방법을 알아보려면 [server-side-rendering](#server-side-rendering)을 참조하세요. {amp-img6} {/amp-img6}
 
 3. 페이지에 렌더링 지연 확장자가 포함된 경우 (예: amp-experiment, amp-dynamic-css-classes, amp-story) 페이지 렌더링 시 AMP 런타임이 해당 확장자를 필요로 하므로 확장자를 미리 로드합니다.
 
 [sourcecode:html]
 
-<link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
-<link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
-<link as="script" rel="preload" href="https://cdn.ampproject.org/v0/story-1.0.js">[/sourcecode]
+<link as="script" rel="preload" href="https://ampjs.org/v0/amp-custom-css-0.1.js">
+<link as="script" rel="preload" href="https://ampjs.org/v0/amp-experiment-0.1.js">
+<link as="script" rel="preload" href="https://ampjs.org/v0/story-1.0.js">[/sourcecode]
 
 1. [사전 연결](https://www.igvita.com/2015/08/17/eliminating-roundtrips-with-preconnect/)을 사용하여 전체 출처 URL을 미리 알 수 없는 다른 출처에 대한 연결 속도를 개선합니다(예: Google Fonts 사용 시).
 
@@ -84,7 +84,7 @@ AMP 페이지의 `<head>` 섹션에 권장되는 정렬은 다음과 같습니�
 
 1. AMP 런타임을로드합니다:
 
-[sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
+[sourcecode:html]<script async src="https://ampjs.org/v0.js"></script>[/sourcecode]
 
 1. [렌더링 지연 확장자](https://github.com/ampproject/amphtml/blob/main/src/render-delaying-services.js)에 대한 `<script>` 태그를 지정합니다(예: [`amp-experiment`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md) 및 [`amp-story`](../../../documentation/components/reference/amp-story.md)
 2. 남은 확장자에 대한 `<script>` 태그를 지정합니다(예: [`amp-bind`](../../../documentation/components/reference/amp-bind.md) ...). 이러한 확장자는 렌더링 지연 확장자가 아닙니다. 그렇기에 초기 렌더링 시 중요한 대역폭을 차지할 수 있으므로 사전 로드되어선 안 됩니다.
@@ -189,7 +189,7 @@ AMP 사이트에서 서비스 워커 사용을 시작할 방법을 모색 중이
 
 사전 캐싱은 캐시된 AMP 페이지에서 고유 원본의 비 AMP 페이지로의 전환만이 아닌 캐시된 AMP 페이지에서 고유 원본의 AMP 페이지로 전환과도 관련이 있습니다. 그 이유는 AMP 캐시가 AMP 런타임 URL을 불변 URL에서 최신 릴리스 버전으로 재작성하기 때문입니다. 예시는 다음과 같습니다.
 
-`https://cdn.ampproject.org/v0.js` -> `https://cdn.ampproject.org/rtv/001515617716922/v0.js`.
+`https://ampjs.org/v0.js` -> `https://ampjs.org/rtv/001515617716922/v0.js`.
 
 결과적으로 고유 원본에서 지원되는 AMP 페이지에서 브라우저 캐싱이 유용하지 않으며 이런 경우 (버전이 없는) AMP 런타임을 다시 다운로드해야 합니다. 서비스 워커를 사용하면 버전이 없는 AMP 런타임을 사전 캐싱하여 전환 속도를 높일 수 있습니다. AMP 캐시가 AMP 런타임 URL을 버전화하는 이유를 자세히 알아보려면 [이 문서](https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer##versioned-amp-runtime)를 읽어보세요.
 

@@ -44,11 +44,11 @@ Berikut ini adalah urutan yang disarankan untuk bagian `<head>` di halaman AMP:
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="This is the AMP Boilerplate.">
-    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
-    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
+    <link rel="preload" as="script" href="https://ampjs.org/v0.js">
+    <link rel="preload" as="script" href="https://ampjs.org/v0/amp-experiment-0.1.js">
     <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-experiment" src="https://cdn.ampproject.org/v0/amp-experiment-0.1.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
+    <script async custom-element="amp-experiment" src="https://ampjs.org/v0/amp-experiment-0.1.js"></script>
     <!-- Import other AMP Extensions here -->
     <style amp-custom>
       /* Add your styles here */
@@ -68,15 +68,15 @@ Mari kita bahas langkah demi langkah:
 
 1. Tag pertama harus tag `meta charset`, diikuti oleh tag `meta` yang tersisa.
 
-2. Selanjutnya, muat terlebih dahulu tag `v0.js` `<script>` runtime AMP dengan `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`. Runtime AMP harus mulai mengunduh sesegera mungkin karena [boilerplate AMP](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) menyembunyikan dokumen melalui `body { visibility:hidden }` hingga runtime AMP telah dimuat. Memuat runtime AMP terlebih dahulu menjadi isyarat bagi browser untuk mengunduh skrip tersebut dengan prioritas yang lebih tinggi. Kunjungi [perenderan sisi server](#server-side-rendering) untuk belajar cara menghindari hal ini.
+2. Selanjutnya, muat terlebih dahulu tag `v0.js` `<script>` runtime AMP dengan `<link as=script href=https://ampjs.org/v0.js rel=preload>`. Runtime AMP harus mulai mengunduh sesegera mungkin karena [boilerplate AMP](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) menyembunyikan dokumen melalui `body { visibility:hidden }` hingga runtime AMP telah dimuat. Memuat runtime AMP terlebih dahulu menjadi isyarat bagi browser untuk mengunduh skrip tersebut dengan prioritas yang lebih tinggi. Kunjungi [perenderan sisi server](#server-side-rendering) untuk belajar cara menghindari hal ini.
 
 3. Jika halaman Anda menyertakan ekstensi penunda perenderan (cth., amp-experiment, amp-dynamic-css-classes, amp-story), muat terlebih dahulu ekstensi tersebut karena mereka dibutuhkan oleh runtime AMP untuk merender halaman.
 
 [sourcecode:html]
 
-<link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
-<link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
-<link as="script" rel="preload" href="https://cdn.ampproject.org/v0/story-1.0.js">[/sourcecode]
+<link as="script" rel="preload" href="https://ampjs.org/v0/amp-custom-css-0.1.js">
+<link as="script" rel="preload" href="https://ampjs.org/v0/amp-experiment-0.1.js">
+<link as="script" rel="preload" href="https://ampjs.org/v0/story-1.0.js">[/sourcecode]
 
 1. Gunakan [preconnect](https://www.igvita.com/2015/08/17/eliminating-roundtrips-with-preconnect/) untuk mempercepat koneksi ke asal lain di mana URL sumber daya lengkapnya tidak diketahui sebelumnya, contoh: saat menggunakan Google Fonts:
 
@@ -84,7 +84,7 @@ Mari kita bahas langkah demi langkah:
 
 1. Muat runtime AMP:
 
-[sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
+[sourcecode:html]<script async src="https://ampjs.org/v0.js"></script>[/sourcecode]
 
 1. Tentukan tag `<script>` untuk [ekstensi penunda perenderan ](https://github.com/ampproject/amphtml/blob/main/src/render-delaying-services.js) (cth.: [`amp-experiment`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md), dan [`amp-story`](../../../documentation/components/reference/amp-story.md)).
 2. Tentukan tag `<script>` untuk ekstensi yang tersisa (cth.: [`amp-bind`](../../../documentation/components/reference/amp-bind.md) ...). Ekstensi ini tidak menunda perenderan, dan oleh karena itu, tidak boleh dimuat sebelumnya karena dapat menghabiskan bandwidth penting untuk perenderan awal.
@@ -189,7 +189,7 @@ Jika Anda mencari cara untuk memulai dengan pekerja layanan di situs AMP Anda, l
 
 Menyimpan di cache sebelumnya tidak hanya relevan untuk beralih dari halaman AMP di cache ke halaman non-AMP di asal Anda sendiri, namun juga untuk beralih dari halaman AMP yang di cache ke halaman AMP di asal Anda sendiri. Alasannya adalah bahwa cache AMP menulis ulang URL runtime AMP dari URL abadi ke versi rilis terbaru, contohnya:
 
-`https://cdn.ampproject.org/v0.js` -> `https://cdn.ampproject.org/rtv/001515617716922/v0.js`.
+`https://ampjs.org/v0.js` -> `https://ampjs.org/rtv/001515617716922/v0.js`.
 
 Konsekuensinya adalah bahwa halaman AMP yang disajikan dari asal Anda tidak mendapatkan keuntungan dari penyimpanan browser di cache, dan dalam hal ini harus mengunduh (tanpa versi) runtime AMP kembali. Dengan pekerja layanan, Anda dapat menyimpan runtime AMP tanpa versi sebelumnya di cache dan mempercepat transisi. Untuk mengetahui selengkapnya tentang mengapa cache AMP mempunyai versi URL runtime AMP, bacalah [dokumen ini](https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer##versioned-amp-runtime).
 

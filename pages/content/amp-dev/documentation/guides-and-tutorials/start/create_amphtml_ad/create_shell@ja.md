@@ -40,7 +40,7 @@ description: 使い慣れているテキストエディタで、my-amphtml-ad.ht
 AMPHTML 広告には独自の AMP ランタイムバージョンが必要であるため、以下の `<script>` タグをドキュメントの `<head>` セクションに追加します。
 
 ```html
-<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+<script async src="https://ampjs.org/amp4ads-v0.js"></script>
 ```
 
 AMPHTML 広告クリエイティブには、AMP ページとは異なる非常に単純な[ボイラープレート](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#boilerplate)スタイル行が必要です。以下のコードを `<head>` セクションに追加します。
@@ -66,7 +66,7 @@ AMPHTML 広告にスタイルを指定するには、`<head>` セクションに
     <meta charset="utf-8" />
     <title>My amphtml ad</title>
     <meta name="viewport" content="width=device-width" />
-    <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+    <script async src="https://ampjs.org/amp4ads-v0.js"></script>
     <style amp4ads-boilerplate>
       body {
         visibility: hidden;

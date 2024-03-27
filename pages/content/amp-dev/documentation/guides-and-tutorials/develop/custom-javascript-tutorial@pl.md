@@ -71,7 +71,7 @@ Aby użyć składnika `<amp-script>`, musimy zaimportować jego własny kod Java
 ```html
 <head>
  ...
-  <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+  <script async custom-element="amp-script" src="https://ampjs.org/v0/amp-script-0.1.js"></script>
   ...
 </head>
 ```

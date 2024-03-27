@@ -215,7 +215,7 @@ Ważne: nie dodawaj żadnego standardowego kodu AMP do nagłówka, ponieważ zos
          playground="true"]
     ```html
     &lt;head&gt;
-      &lt;script async custom-element=&quot;amp-youtube&quot; src=&quot;https://cdn.ampproject.org/v0/amp-youtube-0.1.js&quot;&gt;&lt;/script&gt;
+      &lt;script async custom-element=&quot;amp-youtube&quot; src=&quot;https://ampjs.org/v0/amp-youtube-0.1.js&quot;&gt;&lt;/script&gt;
       &lt;style amp-custom&gt;
         body {
           background: red;
@@ -240,7 +240,7 @@ Wygląda to tak:
 
 ```html
 <head>
-  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://ampjs.org/v0/amp-youtube-0.1.js"></script>
   <style amp-custom>
     body {
       background: red;
@@ -271,7 +271,7 @@ W celu generowania podglądu relacji AMP stosuj atrybut `preview="top-frame"` z 
     ```html
     &lt;head&gt;
       &lt;script async custom-element=&quot;amp-story&quot;
-          src=&quot;https://cdn.ampproject.org/v0/amp-story-1.0.js&quot;&gt;&lt;/script&gt;
+          src=&quot;https://ampjs.org/v0/amp-story-1.0.js&quot;&gt;&lt;/script&gt;
       &lt;style amp-custom&gt;
         body {
           font-family: 'Roboto', sans-serif;
@@ -308,7 +308,7 @@ Wygląda to tak:
 ```html
   <head>
     <script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+        src="https://ampjs.org/v0/amp-story-1.0.js"></script>
     <style amp-custom>
       body {
         font-family: 'Roboto', sans-serif;

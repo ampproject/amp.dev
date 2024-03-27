@@ -30,7 +30,7 @@ Ce composant remplace la balise `video` HTML5 ; il ne doit être utilisé que p
 <table>
   <tr>
     <td width="40%"><strong>Script requis</strong></td>
-    <td><code>&lt;script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js">&lt;/script></code></td>
+    <td><code>&lt;script async custom-element="amp-video" src="https://ampjs.org/v0/amp-video-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
     <td width="40%"><strong>Exemples</strong></td>

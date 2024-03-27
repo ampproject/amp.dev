@@ -49,7 +49,7 @@ To begin, we will add the AMP library file.  This alone won't make your new file
 To include the AMP library, **add** this line to the bottom of the `<head>` tag:
 
 ```html
-<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async src="https://ampjs.org/v0.js"></script>
 ```
 
 **Load** the new `article.amp.html` page in your browser at [http://localhost:8000/article.amp.html](http://localhost:8000/article.amp.html) and then, **open** the [Developer Console](https://developer.chrome.com/devtools/docs/console) in Chrome (or your preferred browser).

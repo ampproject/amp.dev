@@ -31,7 +31,7 @@ L'activation de Beta Channel est idéale pour:
 
 Si vous trouvez un problème qui ne semble se produire que dans la version Beta Channel d'AMP, [signalez un problème](https://github.com/ampproject/amphtml/issues/new) avec une description. Incluez toujours une URL vers une page qui reproduit le problème.
 
-Pour activer AMP Beta Channel pour votre navigateur, accédez à [la page des tests AMP](https://cdn.ampproject.org/experiments.html) et activez le test "AMP Beta Channel". Pour être informé des changements importants/récents concernant AMP, abonnez-vous à la liste de diffusion [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
+Pour activer AMP Beta Channel pour votre navigateur, accédez à [la page des tests AMP](https://ampjs.org/experiments.html) et activez le test "AMP Beta Channel". Pour être informé des changements importants/récents concernant AMP, abonnez-vous à la liste de diffusion [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
 
 ## Activer un composant expérimental
 
@@ -55,14 +55,14 @@ Tout fichier AMP qui comprend des fonctionnalités expérimentales échouera à 
 
 ## Activer un composant expérimental pour un document particulier
 
-Un document peut choisir d'activer des contenus expérimentaux. Pour ce faire, placez une balise meta du nom `amp-experiments-opt-in` dans l'en-tête du document HTML avant votre script AMP (`https://cdn.ampproject.org/v0.js`). Sa valeur de contenu est une chaîne d'ID d'expérimentation séparés par des virgules.
+Un document peut choisir d'activer des contenus expérimentaux. Pour ce faire, placez une balise meta du nom `amp-experiments-opt-in` dans l'en-tête du document HTML avant votre script AMP (`https://ampjs.org/v0.js`). Sa valeur de contenu est une chaîne d'ID d'expérimentation séparés par des virgules.
 
 ```html
 <head>
   ...
   <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b" />
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async src="https://ampjs.org/v0.js"></script>
   ...
 </head>
 ```

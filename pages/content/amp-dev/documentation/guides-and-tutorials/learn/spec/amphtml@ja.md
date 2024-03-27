@@ -83,10 +83,10 @@ AMP フォーマットを使用することで、コンテンツ制作者は AMP
       "datePublished": "2015-02-05T08:00:00+08:00"
     }
     </script>
-    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
-    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://ampjs.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-ad" src="https://ampjs.org/v0/amp-ad-0.1.js"></script>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
   </head>
   <body>
     <h1>Sample document</h1>
@@ -114,7 +114,7 @@ AMP HTML ドキュメントに必須ものは次の通りです。
 - <a name="canon"></a>通常の HTML バージョンの AMP HTML ドキュメントを指すか、そのような HTML バージョンが存在しない場合はそれ自体を指す `<link rel="canonical" href="$SOME_URL">` タグを head の中に入れます。[🔗](#canon)
 - <a name="chrs"></a>head タグの最初の子として `<meta charset="utf-8">` タグを含めます。[🔗](#chrs)
 - <a name="vprt"></a>head タグの中に `<meta name="viewport" content="width=device-width">` タグを含めます。`minimum-scale=1` と `initial-scale=1` を含めることもお勧めです。[🔗](#vprt)
-- <a name="scrpt"></a>head タグの中に `<script async src="https://cdn.ampproject.org/v0.js"></script>` タグを含めます。[🔗](#scrpt)
+- <a name="scrpt"></a>head タグの中に `<script async src="https://ampjs.org/v0.js"></script>` タグを含めます。[🔗](#scrpt)
 - <a name="boilerplate"></a>head タグに [AMP ボイラープレートコード](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md) (`head > style[amp-boilerplate]` と `noscript > style[amp-boilerplate]`) を入れてください。[🔗](#boilerplate)
 
 ### メタデータ <a name="metadata"></a>
@@ -356,7 +356,7 @@ AMP は、一般的なブラウザで GPU を高速化できるプロパティ�
 
 AMP ランタイムは、すべての AMP ドキュメント内で実行される JavaScript の一部です。AMP カスタム要素の実装を提供し、リソースのロードと優先順位付けを管理し、オプションで開発中に使用するための AMP HTML のランタイムバリデータを含みます。
 
-AMP ランタイムは、AMP ドキュメント `<head>` の必須の `<script src="https://cdn.ampproject.org/v0.js"></script>` タグを介してロードされます。
+AMP ランタイムは、AMP ドキュメント `<head>` の必須の `<script src="https://ampjs.org/v0.js"></script>` タグを介してロードされます。
 
 AMP ランタイムは、どのページでも開発モードにすることができます。開発モードでは埋め込みページで AMP 検証がトリガーされ、検証ステータスとエラーが JavaScript 開発者コンソールに送信されます。開発モードはページの URL に `#development=1` を追加することで起動されます。
 
@@ -427,7 +427,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 
 [sourcecode:html]
 
-<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+<script async custom-element="amp-carousel" src="https://ampjs.org/v0/amp-carousel-0.1.js"></script>
 
 [/sourcecode]
 
@@ -442,7 +442,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 拡張コンポーネントの URL は次の形式です:
 
 [sourcecode:html]
-https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
+https://ampjs.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 [/sourcecode]
 
 ##### バージョン管理 <a name="versioning"></a>
@@ -460,7 +460,7 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 
 [sourcecode:html]
 
-<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+<script async custom-template="amp-mustache" src="https://ampjs.org/v0/amp-mustache-0.2.js"></script>
 
 [/sourcecode]
 
@@ -489,7 +489,7 @@ T`id` 属性はオプションです。個々の AMP 要素はそれら自身の
 拡張コンポーネントの URL は次の形式です:
 
 [sourcecode:html]
-https://cdn.ampproject.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
+https://ampjs.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
 [/sourcecode]
 
 ##### バージョン管理 <a name="versioning-1"></a>

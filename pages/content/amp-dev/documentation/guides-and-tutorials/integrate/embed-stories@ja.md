@@ -18,10 +18,10 @@ AMP 非対応ページに AMP ストーリーを埋め込むと、ユーザー�
     <head>
       <script
           async
-          src="https://cdn.ampproject.org/amp-story-player-v0.js"
+          src="https://ampjs.org/amp-story-player-v0.js"
       ></script>
       <link
-          href="https://cdn.ampproject.org/amp-story-player-v0.css"
+          href="https://ampjs.org/amp-story-player-v0.css"
           rel="stylesheet"
           type="text/css"
       />
@@ -77,8 +77,8 @@ AMP 非対応ページで AMP ストーリーを表示するには、[`amp-story
 必要な 2 つのスクリプトをドキュメントのヘッドに含めます。
 
 ```html
-<script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>
-<link href="https://cdn.ampproject.org/amp-story-player-v0.css" rel="stylesheet" type="text/css">
+<script async src="https://ampjs.org/amp-story-player-v0.js"></script>
+<link href="https://ampjs.org/amp-story-player-v0.css" rel="stylesheet" type="text/css">
 ```
 
 最初のスクリプトはプレーヤーのロジックをインポートし、2 つ目のスクリプトはデフォルトのスタイルをインポートします。

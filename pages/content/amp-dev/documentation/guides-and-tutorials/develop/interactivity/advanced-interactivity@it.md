@@ -21,7 +21,7 @@ Aprire il file [`static/index.html`](https://github.com/googlecodelabs/advanced-
 <script
   async
   custom-element="amp-bind"
-  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+  src="https://ampjs.org/v0/amp-bind-0.1.js"
 ></script>
 ```
 

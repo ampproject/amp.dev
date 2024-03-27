@@ -40,7 +40,7 @@ $title: amp-sidebar
   </tr>
   <tr>
     <td width="40%"><strong>Skrip yang Diperlukan</strong></td>
-    <td><code>&lt;script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"&gt;&lt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-sidebar" src="https://ampjs.org/v0/amp-sidebar-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Tata Letak yang Didukung</a></strong></td>

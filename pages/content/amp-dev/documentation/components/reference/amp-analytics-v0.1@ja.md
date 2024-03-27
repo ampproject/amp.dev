@@ -29,7 +29,7 @@ AMP ドキュメントからアナリティクス データを収集します。
 <table>
   <tr>
     <td class="col-fourty"><strong>必要なスクリプト</strong></td>
-    <td><code>&lt;script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"&gt;&lt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong>例</strong></td>

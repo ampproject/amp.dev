@@ -34,7 +34,7 @@ Todos los documentos de AMP deben contener las siguientes etiquetas:
 * <a name="utf"></a>`<meta charset="utf-8">`
 * <a name="viewport"></a>`<meta name="viewport" content="...">`
 * <a name="boilerplate"></a>`<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
-* <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
+* <a name="ampscript"></a>`<script async src="https://ampjs.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
 Estas etiquetas obligatorias incluyen un campo `mandatory: true` en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii), y también se hace referencia a ellas en la [especificación de AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md).
@@ -546,7 +546,7 @@ La lista completa de etiquetas únicas es la siguiente:
 * `<style amp-custom>`
 * `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
 * `<body>`
-* `<script src="https://cdn.ampproject.org/v0.js">`
+* `<script src="https://ampjs.org/v0.js">`
 
 ## Errores de estilo y de diseño <a name="style-and-layout-errors"></a>
 

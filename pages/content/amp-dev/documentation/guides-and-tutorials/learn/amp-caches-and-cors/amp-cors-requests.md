@@ -144,7 +144,7 @@ When your endpoint receives a CORS request:
 
 CORS endpoints receive the requesting origin via the `Origin` HTTP header.
 Endpoints should only allow requests from: (1) the publisher's own origin; and
-(2) every `cacheDomain` origin listed in <https://cdn.ampproject.org/caches.json>.
+(2) every `cacheDomain` origin listed in <https://ampjs.org/caches.json>.
 
 For example, endpoints should allow requests from:
 

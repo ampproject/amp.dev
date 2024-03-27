@@ -21,14 +21,14 @@ Ativar o Canal Dev é ideal para:
 
 Se você encontrar um problema que pareça ocorrer somente na versão do Canal Dev AMP, [envie um relatório do problema](https://github.com/ampproject/amphtml/issues/new) com uma descrição. Sempre inclua o URL de uma página que mostre esse problema.
 
-Para ativar o Canal Dev AMP no navegador, acesse [a página de experimentos de AMP](https://cdn.ampproject.org/experiments.html) e ative o experimento "AMP Beta Channel" (Canal Dev AMP, em inglês). Para receber notificações sobre alterações/novidades importantes das AMP, inscreva-se na lista de e-mails [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
+Para ativar o Canal Dev AMP no navegador, acesse [a página de experimentos de AMP](https://ampjs.org/experiments.html) e ative o experimento "AMP Beta Channel" (Canal Dev AMP, em inglês). Para receber notificações sobre alterações/novidades importantes das AMP, inscreva-se na lista de e-mails [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
 
 ## Ativar um componente experimental
 
 #### Disponibilizado por cdn.ampproject.org
 
 Para conteúdo disponibilizado por [https://cdn.ampproject.org](https://cdn.ampproject.org), 
-acesse a [página de experimentos de AMP](https://cdn.ampproject.org/experiments.html)
+acesse a [página de experimentos de AMP](https://ampjs.org/experiments.html)
 e ative (ou desative) qualquer componente experimental clicando nos controles correspondentes. A ativação de um experimento definirá um cookie no seu navegador para ativar o experimento em todas as páginas AMP disponibilizadas por meio do cache de AMP do Google.
 
 #### Disponibilizado por outros domínios
@@ -45,14 +45,14 @@ Remova os componentes experimentais de documentos AMP prontos para produção.
 
 ## Ativar um experimento para um documento específico
 
-O documento pode ativar alguns experimentos. Para fazer isso, basta colocar uma metatag do nome `amp-experiments-opt-in` no cabeçalho do documento HTML antes do script AMP (`https://cdn.ampproject.org/v0.js`). O valor do conteúdo é uma string com os códigos dos experimentos que serão ativados, separados por vírgula.
+O documento pode ativar alguns experimentos. Para fazer isso, basta colocar uma metatag do nome `amp-experiments-opt-in` no cabeçalho do documento HTML antes do script AMP (`https://ampjs.org/v0.js`). O valor do conteúdo é uma string com os códigos dos experimentos que serão ativados, separados por vírgula.
 
 ```html
 <head>
   …
   <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async src="https://ampjs.org/v0.js"></script>
   …
 </head>
 ```

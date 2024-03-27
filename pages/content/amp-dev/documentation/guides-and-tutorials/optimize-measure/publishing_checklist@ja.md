@@ -25,7 +25,7 @@ AMP には、AMP キャッシュからコンテンツをプリロードしてユ
 
 # キャッシュされた AMP ページにサーバーアクセスを許可する
 
-良いニュースです。有効な AMP ページは自動的に既存の AMP キャッシュにオプトインされるようになっています！つまり、ユーザーは、安全かつ効率的に読み込むコンテンツを体験することになります。こういった最適化は素晴らしいことですが、ささやかな難点が伴います。一部のユーザーには、あなたのドメインに一致しないドメインの AMP ページが配信されてしまいます。このため、[`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=websites) や [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=websites) などの動的な AMP コンポーネントを使用している場合は、ページがサイトデータにアクセスできなくなってしまう可能性があります。こういったエラーはクロスオリジンリソース共有または CORS 問題と呼ばれます。すべての利用可能な [AMP キャッシュ](https://cdn.ampproject.org/caches.json)からの CORS リクエストを有効にして、安全性に対抗するのではなく、それに対応するようにしましょう！バックエンドで Node.js を使用している場合は、[amp-cors ミドルウェア](https://github.com/ampproject/amp-toolbox/tree/master/packages/cors)を使用できます。
+良いニュースです。有効な AMP ページは自動的に既存の AMP キャッシュにオプトインされるようになっています！つまり、ユーザーは、安全かつ効率的に読み込むコンテンツを体験することになります。こういった最適化は素晴らしいことですが、ささやかな難点が伴います。一部のユーザーには、あなたのドメインに一致しないドメインの AMP ページが配信されてしまいます。このため、[`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=websites) や [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=websites) などの動的な AMP コンポーネントを使用している場合は、ページがサイトデータにアクセスできなくなってしまう可能性があります。こういったエラーはクロスオリジンリソース共有または CORS 問題と呼ばれます。すべての利用可能な [AMP キャッシュ](https://ampjs.org/caches.json)からの CORS リクエストを有効にして、安全性に対抗するのではなく、それに対応するようにしましょう！バックエンドで Node.js を使用している場合は、[amp-cors ミドルウェア](https://github.com/ampproject/amp-toolbox/tree/master/packages/cors)を使用できます。
 
 サーバーアクセス権の付与について、以下を参照してください。
 

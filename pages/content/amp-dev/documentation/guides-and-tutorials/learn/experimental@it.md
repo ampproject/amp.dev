@@ -31,7 +31,7 @@ L'attivazione del canale Dev permette di:
 
 Se trovi un problema che sembra verificarsi solo nella versione del canale AMP Dev, [lo puoi segnalare](https://github.com/ampproject/amphtml/issues/new) con una descrizione del problema. Includi sempre un URL a una pagina che riproduce il problema.
 
-Per iscrivere il tuo browser al canale AMP Dev, accedi alla [pagina degli esperimenti AMP](https://cdn.ampproject.org/experiments.html) e attiva l'esperimento "Canale AMP Dev". Per ricevere informazioni sulle principali modifiche ad AMP, iscriviti alla mailing list [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
+Per iscrivere il tuo browser al canale AMP Dev, accedi alla [pagina degli esperimenti AMP](https://ampjs.org/experiments.html) e attiva l'esperimento "Canale AMP Dev". Per ricevere informazioni sulle principali modifiche ad AMP, iscriviti alla mailing list [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
 
 ## Attivazione di componenti sperimentali
 
@@ -55,14 +55,14 @@ Qualsiasi file AMP che include funzioni sperimentali non supererà la [convalida
 
 ## Attivazione di un esperimento per un particolare documento
 
-In ogni documento è possibile attivare gli esperimenti richiesti. A tale scopo, inserire un meta tag del nome `amp-experiments-opt-in` nell'intestazione del documento HTML prima dello script AMP (`https://cdn.ampproject.org/v0.js`). Il valore del suo contenuto è una stringa contenente gli ID degli esperimenti da attivare, separati da virgole.
+In ogni documento è possibile attivare gli esperimenti richiesti. A tale scopo, inserire un meta tag del nome `amp-experiments-opt-in` nell'intestazione del documento HTML prima dello script AMP (`https://ampjs.org/v0.js`). Il valore del suo contenuto è una stringa contenente gli ID degli esperimenti da attivare, separati da virgole.
 
 ```html
 <head>
   ...
   <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b" />
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async src="https://ampjs.org/v0.js"></script>
   ...
 </head>
 ```

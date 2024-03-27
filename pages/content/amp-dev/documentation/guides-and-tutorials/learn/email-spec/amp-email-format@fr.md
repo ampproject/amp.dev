@@ -50,7 +50,7 @@ Le code suivant représente le balisage minimal pour constituer un e-mail AMP va
         visibility: hidden;
       }
     </style>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
   </head>
   <body>
     Hello, world.
@@ -64,7 +64,7 @@ Un e-mail AMP DOIT
 - <a name="ampd"></a>contenir une balise supérieure `<html ⚡4email>` (`<html amp4email>` est également accepté). [🔗](#ampd)
 - <a name="crps"></a>contenir les balises `<head>` et `<body>` (elles sont facultatives en HTML). [🔗](#crps)
 - <a name="chrs"></a>contenir une balise `<meta charset="utf-8">` comme premier enfant de la balise head. [🔗](#chrs)
-- <a name="scrpt"></a>contenir une balise `<script async src="https://cdn.ampproject.org/v0.js"></script>` dans la balise head. [🔗](#scrpt)
+- <a name="scrpt"></a>contenir une balise `<script async src="https://ampjs.org/v0.js"></script>` dans la balise head. [🔗](#scrpt)
 - <a name="boilerplate"></a>contenir le texte standard amp4email (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) à l'intérieur de la balise head afin de masquer initialement le contenu jusqu'à ce que le JS AMP soit chargé. [🔗](#boilerplate)
 
 Le balisage AMPHTML entier ne doit pas dépasser 200 000 octets.

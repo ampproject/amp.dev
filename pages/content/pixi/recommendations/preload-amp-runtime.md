@@ -10,5 +10,5 @@ first. An AMP page requires the framework's JavaScript, so ensure it's preloaded
 Use an [AMP Optimizer](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/)
 to automatically add the following to your page, or do so manually:
 ```
-<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>
+<link as=script href=https://ampjs.org/v0.js rel=preload>
 ```

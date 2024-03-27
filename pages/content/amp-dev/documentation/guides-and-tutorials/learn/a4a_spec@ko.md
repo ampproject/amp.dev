@@ -53,7 +53,7 @@ AMPHTML 광고는 AMP 페이지에서 빠르고 효과적인 광고를 렌더링
 <td>검사기가 광고 문서를 일반 AMP 문서 또는 제한된 AMPHTML 문서로 식별하여 적절히 배정할 수 있습니다.</td>
 </tr>
 <tr>
-<td>런타임 스크립트로 <code>https://cdn.ampproject.org/v0.js</code> 대신 <code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script></code> 포함.</td>
+<td>런타임 스크립트로 <code>https://ampjs.org/v0.js</code> 대신 <code>&lt;script async src="https://ampjs.org/amp4ads-v0.js"></script></code> 포함.</td>
 <td>교차 출처 iframes에서 지원되는 AMPHTML 광고에 적합한 맞춤형 런타임 동작을 사용할 수 있습니다.</td>
 </tr>
 <tr>
@@ -331,7 +331,7 @@ HTML5 네임스페이스에 SVG 태그가 포함되지 않으며 해당 태그�
 
 #### 4.11 스크립팅 <a name="411-scripting"></a>
 
-- 일반 AMP 문서처럼 광고의 `<head>` 태그에도 `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>` 태그가 포함되어야 합니다.
+- 일반 AMP 문서처럼 광고의 `<head>` 태그에도 `<script async src="https://ampjs.org/amp4ads-v0.js"></script>` 태그가 포함되어야 합니다.
 - 일반 AMP와 달리 `<noscript>`는 허용되지 않습니다.
   - _설명:_ AMPHTML 광고의 경우 Javascript 사용이 약간이라도 가능해야 하므로 AMPHTML 광고에서 `<noscript>` 블록은 쓸모가 없으며 네트워크 대역폭만 소모합니다.
 - 일반 AMP와는 달리 `<script type="application/ld+json">`은 허용되지 않습니다.

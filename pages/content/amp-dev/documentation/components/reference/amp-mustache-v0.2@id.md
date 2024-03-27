@@ -32,7 +32,7 @@ Memungkinkan rendering [Mustache.js](https://github.com/janl/mustache.js/).
     <td width="40%"><strong>Skrip yang Diperlukan</strong></td>
     <td>
       <div>
-          <code>&lt;script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js">&lt;/script></code>
+          <code>&lt;script async custom-template="amp-mustache" src="https://ampjs.org/v0/amp-mustache-0.2.js">&lt;/script></code>
       </div>
     </td>
   </tr>
@@ -67,7 +67,7 @@ Template `amp-mustache` harus ditentukan dan digunakan sesuai dengan [Spesifikas
 Pertama, `amp-mustache` harus dinyatakan/dimuat seperti ini:
 
 [sourcecode:html]
-<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+<script async custom-template="amp-mustache" src="https://ampjs.org/v0/amp-mustache-0.2.js"></script>
 [/sourcecode]
 
 

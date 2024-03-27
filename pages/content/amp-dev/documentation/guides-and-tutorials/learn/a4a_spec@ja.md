@@ -52,7 +52,7 @@ AMPHTML 広告は、高速で高性能の広告を AMP ページにレンダリ�
 <td>バリデータは、クリエイティブドキュメントを一般的な AMP ドキュメントか制限された AMPHTML 広告ドキュメントのどちらであるかを識別し、適宜ディスパッチできるようにします。</td>
 </tr>
 <tr>
-<td>ランタイムスクリプトとして、<code>https://cdn.ampproject.org/v0.js</code> ではなく、<code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js">&lt;/script></code> を含めること。</td>
+<td>ランタイムスクリプトとして、<code>https://ampjs.org/v0.js</code> ではなく、<code>&lt;script async src="https://ampjs.org/amp4ads-v0.js">&lt;/script></code> を含めること。</td>
 <td>クロスオリジンの iframe に配信される AMPHTML 広告のランタイムの動作をカスタマイズできます。</td>
 </tr>
 <tr>
@@ -329,7 +329,7 @@ SVG タグは HTML5 名前空間にありません。セクション ID 無し�
 
 #### 4.11 スクリプティング <a name="411-scripting"></a>
 
-- 一般的な AMP ドキュメントと同様に、クリエイティブの `<head>` タグには、`<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>` タグが含まれている必要があります。
+- 一般的な AMP ドキュメントと同様に、クリエイティブの `<head>` タグには、`<script async src="https://ampjs.org/amp4ads-v0.js"></script>` タグが含まれている必要があります。
 - 一般的な AMP とは異なり、`<noscript>` は禁止されています。
   - _根拠:_ AMPHTML 広告が’機能するには、Javascript が必ず必要です。AMPHTML 広告の `<noscript>` ブロックには意味がないため、ネットワーク帯域幅を浪費してしまいます。
 - 一般的な AMP とは異なり、`<script type="application/ld+json">` は禁止されています。

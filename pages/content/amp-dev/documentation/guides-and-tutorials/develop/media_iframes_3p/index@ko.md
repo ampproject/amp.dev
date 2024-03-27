@@ -121,7 +121,7 @@ The [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) 요
 
 [/example]
 
-참고: 이 구성요소를 사용하려면<code> &lt;script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js">&lt;/script></code> 를 페이지 헤드에 삽입하세요.
+참고: 이 구성요소를 사용하려면<code> &lt;script async custom-element="amp-anim" src="https://ampjs.org/v0/amp-anim-0.1.js">&lt;/script></code> 를 페이지 헤드에 삽입하세요.
 
 ## 동영상
 
@@ -175,4 +175,4 @@ The [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) 요
 
 [/example]
 
-참고: 이 구성요소를 사용하려면 <code>&lt;script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js">&lt;/script></code> 를 페이지 헤드에 삽입하세요.
+참고: 이 구성요소를 사용하려면 <code>&lt;script async custom-element="amp-audio" src="https://ampjs.org/v0/amp-audio-0.1.js">&lt;/script></code> 를 페이지 헤드에 삽입하세요.

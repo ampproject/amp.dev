@@ -142,7 +142,7 @@ The AMP runtime is served with a max-age of only 50 minutes to ensure that updat
 
 Precaching is not only relevant for transitioning from cached AMP pages to non-AMP pages on your own origin, but also for transitioning from cached AMP pages to AMP pages on your own origin. The reason is that the AMP cache re-writes the AMP runtime URLs from the evergreen URL to the latest released version, for example:
 
-`https://cdn.ampproject.org/v0.js` -> `https://cdn.ampproject.org/rtv/001515617716922/v0.js`.
+`https://ampjs.org/v0.js` -> `https://ampjs.org/rtv/001515617716922/v0.js`.
 
 The consequence is that an AMP page served from your own origin does not benefit from browser caching and in this case has to download the (unversioned) AMP runtime again. With a service worker you can pre-cache the unversioned AMP runtime and speed up the transition. To learn more about why the AMP cache versions AMP runtime URLs, read [this document](https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer##versioned-amp-runtime).
 

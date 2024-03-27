@@ -52,7 +52,7 @@ Inoltre, i contenuti creativi devono rispettare le seguenti regole:
 <td>Consente agli strumenti di convalida di distinguere se i contenuti creativi sono documenti AMP generali o documenti di annunci AMPHTML limitati, permettendone la corretta visualizzazione.</td>
 </tr>
 <tr>
-<td>Deve includere <code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script></code> come script di runtime al posto di <code>https://cdn.ampproject.org/v0.js</code>.</td>
+<td>Deve includere <code>&lt;script async src="https://ampjs.org/amp4ads-v0.js"></script></code> come script di runtime al posto di <code>https://ampjs.org/v0.js</code>.</td>
 <td>Consente comportamenti di runtime personalizzati per gli annunci AMPHTML pubblicati in iframe indipendenti dall'origine.</td>
 </tr>
 <tr>
@@ -297,7 +297,7 @@ I tag SVG non si trovano nello spazio dei nomi HTML5. Sono elencati di seguito s
 
 #### 4.11 Script <a name="411-scripting"></a>
 
-- Come nel caso di documenti AMP generali, il tag `<head>` dei contenuti creativi deve contenere un tag `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>`.
+- Come nel caso di documenti AMP generali, il tag `<head>` dei contenuti creativi deve contenere un tag `<script async src="https://ampjs.org/amp4ads-v0.js"></script>`.
 - A differenza dei documenti AMP generali, l'uso di `<noscript>` non è consentito.
     - *Spiegazione:* poiché gli annunci AMPHTML richiedono che Javascript sia abilitato per funzionare, i blocchi `<noscript>` non hanno alcuno scopo negli annunci AMPHTML e causano solo maggiori consumi di risorse di rete.
 - A differenza dei documenti AMP generali, l'uso di `<script type="application/ld+json">` non è consentito.

@@ -50,7 +50,7 @@ Aşağıdaki kod, geçerli bir AMP e-posta mesajı oluşturan en az biçimlendir
         visibility: hidden;
       }
     </style>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
   </head>
   <body>
     Hello, world.
@@ -64,7 +64,7 @@ Bir AMP e-posta mesajı GEREKLİDİR
 - <a name="ampd"></a>üst düzey bir `<html ⚡4email>` etiketi içerir (`<html amp4email>` de kabul edilir). [🔗](#ampd)
 - <a name="crps"></a>`<head>` ve `<body>` etiketlerini içerir (Bunlar HTML'de isteğe bağlıdır). [🔗](#crps)
 - <a name="chrs"></a>head etiketinin ilk alt öğesi olarak bir `<meta charset="utf-8">` etiketi içerir. [🔗](#chrs)
-- <a name="scrpt"></a>head etiketinin ilk alt öğesi olarak bir `<script async src="https://cdn.ampproject.org/v0.js"></script>` etiketi içerir. [🔗](#scrpt)
+- <a name="scrpt"></a>head etiketinin ilk alt öğesi olarak bir `<script async src="https://ampjs.org/v0.js"></script>` etiketi içerir. [🔗](#scrpt)
 - <a name="boilerplate"></a>içeriği AMP JS yüklenene kadar ilk başta gizlemek için head etiketinin içinde amp4email standart metni (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) içerir. [🔗](#boilerplate)
 
 AMPHTML işaretlemesinin tamamı 200.000 baytı aşmamalıdır.

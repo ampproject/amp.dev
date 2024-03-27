@@ -52,7 +52,7 @@ AMPHTML 广告是一种在 AMP 网页上快速高效渲染广告的机制。为�
 <td>允许验证工具将广告素材文档识别为常规 AMP 文档或受限的 AMPHTML 广告文档并进行相应分发。</td>
 </tr>
 <tr>
-<td>必须包含 <code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js">&lt;/script></code> 而不是 <code>https://cdn.ampproject.org/v0.js</code> 作为运行时脚本。</td>
+<td>必须包含 <code>&lt;script async src="https://ampjs.org/amp4ads-v0.js">&lt;/script></code> 而不是 <code>https://ampjs.org/v0.js</code> 作为运行时脚本。</td>
 <td>允许在跨源 iframe 中投放的 AMPHTML 广告存在量身定制的运行时行为。</td>
 </tr>
 <tr>
@@ -327,7 +327,7 @@ SVG 标记不属于 HTML5 命名空间。以下列出的 SVG 标记没有板块 
 
 #### 4.11 脚本 <a name="411-scripting"></a>
 
-- 与常规 AMP 文档一样，广告素材的 `<head>` 标记必须包含 `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>` 标记。
+- 与常规 AMP 文档一样，广告素材的 `<head>` 标记必须包含 `<script async src="https://ampjs.org/amp4ads-v0.js"></script>` 标记。
 - 与常规 AMP 不同，不允许使用 `<noscript>`。
   - _理由_：由于 AMPHTML 广告需要启用 Javascript 才能工作，`<noscript>` 块在 AMPHTML 广告中不起任何作用，只会占用网络带宽。
 - 与常规 AMP 不同，不允许使用 `<script type="application/ld+json">`。

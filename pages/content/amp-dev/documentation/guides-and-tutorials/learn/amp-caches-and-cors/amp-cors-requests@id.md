@@ -131,7 +131,7 @@ Saat endpoint Anda menerima permintaan CORS:
 
 <span id="verify-cors-header"></span>
 
-Endpoint CORS menerima asal peminta melalui tajuk HTTP `Origin`. Endpoint hanya boleh mengizinkan permintaan dari: (1) asal penayang sendiri; dan (2) setiap asal <br> `cacheDomain` yang tercantum di [https://cdn.ampproject.org/caches.json](https://cdn.ampproject.org/caches.json).
+Endpoint CORS menerima asal peminta melalui tajuk HTTP `Origin`. Endpoint hanya boleh mengizinkan permintaan dari: (1) asal penayang sendiri; dan (2) setiap asal <br> `cacheDomain` yang tercantum di [https://ampjs.org/caches.json](https://ampjs.org/caches.json).
 
 Contohnya: endpoint harus mengizinkan permintaan dari:
 

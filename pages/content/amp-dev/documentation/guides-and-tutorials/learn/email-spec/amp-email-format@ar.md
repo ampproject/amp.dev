@@ -50,7 +50,7 @@ limitations under the License.
         visibility: hidden;
       }
     </style>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
   </head>
   <body>
     Hello, world.
@@ -64,7 +64,7 @@ limitations under the License.
 - <a name="ampd"></a>تحتوي على علامة `<html ⚡4email>` عالية المستوى (يتم قبول `<html amp4email>` أيضًا). [🔗](#ampd)
 - <a name="crps"></a>تحتوي على علامات `<head>` و`<body>` (وهي اختيارية في HTML). [🔗](#crps)
 - <a name="chrs"></a>تحتوي على علامة `<meta charset="utf-8">` كفرع أول لعلامة الرأس الخاصة بها. [🔗](#chrs)
-- <a name="scrpt"></a>تحتوي على علامة `<script async src="https://cdn.ampproject.org/v0.js"></script>` داخل علامة الرأس الخاصة بها. [🔗](#scrpt)
+- <a name="scrpt"></a>تحتوي على علامة `<script async src="https://ampjs.org/v0.js"></script>` داخل علامة الرأس الخاصة بها. [🔗](#scrpt)
 - <a name="boilerplate"></a>تحتوي على القالب الأساسي amp4email (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) داخل علامة الرأس الخاصة بها لإخفاء المحتوى مبدئيًا حتى يتم تحميلAMP JS. [🔗](#boilerplate)
 
 يجب ألا تتجاوز لغة ترميز AMPHTML بأكملها حجم 200000 بايت.

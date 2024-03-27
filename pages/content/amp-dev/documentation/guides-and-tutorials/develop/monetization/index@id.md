@@ -24,7 +24,7 @@ Komponen `<amp-ad>` adalah ekstensi iklan kustom untuk library AMP. Di bawah `<a
 <script
   async
   custom-element="amp-ad"
-  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+  src="https://ampjs.org/v0/amp-ad-0.1.js"
 ></script>
 ```
 

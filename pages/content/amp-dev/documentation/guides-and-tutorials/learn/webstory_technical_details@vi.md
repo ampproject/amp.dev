@@ -18,7 +18,7 @@ Một Câu chuyện Web về mặt kỹ thuật là một trang web đơn lẻ �
 - Chứa một thẻ `<html ⚡>` hoặc `<html amp>` cấp cao nhất.
 - Chứa thẻ `<head>` và `<body>`.
 - Chứa một thẻ `<meta charset="utf-8">` như con đầu tiên của thẻ `<head>`.
-- Chứa một thẻ `<script async src="https://cdn.ampproject.org/v0.js"></script>` trong thẻ `<head>`. Theo biện pháp thực hành tiên tiến nhất, bạn nên bao gồm kịch bản này càng sớm càng tốt trong `<head>` (đầu đề).
+- Chứa một thẻ `<script async src="https://ampjs.org/v0.js"></script>` trong thẻ `<head>`. Theo biện pháp thực hành tiên tiến nhất, bạn nên bao gồm kịch bản này càng sớm càng tốt trong `<head>` (đầu đề).
 - Chứa một thẻ `<link rel="canonical" href="page/url">` trong phần `<head>` (đầu đề), với href chỉ đến URL Câu chuyện Web.
 - Chứa một thẻ `<meta name="viewport" content="width=device-width">` trong thẻ `<head>` (đầu đề). Bạn cũng nên bao gồm initial-scale=1.
 - Chứa một [code soạn sẵn AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) trong thẻ `<head>`.
@@ -91,16 +91,16 @@ Khác biệt giữa một trang web AMP và một Câu chuyện Web được xâ
         }
       </style></noscript
     >
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
     <script
       async
       custom-element="amp-video"
-      src="https://cdn.ampproject.org/v0/amp-video-0.1.js"
+      src="https://ampjs.org/v0/amp-video-0.1.js"
     ></script>
     <script
       async
       custom-element="amp-story"
-      src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+      src="https://ampjs.org/v0/amp-story-1.0.js"
     ></script>
     <style amp-custom>
       ...;

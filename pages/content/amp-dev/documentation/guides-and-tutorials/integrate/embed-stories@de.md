@@ -22,10 +22,10 @@ Du kannst AMP Storys in eine nicht-AMP Seite einbetten, damit Benutzer sich durc
     <head>
       <script
           async
-          src="https://cdn.ampproject.org/amp-story-player-v0.js"
+          src="https://ampjs.org/amp-story-player-v0.js"
       ></script>
       <link
-          href="https://cdn.ampproject.org/amp-story-player-v0.css"
+          href="https://ampjs.org/amp-story-player-v0.css"
           rel="stylesheet"
           type="text/css"
       />
@@ -80,9 +80,9 @@ Um eine AMP Story auf einer nicht-AMP Seite anzuzeigen, muss das Element [`amp-s
 Binde die beiden erforderlichen Skripte im Header deines Dokuments ein:
 
 ```html
-<script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>
+<script async src="https://ampjs.org/amp-story-player-v0.js"></script>
 <link
-  href="https://cdn.ampproject.org/amp-story-player-v0.css"
+  href="https://ampjs.org/amp-story-player-v0.css"
   rel="stylesheet"
   type="text/css"
 />

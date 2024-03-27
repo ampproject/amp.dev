@@ -16,7 +16,7 @@ Thành phần [`amp-story`](../../../../documentation/components/reference/amp-s
   <script
     async
     custom-element="amp-story"
-    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+    src="https://ampjs.org/v0/amp-story-1.0.js"
   ></script>
 </head>
 ```

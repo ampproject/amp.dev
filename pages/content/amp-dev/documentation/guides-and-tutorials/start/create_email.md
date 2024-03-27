@@ -27,7 +27,7 @@ The AMP playground supports the AMP for Email format, allowing you to develop, t
 <html ⚡4email data-css-strict>
 <head>
   <meta charset="utf-8">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async src="https://ampjs.org/v0.js"></script>
   <style amp4email-boilerplate>body{visibility:hidden}</style>
   <style amp-custom>
     h1 {
@@ -47,7 +47,7 @@ Let's take a moment to call out some notable differences from classic HTML email
 
 *   AMP emails must identify themselves as such by including `⚡4email`, or `amp4email`, in the html tag.
 *   The `<head>` tag must also contain a `<script>` tag that loads the AMP runtime.
-`<script async src="https://cdn.ampproject.org/v0.js"></script>`
+`<script async src="https://ampjs.org/v0.js"></script>`
 *   A CSS boilerplate to initially hide the content until AMP is loaded.
 ` <style amp4email-boilerplate>body{visibility:hidden}</style>`
 
@@ -118,7 +118,7 @@ For this tutorial, we're going to use [`<amp-carousel>`](/content/amp-dev/docume
 Add the `amp-carousel` script to the head of your email.
 
 ```html
-  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <script async custom-element="amp-carousel" src="https://ampjs.org/v0/amp-carousel-0.1.js"></script>
 ```
 
 Then wrap our first image in the `<amp-carousel>` tags.
@@ -199,7 +199,7 @@ In this tutorial, we'll use [`<amp-bind>`](/content/amp-dev/documentation/compon
 
 
 ```html
- <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+ <script async custom-element="amp-bind" src="https://ampjs.org/v0/amp-bind-0.1.js"></script>
 ```
 
 

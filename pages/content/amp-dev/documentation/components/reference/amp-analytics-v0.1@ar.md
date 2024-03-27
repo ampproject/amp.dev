@@ -33,7 +33,7 @@ limitations under the License.
 <table>
   <tr>
     <td class="col-fourty"><strong>النص البرمجي المطلوب</strong></td>
-    <td><code>&lt;script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"&gt;&lt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong>أمثلة</strong></td>

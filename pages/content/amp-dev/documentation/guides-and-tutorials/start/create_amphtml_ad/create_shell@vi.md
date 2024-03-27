@@ -40,7 +40,7 @@ Trong thẻ `<html> `, thêm thuộc tính `⚡4ads`, xác định tài liệu n
 Các quảng cáo AMPHTML cần phiên bản riêng của thời gian chạy AMP, vậy nên hãy thêm thẻ `<script>` sau vào phần `<head>` trong tài liệu của bạn:
 
 ```html
-<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+<script async src="https://ampjs.org/amp4ads-v0.js"></script>
 ```
 
 Các quảng cáo AMPHTML đòi hỏi một kiểu phong cách [code soạn sẵn](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#boilerplate) khác, và đơn giản hơn đáng kể so với các trang AMP. Thêm mã sau vào phần `<head>` của bạn.
@@ -66,7 +66,7 @@ Các quảng cáo AMPHTML đòi hỏi một kiểu phong cách [code soạn sẵ
     <meta charset="utf-8" />
     <title>My amphtml ad</title>
     <meta name="viewport" content="width=device-width" />
-    <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+    <script async src="https://ampjs.org/amp4ads-v0.js"></script>
     <style amp4ads-boilerplate>
       body {
         visibility: hidden;

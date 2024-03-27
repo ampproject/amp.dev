@@ -35,7 +35,7 @@ $title: amp-form
   </tr>
   <tr>
     <td><strong>必要なスクリプト</strong></td>
-    <td><code>&lt;script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js">&lt;/script></code></td>
+    <td><code>&lt;script async custom-element="amp-form" src="https://ampjs.org/v0/amp-form-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
     <td><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute">サポートされるレイアウト</a></strong></td>

@@ -40,7 +40,7 @@ En la etiqueta `<html> `, agregue el atributo `⚡4ads`, que identifica el docum
 Los anuncios AMP HTML necesitan su propia versión del tiempo de ejecución en AMP, por lo que debe agregar la siguiente etiqueta `<script>` en la sección `<head>` de su documento:
 
 ```html
-<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+<script async src="https://ampjs.org/amp4ads-v0.js"></script>
 ```
 
 Los creativos de los anuncios AMP HTML requieren de un [código reutilizable](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#boilerplate) diferente y con un estilo considerablemente más simple en comparación con las páginas de AMP. Para conseguir esto, agregue el siguiente código a su sección `<head>`:
@@ -66,7 +66,7 @@ Este es el código completo de su archivo HTML:
     <meta charset="utf-8" />
     <title>My amphtml ad</title>
     <meta name="viewport" content="width=device-width" />
-    <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+    <script async src="https://ampjs.org/amp4ads-v0.js"></script>
     <style amp4ads-boilerplate>
       body {
         visibility: hidden;

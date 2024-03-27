@@ -75,7 +75,7 @@ AMP组件（例如amp-from，amp-list等等）在获取动态数据(例如JSON)�
 #### 1) 允许来自指定域名的请求 <a name="1-allow-requests-for-specific-cors-origins"></a>
 <span id="verify-cors-header"></span>
 
-负责处理CORS请求的服务器可以通过请求头中`Origin`字段值来判断请求是否是在允许域名范围内，一般来说，服务器应该只允许以下来源的请求: (1)自身的域名 (2)在 <https://cdn.ampproject.org/caches.json> 中'cachedDomain'字段中的服务器域名。
+负责处理CORS请求的服务器可以通过请求头中`Origin`字段值来判断请求是否是在允许域名范围内，一般来说，服务器应该只允许以下来源的请求: (1)自身的域名 (2)在 <https://ampjs.org/caches.json> 中'cachedDomain'字段中的服务器域名。
 
 举个例子，服务器应该允许以下来源的请求：
   *  Google AMP Cache 子域名: `https://<publisher's domain>.cdn.ampproject.org` <br>(例如, `https://nytimes-com.cdn.ampproject.org`)

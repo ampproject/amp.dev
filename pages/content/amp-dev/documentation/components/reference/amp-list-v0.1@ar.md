@@ -34,7 +34,7 @@ teaser:
 <table>
   <tr>
     <td width="40%"><strong>النص البرمجي المطلوب</strong></td>
-    <td><code>&lt;script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-list" src="https://ampjs.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">التنسيقات المعتمدة</a></strong></td>
@@ -305,7 +305,7 @@ amp-list div[role="list"] {
 
 ## تجريبي: تحميل المزيد والتمرير اللانهائي (amp-list-load-more) <a name="common-attributes"></a>
 
-لقد أدخلنا التجربة `amp-list-load-more` كتنفيذ للتقسيم على صفحات والتمرير اللانهائي في `<amp-list>`. يمكنك تفعيل هذه الميزة عن طريق تشغيل التجربة "amp-list-load-more" في [صفحة التجارب](https://cdn.ampproject.org/experiments.html) وإضافة السمة `load-more` إلى `<amp-list>`. هذه الميزة في نطاق التجربة حاليًا، وقد تتغير واجهات برمجة التطبيقات النهائية.
+لقد أدخلنا التجربة `amp-list-load-more` كتنفيذ للتقسيم على صفحات والتمرير اللانهائي في `<amp-list>`. يمكنك تفعيل هذه الميزة عن طريق تشغيل التجربة "amp-list-load-more" في [صفحة التجارب](https://ampjs.org/experiments.html) وإضافة السمة `load-more` إلى `<amp-list>`. هذه الميزة في نطاق التجربة حاليًا، وقد تتغير واجهات برمجة التطبيقات النهائية.
 
 #### مثال للاستخدام <a name="load-more-and-infinite-scroll"></a>
 

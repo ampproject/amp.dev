@@ -43,7 +43,7 @@ description: 分析平台通常通过内嵌 JavaScript 代码段和函数调用�
 <script
   async
   custom-element="amp-analytics"
-  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+  src="https://ampjs.org/v0/amp-analytics-0.1.js"
 ></script>
 ```
 

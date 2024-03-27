@@ -30,7 +30,7 @@ CORS JSON エンドポイントからコンテンツを動的に取得し、指�
 <table>
   <tr>
     <td width="40%"><strong>必要なスクリプト</strong></td>
-    <td><code>&lt;script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-list" src="https://ampjs.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">サポートされるレイアウト</a></strong></td>
@@ -293,7 +293,7 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 
 ## 試験運用版: 追加の読み込みと無限スクロール（amp-list-load-more） <a name="common-attributes"></a>
 
-`<amp-list>` でのページ分けと無限スクロールの実装として `amp-list-load-more`（試験運用版）が導入されました。この機能を有効にするには、[テストページ](https://cdn.ampproject.org/experiments.html)で「amp-list-load-more」（試験運用版）を有効にして、`load-more` 属性を `<amp-list>` に追加します。この機能は現在、初期試用版のため、最終的な API は変更される可能性があります。
+`<amp-list>` でのページ分けと無限スクロールの実装として `amp-list-load-more`（試験運用版）が導入されました。この機能を有効にするには、[テストページ](https://ampjs.org/experiments.html)で「amp-list-load-more」（試験運用版）を有効にして、`load-more` 属性を `<amp-list>` に追加します。この機能は現在、初期試用版のため、最終的な API は変更される可能性があります。
 
 #### 使用例 <a name="load-more-and-infinite-scroll"></a>
 

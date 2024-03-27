@@ -11,7 +11,7 @@ Intégrez un tweet de Twitter dans votre page à l'aide de l'élément [`amp-twi
 Pour inclure un tweet dans votre page, incluez d'abord le script suivant dans la section `<head>` :
 
 [sourcecode:html]
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script async custom-element="amp-twitter" src="https://ampjs.org/v0/amp-twitter-0.1.js"></script>
 [/sourcecode]
 
 Actuellement, les tweets sont automatiquement redimensionnés en fonction de la taille indiquée, mais ne s'affichent pas forcément de façon idéale.
@@ -36,7 +36,7 @@ Intégrez une publication Instagram dans votre page à l'aide de l'élément [`a
 Pour inclure une publication Instagram, incluez d'abord le script suivant dans la section `<head>` :
 
 [sourcecode:html]
-<script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+<script async custom-element="amp-instagram" src="https://ampjs.org/v0/amp-instagram-0.1.js"></script>
 [/sourcecode]
 
 Incluez le code court d'Instagram figurant dans l'URL de la photo Instagram. Ainsi, dans `https://instagram.com/p/fBwFP`, `fBwFP` est le code court.
@@ -95,7 +95,7 @@ Incluez une vidéo YouTube dans votre page à l'aide de l'élément [`amp-youtub
 Vous devez inclure le script suivant dans la section `<head>` :
 
 [sourcecode:html]
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script async custom-element="amp-youtube" src="https://ampjs.org/v0/amp-youtube-0.1.js"></script>
 [/sourcecode]
 
 L'élément `data-videoid` YouTube figure dans l'URL de chaque page de vidéo YouTube. Ainsi, dans `https://www.youtube.com/watch?v=Z1q71gFeRqM`, `Z1q71gFeRqM` représente l'identification vidéo.

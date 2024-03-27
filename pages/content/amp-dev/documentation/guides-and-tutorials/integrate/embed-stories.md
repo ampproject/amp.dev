@@ -13,18 +13,18 @@ Web Stories are a full-screen immersive content experience that user’s tap or 
 
 Web Stories rely on the[ `amp-story-player` component ](https://github.com/ampproject/amphtml/blob/main/extensions/amp-story-player/0.1/amp-story-player.md)to integrate and play stories on AMP valid sites. Implement the `amp-story-player` by including the custom script in the head of the document.
 
-`<script async custom-element="amp-story-player" src="https://cdn.ampproject.org/v0/amp-story-player-0.1.js"></script>`
+`<script async custom-element="amp-story-player" src="https://ampjs.org/v0/amp-story-player-0.1.js"></script>`
 
 Then placing the `amp-story-player` element HTML in the desired location within your page’s `<body>`.
 
 [example preview="top-frame" playground="true" orientation="portrait"]
 ```html
 <head>
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async src="https://ampjs.org/v0.js"></script>
   <script
     async
     custom-element="amp-story-player"
-    src="https://cdn.ampproject.org/v0/amp-story-player-0.1.js"
+    src="https://ampjs.org/v0/amp-story-player-0.1.js"
   ></script>
 </head>
 <body>
@@ -49,11 +49,11 @@ Include the desired number of `<a>` tags, with each `href` attribute pointed to 
 [example preview="top-frame" playground="true" orientation="portrait"]
 ```html
 <head>
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async src="https://ampjs.org/v0.js"></script>
   <script
     async
     custom-element="amp-story-player"
-    src="https://cdn.ampproject.org/v0/amp-story-player-0.1.js"
+    src="https://ampjs.org/v0/amp-story-player-0.1.js"
   ></script>
 </head>
 <body>

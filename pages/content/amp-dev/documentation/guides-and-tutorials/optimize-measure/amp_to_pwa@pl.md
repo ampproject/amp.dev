@@ -67,7 +67,7 @@ Mechanizm AMP Service Worker po zainstalowaniu automatycznie [buforuje skrypty A
 Utwórz plik o nazwie `sw.js` i dodaj następujący kod:
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init();
 [/sourcecode]
 
@@ -82,7 +82,7 @@ Umieść wymagany znacznik skryptu w sekcji head pliku `index.html` oraz element
 [sourcecode:html]
 …
 
-<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async custom-element="amp-install-serviceworker" src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 …
 ...
@@ -122,7 +122,7 @@ Nasza aplikacja festiwalu muzycznego będzie buforować zasoby obrazów, wstępn
 Mechanizm AMP Service Worker można skonfigurować do [buforowania zasobów](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching) takich jak obrazy, filmy i czcionki. Użyjemy go do buforowania naszego obrazu tła i logotypu AMP. Otwórz plik `sw.js` i zaktualizuj go przy użyciu poniższego kodu:
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,
@@ -148,7 +148,7 @@ AMP Service Worker wstępnie ładuje linki, które mają atrybut `data-rel=prefe
 W celu poradzenia sobie z nieoczekiwanymi przypadkami lub kliknięciami linków do stron, których nie pobraliśmy wstępnie, dodamy stronę trybu offline, aby oferować spójne doświadczenie użytkownika, które jest „zorientowane na markę”, w przeciwieństwie do pokazywania ogólnej strony trybu offline przeglądarki. Pobierz plik [`offline.html` stąd](/static/files/tutorials/offline.zip) i zaktualizuj plik `sw.js` przy użyciu następującego kodu:
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,

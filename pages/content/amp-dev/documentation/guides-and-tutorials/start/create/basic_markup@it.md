@@ -25,7 +25,7 @@ Copialo e salvalo in un file con estensione .html.
       }
     </script>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
   </head>
   <body>
     <h1>Welcome to the mobile web</h1>
@@ -45,7 +45,7 @@ I documenti HTML AMP DEVONO:
   - Contenere un tag `<link rel="canonical" href="$SOME_URL">` all’interno dell’intestazione che faccia riferimento alla normale versione HTML del documento HTML AMP o a sé stesso se non esiste tale versione HTML.
   - Contenere un tag `<meta charset="utf-8">` in quanto primo tag secondario del tag dell’intestazione.
   - Contenere un tag `<meta name="viewport" content="width=device-width">`tazione. Si consiglia anche di includere initial-scale=1.
-  - Contenere un tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` in quanto ultimo elemento dell’intestazione (ciò comprende e carica la libreria AMP JS).
+  - Contenere un tag `<script async src="https://ampjs.org/v0.js"></script>` in quanto ultimo elemento dell’intestazione (ciò comprende e carica la libreria AMP JS).
   - Contenere quanto segue nei tag `<head>`:
     `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
 

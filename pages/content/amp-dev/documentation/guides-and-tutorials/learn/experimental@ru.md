@@ -31,7 +31,7 @@ formats:
 
 Если вы обнаружите проблему, которая возникает только в версии AMP для Beta Channel, создайте [задачу](https://github.com/ampproject/amphtml/issues/new) с описанием проблемы. Всегда указывайте URL-адрес страницы, на которой можно воспроизвести проблему.
 
-Чтобы подключить ваш браузер к AMP Beta Channel, перейдите на [страницу экспериментов AMP](https://cdn.ampproject.org/experiments.html) и активируйте эксперимент «AMP Beta Channel». Чтобы получать уведомления о важных или ломающих совместимость изменениях в AMP, подпишитесь на список рассылки [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
+Чтобы подключить ваш браузер к AMP Beta Channel, перейдите на [страницу экспериментов AMP](https://ampjs.org/experiments.html) и активируйте эксперимент «AMP Beta Channel». Чтобы получать уведомления о важных или ломающих совместимость изменениях в AMP, подпишитесь на список рассылки [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
 
 ## Как подключить экспериментальный компонент
 
@@ -55,14 +55,14 @@ AMP.toggleExperiment('experiment');
 
 ## Подключение эксперимента для определенного документа
 
-Документ может самостоятельно активировать определенные эксперименты. Чтобы сделать это, поместите мета-тег с названием `amp-experiments-opt-in` внутри head HTML-документа перед скриптом AMP (`https://cdn.ampproject.org/v0.js`). Значение его атрибута content представляет собой строку идентификаторов экспериментов, разделенных запятыми.
+Документ может самостоятельно активировать определенные эксперименты. Чтобы сделать это, поместите мета-тег с названием `amp-experiments-opt-in` внутри head HTML-документа перед скриптом AMP (`https://ampjs.org/v0.js`). Значение его атрибута content представляет собой строку идентификаторов экспериментов, разделенных запятыми.
 
 ```html
 <head>
   ...
   <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b" />
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async src="https://ampjs.org/v0.js"></script>
   ...
 </head>
 ```

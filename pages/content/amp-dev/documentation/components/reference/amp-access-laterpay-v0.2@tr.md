@@ -32,13 +32,13 @@ Yayıncıların [LaterPay](https://www.laterpay.net) mikro ödeme platformuna ko
     <td>
       <small>"amp-access-laterpay", "amp-access" ve "amp-analytics" ile ilgili komut dosyalarına ihtiyacınız olacaktır.</small>
       <div>
-        <code>&lt;script async custom-element="amp-access" src="https://cdn.ampproject.org/v0/amp-access-0.1.js"></script></code>
+        <code>&lt;script async custom-element="amp-access" src="https://ampjs.org/v0/amp-access-0.1.js"></script></code>
       </div>
       <div>
-        <code>&lt;script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script></code>
+        <code>&lt;script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js"></script></code>
       </div>
       <div>
-        <code>&lt;script async custom-element="amp-access-laterpay" src="https://cdn.ampproject.org/v0/amp-access-laterpay-0.2.js"></script></code>
+        <code>&lt;script async custom-element="amp-access-laterpay" src="https://ampjs.org/v0/amp-access-laterpay-0.2.js"></script></code>
       </div>
     </td>
   </tr>

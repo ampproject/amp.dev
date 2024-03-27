@@ -24,7 +24,7 @@ Umieść Shadow AMP w nagłówku swojej strony w następujący sposób:
 [sourcecode:html]
 
 <!-- Asynchronously load the AMP-with-Shadow-DOM runtime library. -->
-<script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
+<script async src="https://ampjs.org/shadow-v0.js"></script>
 
 [/sourcecode]
 

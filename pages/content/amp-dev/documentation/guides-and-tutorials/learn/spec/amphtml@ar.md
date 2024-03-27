@@ -89,12 +89,12 @@ limitations under the License.
     <script
       async
       custom-element="amp-carousel"
-      src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+      src="https://ampjs.org/v0/amp-carousel-0.1.js"
     ></script>
     <script
       async
       custom-element="amp-ad"
-      src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+      src="https://ampjs.org/v0/amp-ad-0.1.js"
     ></script>
     <style amp-boilerplate>
       body {
@@ -154,7 +154,7 @@ limitations under the License.
         }
       </style></noscript
     >
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
   </head>
   <body>
     <h1>Sample document</h1>
@@ -187,7 +187,7 @@ limitations under the License.
 - <a name="canon"></a>تحتوي على علامة `<link rel="canonical" href="$SOME_URL">` داخل رؤوسها والتي تشير إلى إصدار HTML العادي من مستند AMP HTML أو إلى نفسها إذا لا يوجد إصدار HTML من هذا القبيل. [🔗](#canon)
 - <a name="chrs"></a>تحتوي على علامة `<meta charset="utf-8">` كفرع أول لعلامة الرأس الخاصة بها. [🔗](#chrs)
 - <a name="vprt"></a>تحتوي على علامة `<meta name="viewport" content="width=device-width">` داخل علامة رأسها. ويوصى أيضًا بتضمين`minimum-scale=1` و`initial-scale=1`. [🔗](#vprt)
-- <a name="scrpt"></a>تحتوي على علامة `<script async src="https://cdn.ampproject.org/v0.js"></script>` داخل علامة الرأس الخاصة بها. [🔗](#scrpt)
+- <a name="scrpt"></a>تحتوي على علامة `<script async src="https://ampjs.org/v0.js"></script>` داخل علامة الرأس الخاصة بها. [🔗](#scrpt)
 - <a name="boilerplate"></a>تحتوي [ على رمز فقرة AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md) (`head > style[amp-boilerplate]` و`noscript > style[amp-boilerplate]` في علامة رؤوسهم. [🔗](#boilerplate)
 
 ### بيانات التعريف<a name="metadata"></a>
@@ -433,7 +433,7 @@ limitations under the License.
 
 يمكن إدراج مزودي الخطوط في القائمة البيضاء إذا كانوا يدعمون عمليات تكامل CSS فقط ويعملون عبر HTTPS. ويُسمح حاليًا للأصول التالية بعرض الخطوط عبر علامات الارتباط:
 
-يتم تحميل وقت تشغيل AMP عبر علامة `<script src="https://cdn.ampproject.org/v0.js"></script>` الإلزامية في `<head>` لمستند AMP.
+يتم تحميل وقت تشغيل AMP عبر علامة `<script src="https://ampjs.org/v0.js"></script>` الإلزامية في `<head>` لمستند AMP.
 
 ويمكن وضع وقت تشغيل AMP في وضع التطوير لأي صفحة. حيث سيؤدي وضع التطوير إلى تشغيل التحقق من صحة AMP على الصفحة المضمنة، مما يؤدي إلى إرسال حالة التحقق وأي أخطاء إلى وحدة تحكم مطوري JavaScript. وقد يتم تشغيل وضع التطوير من خلال إلحاق `#development=1` بعنوان URL للصفحة.
 
@@ -504,7 +504,7 @@ Example: `on="submit-success:lightbox1;submit-error:lightbox2"`
 <script
   async
   custom-element="amp-carousel"
-  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+  src="https://ampjs.org/v0/amp-carousel-0.1.js"
 ></script>
 
 [/sourcecode]
@@ -520,7 +520,7 @@ Example: `on="submit-success:lightbox1;submit-error:lightbox2"`
 يتخذ عنوان URL للمكونات الموسعة الشكل:
 
 [sourcecode:http]
-https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
+https://ampjs.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 [/sourcecode]
 
 ##### تعيين الإصدار <a name="versioning"></a>
@@ -540,7 +540,7 @@ https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 <script
   async
   custom-template="amp-mustache"
-  src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+  src="https://ampjs.org/v0/amp-mustache-0.2.js"
 ></script>
 
 [/sourcecode]
@@ -568,7 +568,7 @@ Hello {% raw %}{{you}}{% endraw %}!
 يتخذ عنوان URL للمكونات الموسعة الشكل:
 
 [sourcecode:http]
-https://cdn.ampproject.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
+https://ampjs.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
 [/sourcecode]
 
 ##### تعيين الإصدار <a name="versioning-1"></a>

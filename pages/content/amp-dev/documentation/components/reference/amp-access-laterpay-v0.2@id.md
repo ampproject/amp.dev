@@ -32,13 +32,13 @@ Memungkinkan penayang untuk berintegrasi lebih mudah dengan platform pembayaran 
     <td>
       <small>Perhatikan bahwa Anda memerlukan skrip untuk "amp-access-laterpay", "amp-access", dan "amp-analytics".</small>
       <div>
-        <code>&lt;script async custom-element="amp-access" src="https://cdn.ampproject.org/v0/amp-access-0.1.js"></script></code>
+        <code>&lt;script async custom-element="amp-access" src="https://ampjs.org/v0/amp-access-0.1.js"></script></code>
       </div>
       <div>
-        <code>&lt;script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script></code>
+        <code>&lt;script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js"></script></code>
       </div>
       <div>
-        <code>&lt;script async custom-element="amp-access-laterpay" src="https://cdn.ampproject.org/v0/amp-access-laterpay-0.2.js"></script></code>
+        <code>&lt;script async custom-element="amp-access-laterpay" src="https://ampjs.org/v0/amp-access-laterpay-0.2.js"></script></code>
       </div>
     </td>
   </tr>

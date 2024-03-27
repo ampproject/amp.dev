@@ -22,10 +22,10 @@ Puede insertar historias de AMP dentro de una página que no es parte de AMP, pa
     <head>
       <script
           async
-          src="https://cdn.ampproject.org/amp-story-player-v0.js"
+          src="https://ampjs.org/amp-story-player-v0.js"
       ></script>
       <link
-          href="https://cdn.ampproject.org/amp-story-player-v0.css"
+          href="https://ampjs.org/amp-story-player-v0.css"
           rel="stylesheet"
           type="text/css"
       />
@@ -80,9 +80,9 @@ Mostrar una historia de AMP dentro una página que no es parte de AMP requiere e
 Incluya los dos scripts necesarios en el encabezado de su documento:
 
 ```html
-<script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>
+<script async src="https://ampjs.org/amp-story-player-v0.js"></script>
 <link
-  href="https://cdn.ampproject.org/amp-story-player-v0.css"
+  href="https://ampjs.org/amp-story-player-v0.css"
   rel="stylesheet"
   type="text/css"
 />

@@ -44,11 +44,11 @@ Mặc dù AMP khá hạn chế về việc đánh dấu nào được dùng tron
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="This is the AMP Boilerplate.">
-    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
-    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
+    <link rel="preload" as="script" href="https://ampjs.org/v0.js">
+    <link rel="preload" as="script" href="https://ampjs.org/v0/amp-experiment-0.1.js">
     <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-experiment" src="https://cdn.ampproject.org/v0/amp-experiment-0.1.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
+    <script async custom-element="amp-experiment" src="https://ampjs.org/v0/amp-experiment-0.1.js"></script>
     <!-- Import other AMP Extensions here -->
     <style amp-custom>
       /* Add your styles here */
@@ -68,15 +68,15 @@ Ta hãy xét kĩ đoạn mã này theo từng bước:
 
 1. Thẻ đầu tiên nên là thẻ `meta charset`, tiếp theo sau là bất kì thẻ `meta` nào còn lại.
 
-2. Tiếp theo, tải trước thẻ `v0.js` `<script>` của thời gian chạy AMP với with `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`. Thời gian chạy AMP có thể bắt đầu tải xuống càng nhanh càng tốt vì [code soạn sẵn AMP](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) ẩn tài liệu thông qua `body { visibility:hidden }` cho đến khi thời gian chạy AMP đã tải. Tác vụ tải trước thời gian chạy AMP sẽ bảo trình duyệt tải xuống đoạn mã này với mức ưu tiên cao hơn. Hãy nhìn vào [server-side-rendering](#server-side-rendering) để tìm hiểu cách tránh điều này. {amp-img6} {/amp-img6}
+2. Tiếp theo, tải trước thẻ `v0.js` `<script>` của thời gian chạy AMP với with `<link as=script href=https://ampjs.org/v0.js rel=preload>`. Thời gian chạy AMP có thể bắt đầu tải xuống càng nhanh càng tốt vì [code soạn sẵn AMP](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) ẩn tài liệu thông qua `body { visibility:hidden }` cho đến khi thời gian chạy AMP đã tải. Tác vụ tải trước thời gian chạy AMP sẽ bảo trình duyệt tải xuống đoạn mã này với mức ưu tiên cao hơn. Hãy nhìn vào [server-side-rendering](#server-side-rendering) để tìm hiểu cách tránh điều này. {amp-img6} {/amp-img6}
 
-3. [sourcecode:html]<link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js"><link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js"><link as="script" rel="preload" href="https://cdn.ampproject.org/v0/story-1.0.js">[/sourcecode]
+3. [sourcecode:html]<link as="script" rel="preload" href="https://ampjs.org/v0/amp-custom-css-0.1.js"><link as="script" rel="preload" href="https://ampjs.org/v0/amp-experiment-0.1.js"><link as="script" rel="preload" href="https://ampjs.org/v0/story-1.0.js">[/sourcecode]
 
 4. Sử dụng [preconnect](https://www.igvita.com/2015/08/17/eliminating-roundtrips-with-preconnect/) để tăng tốc kết nối đến nguồn gốc khác khi không biết trước URL tài nguyên đầy đủ, ví dụ, khi sử dụng Google Fonts:
 
    [sourcecode:html]<link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>[/sourcecode]
 
-5. [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
+5. [sourcecode:html]<script async src="https://ampjs.org/v0.js"></script>[/sourcecode]
 
 6. Quy định thẻ `<script>` cho các [phần mở rộng làm trễ render](https://github.com/ampproject/amphtml/blob/main/src/render-delaying-services.js) (ví dụ, [`amp-experiment`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md) và [`amp-story`](../../../documentation/components/reference/amp-story.md)
 
@@ -185,7 +185,7 @@ Nếu bạn đang tìm cách bắt đầu với một service worker trong websi
 
 Lưu sẵn vào bộ nhớ đệm không chỉ phù hợp cho việc chuyển tiếp từ các trang AMP trong bộ nhớ đệm sang các trang không phải AMP từ nguồn gốc của bạn, nhưng còn phù hợp cho việc chuyển tiếp từ các trang AMP trong bộ nhớ đệm sang các trang AMP trên nguồn gốc của bạn. Lí do là bộ nhớ đệm AMP ghi lại các URL thời gian chạy AMP từ URL trường tồn sang phiên bản phát hành mới nhất, ví dụ:
 
-`https://cdn.ampproject.org/v0.js` -> `https://cdn.ampproject.org/rtv/001515617716922/v0.js`.
+`https://ampjs.org/v0.js` -> `https://ampjs.org/rtv/001515617716922/v0.js`.
 
 Hệ quả là một trang AMP được phục vụ từ nguồn gốc của bạn không hưởng lợi từ việc lưu bộ nhớ đệm của trình duyệt và trong trường hợp này phải tải xuống lại thời gian chạy AMP (chưa phân phiên bản nào). Với một service worker, bạn có thể lưu sẵn thời gian chạy AMP chưa phân phiên bản nào vào bộ nhớ đệm và tăng tốc quá trình chuyển tiếp. Để tìm hiểu thêm về lí do bộ nhớ đệm AMP phân thành phiên bản đối với các URL thời gian chạy AMP, hãy đọc [tài liệu này](https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer##versioned-amp-runtime).
 

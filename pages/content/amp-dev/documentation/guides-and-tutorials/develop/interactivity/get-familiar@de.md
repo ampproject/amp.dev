@@ -75,7 +75,7 @@ Eine blanke AMP Seite sieht wie folgt aus:
         }
       </style></noscript
     >
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
   </head>
   <body>
     Hello World!
@@ -93,22 +93,22 @@ Der Startercode des Tutorials ([`static/index.html`](https://github.com/googleco
 <script
   async
   custom-element="amp-carousel"
-  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+  src="https://ampjs.org/v0/amp-carousel-0.1.js"
 ></script>
 <script
   async
   custom-template="amp-mustache"
-  src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"
+  src="https://ampjs.org/v0/amp-mustache-0.1.js"
 ></script>
 <script
   async
   custom-element="amp-form"
-  src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
+  src="https://ampjs.org/v0/amp-form-0.1.js"
 ></script>
 <script
   async
   custom-element="amp-selector"
-  src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"
+  src="https://ampjs.org/v0/amp-selector-0.1.js"
 ></script>
 ```
 

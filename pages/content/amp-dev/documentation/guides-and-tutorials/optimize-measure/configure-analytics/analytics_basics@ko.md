@@ -47,7 +47,7 @@ AMP 플랫폼 통합의 일환으로 공급업체는 사전 정의된 [`amp-anal
 <script
   async
   custom-element="amp-analytics"
-  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+  src="https://ampjs.org/v0/amp-analytics-0.1.js"
 ></script>
 ```
 

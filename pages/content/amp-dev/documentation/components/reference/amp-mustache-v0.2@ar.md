@@ -36,7 +36,7 @@ teaser:
     <td width="40%"><strong>النص البرمجي المطلوب</strong></td>
     <td>
       <div>
-        <code>&lt;script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"&gt;&lt;/script&gt;</code>
+        <code>&lt;script async custom-template="amp-mustache" src="https://ampjs.org/v0/amp-mustache-0.2.js"&gt;&lt;/script&gt;</code>
       </div>
     </td>
   </tr>
@@ -72,7 +72,7 @@ Moustache هو بنية نموذج بمنطق أقل. راجِع [مستندات
 
 ```html
 
-<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+<script async custom-template="amp-mustache" src="https://ampjs.org/v0/amp-mustache-0.2.js"></script>
 ```
 
 يمكن بعد ذلك تعريف نماذج Mustache في علامة `script` أو `template` هكذا:

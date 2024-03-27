@@ -30,7 +30,7 @@ Penggantian untuk tag `video` HTML5; digunakan hanya untuk sematan file video HT
 <table>
   <tr>
     <td width="40%"><strong>Skrip yang Diperlukan</strong></td>
-    <td><code>&lt;script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js">&lt;/script></code></td>
+    <td><code>&lt;script async custom-element="amp-video" src="https://ampjs.org/v0/amp-video-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
     <td width="40%"><strong>Contoh</strong></td>

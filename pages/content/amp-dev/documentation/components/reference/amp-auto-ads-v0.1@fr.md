@@ -36,7 +36,7 @@ Ce composant injecte des annonces de manière dynamique dans une page AMP en uti
     <td>
       <code>
         &lt;script async custom-element="amp-auto-ads"
-            src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"&gt;&lt;/script&gt;
+            src="https://ampjs.org/v0/amp-auto-ads-0.1.js"&gt;&lt;/script&gt;
         </code>
       </td>
     </tr>

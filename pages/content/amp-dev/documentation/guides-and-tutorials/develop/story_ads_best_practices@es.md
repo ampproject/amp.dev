@@ -57,7 +57,7 @@ En los datos de las metaetiquetas se especifica que el anuncio cumple con el for
     <style amp-custom>
      amp-img {height: 100vh}
     </style>
-    <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+    <script async src="https://ampjs.org/amp4ads-v0.js"></script>
 
   </head>
   <body>

@@ -18,7 +18,7 @@ Relacja internetowa to pod względem technicznym pojedyncza strona utworzona prz
 - Zawiera znacznik najwyższego poziomu `<html ⚡>` albo `<html amp>`.
 - Zawiera znaczniki `<head>` i `<body>`.
 - Zawiera znacznik `<meta charset="utf-8>` jako pierwszy element podrzędny znacznika `<head>`.
-- Zawiera znacznik `<script async src="https://cdn.ampproject.org/v0.js"></script>` w sekcji `<head>`. Zgodnie z najlepszą praktyką należy dodać skrypt jak najwcześniej w sekcji `<head>`.
+- Zawiera znacznik `<script async src="https://ampjs.org/v0.js"></script>` w sekcji `<head>`. Zgodnie z najlepszą praktyką należy dodać skrypt jak najwcześniej w sekcji `<head>`.
 - Zawiera znacznik ` <link rel="canonical" href="page/url">` w sekcji `<head>`, z odsyłaczem href wskazującym adres URL relacji internetowej.
 - Zawiera znacznik `<meta name="viewport" content="width=device-width">` w sekcji `<head>`. Zalecane jest dodanie również właściwości initial-scale=1.
 - Zawiera [kod standardowy AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) w sekcji `<head>`.
@@ -91,16 +91,16 @@ Różnica między stroną internetową AMP a relacją internetową utworzoną pr
         }
       </style></noscript
     >
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
     <script
       async
       custom-element="amp-video"
-      src="https://cdn.ampproject.org/v0/amp-video-0.1.js"
+      src="https://ampjs.org/v0/amp-video-0.1.js"
     ></script>
     <script
       async
       custom-element="amp-story"
-      src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+      src="https://ampjs.org/v0/amp-story-1.0.js"
     ></script>
     <style amp-custom>
       ...;

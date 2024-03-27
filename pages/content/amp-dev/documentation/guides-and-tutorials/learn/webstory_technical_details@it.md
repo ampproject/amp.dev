@@ -18,7 +18,7 @@ Una Storia web dal punto di vista tecnico è una singola pagina web realizzata t
 - Contenere un tag di primo livello `<html ⚡>` (`<html amp>` è ugualmente accettato).
 - Contenere i tag `<head>` e `<body>` (questi sono opzionali in HTML).
 - Contenere un tag `<meta charset="utf-8">` come primo elemento figlio del tag `<head>`.
-- Contenere un tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` all'interno del proprio tag `<head>`. Le procedure consigliate suggeriscono l'inclusione dello script il prima possibile nella sezione `<head>`.
+- Contenere un tag `<script async src="https://ampjs.org/v0.js"></script>` all'interno del proprio tag `<head>`. Le procedure consigliate suggeriscono l'inclusione dello script il prima possibile nella sezione `<head>`.
 - Contenere un tag `<link rel="canonical" href="page/url">` all'interno della propria sezione `<head>` con l'elemento href che punta all'URL della Storia web.
 - Contenere un tag `<meta name="viewport" content="width=device-width">` all'interno del tag `<head>`. Si consiglia inoltre di includere l'attributo initial-scale=1.
 - Contenere il codice [boilerplate AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) nel tag `<head>`.
@@ -91,16 +91,16 @@ La differenza tra una semplice pagina web AMP e una storia web realizzata con AM
         }
       </style></noscript
     >
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
     <script
       async
       custom-element="amp-video"
-      src="https://cdn.ampproject.org/v0/amp-video-0.1.js"
+      src="https://ampjs.org/v0/amp-video-0.1.js"
     ></script>
     <script
       async
       custom-element="amp-story"
-      src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+      src="https://ampjs.org/v0/amp-story-1.0.js"
     ></script>
     <style amp-custom>
       ...;

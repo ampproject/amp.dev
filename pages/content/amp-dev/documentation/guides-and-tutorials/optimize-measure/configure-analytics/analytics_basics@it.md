@@ -81,7 +81,7 @@ nell’`<head>` del documento AMP (vedi anche
 [Dichiarazione di inclusione del componente](../../../../documentation/components/index.html)):
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js"></script>
 ```
 
 Il seguente esempio è simile all’[`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md).

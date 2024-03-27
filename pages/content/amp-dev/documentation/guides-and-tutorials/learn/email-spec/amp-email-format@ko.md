@@ -50,7 +50,7 @@ AMP는 모바일 클라이언트에서 매우 빠른 웹 페이지를 개발하�
         visibility: hidden;
       }
     </style>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
   </head>
   <body>
     Hello, world.
@@ -64,7 +64,7 @@ AMP 이메일의 필수 요건은 다음과 같습니다.
 - <a name="ampd"></a>최상위 태그로 `<html ⚡4email>` 태그 사용 (`<html amp4email>`도 사용 가능). [🔗](#ampd)
 - <a name="crps"></a>`<head>` 및 `<body>` 태그 사용(HTML에서는 선택 사항). [🔗](#crps)
 - <a name="chrs"></a>헤드 태그의 첫 번째 하위 요소로 `<meta charset="utf-8">` 태그 사용. [🔗](#chrs)
-- <a name="scrpt"></a>헤드 태그 내에 `<script async src="https://cdn.ampproject.org/v0.js"></script>` 태그 사용. [🔗](#scrpt)
+- <a name="scrpt"></a>헤드 태그 내에 `<script async src="https://ampjs.org/v0.js"></script>` 태그 사용. [🔗](#scrpt)
 - AMP JS 로드 시까지 우선 콘텐츠를 숨김 처리하려면 헤드 태그 내에 <a name="boilerplate"></a>amp4email 상용구 사용(`<style amp4email-boilerplate>body{visibility:hidden}</style>`) [🔗](#boilerplate)
 
 전체 AMPHTML 마크업은 200,000 바이트를 초과할 수 없습니다.

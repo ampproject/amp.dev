@@ -70,7 +70,7 @@ Tout d'abord, nous devons **ajouter** le JavaScript du composant [`amp-sidebar`]
 <script
   async
   custom-element="amp-sidebar"
-  src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
+  src="https://ampjs.org/v0/amp-sidebar-0.1.js"
 ></script>
 ```
 

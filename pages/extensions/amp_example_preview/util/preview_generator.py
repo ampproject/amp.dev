@@ -9,7 +9,7 @@ IMPORT_PATTERN = re.compile(r'<script(?:\s[^>]*)?\scustom-(element|template)\s*=
                             re.IGNORECASE)
 
 AMP_CUSTOM_DEPENDENCY_TEMPLATE = '<script async custom-{type}="{dependency}" ' \
-                                 'src="https://cdn.ampproject.org/v0/{dependency}-{version}.js"></script>'
+                                 'src="https://ampjs.org/v0/{dependency}-{version}.js"></script>'
 
 TEMPLATE_PATH = '/views/partials/code-preview/code-preview.j2'
 

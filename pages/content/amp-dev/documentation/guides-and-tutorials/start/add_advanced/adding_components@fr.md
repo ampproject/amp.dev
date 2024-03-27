@@ -56,7 +56,7 @@ N'oubliez pas que tous les composants ne sont pas inclus dans le fichier JavaScr
 <script
   async
   custom-element="amp-ad"
-  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+  src="https://ampjs.org/v0/amp-ad-0.1.js"
 ></script>
 ```
 
@@ -137,7 +137,7 @@ N'oubliez pas que tous les composants ne sont pas inclus dans le fichier JavaScr
 <script
   async
   custom-element="amp-youtube"
-  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+  src="https://ampjs.org/v0/amp-youtube-0.1.js"
 ></script>
 ```
 
@@ -161,7 +161,7 @@ Commencez par ajouter la requête JavaScript suivante à la section `<head>` de 
 <script
   async
   custom-element="amp-twitter"
-  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+  src="https://ampjs.org/v0/amp-twitter-0.1.js"
 ></script>
 ```
 
@@ -201,7 +201,7 @@ Essayons. Tout d'abord, **ajoutez** la bibliothèque du composant à la section 
 <script
   async
   custom-element="amp-fit-text"
-  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+  src="https://ampjs.org/v0/amp-fit-text-0.1.js"
 ></script>
 ```
 

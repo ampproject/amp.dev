@@ -94,7 +94,7 @@ in the `<head>` of the AMP document (see also
 [Component inclusion declaration](../../../../documentation/components/index.html)):
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js"></script>
 ```
 
 The following example is similar to the [`amp-pixel` example](../../../../documentation/components/reference/amp-pixel.md).

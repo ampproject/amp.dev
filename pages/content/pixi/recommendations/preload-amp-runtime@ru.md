@@ -9,5 +9,5 @@ tags:
 Предварительная загрузка необходимых ресурсов гарантирует их первоочередную доступность, тем самым повышая производительность страницы. Для работы AMP-страниц необходим JavaScript-файл библиотеки среды выполнения AMP, так что проконтролируйте, что он включен в предварительную загрузку. Для этого используйте [AMP-оптимизатор](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/) или вручную добавьте в код страницы следующий тег:
 
 ```
-<link as="script" href="https://cdn.ampproject.org/v0.js" rel="preload">
+<link as="script" href="https://ampjs.org/v0.js" rel="preload">
 ```

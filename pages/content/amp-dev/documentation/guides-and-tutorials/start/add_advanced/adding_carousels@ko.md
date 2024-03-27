@@ -14,7 +14,7 @@ description: 또 다른 모바일 페이지의 일반적인 특징은 캐러셀�
 <script
   async
   custom-element="amp-carousel"
-  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+  src="https://ampjs.org/v0/amp-carousel-0.1.js"
 ></script>
 ```
 

@@ -32,7 +32,7 @@ teaser:
     <td width="40%"><strong>Zorunlu Komut Dosyası</strong></td>
     <td>
       <div>
-        <code>&lt;script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js">&lt;/script></code>
+        <code>&lt;script async custom-template="amp-mustache" src="https://ampjs.org/v0/amp-mustache-0.2.js">&lt;/script></code>
       </div>
     </td>
   </tr>
@@ -66,7 +66,7 @@ Mustache, mantık içermeyen bir şablon söz dizimidir. Daha ayrıntılı bilgi
 Öncelikle `amp-mustache` şu şekilde beyan edilmeli/yüklenmelidir:
 
 ```html
-<script src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" async="" custom-template="amp-mustache"></script>
+<script src="https://ampjs.org/v0/amp-mustache-0.2.js" async="" custom-template="amp-mustache"></script>
 ```
 
 Daha sonra, Mustache şablonları bir `script` veya `template` etiketinde şu şekilde tanımlanabilir:

@@ -109,7 +109,7 @@ Można dodawać i usuwać dowolną liczbę klas CSS przy użyciu stanów i skła
   <script
     async
     custom-element="amp-bind"
-    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+    src="https://ampjs.org/v0/amp-bind-0.1.js"
   ></script>
   <style amp-custom>
     div {

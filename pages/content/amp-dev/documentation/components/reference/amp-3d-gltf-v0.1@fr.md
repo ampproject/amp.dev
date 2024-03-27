@@ -28,7 +28,7 @@ Ce composant affiche les modèles 3D au format glTF (GL Transmission Format).
 <table>
   <tr>
     <td width="40%"><strong>Script requis</strong></td>
-    <td><code>&lt;script async custom-element="amp-3d-gltf" src="https://cdn.ampproject.org/v0/amp-3d-gltf-0.1.js"&gt;&lt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-3d-gltf" src="https://ampjs.org/v0/amp-3d-gltf-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Mises en page compatibles</a></strong></td>

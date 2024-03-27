@@ -88,7 +88,7 @@ Leia mais: Saiba como [fornecer fallbacks e marcadores de posição para imagens
 ```
 [/example]
 
-Observação: Para usar esse componente, inclua `<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` no topo da página.
+Observação: Para usar esse componente, inclua `<script async custom-element="amp-anim" src="https://ampjs.org/v0/amp-anim-0.1.js"></script>` no topo da página.
 
 ## Vídeo
 
@@ -138,4 +138,4 @@ Inclua um marcador de posição antes do começo do áudio e um fallback, caso o
 ```
 [/example]
 
-Observação: Para usar esse componente, inclua `<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` no cabeçalho da página.
+Observação: Para usar esse componente, inclua `<script async custom-element="amp-audio" src="https://ampjs.org/v0/amp-audio-0.1.js"></script>` no cabeçalho da página.

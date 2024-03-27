@@ -64,7 +64,7 @@ Meta tag data specifies that the ad meets the Web Story format, sets the CTA but
     <style amp-custom>
      amp-img {height: 100vh}
     </style>
-    <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+    <script async src="https://ampjs.org/amp4ads-v0.js"></script>
 
   </head>
   <body>

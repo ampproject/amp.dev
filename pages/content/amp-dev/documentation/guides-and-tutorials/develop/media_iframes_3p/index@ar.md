@@ -121,7 +121,7 @@ contributors:
 
 [/example]
 
-[tip type="note"] <strong>ملحوظة–</strong> قم بتضمين <code>&lt;script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js">&lt;/script></code> في رأس صفحتك لاستخدام هذا المكون. [/tip]
+[tip type="note"] <strong>ملحوظة–</strong> قم بتضمين <code>&lt;script async custom-element="amp-anim" src="https://ampjs.org/v0/amp-anim-0.1.js">&lt;/script></code> في رأس صفحتك لاستخدام هذا المكون. [/tip]
 
 ## فيديو
 
@@ -175,4 +175,4 @@ contributors:
 
 [/example]
 
-[tip type="note"] <strong>ملحوظة–</strong> قم بتضمين `<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` في رأس صفحتك لاستخدام هذا المكون. [/tip]
+[tip type="note"] <strong>ملحوظة–</strong> قم بتضمين `<script async custom-element="amp-audio" src="https://ampjs.org/v0/amp-audio-0.1.js"></script>` في رأس صفحتك لاستخدام هذا المكون. [/tip]

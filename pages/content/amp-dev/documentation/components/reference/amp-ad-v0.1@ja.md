@@ -39,7 +39,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>必要なスクリプト</strong></td>
-    <td><code>&lt;script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js">&lt;/script></code><br>注: amp-ad はこのスクリプトがなくても機能しますが、将来にわたって互換性を維持するためにこのスクリプトを使用することを強くおすすめします。</td>
+    <td><code>&lt;script async custom-element="amp-ad" src="https://ampjs.org/v0/amp-ad-0.1.js">&lt;/script></code><br>注: amp-ad はこのスクリプトがなくても機能しますが、将来にわたって互換性を維持するためにこのスクリプトを使用することを強くおすすめします。</td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">サポートされるレイアウト</a></strong></td>

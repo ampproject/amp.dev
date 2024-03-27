@@ -67,7 +67,7 @@ AMP 서비스 워커는 설치 후 사용자가 [AMP 스크립트](https://githu
 `sw.js`라는 이름의 파일을 생성하고 다음 코드를 추가합니다.
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init();
 [/sourcecode]
 
@@ -82,7 +82,7 @@ AMP 웹사이트는 [`<amp-install-serviceworker>`](../../../documentation/compo
 [sourcecode:html]
 …
 
-<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async custom-element="amp-install-serviceworker" src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 …
 ...
@@ -122,7 +122,7 @@ AMP 서비스 워커는 기본 기능 및 앱의 니즈에 맞춰 최적화할 �
 AMP 서비스 워커에서 이미지, 동영상 글꼴과 같은 [애셋을 캐싱](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching)하도록 구성할 수 있습니다. 저희는 배경 이미지 및 AMP 로고를 캐싱하는 데 사용해보겠습니다. `sw.js` 파일을 열고 아래 코드에 업데이트하세요.
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,
@@ -148,7 +148,7 @@ AMP 서비스 워커는 `data-rel=prefetch` 속성이 포함된 링크를 미리
 예기치 못한 상황이나 미리 가져오지 않은 페이지 링크 클릭에 대처하여, 일반 브라우저 오프라인 페이지를 표시하는 대신 "브랜드" 일관성을 유지한 사용자 경험을 선사하는 오프라인 페이지를 추가하겠습니다. [여기에서 `offline.html`](/static/files/tutorials/offline.zip)을 다운로드하고 `sw.js`를 다음 코드로 업데이트합니다.
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,

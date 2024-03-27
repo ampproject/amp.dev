@@ -40,7 +40,7 @@ Füge im Tag `<html>` das Attribut `⚡4ads` hinzu, um das Dokument als AMPHTML 
 Für AMPHTML Ads ist eine eigene Version der AMP Runtime erforderlich. Füge daher das folgende Tag `<script>` im Abschnitt `<head>` deines Dokuments hinzu:
 
 ```html
-<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+<script async src="https://ampjs.org/amp4ads-v0.js"></script>
 ```
 
 AMPHTML Ad Creatives erfordern eine andere, wesentlich einfachere [Zeile für Boilerplate Stil](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#boilerplate) als AMP Seiten. Füge im Abschnitt `<head>` den folgenden Code hinzu:
@@ -66,7 +66,7 @@ Nachfolgend findest du den vollständigen Code für deine HTML Datei:
     <meta charset="utf-8" />
     <title>My amphtml ad</title>
     <meta name="viewport" content="width=device-width" />
-    <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+    <script async src="https://ampjs.org/amp4ads-v0.js"></script>
     <style amp4ads-boilerplate>
       body {
         visibility: hidden;

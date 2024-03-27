@@ -67,7 +67,7 @@ AMP サービスワーカーは、インストールされると、ユーザー�
 `sw.js` というファイルを作成して、以下のコードを追加します。
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init();
 [/sourcecode]
 
@@ -82,7 +82,7 @@ AMP ウェブサイトは、[`<amp-install-serviceworker>`](../../../documentati
 [sourcecode:html]
 …
 
-<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async custom-element="amp-install-serviceworker" src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 …
 ...
@@ -122,7 +122,7 @@ AMP サービスワーカーには、ユーザーが構成可能なオプショ�
 画像、動画、およびフォントなどの[アセットをキャッシュ](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching)するように、AMP サービスワーカーを構成することができます。これを使用して、背景画像と AMP ロゴをキャッシュすることにします。`sw.js` ファイルを開いて、以下のコードで更新します。
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,
@@ -148,7 +148,7 @@ AMP サービスワーカーは、`data-rel=prefetch` 属性のあるリンク�
 プリフェッチしなかったページへのリンクで予期しなかったケースやクリックに対応するために、汎用的なブラウザのオフラインページを表示する代わりに、一貫した「オンブランド」のユーザーエクスペリエンスを提供するオフラインページを追加します。[`offline.html` をここから](/static/files/tutorials/offline.zip)ダウンロードして、`sw.js` を以下のコードに更新します。
 
 [sourcecode:js]
-importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
+importScripts('https://ampjs.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,

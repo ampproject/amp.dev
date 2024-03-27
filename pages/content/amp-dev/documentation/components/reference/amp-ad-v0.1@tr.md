@@ -38,7 +38,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>Zorunlu Komut Dosyası</strong></td>
-    <td><code>&lt;script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js">&lt;/script></code><br>Not: amp-ad, bu komut dosyası olmadan da çalışmaya devam edebilir ancak ileriye dönük uyumluluk için bunu önemle tavsiye ediyoruz</td>
+    <td><code>&lt;script async custom-element="amp-ad" src="https://ampjs.org/v0/amp-ad-0.1.js">&lt;/script></code><br>Not: amp-ad, bu komut dosyası olmadan da çalışmaya devam edebilir ancak ileriye dönük uyumluluk için bunu önemle tavsiye ediyoruz</td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Desteklenen Düzenler</a></strong></td>

@@ -18,7 +18,7 @@ Eine Web Story ist technisch gesehen eine einzelne Webseite, die mit AMP erstell
 - Se enthält das Tag `<html ⚡>` oder `<html amp>` der obersten Ebene.
 - Sie enthält die Tags `<head>` und `<body>`.
 - Sie enthält das Tag ` <meta charset="utf-8">` als untergeordnetes Element des Tags `<head>`.
-- Sie enthält das Tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` in ihrem Tag `<head>`. Als Best Practice solltest du das Skript so früh wie möglich in `<head>` platzieren.
+- Sie enthält das Tag `<script async src="https://ampjs.org/v0.js"></script>` in ihrem Tag `<head>`. Als Best Practice solltest du das Skript so früh wie möglich in `<head>` platzieren.
 - Sie enthält das Tag `<link rel="canonical" href="page/url">` in ihrem Tag `<head>`, wobei href auf die URL der Web Story verweist.
 - Sie enthält das Tag `<meta name="viewport" content="width=device-width">` innerhalb des Tags `<head>`. Es wird auch empfohlen, 'initial-scale=1' anzugeben.
 - Sie enthält den Code der [AMP Boilerplate](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) im Tag `<head>`.
@@ -91,16 +91,16 @@ Der Unterschied zwischen einer AMP Webseite und einer mit AMP erstellten Web Sto
         }
       </style></noscript
     >
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
     <script
       async
       custom-element="amp-video"
-      src="https://cdn.ampproject.org/v0/amp-video-0.1.js"
+      src="https://ampjs.org/v0/amp-video-0.1.js"
     ></script>
     <script
       async
       custom-element="amp-story"
-      src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+      src="https://ampjs.org/v0/amp-story-1.0.js"
     ></script>
     <style amp-custom>
       ...;

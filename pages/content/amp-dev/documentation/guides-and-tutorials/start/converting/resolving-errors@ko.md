@@ -419,7 +419,7 @@ AMP는 사용자가 지정한 너비와 높이에 따라 해당 요소의 가로
         margin: 0.5em;
       }
     </style>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://ampjs.org/v0.js"></script>
   </head>
   <body>
     <header>News Site</header>
