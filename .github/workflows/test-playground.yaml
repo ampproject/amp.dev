@@ -1,12 +1,7 @@
 ---
 name: 'Test: Playground'
 
-on:
-  workflow_dispatch:
-  push:
-    paths:
-      - 'package.json'
-      - 'playground/**'
+on: [push, pull_request]
 
 jobs:
   test:

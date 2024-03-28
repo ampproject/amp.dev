@@ -1,12 +1,7 @@
 ---
 name: 'Test: Platform'
 
-on:
-  workflow_dispatch:
-  push:
-    paths:
-      - 'package.json'
-      - 'platform/lib/**'
+on: [push, pull_request]
 
 jobs:
   test:

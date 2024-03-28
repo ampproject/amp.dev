@@ -1,11 +1,7 @@
 ---
-name: 'Lint: JavaScript'
+name: 'Lint: YAML'
 
-on:
-  workflow_dispatch:
-  push:
-    paths:
-      - '**/*.js'
+on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -21,6 +17,10 @@ jobs:
 
       - name: Installing Node.js packages
         run: npm ci
+
+      - name: Linting YAML files
+        run: |
+          gulp lintYaml
 
       - name: Linting JavaScript files
         run: |
