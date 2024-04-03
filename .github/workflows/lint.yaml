@@ -1,7 +1,13 @@
 ---
-name: 'Lint: YAML'
+name: 'Lint: all'
 
-on: [push, pull_request]
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+
 jobs:
   test:
     runs-on: ubuntu-latest
