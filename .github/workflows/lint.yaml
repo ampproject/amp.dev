@@ -19,9 +19,7 @@ jobs:
         run: npm ci
 
       - name: Linting YAML files
-        run: |
-          gulp lintYaml
+        run: gulp lintYaml
 
       - name: Linting JavaScript files
-        run: |
-          gulp lintNode
+        run: gulp lintNode
