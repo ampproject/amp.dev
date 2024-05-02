@@ -859,6 +859,8 @@ email:
           url: https://elasticemail.com/
         - label: eSputnik
           url: https://esputnik.com/
+        - label: ExpertSender
+          url: https://www.expertsender.com/
         - label: ExpressPigeon
           url: https://expresspigeon.com/amp-dynamic-email
         - label: Iterable
