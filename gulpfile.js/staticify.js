@@ -108,6 +108,7 @@ async function staticify(done) {
           through.obj(async (file, enc, callback) => {
             const configObj = {
               requestPath: `${file.path.replace(requestPathRegex, '')}/`,
+              level: 'beginner', // Some filters require any level to be set, so we set a default here.
               format,
               requestedFormat: format,
             };
