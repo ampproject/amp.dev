@@ -65,7 +65,7 @@ class AmpDependencies(object):
 
             dep_type = details[1]
 
-            src = 'https://ampjs.org/v0/{name}-{version}.js'.format(
+            src = 'https://cdn.ampproject.org/v0/{name}-{version}.js'.format(
                 name=name, version=version)
             tag = '<script custom-{type}="{name}" src="{src}" async></script>'.format(
                 type=dep_type, name=name, src=src)

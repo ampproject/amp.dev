@@ -21,14 +21,14 @@ AMP 개발자 채널은 **덜 안정적**이고 일부 사용자에게만 제공
 
 개발자 채널 버전의 AMP에서만 발생하는 문제를 찾으면 [문제를 신고](https://github.com/ampproject/amphtml/issues/new)하고 문제에 관한 설명을 첨부해 주세요. 항상 문제를 재현하는 페이지의 URL을 포함하세요.
 
-브라우저에서 AMP 개발자 채널을 사용하도록 선택하려면 [AMP 실험 페이지](https://ampjs.org/experiments.html)로 이동한 다음 'AMP 개발자 채널' 실험을 활성화합니다. AMP와 관련된 중요/최신 변경사항에 관해 알림을 받으려면 [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce) 메일링 리스트를 구독하세요.
+브라우저에서 AMP 개발자 채널을 사용하도록 선택하려면 [AMP 실험 페이지](https://cdn.ampproject.org/experiments.html)로 이동한 다음 'AMP 개발자 채널' 실험을 활성화합니다. AMP와 관련된 중요/최신 변경사항에 관해 알림을 받으려면 [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce) 메일링 리스트를 구독하세요.
 
 ## 실험 구성요소 사용
 
 #### cdn.ampproject.org에서 게재
 
 [https://cdn.ampproject.org](https://cdn.ampproject.org)에서 게재된 콘텐츠는 
-[AMP 실험 페이지](https://ampjs.org/experiments.html)로 이동하여
+[AMP 실험 페이지](https://cdn.ampproject.org/experiments.html)로 이동하여
 실험 구성요소를 사용 또는 사용 안함으로 전환하여 사용 또는 사용 중지하시기 바랍니다. 실험 구성요소를 선택하면 브라우저에 Google AMP Cache를 통해 게재되는 모든 AMP 페이지에서 실험을 사용하도록 설정하는 쿠키가 설정됩니다.
 
 #### 다른 도메인에서 게재
@@ -45,14 +45,14 @@ AMP.toggleExperiment('experiment')
 
 ## 특정 문서에 실험 사용
 
-문서는 특정 실험을 선택할 수 있습니다. 선택하려면 AMP 스크립트 앞의 HTML 문서 헤드에 `amp-experiments-opt-in` 이름의 메타태그를 넣기만 하면 됩니다(`https://ampjs.org/v0.js`). 콘텐츠 값은 쉼표로 구분되는 선택할 실험 ID 문자열입니다.
+문서는 특정 실험을 선택할 수 있습니다. 선택하려면 AMP 스크립트 앞의 HTML 문서 헤드에 `amp-experiments-opt-in` 이름의 메타태그를 넣기만 하면 됩니다(`https://cdn.ampproject.org/v0.js`). 콘텐츠 값은 쉼표로 구분되는 선택할 실험 ID 문자열입니다.
 
 ```html
 <head>
   ...
   <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
-  <script async src="https://ampjs.org/v0.js"></script>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
   ...
 </head>
 ```

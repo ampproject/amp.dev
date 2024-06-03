@@ -24,7 +24,7 @@ O componente `<amp-ad>` é uma extensão de anúncio personalizada para a biblio
 <script
   async
   custom-element="amp-ad"
-  src="https://ampjs.org/v0/amp-ad-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
 ></script>
 ```
 

@@ -20,7 +20,7 @@ Las páginas de AMP son compatibles con un JavaScript personalizado mediante el 
 <html ⚡>
 <head>
   ...
-  <script async custom-element="amp-script" src="https://ampjs.org/v0/amp-script-0.1.js"></script>
+  <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
 <body>
   ...
   <amp-script layout="container" src="https://example.com/myfile.js">

@@ -67,7 +67,7 @@ Dopo l'installazione, il processo di lavoro dei servizi AMP è in grado di memor
 Creare un file di nome `sw.js` e aggiungervi il codice seguente:
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init();
 [/sourcecode]
 
@@ -82,7 +82,7 @@ Posizionare il tag dello script richiesto nell'intestazione di `index.html` e l'
 [sourcecode:html]
 …
 
-<script async custom-element="amp-install-serviceworker" src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 …
 ...
@@ -122,7 +122,7 @@ La nostra app per i festival musicali memorizzerà nella cache le nostre risorse
 Si possono configurare i processi di lavoro dei servizi per memorizzare in [cache le risorse](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching), quali immagini, video e caratteri. Ce ne serviremo per memorizzare in cache la nostra immagine di sfondo e il logo AMP. Aprire il file `sw.js` e aggiornarlo con il seguente codice:
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,
@@ -148,7 +148,7 @@ Il processo di lavoro dei servizi AMP esegue il pre-caricamento dei link che han
 Per gestire casi imprevisti o clic su collegamenti a pagine non pre-caricate, aggiungeremo una pagina offline per offrire un'esperienza d'uso coerente con il brand, invece di mostrare la generica pagina offline offerta dal browser. Scaricare [da qui `offline.html`](/static/files/tutorials/offline.zip) e aggiornare `sw.js` con il seguente codice:
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,

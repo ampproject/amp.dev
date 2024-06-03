@@ -43,7 +43,7 @@ Um diese Funktionalität in AMP zu replizieren, müssen wir zuerst die Komponent
 <script
   async
   custom-element="amp-analytics"
-  src="https://ampjs.org/v0/amp-analytics-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
 ></script>
 ```
 

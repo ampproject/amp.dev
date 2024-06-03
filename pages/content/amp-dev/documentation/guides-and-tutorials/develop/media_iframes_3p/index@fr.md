@@ -121,7 +121,7 @@ L'élément [`amp-anim`](../../../../documentation/components/reference/amp-anim
 
 [/example]
 
-[tip type="note"] **REMARQUE –** Ajoutez `<script async custom-element="amp-anim" src="https://ampjs.org/v0/amp-anim-0.1.js"></script>` dans l'en-tête de votre document pour utiliser ce composant. [/tip]
+[tip type="note"] **REMARQUE –** Ajoutez `<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` dans l'en-tête de votre document pour utiliser ce composant. [/tip]
 
 ## Vidéo
 
@@ -175,4 +175,4 @@ Incluez une solution de secours, si le navigateur ne prend pas en charge l'audio
 
 [/example]
 
-[tip type="note"] **REMARQUE –** Ajoutez `<script async custom-element="amp-audio" src="https://ampjs.org/v0/amp-audio-0.1.js"></script>` dans l'en-tête de votre page pour utiliser ce composant. [/tip]
+[tip type="note"] **REMARQUE –** Ajoutez `<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` dans l'en-tête de votre page pour utiliser ce composant. [/tip]

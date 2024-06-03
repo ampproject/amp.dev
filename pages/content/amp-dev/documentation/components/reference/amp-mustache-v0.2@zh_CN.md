@@ -32,7 +32,7 @@ teaser:
     <td width="40%"><strong>必需的脚本</strong></td>
     <td>
       <div>
-        <code>&lt;script async custom-template="amp-mustache" src="https://ampjs.org/v0/amp-mustache-0.2.js">&lt;/script></code>
+        <code>&lt;script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js">&lt;/script></code>
       </div>
     </td>
   </tr>
@@ -66,7 +66,7 @@ Mustache 是一种无逻辑模板语法。如需了解详情，请参阅 [Mustac
 首先，必须按如下所示声明/加载 `amp-mustache`：
 
 ```html
-<script src="https://ampjs.org/v0/amp-mustache-0.2.js" async="" custom-template="amp-mustache"></script>
+<script src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" async="" custom-template="amp-mustache"></script>
 ```
 
 然后，可以在 `script` 或 `template` 标记中定义 Mustache 模板，如下所示：

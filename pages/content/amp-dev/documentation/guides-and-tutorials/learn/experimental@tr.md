@@ -11,11 +11,11 @@ Ancak hataları veya beklenmedik yan etkileri olabileceği için dikkatli bir ş
 
 AMP Yeni Geliştirilenler Konsol Kanalı, tarayıcıda AMP JS kitaplıklarının daha yeni bir sürümünü kullanmayı etkinleştirmenin bir yoludur.
 
-Tarayıcınızda AMP Yeni Geliştirilenler Kanalı'nı etkinleştirmek için [AMP deneyleri sayfasına](https://ampjs.org/experiments.html) gidin ve "AMP Yeni Geliştirilenler Kanalı" deneyini etkinleştirin.
+Tarayıcınızda AMP Yeni Geliştirilenler Kanalı'nı etkinleştirmek için [AMP deneyleri sayfasına](https://cdn.ampproject.org/experiments.html) gidin ve "AMP Yeni Geliştirilenler Kanalı" deneyini etkinleştirin.
 
 ## Bir deneysel bileşeni etkinleştirme
 
-[https://cdn.ampproject.org](https://cdn.ampproject.org) adresinden sunulan içerik için [AMP deneyleri sayfasına](https://ampjs.org/experiments.html) gidin ve açık (veya kapalı) durumuna getirerek deneysel bileşenleri etkinleştirin (veya devre dışı bırakın). Etkinleştirme sonrasında tarayıcınızda, Google AMP Önbelleği üzerinden sunulan tüm AMP sayfalarında deneyi etkinleştirecek bir çerez ayarlanır.
+[https://cdn.ampproject.org](https://cdn.ampproject.org) adresinden sunulan içerik için [AMP deneyleri sayfasına](https://cdn.ampproject.org/experiments.html) gidin ve açık (veya kapalı) durumuna getirerek deneysel bileşenleri etkinleştirin (veya devre dışı bırakın). Etkinleştirme sonrasında tarayıcınızda, Google AMP Önbelleği üzerinden sunulan tüm AMP sayfalarında deneyi etkinleştirecek bir çerez ayarlanır.
 
 Geliştirme modu etkin durumdayken diğer alanlardan sunulan içerik için deneyler, geliştirme araçları konsolundan şu kod kullanılarak etkinleştirilebilir:
 

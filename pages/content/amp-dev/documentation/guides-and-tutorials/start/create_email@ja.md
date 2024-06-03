@@ -25,7 +25,7 @@ AMP Playground では、AMP for Email 形式がサポートされているため
 <html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <style amp4email-boilerplate>
       body {
         visibility: hidden;
@@ -48,7 +48,7 @@ AMP Playground では、AMP for Email 形式がサポートされているため
 では、従来の HTML メールとは大きく異なる点について見てみましょう。
 
 - AMP メールは、html タグに `⚡4email` または `amp4email` を含めることで、AMP メールであることを示す必要があります。
-- `<head>` タグにも、AMP ランタイムを読み込む `<script>` タグを含める必要があります。`<script async src="https://ampjs.org/v0.js"></script>`
+- `<head>` タグにも、AMP ランタイムを読み込む `<script>` タグを含める必要があります。`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 - 最初に AMP が読み込まれるまでコンテンツを非表示にする CSS ボイラープレート。` <style amp4email-boilerplate>body{visibility:hidden}</style>`
 
 メールの作業を行ったことがある方は、メールにスクリプトを配置するという考えに対して抵抗があるかもしれません！ご安心ください。AMP メールをサポートするメールプロバイダは厳格なセキュリティチェックを実施しており、検証済みの AMP スクリプトのみをクライアントで実行できるようにしています。このため、セキュリティの脆弱性を生じることなく、動的でインタラクティブな機能を受信者の受信トレイで直接実行することができるのです！AMP メールに必要なマークアップの詳細について読み進めてください。
@@ -119,7 +119,7 @@ AMP メールには、メールに使用されるほとんどの HTML タグを�
 <script
   async
   custom-element="amp-carousel"
-  src="https://ampjs.org/v0/amp-carousel-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
 ></script>
 ```
 
@@ -218,7 +218,7 @@ AMP では、ドキュメントの head に配置される `<style amp-custom>` 
 <script
   async
   custom-element="amp-bind"
-  src="https://ampjs.org/v0/amp-bind-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
 ></script>
 ```
 

@@ -21,7 +21,7 @@ description: 入门代码提供的是一种极简的用户体验。我们可通�
 <script
   async
   custom-element="amp-bind"
-  src="https://ampjs.org/v0/amp-bind-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
 ></script>
 ```
 

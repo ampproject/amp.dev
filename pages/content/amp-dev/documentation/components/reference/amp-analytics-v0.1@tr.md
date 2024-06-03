@@ -29,7 +29,7 @@ Bir AMP dokümanındaki analiz verilerini yakalar.
 <table>
   <tr>
     <td class="col-fourty"><strong>Zorunlu Komut Dosyası</strong></td>
-    <td><code>&lt;script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js"&gt;&lt;/script></code&gt;</td>
+    <td><code>&lt;script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"&gt;&lt;/script></code&gt;</td>
   </tr>
   <tr>
     <td class="col-fourty"><strong>Örnekler</strong></td>

@@ -24,7 +24,7 @@ Nhúng một Tweet từ Twitter trong trang của bạn sử dụng yếu tố [
 [sourcecode:html]
 
 <script async custom-element="amp-twitter"
-  src="https://ampjs.org/v0/amp-twitter-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 
 [/sourcecode]
 
@@ -55,7 +55,7 @@ Nhúng một Instagram vào trang của bạn sử dụng yếu tố [`amp-insta
 [sourcecode:html]
 
 <script async custom-element="amp-instagram"
-  src="https://ampjs.org/v0/amp-instagram-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
 
 [/sourcecode]
 
@@ -86,7 +86,7 @@ Bạn cần bao gồm kịch bản sau trong phần `<head>`:
 [sourcecode:html]
 
 <script async custom-element="amp-facebook"
-  src="https://ampjs.org/v0/amp-facebook-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
 
 [/sourcecode]
 
@@ -134,7 +134,7 @@ Bạn cần bao gồm kịch bản sau trong phần `<head>`:
 [sourcecode:html]
 
 <script async custom-element="amp-youtube"
-  src="https://ampjs.org/v0/amp-youtube-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 
 [/sourcecode]
 

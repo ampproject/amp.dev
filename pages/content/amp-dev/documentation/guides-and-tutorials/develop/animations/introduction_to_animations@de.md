@@ -219,7 +219,7 @@ Mithilfe der [Ausdrücke `var(/content/amp-dev/documentation/components/referenc
   <script
     async
     custom-element="amp-animation"
-    src="https://ampjs.org/v0/amp-animation-0.1.js"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
   ></script>
   <style amp-custom>
     .parent {
@@ -316,7 +316,7 @@ Animationen können [`conditions`](/content/amp-dev/documentation/components/ref
   <script
     async
     custom-element="amp-animation"
-    src="https://ampjs.org/v0/amp-animation-0.1.js"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
   ></script>
 </head>
 <body>

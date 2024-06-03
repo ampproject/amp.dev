@@ -35,7 +35,7 @@ limitations under the License.
   </tr>
   <tr>
     <td><strong>Zorunlu Komut Dosyası</strong></td>
-    <td><code>&lt;script async custom-element="amp-form" src="https://ampjs.org/v0/amp-form-0.1.js">&lt;/script></code></td>
+    <td><code>&lt;script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
     <td><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute">Desteklenen Düzenler</a></strong></td>

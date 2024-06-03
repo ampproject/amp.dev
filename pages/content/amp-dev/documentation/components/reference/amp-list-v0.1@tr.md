@@ -30,7 +30,7 @@ teaser:
 <table>
   <tr>
     <td width="40%"><strong>Zorunlu Komut Dosyası</strong></td>
-    <td><code>&lt;script async custom-element="amp-list" src="https://ampjs.org/v0/amp-list-0.1.js">&gt;&lt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js">&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Desteklenen Düzenler</a></strong></td>
@@ -298,7 +298,7 @@ Daha hızlı performans için `binding="no"` veya `binding="refresh"` kullanılm
 
 ## Deneme: Daha Fazla Yükleme ve Sonsuz Kaydırma (amp-list-load-more) <a name="common-attributes"></a>
 
-`<amp-list>` öğesinde sayfalara ayırma ve sonsuz kaydırma için bir uygulama olarak `amp-list-load-more` denemesini kullanıma sunduk. [Denemeler sayfasında](https://ampjs.org/experiments.html) "amp-list-load-more" denemesini etkinleştirerek ve `<amp-list>` öğesine `load-more` özelliğini ekleyerek bu özelliği etkinleştirebilirsiniz. Bu özellik şu anda kaynak denemesindedir ve nihai API'ler değişebilir.
+`<amp-list>` öğesinde sayfalara ayırma ve sonsuz kaydırma için bir uygulama olarak `amp-list-load-more` denemesini kullanıma sunduk. [Denemeler sayfasında](https://cdn.ampproject.org/experiments.html) "amp-list-load-more" denemesini etkinleştirerek ve `<amp-list>` öğesine `load-more` özelliğini ekleyerek bu özelliği etkinleştirebilirsiniz. Bu özellik şu anda kaynak denemesindedir ve nihai API'ler değişebilir.
 
 #### Örnek Kullanım <a name="load-more-and-infinite-scroll"></a>
 

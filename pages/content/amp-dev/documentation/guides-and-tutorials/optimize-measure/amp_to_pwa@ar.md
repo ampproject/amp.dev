@@ -67,7 +67,7 @@ You should be able to view the landing page for Lyrical Lyghtning, the Mobile Mu
 أنشئ ملفًا يُسمى `sw.js` وأضِف الرمز التالي:
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init();
 [/sourcecode]
 
@@ -82,7 +82,7 @@ AMP_SW.init();
 [sourcecode:html]
 …
 
-<script async custom-element="amp-install-serviceworker" src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 …
 ...
@@ -122,7 +122,7 @@ AMP_SW.init();
 يمكنك تكوين عامل خدمة AMP على [ذاكرة التخزين المؤقت للأصول](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching)، مثل الصور ومقاطع الفيديو والخطوط. سنستخدمها لتخزين صورة الخلفية وشعار AMP مؤقتًا. قم بفتح ملف `sw.js` وتحديثه إلى الرمز أدناه:
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,
@@ -148,7 +148,7 @@ cachingStrategy: 'CACHE_FIRST'
 للتعامل مع الحالات غير المتوقعة أو النقرات على روابط لصفحات لم نقم بجلبها مُسبقًا، سنضيف صفحة غير متصلة بالإنترنت لتقديم تجربة مستخدم متسقة تكون "على العلامة التجارية"، بدلاً من عرض الصفحة العامة غير المتصلة بالإنترنت للمتصفح. قم بتنزيل [`offline.html` هنا](/static/files/tutorials/offline.zip) وتحديث `sw.js` إلى الرمز التالي:
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,

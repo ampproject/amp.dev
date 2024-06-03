@@ -133,7 +133,7 @@ Khi điểm cuối của bạn nhận được một yêu cầu CORS:
 
 <span id="verify-cors-header"></span>
 
-Các điểm cuối CORS nhận nguồn gốc yêu cầu thông qua đầu đề HTTP của `Origin` (Nguồn gốc). Các điểm cuối chỉ nên cho phép các yêu cầu từ: (1) nguồn gốc của riêng nhà phát hành; và (2) mỗi nguồn gốc `cacheDomain` được liệt kê trong [https://ampjs.org/caches.json](https://ampjs.org/caches.json).
+Các điểm cuối CORS nhận nguồn gốc yêu cầu thông qua đầu đề HTTP của `Origin` (Nguồn gốc). Các điểm cuối chỉ nên cho phép các yêu cầu từ: (1) nguồn gốc của riêng nhà phát hành; và (2) mỗi nguồn gốc `cacheDomain` được liệt kê trong [https://cdn.ampproject.org/caches.json](https://cdn.ampproject.org/caches.json).
 
 Ví dụ, các điểm cuối nên cho phép các yêu cầu từ:
 

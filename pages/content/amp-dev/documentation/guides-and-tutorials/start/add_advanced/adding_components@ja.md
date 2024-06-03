@@ -56,7 +56,7 @@ AMP の広告は、[`amp-ad`](../../../../documentation/components/reference/amp
 <script
   async
   custom-element="amp-ad"
-  src="https://ampjs.org/v0/amp-ad-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
 ></script>
 ```
 
@@ -137,7 +137,7 @@ AMP の広告は、[`amp-ad`](../../../../documentation/components/reference/amp
 <script
   async
   custom-element="amp-youtube"
-  src="https://ampjs.org/v0/amp-youtube-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
 ></script>
 ```
 
@@ -161,7 +161,7 @@ Twitter に投稿されたツイートをそのまま埋め込む機能も、ニ
 <script
   async
   custom-element="amp-twitter"
-  src="https://ampjs.org/v0/amp-twitter-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
 ></script>
 ```
 
@@ -201,7 +201,7 @@ AMP には、この問題を解決するための専用のコンポーネント�
 <script
   async
   custom-element="amp-fit-text"
-  src="https://ampjs.org/v0/amp-fit-text-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
 ></script>
 ```
 

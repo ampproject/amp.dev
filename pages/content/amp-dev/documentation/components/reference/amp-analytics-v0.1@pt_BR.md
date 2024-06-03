@@ -29,7 +29,7 @@ Registra dados de análise de documentos AMP.
 <table>
   <tr>
     <td class="col-fourty"><strong>Script obrigatório</strong></td>
-    <td><code>&lt;script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js"&gt;&lt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong>Exemplos</strong></td>

@@ -52,7 +52,7 @@ En outre, les publicités doivent respecter les règles suivantes:
 <td>Permet aux validateurs d'identifier un document publicitaire en tant que document AMP général ou en tant que document publicitaire AMPHTML restreint et de l'envoyer en conséquence.</td>
 </tr>
 <tr>
-<td>Doit inclure <code>&lt;script async src="https://ampjs.org/amp4ads-v0.js"></code> comme script d'exécution au lieu de <code>https://ampjs.org/v0.js</code>.</td>
+<td>Doit inclure <code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js"></code> comme script d'exécution au lieu de <code>https://cdn.ampproject.org/v0.js</code>.</td>
 <td>Permet des comportements d'exécution personnalisés pour les annonces AMP HTML diffusées dans des iframes d'origine croisée.</td>
 </tr>
 <tr>
@@ -329,7 +329,7 @@ Les balises SVG ne sont pas dans l'espace de noms HTML5. Ils sont répertoriés 
 
 #### 4.11 Script <a name="411-scripting"></a>
 
-- À l'instar d'un document AMP général, l'élément `<head>` de la publicité doit contenir une balise `<script async src="https://ampjs.org/amp4ads-v0.js"></script>`.
+- À l'instar d'un document AMP général, l'élément `<head>` de la publicité doit contenir une balise `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>`.
 - Contrairement à l'AMP général, `<noscript>` est interdit.
   - _Logique: étant_ donné que les annonces AMPHTML nécessitent l'activation de Javascript pour fonctionner, les blocs `<noscript>` ne servent à rien dans les annonces AMPHTML et ne font que consommer la bande passante du réseau.
 - Contrairement à l'AMP général, `<script type="application/ld+json">` est interdit.

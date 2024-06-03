@@ -89,12 +89,12 @@ AMP HTML은 기여되었지만 중앙에서 관리되고 호스팅되는 맞춤 
     <script
       async
       custom-element="amp-carousel"
-      src="https://ampjs.org/v0/amp-carousel-0.1.js"
+      src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
     ></script>
     <script
       async
       custom-element="amp-ad"
-      src="https://ampjs.org/v0/amp-ad-0.1.js"
+      src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
     ></script>
     <style amp-boilerplate>
       body {
@@ -154,7 +154,7 @@ AMP HTML은 기여되었지만 중앙에서 관리되고 호스팅되는 맞춤 
         }
       </style></noscript
     >
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
     <h1>Sample document</h1>
@@ -185,7 +185,7 @@ AMP HTML 문서는
 - <a name="canon"></a>AMP HTML 문서의 일반 HTML 버전을 가리키는 `<link rel="canonical" href="$SOME_URL">` 태그를 머리 안에 포함하거나 그러한 HTML 버전이없는 경우 자체를 가리 킵니다. [🔗](#canon)
 - <a name="chrs"></a>head 태그의 첫 번째 자식으로 `<meta charset="utf-8">` 태그를 포함합니다. [🔗](#chrs)
 - <a name="vprt"></a>head 태그 안에 `<meta name="viewport" content="width=device-width">` 태그를 포함합니다. 또한 `minimum-scale=1` 및 `initial-scale=1` 을 포함하는 것이 좋습니다. [🔗](#vprt)
-- <a name="scrpt"></a>head 태그 안에 `<script async src="https://ampjs.org/v0.js"></script>` 태그를 포함합니다. [🔗](#scrpt)
+- <a name="scrpt"></a>head 태그 안에 `<script async src="https://cdn.ampproject.org/v0.js"></script>` 태그를 포함합니다. [🔗](#scrpt)
 - <a name="boilerplate"></a>head 태그에 [AMP 상용구 코드](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md) ( `head > style[amp-boilerplate]` 및 `noscript > style[amp-boilerplate]` )를 포함합니다. [🔗](#boilerplate)
 
 ### 메타 데이터<a name="metadata"></a>
@@ -437,7 +437,7 @@ Authors are free to include all custom fonts via an `@font-face` CSS instruction
 
 AMP 런타임은 모든 AMP 문서 내에서 실행되는 자바 스크립트의 일부입니다. AMP 맞춤 요소에 대한 구현을 제공하고, 리소스로드 및 우선 순위를 관리하며, 개발 중에 사용할 AMP HTML 용 런타임 유효성 검사기를 선택적으로 포함합니다.
 
-AMP 런타임은 AMP 문서의 필수 `<script src="https://ampjs.org/v0.js"></script>` 태그를 통해로드됩니다.<code></code> .
+AMP 런타임은 AMP 문서의 필수 `<script src="https://cdn.ampproject.org/v0.js"></script>` 태그를 통해로드됩니다.<code></code> .
 
 AMP 런타임은 모든 페이지의 개발 모드에 배치 할 수 있습니다. 개발 모드는 삽입 된 페이지에서 AMP 유효성 검사를 트리거하여 유효성 검사 상태와 모든 오류를 자바 스크립트 개발자 콘솔에 내 보냅니다. 개발 모드는 페이지 URL에 `#development=1` 을 추가하여 실행할 수 있습니다.
 
@@ -508,7 +508,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 <script
   async
   custom-element="amp-carousel"
-  src="https://ampjs.org/v0/amp-carousel-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
 ></script>
 
 [/sourcecode]
@@ -524,7 +524,7 @@ The script URL must start with `https://cdn.ampproject.org` and must follow a ve
 확장 구성 요소의 URL은 다음과 같은 형식입니다.
 
 [sourcecode:http]
-https://ampjs.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
+https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 [/sourcecode]
 
 ##### 버전 관리<a name="versioning"></a>
@@ -544,7 +544,7 @@ https://ampjs.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 <script
   async
   custom-template="amp-mustache"
-  src="https://ampjs.org/v0/amp-mustache-0.2.js"
+  src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
 ></script>
 
 [/sourcecode]
@@ -572,7 +572,7 @@ Hello {% raw %}{{you}}{% endraw %}!
 확장 구성 요소의 URL은 다음과 같은 형식입니다.
 
 [sourcecode:http]
-https://ampjs.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
+https://cdn.ampproject.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
 [/sourcecode]
 
 ##### 버전 관리<a name="versioning-1"></a>

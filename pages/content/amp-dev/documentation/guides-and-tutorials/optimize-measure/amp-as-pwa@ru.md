@@ -26,7 +26,7 @@ contributors:
 [sourcecode:html]
 
 <script async custom-element="amp-install-serviceworker"
-  src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 [/sourcecode]
 
@@ -54,7 +54,7 @@ contributors:
 - Импортируйте код AMP Service Worker в свой файл сервис-воркера.
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 [/sourcecode]
 
 - Установите сервис-воркер при помощи следующего кода.

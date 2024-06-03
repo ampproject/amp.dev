@@ -67,7 +67,7 @@ Der AMP Service Worker führt nach seiner Installation automatisch die [Zwischen
 Erstelle eine Datei mit dem Namen `sw.js` und füge den folgenden Code hinzu:
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init();
 [/sourcecode]
 
@@ -82,7 +82,7 @@ Platziere das erforderliche Tag "script" im Head von `index.html` und das Elemen
 [sourcecode:html]
 …
 
-<script async custom-element="amp-install-serviceworker" src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 …
 ...
@@ -122,7 +122,7 @@ Unsere Musikfestival App führt die Zwischenspeicherung unserer Bildressourcen d
 Du kannst den AMP Service Worker so konfigurieren, dass [Assets zwischengespeichert werden](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching), z. B. Bilder, Videos und Schriftarten. Wir verwenden ihn, um unser Hintergrundbild und das AMP Logo zwischenzuspeichern. Öffne die Datei `sw.js` und aktualisiere sie mit dem folgenden Code:
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,
@@ -148,7 +148,7 @@ Der AMP Service Worker ruft vorab Links mit dem Attribut `data-rel=prefetch` ab.
 Um auf unerwartete Fälle oder Linkklicks zu Seiten zu reagieren, die wir nicht vorab abgerufen haben, fügen wir eine Offlineseite hinzu, um eine konsistente, "markentreue" Benutzererfahrung zu bieten, anstatt die standardmäßige Offlineseite des Browsers anzuzeigen. Lade [`offline.html` hier](/static/files/tutorials/offline.zip) herunter und aktualisiere `sw.js` mit dem folgenden Code:
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,

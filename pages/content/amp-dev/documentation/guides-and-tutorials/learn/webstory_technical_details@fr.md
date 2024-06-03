@@ -18,7 +18,7 @@ Techniquement, une story Web est une page Web unique créée avec AMP et conform
 - Contient une balise de niveau supérieur `<html ⚡>` ou `<html amp>`.
 - Contenir les balises `<head>` et `<body>`.
 - Contenir une balise ` <meta charset="utf-8">` comme premier enfant de la balise `<head>`.
-- Contenir une balise `<script async src="https://ampjs.org/v0.js"></script>` dans la balise `<head>`. Une bonne pratique est d'inclure ce script le plus tôt possible dans `<head>`.
+- Contenir une balise `<script async src="https://cdn.ampproject.org/v0.js"></script>` dans la balise `<head>`. Une bonne pratique est d'inclure ce script le plus tôt possible dans `<head>`.
 - Contenir une balise ` <link rel="canonical" href="page/url">` dans `<head>` avec un href qui pointe vers l'URL de la story Web.
 - Contenir une balise `<meta name="viewport" content="width=device-width">` dans la balise `<head>`. il est également recommandé d'ajouter initial-scale=1.
 - Contenir le code [AMP boilerplate](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) dans la balise `<head>`.
@@ -91,16 +91,16 @@ La différence entre une page Web AMP et une story Web créée avec AMP est le c
         }
       </style></noscript
     >
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script
       async
       custom-element="amp-video"
-      src="https://ampjs.org/v0/amp-video-0.1.js"
+      src="https://cdn.ampproject.org/v0/amp-video-0.1.js"
     ></script>
     <script
       async
       custom-element="amp-story"
-      src="https://ampjs.org/v0/amp-story-1.0.js"
+      src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
     ></script>
     <style amp-custom>
       ...;

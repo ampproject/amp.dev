@@ -50,7 +50,7 @@ En el siguiente código se representa la cantidad mínima de etiquetas para gene
         visibility: hidden;
       }
     </style>
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
     Hello, world.
@@ -64,7 +64,7 @@ Un mensaje de correo electrónico de AMP DEBE:
 - <a name="ampd"></a>contener una etiqueta `<html ⚡4email>` de nivel superior (además de aceptar a `<html amp4email>`. [🔗](#ampd)
 - <a name="crps"></a>contener las etiquetas `<head>` y `<body>` (en HTML son opcionales). [🔗](#crps)
 - <a name="chrs"></a>contener una etiqueta `<meta charset="utf-8">` como primer elemento secundario de su etiqueta principal. [🔗](#chrs)
-- <a name="scrpt"></a>contener una etiqueta `<script async src="https://ampjs.org/v0.js"></script>` dentro de su etiqueta principal. [🔗](#scrpt)
+- <a name="scrpt"></a>contener una etiqueta `<script async src="https://cdn.ampproject.org/v0.js"></script>` dentro de su etiqueta principal. [🔗](#scrpt)
 - <a name="boilerplate"></a>contener el texto estándar de amp4email (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) dentro de su etiqueta principal para ocultar inicialmente el contenido hasta que se cargue AMP JS. [🔗](#boilerplate)
 
 El total de etiquetas AMP HTML no debe exceder los 200,000 bytes.

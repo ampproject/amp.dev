@@ -112,7 +112,7 @@ Observação: Se o console de desenvolvimento ainda estiver aberto e o URL tiver
 **Adicione** o script a seguir à tag `<head>`:
 
 ```html
-<script async custom-element="amp-youtube" src="https://ampjs.org/v0/amp-youtube-0.1.js"></script>
+<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 ```
 
 **Atualize** a página e veja o vídeo do YouTube:
@@ -131,7 +131,7 @@ Incorporar tweets pré-formatados do Twitter é um recurso comum em artigos de n
 Para começar, adicione a solicitação JavaScript a seguir à tag `<head>` do documento:
 
 ```html
-<script async custom-element="amp-twitter" src="https://ampjs.org/v0/amp-twitter-0.1.js"></script>
+<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 ```
 
 Depois, **adicione** este código ao artigo para incorporar o tweet:
@@ -166,7 +166,7 @@ As AMP fornecem outro componente especificamente projetado para esse tipo de sit
 Vamos testar. Primeiro, **adicione** a biblioteca do componente à tag `<head>`:
 
 ```html
-<script async custom-element="amp-fit-text" src="https://ampjs.org/v0/amp-fit-text-0.1.js"></script>
+<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
 ```
 
 Adicione o seguinte à sua página:

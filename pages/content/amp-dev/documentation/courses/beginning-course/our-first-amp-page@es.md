@@ -133,7 +133,7 @@ Las siguientes reglas son específicamente para configurar el tiempo de ejecuci�
 
 - Contener una etiqueta superior `<html ⚡>`. El símbolo del rayo indica que este es un sitio AMP. **Nota**: `<html amp>` es aceptado tambien.
 
-- Contener una etiqueta `<script async src="https://ampjs.org/v0.js"></script>` dentro de la etiqueta `<head>`. Esto carga la libreria JavaScript de AMP. **Nota**: Como una buena práctica, debes incluir el script tan pronto sea posible en el `<head>`.
+- Contener una etiqueta `<script async src="https://cdn.ampproject.org/v0.js"></script>` dentro de la etiqueta `<head>`. Esto carga la libreria JavaScript de AMP. **Nota**: Como una buena práctica, debes incluir el script tan pronto sea posible en el `<head>`.
 
 - Contener una etiqueta `<link rel="canonical" href="$SOME_URL">` dentro del `<head>`. Este apunta a una versión regular HTML de tu sitio si es que existe, o apunta asi mismo si no existe una version no AMP de tu sitio. **Nota**: Debes reemplazar `$SOME_URL` en el atributo `href` con la actual URL de tu pagina.
 
@@ -196,7 +196,7 @@ La solución la puedes encontrar en <a href="https://glitch.com/~hungry-modem" t
 [sourcecode:html]
 {% raw %}<head>
   <meta charset="utf-8">
-  <script async src="https://ampjs.org/v0.js"></script>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
   <title>Chico's Cheese Bicycles</title>
   <link rel="shortcut icon" href="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-favicon.png?1540228964214">
   <meta name="viewport"
@@ -356,7 +356,7 @@ Las siguientes reglas son específicamente para configurar el tiempo de ejecuci�
 
 - Contener una etiqueta superior `<html ⚡>`. El símbolo del rayo indica que este es un sitio AMP. **Nota**: `<html amp>` es aceptado tambien.
 
-- Contener una etiqueta `<script async src="https://ampjs.org/v0.js"></script>` dentro de la etiqueta `<head>`. Esto carga la libreria JavaScript de AMP. **Nota**: Como una buena práctica, debes incluir el script tan pronto sea posible en el `<head>`.
+- Contener una etiqueta `<script async src="https://cdn.ampproject.org/v0.js"></script>` dentro de la etiqueta `<head>`. Esto carga la libreria JavaScript de AMP. **Nota**: Como una buena práctica, debes incluir el script tan pronto sea posible en el `<head>`.
 
 - Contener una etiqueta `<link rel="canonical" href="$SOME_URL">` dentro del `<head>`. Este apunta a una versión regular HTML de tu sitio si es que existe, o apunta asi mismo si no existe una version no AMP de tu sitio. **Nota**: Debes reemplazar `$SOME_URL` en el atributo `href` con la actual URL de tu pagina.
 
@@ -418,7 +418,7 @@ La solución se puede encontar en <a href="https://glitch.com/~hungry-modem" tar
 [sourcecode:html]
 {% raw %}<head>
   <meta charset="utf-8">
-  <script async src="https://ampjs.org/v0.js"></script>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
   <title>Chico's Cheese Bicycles</title>
   <link rel="shortcut icon" href="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-favicon.png?1540228964214">
   <meta name="viewport"

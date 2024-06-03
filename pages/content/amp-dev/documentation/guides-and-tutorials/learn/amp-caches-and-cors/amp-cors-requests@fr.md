@@ -131,7 +131,7 @@ Lorsque votre point de terminaison reçoit une requête CORS :
 
 <span id="verify-cors-header"></span>
 
-Les points de terminaison CORS reçoivent l'origine de la requête via l'en-tête HTTP `Origin`. Les terminaux ne devraient autoriser que les requêtes provenant : (1) de la propre origine de l'éditeur ; et (2) de chaque origine `cacheDomain` répertoriée dans [https://ampjs.org/caches.json](https://ampjs.org/caches.json).
+Les points de terminaison CORS reçoivent l'origine de la requête via l'en-tête HTTP `Origin`. Les terminaux ne devraient autoriser que les requêtes provenant : (1) de la propre origine de l'éditeur ; et (2) de chaque origine `cacheDomain` répertoriée dans [https://cdn.ampproject.org/caches.json](https://cdn.ampproject.org/caches.json).
 
 Par exemple, les points de terminaison doivent autoriser les requêtes provenant de :
 

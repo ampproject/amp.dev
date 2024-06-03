@@ -232,7 +232,7 @@ Python-Markdown にはいくつかの制限があります。リストにコー�
          playground="true"]
     ```html
     &lt;head&gt;
-      &lt;script async custom-element=&quot;amp-youtube&quot; src=&quot;https://ampjs.org/v0/amp-youtube-0.1.js&quot;&gt;&lt;/script&gt;
+      &lt;script async custom-element=&quot;amp-youtube&quot; src=&quot;https://cdn.ampproject.org/v0/amp-youtube-0.1.js&quot;&gt;&lt;/script&gt;
       &lt;style amp-custom&gt;
         body {
           background: red;
@@ -260,7 +260,7 @@ playground="true"]
   <script
     async
     custom-element="amp-youtube"
-    src="https://ampjs.org/v0/amp-youtube-0.1.js"
+    src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
   ></script>
   <style amp-custom>
     body {
@@ -293,7 +293,7 @@ AMP ストーリーのプレビューには、`preview="top-frame"` と `orienta
     ```html
     &lt;head&gt;
       &lt;script async custom-element=&quot;amp-story&quot;
-          src=&quot;https://ampjs.org/v0/amp-story-1.0.js&quot;&gt;&lt;/script&gt;
+          src=&quot;https://cdn.ampproject.org/v0/amp-story-1.0.js&quot;&gt;&lt;/script&gt;
       &lt;style amp-custom&gt;
         body {
           font-family: 'Roboto', sans-serif;
@@ -333,7 +333,7 @@ playground="true"]
   <script
     async
     custom-element="amp-story"
-    src="https://ampjs.org/v0/amp-story-1.0.js"
+    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
   ></script>
   <style amp-custom>
     body {

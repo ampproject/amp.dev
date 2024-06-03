@@ -51,7 +51,7 @@ Remember, not all components are included in the core AMP library JavaScript fil
 **Add** the following script to the `<head>` tag:
 
 ```html
-<script async custom-element="amp-ad" src="https://ampjs.org/v0/amp-ad-0.1.js"></script>
+<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 ```
 
 **Refresh** the page and you should see two test ads:
@@ -134,7 +134,7 @@ Remember, not all components are included in the core AMP library JavaScript fil
 **Add** the following script to the `<head>` tag:
 
 ```html
-<script async custom-element="amp-youtube" src="https://ampjs.org/v0/amp-youtube-0.1.js"></script>
+<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 ```
 
 **Refresh** the page and you should see the YouTube video:
@@ -155,7 +155,7 @@ Embedding preformatted tweets from Twitter is a common feature in news articles.
 Start by adding the following JavaScript request to the `<head>` tag of your document:
 
 ```html
-<script async custom-element="amp-twitter" src="https://ampjs.org/v0/amp-twitter-0.1.js"></script>
+<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 ```
 
 Now, in your article **add** this code to embed the Tweet:
@@ -192,7 +192,7 @@ AMP provides another component specifically designed for this type of situation,
 Let’s give it a try. First, **add** the component’s library to the `<head>` tag:
 
 ```html
-<script async custom-element="amp-fit-text" src="https://ampjs.org/v0/amp-fit-text-0.1.js"></script>
+<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
 ```
 
 Add the following to your page:

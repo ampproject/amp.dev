@@ -18,7 +18,7 @@ AMP E-postaları klasik HTML e-postaları gibi görünür, ancak birkaç farklı
 <html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <style amp4email-boilerplate>
       body {
         visibility: hidden;
@@ -37,7 +37,7 @@ AMP E-postalarını destekleyen e-posta sağlayıcıları, kullanıcıların key
 - Üste seviye bir `<html amp4email>` etiketi ya da e-postanız ekstra havalıysa `<html ⚡4email>` etiketi koyun. Bu etiket, belgeyi AMP E-postası olarak tanımlar ve bu şekilde işlenmesini sağlar.
 - Hem `<head>` hem de `<body>` etiketlerini tanımlayın. Bu, HTML'de isteğe bağlıdır ancak AMP her şeyi saf halde tutar!
 - `<head>` etiketinin bir alt öğesi olarak `<meta charset="utf-8>` etiketi ekleyin. Bu etiket, sayfanın kodlamasını tanımlar.
-- AMP kitaplığı, `<head>` içine yerleştirilmiş bir `<script async src="https://ampjs.org/v0.js"</script>` etiketi aracılığıyla içe aktarılır. Bu olmadan, AMP ile kazanılan harika ve dinamik işlevlerin hiçbiri çalışmayacaktır! En iyi uygulama olarak, bu öğe mümkün olduğunca erken bir zamanda, `<head>` içinde doğrudan `<meta charset="utf-8">` etiketinin altına eklenmelidir.
+- AMP kitaplığı, `<head>` içine yerleştirilmiş bir `<script async src="https://cdn.ampproject.org/v0.js"</script>` etiketi aracılığıyla içe aktarılır. Bu olmadan, AMP ile kazanılan harika ve dinamik işlevlerin hiçbiri çalışmayacaktır! En iyi uygulama olarak, bu öğe mümkün olduğunca erken bir zamanda, `<head>` içinde doğrudan `<meta charset="utf-8">` etiketinin altına eklenmelidir.
 - E-posta için AMP standart metnini `<head>` bölümüne yerleştirerek AMP kitaplığı yüklenene kadar e-posta içeriğini başlangıçta gizleyin.
 
 ```html

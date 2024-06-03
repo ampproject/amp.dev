@@ -52,7 +52,7 @@ Ponadto kreacje muszą być zgodne z następującymi regułami:
 <td>Pozwala walidatorom zidentyfikować dokument kreacji jako ogólny dokument AMP lub ograniczony dokument reklamy AMPHTML i odpowiednio go wysłać.</td>
 </tr>
 <tr>
-<td>Musi zawierać <code>&lt;script async src="https://ampjs.org/amp4ads-v0.js">&lt;/script></code> jako skrypt uruchomieniowy, zamiast <code>https://ampjs.org/v0.js</code>.</td>
+<td>Musi zawierać <code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js">&lt;/script></code> jako skrypt uruchomieniowy, zamiast <code>https://cdn.ampproject.org/v0.js</code>.</td>
 <td>Umożliwia dostosowane do serwowanych w ramkach iframe reklam AMPHTML o różnym pochodzeniu sposoby działania środowiska uruchomieniowego.</td>
 </tr>
 <tr>
@@ -324,7 +324,7 @@ Tagi SVG nie znajdują się w przestrzeni nazw HTML5. Są one wymienione poniże
 
 #### 4.11 Obsługa skryptów <a name="411-scripting"></a>
 
-- Podobnie jak ogólny dokument AMP, znacznik `<head>` kreacji musi zawierać znacznik `<script async src="https://ampjs.org/amp4ads-v0.js"></script>`.
+- Podobnie jak ogólny dokument AMP, znacznik `<head>` kreacji musi zawierać znacznik `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>`.
 - W odróżnieniu od ogólnego AMP, znacznik `<noscript>` jest zabroniony.
   - _Uzasadnienie:_ reklamy AMPHTML wymagają do działania włączenia obsługi JavaScript, więc bloki `<noscript>` są bezcelowe w reklamach AMPHTML i jedynie obciążają sieć.
 - W odróżnieniu od ogólnego AMP, właściwość `<script type="application/ld+json">` jest zabroniona.

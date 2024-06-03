@@ -23,7 +23,7 @@ Include Shadow AMP in the head of your page, like so:
 
 [sourcecode:html]
 <!-- Asynchronously load the AMP-with-Shadow-DOM runtime library. -->
-<script async src="https://ampjs.org/shadow-v0.js"></script>
+<script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
 [/sourcecode]
 
 ### How do you know when the Shadow AMP API is ready to use?

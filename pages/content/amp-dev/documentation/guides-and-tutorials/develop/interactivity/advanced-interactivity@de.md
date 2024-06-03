@@ -21,7 +21,7 @@ Vor der Einführung der Komponente [`amp-bind`](../../../../documentation/compon
 <script
   async
   custom-element="amp-bind"
-  src="https://ampjs.org/v0/amp-bind-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
 ></script>
 ```
 

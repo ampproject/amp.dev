@@ -132,7 +132,7 @@ After you have made the changes, look at your page. You should now see the YouTu
 Remember to include the `<amp-youtube>` script in the `<head>`:
 
 ```
-<script async custom-element="amp-youtube" src="https://ampjs.org/v0/amp-youtube-0.1.js"></script>
+<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 ```
 
 [tip type="note"]
@@ -257,7 +257,7 @@ After you have made the changes, look at your page. You should now see the YouTu
 Remember to include the `<amp-youtube>` script in the `<head>`:
 
 ```
-<script async custom-element="amp-youtube" src="https://ampjs.org/v0/amp-youtube-0.1.js"></script>
+<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 ```
 
 [tip type="note"]

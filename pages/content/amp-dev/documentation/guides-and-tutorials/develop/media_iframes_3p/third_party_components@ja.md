@@ -24,7 +24,7 @@ contributors:
 [sourcecode:html]
 
 <script async custom-element="amp-twitter"
-  src="https://ampjs.org/v0/amp-twitter-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 
 [/sourcecode]
 
@@ -55,7 +55,7 @@ Instagram を埋め込むには、最初に次のスクリプトを `<head>` に
 [sourcecode:html]
 
 <script async custom-element="amp-instagram"
-  src="https://ampjs.org/v0/amp-instagram-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
 
 [/sourcecode]
 
@@ -86,7 +86,7 @@ Facebook の投稿や動画をページに表示するには、[`amp-facebook`](
 [sourcecode:html]
 
 <script async custom-element="amp-facebook"
-  src="https://ampjs.org/v0/amp-facebook-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
 
 [/sourcecode]
 
@@ -134,7 +134,7 @@ YouTube 動画をページに埋め込むには、[`amp-youtube`](../../../../do
 [sourcecode:html]
 
 <script async custom-element="amp-youtube"
-  src="https://ampjs.org/v0/amp-youtube-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 
 [/sourcecode]
 

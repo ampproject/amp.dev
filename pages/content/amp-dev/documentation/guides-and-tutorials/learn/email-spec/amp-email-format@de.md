@@ -50,7 +50,7 @@ Der folgende Code zeigt das minimale Markup, aus der eine gültige AMP E-Mail Na
         visibility: hidden;
       }
     </style>
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
     Hello, world.
@@ -64,7 +64,7 @@ Eine AMP E-Mail Nachricht MUSS
 - <a name="ampd"></a>das Tag `<html ⚡4email>` der obersten Ebene enthalten (`<html amp4email>` wird ebenfalls akzeptiert), [🔗](#ampd)
 - <a name="crps"></a>die Tags `<head>` und `<body>` enthalten (diese sind in HTML optional), [🔗](#crps)
 - <a name="chrs"></a>das Tag `<meta charset="utf-8">` als erstes untergeordnetes Element ihres Head Tags enthalten, [🔗](#chrs)
-- <a name="scrpt"></a>das Tag `<script async src="https://ampjs.org/v0.js"></script>` in ihrem Head Tag enthalten, [🔗](#scrpt)
+- <a name="scrpt"></a>das Tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` in ihrem Head Tag enthalten, [🔗](#scrpt)
 - <a name="boilerplate"></a>ein amp4email Boilerplate (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) in ihrem Head Tag enthalten, um den Inhalt auszublenden, bis AMP JS geladen wird. [🔗](#boilerplate)
 
 Das gesamte AMPHTML Markup darf nicht größer sein als 200.000 Bytes.

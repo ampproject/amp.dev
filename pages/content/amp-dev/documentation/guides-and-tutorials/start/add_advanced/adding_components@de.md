@@ -56,7 +56,7 @@ Denke daran, dass nicht alle Komponenten in der JavaScript Datei mit der AMP Ker
 <script
   async
   custom-element="amp-ad"
-  src="https://ampjs.org/v0/amp-ad-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
 ></script>
 ```
 
@@ -137,7 +137,7 @@ Denke daran, dass nicht alle Komponenten in der JavaScript Datei mit der AMP Ker
 <script
   async
   custom-element="amp-youtube"
-  src="https://ampjs.org/v0/amp-youtube-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
 ></script>
 ```
 
@@ -161,7 +161,7 @@ Füge zunächst zum Tag `<head>` deines Dokuments die folgende JavaScript Anford
 <script
   async
   custom-element="amp-twitter"
-  src="https://ampjs.org/v0/amp-twitter-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
 ></script>
 ```
 
@@ -201,7 +201,7 @@ Testen wir das. **Füge** zunächst die Bibliothek der Komponente zum Tag `<head
 <script
   async
   custom-element="amp-fit-text"
-  src="https://ampjs.org/v0/amp-fit-text-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
 ></script>
 ```
 

@@ -7,7 +7,7 @@ components detected in the HTML source. For example, adding a `<amp-sidebar>`
 element to the source adds the following child element to `<head>`:
 
 ```
-<script async custom-element="amp-sidebar" src="https://ampjs.org/v0/amp-sidebar-0.1.js"></script>
+<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
 ```
 
 The mapping of component HTML element names to versions is derived by parsing

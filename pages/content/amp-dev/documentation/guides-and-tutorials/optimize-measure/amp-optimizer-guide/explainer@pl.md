@@ -32,7 +32,7 @@ Podczas renderowania układów AMP po stronie serwera wykonywane są trzy rzeczy
 
 ⁣**1. Usunięcie kodu standardowego AMP: ** do każdego elementu wykorzystującego układ AMP wstrzykiwany jest kod ze znacznikami specyficznymi dla danego układu.
 
-⁣**2. Wewnętrzne style CSS AMP inline: ** kod standardowy AMP jest zastępowany [stylami CSS środowiska uruchomieniowego AMP](https://ampjs.org/v0.css): <style amp-runtime="">...</style>. W przypadku dokumentów, które nie są renderowane po stronie serwera, AMP dodaje te style w czasie wykonania. Strony AMP renderowane po stronie serwera wymagają natomiast, aby układy AMP działały, zanim zostanie załadowane środowisko AMP. Aby uniknąć potencjalnych konfliktów wersji, AMP sprawdza podczas uruchamiania, czy wersja określona w parametrze i-amphtml-version="011905222334000" różni się od bieżącej wersji AMP, a jeśli nie, zaktualizuje CSS przy użyciu najnowszej wersji.
+⁣**2. Wewnętrzne style CSS AMP inline: ** kod standardowy AMP jest zastępowany [stylami CSS środowiska uruchomieniowego AMP](https://cdn.ampproject.org/v0.css): <style amp-runtime="">...</style>. W przypadku dokumentów, które nie są renderowane po stronie serwera, AMP dodaje te style w czasie wykonania. Strony AMP renderowane po stronie serwera wymagają natomiast, aby układy AMP działały, zanim zostanie załadowane środowisko AMP. Aby uniknąć potencjalnych konfliktów wersji, AMP sprawdza podczas uruchamiania, czy wersja określona w parametrze i-amphtml-version="011905222334000" różni się od bieżącej wersji AMP, a jeśli nie, zaktualizuje CSS przy użyciu najnowszej wersji.
 
 ```
 <style amp-runtime i-amphtml-version="011905222334000">html{overflow-x:hidden!important}html.i-amphtml-...</style>

@@ -64,7 +64,7 @@ Service Worker 是您的网页与服务器之间的客户端代理，可用于�
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
-  src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 [/sourcecode]
 
 然后，在您 `<body>` 中的某个位置添加以下内容（请酌情进行修改以使其指向您的实际 Service Worker）：

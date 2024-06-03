@@ -14,7 +14,7 @@ Hãy nhớ bao gồm thư viện thành phần [`amp-carousel`](../../../../docu
 <script
   async
   custom-element="amp-carousel"
-  src="https://ampjs.org/v0/amp-carousel-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
 ></script>
 ```
 

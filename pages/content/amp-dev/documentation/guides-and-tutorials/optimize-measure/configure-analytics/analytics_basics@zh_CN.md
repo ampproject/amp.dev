@@ -47,7 +47,7 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 <script
   async
   custom-element="amp-analytics"
-  src="https://ampjs.org/v0/amp-analytics-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
 ></script>
 ```
 

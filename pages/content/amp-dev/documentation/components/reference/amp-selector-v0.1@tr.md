@@ -30,7 +30,7 @@ Bir seçenek menüsü sunan ve kullanıcının bu menüden seçim yapmasına ola
 <table>
   <tr>
     <td class="col-fourty" width="40%"><strong>Zorunlu Komut Dosyası</strong></td>
-    <td><code>&lt;script async custom-element="amp-selector" src="https://ampjs.org/v0/amp-selector-0.1.js">&lt;/script></code></td>
+    <td><code>&lt;script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Desteklenen Düzenler</a></strong></td>

@@ -24,7 +24,7 @@ Para incluir um tweet em sua página, em primeiro lugar inclua o seguinte script
 [sourcecode:html]
 
 <script async custom-element="amp-twitter"
-  src="https://ampjs.org/v0/amp-twitter-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 
 [/sourcecode]
 
@@ -55,7 +55,7 @@ Para incluir uma imagem do Instagram, primeiro inclua o seguinte script no `<hea
 [sourcecode:html]
 
 <script async custom-element="amp-instagram"
-  src="https://ampjs.org/v0/amp-instagram-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
 
 [/sourcecode]
 
@@ -86,7 +86,7 @@ Você precisa incluir o seguinte script no `<head>`:
 [sourcecode:html]
 
 <script async custom-element="amp-facebook"
-  src="https://ampjs.org/v0/amp-facebook-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
 
 [/sourcecode]
 
@@ -134,7 +134,7 @@ Você precisa incluir o seguinte script no `<head>`:
 [sourcecode:html]
 
 <script async custom-element="amp-youtube"
-  src="https://ampjs.org/v0/amp-youtube-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 
 [/sourcecode]
 

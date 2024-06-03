@@ -50,7 +50,7 @@ Il codice seguente rappresenta la quantità minima di markup richiesti da un mes
         visibility: hidden;
       }
     </style>
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
     Hello, world.
@@ -64,7 +64,7 @@ Un messaggio e-mail AMP DEVE
 - <a name="ampd"></a>Contenere un tag di primo livello `<html ⚡>` (`<html amp>` è ugualmente accettato). [🔗](#ampd)
 - <a name="crps"></a>Contenere i tag `<head>` e `<body>` (che sono opzionali in HTML). [🔗](#crps)
 - <a name="chrs"></a>Contenere un tag `<meta charset="utf-8">` come primo elemento figlio del proprio tag di intestazione. [🔗](#chrs)
-- <a name="scrpt"></a>Contenere un tag `<script async src="https://ampjs.org/v0.js"></script>` all'interno del proprio tag di intestazione. [🔗](#scrpt)
+- <a name="scrpt"></a>Contenere un tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` all'interno del proprio tag di intestazione. [🔗](#scrpt)
 - <a name="boilerplate"></a>contenere il boilerplate amp4email (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) all'interno del proprio tag di intestazione per nascondere inizialmente il contenuto fino al caricamento di AMP JS. [🔗](#boilerplate)
 
 L'intero markup AMPHTML non deve superare i 200.000 byte.

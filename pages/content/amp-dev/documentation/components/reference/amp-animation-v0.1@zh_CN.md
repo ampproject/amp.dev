@@ -29,7 +29,7 @@ limitations under the License.
 <table>
   <tr>
     <td width="40%"><strong>必需的脚本</strong></td>
-    <td><code>&lt;script async custom-element="amp-animation" src="https://ampjs.org/v0/amp-animation-0.1.js">&lt;/script></code></td>
+    <td><code>&lt;script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">支持的布局</a></strong></td>

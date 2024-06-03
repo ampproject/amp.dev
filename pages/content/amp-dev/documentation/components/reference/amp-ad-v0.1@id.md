@@ -40,7 +40,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>Skrip yang Diperlukan</strong></td>
-    <td><code>&lt;script async custom-element="amp-ad" src="https://ampjs.org/v0/amp-ad-0.1.js">&lt;/script></code><br>Catatan: amp-ad tetap dapat berfungsi tanpa skrip ini, namun kami sangat merekomendasikannya demi kompatibilitas dengan versi mendatang</td>
+    <td><code>&lt;script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js">&lt;/script></code><br>Catatan: amp-ad tetap dapat berfungsi tanpa skrip ini, namun kami sangat merekomendasikannya demi kompatibilitas dengan versi mendatang</td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Tata Letak yang Didukung</a></strong></td>

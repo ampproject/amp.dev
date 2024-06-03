@@ -13,7 +13,7 @@ The following markup is a basic AMP page.
 <html amp lang="en">
   <head>
     <meta charset="utf-8">
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>Hello, AMPs</title>
     <link rel="canonical" href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -60,7 +60,7 @@ The body content is pretty straightforward, but there’s some additional code i
    </td>
   </tr>
   <tr>
-   <td>Contain a <code>&lt;script async src="https://ampjs.org/v0.js">&lt;/script></code> tag inside the <code>&lt;head></code> tag. As a best practice, you should include the script as early as possible.
+   <td>Contain a <code>&lt;script async src="https://cdn.ampproject.org/v0.js">&lt;/script></code> tag inside the <code>&lt;head></code> tag. As a best practice, you should include the script as early as possible.
    </td>
    <td>Includes and loads the AMP JS library.
    </td>

@@ -24,7 +24,7 @@ Para incluir un tuit en su página, incluya en primer lugar la siguiente secuenc
 [sourcecode:html]
 
 <script async custom-element="amp-twitter"
-  src="https://ampjs.org/v0/amp-twitter-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 
 [/sourcecode]
 
@@ -55,7 +55,7 @@ Para incluir un Instagram, primero incluya la siguiente secuencia de comandos en
 [sourcecode:html]
 
 <script async custom-element="amp-instagram"
-  src="https://ampjs.org/v0/amp-instagram-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
 
 [/sourcecode]
 
@@ -86,7 +86,7 @@ Debe incluir la siguiente secuencia de comandos en el `<head>`:
 [sourcecode:html]
 
 <script async custom-element="amp-facebook"
-  src="https://ampjs.org/v0/amp-facebook-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
 
 [/sourcecode]
 
@@ -134,7 +134,7 @@ Debe incluir la siguiente secuencia de comandos en el `<head>`:
 [sourcecode:html]
 
 <script async custom-element="amp-youtube"
-  src="https://ampjs.org/v0/amp-youtube-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 
 [/sourcecode]
 

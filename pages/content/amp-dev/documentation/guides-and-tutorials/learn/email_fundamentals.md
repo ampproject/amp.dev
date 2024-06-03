@@ -18,7 +18,7 @@ AMP Emails look like classic HTML emails, but with a few differences. Below is t
 <html ⚡4email data-css-strict>
 <head>
   <meta charset="utf-8">
-  <script async src="https://ampjs.org/v0.js"></script>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
   <style amp4email-boilerplate>body{visibility:hidden}</style>
 </head>
 <body>
@@ -33,7 +33,7 @@ Email providers who support AMP Emails have set up security checks to ensure use
 *   Contain a top-level a `<html amp4email>` tag, or an `<html ⚡4email>` tag if your email is extra cool. This identifies the document as an AMP Email so it can be treated as such.
 *   Define both `<head>` and `<body>` tags. This is optional in HTML, but AMP keeps things pristine!
 *   Include a `<meta charset="utf-8>` tag as the first child of the `<head>` tag. This identifies the encoding for the page.
-*   The AMP library is imported through a `<script async src="https://ampjs.org/v0.js"></script>` tag placed in the `<head>`. Without it, none of the awesome and dynamic functionality gained through AMP will work! As a best practice, this should be included as early as possible in the `<head>`, directly under the `<meta charset="utf-8">` tag.
+*   The AMP library is imported through a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag placed in the `<head>`. Without it, none of the awesome and dynamic functionality gained through AMP will work! As a best practice, this should be included as early as possible in the `<head>`, directly under the `<meta charset="utf-8">` tag.
 *   Initially hide the email content until the AMP library is loaded by placing the AMP for Email boilerplate in the `<head>`.
 
 ```html

@@ -24,7 +24,7 @@ The [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) compone
 <script
   async
   custom-element="amp-ad"
-  src="https://ampjs.org/v0/amp-ad-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
 ></script>
 ```
 

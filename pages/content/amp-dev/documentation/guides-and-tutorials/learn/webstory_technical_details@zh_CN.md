@@ -18,7 +18,7 @@ author: CrystalOnScript
 - 包含顶级 `<html ⚡>` 或 `<html amp>` 标记。
 - 包含 `<head>` 和 `<body>` 标记。
 - 包含 `<meta charset="utf-8">` 标记，作为 `<head>` 标记的第一个子项。
-- 在 `<head>` 标记内包含 `<script async src="https://ampjs.org/v0.js"></script>` 标记。最佳做法是，应尽早在 `<head>` 中包含该脚本。
+- 在 `<head>` 标记内包含 `<script async src="https://cdn.ampproject.org/v0.js"></script>` 标记。最佳做法是，应尽早在 `<head>` 中包含该脚本。
 - 在 `<head>` 内包含 ` <link rel="canonical" href="page/url">` 标记，其中 href 指向网页故事网址。
 - 在 `<head>` 标记内包含 `<meta name="viewport" content="width=device-width">` 标记。另外，还建议包含 initial-scale=1。
 - 在 `<head>` 标记内包含 [AMP 样板](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites)代码。
@@ -91,16 +91,16 @@ author: CrystalOnScript
         }
       </style></noscript
     >
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script
       async
       custom-element="amp-video"
-      src="https://ampjs.org/v0/amp-video-0.1.js"
+      src="https://cdn.ampproject.org/v0/amp-video-0.1.js"
     ></script>
     <script
       async
       custom-element="amp-story"
-      src="https://ampjs.org/v0/amp-story-1.0.js"
+      src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
     ></script>
     <style amp-custom>
       ...;

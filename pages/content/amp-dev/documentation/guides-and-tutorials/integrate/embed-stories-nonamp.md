@@ -16,10 +16,10 @@ Web Stories are a full-screen immersive content experience that user’s tap or 
   <head>
     <script
       async
-      src="https://ampjs.org/amp-story-player-v0.js"
+      src="https://cdn.ampproject.org/amp-story-player-v0.js"
     ></script>
     <link
-      href="https://ampjs.org/amp-story-player-v0.css"
+      href="https://cdn.ampproject.org/amp-story-player-v0.css"
       rel="stylesheet"
       type="text/css"
     />
@@ -89,9 +89,9 @@ Web Stories are a full-screen immersive content experience that user’s tap or 
 
 Web Stories rely on the AMP Story Player, in the form of the `<amp-story-player>` element, to integrate and play stories on non-AMP sites. Implement the `amp-story-player` element by including the following two scripts in the head of your document:
 
-`<script async src="https://ampjs.org/amp-story-player-v0.js"></script>`
+`<script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>`
 
-`<link href="https://ampjs.org/amp-story-player-v0.css" rel="stylesheet" type="text/css">`
+`<link href="https://cdn.ampproject.org/amp-story-player-v0.css" rel="stylesheet" type="text/css">`
 
 The first script imports the logic for the AMP Story Player. The second script sets the default styling.
 
@@ -152,10 +152,10 @@ Link to a Web Story by including an `<a>` tag with the `href` attribute pointed 
   <head>
     <script
       async
-      src="https://ampjs.org/amp-story-player-v0.js"
+      src="https://cdn.ampproject.org/amp-story-player-v0.js"
     ></script>
     <link
-      href="https://ampjs.org/amp-story-player-v0.css"
+      href="https://cdn.ampproject.org/amp-story-player-v0.css"
       rel="stylesheet"
       type="text/css"
     />
@@ -240,10 +240,10 @@ Include the desired number of `<a>` tags, with each `href` attribute pointed to 
   <head>
     <script
       async
-      src="https://ampjs.org/amp-story-player-v0.js"
+      src="https://cdn.ampproject.org/amp-story-player-v0.js"
     ></script>
     <link
-      href="https://ampjs.org/amp-story-player-v0.css"
+      href="https://cdn.ampproject.org/amp-story-player-v0.css"
       rel="stylesheet"
       type="text/css"
     />

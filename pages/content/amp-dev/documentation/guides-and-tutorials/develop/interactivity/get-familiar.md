@@ -75,7 +75,7 @@ A bare bones AMP page looks like this:
         }
       </style></noscript
     >
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
     Hello World!
@@ -95,22 +95,22 @@ The tutorial's starter code ([`static/index.html`](https://github.com/googlecode
 <script
   async
   custom-element="amp-carousel"
-  src="https://ampjs.org/v0/amp-carousel-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
 ></script>
 <script
   async
   custom-template="amp-mustache"
-  src="https://ampjs.org/v0/amp-mustache-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"
 ></script>
 <script
   async
   custom-element="amp-form"
-  src="https://ampjs.org/v0/amp-form-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
 ></script>
 <script
   async
   custom-element="amp-selector"
-  src="https://ampjs.org/v0/amp-selector-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"
 ></script>
 ```
 

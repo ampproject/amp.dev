@@ -29,7 +29,7 @@ HTML5 `video` 태그의 대체 태그입니다. HTML5 동영상 파일 직접 �
 <table>
   <tr>
     <td width="40%"><strong>필수 스크립트</strong></td>
-    <td><code>&lt;script async custom-element="amp-video" src="https://ampjs.org/v0/amp-video-0.1.js">&lt;/script></code></td>
+    <td><code>&lt;script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
     <td width="40%"><strong>예</strong></td>

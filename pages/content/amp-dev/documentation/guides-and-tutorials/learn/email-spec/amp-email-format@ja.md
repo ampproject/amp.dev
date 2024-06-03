@@ -50,7 +50,7 @@ AMP for Email 形式は、メールメッセージに使用できる [AMP コン
         visibility: hidden;
       }
     </style>
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
     Hello, world.
@@ -64,7 +64,7 @@ AMP メールメッセージには、以下の要件があります。
 - <a name="ampd"></a>最上位階層のタグを `<html ⚡4email>` タグにします（`<html amp4email>` も使用できます）。[🔗](#ampd)
 - <a name="crps"></a>`<head>` と `<body>` タグが必要です（HTML ではオプションです）。[🔗](#crps)
 - <a name="chrs"></a>`<meta charset="utf-8">` タグを head タグの最初の子要素とします。[🔗](#chrs)
-- <a name="scrpt"></a>head タグ内に `<script async src="https://ampjs.org/v0.js"></script>` タグを含めます。[🔗](#scrpt)
+- <a name="scrpt"></a>head タグ内に `<script async src="https://cdn.ampproject.org/v0.js"></script>` タグを含めます。[🔗](#scrpt)
 - <a name="boilerplate"></a>head タグ内に amp4email ボイラープレート（`<style amp4email-boilerplate>body{visibility:hidden}</style>`）を含めて、最初に AMP JS が読み込まれるまでコンテンツを非表示にします。[🔗](#boilerplate)
 
 全 AMPHTML マークアップは 200,000 バイト以内である必要があります。

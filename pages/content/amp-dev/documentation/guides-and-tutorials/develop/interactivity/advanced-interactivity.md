@@ -19,7 +19,7 @@ Open the [`static/index.html`](https://github.com/googlecodelabs/advanced-intera
 
 ```html
 <script async custom-element="amp-bind"
-    src="https://ampjs.org/v0/amp-bind-0.1.js"></script>
+    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 ```
 
 ## Add a slide indicator

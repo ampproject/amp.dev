@@ -40,7 +40,7 @@ description: 使用您常用的文本编辑器，创建一个名为 my-amphtml-a
 AMPHTML 广告需要其自己的 AMP 运行时版本，因此请在文档的 `<head>` 部分中添加以下 `<script>` 标记：
 
 ```html
-<script async src="https://ampjs.org/amp4ads-v0.js"></script>
+<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
 ```
 
 AMPHTML 广告素材需要采用与 AMP 网页不同且更简单的[样板](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#boilerplate)样式行。请在您的 `<head>` 部分中添加以下代码：
@@ -66,7 +66,7 @@ AMPHTML 广告素材需要采用与 AMP 网页不同且更简单的[样板](../.
     <meta charset="utf-8" />
     <title>My amphtml ad</title>
     <meta name="viewport" content="width=device-width" />
-    <script async src="https://ampjs.org/amp4ads-v0.js"></script>
+    <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
     <style amp4ads-boilerplate>
       body {
         visibility: hidden;

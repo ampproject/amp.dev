@@ -34,13 +34,13 @@ Permite a los editores integrar fácilmente la plataforma de micropagos [LaterPa
     <td>
       <small>Ten en cuenta que necesitas las secuencias de comandos de "amp-access-laterpay", "amp-access" y "amp-analytics".</small>
       <div>
-        <code>&lt;script async custom-element="amp-access" src="https://ampjs.org/v0/amp-access-0.1.js">&lt;/script></code>
+        <code>&lt;script async custom-element="amp-access" src="https://cdn.ampproject.org/v0/amp-access-0.1.js">&lt;/script></code>
       </div>
       <div>
-        <code>&lt;script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js">&lt;/script></code>
+        <code>&lt;script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js">&lt;/script></code>
       </div>
       <div>
-        <code>&lt;script async custom-element="amp-access-laterpay" src="https://ampjs.org/v0/amp-access-laterpay-0.2.js">&lt;/script></code>
+        <code>&lt;script async custom-element="amp-access-laterpay" src="https://cdn.ampproject.org/v0/amp-access-laterpay-0.2.js">&lt;/script></code>
       </div>
     </td>
   </tr>

@@ -30,7 +30,7 @@ teaser:
 <table>
   <tr>
     <td width="40%"><strong>必需的脚本</strong></td>
-    <td><code>&lt;script async custom-element="amp-list" src="https://ampjs.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">支持的布局</a></strong></td>
@@ -295,7 +295,7 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 
 ## 实验性：加载更多与无限滚动 (amp-list-load-more) <a name="common-attributes"></a>
 
-我们向 `<amp-list>` 引入了 `amp-list-load-more` 实验，旨在实现分页和无限滚动。要启用此功能，您可以在[实验页面](https://ampjs.org/experiments.html)中开启“amp-list-load-more”实验，然后将 `load-more` 属性添加到 `<amp-list>`。这是当前处于原始试用状态的一项功能，最终 API 可能会发生变化。
+我们向 `<amp-list>` 引入了 `amp-list-load-more` 实验，旨在实现分页和无限滚动。要启用此功能，您可以在[实验页面](https://cdn.ampproject.org/experiments.html)中开启“amp-list-load-more”实验，然后将 `load-more` 属性添加到 `<amp-list>`。这是当前处于原始试用状态的一项功能，最终 API 可能会发生变化。
 
 #### 用法示例 <a name="load-more-and-infinite-scroll"></a>
 

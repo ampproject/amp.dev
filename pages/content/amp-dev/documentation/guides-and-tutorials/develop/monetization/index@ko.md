@@ -24,7 +24,7 @@ AMP 페이지에 광고를 게재하기 위해 컴포넌트를 추가하는 단�
 <script
   async
   custom-element="amp-ad"
-  src="https://ampjs.org/v0/amp-ad-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
 ></script>
 ```
 

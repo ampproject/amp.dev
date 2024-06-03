@@ -39,7 +39,7 @@ limitations under the License.
     <td class="col-fourty"><strong>النص البرمجي المطلوب</strong></td>
     <td>
       <div>
-        <code>&lt;script async custom-element="amp-access" src="https://ampjs.org/v0/amp-access-0.1.js"&gt;&lt;/script&gt;</code>
+        <code>&lt;script async custom-element="amp-access" src="https://cdn.ampproject.org/v0/amp-access-0.1.js"&gt;&lt;/script&gt;</code>
       </div>
     </td>
   </tr>

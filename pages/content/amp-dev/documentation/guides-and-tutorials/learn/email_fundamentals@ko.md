@@ -18,7 +18,7 @@ AMP 이메일은 전형적인 HTML 이메일과 유사하게 보이지만 몇 �
 <html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <style amp4email-boilerplate>
       body {
         visibility: hidden;
@@ -37,7 +37,7 @@ AMP 이메일을 지원하는 이메일 제공 업체는 즐겁고 안전한 사
 - 더 멋진 이메일의 경우 최상위 `<html amp4email>` 태그 또는 `<html ⚡4email>` 태그를 포함합니다. 이러한 태그는 문서를 AMP 이메일로 식별하여 적합하게 처리할 수 있습니다.
 - `<head>` 및 `<body>` 태그를 모두 정의합니다. 이 요건은 HTML에서 선택 사항이지만 AMP는 완벽을 기합니다!
 - `<head>` 태그의 첫 번째 하위 요소로 `<meta charset="utf-8>` 태그를 포함하여 페이지의 인코딩을 식별합니다.
-- `<head>` 태그에 배치된 `<script async src="https://ampjs.org/v0.js"></script>` 태그를 통해 AMP 라이브러리를 가져옵니다. 라이브러리 없이는 AMP로 제작 가능한 멋진 동적 기능들이 작동하지 않습니다! 모범 사례로서 `<meta charset="utf-8">` 태그 바로 아래 `<head>` 태그에 가능한 초기에 포함되어야 합니다.
+- `<head>` 태그에 배치된 `<script async src="https://cdn.ampproject.org/v0.js"></script>` 태그를 통해 AMP 라이브러리를 가져옵니다. 라이브러리 없이는 AMP로 제작 가능한 멋진 동적 기능들이 작동하지 않습니다! 모범 사례로서 `<meta charset="utf-8">` 태그 바로 아래 `<head>` 태그에 가능한 초기에 포함되어야 합니다.
 - AMP 이메일 상용구를 `<head>`에 배치하여 AMP 라이브러리가 로드되기 전까지 초반에는 이메일 콘텐츠를 숨깁니다.
 
 ```html

@@ -67,7 +67,7 @@ El AMP Service Worker [almacena en el caché los scripts de AMP](https://github.
 Cree un archivo llamado `sw.js` y agregue el siguiente código:
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init();
 [/sourcecode]
 
@@ -82,7 +82,7 @@ Coloque la etiqueta del script que se necesita en el encabezado de `index.html` 
 [sourcecode:html]
 …
 
-<script async custom-element="amp-install-serviceworker" src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 …
 ...
@@ -122,7 +122,7 @@ En nuestra aplicación del festival de música se almacenarán en el caché los 
 Puede configurar el AMP Service Worker para [almacenar activos en el caché](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching), tales como imágenes, videos y fuentes. En este caso, lo usaremos para almacenar en el caché nuestra imagen de fondo y el logotipo de AMP. Para ello, abra el archivo `sw.js` y actualícelo mediante el siguiente código:
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,
@@ -148,7 +148,7 @@ Mediante el AMP Service Worker se cargarán previamente los enlaces que cuenten 
 Para lidiar con los casos inesperados o hacer clic en los enlaces de las páginas que no cargamos previamente, agregaremos una página sin conexión para ofrecer una experiencia de usuario que sea consistente y “sobre la marca”, en vez de mostrar una página sin conexión genérica en el navegador. Descargue [ `offline.html` aquí](/static/files/tutorials/offline.zip) y actualice `sw.js` mediante el siguiente código:
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,

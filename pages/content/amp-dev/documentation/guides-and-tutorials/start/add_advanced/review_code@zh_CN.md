@@ -102,7 +102,7 @@ description: 在开始添加代码之前，我们先来看一下示例 article.a
         margin: 0.5em;
       }
     </style>
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",

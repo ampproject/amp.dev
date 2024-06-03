@@ -24,7 +24,7 @@ Um einen Tweet in deine Seite einzubetten, binde zunächst das folgende Skript i
 [sourcecode:html]
 
 <script async custom-element="amp-twitter"
-  src="https://ampjs.org/v0/amp-twitter-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 
 [/sourcecode]
 
@@ -55,7 +55,7 @@ Um einen Beitrag aus Instagram in deine Seite einzubetten, binde zunächst das f
 [sourcecode:html]
 
 <script async custom-element="amp-instagram"
-  src="https://ampjs.org/v0/amp-instagram-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
 
 [/sourcecode]
 
@@ -86,7 +86,7 @@ Binde das folgende Skript in `<head>` ein:
 [sourcecode:html]
 
 <script async custom-element="amp-facebook"
-  src="https://ampjs.org/v0/amp-facebook-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
 
 [/sourcecode]
 
@@ -134,7 +134,7 @@ Binde das folgende Skript in `<head>` ein:
 [sourcecode:html]
 
 <script async custom-element="amp-youtube"
-  src="https://ampjs.org/v0/amp-youtube-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 
 [/sourcecode]
 
