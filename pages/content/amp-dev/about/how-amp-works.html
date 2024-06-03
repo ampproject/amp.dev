@@ -43,7 +43,7 @@ $view: /views/overview/custom-content.j2
     <p>{{ _('Any page that uses a custom script must tell the AMP system that it will eventually have a custom tag. For example, the <a href="../documentation/components/reference/amp-iframe.md"><code>amp-iframe</code></a> script tells the system that there will be an <code>amp-iframe</code> tag. AMP creates the iframe box before it even knows what it will include:') }}</p>
 
     {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
-    {% set code_snippet = '<script async custom-element="amp-iframe" src="https://ampjs.org/v0/amp-iframe-0.1.js"></script>' %}
+    {% set code_snippet = '<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>' %}
     {% set markdown = doc.pod.markdown %}
     {{ markdown.convert('```html\n' + code_snippet + '\n```')|safe }}
   </div>

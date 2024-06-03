@@ -21,14 +21,14 @@ Dengan ikut serta dalam Saluran Dev, Anda dapat:
 
 Jika Anda menemukan masalah hanya pada AMP versi Saluran Dev, [ajukan masalah](https://github.com/ampproject/amphtml/issues/new) dengan menyertakan penjelasannya. Selalu sertakan URL ke halaman yang memiliki masalah.
 
-Untuk mengikutsertakan browser ke Saluran Dev AMP, buka [halaman eksperimen AMP](https://ampjs.org/experiments.html) lalu aktifkan eksperimen "Saluran Dev AMP". Untuk mendapatkan notifikasi tentang perubahan penting/breaking change mengenai AMP, silakan berlangganan milis [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
+Untuk mengikutsertakan browser ke Saluran Dev AMP, buka [halaman eksperimen AMP](https://cdn.ampproject.org/experiments.html) lalu aktifkan eksperimen "Saluran Dev AMP". Untuk mendapatkan notifikasi tentang perubahan penting/breaking change mengenai AMP, silakan berlangganan milis [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
 
 ## Aktifkan komponen eksperimental
 
 #### Ditampilkan dari cdn.ampproject.org
 
 Untuk konten yang ditampilkan dari [https://cdn.ampproject.org](https://cdn.ampproject.org), 
-buka [halaman eksperimental AMP](https://ampjs.org/experiments.html)
+buka [halaman eksperimental AMP](https://cdn.ampproject.org/experiments.html)
 dan aktifkan (atau nonaktifkan) komponen eksperimental dengan mengalihkan pengalih ke aktif (atau nonaktif). Ikut serta akan menetapkan cookie di browser yang akan mengaktifkan eksperimen pada semua halaman AMP yang ditampilkan melalui Cache Google AMP.
 
 #### Ditampilkan dari domain lain
@@ -45,14 +45,14 @@ Hapus komponen eksperimental ini dari dokumen AMP yang siap produksi.
 
 ## Aktifkan eksperimen untuk dokumen tertentu
 
-Dokumen dapat memilih untuk ikut serta dalam eksperimen tertentu. Untuk melakukannya, cukup cantumkan tag meta nama `amp-experiments-opt-in` di bagian kepala dokumen HTML sebelum skrip AMP (`https://ampjs.org/v0.js`). Nilai kontennya adalah string ID eksperimen untuk dipilih yang dipisahkan koma.
+Dokumen dapat memilih untuk ikut serta dalam eksperimen tertentu. Untuk melakukannya, cukup cantumkan tag meta nama `amp-experiments-opt-in` di bagian kepala dokumen HTML sebelum skrip AMP (`https://cdn.ampproject.org/v0.js`). Nilai kontennya adalah string ID eksperimen untuk dipilih yang dipisahkan koma.
 
 ```html
 <head>
   ...
   <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
-  <script async src="https://ampjs.org/v0.js"></script>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
   ...
 </head>
 ```

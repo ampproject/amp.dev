@@ -397,7 +397,7 @@ AMP не поддерживает стандартные HTML-элементы �
         margin: 0.5em;
       }
     </style>
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
     <header>News Site</header>

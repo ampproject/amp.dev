@@ -18,7 +18,7 @@ You can find the import script for each component at the top of its reference do
 [/tip]
 
 ```html
-<script async custom-element="amp-base-carousel" src="https://ampjs.org/v0/amp-base-carousel-0.1.js"></script>
+<script async custom-element="amp-base-carousel" src="https://cdn.ampproject.org/v0/amp-base-carousel-0.1.js"></script>
 ```
 
 Next, include another `<amp-img>` element under the first one, then wrap both inside `<amp-base-carousel>` tags, like below:

@@ -53,7 +53,7 @@ Ayrıca, reklam öğelerinin aşağıdaki kurallara uyması gerekir:
 <td>Doğrulayıcıların, bir reklam öğesi belgesini genel bir AMP belgesi veya kısıtlı bir AMPHTML reklam belgesi olarak tanımlamasına ve uygun şekilde göndermesine izin verir.</td>
 </tr>
 <tr>
-<td>Çalışma zamanı betiği olarak <code>https://ampjs.org/v0.js</code> yerine <code>&lt;script async src="https://ampjs.org/amp4ads-v0.js">&lt;/script></code> kullanmalıdır.</td>
+<td>Çalışma zamanı betiği olarak <code>https://cdn.ampproject.org/v0.js</code> yerine <code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js">&lt;/script></code> kullanmalıdır.</td>
 <td>Kaynaklar arası iframe'lerde sunulan AMPHTML reklamları için özel çalışma zamanı davranışlarına izin verir.</td>
 </tr>
 <tr>
@@ -328,7 +328,7 @@ SVG etiketleri HTML5 ad alanında değildir. Aşağıda bölüm tanımlayıcıla
 
 #### 4.11 Kodlama <a name="411-scripting"></a>
 
-- Genel bir AMP belgesinde olduğu gibi reklam öğesinin `<head>` etiketi bir `<script async src="https://ampjs.org/amp4ads-v0.js"></script>` etiketi içermelidir.
+- Genel bir AMP belgesinde olduğu gibi reklam öğesinin `<head>` etiketi bir `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>` etiketi içermelidir.
 - Genel AMP'den farklı olarak, `<noscript>` yasaklanmıştır.
   - _Gerekçe:_ AMPHTML reklamları, Javascript'in hep çalışabilmesini gerektirdiğinden, `<noscript>` blokları AMPHTML reklamlarında herhangi bir amaca hizmet etmez ve yalnızca ağ bant genişliği maliyeti yaratırlar.
 - Genel AMP'den farklı olarak `<script type="application/ld+json">` yasaklanmıştır.

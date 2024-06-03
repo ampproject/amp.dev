@@ -80,7 +80,7 @@ ilk önce bu `custom-element` bildirimini
 [Bileşen ekleme bildirimi](../../../../documentation/components/index.html)):
 
 ```html
-<script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js"></script>
+<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 ```
 
 Aşağıdaki örnek [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) ile benzerdir.

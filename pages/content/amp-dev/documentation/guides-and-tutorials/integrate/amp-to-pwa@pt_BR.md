@@ -38,7 +38,7 @@ Primeiro, instale o service worker em todas as suas páginas AMP usando [`amp-in
 [sourcecode:html]
 
 <script async custom-element="amp-install-serviceworker"
-  src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 [/sourcecode]
 

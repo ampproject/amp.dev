@@ -22,10 +22,10 @@ AMP Story Player를 사용하면 웹 페이지에 사용자가 탭하거나 클�
     <head>
       <script
           async
-          src="https://ampjs.org/amp-story-player-v0.js"
+          src="https://cdn.ampproject.org/amp-story-player-v0.js"
       ></script>
       <link
-          href="https://ampjs.org/amp-story-player-v0.css"
+          href="https://cdn.ampproject.org/amp-story-player-v0.css"
           rel="stylesheet"
           type="text/css"
       />
@@ -80,9 +80,9 @@ AMP Story Player를 사용하면 웹 페이지에 사용자가 탭하거나 클�
 문서 헤드에 필수 스크립트 두 개를 포함합니다.
 
 ```html
-<script async src="https://ampjs.org/amp-story-player-v0.js"></script>
+<script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>
 <link
-  href="https://ampjs.org/amp-story-player-v0.css"
+  href="https://cdn.ampproject.org/amp-story-player-v0.css"
   rel="stylesheet"
   type="text/css"
 />

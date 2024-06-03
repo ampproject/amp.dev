@@ -43,7 +43,7 @@ AMP에서 이 기능을 복제하려면 먼저 문서의 `<head>`에 [`amp-analy
 <script
   async
   custom-element="amp-analytics"
-  src="https://ampjs.org/v0/amp-analytics-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
 ></script>
 ```
 

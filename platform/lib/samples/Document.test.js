@@ -118,13 +118,13 @@ describe('Document', () => {
   describe('importsComponent is', () => {
     it('true if head imports component ', () => {
       doc.appendHead(
-        '<script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js"></script>'
+        '<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>'
       );
       expect(doc.importsComponent('amp-analytics')).toEqual(true);
     });
     it("false if head doesn't include canonical link", () => {
       doc.appendHead(
-        '<script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js"></script>'
+        '<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>'
       );
       expect(doc.importsComponent('amp-accesss')).toEqual(false);
     });

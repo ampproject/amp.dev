@@ -11,7 +11,7 @@ Sayfalarınıza üçüncü taraf bileşenlerini nasıl ekleyeceğinizi öğrenin
 Sayfanıza tweet eklemek için öncelikle aşağıdaki komut dosyasını `<head>` bölümüne ekleyin:
 
 [sourcecode:html]
-<script async custom-element="amp-twitter" src="https://ampjs.org/v0/amp-twitter-0.1.js"></script>
+<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 [/sourcecode]
 
 Şu anda tweet'ler, sağlanan boyuta sığmaları için otomatik olarak belirli bir oranda ölçeklenmektedir, ancak bu ideal bir görünüm sağlamayabilir.
@@ -34,7 +34,7 @@ Sağlanan genişliği ve yüksekliği manuel olarak değiştirebilir veya en boy
 Bir Instagram fotoğrafını sayfanıza eklemek için öncelikle aşağıdaki komut dosyasını `<head>` bölümüne ekleyin:
 
 [sourcecode:html]
-<script async custom-element="amp-instagram" src="https://ampjs.org/v0/amp-instagram-0.1.js"></script>
+<script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
 [/sourcecode]
 
 Instagram fotoğrafı URL'sinde bulunan Instagram kısa veri kodunu ekleyin. Örneğin, `https://instagram.com/p/fBwFP` URL'sindeki `fBwFP`, veri kısa kodudur.
@@ -57,7 +57,7 @@ Ayrıca, Instagram duyarlı düzenler için sabit bir en boy oranı kullanır. B
 Aşağıdaki komut dosyasını `<head>` bölümüne eklemeniz gerekir:
 
 [sourcecode:html]
-<script async custom-element="amp-facebook" src="https://ampjs.org/v0/amp-facebook-0.1.js"></script>
+<script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
 [/sourcecode]
 
 ##### Örnek - Yayın yerleştirme
@@ -99,7 +99,7 @@ Preview:
 Aşağıdaki komut dosyasını `<head>` bölümüne eklemeniz gerekir:
 
 [sourcecode:html]
-<script async custom-element="amp-youtube" src="https://ampjs.org/v0/amp-youtube-0.1.js"></script>
+<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 [/sourcecode]
 
 Youtube `data-videoid` kodunu her YouTube video sayfası URL'sinde bulabilirsiniz. Örneğin, https://www.youtube.com/watch?v=Z1q71gFeRqM URL'sinin Z1q71gFeRqM kısmı, video kimliğini belirtmektedir.

@@ -32,7 +32,7 @@ Permite el renderizado de las plantillas [Mustache.js](https://github.com/janl/m
     <td width="40%"><strong>Secuencia de comandos obligatoria</strong></td>
     <td>
       <div>
-        <code>&lt;script async custom-template="amp-mustache" src="https://ampjs.org/v0/amp-mustache-0.2.js">&lt;/script></code>
+        <code>&lt;script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js">&lt;/script></code>
       </div>
     </td>
   </tr>
@@ -67,7 +67,7 @@ En primer lugar, `amp-mustache` debe declararse o cargarse de la siguiente maner
 
 ```html
 
-<script src="https://ampjs.org/v0/amp-mustache-0.2.js" async="" custom-template="amp-mustache"></script>
+<script src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" async="" custom-template="amp-mustache"></script>
 ```
 
 A continuación, las plantillas de Mustache se pueden definir mediante una etiqueta `script` o `template` de la siguiente manera:

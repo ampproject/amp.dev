@@ -18,7 +18,7 @@ author: CrystalOnScript
 - 最上位階層のタグを `<html ⚡>` または `<html amp>` タグにする。
 - `<head>` タグと `<body>` タグを含めます。
 - `<meta charset="utf-8">` タグを `<head>` タグの最初の子要素にする。
-- `<script async src="https://ampjs.org/v0.js"></script>` タグを `<head>` タグに含める。このスクリプトを `<head>` の 2 番目の子要素にするのがベストプラクティスです。
+- `<script async src="https://cdn.ampproject.org/v0.js"></script>` タグを `<head>` タグに含める。このスクリプトを `<head>` の 2 番目の子要素にするのがベストプラクティスです。
 - `<head>` タグに ` <link rel="canonical" href="page/url">` タグを含め、href をウェブストーリーの URL にポイントする。
 - `<head>` タグ内に `<meta name="viewport" content="width=device-width">` タグを含める。initial-scale=1 を含めることも推奨されます。
 - `<head>` タグ内に [AMP ボイラープレート](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites)コードを含める。
@@ -91,16 +91,16 @@ AMP ウェブページと AMP を使って作成されたウェブストーリ�
         }
       </style></noscript
     >
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script
       async
       custom-element="amp-video"
-      src="https://ampjs.org/v0/amp-video-0.1.js"
+      src="https://cdn.ampproject.org/v0/amp-video-0.1.js"
     ></script>
     <script
       async
       custom-element="amp-story"
-      src="https://ampjs.org/v0/amp-story-1.0.js"
+      src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
     ></script>
     <style amp-custom>
       ...;

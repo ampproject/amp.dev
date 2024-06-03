@@ -121,7 +121,7 @@ El elemento [`amp-anim`](../../../../documentation/components/reference/amp-anim
 
 [/example]
 
-[tip type="tip"] <strong>NOTA:</strong> Incluya`<script async custom-element="amp-anim" src="https://ampjs.org/v0/amp-anim-0.1.js"></script>` en el encabezado de la página para usar este componente.[/tip]
+[tip type="tip"] <strong>NOTA:</strong> Incluya`<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` en el encabezado de la página para usar este componente.[/tip]
 
 ## Video
 
@@ -175,4 +175,4 @@ Include a fallback, if the browser doesn't support HTML5 audio, for example:
 
 [/example]
 
-[tip type="tip"] <strong>NOTA:</strong> Incluya`<script async custom-element="amp-audio" src="https://ampjs.org/v0/amp-audio-0.1.js"></script>` en el encabezado de la página para usar este componente. [/tip]
+[tip type="tip"] <strong>NOTA:</strong> Incluya`<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` en el encabezado de la página para usar este componente. [/tip]

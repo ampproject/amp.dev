@@ -34,7 +34,7 @@ Iframe đặc biệt hữu ích trong AMP để hiển thị các nội dung kh�
 [sourcecode:html]
 
 <script async custom-element="amp-iframe"
-  src="https://ampjs.org/v0/amp-iframe-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 
 [/sourcecode]
 

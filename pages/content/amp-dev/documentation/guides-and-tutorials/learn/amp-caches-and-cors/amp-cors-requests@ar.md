@@ -131,7 +131,7 @@ src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)"
 
 <span id="verify-cors-header"></span>
 
-تتلقى نقاط نهاية اشتراك المصادر في الموارد الأصل الطالب عبر ترويسة HTTP `Origin`. ويجب أن تسمح نقاط النهاية فقط بالطلبات من: (1) أصل الناشر، و(2) كل أصل `cacheDomain` مُدرج في [https://ampjs.org/caches.json](https://ampjs.org/caches.json).
+تتلقى نقاط نهاية اشتراك المصادر في الموارد الأصل الطالب عبر ترويسة HTTP `Origin`. ويجب أن تسمح نقاط النهاية فقط بالطلبات من: (1) أصل الناشر، و(2) كل أصل `cacheDomain` مُدرج في [https://cdn.ampproject.org/caches.json](https://cdn.ampproject.org/caches.json).
 
 على سبيل المثال، يجب أن تسمح نقاط النهاية بالطلبات ممن:
 

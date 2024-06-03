@@ -67,7 +67,7 @@ author: CrystalOnScript
 Создайте файл с именем `sw.js` и добавьте в него следующий код:
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init();
 [/sourcecode]
 
@@ -82,7 +82,7 @@ AMP-сайты используют компонент [`<amp-install-servicewor
 [sourcecode:html]
 …
 
-<script async custom-element="amp-install-serviceworker" src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 …
 ...
@@ -122,7 +122,7 @@ AMP Service Worker обеспечивает множество оптимиза�
 Вы можете использовать AMP Service Worker для [кеширования ассетов](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching), таких как изображения, видео и шрифты. Мы будем использовать его для кеширования нашего фонового изображения и логотипа AMP. Откройте файл `sw.js` и обновите его следующим образом:
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,
@@ -148,7 +148,7 @@ AMP Service Worker предварительно загружает содерж�
 На случай непредвиденных ситуаций (в том числе, когда пользователь нажимает на ссылки на страницы, которые не были предварительно загружены), мы добавим страницу отсутствующего подключения. Такая страница позволит сохранить согласованное оформление сайта, поскольку заменит собой стандартную страницу отсутствующего подключения, предусмотренную браузером. Скачайте файл [`offline.html` по этой ссылке](/static/files/tutorials/offline.zip) и обновите `sw.js` следующим образом:
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,

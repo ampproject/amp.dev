@@ -16,7 +16,7 @@ author: CrystalOnScript
 ```html
 <meta
   http-equiv="Content-Security-Policy"
-  content="default-src * data: blob:; script-src blob: https://ampjs.org/v0.js https://ampjs.org/v0/ https://ampjs.org/viewer/ https://ampjs.org/rtv/; object-src 'none'; style-src 'unsafe-inline' https://ampjs.org/rtv/ https://cdn.materialdesignicons.com https://cloud.typography.com https://fast.fonts.net https://fonts.googleapis.com https://maxcdn.bootstrapcdn.com https://p.typekit.net https://use.fontawesome.com https://use.typekit.net; report-uri https://csp-collector.appspot.com/csp/amp"
+  content="default-src * data: blob:; script-src blob: https://cdn.ampproject.org/v0.js https://cdn.ampproject.org/v0/ https://cdn.ampproject.org/viewer/ https://cdn.ampproject.org/rtv/; object-src 'none'; style-src 'unsafe-inline' https://cdn.ampproject.org/rtv/ https://cdn.materialdesignicons.com https://cloud.typography.com https://fast.fonts.net https://fonts.googleapis.com https://maxcdn.bootstrapcdn.com https://p.typekit.net https://use.fontawesome.com https://use.typekit.net; report-uri https://csp-collector.appspot.com/csp/amp"
 />
 ```
 

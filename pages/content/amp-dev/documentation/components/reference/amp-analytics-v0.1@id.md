@@ -29,7 +29,7 @@ Mengambil data analisis dari dokumen AMP.
 <table>
   <tr>
     <td class="col-fourty"><strong>Skrip yang Diperlukan</strong></td>
-    <td><code>&lt;script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js"&lt;&gt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"&lt;&gt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong>Contoh</strong></td>

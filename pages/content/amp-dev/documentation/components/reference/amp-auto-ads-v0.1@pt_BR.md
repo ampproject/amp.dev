@@ -36,7 +36,7 @@ Insere anúncios em páginas AMP de maneira dinâmica usando um arquivo de confi
     <td>
     <code>
       &lt;script async custom-element="amp-auto-ads"
-      src="https://ampjs.org/v0/amp-auto-ads-0.1.js">&lt;/script>
+      src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">&lt;/script>
     </code>
       </td>
     </tr>

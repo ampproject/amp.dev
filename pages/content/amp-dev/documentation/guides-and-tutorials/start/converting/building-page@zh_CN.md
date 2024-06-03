@@ -47,7 +47,7 @@ description: 在项目目录中，您会看到一个名为 article.html 的文�
 要添加 AMP 库，请将下面这行内容**添加**到 `<head>` 标记底部：
 
 ```html
-<script async src="https://ampjs.org/v0.js"></script>
+<script async src="https://cdn.ampproject.org/v0.js"></script>
 ```
 
 在浏览器中访问 [http://localhost:8000/article.amp.html](http://localhost:8000/article.amp.html)，以**加载** `article.amp.html` 这一新网页，然后，在 Chrome（或您的首选浏览器）中**打开**[开发者控制台](https://developer.chrome.com/devtools/docs/console)。

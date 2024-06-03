@@ -21,14 +21,14 @@ AMP 开发者版**可能不太稳定**，并且可能包含仅限部分用户使
 
 如果您发现某个问题似乎只出现在开发者版 AMP 中，请[报告问题](https://github.com/ampproject/amphtml/issues/new)并附上此问题的说明。请务必添加可重现该问题的网页对应的网址。
 
-要为浏览器选择启用 AMP 开发者版，请转到 [AMP 实验性功能页面](https://ampjs.org/experiments.html)，然后启用“AMP 开发者版”实验性功能。要接收有关 AMP 的重要/重大变更的通知，请订阅 [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce) 网上论坛。
+要为浏览器选择启用 AMP 开发者版，请转到 [AMP 实验性功能页面](https://cdn.ampproject.org/experiments.html)，然后启用“AMP 开发者版”实验性功能。要接收有关 AMP 的重要/重大变更的通知，请订阅 [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce) 网上论坛。
 
 ## 启用实验性组件
 
 #### 从 cdn.ampproject.org 提供的内容
 
 对于从 [https://cdn.ampproject.org](https://cdn.ampproject.org) 提供的内容，
-请转到 [AMP 实验性功能页面](https://ampjs.org/experiments.html)，
+请转到 [AMP 实验性功能页面](https://cdn.ampproject.org/experiments.html)，
 然后开启（或关闭）任何实验性组件以将其启用（停用）。选择启用实验性组件后，系统会在浏览器上设置 Cookie，以便在通过 Google AMP 缓存提供的所有 AMP 网页上启用实验性功能。
 
 #### 从其他网域提供的内容
@@ -45,14 +45,14 @@ AMP.toggleExperiment('experiment')
 
 ## 为特定文档启用实验性功能
 
-文档可以选择启用特定实验性功能。为此，只需将 `amp-experiments-opt-in` 名称的元标记放在 HTML 文档标头中 AMP 脚本 (`https://ampjs.org/v0.js`) 的前面即可。该元标记的内容值是要选择启用的实验性功能的实验 ID 字符串（以英文逗号分隔）。
+文档可以选择启用特定实验性功能。为此，只需将 `amp-experiments-opt-in` 名称的元标记放在 HTML 文档标头中 AMP 脚本 (`https://cdn.ampproject.org/v0.js`) 的前面即可。该元标记的内容值是要选择启用的实验性功能的实验 ID 字符串（以英文逗号分隔）。
 
 ```html
 <head>
   ...
   <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
-  <script async src="https://ampjs.org/v0.js"></script>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
   ...
 </head>
 ```

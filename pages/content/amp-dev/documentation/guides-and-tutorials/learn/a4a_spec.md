@@ -51,7 +51,7 @@ In addition, creatives must obey the following rules:
 <td>Allows validators to identify a creative document as either a general AMP doc or a restricted AMPHTML ad doc and to dispatch appropriately.</td>
 </tr>
 <tr>
-<td>Must include <code>&lt;script async src="https://ampjs.org/amp4ads-v0.js">&lt;/script></code> as the runtime script instead of <code>https://ampjs.org/v0.js</code>.</td>
+<td>Must include <code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js">&lt;/script></code> as the runtime script instead of <code>https://cdn.ampproject.org/v0.js</code>.</td>
 <td>Allows tailored runtime behaviors for AMPHTML ads served in cross-origin iframes.</td>
 </tr>
 <tr>
@@ -459,7 +459,7 @@ SVG tags are not in the HTML5 namespace. They are listed below without section i
 #### 4.11 Scripting <a name="411-scripting"></a>
 
 -   Like a general AMP document, the creative's `<head>` tag must contain a
-    `<script async src="https://ampjs.org/amp4ads-v0.js"></script>` tag.
+    `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>` tag.
 -   Unlike general AMP, `<noscript>` is prohibited.
     -   _Rationale:_ Since AMPHTML ads requires Javascript to be enabled to function
         at all, `<noscript>` blocks serve no purpose in AMPHTML ads and

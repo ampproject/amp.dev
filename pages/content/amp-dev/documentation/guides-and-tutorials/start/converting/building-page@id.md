@@ -47,7 +47,7 @@ Untuk memulai, kita akan menambahkan berkas perpustakaan AMP. Selain membuat ber
 Untuk menyertakan perpustakaan AMP, **tambahkan** baris berikut ini ke bagian bawah tag `<head>`:
 
 ```html
-<script async src="https://ampjs.org/v0.js"></script>
+<script async src="https://cdn.ampproject.org/v0.js"></script>
 ```
 
 **Muat** halaman `article.amp.html` baru pada browser Anda di [http://localhost:8000/article.amp.html](http://localhost:8000/article.amp.html), kemudian **buka** [Konsol Pengembang](https://developer.chrome.com/devtools/docs/console) di Chrome (atau browser pilihan Anda).

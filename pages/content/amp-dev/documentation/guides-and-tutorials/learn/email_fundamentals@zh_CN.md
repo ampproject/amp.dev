@@ -18,7 +18,7 @@ AMP 电子邮件与传统 HTML 电子邮件看起来很像，但存在几点区�
 <html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <style amp4email-boilerplate>
       body {
         visibility: hidden;
@@ -37,7 +37,7 @@ AMP 电子邮件与传统 HTML 电子邮件看起来很像，但存在几点区�
 - 包含顶级 `<html amp4email>` 标记或 `<html ⚡4email>` 标记（如果电子邮件格外酷）。这可以将文档标识为 AMP 电子邮件，从而以相应方式对待该文档。
 - 定义 `<head>` 和 `<body>` 标记。这一点在 HTML 中为可选项，但 AMP 保留了原始做法！
 - 包括 `<meta charset="utf-8>` 标记，作为 `<head>` 标记的第一个子级。这样可以标识网页的编码。
-- 利用放在 `<head>` 中的 `<script async src="https://ampjs.org/v0.js"></script>` 标记导入 AMP 库。只有包括此标记，才能让通过 AMP 获得的炫酷动态功能起作用！最佳做法是，应该尽早在 `<head>` 中添加此标记，直接放在 `<meta charset="utf-8">` 标记下方。
+- 利用放在 `<head>` 中的 `<script async src="https://cdn.ampproject.org/v0.js"></script>` 标记导入 AMP 库。只有包括此标记，才能让通过 AMP 获得的炫酷动态功能起作用！最佳做法是，应该尽早在 `<head>` 中添加此标记，直接放在 `<meta charset="utf-8">` 标记下方。
 - 最初隐藏电子邮件内容，直到在 `<head>` 中放置 AMP 电子邮件样板来加载 AMP 库。
 
 ```html

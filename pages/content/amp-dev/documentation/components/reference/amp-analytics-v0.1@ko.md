@@ -29,7 +29,7 @@ AMP 문서에서 애널리틱스 데이터를 캡처합니다.
 <table>
   <tr>
     <td class="col-fourty"><strong>필수 스크립트</strong></td>
-    <td><code>&lt;script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js"&gt;&lt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong>예</strong></td>

@@ -19,7 +19,7 @@ author: CrystalOnScript
 - تضمين العلامة `<html ⚡>` `<html amp>` من المستوى الأعلى.
 - تضمين العلامات `<head>` and `<body>`.
 - تضمين العلامة ` <meta charset="utf-8">` على أنها التابع الأول للعلامة `<head>`.
-- تضمين العلامة `<script async src="https://ampjs.org/v0.js"></script>` tag inside their `<head>`. وكأفضل ممارسة، يجب تضمين النص في أقرب وقت ممكن في `<head>`.
+- تضمين العلامة `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their `<head>`. وكأفضل ممارسة، يجب تضمين النص في أقرب وقت ممكن في `<head>`.
 - تضمين العلامة a` <link rel="canonical" href="page/url">` داخل `<head>` مع المدلال النصي الترابطي الذي يشير إلى عنوان URL لقصة الويب.
 - تضمين العلامة `<meta name="viewport" content="width=device-width">` داخل العلامة `<head>`. يوصى أيضًا بتضمين المقياس الأولي=1.
 - تضمين الرمز [AMP boilerplate](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) في العلامة `<head>`.
@@ -92,16 +92,16 @@ author: CrystalOnScript
         }
       </style></noscript
     >
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script
       async
       custom-element="amp-video"
-      src="https://ampjs.org/v0/amp-video-0.1.js"
+      src="https://cdn.ampproject.org/v0/amp-video-0.1.js"
     ></script>
     <script
       async
       custom-element="amp-story"
-      src="https://ampjs.org/v0/amp-story-1.0.js"
+      src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
     ></script>
     <style amp-custom>
       ...;

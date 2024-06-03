@@ -176,7 +176,7 @@ The portion of the page containing the carousel should look like this:
 Remember to include the `<amp-bind>` library in the `<head>`:
 
 [sourcecode:html]
-{% raw %}<script async custom-element="amp-bind" src="https://ampjs.org/v0/amp-bind-0.1.js"></script>
+{% raw %}<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 {% endraw %}[/sourcecode]
 
 ## Case Study: Analyzing an Online Shopping Page
@@ -462,7 +462,7 @@ The portion of the page containing the carousel should look like this:
 Remember to include the `<amp-bind>` library in the `<head>`:
 
 [sourcecode:html]
-{% raw %}<script async custom-element="amp-bind" src="https://ampjs.org/v0/amp-bind-0.1.js"></script>
+{% raw %}<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 {% endraw %}[/sourcecode]
 
 ## Case Study: Analyzing an Online Shopping Page

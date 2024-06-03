@@ -40,7 +40,7 @@ Di dalam tag `<html>`, tambahkan atribut `⚡4ads`, yang mengidentifikasi dokume
 Iklan HTML AMP memerlukan versi runtime AMP sendiri, jadi tambahkan tag `<script>` berikut ini ke bagian `<head>`dokumen Anda:
 
 ```html
-<script async src="https://ampjs.org/amp4ads-v0.js"></script>
+<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
 ```
 
 Kreatif iklan HTML AMP membutuhkan baris gaya [boilerplate](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#boilerplate) yang jauh lebih sederhana dan berbeda dibanding halaman AMP pada umumnya. Tambahkan kode berikut ini ke bagian `<head>` Anda:
@@ -66,7 +66,7 @@ Berikut ini adalah kode lengkap untuk berkas HTML Anda:
     <meta charset="utf-8" />
     <title>My amphtml ad</title>
     <meta name="viewport" content="width=device-width" />
-    <script async src="https://ampjs.org/amp4ads-v0.js"></script>
+    <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
     <style amp4ads-boilerplate>
       body {
         visibility: hidden;

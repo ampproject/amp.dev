@@ -18,7 +18,7 @@ formats:
 <html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <style amp4email-boilerplate>
       body {
         visibility: hidden;
@@ -37,7 +37,7 @@ formats:
 - قم بتضمين علامة `<html amp4email>` من المستوى الأعلى، أو علامة `<html ⚡4email>` لإضفاء سمات رائعة لبريدك الإلكتروني. إذ يحدد هذا الأمر المستند على أنه بريد إلكتروني بتنسيق AMP لكي يتسنى معاملته على هذا النحو.
 - حدد كلاً من علامتي `<head>` و`<body>`. هذا الأمر اختياري في HTML، لكن AMP تحافظ على أصالة الأشياء!
 - قم بتضمين العلامة `<meta charset="utf-8>` على أنها التابع الأول للعلامة `<head>`. حيث يحدد هذا الأمر الترميز للصفحة.
-- يتم استيراد مكتبة AMP من خلال علامة `<script async src="https://ampjs.org/v0.js"></script>` التي يتم وضعها في `<head>`. ولن تعمل بدونها أي من الوظائف الرائعة والديناميكية المكتسبة من خلال AMP! كأفضل ممارسة، يجب تضمين هذا الأمر في أقرب وقت ممكن في `<head>`، مباشرة أسفل العلامة `<meta charset="utf-8">`.
+- يتم استيراد مكتبة AMP من خلال علامة `<script async src="https://cdn.ampproject.org/v0.js"></script>` التي يتم وضعها في `<head>`. ولن تعمل بدونها أي من الوظائف الرائعة والديناميكية المكتسبة من خلال AMP! كأفضل ممارسة، يجب تضمين هذا الأمر في أقرب وقت ممكن في `<head>`، مباشرة أسفل العلامة `<meta charset="utf-8">`.
 - قم في البداية بإخفاء محتوى البريد الإلكتروني حتى يتم تحميل مكتبة AMP عن طريق وضع معيار AMP للبريد الإلكتروني في `<head>`.
 
 ```html

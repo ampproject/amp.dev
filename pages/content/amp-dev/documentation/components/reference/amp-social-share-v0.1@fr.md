@@ -32,7 +32,7 @@ Ce composant affiche un bouton de partage sur les réseaux sociaux.
     <td class="col-fourty"><strong>Script requis</strong></td>
     <td>
       <div>
-        <code>&lt;script async custom-element="amp-social-share" src="https://ampjs.org/v0/amp-social-share-0.1.js"&gt;&lt;script&gt;</code>
+        <code>&lt;script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"&gt;&lt;script&gt;</code>
       </div>
     </td>
   </tr>

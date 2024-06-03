@@ -31,7 +31,7 @@ Beta Channel to świetny wybór:
 
 Jeśli znajdziesz problem, który wydaje się występować tylko w wersji AMP z Beta Channel, [zgłoś problem](https://github.com/ampproject/amphtml/issues/new) z opisem. Zawsze dołączaj adres URL do strony z odtworzeniem problemu.
 
-Aby ustawić przeglądarkę do korzystania z kanału AMP Beta Channel, przejdź do [strony eksperymentów AMP](https://ampjs.org/experiments.html) i aktywuj eksperyment „AMP Beta Channel”. Aby otrzymywać powiadomienia o ważnych/przełomowych zmianach dotyczących AMP, zapisz się na listę mailingową [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
+Aby ustawić przeglądarkę do korzystania z kanału AMP Beta Channel, przejdź do [strony eksperymentów AMP](https://cdn.ampproject.org/experiments.html) i aktywuj eksperyment „AMP Beta Channel”. Aby otrzymywać powiadomienia o ważnych/przełomowych zmianach dotyczących AMP, zapisz się na listę mailingową [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
 
 ## Włączanie składnika eksperymentalnego
 
@@ -55,14 +55,14 @@ AMP.toggleExperiment('experiment');
 
 ## Włączanie eksperymentu dla konkretnego dokumentu
 
-Dokument może włączać określone eksperymenty. W tym celu należy w nagłówku dokumentu HTML umieścić tag meta nazwy `amp-experiments-opt-in` przed skryptem AMP (`https://ampjs.org/v0.js`). Zawarta w nim wartość to rozdzielany przecinkami ciąg identyfikatorów eksperymentów, które mają zostać włączone.
+Dokument może włączać określone eksperymenty. W tym celu należy w nagłówku dokumentu HTML umieścić tag meta nazwy `amp-experiments-opt-in` przed skryptem AMP (`https://cdn.ampproject.org/v0.js`). Zawarta w nim wartość to rozdzielany przecinkami ciąg identyfikatorów eksperymentów, które mają zostać włączone.
 
 ```html
 <head>
   ...
   <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b" />
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
-  <script async src="https://ampjs.org/v0.js"></script>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
   ...
 </head>
 ```

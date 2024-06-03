@@ -69,7 +69,7 @@ Hello World (Halo Dunia) dalam teks polos!
 
 <!doctype html>
 
-    <meta charset="utf-8">   <style amp4email-boilerplate="">body{visibility:hidden}</style>   <script async="" src="https://ampjs.org/v0.js"></script>   Hello World in AMP!   --001a114634ac3555ae05525685ae Content-Type: text/html; charset="UTF-8"
+    <meta charset="utf-8">   <style amp4email-boilerplate="">body{visibility:hidden}</style>   <script async="" src="https://cdn.ampproject.org/v0.js"></script>   Hello World in AMP!   --001a114634ac3555ae05525685ae Content-Type: text/html; charset="UTF-8"
 
 <span>Hello World (Halo Dunia) dalam HTML!</span> --001a114634ac3555ae05525685ae-- [/sourcecode]
 

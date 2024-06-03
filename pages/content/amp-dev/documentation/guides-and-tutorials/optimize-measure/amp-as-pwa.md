@@ -28,7 +28,7 @@ For that, first include the [`amp-install-serviceworker`](../../../documentation
 [sourcecode:html]
 
 <script async custom-element="amp-install-serviceworker"
-  src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 [/sourcecode]
 
@@ -57,7 +57,7 @@ Install the AMP Service Worker with minimal steps:
 
 - Import the AMP Service Worker code into your service worker file.
   [sourcecode:js]
-  importScripts('https://ampjs.org/sw/amp-sw.js');
+  importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
   [/sourcecode]
 
 - Install the service worker with the following code.

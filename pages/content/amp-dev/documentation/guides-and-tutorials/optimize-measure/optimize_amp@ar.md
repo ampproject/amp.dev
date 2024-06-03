@@ -44,11 +44,11 @@ author: sebastianbenz
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="This is the AMP Boilerplate.">
-    <link rel="preload" as="script" href="https://ampjs.org/v0.js">
-    <link rel="preload" as="script" href="https://ampjs.org/v0/amp-experiment-0.1.js">
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
     <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
-    <script async src="https://ampjs.org/v0.js"></script>
-    <script async custom-element="amp-experiment" src="https://ampjs.org/v0/amp-experiment-0.1.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-experiment" src="https://cdn.ampproject.org/v0/amp-experiment-0.1.js"></script>
     <!-- Import other AMP Extensions here -->
     <style amp-custom>
       /* Add your styles here */
@@ -68,15 +68,15 @@ author: sebastianbenz
 
 1. يجب أن تكون العلامة الأولى هي علامة `meta charset`، متبوعة بأي علامات `meta` متبقية.
 
-2. بعد ذلك، قم بالتحميل المسبق لعلامة وقت تشغيل AMP `v0.js` `<script>` باستخدام `<link as=script href=https://ampjs.org/v0.js rel=preload>`. يجب أن يبدأ وقت تشغيل AMP بالتحميل بأسرع وقت لأن [AMP boilerplate](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) يقوم بإخفاء المستند من خلال `body { visibility:hidden }` حتى يكتمل تحميل وقت تشغيل AMP. التحميل المسبق لوقت تشغيل AMP يُعلم المتصفح بتحميل النص البرمجي بأولوية قصوى. القِ نظرة على [العرض بجانب الخادم](#server-side-rendering) للتعرّف على كيفية تجنب هذا الأمر.
+2. بعد ذلك، قم بالتحميل المسبق لعلامة وقت تشغيل AMP `v0.js` `<script>` باستخدام `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`. يجب أن يبدأ وقت تشغيل AMP بالتحميل بأسرع وقت لأن [AMP boilerplate](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) يقوم بإخفاء المستند من خلال `body { visibility:hidden }` حتى يكتمل تحميل وقت تشغيل AMP. التحميل المسبق لوقت تشغيل AMP يُعلم المتصفح بتحميل النص البرمجي بأولوية قصوى. القِ نظرة على [العرض بجانب الخادم](#server-side-rendering) للتعرّف على كيفية تجنب هذا الأمر.
 
 3. إذا كانت صفحتك تحتوي على إضافات تأخير العرض (على سبيل المثال، amp-experience وamp-dynamic-css-class وamp-story)، فحمِّل هذه الإضافات مسبقًا كما هو مطلوب في وقت تشغيل AMP لعرض الصفحة.
 
 [sourcecode:html]
 
-<link as="script" rel="preload" href="https://ampjs.org/v0/amp-custom-css-0.1.js">
-<link as="script" rel="preload" href="https://ampjs.org/v0/amp-experiment-0.1.js">
-<link as="script" rel="preload" href="https://ampjs.org/v0/story-1.0.js">[/sourcecode]
+<link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-custom-css-0.1.js">
+<link as="script" rel="preload" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
+<link as="script" rel="preload" href="https://cdn.ampproject.org/v0/story-1.0.js">[/sourcecode]
 
 1. استخدم [preonnect](https://www.igvita.com/2015/08/17/eliminating-roundtrips-with-preconnect/) لتسريع الاتصال بأصل آخر حيث لا يكون عنوان URL الكامل للمورد معروفًا مسبقًا، على سبيل المثال: عند استخدام Google Fonts:
 
@@ -84,7 +84,7 @@ author: sebastianbenz
 
 1. تحميل وقت تشغيل AMP:
 
-[sourcecode:html]<script async src="https://ampjs.org/v0.js"></script>[/sourcecode]
+[sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
 
 1. حدد العلامات `<script>` لـ [امتدادات عرض التأخير](https://github.com/ampproject/amphtml/blob/main/src/render-delaying-services.js) (على سبيل المثال، [`amp-perience`](../../../documentation/components/reference/amp-experiment.md) [`amp-dynamic-css-classes` ](../../../documentation/components/reference/amp-dynamic-css-classes.md) و[`amp-story`](../../../documentation/components/reference/amp-story.md)
 2. حدد علامات `<script>` للإضافات المتبقية (على سبيل المثال، [`amp-bind`](../../../documentation/components/reference/amp-bind.md) ...). لا تؤدي هذه الإضافات إلى تأخير العرض، وبالتالي لا يجب تحميلها مسبقًا لأنها قد تزيل النطاق الترددي المهم لعملية العرض الأولية.
@@ -189,7 +189,7 @@ author: sebastianbenz
 
 لا تقتصر أهمية التخزين المؤقت المسبق على الانتقال من صفحات AMP المخزنة مؤقتًا إلى صفحات لا تدعم AMP في المصدر الخاص بك، ولكن أيضًا للانتقال من صفحات AMP المخزنة مؤقتًا إلى صفحات AMP الموجودة في المصدر الخاص بك. والسبب هو أن ذاكرة AMP للتخزين المؤقت تُعيد كتابة عناوين URL لوقت تشغيل AMP من عنوان URL ثابت إلى أحدث إصدار تم إصداره، على سبيل المثال:
 
-`https://ampjs.org/v0.js` -> `https://ampjs.org/rtv/001515617716922/v0.js`.
+`https://cdn.ampproject.org/v0.js` -> `https://cdn.ampproject.org/rtv/001515617716922/v0.js`.
 
 والنتيجة هي أن صفحة AMP التي يتم عرضها من مصدرك لا تستفيد من التخزين المؤقت للمتصفح وفي هذه الحالة يجب تنزيل وقت تشغيل AMP (بدون إصدار) مرة أخرى. باستخدام عامل الخدمة، يمكنك تخزين وقت تشغيل AMP الذي يأتي بدون إصدار بشكل مؤقت وتسريع عملية النقل. لمعرفة المزيد حول سبب إنشاء ذاكرة AMP للتخزين المؤقت نسخة جديدة من عناوين URL لوقت تشغيل AMP، اقرأ [هذا المستند](https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer##versioned-amp-runtime).
 

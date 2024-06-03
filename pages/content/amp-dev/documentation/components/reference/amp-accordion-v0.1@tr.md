@@ -29,7 +29,7 @@ Görüntüleyenlerin içeriğin ana hatlarına göz atması ve herhangi bir böl
 <table>
   <tr>
     <td class="col-fourty"><strong>Zorunlu Komut Dosyası</strong></td>
-    <td><code>&lt;script async custom-element="amp-accordion" src="https://ampjs.org/v0/amp-accordion-0.1.js"&gt;&lt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Desteklenen Düzenler</a></strong></td>

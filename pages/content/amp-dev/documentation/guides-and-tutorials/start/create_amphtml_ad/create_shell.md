@@ -41,7 +41,7 @@ In the `<html> `tag,  add the  `⚡4ads` attribute, which identifies the documen
 AMPHTML ads require their own version of the AMP runtime, so add the following `<script>` tag to the `<head>`section of your document:
 
 ```html hl_lines="1"
-<script async src="https://ampjs.org/amp4ads-v0.js"></script>
+<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
 ```
 
 AMPHTML ad creatives require a different, and considerably simple [boilerplate](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#boilerplate) style line than AMP pages do. Add the following code to your `<head>` section:
@@ -65,7 +65,7 @@ Here's the complete code for your HTML file:
   <meta charset="utf-8">
   <title>My amphtml ad</title>
   <meta name="viewport" content="width=device-width">
-  <script async src="https://ampjs.org/amp4ads-v0.js"></script>
+  <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
   <style amp4ads-boilerplate>body{visibility:hidden}</style>
 </head>
 <body>

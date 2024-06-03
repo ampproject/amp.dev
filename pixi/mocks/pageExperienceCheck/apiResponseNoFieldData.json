@@ -310,13 +310,13 @@
 							"statusCode": 200,
 							"mimeType": "text/javascript",
 							"transferSize": 71854,
-							"url": "https://ampjs.org/v0.js"
+							"url": "https://cdn.ampproject.org/v0.js"
 						},
 						{
 							"startTime": 36.214000079780817,
 							"mimeType": "text/javascript",
 							"resourceSize": 16042,
-							"url": "https://ampjs.org/v0/amp-accordion-0.1.js",
+							"url": "https://cdn.ampproject.org/v0/amp-accordion-0.1.js",
 							"statusCode": 200,
 							"finished": true,
 							"endTime": 42.3999996855855,
@@ -326,7 +326,7 @@
 						{
 							"startTime": 179.98299980536103,
 							"finished": true,
-							"url": "https://ampjs.org/rtv/012008220050001/v0/amp-auto-lightbox-0.1.js",
+							"url": "https://cdn.ampproject.org/rtv/012008220050001/v0/amp-auto-lightbox-0.1.js",
 							"endTime": 184.19499974697828,
 							"resourceSize": 6602,
 							"mimeType": "text/javascript",
@@ -494,7 +494,7 @@
 						{
 							"totalBytes": 71854,
 							"wastedBytes": 38625,
-							"url": "https://ampjs.org/v0.js",
+							"url": "https://cdn.ampproject.org/v0.js",
 							"wastedPercent": 53.754930106517129,
 							"subItems": {
 								"type": "subitems",
@@ -737,15 +737,15 @@
 					],
 					"items": [
 						{
-							"url": "https://ampjs.org/v0.js",
+							"url": "https://cdn.ampproject.org/v0.js",
 							"totalBytes": 71854
 						},
 						{
 							"totalBytes": 6955,
-							"url": "https://ampjs.org/v0/amp-accordion-0.1.js"
+							"url": "https://cdn.ampproject.org/v0/amp-accordion-0.1.js"
 						},
 						{
-							"url": "https://ampjs.org/rtv/012008220050001/v0/amp-auto-lightbox-0.1.js",
+							"url": "https://cdn.ampproject.org/rtv/012008220050001/v0/amp-auto-lightbox-0.1.js",
 							"totalBytes": 4062
 						},
 						{
@@ -959,11 +959,11 @@
 						{
 							"duration": 109,
 							"startTime": 2010,
-							"url": "https://ampjs.org/v0.js"
+							"url": "https://cdn.ampproject.org/v0.js"
 						},
 						{
 							"startTime": 2119,
-							"url": "https://ampjs.org/v0.js",
+							"url": "https://cdn.ampproject.org/v0.js",
 							"duration": 69
 						}
 					],
@@ -1279,7 +1279,7 @@
 					"type": "table",
 					"items": [
 						{
-							"url": "https://ampjs.org/v0.js",
+							"url": "https://cdn.ampproject.org/v0.js",
 							"scripting": 350.91200000000043,
 							"scriptParseCompile": 23.016000000000002,
 							"total": 420.88400000000047

@@ -102,7 +102,7 @@ Trước khi chúng ta bắt đầu thêm mã, hãy cùng xem lại trang mẫu 
         margin: 0.5em;
       }
     </style>
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",

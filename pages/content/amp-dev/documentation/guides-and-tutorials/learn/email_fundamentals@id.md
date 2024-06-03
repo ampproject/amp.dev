@@ -18,7 +18,7 @@ Email AMP terlihat seperti email HTML klasik, tetapi dengan sedikit perbedaan. D
 <html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <style amp4email-boilerplate>
       body {
         visibility: hidden;
@@ -37,7 +37,7 @@ Penyedia email yang mendukung Email AMP telah mengatur pemeriksaan keamanan untu
 - Berisi tag `<html amp4email>` tingkat atas, atau tag `<html ⚡4email>` jika email Anda ekstra mantap. Ini mengidentifikasi dokumen sebagai Email AMP, jadi dapat diperlakukan seperti itu.
 - Tentukan tag `<head>` dan `<body>`. Ini bersifat pilihan di dalam HTML, namun AMP mempertahankan semuanya tetap murni!
 - Disertai tag `<meta charset="utf-8>` sebagai anak atau turunan pertama dari tag `<head>`. Ini mengidentifikasi pengodean untuk halaman.
-- Perpustakaan AMP diimpor melalui sebuah tag `<script async src="https://ampjs.org/v0.js"></script>` yang ditempatkan di dalam `<head>`. Tanpanya, fungsionalitas mengagumkan dan dinamis yang diraih melalui AMP tidak akan berfungsi! Sebagai praktik terbaik, ini seharusnya disertakan sedini mungkin di dalam `<head>`, langsung di bawah tag `<meta charset="utf-8">`.
+- Perpustakaan AMP diimpor melalui sebuah tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` yang ditempatkan di dalam `<head>`. Tanpanya, fungsionalitas mengagumkan dan dinamis yang diraih melalui AMP tidak akan berfungsi! Sebagai praktik terbaik, ini seharusnya disertakan sedini mungkin di dalam `<head>`, langsung di bawah tag `<meta charset="utf-8">`.
 - Pada awalnya, sembunyikan konten email hingga perpustakaan AMP dimuat dengan menempatkan boilerplate AMP untuk Email di dalam `<head>`.
 
 ```html

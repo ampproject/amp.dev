@@ -41,7 +41,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>النص البرمجي المطلوب</strong></td>
-    <td><code>&lt;script async custom-element="amp-ad" src="https://ampjs.org/v0/amp-ad-0.1.js"&gt;&lt;/script&gt;</code><br>ملاحظة: ربما لا يزال العنصر amp-ad يعمل بدون هذا النص البرمجي، لكننا ننصح باستخدام النص بشدة بغرض التوافق في المستقبل.</td>
+    <td><code>&lt;script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"&gt;&lt;/script&gt;</code><br>ملاحظة: ربما لا يزال العنصر amp-ad يعمل بدون هذا النص البرمجي، لكننا ننصح باستخدام النص بشدة بغرض التوافق في المستقبل.</td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">التنسيقات المعتمدة</a></strong></td>

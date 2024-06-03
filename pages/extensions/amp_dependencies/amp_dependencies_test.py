@@ -72,9 +72,9 @@ class AmpDependenciesTestCase(unittest.TestCase):
     content = amp_deps.emit()
     content = amp_deps.inject(content)
     self.assertEqual('<script custom-element="amp-anim" '
-                      'src="https://ampjs.org/v0/amp-anim-99.9.js" async></script>'
+                      'src="https://cdn.ampproject.org/v0/amp-anim-99.9.js" async></script>'
                       '<script custom-template="amp-mustache" '
-                      'src="https://ampjs.org/v0/amp-mustache-77.7.js" async></script>',
+                      'src="https://cdn.ampproject.org/v0/amp-mustache-77.7.js" async></script>',
                       content)
 
   def test_emit_and_inject_with_default_version(self):
@@ -84,7 +84,7 @@ class AmpDependenciesTestCase(unittest.TestCase):
     content = amp_deps.emit()
     content = amp_deps.inject(content)
     self.assertEqual('<script custom-element="amp-anim" '
-                      'src="https://ampjs.org/v0/amp-anim-0.1.js" async></script>',
+                      'src="https://cdn.ampproject.org/v0/amp-anim-0.1.js" async></script>',
                       content)
 
   def test_inject_without_emit(self):

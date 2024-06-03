@@ -32,7 +32,7 @@ teaser:
     <td width="40%"><strong>必須のスクリプト</strong></td>
     <td>
       <div>
-          <code>&lt;script async custom-template="amp-mustache" src="https://ampjs.org/v0/amp-mustache-0.2.js">&lt;/script></code>
+          <code>&lt;script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js">&lt;/script></code>
       </div>
     </td>
   </tr>
@@ -66,7 +66,7 @@ Mustache は、ロジックレスのテンプレート構文です。細につ�
 まず、以下のように `amp-mustache` を宣言して読み込む必要があります。
 
 ```html
-<script src="https://ampjs.org/v0/amp-mustache-0.2.js" async="" custom-template="amp-mustache"></script>
+<script src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" async="" custom-template="amp-mustache"></script>
 ```
 
 次に、Mustache テンプレートを `script` タグか `template` タグ内で以下のように定義します。

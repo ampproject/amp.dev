@@ -89,12 +89,12 @@ AMP HTML использует ряд специальных элементов (
     <script
       async
       custom-element="amp-carousel"
-      src="https://ampjs.org/v0/amp-carousel-0.1.js"
+      src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
     ></script>
     <script
       async
       custom-element="amp-ad"
-      src="https://ampjs.org/v0/amp-ad-0.1.js"
+      src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
     ></script>
     <style amp-boilerplate>
       body {
@@ -154,7 +154,7 @@ AMP HTML использует ряд специальных элементов (
         }
       </style></noscript
     >
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
     <h1>Sample document</h1>
@@ -185,7 +185,7 @@ AMP HTML использует ряд специальных элементов (
 - <a name="canon"></a>содержать тег `<link rel="canonical" href="$SOME_URL">` (внутри тега head), указывающий на «обычную» HTML-версию документа AMP HTML либо на текущий документ (если обычной HTML-версии не существует). [🔗](#canon)
 - <a name="chrs"></a> содержать `<meta charset="utf-8">` в качестве первого дочернего элемента тега head. [🔗](#chrs)
 - <a name="vprt"></a> содержать тег `<meta name="viewport" content="width=device-width">` внутри своего тега head. Также рекомендуется добавлять `minimum-scale=1` и `initial-scale=1`. [🔗](#vprt)
-- <a name="scrpt"></a> содержать `<script async src="https://ampjs.org/v0.js"></script>` в теге head. [🔗](#scrpt)
+- <a name="scrpt"></a> содержать `<script async src="https://cdn.ampproject.org/v0.js"></script>` в теге head. [🔗](#scrpt)
 - <a name="boilerplate"></a> содержать [шаблонный код AMP](https://github.com/ampproject/amphtml/blob/main/docs/spec/amp-boilerplate.md) ( `head > style[amp-boilerplate]` и `noscript > style[amp-boilerplate]`) в теге head. [🔗](#boilerplate)
 
 ### Метаданные <a name="metadata"></a>
@@ -432,7 +432,7 @@ AMP HTML использует ряд специальных элементов (
 
 Среда выполнения AMP — это специальный код JavaScript, который выполняется внутри любого документа AMP. Он реализует функциональность специальных элементов AMP, управляет загрузкой ресурсов и установкой приоритетов и позволяет задействовать runtime-валидатор AMP HTML на этапе разработки.
 
-Загрузка среды выполнения AMP осуществляется с помощью обязательной строки `<script src="https://ampjs.org/v0.js"></script>`, расположенной в разделе `<head>` документа AMP.
+Загрузка среды выполнения AMP осуществляется с помощью обязательной строки `<script src="https://cdn.ampproject.org/v0.js"></script>`, расположенной в разделе `<head>` документа AMP.
 
 Среду выполнения AMP можно переключить в режим разработки на любой странице. В этом режиме на встроенной странице запускается механизм валидации AMP, который выводит статус валидации и все ошибки в консоль разработчика JavaScript. Чтобы запустить режим разработки, добавьте к URL страницы `#development=1`.
 
@@ -503,7 +503,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 <script
   async
   custom-element="amp-carousel"
-  src="https://ampjs.org/v0/amp-carousel-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
 ></script>
 
 [/sourcecode]
@@ -519,7 +519,7 @@ URL-адрес скрипта должен начинаться с <code>https:/
 URL расширенных компонентов имеют следующий вид:
 
 [sourcecode:http]
-https://ampjs.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
+https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 [/sourcecode]
 
 ##### Управление версиями <a name="versioning"></a>
@@ -539,7 +539,7 @@ https://ampjs.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 <script
   async
   custom-template="amp-mustache"
-  src="https://ampjs.org/v0/amp-mustache-0.2.js"
+  src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
 ></script>
 
 [/sourcecode]
@@ -567,7 +567,7 @@ Hello {% raw %}{{you}}{% endraw %}!
 URL расширенных компонентов имеют следующий вид:
 
 [sourcecode:http]
-https://ampjs.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
+https://cdn.ampproject.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
 [/sourcecode]
 
 ##### Управление версиями <a name="versioning-1"></a>

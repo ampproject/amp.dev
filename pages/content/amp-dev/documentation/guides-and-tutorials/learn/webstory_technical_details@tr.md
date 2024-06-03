@@ -18,7 +18,7 @@ Web Hikayesi, teknik olarak AMP ile oluşturulmuş tek bir web sayfasıdır ve A
 - Üst seviye `<html ⚡>` veya`<html amp>` etiketi içerir.
 - `<head>` ve `<body>` etiketleri içerir.
 - `<head>` etiketinin ilk alt öğesi olarak bir ` <meta charset="utf-8">` içerir.
-- `<head>` etiketlerinin içinde bir `<script async src="https://ampjs.org/v0.js"></script>` etiketi içerir. En iyi uygulama olarak, betiği olabildiğince erken ` <head>` içine eklemelisiniz.
+- `<head>` etiketlerinin içinde bir `<script async src="https://cdn.ampproject.org/v0.js"></script>` etiketi içerir. En iyi uygulama olarak, betiği olabildiğince erken ` <head>` içine eklemelisiniz.
 - Href, Web Hikayesi URL'sini işaret edecek şekilde `<head>` içinde bir `<link rel="canonical" href="page/url">` etiketi içerir.
 - `<head>` etiketi içinde `<meta name="viewport" content="width=device-width">` etiketi içerir. Ayrıca initial-scale=1 eklemek de önerilir.
 - `<head>` etiketinde [AMP ortak metni](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) kodunu içerir.
@@ -91,16 +91,16 @@ Bir AMP web sayfası ile AMP ile oluşturulmuş bir Web Hikayesi arasındaki far
         }
       </style></noscript
     >
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script
       async
       custom-element="amp-video"
-      src="https://ampjs.org/v0/amp-video-0.1.js"
+      src="https://cdn.ampproject.org/v0/amp-video-0.1.js"
     ></script>
     <script
       async
       custom-element="amp-story"
-      src="https://ampjs.org/v0/amp-story-1.0.js"
+      src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
     ></script>
     <style amp-custom>
       ...;

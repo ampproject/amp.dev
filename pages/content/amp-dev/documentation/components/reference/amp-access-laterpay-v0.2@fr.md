@@ -32,13 +32,13 @@ Ce composant permet aux éditeurs de s'intégrer facilement à la plate-forme de
     <td>
       <small>Notez que vous avez besoin de scripts pour "amp-access-laterpay", "amp-access" et "amp-analytics".</small>
       <div>
-        <code>&lt;script async custom-element="amp-access" src="https://ampjs.org/v0/amp-access-0.1.js"></script></code>
+        <code>&lt;script async custom-element="amp-access" src="https://cdn.ampproject.org/v0/amp-access-0.1.js"></script></code>
       </div>
       <div>
-        <code>&lt;script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js"></script></code>
+        <code>&lt;script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script></code>
       </div>
       <div>
-        <code>&lt;script async custom-element="amp-access-laterpay" src="https://ampjs.org/v0/amp-access-laterpay-0.2.js"></script></code>
+        <code>&lt;script async custom-element="amp-access-laterpay" src="https://cdn.ampproject.org/v0/amp-access-laterpay-0.2.js"></script></code>
       </div>
     </td>
   </tr>

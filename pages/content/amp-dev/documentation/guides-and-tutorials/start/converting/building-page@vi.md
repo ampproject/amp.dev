@@ -47,7 +47,7 @@ Hiện tại, phiên bản AMP của bài viết chỉ là bản sao của bài 
 Để bao gồm thư viện AMP, hãy **bổ sung** dòng này vào cuối thẻ `<head>`:
 
 ```html
-<script async src="https://ampjs.org/v0.js"></script>
+<script async src="https://cdn.ampproject.org/v0.js"></script>
 ```
 
 **Tải** trang `article.amp.html` mới trong trình duyệt của bạn tại [http://localhost:8000/article.amp.html](http://localhost:8000/article.amp.html) và sau đó, **mở** [Bảng điều khiển Nhà phát triển](https://developer.chrome.com/devtools/docs/console) trong Chrome (hoặc trình duyệt ưa thích của bạn).

@@ -30,7 +30,7 @@ Muestra un vídeo de [YouTube](https://www.youtube.com/).
 <table>
   <tr>
     <td width="40%"><strong>Secuencia de comandos obligatoria</strong></td>
-    <td><code>&lt;script async custom-element="amp-youtube" src="https://ampjs.org/v0/amp-youtube-0.1.js">&lt;/script></code></td>
+    <td><code>&lt;script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Diseños admitidos</a></strong></td>

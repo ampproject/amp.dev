@@ -219,7 +219,7 @@ Dengan menggunakan [ekspresi `var(/content/amp-dev/documentation/components/refe
   <script
     async
     custom-element="amp-animation"
-    src="https://ampjs.org/v0/amp-animation-0.1.js"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
   ></script>
   <style amp-custom>
     .parent {
@@ -316,7 +316,7 @@ Animasi dapat menyertakan [`conditions`](/content/amp-dev/documentation/componen
   <script
     async
     custom-element="amp-animation"
-    src="https://ampjs.org/v0/amp-animation-0.1.js"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
   ></script>
 </head>
 <body>

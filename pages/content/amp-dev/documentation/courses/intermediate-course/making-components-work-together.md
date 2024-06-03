@@ -154,7 +154,7 @@ Once you have finished, the result should look like this:
 Remember to include the `<amp-selector>` library in the `<head>`:
 
 [sourcecode:html]
-{% raw %}<script async custom-element="amp-selector" src="https://ampjs.org/v0/amp-selector-0.1.js"></script>
+{% raw %}<script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
 {% endraw %}[/sourcecode]
 
 ## Exercise 7: Zooming In On a Carousel Image
@@ -171,7 +171,7 @@ The [`<amp-image-lightbox>`](../../../documentation/components/reference/amp-ima
 Remember to include the `<amp-image-lightbox>` JavaScript in the `<head>`:
 
 [sourcecode:html]
-{% raw %}<script async custom-element="amp-image-lightbox" src="https://ampjs.org/v0/amp-image-lightbox-0.1.js"></script>
+{% raw %}<script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
 {% endraw %}[/sourcecode]
 
 We could apply this approach to each image in our larger carousel to implement our requirement. However, there is an even more organic way to accomplish the same thing. The `<amp-lightbox-gallery>` component extends the behavior of the `<amp-img>` and `<amp-carousel>` components by adding a `lightbox` attribute. A component with the `lightbox` attribute will open a styled lightbox when clicked. There is no need to have an `<amp-image-lightbox>` to connect with, nor is there a need to have a click-handler on the image or carousel to open in the lightbox.
@@ -199,7 +199,7 @@ To implement the lightbox effect on our larger carousel:
 Remember to include the `<amp-lightbox-gallery>` library in the `<head>`:
 
 [sourcecode:html]
-{% raw %}<script async custom-element="amp-lightbox-gallery" src="https://ampjs.org/v0/amp-lightbox-gallery-0.1.js"></script>
+{% raw %}<script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
 {% endraw %}[/sourcecode]
 [/filter]
 [filter level="advanced"]
@@ -353,7 +353,7 @@ Once you have finished, the result should look like this:
 Remember to include the `<amp-selector>` library in the `<head>`:
 
 [sourcecode:html]
-{% raw %}<script async custom-element="amp-selector" src="https://ampjs.org/v0/amp-selector-0.1.js"></script>
+{% raw %}<script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
 {% endraw %}[/sourcecode]
 
 ## Exercise 7: Zooming In On a Carousel Image
@@ -368,7 +368,7 @@ Lastly, we want to zoom in on a carousel image when a user clicks on it so that 
 Remember to include the `<amp-image-lightbox>` JavaScript in the `<head>`:
 
 [sourcecode:html]
-{% raw %}<script async custom-element="amp-image-lightbox" src="https://ampjs.org/v0/amp-image-lightbox-0.1.js"></script>
+{% raw %}<script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
 {% endraw %}[/sourcecode]
 
 We could apply this approach to each image in our larger carousel to implement our requirement. However, there is an even more organic way to accomplish the same thing. The `<amp-lightbox-gallery>` component extends the behavior of the `<amp-img>` and `<amp-carousel>` components by adding a `lightbox` attribute. A component with the `lightbox` attribute will open a styled lightbox when clicked. There is no need to have an `<amp-image-lightbox>` to connect with, nor is there a need to have a click-handler on the image or carousel to open in the lightbox.
@@ -396,6 +396,6 @@ To implement the lightbox effect on our larger carousel:
 Remember to include the `<amp-lightbox-gallery>` library in the `<head>`:
 
 [sourcecode:html]
-{% raw %}<script async custom-element="amp-lightbox-gallery" src="https://ampjs.org/v0/amp-lightbox-gallery-0.1.js"></script>
+{% raw %}<script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
 {% endraw %}[/sourcecode]
 [/filter]

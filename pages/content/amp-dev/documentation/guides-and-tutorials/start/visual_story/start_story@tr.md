@@ -16,7 +16,7 @@ Tüm bir Web Hikayesi, bir hikayedeki tüm sayfalar için kapsayıcı görevi g�
   <script
     async
     custom-element="amp-story"
-    src="https://ampjs.org/v0/amp-story-1.0.js"
+    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
   ></script>
 </head>
 ```

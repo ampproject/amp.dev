@@ -62,7 +62,7 @@ A common navigation technique is to add a menu icon that when clicked reveals a 
 First, we must **add** the [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) component’s JavaScript to the `<head>` tag:
 
 ```html
-<script async custom-element="amp-sidebar" src="https://ampjs.org/v0/amp-sidebar-0.1.js"></script>
+<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
 ```
 
 Next, we want to display a menu icon.  When the icon is tapped, it will open the sidebar. **Replace** the `<header>` with the following code to display a ["hamburger"](https://en.wikipedia.org/wiki/Hamburger_button) icon instead of a home icon:

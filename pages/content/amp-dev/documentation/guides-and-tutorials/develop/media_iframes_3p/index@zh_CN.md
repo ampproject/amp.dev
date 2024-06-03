@@ -121,7 +121,7 @@ The [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) 元
 
 [/example]
 
-注意: 您需要在网页的标头部分添加 <code>&lt;script async custom-element="amp-anim" src="https://ampjs.org/v0/amp-anim-0.1.js">&lt;/script></code> 才能使用此组件。
+注意: 您需要在网页的标头部分添加 <code>&lt;script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js">&lt;/script></code> 才能使用此组件。
 
 ## 视频
 
@@ -175,4 +175,4 @@ The [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) 元
 
 [/example]
 
-注意: 您需要在网页的标头部分添加 <code> &lt;script async custom-element="amp-audio" src="https://ampjs.org/v0/amp-audio-0.1.js">&lt;/script></code> 才能使用此组件。
+注意: 您需要在网页的标头部分添加 <code> &lt;script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js">&lt;/script></code> 才能使用此组件。

@@ -40,7 +40,7 @@ description: '"باستخدام محرر النصوص المفضل لديك، ق
 تتطلب إعلانات AMPHTML إصدارها الخاص من وقت تشغيل AMP، لذا أضف علامة `<script>` التالية إلى قسم `<head>` من المستند الخاص بك:
 
 ```html
-<script async src="https://ampjs.org/amp4ads-v0.js"></script>
+<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
 ```
 
 تتطلب تصميمات إعلانات AMPHTML خط نمط [معياري](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#boilerplate) مختلفًا وبسيطًا إلى حد كبير عما تتطلبه صفحات AMP. أضف لرمز التالي إلى قسم `<head>`:
@@ -66,7 +66,7 @@ description: '"باستخدام محرر النصوص المفضل لديك، ق
     <meta charset="utf-8" />
     <title>My amphtml ad</title>
     <meta name="viewport" content="width=device-width" />
-    <script async src="https://ampjs.org/amp4ads-v0.js"></script>
+    <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
     <style amp4ads-boilerplate>
       body {
         visibility: hidden;

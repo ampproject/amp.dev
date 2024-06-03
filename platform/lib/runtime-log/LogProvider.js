@@ -20,7 +20,7 @@ const {format} = require('util');
 const nodeFetch = require('node-fetch');
 const LRU = require('lru-cache');
 
-const LOG_HOST = 'https://ampjs.org/rtv/%s/log-messages.json';
+const LOG_HOST = 'https://cdn.ampproject.org/rtv/%s/log-messages.json';
 const MAX_CACHE_SIZE = 10;
 
 /**

@@ -40,7 +40,7 @@ description: '가장 좋아하는 텍스트 에디터를 사용하여 my-amphtml
 AMPHTML 광고는 자체적인 AMP 런타임 버전을 필요로 하므로 다음 `<script>` 태그를 문서의 `<head>` 섹션에 추가합니다.
 
 ```html
-<script async src="https://ampjs.org/amp4ads-v0.js"></script>
+<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
 ```
 
 AMPHTML 광고에는 AMP 페이지와는 다르고 훨씬 단순한 [상용구](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#boilerplate) 스타일 라인이 필요합니다. 다음 코드를 `<head>` 섹션에 추가합니다.
@@ -66,7 +66,7 @@ HTML 파일의 완성된 코드는 다음과 같습니다.
     <meta charset="utf-8" />
     <title>My amphtml ad</title>
     <meta name="viewport" content="width=device-width" />
-    <script async src="https://ampjs.org/amp4ads-v0.js"></script>
+    <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
     <style amp4ads-boilerplate>
       body {
         visibility: hidden;

@@ -36,7 +36,7 @@ Memasukkan iklan secara dinamis ke halaman AMP dengan menggunakan file konfigura
     <td>
       <code>
       &lt;script async custom-element="amp-auto-ads"
-      src="https://ampjs.org/v0/amp-auto-ads-0.1.js">&lt;/script>
+      src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">&lt;/script>
         </code>
       </td>
     </tr>

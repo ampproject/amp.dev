@@ -18,7 +18,7 @@ author: CrystalOnScript
 - Содержит тег верхнего уровня `<html ⚡>` или `<html amp>`.
 - Содержит теги `<head>` и `<body>`.
 - Содержит тег `<meta charset="utf-8">` в качестве первого дочернего элемента `<head>`.
-- Содержит `<script async src="https://ampjs.org/v0.js"></script>` внутри элемента `<head>`. Размещать этот скрипт рекомендуется как можно ближе к началу `<head>`.
+- Содержит `<script async src="https://cdn.ampproject.org/v0.js"></script>` внутри элемента `<head>`. Размещать этот скрипт рекомендуется как можно ближе к началу `<head>`.
 - Содержит `<link rel="canonical" href="page/url">` внутри элемента `<head>`; значение href является URL-адресом веб-истории.
 - Содержит `<meta name="viewport" content="width=device-width">` внутри тега `<head>`. Также рекомендуется включить атрибут initial-scale=1.
 - Содержит [шаблонный код AMP](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate/?format=websites) внутри тега `<head>`.
@@ -91,16 +91,16 @@ author: CrystalOnScript
         }
       </style></noscript
     >
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script
       async
       custom-element="amp-video"
-      src="https://ampjs.org/v0/amp-video-0.1.js"
+      src="https://cdn.ampproject.org/v0/amp-video-0.1.js"
     ></script>
     <script
       async
       custom-element="amp-story"
-      src="https://ampjs.org/v0/amp-story-1.0.js"
+      src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
     ></script>
     <style amp-custom>
       ...;

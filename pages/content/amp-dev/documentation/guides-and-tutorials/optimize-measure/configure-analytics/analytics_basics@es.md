@@ -41,7 +41,7 @@ Para crear una configuración de [`amp-analytics`](../../../../documentation/com
 (consulta la sección sobre [cómo incluir componentes](../../../../documentation/components/index.html)):
 
 ```html
-<script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js"></script>
+<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 ```
 
 El siguiente ejemplo es parecido al [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). Cuando se visualiza una página, el evento de activación se pone en marcha y envía los datos de página vista junto con un número de identificación aleatorio a una URL previamente definida:

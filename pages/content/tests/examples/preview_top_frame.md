@@ -24,12 +24,12 @@ imports="amp-list,amp-carousel,amp-bind,amp-lightbox-gallery" ]
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <link rel="canonical" href="/static/samples/standalone/amp-website.html">
   <title>AMP Website Demo</title>
-  <script async src="https://ampjs.org/v0.js"></script>
-  <script async custom-element="amp-list" src="https://ampjs.org/v0/amp-list-0.1.js"></script>
-  <script async custom-template="amp-mustache" src="https://ampjs.org/v0/amp-mustache-0.2.js"></script>
-  <script async custom-element="amp-carousel" src="https://ampjs.org/v0/amp-carousel-0.1.js"></script>
-  <script async custom-element="amp-bind" src="https://ampjs.org/v0/amp-bind-0.1.js"></script>
-  <script async custom-element="amp-lightbox-gallery" src="https://ampjs.org/v0/amp-lightbox-gallery-0.1.js"></script>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
   <style amp-custom>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";

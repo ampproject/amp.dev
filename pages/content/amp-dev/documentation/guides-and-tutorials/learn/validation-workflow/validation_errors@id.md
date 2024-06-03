@@ -53,7 +53,7 @@ Tag berikut harus ada di semua dokumen AMP:
 * <a name="utf"></a>`<meta charset="utf-8">`
 * <a name="viewport"></a>`<meta name="viewport" content="...">`
 * <a name="boilerplate"></a>`<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
-* <a name="ampscript"></a>`<script async src="https://ampjs.org/v0.js"></script>`
+* <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
 Tag wajib ini mencakup kolom `mandatory: true` dalam <a href="https://github.com/ampproject/amphtml/blob/main/validator/validator-main.protoascii">spesifikasi validator AMP</a>;
@@ -633,7 +633,7 @@ Daftar lengkap tag unik yang diketahui:
 * `<style amp-custom>`
 * `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
 * `<body>`
-* `<script src="https://ampjs.org/v0.js">`
+* `<script src="https://cdn.ampproject.org/v0.js">`
 
 ## Error gaya dan tata letak <a name="style-and-layout-errors"></a>
 

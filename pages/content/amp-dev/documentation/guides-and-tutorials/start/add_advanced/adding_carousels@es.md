@@ -14,7 +14,7 @@ Recuerde incluir la biblioteca de componentes de <a><code data-md-type="codespan
 <script
   async
   custom-element="amp-carousel"
-  src="https://ampjs.org/v0/amp-carousel-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
 ></script>
 ```
 

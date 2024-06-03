@@ -23,7 +23,7 @@ Let's walk through the steps of adding the component so you can display ads on y
 The [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component is a custom ad extension to the AMP library. Under the hood of [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) is custom JavaScript that's carefully designed to optimize performance. To run the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component, you must add the required JavaScript for this component in the `head` section of your AMP page:
 
 ```html
-<script async custom-element="amp-ad" src="https://ampjs.org/v0/amp-ad-0.1.js"></script>
+<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 ```
 
 ### Step 2: Add the amp-ad tag to your AMP page

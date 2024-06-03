@@ -56,7 +56,7 @@ AMP-реклама создается с помощью компонента [`a
 <script
   async
   custom-element="amp-ad"
-  src="https://ampjs.org/v0/amp-ad-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
 ></script>
 ```
 
@@ -137,7 +137,7 @@ AMP-реклама создается с помощью компонента [`a
 <script
   async
   custom-element="amp-youtube"
-  src="https://ampjs.org/v0/amp-youtube-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
 ></script>
 ```
 
@@ -161,7 +161,7 @@ AMP-реклама создается с помощью компонента [`a
 <script
   async
   custom-element="amp-twitter"
-  src="https://ampjs.org/v0/amp-twitter-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
 ></script>
 ```
 
@@ -201,7 +201,7 @@ AMP-реклама создается с помощью компонента [`a
 <script
   async
   custom-element="amp-fit-text"
-  src="https://ampjs.org/v0/amp-fit-text-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
 ></script>
 ```
 

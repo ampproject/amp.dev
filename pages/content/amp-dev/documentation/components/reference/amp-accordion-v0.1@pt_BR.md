@@ -29,7 +29,7 @@ Oferece aos usuários uma visualização rápida do conteúdo e permite pular pa
 <table>
   <tr>
     <td class="col-fourty"><strong>Script obrigatório</strong></td>
-    <td><code>&lt;script async custom-element="amp-accordion" src="https://ampjs.org/v0/amp-accordion-0.1.js"&gt;&lt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layouts compatíveis</a></strong></td>

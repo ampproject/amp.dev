@@ -25,7 +25,7 @@ first include the following script in the `<head>`:
 
 [sourcecode:html]
 <script async custom-element="amp-twitter"
-  src="https://ampjs.org/v0/amp-twitter-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 [/sourcecode]
 
 Currently, tweets are automatically proportionally scaled
@@ -58,7 +58,7 @@ first include the following script in the `<head>`:
 
 [sourcecode:html]
 <script async custom-element="amp-instagram"
-  src="https://ampjs.org/v0/amp-instagram-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
 [/sourcecode]
 
 Include the Instagram data-shortcode found in the Instagram photo URL.
@@ -90,7 +90,7 @@ You must include the following script in the `<head>`:
 
 [sourcecode:html]
 <script async custom-element="amp-facebook"
-  src="https://ampjs.org/v0/amp-facebook-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
 [/sourcecode]
 
 ##### Example: Embedding a post
@@ -138,7 +138,7 @@ You must include the following script in the `<head>`:
 
 [sourcecode:html]
 <script async custom-element="amp-youtube"
-  src="https://ampjs.org/v0/amp-youtube-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 [/sourcecode]
 
 The YouTube `data-videoid` can be found in every YouTube video page URL.

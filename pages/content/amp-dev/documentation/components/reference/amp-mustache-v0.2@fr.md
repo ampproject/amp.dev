@@ -32,7 +32,7 @@ Ce composant autorise l'affichage de modèle [Mustache.js](https://github.com/ja
     <td width="40%"><strong>Script requis</strong></td>
     <td>
       <div>
-        <code>&lt;script async custom-template="amp-mustache" src="https://ampjs.org/v0/amp-mustache-0.2.js">&lt;/script></code>
+        <code>&lt;script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js">&lt;/script></code>
       </div>
     </td>
   </tr>
@@ -66,7 +66,7 @@ Le modèle `amp-mustache` doit être défini et utilisé conformément aux [spé
 Tout d'abord,`amp-mustache` doit être déclaré et chargé comme suit :
 
 ```html
-<script src="https://ampjs.org/v0/amp-mustache-0.2.js" async="" custom-template="amp-mustache"></script>
+<script src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" async="" custom-template="amp-mustache"></script>
 ```
 
 Ensuite, les modèles Mustache peuvent être définis dans une balise `script` ou `template` comme suit :

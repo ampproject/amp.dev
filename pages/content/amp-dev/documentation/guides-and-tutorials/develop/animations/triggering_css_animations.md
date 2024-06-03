@@ -102,7 +102,7 @@ You can add and remove any number of CSS classes with states using [`amp-bind`](
 [example preview="top-frame" playground="true"]
 ```html
 <head>
-  <script async custom-element="amp-bind" src="https://ampjs.org/v0/amp-bind-0.1.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
   <style amp-custom>
     div {
       height: 100px;

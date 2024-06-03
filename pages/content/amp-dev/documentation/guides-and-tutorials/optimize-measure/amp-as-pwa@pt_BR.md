@@ -64,7 +64,7 @@ Para isso, primeiro inclua o componente [`amp-install-serviceworker`](../../../d
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
-  src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 [/sourcecode]
 
 Em seguida, adicione o código a seguir dentro da seção `<body>` (modifique-o para apontar para seu service worker):

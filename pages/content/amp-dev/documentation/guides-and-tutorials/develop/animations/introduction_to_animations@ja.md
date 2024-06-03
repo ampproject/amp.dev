@@ -219,7 +219,7 @@ CSS では、トランジションを使用して、状態間を変化させる�
   <script
     async
     custom-element="amp-animation"
-    src="https://ampjs.org/v0/amp-animation-0.1.js"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
   ></script>
   <style amp-custom>
     .parent {
@@ -316,7 +316,7 @@ CSS では、トランジションを使用して、状態間を変化させる�
   <script
     async
     custom-element="amp-animation"
-    src="https://ampjs.org/v0/amp-animation-0.1.js"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
   ></script>
 </head>
 <body>

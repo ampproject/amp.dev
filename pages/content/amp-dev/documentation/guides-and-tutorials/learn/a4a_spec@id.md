@@ -52,7 +52,7 @@ Selain itu, kreatif harus mematuhi aturan-aturan berikut ini:
 <td>Mengizinkan validator untuk mengidentifikasi sebuah dokumen kreatif sebagai dokumen AMP umum atau dokumen iklan AMPHTML terbatas dan untuk mengirimkannya dengan tepat.</td>
 </tr>
 <tr>
-<td>Harus menyertakan <code>&lt;script async src="https://ampjs.org/amp4ads-v0.js"></script></code> sebagai skrip runtime, bukan <code>https://ampjs.org/v0.js</code>.</td>
+<td>Harus menyertakan <code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script></code> sebagai skrip runtime, bukan <code>https://cdn.ampproject.org/v0.js</code>.</td>
 <td>Mengizinkan perilaku runtime yang disesuaikan untuk iklan AMPHTML disajikan di iframe lintas asal (cross-origin).</td>
 </tr>
 <tr>
@@ -327,7 +327,7 @@ Tag-tag SVG tidak ada di dalam namespace HTML5. Mereka dicantumkan di bawah tanp
 
 #### 4.11 Pembuatan skrip <a name="411-scripting"></a>
 
-- Seperti dokumen AMP umum, tag `<head>` kreatif harus berisi tag `<script async src="https://ampjs.org/amp4ads-v0.js"></script>`.
+- Seperti dokumen AMP umum, tag `<head>` kreatif harus berisi tag `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>`.
 - Tidak seperti AMP umum, `<noscript>` dilarang.
   - _Alasan:_ Karena iklan AMPHTML memerlukan JavaScript agar dapat berfungsi, blok `<noscript>` tidak berguna di dalam iklan AMPHTML dan hanya menghabiskan bandwidth jaringan.
 - Tidak seperti AMP umum, `<script type="application/ld+json">` dilarang.

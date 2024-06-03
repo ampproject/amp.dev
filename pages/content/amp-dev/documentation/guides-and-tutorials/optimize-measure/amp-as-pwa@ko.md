@@ -64,7 +64,7 @@ AMP 페이지에 [웹 앱 매니페스트](https://developers.google.com/web/fun
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
-  src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 [/sourcecode]
 
 그런 다음 `<body>` 안에 다음 항목을 추가합니다. 실제로 사용하는 서비스 워커를 가리키도록 수정하세요.

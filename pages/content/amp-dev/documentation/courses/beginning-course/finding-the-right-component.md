@@ -121,7 +121,7 @@ Here is how the code you added might look in your project:
 Remember to include the `<amp-carousel>` script in the `<head>`:
 
 ```
-<script async custom-element="amp-carousel" src="https://ampjs.org/v0/amp-carousel-0.1.js"></script>
+<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
 ```
 
 ## Discovering New Components
@@ -172,7 +172,7 @@ After you have completed this task, your page should contain buttons for the use
 Remember to include the `<amp-social-share>` script in the `<head>`:
 
 ```
-<script async custom-element="amp-social-share" src="https://ampjs.org/v0/amp-social-share-0.1.js"></script>
+<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
 ```
 [/filter]
 [filter level="advanced"]
@@ -288,7 +288,7 @@ Here is how the code you added might look in your project:
 Remember to include the `<amp-carousel>` script in the `<head>`:
 
 ```
-<script async custom-element="amp-carousel" src="https://ampjs.org/v0/amp-carousel-0.1.js"></script>
+<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
 ```
 
 ## Discovering New Components
@@ -330,6 +330,6 @@ After you have completed this task, your page should contain buttons for the use
 Remember to include the `<amp-social-share>` script in the `<head>`:
 
 ```
-<script async custom-element="amp-social-share" src="https://ampjs.org/v0/amp-social-share-0.1.js"></script>
+<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
 ```
 [/filter]

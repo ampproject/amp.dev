@@ -36,7 +36,7 @@ teaser:
 <table>
   <tr>
     <td width="40%"><strong>النص البرمجي المطلوب</strong></td>
-    <td><code>&lt;script async custom-element="amp-video" src="https://ampjs.org/v0/amp-video-0.1.js"&gt;&lt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td width="40%"><strong>أمثلة</strong></td>

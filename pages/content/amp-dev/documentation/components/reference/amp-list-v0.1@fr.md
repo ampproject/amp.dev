@@ -30,7 +30,7 @@ Ce composant récupère du contenu de manière dynamique à partir d'un point de
 <table>
   <tr>
     <td width="40%"><strong>Script requis</strong></td>
-    <td><code>&lt;script async custom-element="amp-list" src="https://ampjs.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Mises en page compatibles</a></strong></td>
@@ -297,7 +297,7 @@ Si l'attribut `binding` n'est pas spécifié, la valeur par défaut est `always`
 
 ## Expérimental : Charger plus et Défilement infini (amp-list-load-more) <a name="common-attributes"></a>
 
-Les attributs `load-more` sont proposés avec les options "manual" et "auto" pour autoriser la pagination et le défilement infini. Vous pouvez activer cette fonctionnalité en activant le test "amp-list-load-more" sur la [page des tests](https://ampjs.org/experiments.html) et en ajoutant l'attribut `load-more` à `<amp-list>`. Cette fonctionnalité est actuellement en phase d'évaluation (Origin Trial) et les API finales peuvent évoluer.
+Les attributs `load-more` sont proposés avec les options "manual" et "auto" pour autoriser la pagination et le défilement infini. Vous pouvez activer cette fonctionnalité en activant le test "amp-list-load-more" sur la [page des tests](https://cdn.ampproject.org/experiments.html) et en ajoutant l'attribut `load-more` à `<amp-list>`. Cette fonctionnalité est actuellement en phase d'évaluation (Origin Trial) et les API finales peuvent évoluer.
 
 #### Exemple d'utilisation <a name="load-more-and-infinite-scroll"></a>
 

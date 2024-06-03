@@ -29,7 +29,7 @@ Permite a los usuarios echar un vistazo al esquema del contenido e ir directos a
 <table>
   <tr>
     <td class="col-fourty"><strong>Secuencia de comandos obligatoria</strong></td>
-    <td><code>&lt;script async custom-element="amp-accordion" src="https://ampjs.org/v0/amp-accordion-0.1.js"&gt;&lt;/script&gt;</code></td>
+    <td><code>&lt;script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Diseños admitidos</a></strong></td>

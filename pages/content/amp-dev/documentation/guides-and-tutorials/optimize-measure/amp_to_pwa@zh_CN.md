@@ -67,7 +67,7 @@ Service Worker 是浏览器在后台运行的脚本。有别于网页，Service 
 创建名为 `sw.js` 的文件并添加以下代码：
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init();
 [/sourcecode]
 
@@ -82,7 +82,7 @@ AMP 网站可以使用 [`<amp-install-serviceworker>`](../../../documentation/co
 [sourcecode:html]
 …
 
-<script async custom-element="amp-install-serviceworker" src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 …
 ...
@@ -122,7 +122,7 @@ AMP Service Worker 具有内置优势，支持根据应用需求优化可以配�
 您可以配置 AMP Service Worker 来[缓存素材资源](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching)，例如图片、视频和字体。我们将使用它来缓存我们的背景图片和 AMP 徽标。打开 `sw.js` 文件，并将其更新为以下代码：
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,
@@ -148,7 +148,7 @@ AMP Service Worker 会预提取具有 `data-rel=prefetch` 属性的链接。这�
 为了应对意外情况或用户点击未预提取的网页的链接这一状况，我们将添加离线网页来提供一致且符合品牌形象的用户体验，而不是显示通用的浏览器离线网页。[在此下载 `offline.html`](/static/files/tutorials/offline.zip) 并将 `sw.js` 更新为以下代码：
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,

@@ -28,9 +28,9 @@ You can see the sample in action [here](preview).
   <meta name="viewport" content="width=device-width">
   <!-- ## Setup -->
   <!-- Include the `amp-video-iframe` extension script. -->
-  <script async custom-element="amp-video-iframe" src="https://ampjs.org/v0/amp-video-iframe-0.1.js"></script>
+  <script async custom-element="amp-video-iframe" src="https://cdn.ampproject.org/v0/amp-video-iframe-0.1.js"></script>
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-  <script async src="https://ampjs.org/v0.js"></script>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
 </head>
 <body>
   <!--
@@ -55,7 +55,7 @@ You can see the sample in action [here](preview).
   Inside the document in your frame, you must include a library and a simple integration callback in order for the host to comunicate with your frame. Include the `amp-video-iframe` frame integration library in your `<head>` tag.
 
   ```html
-  <script async src="https://ampjs.org/video-iframe-integration-v0.js"></script>
+  <script async src="https://cdn.ampproject.org/video-iframe-integration-v0.js"></script>
   ```
 
   Write an [integration script](/content/amp-dev/documentation/components/reference/amp-video-iframe.md#integration) to communicate the AMP document with this frame. The integration library natively supports Video.JS (and [JwPlayer](https://www.jwplayer.com/)), so this task is very simple. If you don't use Video.JS or JwPlayer, you can use tools like provided by the library which are [described here](/content/amp-dev/documentation/components/reference/amp-video-iframe.md#integration). For Video.JS, include the following in your `<body> tag after your video and the Video.JS library script.

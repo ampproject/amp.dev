@@ -219,7 +219,7 @@ CSS를 사용하면 트랜지션을 통해 어떤 상태에서 다른 상태로 
   <script
     async
     custom-element="amp-animation"
-    src="https://ampjs.org/v0/amp-animation-0.1.js"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
   ></script>
   <style amp-custom>
     .parent {
@@ -316,7 +316,7 @@ CSS를 사용하면 트랜지션을 통해 어떤 상태에서 다른 상태로 
   <script
     async
     custom-element="amp-animation"
-    src="https://ampjs.org/v0/amp-animation-0.1.js"
+    src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
   ></script>
 </head>
 <body>

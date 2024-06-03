@@ -40,7 +40,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>Script obrigatório</strong></td>
-    <td><code>&lt;script async custom-element="amp-ad" src="https://ampjs.org/v0/amp-ad-0.1.js">&lt;/script></code><br>Observação: o amp-ad ainda pode funcionar sem esse script, mas ele é altamente recomendável para compatibilidade futura.</td>
+    <td><code>&lt;script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js">&lt;/script></code><br>Observação: o amp-ad ainda pode funcionar sem esse script, mas ele é altamente recomendável para compatibilidade futura.</td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layouts compatíveis</a></strong></td>

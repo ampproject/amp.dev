@@ -67,7 +67,7 @@ AMP Hizmet Çalışanı [AMP betiklerini](https://github.com/ampproject/amp-sw/t
 `sw.js` adlı bir dosya oluşturun ve aşağıdaki kodu ekleyin:
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init();
 [/sourcecode]
 
@@ -82,7 +82,7 @@ Gerekli betik etiketini `index.html` başlığına ve `<amp-install-serviceworke
 [sourcecode:html]
 …
 
-<script async custom-element="amp-install-serviceworker" src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 …
 ...
@@ -122,7 +122,7 @@ Müzik festivali uygulamamız görüntü varlıklarımızı önbelleğe alacak, 
 AMP Hizmet Çalışanını görüntüler, videolar ve yazı tipleri gibi [varlıkları önbelleğe alacak](https://github.com/ampproject/amp-sw/tree/master/src/modules/asset-caching) şekilde yapılandırabilirsiniz. Biz onu arka plan resmimizi ve AMP logomuzu önbelleğe almak için kullanacağız. `sw.js` dosyasını açın ve aşağıdaki koda güncelleyin:
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,
@@ -148,7 +148,7 @@ AMP Hizmet Çalışanı,`data-rel=prefetch` özniteliğine sahip bağlantıları
 Beklenmedik durumlarla veya önceden getirmediğimiz sayfaların bağlantılarına yapılan tıklamalarla başa çıkmak için, genel tarayıcı çevrimdışı sayfasını göstermek yerine "markaya uygun" tutarlı bir kullanıcı deneyimi sunmak için bir çevrimdışı sayfa ekleyeceğiz. [`offline.html` sayfasını buradan](/static/files/tutorials/offline.zip) indirin ve `sw.js` kodunu aşağıdaki kodla güncelleyin:
 
 [sourcecode:js]
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init({
 assetCachingOptions: [{
 regexp: /\.(png|jpg)/,

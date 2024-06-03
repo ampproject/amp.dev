@@ -1,4 +1,4 @@
-importScripts('https://ampjs.org/sw/amp-sw.js');
+importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init({
   assetCachingOptions: [
     {

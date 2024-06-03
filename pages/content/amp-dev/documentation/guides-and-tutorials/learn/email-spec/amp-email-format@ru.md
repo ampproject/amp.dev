@@ -50,7 +50,7 @@ AMP — это технология, используемая для разра�
         visibility: hidden;
       }
     </style>
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
     Hello, world.
@@ -64,7 +64,7 @@ AMP — это технология, используемая для разра�
 - <a name="ampd"></a> содержать тег верхнего уровня `<html ⚡4email>` (также допускается `<html amp4email>`). [🔗](#ampd)
 - <a name="crps"></a> содержать теги `<head>` и `<body>` (в HTML они необязательны). [🔗](#crps)
 - <a name="chrs"></a> содержать `<meta charset="utf-8">` в качестве первого дочернего элемента тега head. [🔗](#chrs)
-- <a name="scrpt"></a> содержать `<script async src="https://ampjs.org/v0.js"></script>` в теге head. [🔗](#scrpt)
+- <a name="scrpt"></a> содержать `<script async src="https://cdn.ampproject.org/v0.js"></script>` в теге head. [🔗](#scrpt)
 - <a name="boilerplate"></a> содержать шаблон amp4email (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) в своем теге head, чтобы обеспечивать скрытие контента письма до загрузки JavaScript-кода AMP. [🔗](#boilerplate)
 
 Объем всей разметки AMPHTML не должен превышать 102 400 байт.

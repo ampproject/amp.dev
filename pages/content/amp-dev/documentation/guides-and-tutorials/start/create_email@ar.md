@@ -25,7 +25,7 @@ author: CrystalOnScript
 <html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <style amp4email-boilerplate>
       body {
         visibility: hidden;
@@ -48,7 +48,7 @@ author: CrystalOnScript
 لنقضي دقيقة في تذكر الاختلافات الملحوظة عن رسائل HTML الإلكترونية الكلاسيكية:
 
 - يجب أن تعرّف رسائل AMP الإلكترونية نفسها من خلال تضمين `⚡4email`، أو `amp4email`,، في علامة html.
-- يجب أن تحتوي علامة `<head>` أيضًا على علامة `<script>` التي تحمِّل وقت تشغيل AMP. `<script async src="https://ampjs.org/v0.js"></script>`
+- يجب أن تحتوي علامة `<head>` أيضًا على علامة `<script>` التي تحمِّل وقت تشغيل AMP. `<script async src="https://cdn.ampproject.org/v0.js"></script>`
 - نص CSS أساسي لإخفاء المحتوى مبدئيًا حتى تحميل AMP. ` <style amp4email-boilerplate>body{visibility:hidden}</style>`
 
 إذا سبق لك التعامل مع رسائل البريد الإلكتروني، فإن فكرة إضافة نص برمجي إلى رسالة إلكترونية قد يشكل أجراس إنذار في رأسك! لكن اطمئن، فموفري البريد الإلكتروني الذي يدعمون رسائل AMP الإلكترونية يطبقون فحوصات أمان صارمة تسمح فقط بتشغيل نصوص AMP البرمجية المتحقق منها في العملاء الخاصين بهم. وهذا يتيح تشغيل الميزات الديناميكية والتفاعلية مباشرة في صناديق بريد المستلمين الذين ليس لديهم ثغرات أمنية! اقرأ المزيد حول لغة الترميز المطلوبة لرسائل AMP الإلكترونية هنا.
@@ -119,7 +119,7 @@ author: CrystalOnScript
 <script
   async
   custom-element="amp-carousel"
-  src="https://ampjs.org/v0/amp-carousel-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
 ></script>
 ```
 
@@ -218,7 +218,7 @@ author: CrystalOnScript
 <script
   async
   custom-element="amp-bind"
-  src="https://ampjs.org/v0/amp-bind-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
 ></script>
 ```
 

@@ -25,7 +25,7 @@ AMP 플레이그라운드는 이메일용 AMP 형식을 지원하여 AMP 이메�
 <html ⚡4email data-css-strict>
   <head>
     <meta charset="utf-8" />
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
     <style amp4email-boilerplate>
       body {
         visibility: hidden;
@@ -48,7 +48,7 @@ AMP 플레이그라운드는 이메일용 AMP 형식을 지원하여 AMP 이메�
 그럼, 기존 HTML 이메일과 AMP 이메일의 주요 차이점을 간략하게 살펴볼까요.
 
 - AMP 이메일은 html 태그 내에 `⚡4email` 또는 `amp4email`을 사용하여 AMP로 작성된 이메일임을 표시합니다.
-- 또한 `<head>` 태그에는 AMP 런타임을 로드하는 `<script>` 태그가 사용되어야 합니다. `<script async src="https://ampjs.org/v0.js"></script>`
+- 또한 `<head>` 태그에는 AMP 런타임을 로드하는 `<script>` 태그가 사용되어야 합니다. `<script async src="https://cdn.ampproject.org/v0.js"></script>`
 - CSS 상용구는 AMP가 로드될 때까지 처음에 콘텐츠를 숨김 처리합니다. ` <style amp4email-boilerplate>body{visibility:hidden}</style>`
 
 기존에 이메일 작업 경험이 있다면 이메일에 스크립트를 배치하는 아이디어에 대한 우려를 느끼실 겁니다! 하지만 안심하세요. AMP를 지원하는 이메일 제공 업체는 철저한 검사를 수행하여 검증된 AMP 스크립트만이 클라이언트에서 실행되도록 허용합니다. 따라서 보안상 취약성 없이도 동적이고 인터랙티브한 기능이 수신자의 메일함에서 바로 실행될 수 있습니다! AMP 이메일의 필수 마크업에 대한 자세한 내용을 이곳에서 읽어보세요.
@@ -119,7 +119,7 @@ AMP 플레이그라운드는 이메일용 AMP 형식을 지원하여 AMP 이메�
 <script
   async
   custom-element="amp-carousel"
-  src="https://ampjs.org/v0/amp-carousel-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
 ></script>
 ```
 
@@ -218,7 +218,7 @@ AMP는 `<style amp-custom>` 태그 내의 문서 헤드에서 스타일링을 �
 <script
   async
   custom-element="amp-bind"
-  src="https://ampjs.org/v0/amp-bind-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
 ></script>
 ```
 

@@ -133,7 +133,7 @@ Gdy Twój punkt końcowy otrzyma żądanie CORS:
 
 <span id="verify-cors-header"></span>
 
-Punkty końcowe CORS otrzymują żądane źródło za pomocą nagłówka HTTP `Origin`. Punkty końcowe powinny zezwalać na żądania tylko z: (1) własnego źródła wydawcy; oraz (2) każdego źródła `cacheDomain` wymienionego na liście pod adresem [https://ampjs.org/caches.json](https://ampjs.org/caches.json).
+Punkty końcowe CORS otrzymują żądane źródło za pomocą nagłówka HTTP `Origin`. Punkty końcowe powinny zezwalać na żądania tylko z: (1) własnego źródła wydawcy; oraz (2) każdego źródła `cacheDomain` wymienionego na liście pod adresem [https://cdn.ampproject.org/caches.json](https://cdn.ampproject.org/caches.json).
 
 Na przykład, punkty końcowe powinny zezwalać na żądania z:
 

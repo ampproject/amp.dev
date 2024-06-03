@@ -122,7 +122,7 @@ Esta é a aparência do código que você adicionou em seu projeto:
 Lembre-se de incluir o script `<amp-carousel>` no `<head>`:
 
 ```
-<script async custom-element="amp-carousel" src="https://ampjs.org/v0/amp-carousel-0.1.js"></script>
+<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
 ```
 
 ## Descobrindo Novos Componentes
@@ -173,7 +173,7 @@ Depois de concluir esta tarefa, sua página deve conter botões para o usuário 
 Lembre-se de incluir o script `<amp-social-share>` no `<head>`:
 
 ```
-<script async custom-element="amp-social-share" src="https://ampjs.org/v0/amp-social-share-0.1.js"></script>
+<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
 ```
 [/filter]
 
@@ -291,7 +291,7 @@ Esta é a aparência do código que você adicionou em seu projeto:
 Lembre-se de incluir o script `<amp-carousel>` no `<head>`:
 
 ```
-<script async custom-element="amp-carousel" src="https://ampjs.org/v0/amp-carousel-0.1.js"></script>
+<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
 ```
 
 ## Descobrindo Novos Componentes
@@ -333,6 +333,6 @@ Depois de concluir esta tarefa, sua página deve conter botões para o usuário 
 Lembre-se de incluir o script `<amp-social-share>` no `<head>`:
 
 ```
-<script async custom-element="amp-social-share" src="https://ampjs.org/v0/amp-social-share-0.1.js"></script>
+<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
 ```
 [/filter]

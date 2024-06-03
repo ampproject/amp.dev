@@ -40,7 +40,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>필수 스크립트</strong></td>
-    <td><code>&lt;script async custom-element="amp-ad" src="https://ampjs.org/v0/amp-ad-0.1.js">&lt;</code><br>참고: amp-ad는 이 스크립트가 없어도 작동할 수 있지만 향후 호환성을 위해 사용하는 것이 좋습니다.</td>
+    <td><code>&lt;script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js">&lt;</code><br>참고: amp-ad는 이 스크립트가 없어도 작동할 수 있지만 향후 호환성을 위해 사용하는 것이 좋습니다.</td>
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">지원되는 레이아웃</a></strong></td>

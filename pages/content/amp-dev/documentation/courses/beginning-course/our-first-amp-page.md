@@ -132,7 +132,7 @@ The following rules are specifically for setting up the AMP runtime. Valid AMP p
 
 - Contain a top-level `<html ⚡>` tag. The lightning bolt symbol indicates that this is an AMP site. **Note**: `<html amp>` is accepted as well.
 
-- Contain a `<script async src="https://ampjs.org/v0.js"></script>` tag inside their `<head>` tag. This loads the AMP JavaScript library. **Note**: As a
+- Contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their `<head>` tag. This loads the AMP JavaScript library. **Note**: As a
   best practice, you should include the script as early as possible in the `<head>`.
 
 - Contain a `<link rel="canonical" href="$SOME_URL">` tag inside their `<head>`. This points to the regular HTML version of your site if it exists, or points to itself if no non-AMP version of the site exists. **Note**: You should replace `$SOME_URL` in the `href` attribute above with the actual URL of your page.
@@ -198,7 +198,7 @@ The solution can be found in <a href="https://glitch.com/~hungry-modem" target="
 [sourcecode:html]
 {% raw %}<head>
   <meta charset="utf-8">
-  <script async src="https://ampjs.org/v0.js"></script>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
   <title>Chico's Cheese Bicycles</title>
   <link rel="shortcut icon" href="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-favicon.png?1540228964214">
   <meta name="viewport"
@@ -356,7 +356,7 @@ The following rules are specifically for setting up the AMP runtime. Valid AMP p
 
 - Contain a top-level `<html ⚡>` tag. The lightning bolt symbol indicates that this is an AMP site. **Note**: `<html amp>` is accepted as well.
 
-- Contain a `<script async src="https://ampjs.org/v0.js"></script>` tag inside their `<head>` tag. This loads the AMP JavaScript library. **Note**: As a
+- Contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their `<head>` tag. This loads the AMP JavaScript library. **Note**: As a
   best practice, you should include the script as early as possible in the `<head>`.
 
 - Contain a `<link rel="canonical" href="$SOME_URL">` tag inside their `<head>`. This points to the regular HTML version of your site if it exists, or points to itself if no non-AMP version of the site exists. **Note**: You should replace `$SOME_URL` in the `href` attribute above with the actual URL of your page.
@@ -422,7 +422,7 @@ The solution can be found in <a href="https://glitch.com/~hungry-modem" target="
 [sourcecode:html]
 {% raw %}<head>
   <meta charset="utf-8">
-  <script async src="https://ampjs.org/v0.js"></script>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
   <title>Chico's Cheese Bicycles</title>
   <link rel="shortcut icon" href="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-favicon.png?1540228964214">
   <meta name="viewport"

@@ -25,7 +25,7 @@ AMP 自带大量优势，例如，从 AMP 缓存预加载内容，从而减少�
 
 # 向缓存的 AMP 网页授予服务器访问权限
 
-好消息是，有效的 AMP 网页会自动选择加入现有的所有 AMP 缓存！这意味着，您的用户体验内容会安全有效地进行加载。这种类型的优化很出色，但同时也带来了一个小问题。系统将从您自己的域以外的域为某些用户提供 AMP 网页。这可能会导致网页在使用动态 AMP 组件（例如 [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=websites) 或 [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=websites)）时无法访问网站数据。这些类型的错误属于跨源资源共享（或者称为 CORS）问题。通过从所有可用的 [AMP 缓存](https://ampjs.org/caches.json)发出 CORS 请求，可以安全操作！如果在后端中使用 Node.js，则可以使用 [amp-cors 中间件](https://github.com/ampproject/amp-toolbox/tree/master/packages/cors)。
+好消息是，有效的 AMP 网页会自动选择加入现有的所有 AMP 缓存！这意味着，您的用户体验内容会安全有效地进行加载。这种类型的优化很出色，但同时也带来了一个小问题。系统将从您自己的域以外的域为某些用户提供 AMP 网页。这可能会导致网页在使用动态 AMP 组件（例如 [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=websites) 或 [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=websites)）时无法访问网站数据。这些类型的错误属于跨源资源共享（或者称为 CORS）问题。通过从所有可用的 [AMP 缓存](https://cdn.ampproject.org/caches.json)发出 CORS 请求，可以安全操作！如果在后端中使用 Node.js，则可以使用 [amp-cors 中间件](https://github.com/ampproject/amp-toolbox/tree/master/packages/cors)。
 
 详细了解如何授予服务器访问权限：
 

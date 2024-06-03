@@ -133,7 +133,7 @@ Bitiş noktanız bir CORS isteği aldığında:
 
 <span id="verify-cors-header"></span>
 
-CORS uç noktaları, `Origin` HTTP üstbilgisi aracılığıyla istekte bulunan kaynağı alır. Uç noktalar yalnızca aşağıdaki isteklere izin vermelidir: (1) yayıncının kendi kaynağı ve (2) [https://ampjs.org/caches.json](https://ampjs.org/caches.json)'da listelenen her `cacheDomain` kaynağı.
+CORS uç noktaları, `Origin` HTTP üstbilgisi aracılığıyla istekte bulunan kaynağı alır. Uç noktalar yalnızca aşağıdaki isteklere izin vermelidir: (1) yayıncının kendi kaynağı ve (2) [https://cdn.ampproject.org/caches.json](https://cdn.ampproject.org/caches.json)'da listelenen her `cacheDomain` kaynağı.
 
 Örneğin, uç noktalar isteklere izin vermelidir:
 

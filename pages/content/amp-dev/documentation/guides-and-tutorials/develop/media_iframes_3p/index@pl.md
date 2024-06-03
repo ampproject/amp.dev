@@ -121,7 +121,7 @@ Element [`amp-anim`](../../../../documentation/components/reference/amp-anim.md)
 
 [/example]
 
-[tip type="note"] **UWAGA —** aby użyć tego składnika, dodaj kod `<script async custom-element="amp-anim" src="https://ampjs.org/v0/amp-anim-0.1.js"></script>` w sekcji head strony. [/tip]
+[tip type="note"] **UWAGA —** aby użyć tego składnika, dodaj kod `<script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>` w sekcji head strony. [/tip]
 
 ## Wideo
 
@@ -175,4 +175,4 @@ Dodaj element zastępczy wyświetlany przed uruchomieniem audio, a także zasoby
 
 [/example]
 
-[tip type="note"] **UWAGA —** aby użyć tego składnika, dodaj kod `<script async custom-element="amp-audio" src="https://ampjs.org/v0/amp-audio-0.1.js"></script>` w sekcji head strony. [/tip]
+[tip type="note"] **UWAGA —** aby użyć tego składnika, dodaj kod `<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>` w sekcji head strony. [/tip]

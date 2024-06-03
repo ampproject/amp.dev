@@ -35,7 +35,7 @@ teaser:
     <td class="col-fourty"><strong>필수 스크립트</strong></td>
     <td>
       <div>
-        <code>&lt;script async custom-element="amp-social-share" src="https://ampjs.org/v0/amp-social-share-0.1.js"&gt;&lt;/script&gt;</code>
+        <code>&lt;script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"&gt;&lt;/script&gt;</code>
       </div>
     </td>
   </tr>

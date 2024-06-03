@@ -111,7 +111,7 @@ extension script must be present:
 <script
   async
   custom-element="amp-video-docking"
-  src="https://ampjs.org/v0/amp-video-docking-0.1.js"
+  src="https://cdn.ampproject.org/v0/amp-video-docking-0.1.js"
 ></script>
 [/sourcecode]
 

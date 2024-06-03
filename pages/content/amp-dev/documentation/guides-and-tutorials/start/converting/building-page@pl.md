@@ -47,7 +47,7 @@ Na początek dodamy plik biblioteki AMP. Samo to nie sprawi jeszcze, że nowy pl
 Aby dołączyć bibliotekę AMP, **dodaj** ten wiersz na końcu sekcji `<head>`:
 
 ```html
-<script async src="https://ampjs.org/v0.js"></script>
+<script async src="https://cdn.ampproject.org/v0.js"></script>
 ```
 
 **Załaduj** nową stronę `article.amp.html` do przeglądarki pod adresem [http://localhost:8000/article.amp.html](http://localhost:8000/article.amp.html), a następnie **otwórz** [konsolę programistyczną](https://developer.chrome.com/devtools/docs/console) w programie Chrome (lub preferowanej przeglądarce).

@@ -109,7 +109,7 @@ Bạn có thể thêm và xóa số lớp CSS bất kỳ với các trạng thá
   <script
     async
     custom-element="amp-bind"
-    src="https://ampjs.org/v0/amp-bind-0.1.js"
+    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
   ></script>
   <style amp-custom>
     div {

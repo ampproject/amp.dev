@@ -35,13 +35,13 @@ limitations under the License.
     <td>
       <small>لاحظ أنك تحتاج إلى نصوص برمجية لكل من "amp-access-laterpay" و"amp-access" و"amp-analytics".</small>
       <div>
-        <code>&lt;script async custom-element="amp-access" src="https://ampjs.org/v0/amp-access-0.1.js"&gt;&lt;/script&gt;</code>
+        <code>&lt;script async custom-element="amp-access" src="https://cdn.ampproject.org/v0/amp-access-0.1.js"&gt;&lt;/script&gt;</code>
       </div>
       <div>
-        <code>&lt;script async custom-element="amp-analytics" src="https://ampjs.org/v0/amp-analytics-0.1.js"&gt;&lt;/script&gt;</code>
+        <code>&lt;script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"&gt;&lt;/script&gt;</code>
       </div>
       <div>
-        <code>&lt;script async custom-element="amp-access-laterpay" src="https://ampjs.org/v0/amp-access-laterpay-0.2.js"&gt;&lt;/script&gt;</code>
+        <code>&lt;script async custom-element="amp-access-laterpay" src="https://cdn.ampproject.org/v0/amp-access-laterpay-0.2.js"&gt;&lt;/script&gt;</code>
       </div>
     </td>
   </tr>

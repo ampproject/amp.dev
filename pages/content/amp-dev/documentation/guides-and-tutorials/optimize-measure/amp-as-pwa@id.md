@@ -26,7 +26,7 @@ Kemudian, tautkan manifes dari `<head>` halaman AMP:
 [sourcecode:html]
 
 <script async custom-element="amp-install-serviceworker"
-  src="https://ampjs.org/v0/amp-install-serviceworker-0.1.js"></script>
+  src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 [/sourcecode]
 
@@ -51,7 +51,7 @@ Service Worker perlu didaftarkan pada halaman tertentu, karena jika tidak, brows
 
 Untuk melakukannya, sertakan komponen [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) terlebih dahulu melalui skripnya pada `<head>` halaman Anda:
 
-- [sourcecode:js] importScripts('https://ampjs.org/sw/amp-sw.js'); [/sourcecode]
+- [sourcecode:js] importScripts('https://cdn.ampproject.org/sw/amp-sw.js'); [/sourcecode]
 
 - [sourcecode:js]
   AMP_SW.init();

@@ -40,7 +40,7 @@ W sekcji `<html> `dodaj atrybut `⚡4ads`, który identyfikuje dokument jako rek
 Reklamy AMPHTML wymagają własnej wersji środowiska uruchomieniowego AMP, więc dodaj następujący znacznik `<script>` do sekcji `<head>` dokumentu:
 
 ```html
-<script async src="https://ampjs.org/amp4ads-v0.js"></script>
+<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
 ```
 
 Kreacje reklamowe AMPHTML wymagają innej i znacznie prostszej linii stylu [boilerplate](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#boilerplate) niż strony AMP. Dodaj następujący kod do swojej sekcji `<head>`:
@@ -66,7 +66,7 @@ Oto kompletny kod Twojego pliku HTML:
     <meta charset="utf-8" />
     <title>My amphtml ad</title>
     <meta name="viewport" content="width=device-width" />
-    <script async src="https://ampjs.org/amp4ads-v0.js"></script>
+    <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
     <style amp4ads-boilerplate>
       body {
         visibility: hidden;

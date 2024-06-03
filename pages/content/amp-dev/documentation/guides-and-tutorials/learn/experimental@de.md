@@ -31,7 +31,7 @@ Dein Opt-in beim Beta Channel erlaubt dir:
 
 Wenn du ein Problem findest, das nur in der Beta Channel Version von AMP aufzutreten scheint, [erstelle ein Issue](https://github.com/ampproject/amphtml/issues/new) mit einer Beschreibung des Problems. Vergiss nicht, die URL der Seite anzugeben, auf der das Problem auftritt.
 
-Um den AMP Beta Channel für deinen Browser zu aktivieren, wechsle zur [Seite mit AMP Experimenten](https://ampjs.org/experiments.html) und aktiviere das Experiment "AMP Beta Channel". Wenn du über wichtige und kritische Änderungen an AMP informiert werden möchtest, abonniere die Mailingliste [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
+Um den AMP Beta Channel für deinen Browser zu aktivieren, wechsle zur [Seite mit AMP Experimenten](https://cdn.ampproject.org/experiments.html) und aktiviere das Experiment "AMP Beta Channel". Wenn du über wichtige und kritische Änderungen an AMP informiert werden möchtest, abonniere die Mailingliste [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
 
 ## Experimentelle Komponente aktivieren
 
@@ -55,14 +55,14 @@ Für jede AMP Datei, die experimentelle Funktionen enthält, schlägt die [AMP V
 
 ## Experiment für ein bestimmtes Dokument aktivieren
 
-Für Dokumente sind Opt-ins bei bestimmten Experimenten möglich. Platziere dazu ein Meta Tag mit dem Namen `amp-experiments-opt-in` im Kopf des HTML Dokuments vor deinem AMP Skript (`https://ampjs.org/v0.js`). Sein Inhaltswert ist eine kommagetrennte Abfolge von Strings mit den Experiment IDs, die aktiviert werden sollen.
+Für Dokumente sind Opt-ins bei bestimmten Experimenten möglich. Platziere dazu ein Meta Tag mit dem Namen `amp-experiments-opt-in` im Kopf des HTML Dokuments vor deinem AMP Skript (`https://cdn.ampproject.org/v0.js`). Sein Inhaltswert ist eine kommagetrennte Abfolge von Strings mit den Experiment IDs, die aktiviert werden sollen.
 
 ```html
 <head>
   ...
   <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b" />
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
-  <script async src="https://ampjs.org/v0.js"></script>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
   ...
 </head>
 ```

@@ -50,7 +50,7 @@ Kode berikut ini mewakili jumlah penambahan minimum yang menjadi bagian pesan em
         visibility: hidden;
       }
     </style>
-    <script async src="https://ampjs.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
     Hello, world.
@@ -64,7 +64,7 @@ Sebuah pesan email AMP HARUS
 - <a name="ampd"></a>berisi tag `<html ⚡4email>` tingkat atas, (`<html amp4email>` juga diterima). [🔗](#ampd)
 - <a name="crps"></a>berisi tag `<head>` dan `<body>` (Ini bersifat opsional dalam HTML). [🔗](#crps)
 - <a name="chrs"></a>berisi tag `<meta charset="utf-8">` sebagai anak atau turunan pertama dari tag tajuknya. [🔗](#chrs)
-- <a name="scrpt"></a>berisi tag `<script async src="https://ampjs.org/v0.js"></script>` di dalam tag tajuknya. [🔗](#scrpt)
+- <a name="scrpt"></a>berisi tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` di dalam tag tajuknya. [🔗](#scrpt)
 - <a name="boilerplate"></a>berisi boilerplate amp4email (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) di dalam tag tajuknya untuk pada awalnya menyembunyikan konten hingga JS AMP dimuat. [🔗](#boilerplate)
 
 Seluruh markup AMPHTML tidak boleh melebihi 200.000 byte.

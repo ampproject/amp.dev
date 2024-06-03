@@ -40,7 +40,7 @@ description: '"Используя свой любимый текстовый р�
 AMPHTML-рекламе требуется собственная версия среды выполнения AMP, поэтому добавьте в раздел `<head>` документа следующий `<script>`:
 
 ```html
-<script async src="https://ampjs.org/amp4ads-v0.js"></script>
+<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
 ```
 
 Для AMPHTML-рекламы требуется cвоя, значительно более простая строка [стандартного](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md#boilerplate) стиля, чем для AMP-страниц. Добавьте в раздел `<head>` следующий код:
@@ -66,7 +66,7 @@ AMPHTML-рекламе требуется собственная версия с
     <meta charset="utf-8" />
     <title>My amphtml ad</title>
     <meta name="viewport" content="width=device-width" />
-    <script async src="https://ampjs.org/amp4ads-v0.js"></script>
+    <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
     <style amp4ads-boilerplate>
       body {
         visibility: hidden;

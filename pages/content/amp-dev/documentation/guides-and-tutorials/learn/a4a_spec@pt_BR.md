@@ -52,7 +52,7 @@ Além disso, os criativos devem obedecer às seguintes regras:
 <td>Permite que os validadores identifiquem um documento criativo ou como um documento AMP genérico ou um documento de anúncio AMPHTML restrito, para que seja despachado de forma apropriada.</td>
 </tr>
 <tr>
-<td>Deve incluir <code>&lt;script async src="https://ampjs.org/amp4ads-v0.js">&lt;/script></code> como o script de execução em vez de <code>https://ampjs.org/v0.js</code>.</td>
+<td>Deve incluir <code>&lt;script async src="https://cdn.ampproject.org/amp4ads-v0.js">&lt;/script></code> como o script de execução em vez de <code>https://cdn.ampproject.org/v0.js</code>.</td>
 <td>Permite comportamentos personalizados em tempo de execução para anúncios AMPHTML servidos em iframes cross-origin.</td>
 </tr>
 <tr>
@@ -321,7 +321,7 @@ As tags SVG não fazem parte do espaço de nomes HTML5. Elas estão listados aba
 
 #### 4.11 Scripting <a name="411-scripting"></a>
 
-- Como um documento AMP geral, a tag `<head>` do criativo deve conter uma tag `<script async src="https://ampjs.org/amp4ads-v0.js"></script>`.
+- Como um documento AMP geral, a tag `<head>` do criativo deve conter uma tag `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>`.
 - Diferentemente do AMP geral, `<noscript>` é proibido.
   - _Justificativa:_ Como anúncios AMPHTML requerem que o Javascript seja ativado para poder funcionar, blocos `<noscript>` não têm nenhuma finalidade em anúncios AMPHTML e apenas aumentam o custo da transferência de rede.
 - Diferentemente do AMP geral, `<script type="application/ld+json">` é proibido.
