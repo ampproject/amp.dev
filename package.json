@@ -58,9 +58,9 @@
 		"not dead"
 	],
 	"dependencies": {
-		"@ampproject/toolbox-cache-list": "2.9.0",
-		"@ampproject/toolbox-cors": "2.9.0",
-		"@ampproject/toolbox-optimizer": "https://gitpkg.now.sh/ampproject/amp-toolbox/packages/optimizer?main",
+		"@ampproject/toolbox-cache-list": "2.10.1",
+		"@ampproject/toolbox-cors": "2.10.1",
+		"@ampproject/toolbox-optimizer": "2.10.1",
 		"@google-cloud/datastore": "8.7.0",
 		"@iarna/toml": "2.2.5",
 		"busboy": "1.6.0",
