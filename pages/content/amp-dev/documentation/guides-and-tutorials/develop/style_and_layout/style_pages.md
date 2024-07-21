@@ -15,7 +15,7 @@ contributors:
 ---
 
 [filter formats="email"]
-Note: AMP for Email specifies additional CSS constraints which are described in
+Warning: AMP for Email specifies additional CSS constraints which are described in
 [AMP for Email Supported CSS](../../../../documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md).
 [/filter]
 
@@ -64,6 +64,8 @@ The following styles aren’t allowed in AMP pages:
 ## Performance recommendations
 
 These allowed styles should restrict values to the following for an optimal performance:
+
+[filter formats="websites, ads, stories"]
 
 <table>
   <thead>
@@ -139,3 +141,22 @@ so that many pages across the site can include embedded youtube videos.
 To see how the above translates into formatted AMP HTML,
 view the source for any page in [amp.dev](https://amp.dev/).
 (In Chrome, right-click and `View Page Source`.)
+
+[/filter]
+
+[filter formats="email"]
+<table>
+  <thead>
+    <tr>
+      <th class="col-thirty" data-th="Banned style">Restricted style</th>
+      <th data-th="Description">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Restricted style"><code>transition</code> property</td>
+      <td data-th="Description">Only GPU-accelerated properties (currently <code>opacity</code>, <code>transform</code> and <code>-vendorPrefix-transform</code>).</td>
+    </tr>
+  </tbody>
+</table>
+[/filter]
