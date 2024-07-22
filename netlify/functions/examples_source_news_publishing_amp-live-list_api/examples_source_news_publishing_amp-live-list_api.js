@@ -243,15 +243,6 @@ function createMetaData(origin, baseUrl) {
   return result;
 }
 
-function getMaxAgeStr(maxAge, cdnMaxAge = '') {
-  if (cdnMaxAge) {
-    cdnMaxAge = `s-max-age=${cdnMaxAge}, `;
-  }
-  return ` max-age=${maxAge}, ${cdnMaxAge}stale-while-revalidate=${Math.floor(
-    maxAge * 2
-  )}`;
-}
-
 function readStatus(ev) {
   const Cookies = Cookie.parse(ev.headers.cookie || '');
   const cookie = Cookies[AMP_LIVE_LIST_COOKIE_NAME];
@@ -271,8 +262,7 @@ const handler = async (ev) => {
   return {
     statusCode: 200,
     headers: {
-      // set max-age to 15 s - the minimum refresh time for an amp-live-list
-      'Cache-Control': getMaxAgeStr(15),
+      'Cache-Control': 'no-cache',
       'Content-Type': 'text/html',
       'Set-Cookie': newStatus.cookie,
       'Access-Control-Allow-Origin': ev.headers?.origin || '',

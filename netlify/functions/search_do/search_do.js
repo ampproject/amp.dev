@@ -8,12 +8,6 @@ const MAX_HIGHLIGHT_COMPONENT_INDEX = 7;
 const COMPONENT_REFERENCE_DOC_PATTERN =
   /^(?:https?:\/\/[^/]+)?(?:\/[^/]+)?\/documentation\/components\/(amp-[^/]+)/;
 
-const RESPONSE_MAX_AGE = {
-  search: 21600, // 6 hours
-  highlights: 86400, // 24 hours
-  autosuggest: 86400, // 24 hours
-};
-
 const DEFAULT_LOCALE = 'en';
 
 /** Will remove/rewrite characters that cause problems when displaying */
@@ -146,7 +140,7 @@ const handler = async (ev) => {
       headers: {
         'Access-Control-Allow-Origin': ev.headers?.origin || '',
         'Content-Type': 'application/javascript',
-        'Cache-Control': `max-age=${RESPONSE_MAX_AGE.search}, immutable`,
+        'Cache-Control': 'no-cache',
       },
       body: JSON.stringify({error}),
     };
@@ -205,7 +199,7 @@ const handler = async (ev) => {
     headers: {
       'Access-Control-Allow-Origin': ev.headers?.origin || '',
       'Content-Type': 'application/javascript',
-      'Cache-Control': `max-age=${RESPONSE_MAX_AGE.search}, immutable`,
+      'Cache-Control': 'no-cache',
     },
     body: createResult(
       totalResults,
