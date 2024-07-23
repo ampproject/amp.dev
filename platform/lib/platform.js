@@ -17,7 +17,6 @@
 'use strict';
 
 const express = require('express');
-const shrinkRay = require('shrink-ray-current');
 const cors = require('cors');
 const ampCors = require('@ampproject/toolbox-cors');
 const config = require('./config.js');
@@ -104,7 +103,6 @@ class Platform {
   }
 
   _configureMiddlewares() {
-    this.server.use(shrinkRay());
     this.server.use(require('./middleware/csp.js'));
     this.server.use(require('./middleware/security.js'));
     this.server.use(require('./middleware/redirects.js'));
