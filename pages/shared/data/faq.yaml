@@ -112,6 +112,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/adman.md
       - label: Admanmedia
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/admanmedia.md
+      - label: AdMatic
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/admatic.md
       - label: Admixer
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/admixer.md
       - label: Adnuntius
@@ -150,6 +152,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/adstir.md
       - label: AdStyle
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/adstyle.md
+      - label: Adsviu
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/adsviu.md
       - label: AdTech
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/adtech.md
       - label: Adtelligent
@@ -198,6 +202,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/baidu.md
       - label: BeaverAds
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/beaverads.md
+      - label: Bidgear
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/bidgear.md
       - label: Bidtellect
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/bidtellect.md
       - label: Blade
@@ -270,6 +276,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/f1e.md
       - label: F1H
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/f1h.md
+      - label: Fairground
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/fairground.md
       - label: FeedAd
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/feedad.md
       - label: felmat
@@ -316,6 +324,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/imonomy.md
       - label: Improve Digital
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/improvedigital.md
+      - label: IncrementX
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/incrementx.md
       - label: Industrybrains
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/industrybrains.md
       - label: InMobi
@@ -386,6 +396,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/miximedia.md
       - label: Mixpo
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/mixpo.md
+      - label: Momagic
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/momagic.md
       - label: Monetizer101
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/monetizer101.md
       - label: mox.tv
@@ -434,6 +446,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/opinary.md
       - label: Outbrain
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/outbrain.md
+      - label: Pixad
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/pixad.md
       - label: Pixels
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/pixels.md
       - label: PlayStream
@@ -462,6 +476,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/pubmatic.md
       - label: Pubmine
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/pubmine.md
+      - label: Example
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/pubscale.md
       - label: puffnetwork
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/puffnetwork.md
       - label: Pulse
@@ -516,12 +532,16 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/seedtag.md
       - label: Sekindo
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/sekindo.md
+      - label: Sevio
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/sevio.md
       - label: Sharethrough
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/sharethrough.md
       - label: SHE Media
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/shemedia.md
       - label: Sklik.cz
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/sklik.md
+      - label: Example
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/skoiy.md
       - label: SlimCut Media
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/slimcutmedia.md
       - label: SmartAdServer
