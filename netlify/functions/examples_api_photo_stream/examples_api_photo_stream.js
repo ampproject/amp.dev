@@ -15,15 +15,6 @@ function randomFalsy() {
   }
 }
 
-function getMaxAgeStr(maxAge, cdnMaxAge = '') {
-  if (cdnMaxAge) {
-    cdnMaxAge = `s-max-age=${cdnMaxAge}, `;
-  }
-  return ` max-age=${maxAge}, ${cdnMaxAge}stale-while-revalidate=${Math.floor(
-    maxAge * 2
-  )}`;
-}
-
 const handler = async (ev) => {
   const query = ev.queryStringParameters;
   let items = [];
@@ -39,7 +30,7 @@ const handler = async (ev) => {
     return {
       statusCode: 200,
       headers: {
-        'Cache-Control': getMaxAgeStr(60 * 60), // 1h
+        'Cache-Control': 'no-cache',
         'Access-Control-Allow-Origin': ev.headers?.origin || '',
         'Access-Control-Allow-Credentials': true,
         'Content-Type': 'application/json',

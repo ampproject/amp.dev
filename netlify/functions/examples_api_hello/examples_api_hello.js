@@ -41,16 +41,15 @@ const parseFormData = (ev) => {
 const handler = async (ev) => {
   const headers = {
     'Access-Control-Allow-Origin': ev.headers?.origin || '',
+    'Cache-Control': 'no-cache',
   };
   let name;
 
   if (ev.httpMethod === 'POST') {
-    headers['Cache-Control'] = 'no-cache';
     const parsedEvent = await parseFormData(ev);
 
     name = parsedEvent.body.name;
   } else if (ev.httpMethod === 'GET') {
-    headers['Cache-Control'] = 'max-age=365000000, immutable';
     name = ev.queryStringParameters.name;
   } else {
     return {statusCode: 405, body: 'Method Not Allowed'};

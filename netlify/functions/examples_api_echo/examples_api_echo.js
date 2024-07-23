@@ -7,7 +7,7 @@ function jsonReply(data, ev) {
       'Access-Control-Allow-Origin': ev.headers?.origin || '',
       'Access-Control-Allow-Credentials': 'true',
       'Content-Type': 'application/json',
-      'Cache-Control': 'max-age=365000000, immutable',
+      'Cache-Control': 'no-cache',
     },
     body: JSON.stringify(data),
   };

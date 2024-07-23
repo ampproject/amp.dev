@@ -2,7 +2,7 @@ const cartJSON = require('./cart.json');
 
 const handler = async (ev) => {
   const headers = {
-    'Cache-Control': 'public, max-age=604800, stale-while-revalidate=0',
+    'Cache-Control': 'no-cache',
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': ev.headers?.origin || '',
   };
