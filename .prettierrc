@@ -13,7 +13,7 @@
       "options": {"parser": "json"}
     },
     {
-      "files": [".travis.yml", "*.yaml", "*.yml"],
+      "files": ["*.yaml", "*.yml"],
       "options": {"parser": "yaml"}
     }
   ]

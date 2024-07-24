@@ -182,12 +182,7 @@ To perform a build run the following command with `--env` being one of the follo
 $ npx gulp build --env <environment>
 ```
 
-This command builds all parts of the project and might take a while. Usually, all builds on [amp-dev-staging.appspot.com](https://amp-dev-staging.appspot.com/) and [amp.dev](https://amp.dev/) are built using [Travis CI](https://travis-ci.org/ampproject/amp.dev). In case you want to reproduce one of those remote builds in your local environment, you can fetch the build artifacts by running:
-
-```sh
-$ npx gulp fetchArtifacts --travis-build <build_number>
-```
-
+This command builds all parts of the project and might take a while.
 ---
 
 Copyright 2019 The AMP HTML Authors. All Rights Reserved.
