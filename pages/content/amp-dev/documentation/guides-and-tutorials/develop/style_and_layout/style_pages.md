@@ -20,8 +20,13 @@ Warning: AMP for Email specifies additional CSS constraints which are described 
 [/filter]
 
 Like all web pages, AMP pages are styled with CSS,
-but you can’t reference external stylesheets
-(with the exception of [custom fonts](#the-custom-fonts-exception)).
+but you can’t reference external
+[filter formats="websites, ads, stories"]
+stylesheets (with the exception of [custom fonts](#the-custom-fonts-exception)).
+[/filter]
+[filter formats="email"]
+stylesheets.
+[/filter]
 Also certain styles are disallowed due to performance implications.
 
 Styles may live in the head of the document or as inline `style` attributes
@@ -37,6 +42,7 @@ to better manage your content.
 
 The following styles aren’t allowed in AMP pages:
 
+[filter formats="websites, ads, stories"]
 <table>
   <thead>
     <tr>
@@ -60,6 +66,32 @@ The following styles aren’t allowed in AMP pages:
     </tr>
   </tbody>
 </table>
+[/filter]
+[filter formats="email"]
+<table>
+  <thead>
+    <tr>
+      <th class="col-thirty" data-th="Banned style">Banned style</th>
+      <th data-th="Description">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-th="Banned style"><code>!important</code> qualifier </td>
+      <td data-th="Description">Use and reference to <code>!important</code> is not allowed.
+      This is a necessary requirement to enable AMP to enforce its element sizing rules.</td>
+    </tr>
+    <tr>
+      <td data-th="Banned style"><code>&lt;link rel=”stylesheet”&gt;</code></td>
+      <td data-th="Description">Disallowed.</td>
+    </tr>
+    <tr>
+      <td data-th="Banned style"><code>i-amphtml-</code> class and <code>i-amphtml-</code> tag names.</td>
+      <td data-th="Description">The validator disallows class and tags names with the following regex `(^|\W)i-amphtml-`. These are reserved for internal use by the AMP framework. It follows, that the user's stylesheet may not reference CSS selectors for <code>i-amphtml-</code> classes and tags.</td>
+    </tr>
+  </tbody>
+</table>
+[/filter]
 
 ## Performance recommendations
 
