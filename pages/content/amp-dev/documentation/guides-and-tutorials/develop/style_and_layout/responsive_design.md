@@ -96,7 +96,9 @@ The tricky part is having responsive elements render on the page without adverse
 
 ## Scaling media for the page <a name="scaling-media-for-the-page"></a>
 
-Probably the most challenging aspect of responsive design is displaying media correctly on the page so that it responds to the screen's characteristics. In this section, we'll look at how you can embed responsive videos and images on AMP pages.
+Probably the most challenging aspect of responsive design is displaying media correctly on the page so that it responds to the screen's characteristics. In this section, we'll look at how you can embed responsive media on AMP pages.
+
+[filter formats="websites, ads, stories"]
 
 ### Embedding videos
 
@@ -121,6 +123,8 @@ In the following example, we want to display an embedded YouTube video that resp
 [/example]
 
 There are many types of videos that you can add to your AMP pages. For details, see the list of available [media components](../../../../documentation/components/index.html#media).
+
+[/filter]
 
 ### Displaying responsive images <a name="displaying-responsive-images"></a>
 
@@ -288,6 +292,11 @@ Here are some examples that we hope inspire you to create responsive AMP pages:
 
 #### Made by AMP
 
+
+[filter formats="websites, ads, stories"]
 - [Examples](../../../../documentation/examples/index.html)
 - [Templates](../../../../documentation/templates/index.html)
 - [AMP Conf Workshop Codelab: Making beautiful AMPs](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)
+[filter formats="email"]
+- [Examples](../../../../documentation/examples/index.html?format=email)
+[/filter]
