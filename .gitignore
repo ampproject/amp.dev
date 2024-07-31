@@ -41,6 +41,7 @@ pages/shared/data/componentSamples.json
 pages/shared/data/roadmap.json
 
 # Ignore files created during build process
+artifacts/
 platform/pages*
 platform/static
 platform/config/build-info.yaml
