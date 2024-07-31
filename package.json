@@ -140,7 +140,7 @@
 		"file-loader": "6.2.0",
 		"filemanager-webpack-plugin": "8.0.0",
 		"gulp": "4.0.2",
-		"gulp-amphtml-validator": "1.0.6",
+		"gulp-amphtml-validator": "1.0.8",
 		"gulp-once": "2.1.1",
 		"gulp-sass": "5.1.0",
 		"handlebars": "4.7.8",
