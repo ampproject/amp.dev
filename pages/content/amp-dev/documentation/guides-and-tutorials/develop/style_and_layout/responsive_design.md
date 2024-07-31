@@ -297,6 +297,7 @@ Here are some examples that we hope inspire you to create responsive AMP pages:
 - [Examples](../../../../documentation/examples/index.html)
 - [Templates](../../../../documentation/templates/index.html)
 - [AMP Conf Workshop Codelab: Making beautiful AMPs](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)
+[/filter]
 [filter formats="email"]
 - [Examples](../../../../documentation/examples/index.html?format=email)
 [/filter]
