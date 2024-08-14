@@ -19,13 +19,11 @@ Warning: AMP for Email specifies additional CSS constraints which are described 
 [AMP for Email Supported CSS](../../../../documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md).
 [/filter]
 
-Like all web pages, AMP pages are styled with CSS,
-but you can’t reference external
 [filter formats="websites, ads, stories"]
-stylesheets (with the exception of [custom fonts](#the-custom-fonts-exception)).
+Like all web pages, AMP pages are styled with CSS, but you can’t reference external stylesheets (with the exception of [custom fonts](#the-custom-fonts-exception)).
 [/filter]
 [filter formats="email"]
-stylesheets.
+Like all web pages, AMP pages are styled with CSS, but you can’t reference external stylesheets.
 [/filter]
 Also certain styles are disallowed due to performance implications.
 
