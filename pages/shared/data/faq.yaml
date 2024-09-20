@@ -701,8 +701,6 @@ platform_and_vendor_partners:
         url: https://www.sogou.com
       - label: Tencent qZone
         url: https://qzone.qq.com
-      - label: Twitter
-        url: https://twitter.com
       - label: Weibo
         url: https://weibo.com
       - label: Yahoo JP
