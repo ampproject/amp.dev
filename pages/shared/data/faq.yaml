@@ -831,6 +831,10 @@ email:
   clients:
     title: Email Clients
     list:
+      - label: AOL Mail
+        url: https://senders.yahooinc.com/amp/
+        image:
+          src: /static/img/email-clients/aol-mail.png
       - label: FairEmail
         url: https://email.faircode.eu/
         image:
@@ -844,7 +848,7 @@ email:
         image:
           src: /static/img/email-clients/mailru.png
       - label: Yahoo Mail
-        url: https://developer.verizonmedia.com/mail/amp-for-email/
+        url: https://senders.yahooinc.com/amp/
         image:
           src: /static/img/email-clients/yahoo-mail.png
   partners:
