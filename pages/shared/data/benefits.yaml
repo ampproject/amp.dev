@@ -7,7 +7,7 @@ home:
       text: You can often convert your entire archive in days especially if you use a popular CMS such as WordPress or Drupal.
       icon: star
     - headline: 'AMP can be applied across various web touch points'
-      text: 'Used by popular and global platforms like Google, Bing and Twitter, AMP allows you to ensure users from all these surfaces get an unparalleled, often instantaneous and native-feeling experience by defaulting to AMP pages when available.'
+      text: 'Used by popular and global platforms like Google and Bing, AMP allows you to ensure users from all these surfaces get an unparalleled, often instantaneous and native-feeling experience by defaulting to AMP pages when available.'
       icon: interaction
   developer:
     - headline: Maintain flexibility and control and reduce complexity in your code
@@ -28,7 +28,7 @@ websites:
       text: You can often convert your entire archive in days – especially when using common CMS like WordPress or Drupal.
       icon: components
     - headline: AMP can be applied across various web touch points
-      text: Used by global platforms like Google, Bing and Twitter, AMP allows users a native-feeling experience across all platforms by defaulting to AMP pages when available.
+      text: Used by global platforms like Google and Bing, AMP allows users a native-feeling experience across all platforms by defaulting to AMP pages when available.
       icon: fast-loading
   developer:
     - headline: Maintain flexibility and control and reduce complexity in your code
