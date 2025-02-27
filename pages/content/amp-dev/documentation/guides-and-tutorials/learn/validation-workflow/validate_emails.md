@@ -54,15 +54,16 @@ If the email is valid the command-line tool will result in a `PASS`. If invalid,
 
 You can also validate AMP Emails using the [AMP playground](https://playground.amp.dev/?runtime=amp4email). Similar to the web-based validator, paste your AMP Email into the tool, and the playground will flag any validator errors directly inline.
 
-### Validate delivered emails
+### Validate emails delivered by ESPs
 
 Sometimes your delivered AMP Emails may be invalid even though the email markup you authored has already been validated by tools documented in this page. The most common reason for this to happen is that your [ESP](https://amp.dev/support/faq/email-support/) modified your email markup and made it invalid after you have sent your email to your ESP for delivery. For example, if your ESP is SparkPost and you haven't configured HTTPS tracking pixels with SparkPost, then SparkPost will add an insecure HTTP tracking pixel to your email. Since AMP Emails only allow HTTPS images, this will make your AMP Email invalid.
 
-To check whether an email delivered to your inbox is valid AMP:
+To check whether an email that your ESP delivered to your inbox is valid AMP:
 
+1. Deliver the AMP email via your ESP. Do **not** deliver the email from any email-client-specific playground.
 1. [download the AMP Email as an `.eml` file](https://www.codetwo.com/kb/export-email-to-file) from your email client.
-2. Open the [AMP playground](https://playground.amp.dev/?runtime=amp4email).
-3. Click on "IMPORT EMAIL", and select the `.eml` file you just downloaded.
+1. Open the [AMP playground](https://playground.amp.dev/?runtime=amp4email).
+1. Click on "IMPORT EMAIL", and select the `.eml` file you just downloaded.
 
 The playground will import the AMP email you downloaded into the inline editor and flag any validation errors.
 
