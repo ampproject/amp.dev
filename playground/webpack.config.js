@@ -44,7 +44,6 @@ module.exports = (env, argv) => {
             ecma: '2015',
             compress: {
               defaults: true,
-              unsafe: true,
             },
           },
         }),
