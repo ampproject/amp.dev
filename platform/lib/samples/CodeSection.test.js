@@ -184,6 +184,15 @@ describe('CodeSection', () => {
         },
       ]);
     });
+    it('escapes the heading', () => {
+      section.appendDoc('##Some Doc amp.getState()');
+      expect(section.headings).toEqual([
+        {
+          id: 'some-doc-amp-getstate',
+          name: 'Some Doc amp.getState()',
+        },
+      ]);
+    });
     it('adds multiple headings', () => {
       section.appendDoc('##Some Doc');
       section.appendDoc('##Another Doc');

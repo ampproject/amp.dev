@@ -244,7 +244,13 @@ class ComponentReferenceLinker {
 
   _linkText(result) {
     const section = result.match(/#\w*(-.*)?(?=\))/gm);
-    const sectionId = section !== null ? section[0].replace(/\s/g, '') : '';
+    const sectionId =
+      section !== null
+        ? section[0]
+            .replace(/\s/g, '')
+            .replace(/\./g, '-')
+            .replace(/[\(\)]/g, '')
+        : '';
     const text = result.match(/\[(.*?)]/gm);
     if (text !== null) {
       return {'text': text, 'id': sectionId};
