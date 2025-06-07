@@ -100,9 +100,9 @@
   date: 2019-04-01 19:39:44 +0200
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md
   date: 2019-04-01 18:36:56 +0200
-- path: /content/amp-dev/documentation/guides-and-tutorials/integrate/add-email.md
-  date: 2019-03-25 12:04:55 +0300
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/email_fundamentals.md
+  date: 2019-03-25 12:04:55 +0300
+- path: /content/amp-dev/documentation/guides-and-tutorials/integrate/add-email.md
   date: 2019-03-25 12:04:55 +0300
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create_email.md
   date: 2019-03-25 11:17:23 +0100
@@ -114,11 +114,11 @@
   date: 2019-02-07 19:57:26 +0100
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html
   date: 2019-02-05 15:42:29 +0100
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/combine-amp-pwa.md
+  date: 2019-02-04 18:46:52 -0800
 - path: /content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md
   date: 2019-02-04 18:46:52 -0800
 - path: /content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md
-  date: 2019-02-04 18:46:52 -0800
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/combine-amp-pwa.md
   date: 2019-02-04 18:46:52 -0800
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md
   date: 2019-02-04 18:46:52 -0800
