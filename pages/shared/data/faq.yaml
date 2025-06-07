@@ -190,6 +190,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/aniview.md
       - label: AnyClip
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/anyclip.md
+      - label: AppMonsta
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/appmonsta.md
       - label: AppNexus
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/appnexus.md
       - label: AppVador
@@ -358,8 +360,6 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/kixer.md
       - label: Kuadio
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/kuadio.md
-      - label: Lentainform
-        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/lentainform.md
       - label: Ligatus
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/ligatus.md
       - label: LockerDome
@@ -446,6 +446,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/opinary.md
       - label: Outbrain
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/outbrain.md
+      - label: PIberica
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/piberica.md
       - label: Pixad
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/pixad.md
       - label: Pixels
@@ -478,8 +480,6 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/pubmine.md
       - label: Example
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/pubscale.md
-      - label: puffnetwork
-        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/puffnetwork.md
       - label: Pulse
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/pulse.md
       - label: PulsePoint
@@ -640,8 +640,6 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/wunderkind.md
       - label: Xlift
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/xlift.md
-      - label: yahoo
-        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/yahoo.md
       - label: Yahoo Native-Display Ads Federation
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/yahoofedads.md
       - label: Yahoo JP
@@ -662,6 +660,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/yieldone.md
       - label: YieldPro
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/yieldpro.md
+      - label: Yobee
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/yobee.md
       - label: Zedo
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/zedo.md
       - label: Zen
