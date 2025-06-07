@@ -271,9 +271,13 @@ module.exports = class CodeSection {
       return;
     }
     const name = matches[1].trim().replace(/`/g, '');
+    let id = name.toLowerCase();
+    id = id.replace(/\s+/g, '-');
+    id = id.replace(/\./g, '-');
+    id = id.replace(/[\(\)]/g, '');
     const heading = {
-      id: name.toLowerCase().replace(/\s+/g, '-'),
-      name: name,
+      id,
+      name,
     };
     this.headings.push(heading);
   }
