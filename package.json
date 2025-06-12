@@ -4,7 +4,7 @@
 	"description": "The AMP Project website.",
 	"repository": "git@github.com:ampproject/docs.git",
 	"engines": {
-		"node": "18.x"
+		"node": "22.x"
 	},
 	"private": true,
 	"scripts": {
