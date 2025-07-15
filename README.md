@@ -182,11 +182,38 @@ To perform a build run the following command with `--env` being one of the follo
 $ npx gulp build --env <environment>
 ```
 
-This command builds all parts of the project and might take a while. Usually, all builds on [amp-dev-staging.appspot.com](https://amp-dev-staging.appspot.com/) and [amp.dev](https://amp.dev/) are built using [Travis CI](https://travis-ci.org/ampproject/amp.dev). In case you want to reproduce one of those remote builds in your local environment, you can fetch the build artifacts by running:
+## Deployment
 
-```sh
-$ npx gulp fetchArtifacts --travis-build <build_number>
-```
+The amp.dev site uses GitHub Actions for automated deployments to both staging and production environments.
+
+### Deployment Environments
+
+- **Staging**: [staging-amp-dev.netlify.app](https://staging-amp-dev.netlify.app/)
+- **Production**: [amp.dev](https://amp.dev/)
+
+### How to Deploy
+
+Deployments are triggered through GitHub Actions workflows:
+
+1. **Staging Deployment**: 
+   - Triggered automatically on pushes to the `main` branch
+   - Automatically builds and deploys to the staging environment
+   - View workflow status with the "Staging" badge at the top of this README
+
+2. **Production Deployment**:
+   - **Manual deployment only** - no automatic triggers
+   - Must be manually triggered through GitHub Actions
+   - View workflow status with the "Production" badge at the top of this README
+
+### Manual Deployment
+
+To manually trigger a deployment (required for production):
+
+1. Navigate to the [deploy workflow](https://github.com/ampproject/amp.dev/actions/workflows/deploy.yaml) in the GitHub actions tab.
+2. Click "Run workflow" and choose the branch you want to deploy
+3. Confirm the deployment
+
+**Note**: Ensure your changes have been properly tested in the staging environment before deploying to production.
 
 ---
 
