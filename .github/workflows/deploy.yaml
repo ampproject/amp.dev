@@ -75,7 +75,7 @@ jobs:
           APP_ENV: production
           AMP_DOC_TOKEN: ${{ secrets.AMP_DOC_TOKEN }}
         run: |
-          npx gulp buildPrepare
+          npx gulp buildPrepare --queue-imports
 
       - name: Storing build artifacts
         uses: actions/upload-artifact@v4
