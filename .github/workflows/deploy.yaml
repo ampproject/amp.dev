@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cloning repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setting up Node.js
         uses: actions/setup-node@v4
@@ -59,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cloning repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setting up Node.js
         uses: actions/setup-node@v4
@@ -110,7 +110,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cloning repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setting up Node.js
         uses: actions/setup-node@v4
@@ -132,7 +132,7 @@ jobs:
           pip install grow --upgrade-strategy eager
 
       - name: Fetching build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: build-setup
           path: artifacts
@@ -160,7 +160,7 @@ jobs:
       NETLIFY_DEPLOY_TOKEN: ${{ secrets.NETLIFY_DEPLOY_TOKEN }}
     steps:
       - name: Cloning repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setting up Node.js
         uses: actions/setup-node@v4
@@ -172,7 +172,7 @@ jobs:
         run: npm ci
 
       - name: Fetching build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           path: artifacts
 
