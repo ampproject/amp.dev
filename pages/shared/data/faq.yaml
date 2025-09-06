@@ -230,6 +230,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/cedato.md
       - label: Clever
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/clever.md
+      - label: Clickio
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/clickio.md
       - label: Cognativex
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/cognativex.md
       - label: Colombia
