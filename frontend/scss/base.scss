@@ -79,3 +79,7 @@ body > * > :not(.ap-o-code-preview) > * > .amp-carousel-button {
   h5:target::before { height: 93px; margin-top: -93px; }
   h6:target::before { height: 97px; margin-top: -97px; }
 }
+
+.ap-language-selector select {
+  cursor: pointer;
+}
