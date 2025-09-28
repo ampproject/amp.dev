@@ -6,7 +6,7 @@
   &-card {
     display: flex;
     flex-direction: column;
-    max-width: calc(100% - 10px);
+    width: calc(100% - 10px);
     white-space: normal;
     color: color('charade');
     border-radius: 8px;
