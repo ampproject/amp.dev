@@ -186,6 +186,10 @@ Wartość atrybutu type: `ibeatanalytics`
 
 Dodaje obsługę Ibeat Analytics. Więcej szczegółów dotyczących dodawania obsługi Ibeat można znaleźć na stronie [Obsługa integracji Ibeat](https://ibeat.indiatimes.com/support.html#h.a5rit14mwie1).
 
+### Idealmedia <a name="idealmedia"></a>
+
+Wartość atrybutu type: `idealmedia`
+
 ### INFOnline / IVW <a name="infonline--ivw"></a>
 
 Wartość atrybutu type: `infonline`
@@ -281,6 +285,12 @@ Dodaje obsługę mediarithmics. Więcej informacji i szczegóły konfiguracji mo
 ### Memo <a name="memo"></a>
 
 Wartość atrybutu type: `memo`
+
+### MGID <a name="mgid"></a>
+
+Wartość atrybutu type: `mgid`
+
+Dodaje obsługę MGID. Więcej szczegółów można znaleźć na stronie [mgid.com/blog](https://www.mgid.com/blog).
 
 ### Metrika <a name="metrika"></a>
 

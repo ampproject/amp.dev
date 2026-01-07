@@ -186,6 +186,10 @@ limitations under the License.
 
 Добавляет поддержку Ibeat Analytics. Более подробную информацию о добавлении поддержки Ibeat можно найти на [сайте Ibeat в разделе интеграции](https://ibeat.indiatimes.com/support.html#h.a5rit14mwie1).
 
+### Idealmedia <a name="idealmedia"></a>
+
+Значение атрибута типа: `idealmedia`
+
 ### INFOnline/IVW <a name="infonline--ivw"></a>
 
 Тип значения атрибута: `infonline`
@@ -281,6 +285,12 @@ limitations under the License.
 ### Memo <a name="memo"></a>
 
 Значение атрибута типа: `memo`
+
+### MGID <a name="mgid"></a>
+
+Значение атрибута типа: `mgid`
+
+Добавляет поддержку MGID. Более подробную информацию можно найти на [mgid.com/blog](https://www.mgid.com/blog).
 
 ### Metrika <a name="metrika"></a>
 

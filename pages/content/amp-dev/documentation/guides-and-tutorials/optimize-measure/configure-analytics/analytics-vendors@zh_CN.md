@@ -147,6 +147,10 @@ type 属性值：`googleanalytics`
 
 添加对 Google Analytics（分析）的支持。要详细了解如何添加 Google Analytics（分析）支持，请访问 [developers.google.com](https://developers.google.com/analytics/devguides/collection/amp-analytics/)。
 
+### Idealmedia
+
+type 属性值：`idealmedia`
+
 ### INFOnline/IVW
 
 type 属性值：`infonline`
@@ -191,6 +195,12 @@ type 属性值：`mediametrie`
 type 属性值：`mediarithmics`
 
 添加对 mediarithmics 的支持。有关详情和配置详细信息，请访问 [developer.mediarithmics.com](https://developer.mediarithmics.com/)。
+
+### MGID
+
+type 属性值：`mgid`
+
+添加对 MGID 的支持。要了解更多详情，请访问 [mgid.com/blog](https://www.mgid.com/blog)。
 
 ### mParticle
 

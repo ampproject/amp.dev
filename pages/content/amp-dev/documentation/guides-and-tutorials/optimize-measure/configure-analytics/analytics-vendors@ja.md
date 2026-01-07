@@ -148,6 +148,10 @@ type 属性の値: `googleanalytics`
 
 この値を指定すると、Google アナリティクスを利用できるようになります。Google アナリティクスの利用を有効にする方法について詳しくは、[developers.google.com](https://developers.google.com/analytics/devguides/collection/amp-analytics/) をご覧ください。
 
+### Idealmedia
+
+type 属性の値: `idealmedia`
+
 ### INFOnline / IVW
 
 type 属性の値: `infonline`
@@ -192,6 +196,12 @@ type 属性の値: `mediametrie`
 type 属性の値: `mediarithmics`
 
 この値を指定すると、mediarithmics を利用できるようになります。詳しい情報や設定の詳細については、[developer.mediarithmics.com](https://developer.mediarithmics.com/) をご覧ください。
+
+### MGID
+
+type 属性の値: `mgid`
+
+この値を指定すると、MGID を利用できるようになります。詳しくは、[mgid.com/blog](https://www.mgid.com/blog) をご覧ください。
 
 ### mParticle
 

@@ -190,6 +190,10 @@ Valore dell'attributo type:: `ibeatanalytics`
 
 Fornisce supporto per Ibeat Analytics. Maggiori dettagli per l'aggiunta di Ibeat sono disponibili su [Ibeat Integration Support](https://ibeat.indiatimes.com/support.html#h.a5rit14mwie1).
 
+### Idealmedia <a name="idealmedia"></a>
+
+Valore dell'attributo type: `idealmedia`
+
 ### INFOnline / IVW <a name="infonline--ivw"></a>
 
 Valore dell'attributo type: `infonline`
@@ -289,6 +293,12 @@ Fornisce supporto per mediarithmics. Ulteriori informazioni e dettagli sulla con
 ### Memo <a name="memo"></a>
 
 Valore dell'attributo type: `memo`
+
+### MGID <a name="mgid"></a>
+
+Valore dell'attributo type: `mgid`
+
+Fornisce supporto per MGID. Maggiori dettagli sono disponibili su [mgid.com/blog](https://www.mgid.com/blog).
 
 ### Metrika <a name="metrika"></a>
 

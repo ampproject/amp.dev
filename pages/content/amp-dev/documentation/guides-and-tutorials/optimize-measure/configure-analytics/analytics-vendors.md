@@ -252,6 +252,10 @@ Type attribute value: `ibeatanalytics`
 
 Adds support for Ibeat Analytics.
 
+### Idealmedia <a name="idealmedia"></a>
+
+Type attribute value: `idealmedia`
+
 <!-- markdown-link-check-disable -->
 
 ### INFOnline / IVW <a name="infonline--ivw"></a>
@@ -377,6 +381,12 @@ Type attribute value: `mediator`
 ### Memo <a name="memo"></a>
 
 Type attribute value: `memo`
+
+### MGID <a name="mgid"></a>
+
+Type attribute value: `mgid`
+
+Adds support for MGID. More details can be found at [mgid.com/blog](https://www.mgid.com/blog).
 
 ### Yandex Metrica <a name="yandex-metrica"></a>
 

@@ -147,6 +147,10 @@ Escribe el valor de atributo: `googleanalytics`
 
 Permite añadir compatibilidad con Google Analytics. Puedes encontrar más información sobre cómo añadir compatibilidad con Google Analytics en [developers.google.com](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
+### Idealmedia
+
+Escribe el valor de atributo: `idealmedia`
+
 ### INFOnline / IVW
 
 Escribe el valor de atributo: `infonline`
@@ -191,6 +195,12 @@ Permite añadir compatibilidad con las páginas de seguimiento de Médiamétrie.
 Escribe el valor de atributo: `mediarithmics`
 
 Permite añadir compatibilidad con mediarithmics. Puedes encontrar más información y detalles sobre la configuración en [developer.mediarithmics.com](https://developer.mediarithmics.com/).
+
+### MGID
+
+Escribe el valor de atributo: `mgid`
+
+Permite añadir compatibilidad con MGID. Puedes encontrar más información en [mgid.com/blog](https://www.mgid.com/blog).
 
 ### mParticle
 

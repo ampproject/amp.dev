@@ -147,6 +147,10 @@ Google AdWords 전환추적 및 리마케팅 지원을 추가합니다. 자세�
 
 Google 애널리틱스 지원을 추가합니다. Google Analytics 지원 추가에 관한 자세한 내용은 [developers.google.com](https://developers.google.com/analytics/devguides/collection/amp-analytics/)을 참고하세요.
 
+### Idealmedia
+
+타입 속성값: `idealmedia`
+
 ### INFOnline / IVW
 
 타입 속성값: `infonline`
@@ -191,6 +195,12 @@ Médiamétrie 추적 페이지 지원을 추가합니다. *var* `serial`을 정�
 타입 속성값: `mediarithmics`
 
 mediarithmics 지원을 추가합니다. 자세한 내용과 구성에 관한 세부정보는 [developer.mediarithmics.com](https://developer.mediarithmics.com/)을 참고하세요.
+
+### MGID
+
+타입 속성값: `mgid`
+
+MGID 지원을 추가합니다. 자세한 내용은 [mgid.com/blog](https://www.mgid.com/blog)을 참고하세요.
 
 ### mParticle
 

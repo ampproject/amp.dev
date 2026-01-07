@@ -190,6 +190,10 @@ Giá trị thuộc tính type: `ibeatanalytics`
 
 Bổ sung hỗ trợ cho Ibeat Analytics. Chi tiết khác cho việc thêm sự hỗ trợ của Ibeat có thể được tìm thấy tại [Hỗ trợ tích hợp Ibeat](https://ibeat.indiatimes.com/support.html#h.a5rit14mwie1).
 
+### Idealmedia <a name="idealmedia"></a>
+
+Giá trị thuộc tính type: `idealmedia`
+
 ### INFOnline / IVW <a name="infonline--ivw"></a>
 
 Giá trị thuộc tính type: `infonline`
@@ -289,6 +293,12 @@ Bổ sung hỗ trợ cho mediarithmics. Thông tin thêm và chi tiết cấu h�
 ### Memo <a name="memo"></a>
 
 Giá trị thuộc tính type: `memo`
+
+### MGID <a name="mgid"></a>
+
+Giá trị thuộc tính type: `mgid`
+
+Bổ sung hỗ trợ cho MGID. Chi tiết khác có thể được tìm thấy tại [mgid.com/blog](https://www.mgid.com/blog).
 
 ### Metrika <a name="metrika"></a>
 

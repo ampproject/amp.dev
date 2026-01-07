@@ -186,6 +186,10 @@ Tür özellik değeri: `ibeatanalytics`
 
 Ibeat Analytics için destek ekler. Ibeat desteği eklemek için daha fazla ayrıntı [Ibeat Entegrasyon Desteği](https://ibeat.indiatimes.com/support.html#h.a5rit14mwie1) adresinde bulunabilir.
 
+### Idealmedia <a name="idealmedia"></a>
+
+Tür özellik değeri: `idealmedia`
+
 ### INFOnline / IVW <a name="infonline--ivw"></a>
 
 Tür özellik değeri: `infonline`
@@ -281,6 +285,12 @@ mediarithmics için destek ekler. Daha fazla bilgi ve yapılandırma ayrıntıla
 ### Memo <a name="memo"></a>
 
 Tür özellik değeri: `memo`
+
+### MGID <a name="mgid"></a>
+
+Tür özellik değeri: `mgid`
+
+MGID için destek ekler. Daha fazla ayrıntı [mgid.com/blog](https://www.mgid.com/blog) adresinde bulunabilir.
 
 ### Metrika <a name="metrika"></a>
 

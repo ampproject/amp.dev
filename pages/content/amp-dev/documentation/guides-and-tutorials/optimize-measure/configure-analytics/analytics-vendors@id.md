@@ -147,6 +147,10 @@ Nilai atribut type: `googleanalytics`
 
 Menambahkan dukungan untuk Google Analytics. Detail selengkapnya tentang menambahkan dukungan Google Analytics dapat dilihat di [developers.google.com](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
+### Idealmedia
+
+Nilai atribut type: `idealmedia`
+
 ### INFOnline / IVW
 
 Nilai atribut type: `infonline`
@@ -191,6 +195,12 @@ Menambahkan dukungan untuk halaman pelacakan Médiamétrie. *Var* `serial` harus
 Nilai atribut type: `mediarithmics`
 
 Menambahkan dukungan untuk mediarithmics. Informasi lebih lanjut dan detail konfigurasi dapat dilihat di [developer.mediarithmics.com](https://developer.mediarithmics.com/).
+
+### MGID
+
+Nilai atribut type: `mgid`
+
+Menambahkan dukungan untuk MGID. Detail selengkapnya dapat dilihat di [mgid.com/blog](https://www.mgid.com/blog).
 
 ### mParticle
 

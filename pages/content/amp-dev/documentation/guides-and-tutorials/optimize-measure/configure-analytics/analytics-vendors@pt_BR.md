@@ -147,6 +147,10 @@ Valor do atributo de tipo: `googleanalytics`
 
 Adiciona compatibilidade com o Google Analytics. Veja mais detalhes sobre como adicionar compatibilidade com o Google Analytics em [developers.google.com](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
+### Idealmedia
+
+Valor do atributo de tipo: `idealmedia`
+
 ### INFOnline / IVW
 
 Valor do atributo de tipo: `infonline`
@@ -191,6 +195,12 @@ Adiciona compatibilidade com as páginas de rastreamento da Médiamétrie. Exige
 Valor do atributo de tipo: `mediarithmics`
 
 Adiciona compatibilidade com o mediarithmics. Veja mais informações e detalhes de configuração em [developer.mediarithmics.com](https://developer.mediarithmics.com/) (em inglês).
+
+### MGID
+
+Valor do atributo de tipo: `mgid`
+
+Adiciona compatibilidade com o MGID. Veja mais detalhes em [mgid.com/blog](https://www.mgid.com/blog).
 
 ### mParticle
 
