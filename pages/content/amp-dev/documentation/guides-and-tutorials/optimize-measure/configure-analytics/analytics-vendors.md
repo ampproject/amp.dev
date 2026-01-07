@@ -61,6 +61,10 @@ Do not use both the `adobeanalytics` and `adobeanalytics_nativeConfig` types on 
 Type attribute value: `adobeanalytics_nativeConfig`
 -->
 
+### Adskeeper <a name="adskeeper"></a>
+
+Type attribute value: `adskeeper`
+
 ### AFS Analytics <a name="afs-analytics"></a>
 
 Type attribute value: `afsanalytics`

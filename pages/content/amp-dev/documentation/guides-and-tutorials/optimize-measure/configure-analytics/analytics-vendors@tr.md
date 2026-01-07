@@ -48,6 +48,10 @@ Tür özellik değeri: `adobeanalytics`
 
 Adobe Analytics için destek ekler. Adobe Analytics desteğinin eklenmesiyle ilgili daha fazla ayrıntı [marketing.adobe.com](https://marketing.adobe.com/resources/help/en_US/sc/implement/accelerated-mobile-pages.html) adresinde bulunabilir.
 
+### Adskeeper <a name="adskeeper"></a>
+
+Tür özellik değeri: `adskeeper`
+
 ### AFS Analytics <a name="afs-analytics"></a>
 
 Tür özellik değeri: `afsanalytics`

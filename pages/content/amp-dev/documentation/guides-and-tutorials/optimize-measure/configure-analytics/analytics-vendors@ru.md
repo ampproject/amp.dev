@@ -48,6 +48,10 @@ limitations under the License.
 
 Добавляет поддержку Adobe Analytics. Более подробную информацию о добавлении поддержки Adobe Analytics можно найти на сайте [marketing.adobe.com](https://marketing.adobe.com/resources/help/en_US/sc/implement/accelerated-mobile-pages.html).
 
+### Adskeeper <a name="adskeeper"></a>
+
+Значение атрибута типа: `adskeeper`
+
 ### AFS Analytics <a name="afs-analytics"></a>
 
 Значение атрибута типа: `afsanalytics`

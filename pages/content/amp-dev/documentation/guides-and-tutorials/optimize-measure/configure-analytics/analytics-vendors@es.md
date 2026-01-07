@@ -57,6 +57,10 @@ Escribe el valor de atributo: `adobeanalytics`
 
 Permite añadir compatibilidad con Adobe Analytics. Puedes encontrar más información sobre cómo añadir compatibilidad con Adobe Analytics en [marketing.adobe.com](https://marketing.adobe.com/resources/help/es_ES/sc/implement/accelerated-mobile-pages.html).
 
+### Adskeeper
+
+Escribe el valor de atributo: `adskeeper`
+
 ### AFS Analytics
 
 Escribe el valor de atributo: `afsanalytics`

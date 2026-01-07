@@ -57,6 +57,10 @@ type 属性の値: `adobeanalytics`
 
 この値を指定すると、Adobe Analytics を利用できるようになります。Adobe Analytics の利用を有効にする方法について詳しくは、[marketing.adobe.com](https://marketing.adobe.com/resources/help/ja_JP/sc/implement/accelerated-mobile-pages.html) をご覧ください。
 
+### Adskeeper
+
+type 属性の値: `adskeeper`
+
 ### AFS Analytics
 
 type 属性の値: `afsanalytics`

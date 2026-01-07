@@ -48,6 +48,10 @@ Giá trị thuộc tính type: `adobeanalytics`
 
 Bổ sung hỗ trợ cho Adobe Analytics. Chi tiết khác cho việc thêm sự hỗ trợ của Adobe Analytics có thể được tìm thấy tại [marketing.adobe.com](https://marketing.adobe.com/resources/help/en_US/sc/implement/accelerated-mobile-pages.html).
 
+### Adskeeper <a name="adskeeper"></a>
+
+Giá trị thuộc tính type: `adskeeper`
+
 ### AFS Analytics <a name="afs-analytics"></a>
 
 Giá trị thuộc tính type: `afsanalytics`

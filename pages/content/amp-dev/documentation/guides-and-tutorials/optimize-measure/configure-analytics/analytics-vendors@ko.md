@@ -57,6 +57,10 @@ Acquia Lift 지원을 추가합니다. `decisionApiUrl`, `accountId`, `siteId`�
 
 Adobe Analytics 지원을 추가합니다. Adobe Analytics 지원 추가에 관한 자세한 내용은 [marketing.adobe.com](https://marketing.adobe.com/resources/help/ko_KR/sc/implement/?f=accelerated-mobile-pages)을 참고하세요.
 
+### Adskeeper
+
+타입 속성값: `adskeeper`
+
 ### AFS Analytics
 
 타입 속성값: `afsanalytics`

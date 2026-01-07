@@ -57,6 +57,10 @@ Nilai atribut type: `adobeanalytics`
 
 Menambahkan dukungan untuk Adobe Analytics. Detail selengkapnya tentang menambahkan dukungan Adobe Analytics dapat dilihat di [marketing.adobe.com](https://marketing.adobe.com/resources/help/en_US/sc/implement/accelerated-mobile-pages.html).
 
+### Adskeeper
+
+Nilai atribut type: `adskeeper`
+
 ### AFS Analytics
 
 Nilai atribut type: `afsanalytics`

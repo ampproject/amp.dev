@@ -57,6 +57,10 @@ type 属性值：`adobeanalytics`
 
 添加对 Adobe Analytics 的支持。要详细了解如何添加 Adobe Analytics 支持，请访问 [marketing.adobe.com](https://marketing.adobe.com/resources/help/zh_CN/sc/implement/accelerated-mobile-pages.html)。
 
+### Adskeeper
+
+type 属性值：`adskeeper`
+
 ### AFS Analytics
 
 type 属性值：`afsanalytics`

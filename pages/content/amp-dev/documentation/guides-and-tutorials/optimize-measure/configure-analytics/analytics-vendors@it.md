@@ -48,6 +48,10 @@ Valore dell'attributo type: `adobeanalytics`
 
 Fornisce il supporto per Adobe Analytics. Ulteriori dettagli sull'aggiunta di Adobe Analytics sono disponibili su [marketing.adobe.com](https://marketing.adobe.com/resources/help/en_US/sc/implement/accelerated-mobile-pages.html).
 
+### Adskeeper <a name="adskeeper"></a>
+
+Valore dell'attributo type: `adskeeper`
+
 ### AFS Analytics <a name="afs-analytics"></a>
 
 Valore dell'attributo type:: `afsanalytics`
