@@ -52,6 +52,17 @@ creation:
       fit: contain
     formats:
       - email
+  - name: Easy Email Pro
+    url: https://www.easyemail.pro/
+    type: Email Editor
+    description: The most powerful and flexible email editor for SaaS applications, with AMP Email Blocks for interactive emails—carousels, forms, live data—and responsive design.
+    image:
+      src: /static/img/tools/easyemailpro.png
+      width: 700
+      height: 350
+      fit: contain
+    formats:
+      - email
   - name: Glia Story
     description: GliaStory uses AI to generate Web Stories from news, e-commerce and even podcast content in minutes!
     url: https://www.gliastory.com/
@@ -480,6 +491,17 @@ developer:
       height: 471
     formats:
       - websites
+  - name: MJML to AMP Email
+    url: https://mjml2amp.easyemail.pro/
+    type: Development
+    description: Live convert MJML to AMP email and preview.
+    image:
+      src: /static/img/tools/easyemailpro.png
+      width: 700
+      height: 350
+      fit: contain
+    formats:
+      - email
   - name: AMP Readiness
     official: true
     type: Debugging
