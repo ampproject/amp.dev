@@ -1,304 +1,304 @@
 - path: /content/amp-dev/documentation/guides-and-tutorials/index.html
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/contribute/email-viewer.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/contribute/index.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-amphtml-email.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/contribute/translations.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/integrate/add-email.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/integrate/embed-stories-nonamp.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/integrate/embed-stories.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/integrate/integrate-with-apps.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/integrate/web-story-player-guide.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-email-actions-and-events.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/combine-amp-pwa.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/cors-in-email.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/email_fundamentals.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/webstory_technical_details.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/advertise_amp_stories.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/amp_email_best_practices.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/custom-javascript-tutorial.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/custom-javascript.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/seatmap.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/story_ads_best_practices.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/testing_amp_emails.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/integrate/add-email.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/integrate/embed-stories-nonamp.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/integrate/embed-stories.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/integrate/integrate-with-apps.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/integrate/web-story-player-guide.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-email-actions-and-events.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/combine-amp-pwa.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/cors-in-email.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/email_fundamentals.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/webstory_technical_details.md
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-managing-user-state.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp_to_pwa.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery_web_stories.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/engagement.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/optimize_amp.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/publishing_checklist.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/secure-pages.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/signed-exchange.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/tracking-engagement.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create_email.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create_successful_stories.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/email-inspiration.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/email_sender_distribution.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/productivity_sender.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/contribute/contribute-documentation/documentation-types.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/contribute/contribute-documentation/formatting.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/contribute/contribute-documentation/index.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/contribute/contribute-documentation/terminology.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/index.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/release-schedule-accessible.html
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/release-schedule.html
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-debugging.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-urls.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-components.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-format.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-html.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-structure.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-html-responsive-attributes.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-video-interface.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/spec/release-schedule.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_emails.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/animations/introduction_to_animations.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/animations/triggering_css_animations.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/advanced-interactivity.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/get-familiar.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/prereqs-setup.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/remote-data.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/wrapping-up.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity_guide/client_rendering.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity_guide/foundations.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity_guide/index.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity_guide/personalized_experiences.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity_guide/ready_made.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/add_comment.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/index.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/login.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/logout.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/summary.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/iframes.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/third_party_components.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/monetization/content_encryption.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/custom_fonts.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-debugging.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-urls.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-components.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-format.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-html.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-structure.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-html-responsive-attributes.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-video-interface.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/spec/release-schedule.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_emails.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-optimizer-guide/explainer.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-optimizer-guide/index.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-optimizer-guide/node-amp-optimizer.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/building-page.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/resolving-errors.md
-  date: 2025-07-16 10:48:17 -0700
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/setting-up.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create/actions_events.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create/include_image.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create/index.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create/prepare_for_discovery.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create/presentation_layout.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create/preview_and_validate.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create/publish.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/create_shell.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/image_ad.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/index.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/summary.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/track_views.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/validate.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/building-page.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/resolving-errors.md
+  date: 2026-02-24 14:44:50 -0500
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/setting-up.md
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/adding_carousels.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/adding_components.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/congratulations.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/fonts.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/index.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/navigating.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/review_code.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/setting_up.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/tracking_data.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/animating_elements.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/congratulations.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/parts_of_story.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/setting_up.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/start_story.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/validation.md
-  date: 2025-07-16 10:48:17 -0700
+  date: 2026-02-24 14:44:50 -0500
