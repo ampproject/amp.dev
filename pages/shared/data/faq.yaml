@@ -432,6 +432,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/nend.md
       - label: netletix
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/netletix.md
+      - label: Neuwo
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/neuwo.md
       - label: Noddus
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/vendors/noddus.md
       - label: Nokta
